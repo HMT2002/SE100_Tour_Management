@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Cassandra;
 
 namespace Tour
 {
@@ -22,8 +21,6 @@ namespace Tour
         DataConnection dc;
         SqlDataAdapter adapter;
 
-        Func<Row, tblTicket> TicketSelector;
-        Func<Row, tblTicket> TicketSelectorV2;
 
         void Clear()
         {
@@ -32,40 +29,6 @@ namespace Tour
         }
         public CSDLPhieuDatCho()
         {
-            TicketSelector = delegate (Row r)
-            {
-                tblTicket ticket = new tblTicket
-                {
-                    MaDuKhach = r.GetValue<Guid>("madukhach"),
-                    HanPassport = r.GetValue<DateTime>("hanpassport"),
-                    HanVisa = r.GetValue<DateTime>("hanvisa"),
-                    MaChuyen = r.GetValue<Guid>("machuyen"),
-                    TenLoaiTuyen = r.GetValue<string>("tenloaituyen"),
-                    TenLoaiChuyen = r.GetValue<string>("tenloaichuyen"),
-                    LePhiHoanTra = r.GetValue<int>("lephihoantra"),
-                    TienHoanTra = r.GetValue<decimal>("tienhoantra"),
-                    MaVe = r.GetValue<Guid>("mave"),
-                    MaPhieu = r.GetValue<Guid>("maphieu"),
-                    HoTen = r.GetValue<string>("hoten"),
-                    DiaChi = r.GetValue<string>("diachi"),
-                    SDT = r.GetValue<string>("sdt"),
-                    GioiTinh = r.GetValue<string>("gioitinh"),
-                    TenLoaiKhach = r.GetValue<string>("tenloaikhach"),
-                    CMND_Passport = r.GetValue<string>("cmnd_passport"),
-                    GiaVe = r.GetValue<decimal>("giave")
-                };
-                return ticket;
-            };
-
-            TicketSelectorV2 = delegate (Row r)
-            {
-                tblTicket ticket = new tblTicket
-                {
-                    MaPhieu = r.GetValue<Guid>("maphieu"),
-                    HoTen = r.GetValue<string>("hoten"),
-                };
-                return ticket;
-            };
 
             InitializeComponent();
             tkDAL = new ticketDAL();
@@ -118,8 +81,6 @@ namespace Tour
         {
             string query = "SELECT MaDuKhach, HanPassport, HanVisa, MaChuyen, TenLoaiTuyen, TenLoaiChuyen, LePhiHoanTra, TienHoanTra, MaVe, MaPhieu, HoTen, DiaChi, SDT, GioiTinh, TenLoaiKhach, CMND_Passport, GiaVe FROM Ve";
 
-            var TicketTable = DataConnection.Ins.session.Execute(query)
-                .Select(TicketSelector);
 
             dgvQuanLy.DataSource = TicketTable.ToList();
         }
@@ -129,8 +90,7 @@ namespace Tour
             
             string query = "Select MaPhieu, HoTen from ve";
 
-            var TicketTable = DataConnection.Ins.session.Execute(query)
-                .Select(TicketSelectorV2);
+
 
             dgvDatCho.DataSource = TicketTable.ToList();
         }
@@ -251,8 +211,7 @@ namespace Tour
             if (!string.IsNullOrEmpty(value) && value != "Enter Tour ID to search")
             {
                 string query = "Select MaChuyen, MaPhieu, HoTen from Ve where MaChuyenSearch like '%" + value + "%'";
-                var ChuyenTable = DataConnection.Ins.session.Execute(query)
-                .Select(TicketSelectorV2);
+
                 dgvDatCho.DataSource = ChuyenTable.ToList();
             }
             else { ShowTicketv2(); }
@@ -373,16 +332,7 @@ namespace Tour
             decimal costA = 1;
             int costB = 0;
 
-            tblTicket ticket = DataConnection.Ins.session
-                .Execute("Select * from Ve where MaVe = " + TicketID + " and MaPhieu = " + res.MaPhieu + " and MaDuKhach = " + cus.MaDuKhach)
-                .Select(TicketSelector)
-                .FirstOrDefault();
 
-            if (ticket == null)
-                return;
-
-            costA = ticket.TienHoanTra;
-            costB = ticket.LePhiHoanTra;
 
             result = (CostTicket * costA) - costB;
             if (result > 0)
@@ -483,16 +433,10 @@ namespace Tour
         public DateTime GetTime(Guid MaChuyen)
         {
             DateTime date = new DateTime();
-            Func<Row, DateTime> DateSelector = delegate (Row r)
-            {
-                return r.GetValue<DateTime>("thoigiankhoihanh");
-            };
             
             try
             {
-                date = DataConnection.Ins.session.Execute("SELECT ThoiGianKhoiHanh FROM ChuyenDuLich WHERE MaChuyen =" + MaChuyen)
-                .Select(DateSelector)
-                .FirstOrDefault();
+
             }
             catch (Exception e)
             {

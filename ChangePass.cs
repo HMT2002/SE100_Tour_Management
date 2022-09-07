@@ -25,7 +25,6 @@ namespace Tour
         {
             if (newpasstxb.Text == confirmtxb.Text && newpasstxb.Text != "")
             {
-                DataConnection.Ins.session.Execute("UPDATE User SET Password = '" + LoginForm.Encrypt(newpasstxb.Text) + "' WHERE Email = '" + email + "' ");
                 MessageBox.Show("Reset password success!!!");
                 this.Close();
             }

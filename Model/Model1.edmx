@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="QL_TOUR_DU_LICHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'QL_TOUR_DU_LICH.dbo.DATTOUR' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="DATTOUR">
+          <Property Name="ID" Type="char" MaxLength="7" />
+          <Property Name="IDKH" Type="char" MaxLength="7" />
+          <Property Name="IDTOUR" Type="char" MaxLength="7" />
+        </EntityType>-->
+        <EntityType Name="KHACHHANG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="TENKH" Type="varchar" MaxLength="40" />
+          <Property Name="NGAYSINH" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="TOUR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="TENTOUR" Type="varchar" MaxLength="40" />
+          <Property Name="GIA" Type="money" />
+        </EntityType>
+        <!--Errors Found During Generation:
+error 6004: The table 'QL_TOUR_DU_LICH.dbo.DATTOUR' is referenced by a relationship, but cannot be found.
+        <Association Name="LK_KH" />-->
+        <!--Errors Found During Generation:
+error 6004: The table 'QL_TOUR_DU_LICH.dbo.DATTOUR' is referenced by a relationship, but cannot be found.
+        <Association Name="LK_TOUR" />-->
+        <EntityContainer Name="QL_TOUR_DU_LICHModelStoreContainer">
+          <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TOUR" EntityType="Self.TOUR" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QL_TOUR_DU_LICHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="KHACHHANG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TENKH" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="NGAYSINH" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="TOUR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TENTOUR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="GIA" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityContainer Name="QL_TOUR_DU_LICHEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
+          <EntitySet Name="TOURs" EntityType="Self.TOUR" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QL_TOUR_DU_LICHModelStoreContainer" CdmEntityContainer="QL_TOUR_DU_LICHEntities">
+          <EntitySetMapping Name="KHACHHANGs">
+            <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.KHACHHANG">
+              <MappingFragment StoreEntitySet="KHACHHANG">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TENKH" ColumnName="TENKH" />
+                <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TOURs">
+            <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.TOUR">
+              <MappingFragment StoreEntitySet="TOUR">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TENTOUR" ColumnName="TENTOUR" />
+                <ScalarProperty Name="GIA" ColumnName="GIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
