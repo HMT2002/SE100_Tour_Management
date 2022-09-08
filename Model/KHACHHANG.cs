@@ -14,8 +14,20 @@ namespace Tour.Model
     
     public partial class KHACHHANG
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public KHACHHANG()
+        {
+            this.tb_DOAN = new HashSet<tb_DOAN>();
+        }
+    
         public string ID { get; set; }
         public string TENKH { get; set; }
-        public Nullable<System.DateTime> NGAYSINH { get; set; }
+        public string CMND { get; set; }
+        public string DIACHI { get; set; }
+        public string GIOITINH { get; set; }
+        public string SDT { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_DOAN> tb_DOAN { get; set; }
     }
 }

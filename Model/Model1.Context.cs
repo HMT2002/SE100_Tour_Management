@@ -25,7 +25,19 @@ namespace Tour.Model
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<CHIPHI> CHIPHIs { get; set; }
+        public virtual DbSet<DIADIEM> DIADIEMs { get; set; }
+        public virtual DbSet<DOAN> DOANs { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
+        public virtual DbSet<KHACHSAN> KHACHSANs { get; set; }
+        public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
+        public virtual DbSet<PHUONGTIEN> PHUONGTIENs { get; set; }
+        public virtual DbSet<tb_DOAN> tb_DOAN { get; set; }
+        public virtual DbSet<tb_KHACHSAN> tb_KHACHSAN { get; set; }
+        public virtual DbSet<tb_NHIEMVU> tb_NHIEMVU { get; set; }
+        public virtual DbSet<tb_PHUONGTIEN> tb_PHUONGTIEN { get; set; }
+        public virtual DbSet<tb_PHUTRACH> tb_PHUTRACH { get; set; }
+        public virtual DbSet<TINH> TINHs { get; set; }
         public virtual DbSet<TOUR> TOURs { get; set; }
     }
 }

@@ -5,63 +5,762 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="QL_TOUR_DU_LICHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'QL_TOUR_DU_LICH.dbo.DATTOUR' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="DATTOUR">
-          <Property Name="ID" Type="char" MaxLength="7" />
-          <Property Name="IDKH" Type="char" MaxLength="7" />
+        <EntityType Name="CHIPHI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="PHIAN" Type="money" />
+          <Property Name="PHICHOI" Type="money" />
+          <Property Name="PHIKHAC" Type="money" />
+          <Property Name="TONG" Type="money" />
+        </EntityType>
+        <EntityType Name="DIADIEM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="TEN" Type="nvarchar" MaxLength="40" />
+          <Property Name="IDTINH" Type="char" MaxLength="7" />
+        </EntityType>
+        <EntityType Name="DOAN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="TEN" Type="nvarchar" MaxLength="40" />
+          <Property Name="NGAYKHOIHANH" Type="smalldatetime" />
+          <Property Name="NGAYKETTHUC" Type="smalldatetime" />
+          <Property Name="CHITIETCHUONGTRINH" Type="nvarchar" MaxLength="150" />
+          <Property Name="IDCHIPHI" Type="char" MaxLength="7" />
           <Property Name="IDTOUR" Type="char" MaxLength="7" />
-        </EntityType>-->
+        </EntityType>
         <EntityType Name="KHACHHANG">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
-          <Property Name="TENKH" Type="varchar" MaxLength="40" />
-          <Property Name="NGAYSINH" Type="smalldatetime" />
+          <Property Name="TENKH" Type="nvarchar" MaxLength="30" />
+          <Property Name="CMND" Type="nvarchar" MaxLength="13" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="50" />
+          <Property Name="GIOITINH" Type="nvarchar" MaxLength="15" />
+          <Property Name="SDT" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="KHACHSAN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="50" />
+          <Property Name="SDT" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="NHANVIEN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="TEN" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="PHUONGTIEN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="TEN" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="tb_DOAN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="IDDOAN" Type="char" MaxLength="7" />
+          <Property Name="IDKHACHHANG" Type="char" MaxLength="7" />
+        </EntityType>
+        <EntityType Name="tb_KHACHSAN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="IDDOAN" Type="char" MaxLength="7" />
+          <Property Name="IDKHACHSAN" Type="char" MaxLength="7" />
+        </EntityType>
+        <EntityType Name="tb_NHIEMVU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="IDDOAN" Type="char" MaxLength="7" />
+          <Property Name="IDNHANVIEN" Type="char" MaxLength="7" />
+          <Property Name="NHIEMVU" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tb_PHUONGTIEN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="IDDOAN" Type="char" MaxLength="7" />
+          <Property Name="IDPHUONGTIEN" Type="char" MaxLength="7" />
+        </EntityType>
+        <EntityType Name="tb_PHUTRACH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="IDDOAN" Type="char" MaxLength="7" />
+          <Property Name="IDNHANVIEN" Type="char" MaxLength="7" />
+          <Property Name="PHUTRACH" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TINH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="TEN" Type="nvarchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="TOUR">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
-          <Property Name="TENTOUR" Type="varchar" MaxLength="40" />
-          <Property Name="GIA" Type="money" />
+          <Property Name="TEN" Type="nvarchar" MaxLength="30" />
+          <Property Name="DACDIEM" Type="nvarchar" MaxLength="50" />
+          <Property Name="LOAI" Type="nvarchar" MaxLength="30" />
+          <Property Name="IDCHIPHI" Type="char" MaxLength="7" />
         </EntityType>
-        <!--Errors Found During Generation:
-error 6004: The table 'QL_TOUR_DU_LICH.dbo.DATTOUR' is referenced by a relationship, but cannot be found.
-        <Association Name="LK_KH" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'QL_TOUR_DU_LICH.dbo.DATTOUR' is referenced by a relationship, but cannot be found.
-        <Association Name="LK_TOUR" />-->
+        <Association Name="LK_CHIPHI">
+          <End Role="CHIPHI" Type="Self.CHIPHI" Multiplicity="0..1" />
+          <End Role="TOUR" Type="Self.TOUR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHIPHI">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TOUR">
+              <PropertyRef Name="IDCHIPHI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_CHIPHI_DOAN">
+          <End Role="CHIPHI" Type="Self.CHIPHI" Multiplicity="0..1" />
+          <End Role="DOAN" Type="Self.DOAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHIPHI">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DOAN">
+              <PropertyRef Name="IDCHIPHI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_DOAN_DOAN">
+          <End Role="DOAN" Type="Self.DOAN" Multiplicity="0..1" />
+          <End Role="tb_DOAN" Type="Self.tb_DOAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOAN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_DOAN">
+              <PropertyRef Name="IDDOAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_DOAN_KHACHSAN">
+          <End Role="DOAN" Type="Self.DOAN" Multiplicity="0..1" />
+          <End Role="tb_KHACHSAN" Type="Self.tb_KHACHSAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOAN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_KHACHSAN">
+              <PropertyRef Name="IDDOAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_DOAN_NHIEMVU">
+          <End Role="DOAN" Type="Self.DOAN" Multiplicity="0..1" />
+          <End Role="tb_NHIEMVU" Type="Self.tb_NHIEMVU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOAN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_NHIEMVU">
+              <PropertyRef Name="IDDOAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_DOAN_PHUONGTIEN">
+          <End Role="DOAN" Type="Self.DOAN" Multiplicity="0..1" />
+          <End Role="tb_PHUONGTIEN" Type="Self.tb_PHUONGTIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOAN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_PHUONGTIEN">
+              <PropertyRef Name="IDDOAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_DOAN_PHUTRACH">
+          <End Role="DOAN" Type="Self.DOAN" Multiplicity="0..1" />
+          <End Role="tb_PHUTRACH" Type="Self.tb_PHUTRACH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOAN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_PHUTRACH">
+              <PropertyRef Name="IDDOAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_KH_DOAN">
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+          <End Role="tb_DOAN" Type="Self.tb_DOAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_DOAN">
+              <PropertyRef Name="IDKHACHHANG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_KHACHSAN_KHACHSAN">
+          <End Role="KHACHSAN" Type="Self.KHACHSAN" Multiplicity="0..1" />
+          <End Role="tb_KHACHSAN" Type="Self.tb_KHACHSAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHSAN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_KHACHSAN">
+              <PropertyRef Name="IDKHACHSAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_NHANVIEN_NHIEMVU">
+          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+          <End Role="tb_NHIEMVU" Type="Self.tb_NHIEMVU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_NHIEMVU">
+              <PropertyRef Name="IDNHANVIEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_NHANVIEN_PHUTRACH">
+          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+          <End Role="tb_PHUTRACH" Type="Self.tb_PHUTRACH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_PHUTRACH">
+              <PropertyRef Name="IDNHANVIEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_PHUONGTIEN_PHUONGTIEN">
+          <End Role="PHUONGTIEN" Type="Self.PHUONGTIEN" Multiplicity="0..1" />
+          <End Role="tb_PHUONGTIEN" Type="Self.tb_PHUONGTIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHUONGTIEN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_PHUONGTIEN">
+              <PropertyRef Name="IDPHUONGTIEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_TINH">
+          <End Role="TINH" Type="Self.TINH" Multiplicity="0..1" />
+          <End Role="DIADIEM" Type="Self.DIADIEM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TINH">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DIADIEM">
+              <PropertyRef Name="IDTINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_TOUR_DOAN">
+          <End Role="TOUR" Type="Self.TOUR" Multiplicity="0..1" />
+          <End Role="DOAN" Type="Self.DOAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TOUR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DOAN">
+              <PropertyRef Name="IDTOUR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="QL_TOUR_DU_LICHModelStoreContainer">
+          <EntitySet Name="CHIPHI" EntityType="Self.CHIPHI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DIADIEM" EntityType="Self.DIADIEM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DOAN" EntityType="Self.DOAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KHACHSAN" EntityType="Self.KHACHSAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHUONGTIEN" EntityType="Self.PHUONGTIEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_DOAN" EntityType="Self.tb_DOAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_KHACHSAN" EntityType="Self.tb_KHACHSAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_NHIEMVU" EntityType="Self.tb_NHIEMVU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_PHUONGTIEN" EntityType="Self.tb_PHUONGTIEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_PHUTRACH" EntityType="Self.tb_PHUTRACH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TINH" EntityType="Self.TINH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TOUR" EntityType="Self.TOUR" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="LK_CHIPHI" Association="Self.LK_CHIPHI">
+            <End Role="CHIPHI" EntitySet="CHIPHI" />
+            <End Role="TOUR" EntitySet="TOUR" />
+          </AssociationSet>
+          <AssociationSet Name="LK_CHIPHI_DOAN" Association="Self.LK_CHIPHI_DOAN">
+            <End Role="CHIPHI" EntitySet="CHIPHI" />
+            <End Role="DOAN" EntitySet="DOAN" />
+          </AssociationSet>
+          <AssociationSet Name="LK_DOAN_DOAN" Association="Self.LK_DOAN_DOAN">
+            <End Role="DOAN" EntitySet="DOAN" />
+            <End Role="tb_DOAN" EntitySet="tb_DOAN" />
+          </AssociationSet>
+          <AssociationSet Name="LK_DOAN_KHACHSAN" Association="Self.LK_DOAN_KHACHSAN">
+            <End Role="DOAN" EntitySet="DOAN" />
+            <End Role="tb_KHACHSAN" EntitySet="tb_KHACHSAN" />
+          </AssociationSet>
+          <AssociationSet Name="LK_DOAN_NHIEMVU" Association="Self.LK_DOAN_NHIEMVU">
+            <End Role="DOAN" EntitySet="DOAN" />
+            <End Role="tb_NHIEMVU" EntitySet="tb_NHIEMVU" />
+          </AssociationSet>
+          <AssociationSet Name="LK_DOAN_PHUONGTIEN" Association="Self.LK_DOAN_PHUONGTIEN">
+            <End Role="DOAN" EntitySet="DOAN" />
+            <End Role="tb_PHUONGTIEN" EntitySet="tb_PHUONGTIEN" />
+          </AssociationSet>
+          <AssociationSet Name="LK_DOAN_PHUTRACH" Association="Self.LK_DOAN_PHUTRACH">
+            <End Role="DOAN" EntitySet="DOAN" />
+            <End Role="tb_PHUTRACH" EntitySet="tb_PHUTRACH" />
+          </AssociationSet>
+          <AssociationSet Name="LK_KH_DOAN" Association="Self.LK_KH_DOAN">
+            <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+            <End Role="tb_DOAN" EntitySet="tb_DOAN" />
+          </AssociationSet>
+          <AssociationSet Name="LK_KHACHSAN_KHACHSAN" Association="Self.LK_KHACHSAN_KHACHSAN">
+            <End Role="KHACHSAN" EntitySet="KHACHSAN" />
+            <End Role="tb_KHACHSAN" EntitySet="tb_KHACHSAN" />
+          </AssociationSet>
+          <AssociationSet Name="LK_NHANVIEN_NHIEMVU" Association="Self.LK_NHANVIEN_NHIEMVU">
+            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+            <End Role="tb_NHIEMVU" EntitySet="tb_NHIEMVU" />
+          </AssociationSet>
+          <AssociationSet Name="LK_NHANVIEN_PHUTRACH" Association="Self.LK_NHANVIEN_PHUTRACH">
+            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+            <End Role="tb_PHUTRACH" EntitySet="tb_PHUTRACH" />
+          </AssociationSet>
+          <AssociationSet Name="LK_PHUONGTIEN_PHUONGTIEN" Association="Self.LK_PHUONGTIEN_PHUONGTIEN">
+            <End Role="PHUONGTIEN" EntitySet="PHUONGTIEN" />
+            <End Role="tb_PHUONGTIEN" EntitySet="tb_PHUONGTIEN" />
+          </AssociationSet>
+          <AssociationSet Name="LK_TINH" Association="Self.LK_TINH">
+            <End Role="TINH" EntitySet="TINH" />
+            <End Role="DIADIEM" EntitySet="DIADIEM" />
+          </AssociationSet>
+          <AssociationSet Name="LK_TOUR_DOAN" Association="Self.LK_TOUR_DOAN">
+            <End Role="TOUR" EntitySet="TOUR" />
+            <End Role="DOAN" EntitySet="DOAN" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QL_TOUR_DU_LICHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CHIPHI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="PHIAN" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PHICHOI" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PHIKHAC" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TONG" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="TOURs" Relationship="Self.LK_CHIPHI" FromRole="CHIPHI" ToRole="TOUR" />
+          <NavigationProperty Name="DOANs" Relationship="Self.LK_CHIPHI_DOAN" FromRole="CHIPHI" ToRole="DOAN" />
+        </EntityType>
+        <EntityType Name="DIADIEM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TEN" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="IDTINH" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="TINH" Relationship="Self.LK_TINH" FromRole="DIADIEM" ToRole="TINH" />
+        </EntityType>
+        <EntityType Name="DOAN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TEN" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYKHOIHANH" Type="DateTime" Precision="0" />
+          <Property Name="NGAYKETTHUC" Type="DateTime" Precision="0" />
+          <Property Name="CHITIETCHUONGTRINH" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="IDCHIPHI" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="IDTOUR" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="CHIPHI" Relationship="Self.LK_CHIPHI_DOAN" FromRole="DOAN" ToRole="CHIPHI" />
+          <NavigationProperty Name="tb_DOAN" Relationship="Self.LK_DOAN_DOAN" FromRole="DOAN" ToRole="tb_DOAN" />
+          <NavigationProperty Name="tb_KHACHSAN" Relationship="Self.LK_DOAN_KHACHSAN" FromRole="DOAN" ToRole="tb_KHACHSAN" />
+          <NavigationProperty Name="tb_NHIEMVU" Relationship="Self.LK_DOAN_NHIEMVU" FromRole="DOAN" ToRole="tb_NHIEMVU" />
+          <NavigationProperty Name="tb_PHUONGTIEN" Relationship="Self.LK_DOAN_PHUONGTIEN" FromRole="DOAN" ToRole="tb_PHUONGTIEN" />
+          <NavigationProperty Name="tb_PHUTRACH" Relationship="Self.LK_DOAN_PHUTRACH" FromRole="DOAN" ToRole="tb_PHUTRACH" />
+          <NavigationProperty Name="TOUR" Relationship="Self.LK_TOUR_DOAN" FromRole="DOAN" ToRole="TOUR" />
+        </EntityType>
         <EntityType Name="KHACHHANG">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="TENKH" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="NGAYSINH" Type="DateTime" Precision="0" />
+          <Property Name="TENKH" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="CMND" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GIOITINH" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_DOAN" Relationship="Self.LK_KH_DOAN" FromRole="KHACHHANG" ToRole="tb_DOAN" />
+        </EntityType>
+        <EntityType Name="KHACHSAN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_KHACHSAN" Relationship="Self.LK_KHACHSAN_KHACHSAN" FromRole="KHACHSAN" ToRole="tb_KHACHSAN" />
+        </EntityType>
+        <EntityType Name="NHANVIEN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TEN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_NHIEMVU" Relationship="Self.LK_NHANVIEN_NHIEMVU" FromRole="NHANVIEN" ToRole="tb_NHIEMVU" />
+          <NavigationProperty Name="tb_PHUTRACH" Relationship="Self.LK_NHANVIEN_PHUTRACH" FromRole="NHANVIEN" ToRole="tb_PHUTRACH" />
+        </EntityType>
+        <EntityType Name="PHUONGTIEN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TEN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_PHUONGTIEN" Relationship="Self.LK_PHUONGTIEN_PHUONGTIEN" FromRole="PHUONGTIEN" ToRole="tb_PHUONGTIEN" />
+        </EntityType>
+        <EntityType Name="tb_DOAN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="IDDOAN" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="IDKHACHHANG" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="DOAN" Relationship="Self.LK_DOAN_DOAN" FromRole="tb_DOAN" ToRole="DOAN" />
+          <NavigationProperty Name="KHACHHANG" Relationship="Self.LK_KH_DOAN" FromRole="tb_DOAN" ToRole="KHACHHANG" />
+        </EntityType>
+        <EntityType Name="tb_KHACHSAN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="IDDOAN" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="IDKHACHSAN" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="DOAN" Relationship="Self.LK_DOAN_KHACHSAN" FromRole="tb_KHACHSAN" ToRole="DOAN" />
+          <NavigationProperty Name="KHACHSAN" Relationship="Self.LK_KHACHSAN_KHACHSAN" FromRole="tb_KHACHSAN" ToRole="KHACHSAN" />
+        </EntityType>
+        <EntityType Name="tb_NHIEMVU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="IDDOAN" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="IDNHANVIEN" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="NHIEMVU" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DOAN" Relationship="Self.LK_DOAN_NHIEMVU" FromRole="tb_NHIEMVU" ToRole="DOAN" />
+          <NavigationProperty Name="NHANVIEN" Relationship="Self.LK_NHANVIEN_NHIEMVU" FromRole="tb_NHIEMVU" ToRole="NHANVIEN" />
+        </EntityType>
+        <EntityType Name="tb_PHUONGTIEN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="IDDOAN" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="IDPHUONGTIEN" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="DOAN" Relationship="Self.LK_DOAN_PHUONGTIEN" FromRole="tb_PHUONGTIEN" ToRole="DOAN" />
+          <NavigationProperty Name="PHUONGTIEN" Relationship="Self.LK_PHUONGTIEN_PHUONGTIEN" FromRole="tb_PHUONGTIEN" ToRole="PHUONGTIEN" />
+        </EntityType>
+        <EntityType Name="tb_PHUTRACH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="IDDOAN" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="IDNHANVIEN" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="PHUTRACH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DOAN" Relationship="Self.LK_DOAN_PHUTRACH" FromRole="tb_PHUTRACH" ToRole="DOAN" />
+          <NavigationProperty Name="NHANVIEN" Relationship="Self.LK_NHANVIEN_PHUTRACH" FromRole="tb_PHUTRACH" ToRole="NHANVIEN" />
+        </EntityType>
+        <EntityType Name="TINH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TEN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DIADIEMs" Relationship="Self.LK_TINH" FromRole="TINH" ToRole="DIADIEM" />
         </EntityType>
         <EntityType Name="TOUR">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="TENTOUR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="GIA" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TEN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DACDIEM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LOAI" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="IDCHIPHI" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="CHIPHI" Relationship="Self.LK_CHIPHI" FromRole="TOUR" ToRole="CHIPHI" />
+          <NavigationProperty Name="DOANs" Relationship="Self.LK_TOUR_DOAN" FromRole="TOUR" ToRole="DOAN" />
         </EntityType>
+        <Association Name="LK_CHIPHI">
+          <End Role="CHIPHI" Type="Self.CHIPHI" Multiplicity="0..1" />
+          <End Role="TOUR" Type="Self.TOUR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHIPHI">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TOUR">
+              <PropertyRef Name="IDCHIPHI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_CHIPHI_DOAN">
+          <End Role="CHIPHI" Type="Self.CHIPHI" Multiplicity="0..1" />
+          <End Role="DOAN" Type="Self.DOAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHIPHI">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DOAN">
+              <PropertyRef Name="IDCHIPHI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_TINH">
+          <End Role="TINH" Type="Self.TINH" Multiplicity="0..1" />
+          <End Role="DIADIEM" Type="Self.DIADIEM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TINH">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DIADIEM">
+              <PropertyRef Name="IDTINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_DOAN_DOAN">
+          <End Role="DOAN" Type="Self.DOAN" Multiplicity="0..1" />
+          <End Role="tb_DOAN" Type="Self.tb_DOAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOAN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_DOAN">
+              <PropertyRef Name="IDDOAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_DOAN_KHACHSAN">
+          <End Role="DOAN" Type="Self.DOAN" Multiplicity="0..1" />
+          <End Role="tb_KHACHSAN" Type="Self.tb_KHACHSAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOAN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_KHACHSAN">
+              <PropertyRef Name="IDDOAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_DOAN_NHIEMVU">
+          <End Role="DOAN" Type="Self.DOAN" Multiplicity="0..1" />
+          <End Role="tb_NHIEMVU" Type="Self.tb_NHIEMVU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOAN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_NHIEMVU">
+              <PropertyRef Name="IDDOAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_DOAN_PHUONGTIEN">
+          <End Role="DOAN" Type="Self.DOAN" Multiplicity="0..1" />
+          <End Role="tb_PHUONGTIEN" Type="Self.tb_PHUONGTIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOAN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_PHUONGTIEN">
+              <PropertyRef Name="IDDOAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_DOAN_PHUTRACH">
+          <End Role="DOAN" Type="Self.DOAN" Multiplicity="0..1" />
+          <End Role="tb_PHUTRACH" Type="Self.tb_PHUTRACH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOAN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_PHUTRACH">
+              <PropertyRef Name="IDDOAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_TOUR_DOAN">
+          <End Role="TOUR" Type="Self.TOUR" Multiplicity="0..1" />
+          <End Role="DOAN" Type="Self.DOAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TOUR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DOAN">
+              <PropertyRef Name="IDTOUR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_KH_DOAN">
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+          <End Role="tb_DOAN" Type="Self.tb_DOAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_DOAN">
+              <PropertyRef Name="IDKHACHHANG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_KHACHSAN_KHACHSAN">
+          <End Role="KHACHSAN" Type="Self.KHACHSAN" Multiplicity="0..1" />
+          <End Role="tb_KHACHSAN" Type="Self.tb_KHACHSAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHSAN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_KHACHSAN">
+              <PropertyRef Name="IDKHACHSAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_NHANVIEN_NHIEMVU">
+          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+          <End Role="tb_NHIEMVU" Type="Self.tb_NHIEMVU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_NHIEMVU">
+              <PropertyRef Name="IDNHANVIEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_NHANVIEN_PHUTRACH">
+          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+          <End Role="tb_PHUTRACH" Type="Self.tb_PHUTRACH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_PHUTRACH">
+              <PropertyRef Name="IDNHANVIEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_PHUONGTIEN_PHUONGTIEN">
+          <End Role="PHUONGTIEN" Type="Self.PHUONGTIEN" Multiplicity="0..1" />
+          <End Role="tb_PHUONGTIEN" Type="Self.tb_PHUONGTIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHUONGTIEN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_PHUONGTIEN">
+              <PropertyRef Name="IDPHUONGTIEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="QL_TOUR_DU_LICHEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CHIPHIs" EntityType="Self.CHIPHI" />
+          <EntitySet Name="DIADIEMs" EntityType="Self.DIADIEM" />
+          <EntitySet Name="DOANs" EntityType="Self.DOAN" />
           <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
+          <EntitySet Name="KHACHSANs" EntityType="Self.KHACHSAN" />
+          <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
+          <EntitySet Name="PHUONGTIENs" EntityType="Self.PHUONGTIEN" />
+          <EntitySet Name="tb_DOAN" EntityType="Self.tb_DOAN" />
+          <EntitySet Name="tb_KHACHSAN" EntityType="Self.tb_KHACHSAN" />
+          <EntitySet Name="tb_NHIEMVU" EntityType="Self.tb_NHIEMVU" />
+          <EntitySet Name="tb_PHUONGTIEN" EntityType="Self.tb_PHUONGTIEN" />
+          <EntitySet Name="tb_PHUTRACH" EntityType="Self.tb_PHUTRACH" />
+          <EntitySet Name="TINHs" EntityType="Self.TINH" />
           <EntitySet Name="TOURs" EntityType="Self.TOUR" />
+          <AssociationSet Name="LK_CHIPHI" Association="Self.LK_CHIPHI">
+            <End Role="CHIPHI" EntitySet="CHIPHIs" />
+            <End Role="TOUR" EntitySet="TOURs" />
+          </AssociationSet>
+          <AssociationSet Name="LK_CHIPHI_DOAN" Association="Self.LK_CHIPHI_DOAN">
+            <End Role="CHIPHI" EntitySet="CHIPHIs" />
+            <End Role="DOAN" EntitySet="DOANs" />
+          </AssociationSet>
+          <AssociationSet Name="LK_TINH" Association="Self.LK_TINH">
+            <End Role="TINH" EntitySet="TINHs" />
+            <End Role="DIADIEM" EntitySet="DIADIEMs" />
+          </AssociationSet>
+          <AssociationSet Name="LK_DOAN_DOAN" Association="Self.LK_DOAN_DOAN">
+            <End Role="DOAN" EntitySet="DOANs" />
+            <End Role="tb_DOAN" EntitySet="tb_DOAN" />
+          </AssociationSet>
+          <AssociationSet Name="LK_DOAN_KHACHSAN" Association="Self.LK_DOAN_KHACHSAN">
+            <End Role="DOAN" EntitySet="DOANs" />
+            <End Role="tb_KHACHSAN" EntitySet="tb_KHACHSAN" />
+          </AssociationSet>
+          <AssociationSet Name="LK_DOAN_NHIEMVU" Association="Self.LK_DOAN_NHIEMVU">
+            <End Role="DOAN" EntitySet="DOANs" />
+            <End Role="tb_NHIEMVU" EntitySet="tb_NHIEMVU" />
+          </AssociationSet>
+          <AssociationSet Name="LK_DOAN_PHUONGTIEN" Association="Self.LK_DOAN_PHUONGTIEN">
+            <End Role="DOAN" EntitySet="DOANs" />
+            <End Role="tb_PHUONGTIEN" EntitySet="tb_PHUONGTIEN" />
+          </AssociationSet>
+          <AssociationSet Name="LK_DOAN_PHUTRACH" Association="Self.LK_DOAN_PHUTRACH">
+            <End Role="DOAN" EntitySet="DOANs" />
+            <End Role="tb_PHUTRACH" EntitySet="tb_PHUTRACH" />
+          </AssociationSet>
+          <AssociationSet Name="LK_TOUR_DOAN" Association="Self.LK_TOUR_DOAN">
+            <End Role="TOUR" EntitySet="TOURs" />
+            <End Role="DOAN" EntitySet="DOANs" />
+          </AssociationSet>
+          <AssociationSet Name="LK_KH_DOAN" Association="Self.LK_KH_DOAN">
+            <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+            <End Role="tb_DOAN" EntitySet="tb_DOAN" />
+          </AssociationSet>
+          <AssociationSet Name="LK_KHACHSAN_KHACHSAN" Association="Self.LK_KHACHSAN_KHACHSAN">
+            <End Role="KHACHSAN" EntitySet="KHACHSANs" />
+            <End Role="tb_KHACHSAN" EntitySet="tb_KHACHSAN" />
+          </AssociationSet>
+          <AssociationSet Name="LK_NHANVIEN_NHIEMVU" Association="Self.LK_NHANVIEN_NHIEMVU">
+            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+            <End Role="tb_NHIEMVU" EntitySet="tb_NHIEMVU" />
+          </AssociationSet>
+          <AssociationSet Name="LK_NHANVIEN_PHUTRACH" Association="Self.LK_NHANVIEN_PHUTRACH">
+            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+            <End Role="tb_PHUTRACH" EntitySet="tb_PHUTRACH" />
+          </AssociationSet>
+          <AssociationSet Name="LK_PHUONGTIEN_PHUONGTIEN" Association="Self.LK_PHUONGTIEN_PHUONGTIEN">
+            <End Role="PHUONGTIEN" EntitySet="PHUONGTIENs" />
+            <End Role="tb_PHUONGTIEN" EntitySet="tb_PHUONGTIEN" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -69,12 +768,128 @@ error 6004: The table 'QL_TOUR_DU_LICH.dbo.DATTOUR' is referenced by a relations
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="QL_TOUR_DU_LICHModelStoreContainer" CdmEntityContainer="QL_TOUR_DU_LICHEntities">
+          <EntitySetMapping Name="CHIPHIs">
+            <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.CHIPHI">
+              <MappingFragment StoreEntitySet="CHIPHI">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PHIAN" ColumnName="PHIAN" />
+                <ScalarProperty Name="PHICHOI" ColumnName="PHICHOI" />
+                <ScalarProperty Name="PHIKHAC" ColumnName="PHIKHAC" />
+                <ScalarProperty Name="TONG" ColumnName="TONG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DIADIEMs">
+            <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.DIADIEM">
+              <MappingFragment StoreEntitySet="DIADIEM">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TEN" ColumnName="TEN" />
+                <ScalarProperty Name="IDTINH" ColumnName="IDTINH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DOANs">
+            <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.DOAN">
+              <MappingFragment StoreEntitySet="DOAN">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TEN" ColumnName="TEN" />
+                <ScalarProperty Name="NGAYKHOIHANH" ColumnName="NGAYKHOIHANH" />
+                <ScalarProperty Name="NGAYKETTHUC" ColumnName="NGAYKETTHUC" />
+                <ScalarProperty Name="CHITIETCHUONGTRINH" ColumnName="CHITIETCHUONGTRINH" />
+                <ScalarProperty Name="IDCHIPHI" ColumnName="IDCHIPHI" />
+                <ScalarProperty Name="IDTOUR" ColumnName="IDTOUR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="KHACHHANGs">
             <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.KHACHHANG">
               <MappingFragment StoreEntitySet="KHACHHANG">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TENKH" ColumnName="TENKH" />
-                <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+                <ScalarProperty Name="CMND" ColumnName="CMND" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KHACHSANs">
+            <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.KHACHSAN">
+              <MappingFragment StoreEntitySet="KHACHSAN">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NHANVIENs">
+            <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.NHANVIEN">
+              <MappingFragment StoreEntitySet="NHANVIEN">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TEN" ColumnName="TEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHUONGTIENs">
+            <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.PHUONGTIEN">
+              <MappingFragment StoreEntitySet="PHUONGTIEN">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TEN" ColumnName="TEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_DOAN">
+            <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.tb_DOAN">
+              <MappingFragment StoreEntitySet="tb_DOAN">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDDOAN" ColumnName="IDDOAN" />
+                <ScalarProperty Name="IDKHACHHANG" ColumnName="IDKHACHHANG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_KHACHSAN">
+            <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.tb_KHACHSAN">
+              <MappingFragment StoreEntitySet="tb_KHACHSAN">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDDOAN" ColumnName="IDDOAN" />
+                <ScalarProperty Name="IDKHACHSAN" ColumnName="IDKHACHSAN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_NHIEMVU">
+            <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.tb_NHIEMVU">
+              <MappingFragment StoreEntitySet="tb_NHIEMVU">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDDOAN" ColumnName="IDDOAN" />
+                <ScalarProperty Name="IDNHANVIEN" ColumnName="IDNHANVIEN" />
+                <ScalarProperty Name="NHIEMVU" ColumnName="NHIEMVU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_PHUONGTIEN">
+            <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.tb_PHUONGTIEN">
+              <MappingFragment StoreEntitySet="tb_PHUONGTIEN">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDDOAN" ColumnName="IDDOAN" />
+                <ScalarProperty Name="IDPHUONGTIEN" ColumnName="IDPHUONGTIEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_PHUTRACH">
+            <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.tb_PHUTRACH">
+              <MappingFragment StoreEntitySet="tb_PHUTRACH">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDDOAN" ColumnName="IDDOAN" />
+                <ScalarProperty Name="IDNHANVIEN" ColumnName="IDNHANVIEN" />
+                <ScalarProperty Name="PHUTRACH" ColumnName="PHUTRACH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TINHs">
+            <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.TINH">
+              <MappingFragment StoreEntitySet="TINH">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TEN" ColumnName="TEN" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -82,8 +897,10 @@ error 6004: The table 'QL_TOUR_DU_LICH.dbo.DATTOUR' is referenced by a relations
             <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.TOUR">
               <MappingFragment StoreEntitySet="TOUR">
                 <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="TENTOUR" ColumnName="TENTOUR" />
-                <ScalarProperty Name="GIA" ColumnName="GIA" />
+                <ScalarProperty Name="TEN" ColumnName="TEN" />
+                <ScalarProperty Name="DACDIEM" ColumnName="DACDIEM" />
+                <ScalarProperty Name="LOAI" ColumnName="LOAI" />
+                <ScalarProperty Name="IDCHIPHI" ColumnName="IDCHIPHI" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
