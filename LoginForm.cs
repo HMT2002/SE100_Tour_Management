@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Threading;
+using Tour.Model;
 namespace Tour
 {
     public partial class LoginForm : Form
@@ -19,6 +20,7 @@ namespace Tour
         public LoginForm()
         {
             InitializeComponent();
+            DataProvider.Ins.DB.
             emailtxb.ForeColor = Color.LightGray;
             emailtxb.Text = "Email";
             this.emailtxb.Leave += new System.EventHandler(this.textBox1_Leave);
@@ -72,11 +74,7 @@ namespace Tour
                 Properties.Settings.Default.Save();
             }
 
-            string query = "Select * from User Where Email ='" + emailtxb.Text.Trim() + "' and Password = '" + Encrypt(passwordtxb.Text.Trim()) + "'  ALLOW FILTERING";
-
-            Cassandra.RowSet row = DataConnection.Ins.session.Execute(query);
-
-            if (row.FirstOrDefault() != null)
+            if (DataProvider.Ins.DB. != null)
             {
                 Properties.Settings.Default.UserName = emailtxb.Text;
                 Properties.Settings.Default.Password = passwordtxb.Text;
@@ -143,7 +141,6 @@ namespace Tour
         {
             password = Encrypt(password);
             string query = "Select * from User Where Email ='" + email + "' and Password = '" + password + "'  ALLOW FILTERING";
-            Cassandra.RowSet row = DataConnection.Ins.session.Execute(query);
 
             if (row.FirstOrDefault() != null)
             {

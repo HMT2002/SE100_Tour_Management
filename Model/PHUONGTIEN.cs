@@ -12,22 +12,18 @@ namespace Tour.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class TOUR
+    public partial class PHUONGTIEN
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TOUR()
+        public PHUONGTIEN()
         {
-            this.DOANs = new HashSet<DOAN>();
+            this.tb_PHUONGTIEN = new HashSet<tb_PHUONGTIEN>();
         }
     
         public string ID { get; set; }
         public string TEN { get; set; }
-        public string DACDIEM { get; set; }
-        public string LOAI { get; set; }
-        public string IDCHIPHI { get; set; }
     
-        public virtual CHIPHI CHIPHI { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DOAN> DOANs { get; set; }
+        public virtual ICollection<tb_PHUONGTIEN> tb_PHUONGTIEN { get; set; }
     }
 }
