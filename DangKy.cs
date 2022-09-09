@@ -1,5 +1,4 @@
-﻿using Cassandra;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -337,63 +336,16 @@ namespace Tour
 
         private void LoadCombobox(ComboBox cb)
         {
-            Func<Row, tblChuyen> ChuyenSelector = delegate (Row r)
-            {
-                tblChuyen chuyen = new tblChuyen
-                {
-                    MaChuyen = r.GetValue<Guid>("machuyen")
-                };
-                return chuyen;
-            };
             string query = "Select MaChuyen From ChuyenDuLich";
-            var ChuyenTable = DataConnection.Ins.session.Execute(query)
-                .Select(ChuyenSelector);
-            cb.DisplayMember = "MaChuyen";
-            cb.DataSource = ChuyenTable.ToList();
         }
 
         private void cbDes_SelectedValueChanged(object sender, EventArgs e)
         {
             //MessageBox.Show(cbDes.)
             ChuyenDAL chuyenDAL = new ChuyenDAL();
-            chuyen = chuyenDAL.getChuyen(Guid.Parse(cbDes.Text));
-
-            Func<Row, decimal> hoanTra = delegate (Row r)
-            {
-                return r.GetValue<decimal>("tienhoantra");
-            };
-            TienHoanTra = DataConnection.Ins.session.Execute("Select TienHoanTra from LoaiChuyen where MaLoaiChuyen = '" + chuyen.MaLoaiChuyen + "'")
-                .Select(hoanTra)
-                .FirstOrDefault();
-
-
-            Func<Row, string> MaLoaiTuyenSelector = delegate (Row r)
-            {
-                return r.GetValue<string>("maloaituyen");
-            };
-            string MaLoaiTuyen = DataConnection.Ins.session.Execute("Select MaLoaiTuyen from Tuyen where MaTuyen = " + chuyen.MaTuyen)
-                .Select(MaLoaiTuyenSelector)
-                .FirstOrDefault();
-
-            Func<Row, int> lephi = delegate (Row r)
-            {
-                return r.GetValue<int>("lephihoantra");
-            };
-            TienHoanTra = DataConnection.Ins.session.Execute("Select LePhiHoanTra from LoaiTuyen where MaLoaiTuyen = '" + MaLoaiTuyen  + "'")
-                .Select(lephi)
-                .FirstOrDefault();
 
             tbVehicle.Text = chuyen.PhuongTien;
             tbDate.Text = chuyen.ThoiGianKhoiHanh.ToString();
-
-            Func<Row, string> thoigian = delegate (Row r)
-            {
-                return r.GetValue<string>("thoigiantochuc");
-            };
-
-            ThoiGianToChuc = DataConnection.Ins.session.Execute("Select ThoiGianToChuc from Tuyen where MaTuyen = " + chuyen.MaTuyen)
-                .Select(thoigian)
-                .FirstOrDefault();
 
             tbDuration.Text = ThoiGianToChuc;
             tbPrice.Text = chuyen.GiaVe.ToString();
@@ -421,9 +373,8 @@ namespace Tour
         private int GetCount(string MaChuyen)
         {
             string query = "SELECT COUNT(*) FROM PhieuDatCho WHERE MaChuyen = " + Guid.Parse(MaChuyen);
-            var count = DataConnection.Ins.session.Execute(query);
 
-            return count.Count();
+            return 0;
         }
         void Clear()
         {

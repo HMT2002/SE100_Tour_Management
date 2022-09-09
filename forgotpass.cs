@@ -47,41 +47,6 @@ namespace Tour
         {
             string query = "Select * from User Where Email ='" + emailtxb.Text.Trim() + "'";
 
-            Cassandra.RowSet row = DataConnection.Ins.session.Execute(query);
-
-            if (row.FirstOrDefault() != null)
-            {
-                string from, pass, messageBody;
-                Random random = new Random();
-                randomcode = (random.Next(100000, 999999)).ToString();
-                MailMessage message = new MailMessage();
-                to = (emailtxb.Text).ToString();
-                from = "PTS.UIT.Group@gmail.com";
-                pass = "PTS@uitGroup";
-                messageBody = "Your reset account code:" + randomcode;
-                message.To.Add(to);
-                message.From = new MailAddress(from);
-                message.Body = messageBody;
-                message.Subject = "Password reseting code";
-                SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-                smtp.EnableSsl = true;
-                smtp.Port = 587;
-                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtp.Credentials = new NetworkCredential(from, pass);
-                try
-                {
-                    smtp.Send(message);
-                    MessageBox.Show("Code send success!!!");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Wrong Gmail.Try Again!!!!");
-            }
         }
 
         private void verifybtn_Click(object sender, EventArgs e)

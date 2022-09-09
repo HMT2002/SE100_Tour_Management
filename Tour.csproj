@@ -151,6 +151,9 @@
     <Compile Include="CSDLPhieuDatCho.Designer.cs">
       <DependentUpon>CSDLPhieuDatCho.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\ACCOUNT.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\CHIPHI.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -279,6 +282,7 @@
     <Compile Include="DAL\TuyenDAL.cs" />
     <Compile Include="Model\typeCustomer.cs" />
     <Compile Include="DAL\typeCustomerDAL.cs" />
+    <Compile Include="Utils\Converter.cs" />
     <EmbeddedResource Include="AboutUs.resx">
       <DependentUpon>AboutUs.cs</DependentUpon>
     </EmbeddedResource>

@@ -11,6 +11,8 @@ using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Net;
 using System.Net.Mail;
+using Tour.Utils;
+using Tour.Model;
 
 namespace Tour
 {
@@ -27,22 +29,18 @@ namespace Tour
         bool CheckDuplicateEmail(string email)
         {
             string query = "select * from User where Email='" + email + "'";
-            Cassandra.RowSet row = DataConnection.Ins.session.Execute(query);
 
-            if (row.FirstOrDefault() != null)
-                return false;
-            return true;
+            return false;
         }
 
         private void SignUpbtn_Click(object sender, EventArgs e)
         {
-            var sql = DataConnection.Ins.session.Prepare("Insert into User(Ho,Ten,SDT,Email,Password) values(?,?,?,?,?)");
-            
-            if (CheckDuplicateEmail(txbGmail.Text) == false)
+
+            if (CheckDuplicateEmail(txbGmail.Text) == true)
             {
                 MessageBox.Show("Your Email is already in use");
             }
-            else if (txbGmail.Text == "" || txbHo.Text == "" || txbTen.Text == "" || txbSDT.Text == "" )
+            else if (txbGmail.Text == "" || txbHo.Text == "" || txbTen.Text == "" || txbSDT.Text == "")
             {
                 MessageBox.Show("Please enter FULL INFORMATION!!!");
             }
@@ -50,21 +48,45 @@ namespace Tour
                 MessageBox.Show("Please Enter Password!!!");
             else if (txbConfirm.Text != txbPass.Text)
                 MessageBox.Show("Password not match!!!");
-            else if (randomcode != txbCode.Text.ToString() || txbGmail.Text.ToString() != email)
-            {
-                MessageBox.Show("Code Box is wrong or empty!!!");
-            }
+            //else if (randomcode != txbCode.Text.ToString() || txbGmail.Text.ToString() != email)
+            //{
+            //    MessageBox.Show("Code Box is wrong or empty!!!");
+            //}
             else
             {
-                var query = sql.Bind(txbHo.Text.Trim(), txbTen.Text.Trim(), txbSDT.Text.Trim(), email, LoginForm.Encrypt(txbPass.Text.Trim()));
-                DataConnection.Ins.session.Execute(query);
-
                 label12.Text = "Checked";
                 label12.ForeColor = Color.Green;
                 SignUpbtn.Enabled = true;
+                try
+                {
 
-                MessageBox.Show("SignUp success!!!");
-                Clear();
+                    var nv = new NHANVIEN() { ID = randomcode, TEN = txbTen.Text };
+                    var account = new ACCOUNT() { ACC = txbGmail.Text, PASS = Converter.Instance.MD5Encrypt(Converter.Instance.Base64Encode(txbPass.Text)), ID = randomcode, IDNHANVIEN = randomcode };
+                    DataProvider.Ins.DB.ACCOUNTs.Add(account);
+                    DataProvider.Ins.DB.NHANVIENs.Add(nv);
+
+                    DataProvider.Ins.DB.SaveChanges();
+                    MessageBox.Show("SignUp success!!!");
+                    Clear();
+                }
+                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+                {
+                    Exception raise = dbEx;
+                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    {
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            string message = string.Format("{0}:{1}",
+                                validationErrors.Entry.Entity.ToString(),
+                                validationError.ErrorMessage);
+                            // raise a new exception nesting
+                            // the current instance as InnerException
+                            raise = new InvalidOperationException(message, raise);
+                        }
+                    }
+                    throw raise;
+                }
+
             }
         }
         void Clear()
@@ -107,7 +129,7 @@ namespace Tour
                     email = txbGmail.Text.ToString();
                     string from, pass, messageBody;
                     Random random = new Random();
-                    randomcode = (random.Next(100000, 999999)).ToString();
+                    randomcode = Converter.Instance.RandomString(5);
                     MailMessage message = new MailMessage();
                     to = (txbGmail.Text).ToString();
                     from = "PTS.UIT.Group@gmail.com";
@@ -122,16 +144,18 @@ namespace Tour
                     smtp.Port = 587;
                     smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                     smtp.Credentials = new NetworkCredential(from, pass);
-                    try
-                    {
-                        smtp.Send(message);
-                        MessageBox.Show("Code send success!!!");
-                        label12.Text = "";
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
+                    //try
+                    //{
+                    //    smtp.Send(message);
+                    //    MessageBox.Show("Code send success!!!");
+                    //    label12.Text = "";
+                    //}
+                    //catch (Exception ex)
+                    //{
+                    //    MessageBox.Show(ex.Message);
+                    //}
+                    label12.Text = randomcode;
+
                 }
             }
         }

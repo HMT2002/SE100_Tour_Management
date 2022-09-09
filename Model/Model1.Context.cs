@@ -25,6 +25,7 @@ namespace Tour.Model
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<ACCOUNT> ACCOUNTs { get; set; }
         public virtual DbSet<CHIPHI> CHIPHIs { get; set; }
         public virtual DbSet<DIADIEM> DIADIEMs { get; set; }
         public virtual DbSet<DOAN> DOANs { get; set; }

@@ -12,31 +12,12 @@ namespace Tour
     {
         public bool Insert(Reservation res)
         {
-            var ps = DataConnection.Ins.session.Prepare("INSERT INTO PhieuDatCho(MaPhieu, MaChuyen) VALUES (?, ?)");
-            try
-            {
-                var query = ps.Bind(res.MaPhieu, res.MaChuyen);
-                DataConnection.Ins.session.Execute(query);
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
             return true;
         }
         
 
         public bool Delete(Reservation res)
         {
-            string query = "DELETE from PhieuDatCho WHERE MaPhieu = " + res.MaPhieu + " and MaChuyen = " + res.MaChuyen;
-            try
-            {
-                DataConnection.Ins.session.Execute(query);
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
             return true;
         }
     }

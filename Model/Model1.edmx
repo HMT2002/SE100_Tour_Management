@@ -5,6 +5,15 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="QL_TOUR_DU_LICHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ACCOUNT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="ACC" Type="nvarchar" MaxLength="50" />
+          <Property Name="PASS" Type="nvarchar(max)" />
+          <Property Name="IDNHANVIEN" Type="char" MaxLength="7" />
+        </EntityType>
         <EntityType Name="CHIPHI">
           <Key>
             <PropertyRef Name="ID" />
@@ -235,6 +244,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="LK_NHANVIEN_ACCOUNT">
+          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ACCOUNT">
+              <PropertyRef Name="IDNHANVIEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="LK_NHANVIEN_NHIEMVU">
           <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
           <End Role="tb_NHIEMVU" Type="Self.tb_NHIEMVU" Multiplicity="*" />
@@ -296,6 +317,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="QL_TOUR_DU_LICHModelStoreContainer">
+          <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CHIPHI" EntityType="Self.CHIPHI" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DIADIEM" EntityType="Self.DIADIEM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DOAN" EntityType="Self.DOAN" Schema="dbo" store:Type="Tables" />
@@ -346,6 +368,10 @@
             <End Role="KHACHSAN" EntitySet="KHACHSAN" />
             <End Role="tb_KHACHSAN" EntitySet="tb_KHACHSAN" />
           </AssociationSet>
+          <AssociationSet Name="LK_NHANVIEN_ACCOUNT" Association="Self.LK_NHANVIEN_ACCOUNT">
+            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+          </AssociationSet>
           <AssociationSet Name="LK_NHANVIEN_NHIEMVU" Association="Self.LK_NHANVIEN_NHIEMVU">
             <End Role="NHANVIEN" EntitySet="NHANVIEN" />
             <End Role="tb_NHIEMVU" EntitySet="tb_NHIEMVU" />
@@ -372,6 +398,16 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QL_TOUR_DU_LICHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ACCOUNT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ACC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PASS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IDNHANVIEN" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="NHANVIEN" Relationship="Self.LK_NHANVIEN_ACCOUNT" FromRole="ACCOUNT" ToRole="NHANVIEN" />
+        </EntityType>
         <EntityType Name="CHIPHI">
           <Key>
             <PropertyRef Name="ID" />
@@ -439,6 +475,7 @@
           </Key>
           <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="TEN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ACCOUNTs" Relationship="Self.LK_NHANVIEN_ACCOUNT" FromRole="NHANVIEN" ToRole="ACCOUNT" />
           <NavigationProperty Name="tb_NHIEMVU" Relationship="Self.LK_NHANVIEN_NHIEMVU" FromRole="NHANVIEN" ToRole="tb_NHIEMVU" />
           <NavigationProperty Name="tb_PHUTRACH" Relationship="Self.LK_NHANVIEN_PHUTRACH" FromRole="NHANVIEN" ToRole="tb_PHUTRACH" />
         </EntityType>
@@ -522,6 +559,18 @@
           <NavigationProperty Name="CHIPHI" Relationship="Self.LK_CHIPHI" FromRole="TOUR" ToRole="CHIPHI" />
           <NavigationProperty Name="DOANs" Relationship="Self.LK_TOUR_DOAN" FromRole="TOUR" ToRole="DOAN" />
         </EntityType>
+        <Association Name="LK_NHANVIEN_ACCOUNT">
+          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ACCOUNT">
+              <PropertyRef Name="IDNHANVIEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="LK_CHIPHI">
           <End Role="CHIPHI" Type="Self.CHIPHI" Multiplicity="0..1" />
           <End Role="TOUR" Type="Self.TOUR" Multiplicity="*" />
@@ -691,6 +740,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="QL_TOUR_DU_LICHEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ACCOUNTs" EntityType="Self.ACCOUNT" />
           <EntitySet Name="CHIPHIs" EntityType="Self.CHIPHI" />
           <EntitySet Name="DIADIEMs" EntityType="Self.DIADIEM" />
           <EntitySet Name="DOANs" EntityType="Self.DOAN" />
@@ -705,6 +755,10 @@
           <EntitySet Name="tb_PHUTRACH" EntityType="Self.tb_PHUTRACH" />
           <EntitySet Name="TINHs" EntityType="Self.TINH" />
           <EntitySet Name="TOURs" EntityType="Self.TOUR" />
+          <AssociationSet Name="LK_NHANVIEN_ACCOUNT" Association="Self.LK_NHANVIEN_ACCOUNT">
+            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+            <End Role="ACCOUNT" EntitySet="ACCOUNTs" />
+          </AssociationSet>
           <AssociationSet Name="LK_CHIPHI" Association="Self.LK_CHIPHI">
             <End Role="CHIPHI" EntitySet="CHIPHIs" />
             <End Role="TOUR" EntitySet="TOURs" />
@@ -768,6 +822,16 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="QL_TOUR_DU_LICHModelStoreContainer" CdmEntityContainer="QL_TOUR_DU_LICHEntities">
+          <EntitySetMapping Name="ACCOUNTs">
+            <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.ACCOUNT">
+              <MappingFragment StoreEntitySet="ACCOUNT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ACC" ColumnName="ACC" />
+                <ScalarProperty Name="PASS" ColumnName="PASS" />
+                <ScalarProperty Name="IDNHANVIEN" ColumnName="IDNHANVIEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="CHIPHIs">
             <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.CHIPHI">
               <MappingFragment StoreEntitySet="CHIPHI">

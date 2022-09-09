@@ -11,6 +11,8 @@ using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Threading;
 using Tour.Model;
+using Tour.Utils;
+
 namespace Tour
 {
     public partial class LoginForm : Form
@@ -20,7 +22,6 @@ namespace Tour
         public LoginForm()
         {
             InitializeComponent();
-            DataProvider.Ins.DB.
             emailtxb.ForeColor = Color.LightGray;
             emailtxb.Text = "Email";
             this.emailtxb.Leave += new System.EventHandler(this.textBox1_Leave);
@@ -54,13 +55,16 @@ namespace Tour
         }
         private void exitbtn_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Do you want to exit the program?", "Nofitication", MessageBoxButtons.OKCancel,MessageBoxIcon.Warning) == DialogResult.OK)
-            {
-                Application.Exit();
-            }  
+            //if (MessageBox.Show("Do you want to exit the program?", "Nofitication", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            //{
+            //    Application.Exit();
+            //}
+            Application.Exit();
+
         }
         public void loginbtn_Click(object sender, EventArgs e)
         {
+            string ensryptedpass = Converter.Instance.MD5Encrypt(Converter.Instance.Base64Encode(passwordtxb.Text));
             if (cbghinho.Checked == true)
             {
                 Properties.Settings.Default.Email = emailtxb.Text;
@@ -74,7 +78,8 @@ namespace Tour
                 Properties.Settings.Default.Save();
             }
 
-            if (DataProvider.Ins.DB. != null)
+
+            if (DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass)).SingleOrDefault() != null)
             {
                 Properties.Settings.Default.UserName = emailtxb.Text;
                 Properties.Settings.Default.Password = passwordtxb.Text;
@@ -113,20 +118,20 @@ namespace Tour
 
         private void emailtxb_Validating(object sender, CancelEventArgs e)
         {
-            if (emailtxb.Text.Length > 0)
-            {
-                if (!rEMail.IsMatch(emailtxb.Text))
-                {
-                    MessageBox.Show("Invalidate Email", "Error");
-                    emailtxb.SelectAll();
-                    loginbtn.Enabled = false;
-                    //e.Cancel = true;
-                }
-                else
-                {
-                    loginbtn.Enabled = true;
-                }
-            }
+            //if (emailtxb.Text.Length > 0)
+            //{
+            //    if (!rEMail.IsMatch(emailtxb.Text))
+            //    {
+            //        MessageBox.Show("Invalidate Email", "Error");
+            //        emailtxb.SelectAll();
+            //        loginbtn.Enabled = false;
+            //        //e.Cancel = true;
+            //    }
+            //    else
+            //    {
+            //        loginbtn.Enabled = true;
+            //    }
+            //}
         }
 
         private void registaccountlb_Click(object sender, EventArgs e)
@@ -137,16 +142,5 @@ namespace Tour
             this.Show();
         }
         public string password, email;
-        public bool Login()
-        {
-            password = Encrypt(password);
-            string query = "Select * from User Where Email ='" + email + "' and Password = '" + password + "'  ALLOW FILTERING";
-
-            if (row.FirstOrDefault() != null)
-            {
-                return true;
-            }
-            return false;
-        }
     }
 }

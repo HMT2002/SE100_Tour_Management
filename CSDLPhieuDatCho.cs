@@ -82,7 +82,6 @@ namespace Tour
             string query = "SELECT MaDuKhach, HanPassport, HanVisa, MaChuyen, TenLoaiTuyen, TenLoaiChuyen, LePhiHoanTra, TienHoanTra, MaVe, MaPhieu, HoTen, DiaChi, SDT, GioiTinh, TenLoaiKhach, CMND_Passport, GiaVe FROM Ve";
 
 
-            dgvQuanLy.DataSource = TicketTable.ToList();
         }
 
         public void ShowTicketv2()
@@ -92,7 +91,6 @@ namespace Tour
 
 
 
-            dgvDatCho.DataSource = TicketTable.ToList();
         }
 
 
@@ -194,27 +192,11 @@ namespace Tour
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            string value = tbSearchTicket.Text;
-            if (!string.IsNullOrEmpty(value) && value != "Enter Tour ID to search")
-            {
-                string query = "SELECT MaDuKhach, HanPassport, HanVisa, MaChuyen, TenLoaiTuyen, TenLoaiChuyen, LePhiHoanTra, TienHoanTra, MaVe, MaPhieu, HoTen, DiaChi, SDT, GioiTinh, TenLoaiKhach, CMND_Passport, GiaVe FROM Ve where MaChuyenSearch like '%" + value + "%'";
-                var VeTable = DataConnection.Ins.session.Execute(query)
-                .Select(TicketSelector);
-                dgvQuanLy.DataSource = VeTable.ToList();
-            }
-            else { ShowTicket(); }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            string value = tbSearchResID.Text;
-            if (!string.IsNullOrEmpty(value) && value != "Enter Tour ID to search")
-            {
-                string query = "Select MaChuyen, MaPhieu, HoTen from Ve where MaChuyenSearch like '%" + value + "%'";
 
-                dgvDatCho.DataSource = ChuyenTable.ToList();
-            }
-            else { ShowTicketv2(); }
         }
 
         public bool CheckData()
