@@ -69,6 +69,9 @@
           </Key>
           <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
           <Property Name="TEN" Type="nvarchar" MaxLength="30" />
+          <Property Name="HO" Type="nvarchar" MaxLength="30" />
+          <Property Name="MAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="SDT" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="PHUONGTIEN">
           <Key>
@@ -475,6 +478,9 @@
           </Key>
           <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="TEN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="HO" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ACCOUNTs" Relationship="Self.LK_NHANVIEN_ACCOUNT" FromRole="NHANVIEN" ToRole="ACCOUNT" />
           <NavigationProperty Name="tb_NHIEMVU" Relationship="Self.LK_NHANVIEN_NHIEMVU" FromRole="NHANVIEN" ToRole="tb_NHIEMVU" />
           <NavigationProperty Name="tb_PHUTRACH" Relationship="Self.LK_NHANVIEN_PHUTRACH" FromRole="NHANVIEN" ToRole="tb_PHUTRACH" />
@@ -891,6 +897,9 @@
               <MappingFragment StoreEntitySet="NHANVIEN">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TEN" ColumnName="TEN" />
+                <ScalarProperty Name="HO" ColumnName="HO" />
+                <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

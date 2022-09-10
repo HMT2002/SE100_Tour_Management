@@ -60,7 +60,7 @@ namespace Tour
                 try
                 {
 
-                    var nv = new NHANVIEN() { ID = randomcode, TEN = txbTen.Text };
+                    var nv = new NHANVIEN() { ID = randomcode,HO=txbHo.Text, TEN = txbTen.Text,SDT=txbSDT.Text,MAIL=txbGmail.Text };
                     var account = new ACCOUNT() { ACC = txbGmail.Text, PASS = Converter.Instance.MD5Encrypt(Converter.Instance.Base64Encode(txbPass.Text)), ID = randomcode, IDNHANVIEN = randomcode };
                     DataProvider.Ins.DB.ACCOUNTs.Add(account);
                     DataProvider.Ins.DB.NHANVIENs.Add(nv);
