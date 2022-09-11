@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+using Tour.Model;
+using Tour.Utils;
 
 namespace Tour
 {
@@ -16,6 +18,8 @@ namespace Tour
     {
         ChuyenBLL bllChuyen;
         string id;
+        string randomcode;
+
         public Tour()
         {
             InitializeComponent();
@@ -49,37 +53,11 @@ namespace Tour
         private void TRIPManageTour_Load(object sender, EventArgs e)
         {
             ShowAllChuyen();
-            bllChuyen.LoadComboBox(idTuyencb);
         }
         public bool CheckData()
         {
-            if (string.IsNullOrEmpty(cbHour.Text))
+            if (tb_price.Text.Trim().CompareTo(string.Empty) == 0)
             {
-                MessageBox.Show("Please choose the hour", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                cbHour.Focus();
-                return false;
-            }
-            if (string.IsNullOrEmpty(cbMinute.Text))
-            {
-                MessageBox.Show("Please choose the minute", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                cbMinute.Focus();
-                return false;
-            }
-            if (rdbRegular.Checked == false && rdbPromotional.Checked == false)
-            {
-                MessageBox.Show("Please Check the type of trip box", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return false;
-            }
-            if (string.IsNullOrEmpty(tb_price.Text))
-            {
-                MessageBox.Show("Please fill the price box", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                tb_price.Focus();
-                return false;
-            }
-            if (string.IsNullOrEmpty(cbTTransporation.Text))
-            {
-                MessageBox.Show("Please fill the transportation box", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                cbTTransporation.Focus();
                 return false;
             }
             return true;
@@ -92,28 +70,11 @@ namespace Tour
                 int Hour, Minute;
                 DateTime temp = new DateTime();
                 DateTime date = new DateTime();
-                Hour = Int32.Parse(cbHour.Text);
-                Minute = Int32.Parse(cbMinute.Text);
-                temp = dtpKhoiHanh.Value;
-                date = new DateTime(temp.Year, temp.Month, temp.Day, Hour, Minute, 0);
-                route.MaTuyen = Guid.Parse(idTuyencb.SelectedValue.ToString());
                 route.MaChuyen = Guid.Parse(tb_idtrip.Text);
                 route.MaChuyenSearch = route.MaChuyen.ToString();
-                route.TenTuyen = idTuyencb.Text;
-                route.PhuongTien = cbTTransporation.Text;
                 route.ThoiGianKhoiHanh = date;
-                route.SoLuongVeMax = Int32.Parse(tbAmount.Text);
                 route.GiaVe = Int32.Parse(tb_price.Text);
-                if (rdbRegular.Checked == true)
-                {
-                    route.MaLoaiChuyen = "TOUR01";
-                    route.TenLoaiChuyen = "Regular";
-                }
-                else
-                {
-                    route.MaLoaiChuyen = "TOUR02";
-                    route.TenLoaiChuyen = "Promotional";
-                }
+
                 if (bllChuyen.UpdateChuyen(route))
                 {
                     ShowAllChuyen();
@@ -125,9 +86,8 @@ namespace Tour
         }
         void Clear()
         {
-            tb_price.Text = cbTTransporation.Text = cbMinute.Text = cbHour.Text = tb_idtrip.Text = "";
-            rdbPromotional.Checked = false;
-            rdbRegular.Checked = false;
+            tb_price.Text = cb_typetour.Text = tb_nametour.Text = tb_idtrip.Text = cb_typetour.Text =richtbDetail.Text= "";
+            cb_typetour.SelectedItem = null;
         }
         private void add_Click(object sender, EventArgs e)
         {
@@ -137,34 +97,24 @@ namespace Tour
                 DateTime temp = new DateTime();
                 DateTime date = new DateTime();
                 tblChuyen route = new tblChuyen();
-                Hour = Int32.Parse(cbHour.Text);
-                Minute = Int32.Parse(cbMinute.Text);
-                temp = dtpKhoiHanh.Value;
-                date = new DateTime(temp.Year, temp.Month, temp.Day, Hour, Minute, 0);
-                route.MaTuyen = Guid.Parse(idTuyencb.SelectedValue.ToString());
                 route.MaChuyen = Guid.NewGuid();
                 route.MaChuyenSearch = route.MaChuyen.ToString();
-                route.TenTuyen = idTuyencb.Text;
                 route.ThoiGianKhoiHanh = date;
-                route.PhuongTien = cbTTransporation.Text;
-                route.SoLuongVeMax = Int32.Parse(tbAmount.Text);
                 route.GiaVe = Int32.Parse(tb_price.Text);
-                if (rdbRegular.Checked == true)
+                try
                 {
-                    route.MaLoaiChuyen = "TOUR01";
-                    route.TenLoaiChuyen = "Regular";
-                }
-                else
-                { 
-                    route.MaLoaiChuyen = "TOUR02";
-                    route.TenLoaiChuyen = "Promotional";
-                }
-                if (bllChuyen.InsertChuyen(route))
-                {
+                    randomcode = Converter.Instance.RandomString(5);
+                    var tour = new TOUR() { ID = randomcode, GIA = Convert.ToDecimal(tb_price.Text), TEN = tb_nametour.Text, LOAI = cb_typetour.Text, DACDIEM = richtbDetail.Text };
+                    DataProvider.Ins.DB.TOURs.Add(tour);
+                    DataProvider.Ins.DB.SaveChanges();
                     ShowAllChuyen();
                 }
-                else
-                    MessageBox.Show("Error, Please try again later", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+
                 Clear();
             }
         }
@@ -184,11 +134,11 @@ namespace Tour
                 Clear();
             }
         }
-        public string TourID, TourName , TourCode, TypeofTour,Transport,RouteID;
-        public int Hour, Minute, Year, Month, Day, Tickets,Price;
+        public string TourID, TourName, TourCode, TypeofTour, Transport, RouteID;
+        public int Hour, Minute, Year, Month, Day, Tickets, Price;
         public bool addChuyen()
         {
-            DateTime date ;
+            DateTime date;
             tblChuyen route = new tblChuyen();
             date = new DateTime(Year, Month, Day, Hour, Minute, 0);
             route.MaTuyen = Guid.Parse(RouteID);
@@ -222,7 +172,7 @@ namespace Tour
             DateTime date;
             tblChuyen route = new tblChuyen();
             date = new DateTime(Year, Month, Day, Hour, Minute, 0);
-            route.MaTuyen =  Guid.Parse(RouteID);
+            route.MaTuyen = Guid.Parse(RouteID);
             route.MaChuyen = Guid.Parse(TourID);
             route.TenTuyen = TourName;
             route.ThoiGianKhoiHanh = date;
@@ -245,19 +195,9 @@ namespace Tour
             if (index >= 0)
             {
                 id = dgv_trip.Rows[index].Cells["MaTuyen"].Value.ToString();
-                idTuyencb.Text = dgv_trip.Rows[index].Cells["TenTuyen"].Value.ToString();
                 tb_idtrip.Text = dgv_trip.Rows[index].Cells["MaChuyen"].Value.ToString();
-                cbTTransporation.Text = dgv_trip.Rows[index].Cells["PhuongTien"].Value.ToString();
                 Time = Convert.ToDateTime(dgv_trip.Rows[index].Cells["ThoiGianKhoiHanh"].Value.ToString());
-                cbHour.Text = Time.Hour.ToString();
-                cbMinute.Text = Time.Minute.ToString();
-                dtpKhoiHanh.Value = Time;
                 kind = dgv_trip.Rows[index].Cells["TenLoaiChuyen"].Value.ToString();
-                if (kind == "Regular")
-                {
-                    rdbRegular.Checked = true;
-                }
-                else rdbPromotional.Checked = true;
                 tb_price.Text = dgv_trip.Rows[index].Cells["GiaVe"].Value.ToString();
             }
         }
@@ -274,22 +214,7 @@ namespace Tour
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbTTransporation.Text == "Train")
-            {
-                tbAmount.Text = "100";
-            }
-            if (cbTTransporation.Text == "Boat")
-            {
-                tbAmount.Text = "30";
-            }
-            if (cbTTransporation.Text == "Passenger Car")
-            {
-                tbAmount.Text = "50";
-            }
-            if (cbTTransporation.Text == "Plane")
-            {
-                tbAmount.Text = "100";
-            }
+
         }
 
         private void backtoroutebtn_Click(object sender, EventArgs e)
@@ -329,6 +254,11 @@ namespace Tour
 
         }
 
+        private void btn_newid_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+
         private void idTuyencb_Enter(object sender, EventArgs e)
         {
             ShowAllChuyen();
@@ -341,17 +271,17 @@ namespace Tour
 
         private void rdbRegular_Enter(object sender, EventArgs e)
         {
-            //ShowAllChuyen();
+            ShowAllChuyen();
         }
 
         private void rdbPromotional_Enter(object sender, EventArgs e)
         {
-            //ShowAllChuyen();
+            ShowAllChuyen();
         }
 
         private void tb_price_Enter(object sender, EventArgs e)
         {
-            //ShowAllChuyen();
+            ShowAllChuyen();
         }
 
         private void dtpKhoiHanh_Enter(object sender, EventArgs e)
@@ -376,7 +306,7 @@ namespace Tour
 
         private void tb_search_Leave(object sender, EventArgs e)
         {
-            //ShowAllChuyen();
+            ShowAllChuyen();
         }
 
         private void tb_search_KeyPress(object sender, KeyPressEventArgs e)

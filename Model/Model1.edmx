@@ -40,7 +40,7 @@
           <Property Name="TEN" Type="nvarchar" MaxLength="40" />
           <Property Name="NGAYKHOIHANH" Type="smalldatetime" />
           <Property Name="NGAYKETTHUC" Type="smalldatetime" />
-          <Property Name="CHITIETCHUONGTRINH" Type="nvarchar" MaxLength="150" />
+          <Property Name="CHITIETCHUONGTRINH" Type="nvarchar" MaxLength="500" />
           <Property Name="IDCHIPHI" Type="char" MaxLength="7" />
           <Property Name="IDTOUR" Type="char" MaxLength="7" />
         </EntityType>
@@ -137,20 +137,8 @@
           <Property Name="TEN" Type="nvarchar" MaxLength="30" />
           <Property Name="DACDIEM" Type="nvarchar" MaxLength="50" />
           <Property Name="LOAI" Type="nvarchar" MaxLength="30" />
-          <Property Name="IDCHIPHI" Type="char" MaxLength="7" />
+          <Property Name="GIA" Type="money" />
         </EntityType>
-        <Association Name="LK_CHIPHI">
-          <End Role="CHIPHI" Type="Self.CHIPHI" Multiplicity="0..1" />
-          <End Role="TOUR" Type="Self.TOUR" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CHIPHI">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="TOUR">
-              <PropertyRef Name="IDCHIPHI" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="LK_CHIPHI_DOAN">
           <End Role="CHIPHI" Type="Self.CHIPHI" Multiplicity="0..1" />
           <End Role="DOAN" Type="Self.DOAN" Multiplicity="*" />
@@ -335,10 +323,6 @@
           <EntitySet Name="tb_PHUTRACH" EntityType="Self.tb_PHUTRACH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TINH" EntityType="Self.TINH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TOUR" EntityType="Self.TOUR" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="LK_CHIPHI" Association="Self.LK_CHIPHI">
-            <End Role="CHIPHI" EntitySet="CHIPHI" />
-            <End Role="TOUR" EntitySet="TOUR" />
-          </AssociationSet>
           <AssociationSet Name="LK_CHIPHI_DOAN" Association="Self.LK_CHIPHI_DOAN">
             <End Role="CHIPHI" EntitySet="CHIPHI" />
             <End Role="DOAN" EntitySet="DOAN" />
@@ -420,7 +404,6 @@
           <Property Name="PHICHOI" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="PHIKHAC" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="TONG" Type="Decimal" Precision="19" Scale="4" />
-          <NavigationProperty Name="TOURs" Relationship="Self.LK_CHIPHI" FromRole="CHIPHI" ToRole="TOUR" />
           <NavigationProperty Name="DOANs" Relationship="Self.LK_CHIPHI_DOAN" FromRole="CHIPHI" ToRole="DOAN" />
         </EntityType>
         <EntityType Name="DIADIEM">
@@ -440,7 +423,7 @@
           <Property Name="TEN" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="NGAYKHOIHANH" Type="DateTime" Precision="0" />
           <Property Name="NGAYKETTHUC" Type="DateTime" Precision="0" />
-          <Property Name="CHITIETCHUONGTRINH" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CHITIETCHUONGTRINH" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="IDCHIPHI" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
           <Property Name="IDTOUR" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
           <NavigationProperty Name="CHIPHI" Relationship="Self.LK_CHIPHI_DOAN" FromRole="DOAN" ToRole="CHIPHI" />
@@ -561,8 +544,7 @@
           <Property Name="TEN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="DACDIEM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LOAI" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="IDCHIPHI" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="CHIPHI" Relationship="Self.LK_CHIPHI" FromRole="TOUR" ToRole="CHIPHI" />
+          <Property Name="GIA" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="DOANs" Relationship="Self.LK_TOUR_DOAN" FromRole="TOUR" ToRole="DOAN" />
         </EntityType>
         <Association Name="LK_NHANVIEN_ACCOUNT">
@@ -574,18 +556,6 @@
             </Principal>
             <Dependent Role="ACCOUNT">
               <PropertyRef Name="IDNHANVIEN" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="LK_CHIPHI">
-          <End Role="CHIPHI" Type="Self.CHIPHI" Multiplicity="0..1" />
-          <End Role="TOUR" Type="Self.TOUR" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CHIPHI">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="TOUR">
-              <PropertyRef Name="IDCHIPHI" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -764,10 +734,6 @@
           <AssociationSet Name="LK_NHANVIEN_ACCOUNT" Association="Self.LK_NHANVIEN_ACCOUNT">
             <End Role="NHANVIEN" EntitySet="NHANVIENs" />
             <End Role="ACCOUNT" EntitySet="ACCOUNTs" />
-          </AssociationSet>
-          <AssociationSet Name="LK_CHIPHI" Association="Self.LK_CHIPHI">
-            <End Role="CHIPHI" EntitySet="CHIPHIs" />
-            <End Role="TOUR" EntitySet="TOURs" />
           </AssociationSet>
           <AssociationSet Name="LK_CHIPHI_DOAN" Association="Self.LK_CHIPHI_DOAN">
             <End Role="CHIPHI" EntitySet="CHIPHIs" />
@@ -973,7 +939,7 @@
                 <ScalarProperty Name="TEN" ColumnName="TEN" />
                 <ScalarProperty Name="DACDIEM" ColumnName="DACDIEM" />
                 <ScalarProperty Name="LOAI" ColumnName="LOAI" />
-                <ScalarProperty Name="IDCHIPHI" ColumnName="IDCHIPHI" />
+                <ScalarProperty Name="GIA" ColumnName="GIA" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

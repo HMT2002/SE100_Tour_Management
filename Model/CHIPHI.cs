@@ -17,7 +17,6 @@ namespace Tour.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CHIPHI()
         {
-            this.TOURs = new HashSet<TOUR>();
             this.DOANs = new HashSet<DOAN>();
         }
     
@@ -27,8 +26,6 @@ namespace Tour.Model
         public Nullable<decimal> PHIKHAC { get; set; }
         public Nullable<decimal> TONG { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TOUR> TOURs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DOAN> DOANs { get; set; }
     }
