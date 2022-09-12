@@ -28,19 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tour));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv_trip = new System.Windows.Forms.DataGridView();
-            this.identify = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaTuyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaChuyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThoiGianKhoiHanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhuongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuongVeMax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLoaiChuyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaVe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tOURBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_search = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.richtbDetail = new System.Windows.Forms.RichTextBox();
+            this.btn_newid = new System.Windows.Forms.Button();
+            this.cb_typetour = new System.Windows.Forms.ComboBox();
+            this.tb_nametour = new System.Windows.Forms.TextBox();
             this.tb_price = new System.Windows.Forms.TextBox();
             this.tb_idtrip = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -56,13 +55,14 @@
             this.gotoregistbtn = new System.Windows.Forms.Button();
             this.backtoroutebtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.tb_nametour = new System.Windows.Forms.TextBox();
-            this.cb_typetour = new System.Windows.Forms.ComboBox();
-            this.btn_newid = new System.Windows.Forms.Button();
-            this.richtbDetail = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.data_tourid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHITIET = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_trip)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tOURBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -85,14 +85,11 @@
             this.dgv_trip.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_trip.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_trip.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.identify,
-            this.MaTuyen,
-            this.MaChuyen,
-            this.ThoiGianKhoiHanh,
-            this.PhuongTien,
-            this.SoLuongVeMax,
-            this.TenLoaiChuyen,
-            this.GiaVe});
+            this.data_tourid,
+            this.TEN,
+            this.CHITIET,
+            this.LOAI,
+            this.GIA});
             this.dgv_trip.Location = new System.Drawing.Point(14, 22);
             this.dgv_trip.Name = "dgv_trip";
             this.dgv_trip.ReadOnly = true;
@@ -100,71 +97,6 @@
             this.dgv_trip.Size = new System.Drawing.Size(787, 225);
             this.dgv_trip.TabIndex = 1;
             this.dgv_trip.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_trip_CellClick_1);
-            // 
-            // identify
-            // 
-            this.identify.DataPropertyName = "ID";
-            this.identify.HeaderText = "ID";
-            this.identify.MinimumWidth = 6;
-            this.identify.Name = "identify";
-            this.identify.ReadOnly = true;
-            this.identify.Visible = false;
-            // 
-            // MaTuyen
-            // 
-            this.MaTuyen.DataPropertyName = "MaTuyen";
-            this.MaTuyen.HeaderText = "Route ID";
-            this.MaTuyen.MinimumWidth = 6;
-            this.MaTuyen.Name = "MaTuyen";
-            this.MaTuyen.ReadOnly = true;
-            // 
-            // MaChuyen
-            // 
-            this.MaChuyen.DataPropertyName = "MaChuyen";
-            this.MaChuyen.HeaderText = "Tour ID";
-            this.MaChuyen.MinimumWidth = 6;
-            this.MaChuyen.Name = "MaChuyen";
-            this.MaChuyen.ReadOnly = true;
-            // 
-            // ThoiGianKhoiHanh
-            // 
-            this.ThoiGianKhoiHanh.DataPropertyName = "ThoiGianKhoiHanh";
-            this.ThoiGianKhoiHanh.HeaderText = "Departure time";
-            this.ThoiGianKhoiHanh.MinimumWidth = 6;
-            this.ThoiGianKhoiHanh.Name = "ThoiGianKhoiHanh";
-            this.ThoiGianKhoiHanh.ReadOnly = true;
-            // 
-            // PhuongTien
-            // 
-            this.PhuongTien.DataPropertyName = "PhuongTien";
-            this.PhuongTien.HeaderText = "Transportation";
-            this.PhuongTien.MinimumWidth = 6;
-            this.PhuongTien.Name = "PhuongTien";
-            this.PhuongTien.ReadOnly = true;
-            // 
-            // SoLuongVeMax
-            // 
-            this.SoLuongVeMax.DataPropertyName = "SoLuongVeMax";
-            this.SoLuongVeMax.HeaderText = "Amount";
-            this.SoLuongVeMax.MinimumWidth = 6;
-            this.SoLuongVeMax.Name = "SoLuongVeMax";
-            this.SoLuongVeMax.ReadOnly = true;
-            // 
-            // TenLoaiChuyen
-            // 
-            this.TenLoaiChuyen.DataPropertyName = "TenLoaiChuyen";
-            this.TenLoaiChuyen.HeaderText = "Type of Tour";
-            this.TenLoaiChuyen.MinimumWidth = 6;
-            this.TenLoaiChuyen.Name = "TenLoaiChuyen";
-            this.TenLoaiChuyen.ReadOnly = true;
-            // 
-            // GiaVe
-            // 
-            this.GiaVe.DataPropertyName = "GiaVe";
-            this.GiaVe.HeaderText = "Price";
-            this.GiaVe.MinimumWidth = 6;
-            this.GiaVe.Name = "GiaVe";
-            this.GiaVe.ReadOnly = true;
             // 
             // tb_search
             // 
@@ -198,6 +130,65 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tour details";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(458, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 19);
+            this.label1.TabIndex = 51;
+            this.label1.Text = "Detail ( max 500)";
+            // 
+            // richtbDetail
+            // 
+            this.richtbDetail.Location = new System.Drawing.Point(462, 90);
+            this.richtbDetail.Name = "richtbDetail";
+            this.richtbDetail.Size = new System.Drawing.Size(326, 143);
+            this.richtbDetail.TabIndex = 50;
+            this.richtbDetail.Text = "";
+            // 
+            // btn_newid
+            // 
+            this.btn_newid.BackColor = System.Drawing.Color.Transparent;
+            this.btn_newid.BackgroundImage = global::Tour.Properties.Resources.Btn3;
+            this.btn_newid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_newid.FlatAppearance.BorderSize = 0;
+            this.btn_newid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_newid.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_newid.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_newid.Location = new System.Drawing.Point(10, 33);
+            this.btn_newid.Name = "btn_newid";
+            this.btn_newid.Size = new System.Drawing.Size(100, 38);
+            this.btn_newid.TabIndex = 49;
+            this.btn_newid.Text = "CLEAR";
+            this.btn_newid.UseVisualStyleBackColor = true;
+            this.btn_newid.Click += new System.EventHandler(this.btn_newid_Click);
+            // 
+            // cb_typetour
+            // 
+            this.cb_typetour.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_typetour.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_typetour.FormattingEnabled = true;
+            this.cb_typetour.Items.AddRange(new object[] {
+            "Plane",
+            "Passenger Car",
+            "Boat",
+            "Train"});
+            this.cb_typetour.Location = new System.Drawing.Point(128, 181);
+            this.cb_typetour.Name = "cb_typetour";
+            this.cb_typetour.Size = new System.Drawing.Size(249, 27);
+            this.cb_typetour.TabIndex = 48;
+            // 
+            // tb_nametour
+            // 
+            this.tb_nametour.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_nametour.Location = new System.Drawing.Point(128, 131);
+            this.tb_nametour.MaxLength = 15;
+            this.tb_nametour.Name = "tb_nametour";
+            this.tb_nametour.Size = new System.Drawing.Size(249, 26);
+            this.tb_nametour.TabIndex = 47;
             // 
             // tb_price
             // 
@@ -405,64 +396,40 @@
             this.label8.Text = "TOUR MANAGEMENT";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tb_nametour
+            // data_tourid
             // 
-            this.tb_nametour.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_nametour.Location = new System.Drawing.Point(128, 131);
-            this.tb_nametour.MaxLength = 15;
-            this.tb_nametour.Name = "tb_nametour";
-            this.tb_nametour.Size = new System.Drawing.Size(249, 26);
-            this.tb_nametour.TabIndex = 47;
+            this.data_tourid.DataPropertyName = "ID";
+            this.data_tourid.HeaderText = "ID";
+            this.data_tourid.Name = "data_tourid";
+            this.data_tourid.ReadOnly = true;
             // 
-            // cb_typetour
+            // TEN
             // 
-            this.cb_typetour.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_typetour.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_typetour.FormattingEnabled = true;
-            this.cb_typetour.Items.AddRange(new object[] {
-            "Plane",
-            "Passenger Car",
-            "Boat",
-            "Train"});
-            this.cb_typetour.Location = new System.Drawing.Point(128, 181);
-            this.cb_typetour.Name = "cb_typetour";
-            this.cb_typetour.Size = new System.Drawing.Size(249, 27);
-            this.cb_typetour.TabIndex = 48;
+            this.TEN.DataPropertyName = "TEN";
+            this.TEN.HeaderText = "Tên tour";
+            this.TEN.Name = "TEN";
+            this.TEN.ReadOnly = true;
             // 
-            // btn_newid
+            // CHITIET
             // 
-            this.btn_newid.BackColor = System.Drawing.Color.Transparent;
-            this.btn_newid.BackgroundImage = global::Tour.Properties.Resources.Btn3;
-            this.btn_newid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_newid.FlatAppearance.BorderSize = 0;
-            this.btn_newid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_newid.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_newid.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_newid.Location = new System.Drawing.Point(10, 33);
-            this.btn_newid.Name = "btn_newid";
-            this.btn_newid.Size = new System.Drawing.Size(100, 38);
-            this.btn_newid.TabIndex = 49;
-            this.btn_newid.Text = "CLEAR";
-            this.btn_newid.UseVisualStyleBackColor = true;
-            this.btn_newid.Click += new System.EventHandler(this.btn_newid_Click);
+            this.CHITIET.DataPropertyName = "DACDIEM";
+            this.CHITIET.HeaderText = "Chi tiết";
+            this.CHITIET.Name = "CHITIET";
+            this.CHITIET.ReadOnly = true;
             // 
-            // richtbDetail
+            // LOAI
             // 
-            this.richtbDetail.Location = new System.Drawing.Point(462, 90);
-            this.richtbDetail.Name = "richtbDetail";
-            this.richtbDetail.Size = new System.Drawing.Size(326, 143);
-            this.richtbDetail.TabIndex = 50;
-            this.richtbDetail.Text = "";
+            this.LOAI.DataPropertyName = "LOAI";
+            this.LOAI.HeaderText = "Loại";
+            this.LOAI.Name = "LOAI";
+            this.LOAI.ReadOnly = true;
             // 
-            // label1
+            // GIA
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(458, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 19);
-            this.label1.TabIndex = 51;
-            this.label1.Text = "Detail ( max 500)";
+            this.GIA.DataPropertyName = "GIA";
+            this.GIA.HeaderText = "Giá";
+            this.GIA.Name = "GIA";
+            this.GIA.ReadOnly = true;
             // 
             // Tour
             // 
@@ -487,6 +454,7 @@
             this.Load += new System.EventHandler(this.TRIPManageTour_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_trip)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tOURBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -515,18 +483,22 @@
         private System.Windows.Forms.Label lb_price;
         private System.Windows.Forms.Label lb_idtour;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn identify;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaTuyen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaChuyen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianKhoiHanh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PhuongTien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongVeMax;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenLoaiChuyen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GiaVe;
         private System.Windows.Forms.ComboBox cb_typetour;
         private System.Windows.Forms.TextBox tb_nametour;
         private System.Windows.Forms.Button btn_newid;
         private System.Windows.Forms.RichTextBox richtbDetail;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tENDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dACDIEMDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lOAIDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gIADataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dOANsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource tOURBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data_tourid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHITIET;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LOAI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GIA;
     }
 }

@@ -48,7 +48,17 @@ namespace Tour
         }
         public void ShowAllChuyen()
         {
-            dgv_trip.DataSource = bllChuyen.getAllChuyen();
+            //dgv_trip.DataSource = bllChuyen.getAllChuyen();
+            dgv_trip.DataSource = DataProvider.Ins.DB.TOURs.Select(t => new
+            {
+                t.ID,
+                t.TEN,
+                t.LOAI,
+                t.DACDIEM,
+                t.GIA,
+            }
+                ).ToList();
+
         }
         private void TRIPManageTour_Load(object sender, EventArgs e)
         {
@@ -56,6 +66,11 @@ namespace Tour
         }
         public bool CheckData()
         {
+            if (Convert.ToDecimal(tb_price.Text) == 0)
+            {
+                MessageBox.Show(Convert.ToDecimal(tb_price.Text).ToString());
+                return false;
+            }
             if (tb_price.Text.Trim().CompareTo(string.Empty) == 0)
             {
                 return false;
@@ -66,27 +81,31 @@ namespace Tour
         {
             if (CheckData() == true)
             {
-                tblChuyen route = new tblChuyen();
-                int Hour, Minute;
-                DateTime temp = new DateTime();
-                DateTime date = new DateTime();
-                route.MaChuyen = Guid.Parse(tb_idtrip.Text);
-                route.MaChuyenSearch = route.MaChuyen.ToString();
-                route.ThoiGianKhoiHanh = date;
-                route.GiaVe = Int32.Parse(tb_price.Text);
-
-                if (bllChuyen.UpdateChuyen(route))
+                if (id == null || id.CompareTo(string.Empty) == 0)
                 {
+                    return;
+                }
+                try
+                {
+                    var tour = DataProvider.Ins.DB.TOURs.Where(x => x.ID == id).FirstOrDefault();
+                    tour.TEN = tb_nametour.Text;
+                    tour.LOAI = cb_typetour.Text;
+                    tour.GIA = Convert.ToDecimal(tb_price.Text);
+                    tour.DACDIEM = richtbDetail.Text;
+                    DataProvider.Ins.DB.SaveChanges();
                     ShowAllChuyen();
                 }
-                else
-                    MessageBox.Show("Error, Please try again later", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
                 Clear();
             }
         }
         void Clear()
         {
-            tb_price.Text = cb_typetour.Text = tb_nametour.Text = tb_idtrip.Text = cb_typetour.Text =richtbDetail.Text= "";
+            tb_price.Text = cb_typetour.Text = tb_nametour.Text = tb_idtrip.Text = cb_typetour.Text = richtbDetail.Text = "";
             cb_typetour.SelectedItem = null;
         }
         private void add_Click(object sender, EventArgs e)
@@ -123,70 +142,27 @@ namespace Tour
         {
             if (MessageBox.Show("Are you sure to delete this?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                tblChuyen route = new tblChuyen();
-                route.MaChuyen = Guid.Parse(tb_idtrip.Text);
-                if (bllChuyen.DeleteChuyen(route))
+                if (id == null || id.CompareTo(string.Empty) == 0)
                 {
+                    return;
+                }
+                try
+                {
+                    TOUR tour= DataProvider.Ins.DB.TOURs.Where(x => x.ID == id).FirstOrDefault();
+                    DataProvider.Ins.DB.TOURs.Remove(tour);
+                    DataProvider.Ins.DB.SaveChanges();
                     ShowAllChuyen();
                 }
-                else
-                    MessageBox.Show("Error, Please try again later", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
                 Clear();
             }
         }
         public string TourID, TourName, TourCode, TypeofTour, Transport, RouteID;
         public int Hour, Minute, Year, Month, Day, Tickets, Price;
-        public bool addChuyen()
-        {
-            DateTime date;
-            tblChuyen route = new tblChuyen();
-            date = new DateTime(Year, Month, Day, Hour, Minute, 0);
-            route.MaTuyen = Guid.Parse(RouteID);
-            route.MaChuyen = Guid.NewGuid();
-            route.TenTuyen = TourName;
-            route.ThoiGianKhoiHanh = date;
-            route.PhuongTien = Transport;
-            route.SoLuongVeMax = Tickets;
-            route.GiaVe = Price;
-            route.MaLoaiChuyen = TourCode;
-            route.TenLoaiChuyen = TypeofTour;
-            route.MaChuyenSearch = route.MaChuyen.ToString();
-            if (bllChuyen.InsertChuyen(route))
-            {
-                return true;
-            }
-            return false;
-        }
-        public bool deleteChuyen()
-        {
-            tblChuyen route = new tblChuyen();
-            route.MaChuyen = Guid.Parse(TourID);
-            if (bllChuyen.DeleteChuyen(route))
-            {
-                return true;
-            }
-            return false;
-        }
-        public bool updateChuyen()
-        {
-            DateTime date;
-            tblChuyen route = new tblChuyen();
-            date = new DateTime(Year, Month, Day, Hour, Minute, 0);
-            route.MaTuyen = Guid.Parse(RouteID);
-            route.MaChuyen = Guid.Parse(TourID);
-            route.TenTuyen = TourName;
-            route.ThoiGianKhoiHanh = date;
-            route.PhuongTien = Transport;
-            route.SoLuongVeMax = Tickets;
-            route.GiaVe = Price;
-            route.MaLoaiChuyen = TourCode;
-            route.TenLoaiChuyen = TypeofTour;
-            if (bllChuyen.UpdateChuyen(route))
-            {
-                return true;
-            }
-            return false;
-        }
         private void dgv_trip_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
@@ -194,11 +170,13 @@ namespace Tour
             string kind;
             if (index >= 0)
             {
-                id = dgv_trip.Rows[index].Cells["MaTuyen"].Value.ToString();
-                tb_idtrip.Text = dgv_trip.Rows[index].Cells["MaChuyen"].Value.ToString();
-                Time = Convert.ToDateTime(dgv_trip.Rows[index].Cells["ThoiGianKhoiHanh"].Value.ToString());
-                kind = dgv_trip.Rows[index].Cells["TenLoaiChuyen"].Value.ToString();
-                tb_price.Text = dgv_trip.Rows[index].Cells["GiaVe"].Value.ToString();
+                id = dgv_trip.Rows[index].Cells["data_tourid"].Value.ToString();
+                tb_idtrip.Text = dgv_trip.Rows[index].Cells["data_tourid"].Value.ToString();
+                cb_typetour.Text = dgv_trip.Rows[index].Cells["LOAI"].Value.ToString();
+                tb_price.Text = dgv_trip.Rows[index].Cells["GIA"].Value.ToString();
+                richtbDetail.Text = dgv_trip.Rows[index].Cells["CHITIET"].Value.ToString();
+                tb_nametour.Text = dgv_trip.Rows[index].Cells["TEN"].Value.ToString();
+
             }
         }
 
@@ -238,8 +216,7 @@ namespace Tour
 
         private void tb_price_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-                (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
