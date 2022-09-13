@@ -32,6 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tour));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv_trip = new System.Windows.Forms.DataGridView();
+            this.data_tourid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHITIET = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tOURBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_search = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -55,11 +60,6 @@
             this.gotoregistbtn = new System.Windows.Forms.Button();
             this.backtoroutebtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.data_tourid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHITIET = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_trip)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tOURBindingSource)).BeginInit();
@@ -97,6 +97,41 @@
             this.dgv_trip.Size = new System.Drawing.Size(787, 225);
             this.dgv_trip.TabIndex = 1;
             this.dgv_trip.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_trip_CellClick_1);
+            // 
+            // data_tourid
+            // 
+            this.data_tourid.DataPropertyName = "ID";
+            this.data_tourid.HeaderText = "ID";
+            this.data_tourid.Name = "data_tourid";
+            this.data_tourid.ReadOnly = true;
+            // 
+            // TEN
+            // 
+            this.TEN.DataPropertyName = "TEN";
+            this.TEN.HeaderText = "Tên tour";
+            this.TEN.Name = "TEN";
+            this.TEN.ReadOnly = true;
+            // 
+            // CHITIET
+            // 
+            this.CHITIET.DataPropertyName = "DACDIEM";
+            this.CHITIET.HeaderText = "Chi tiết";
+            this.CHITIET.Name = "CHITIET";
+            this.CHITIET.ReadOnly = true;
+            // 
+            // LOAI
+            // 
+            this.LOAI.DataPropertyName = "LOAI";
+            this.LOAI.HeaderText = "Loại";
+            this.LOAI.Name = "LOAI";
+            this.LOAI.ReadOnly = true;
+            // 
+            // GIA
+            // 
+            this.GIA.DataPropertyName = "GIA";
+            this.GIA.HeaderText = "Giá";
+            this.GIA.Name = "GIA";
+            this.GIA.ReadOnly = true;
             // 
             // tb_search
             // 
@@ -144,6 +179,7 @@
             // richtbDetail
             // 
             this.richtbDetail.Location = new System.Drawing.Point(462, 90);
+            this.richtbDetail.MaxLength = 499;
             this.richtbDetail.Name = "richtbDetail";
             this.richtbDetail.Size = new System.Drawing.Size(326, 143);
             this.richtbDetail.TabIndex = 50;
@@ -185,7 +221,7 @@
             // 
             this.tb_nametour.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_nametour.Location = new System.Drawing.Point(128, 131);
-            this.tb_nametour.MaxLength = 15;
+            this.tb_nametour.MaxLength = 30;
             this.tb_nametour.Name = "tb_nametour";
             this.tb_nametour.Size = new System.Drawing.Size(249, 26);
             this.tb_nametour.TabIndex = 47;
@@ -395,41 +431,6 @@
             this.label8.TabIndex = 44;
             this.label8.Text = "TOUR MANAGEMENT";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // data_tourid
-            // 
-            this.data_tourid.DataPropertyName = "ID";
-            this.data_tourid.HeaderText = "ID";
-            this.data_tourid.Name = "data_tourid";
-            this.data_tourid.ReadOnly = true;
-            // 
-            // TEN
-            // 
-            this.TEN.DataPropertyName = "TEN";
-            this.TEN.HeaderText = "Tên tour";
-            this.TEN.Name = "TEN";
-            this.TEN.ReadOnly = true;
-            // 
-            // CHITIET
-            // 
-            this.CHITIET.DataPropertyName = "DACDIEM";
-            this.CHITIET.HeaderText = "Chi tiết";
-            this.CHITIET.Name = "CHITIET";
-            this.CHITIET.ReadOnly = true;
-            // 
-            // LOAI
-            // 
-            this.LOAI.DataPropertyName = "LOAI";
-            this.LOAI.HeaderText = "Loại";
-            this.LOAI.Name = "LOAI";
-            this.LOAI.ReadOnly = true;
-            // 
-            // GIA
-            // 
-            this.GIA.DataPropertyName = "GIA";
-            this.GIA.HeaderText = "Giá";
-            this.GIA.Name = "GIA";
-            this.GIA.ReadOnly = true;
             // 
             // Tour
             // 
