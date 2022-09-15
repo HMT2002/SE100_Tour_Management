@@ -197,5 +197,14 @@ namespace Tour
             this.Show();
             hideSubmenu();
         }
+
+        private void btnLocationDatabase_Click(object sender, EventArgs e)
+        {
+            Location h = new Location();
+            this.Hide();
+            h.ShowDialog();
+            this.Show();
+            hideSubmenu();
+        }
     }
 }

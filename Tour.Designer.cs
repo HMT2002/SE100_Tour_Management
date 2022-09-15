@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tour));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv_trip = new System.Windows.Forms.DataGridView();
@@ -37,7 +36,6 @@
             this.CHITIET = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tOURBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_search = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,7 +60,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_trip)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tOURBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -455,7 +452,6 @@
             this.Load += new System.EventHandler(this.TRIPManageTour_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_trip)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tOURBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -495,7 +491,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lOAIDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn gIADataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dOANsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource tOURBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn data_tourid;
         private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHITIET;
