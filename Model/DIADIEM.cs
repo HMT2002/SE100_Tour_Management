@@ -17,6 +17,8 @@ namespace Tour.Model
         public string ID { get; set; }
         public string TEN { get; set; }
         public string IDTINH { get; set; }
+        public string CHITIET { get; set; }
+        public byte[] PICBI { get; set; }
     
         public virtual TINH TINH { get; set; }
     }

@@ -4,21 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2f4b755fc79148c980e4e26845232704" Name="Diagram1">
-        <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.ACCOUNT" Width="1.5" PointX="8.25" PointY="11.75" IsExpanded="true" />
+      <Diagram DiagramId="be0b0a13103d4225b7942e5837300b19" Name="Diagram1">
+        <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.ACCOUNT" Width="1.5" PointX="8.25" PointY="11.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.CHIPHI" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.DIADIEM" Width="1.5" PointX="11" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.DOAN" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.DIADIEM" Width="1.5" PointX="11" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.DOAN" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
         <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.KHACHHANG" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.KHACHSAN" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.NHANVIEN" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.PHUONGTIEN" Width="1.5" PointX="6" PointY="14.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.tb_DOAN" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.tb_KHACHSAN" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.tb_DOAN" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.tb_KHACHSAN" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.tb_NHIEMVU" Width="1.5" PointX="5.25" PointY="11" IsExpanded="true" />
-        <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.tb_PHUONGTIEN" Width="1.5" PointX="8.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.tb_PHUONGTIEN" Width="1.5" PointX="8.25" PointY="8.125" IsExpanded="true" />
         <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.tb_PHUTRACH" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.TINH" Width="1.5" PointX="8.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.TINH" Width="1.5" PointX="8.75" PointY="2.25" IsExpanded="true" />
         <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.TOUR" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
         <AssociationConnector Association="QL_TOUR_DU_LICHModel.LK_NHANVIEN_ACCOUNT" ManuallyRouted="false" />
         <AssociationConnector Association="QL_TOUR_DU_LICHModel.LK_CHIPHI_DOAN" ManuallyRouted="false" />

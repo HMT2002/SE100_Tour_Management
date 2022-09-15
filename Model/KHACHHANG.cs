@@ -26,6 +26,7 @@ namespace Tour.Model
         public string DIACHI { get; set; }
         public string GIOITINH { get; set; }
         public string SDT { get; set; }
+        public byte[] PICBI { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_DOAN> tb_DOAN { get; set; }

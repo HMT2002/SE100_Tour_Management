@@ -31,6 +31,8 @@
           <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
           <Property Name="TEN" Type="nvarchar" MaxLength="40" />
           <Property Name="IDTINH" Type="char" MaxLength="7" />
+          <Property Name="CHITIET" Type="nvarchar" MaxLength="500" />
+          <Property Name="PICBI" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="DOAN">
           <Key>
@@ -54,6 +56,7 @@
           <Property Name="DIACHI" Type="nvarchar" MaxLength="50" />
           <Property Name="GIOITINH" Type="nvarchar" MaxLength="15" />
           <Property Name="SDT" Type="nvarchar" MaxLength="15" />
+          <Property Name="PICBI" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="KHACHSAN">
           <Key>
@@ -62,6 +65,7 @@
           <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
           <Property Name="DIACHI" Type="nvarchar" MaxLength="50" />
           <Property Name="SDT" Type="nvarchar" MaxLength="15" />
+          <Property Name="PICBI" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="NHANVIEN">
           <Key>
@@ -72,6 +76,7 @@
           <Property Name="HO" Type="nvarchar" MaxLength="30" />
           <Property Name="MAIL" Type="nvarchar" MaxLength="50" />
           <Property Name="SDT" Type="nvarchar" MaxLength="20" />
+          <Property Name="PICBI" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="PHUONGTIEN">
           <Key>
@@ -79,6 +84,7 @@
           </Key>
           <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
           <Property Name="TEN" Type="nvarchar" MaxLength="30" />
+          <Property Name="PICBI" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="tb_DOAN">
           <Key>
@@ -413,6 +419,8 @@
           <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="TEN" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="IDTINH" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="CHITIET" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PICBI" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="TINH" Relationship="Self.LK_TINH" FromRole="DIADIEM" ToRole="TINH" />
         </EntityType>
         <EntityType Name="DOAN">
@@ -444,6 +452,7 @@
           <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="GIOITINH" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PICBI" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="tb_DOAN" Relationship="Self.LK_KH_DOAN" FromRole="KHACHHANG" ToRole="tb_DOAN" />
         </EntityType>
         <EntityType Name="KHACHSAN">
@@ -453,6 +462,7 @@
           <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PICBI" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="tb_KHACHSAN" Relationship="Self.LK_KHACHSAN_KHACHSAN" FromRole="KHACHSAN" ToRole="tb_KHACHSAN" />
         </EntityType>
         <EntityType Name="NHANVIEN">
@@ -464,6 +474,7 @@
           <Property Name="HO" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="MAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SDT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PICBI" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="ACCOUNTs" Relationship="Self.LK_NHANVIEN_ACCOUNT" FromRole="NHANVIEN" ToRole="ACCOUNT" />
           <NavigationProperty Name="tb_NHIEMVU" Relationship="Self.LK_NHANVIEN_NHIEMVU" FromRole="NHANVIEN" ToRole="tb_NHIEMVU" />
           <NavigationProperty Name="tb_PHUTRACH" Relationship="Self.LK_NHANVIEN_PHUTRACH" FromRole="NHANVIEN" ToRole="tb_PHUTRACH" />
@@ -474,6 +485,7 @@
           </Key>
           <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="TEN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PICBI" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="tb_PHUONGTIEN" Relationship="Self.LK_PHUONGTIEN_PHUONGTIEN" FromRole="PHUONGTIEN" ToRole="tb_PHUONGTIEN" />
         </EntityType>
         <EntityType Name="tb_DOAN">
@@ -821,6 +833,8 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TEN" ColumnName="TEN" />
                 <ScalarProperty Name="IDTINH" ColumnName="IDTINH" />
+                <ScalarProperty Name="CHITIET" ColumnName="CHITIET" />
+                <ScalarProperty Name="PICBI" ColumnName="PICBI" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -846,6 +860,7 @@
                 <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
                 <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
                 <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="PICBI" ColumnName="PICBI" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -855,6 +870,7 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
                 <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="PICBI" ColumnName="PICBI" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -866,6 +882,7 @@
                 <ScalarProperty Name="HO" ColumnName="HO" />
                 <ScalarProperty Name="MAIL" ColumnName="MAIL" />
                 <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="PICBI" ColumnName="PICBI" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -874,6 +891,7 @@
               <MappingFragment StoreEntitySet="PHUONGTIEN">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TEN" ColumnName="TEN" />
+                <ScalarProperty Name="PICBI" ColumnName="PICBI" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

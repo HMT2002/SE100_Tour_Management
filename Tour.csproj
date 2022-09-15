@@ -451,6 +451,7 @@
     <None Include="Resources\4.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\ic_image_empty-128.png" />
     <Content Include="Model\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

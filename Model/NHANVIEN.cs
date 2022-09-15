@@ -27,6 +27,7 @@ namespace Tour.Model
         public string HO { get; set; }
         public string MAIL { get; set; }
         public string SDT { get; set; }
+        public byte[] PICBI { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ACCOUNT> ACCOUNTs { get; set; }
