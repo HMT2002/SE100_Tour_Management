@@ -66,6 +66,10 @@
           <Property Name="DIACHI" Type="nvarchar" MaxLength="50" />
           <Property Name="SDT" Type="nvarchar" MaxLength="15" />
           <Property Name="PICBI" Type="varbinary(max)" />
+          <Property Name="CHITIET" Type="nvarchar" MaxLength="500" />
+          <Property Name="GIA" Type="money" />
+          <Property Name="IDTINH" Type="char" MaxLength="7" />
+          <Property Name="TEN" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="NHANVIEN">
           <Key>
@@ -241,6 +245,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="LK_KHACHSAN_TINH">
+          <End Role="TINH" Type="Self.TINH" Multiplicity="0..1" />
+          <End Role="KHACHSAN" Type="Self.KHACHSAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TINH">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="KHACHSAN">
+              <PropertyRef Name="IDTINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="LK_NHANVIEN_ACCOUNT">
           <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
           <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="*" />
@@ -361,6 +377,10 @@
             <End Role="KHACHSAN" EntitySet="KHACHSAN" />
             <End Role="tb_KHACHSAN" EntitySet="tb_KHACHSAN" />
           </AssociationSet>
+          <AssociationSet Name="LK_KHACHSAN_TINH" Association="Self.LK_KHACHSAN_TINH">
+            <End Role="TINH" EntitySet="TINH" />
+            <End Role="KHACHSAN" EntitySet="KHACHSAN" />
+          </AssociationSet>
           <AssociationSet Name="LK_NHANVIEN_ACCOUNT" Association="Self.LK_NHANVIEN_ACCOUNT">
             <End Role="NHANVIEN" EntitySet="NHANVIEN" />
             <End Role="ACCOUNT" EntitySet="ACCOUNT" />
@@ -463,7 +483,12 @@
           <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="PICBI" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="CHITIET" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="GIA" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="IDTINH" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="TEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="tb_KHACHSAN" Relationship="Self.LK_KHACHSAN_KHACHSAN" FromRole="KHACHSAN" ToRole="tb_KHACHSAN" />
+          <NavigationProperty Name="TINH" Relationship="Self.LK_KHACHSAN_TINH" FromRole="KHACHSAN" ToRole="TINH" />
         </EntityType>
         <EntityType Name="NHANVIEN">
           <Key>
@@ -547,6 +572,7 @@
           <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="TEN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="DIADIEMs" Relationship="Self.LK_TINH" FromRole="TINH" ToRole="DIADIEM" />
+          <NavigationProperty Name="KHACHSANs" Relationship="Self.LK_KHACHSAN_TINH" FromRole="TINH" ToRole="KHACHSAN" />
         </EntityType>
         <EntityType Name="TOUR">
           <Key>
@@ -691,6 +717,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="LK_KHACHSAN_TINH">
+          <End Role="TINH" Type="Self.TINH" Multiplicity="0..1" />
+          <End Role="KHACHSAN" Type="Self.KHACHSAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TINH">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="KHACHSAN">
+              <PropertyRef Name="IDTINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="LK_NHANVIEN_NHIEMVU">
           <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
           <End Role="tb_NHIEMVU" Type="Self.tb_NHIEMVU" Multiplicity="*" />
@@ -787,6 +825,10 @@
             <End Role="KHACHSAN" EntitySet="KHACHSANs" />
             <End Role="tb_KHACHSAN" EntitySet="tb_KHACHSAN" />
           </AssociationSet>
+          <AssociationSet Name="LK_KHACHSAN_TINH" Association="Self.LK_KHACHSAN_TINH">
+            <End Role="TINH" EntitySet="TINHs" />
+            <End Role="KHACHSAN" EntitySet="KHACHSANs" />
+          </AssociationSet>
           <AssociationSet Name="LK_NHANVIEN_NHIEMVU" Association="Self.LK_NHANVIEN_NHIEMVU">
             <End Role="NHANVIEN" EntitySet="NHANVIENs" />
             <End Role="tb_NHIEMVU" EntitySet="tb_NHIEMVU" />
@@ -871,6 +913,10 @@
                 <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
                 <ScalarProperty Name="SDT" ColumnName="SDT" />
                 <ScalarProperty Name="PICBI" ColumnName="PICBI" />
+                <ScalarProperty Name="CHITIET" ColumnName="CHITIET" />
+                <ScalarProperty Name="GIA" ColumnName="GIA" />
+                <ScalarProperty Name="IDTINH" ColumnName="IDTINH" />
+                <ScalarProperty Name="TEN" ColumnName="TEN" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -43,6 +43,8 @@ namespace Tour
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.panelManage = new System.Windows.Forms.Panel();
+            this.btnHotelDatabase = new System.Windows.Forms.Button();
+            this.btnLocationDatabase = new System.Windows.Forms.Button();
             this.btndataCus = new System.Windows.Forms.Button();
             this.btnRoute = new System.Windows.Forms.Button();
             this.btnTicket = new System.Windows.Forms.Button();
@@ -58,8 +60,6 @@ namespace Tour
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnLocationDatabase = new System.Windows.Forms.Button();
-            this.btnHotelDatabase = new System.Windows.Forms.Button();
             this.panel_slide.SuspendLayout();
             this.panel_Help.SuspendLayout();
             this.panel_staff.SuspendLayout();
@@ -265,6 +265,44 @@ namespace Tour
             this.panelManage.Size = new System.Drawing.Size(247, 360);
             this.panelManage.TabIndex = 3;
             // 
+            // btnHotelDatabase
+            // 
+            this.btnHotelDatabase.BackColor = System.Drawing.Color.Linen;
+            this.btnHotelDatabase.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHotelDatabase.FlatAppearance.BorderSize = 0;
+            this.btnHotelDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHotelDatabase.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHotelDatabase.ForeColor = System.Drawing.Color.Black;
+            this.btnHotelDatabase.Location = new System.Drawing.Point(0, 300);
+            this.btnHotelDatabase.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHotelDatabase.Name = "btnHotelDatabase";
+            this.btnHotelDatabase.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnHotelDatabase.Size = new System.Drawing.Size(247, 60);
+            this.btnHotelDatabase.TabIndex = 5;
+            this.btnHotelDatabase.Text = "Hotel Database";
+            this.btnHotelDatabase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHotelDatabase.UseVisualStyleBackColor = false;
+            this.btnHotelDatabase.Click += new System.EventHandler(this.btnHotelDatabase_Click);
+            // 
+            // btnLocationDatabase
+            // 
+            this.btnLocationDatabase.BackColor = System.Drawing.Color.Linen;
+            this.btnLocationDatabase.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLocationDatabase.FlatAppearance.BorderSize = 0;
+            this.btnLocationDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLocationDatabase.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLocationDatabase.ForeColor = System.Drawing.Color.Black;
+            this.btnLocationDatabase.Location = new System.Drawing.Point(0, 240);
+            this.btnLocationDatabase.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLocationDatabase.Name = "btnLocationDatabase";
+            this.btnLocationDatabase.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnLocationDatabase.Size = new System.Drawing.Size(247, 60);
+            this.btnLocationDatabase.TabIndex = 4;
+            this.btnLocationDatabase.Text = "Location Database";
+            this.btnLocationDatabase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLocationDatabase.UseVisualStyleBackColor = false;
+            this.btnLocationDatabase.Click += new System.EventHandler(this.btnLocationDatabase_Click);
+            // 
             // btndataCus
             // 
             this.btndataCus.BackColor = System.Drawing.Color.Linen;
@@ -468,43 +506,6 @@ namespace Tour
             this.label2.TabIndex = 0;
             this.label2.Text = "EZ - TRAVEL";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnLocationDatabase
-            // 
-            this.btnLocationDatabase.BackColor = System.Drawing.Color.Linen;
-            this.btnLocationDatabase.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLocationDatabase.FlatAppearance.BorderSize = 0;
-            this.btnLocationDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLocationDatabase.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLocationDatabase.ForeColor = System.Drawing.Color.Black;
-            this.btnLocationDatabase.Location = new System.Drawing.Point(0, 240);
-            this.btnLocationDatabase.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLocationDatabase.Name = "btnLocationDatabase";
-            this.btnLocationDatabase.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnLocationDatabase.Size = new System.Drawing.Size(247, 60);
-            this.btnLocationDatabase.TabIndex = 4;
-            this.btnLocationDatabase.Text = "Location Database";
-            this.btnLocationDatabase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLocationDatabase.UseVisualStyleBackColor = false;
-            this.btnLocationDatabase.Click += new System.EventHandler(this.btnLocationDatabase_Click);
-            // 
-            // btnHotelDatabase
-            // 
-            this.btnHotelDatabase.BackColor = System.Drawing.Color.Linen;
-            this.btnHotelDatabase.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHotelDatabase.FlatAppearance.BorderSize = 0;
-            this.btnHotelDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHotelDatabase.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHotelDatabase.ForeColor = System.Drawing.Color.Black;
-            this.btnHotelDatabase.Location = new System.Drawing.Point(0, 300);
-            this.btnHotelDatabase.Margin = new System.Windows.Forms.Padding(2);
-            this.btnHotelDatabase.Name = "btnHotelDatabase";
-            this.btnHotelDatabase.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnHotelDatabase.Size = new System.Drawing.Size(247, 60);
-            this.btnHotelDatabase.TabIndex = 5;
-            this.btnHotelDatabase.Text = "Hotel Database";
-            this.btnHotelDatabase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHotelDatabase.UseVisualStyleBackColor = false;
             // 
             // SelectForm
             // 

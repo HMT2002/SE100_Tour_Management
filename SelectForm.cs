@@ -206,5 +206,14 @@ namespace Tour
             this.Show();
             hideSubmenu();
         }
+
+        private void btnHotelDatabase_Click(object sender, EventArgs e)
+        {
+            Hotel h = new Hotel();
+            this.Hide();
+            h.ShowDialog();
+            this.Show();
+            hideSubmenu();
+        }
     }
 }

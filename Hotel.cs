@@ -12,8 +12,14 @@ using Tour.Utils;
 
 namespace Tour
 {
-    public partial class Location : Form
+    public partial class Hotel : Form
     {
+
+        Image img;
+        Byte[] img_data;
+        string randomcode;
+        string id;
+
         List<string> ListProvince = new List<string>() {
             "",
 "An Giang",
@@ -80,26 +86,23 @@ namespace Tour
 "Vĩnh Phúc",
 "Yên Bái",
         };
-        Image img;
-        Byte[] img_data;
-        string randomcode;
-        string id;
 
-        public Location()
+        public Hotel()
         {
             InitializeComponent();
             cbboxProvince.DataSource = ListProvince;
-
             showAll();
-            cbbxLocation.SelectedIndex = -1;
+            cbbxHotel.SelectedIndex = -1;
             Clear();
+        }
 
-        }
-        public void showAll()
+
+
+        private void btnExit_Click(object sender, EventArgs e)
         {
-            cbbxLocation.DataSource = DataProvider.Ins.DB.DIADIEMs.Select(t =>t).ToList();
-            cbbxLocation.DisplayMember = "TEN";
+            this.Close();
         }
+
         private void btnPickPicture_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -113,36 +116,19 @@ namespace Tour
 
             }
         }
-
         public bool CheckData()
         {
-
-            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null)
+            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null||txtbxDiaChi.Text.Trim().CompareTo(string.Empty) == 0|| Convert.ToDecimal(txtbxGia.Text) == 0)
             {
                 return false;
             }
             return true;
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        public void showAll()
         {
-            this.Close();
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-
-            Clear();
-        }
-
-        private void Clear()
-        {
-            txtbxId.Text = "";
-            txtbxName.Text = "";
-            rchtxtbxDetail.Text = "";
-            cbboxProvince.Text = "";
-            cbbxLocation.SelectedIndex = -1;
-            pcbxLocation.Image = null;
+            cbbxHotel.DataSource = DataProvider.Ins.DB.KHACHSANs.Select(t => t).ToList();
+            cbbxHotel.DisplayMember = "TEN";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -151,17 +137,15 @@ namespace Tour
             {
                 try
                 {
-                    randomcode = Converter.Instance.RandomString(5);
                     if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
                     {
                         var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text };
                         DataProvider.Ins.DB.TINHs.Add(tinh);
                         DataProvider.Ins.DB.SaveChanges();
                     }
-
-                    var location = new DIADIEM() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), CHITIET = rchtxtbxDetail.Text, PICBI = img_data };
-
-                    DataProvider.Ins.DB.DIADIEMs.Add(location);
+                    randomcode = Converter.Instance.RandomString(5);
+                    var location = new KHACHSAN() { ID = randomcode, DIACHI = txtbxName.Text, PICBI = img_data,CHITIET=rchtxtbxDetail.Text,GIA=Convert.ToDecimal( txtbxGia.Text ),IDTINH=cbboxProvince.SelectedIndex.ToString(),SDT=txtbxSDT.Text,TEN=txtbxName.Text};
+                    DataProvider.Ins.DB.KHACHSANs.Add(location);
                     DataProvider.Ins.DB.SaveChanges();
                     Clear();
                     showAll();
@@ -185,6 +169,7 @@ namespace Tour
                     throw raise;
                 }
             }
+
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -197,8 +182,8 @@ namespace Tour
                 }
                 try
                 {
-                    DIADIEM diadiem = DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == id).FirstOrDefault();
-                    DataProvider.Ins.DB.DIADIEMs.Remove(diadiem);
+                    KHACHSAN khachsan = DataProvider.Ins.DB.KHACHSANs.Where(x => x.ID == id).FirstOrDefault();
+                    DataProvider.Ins.DB.KHACHSANs.Remove(khachsan);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
                     Clear();
@@ -213,48 +198,58 @@ namespace Tour
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (CheckData() == true)
+            if (id == null || id.CompareTo(string.Empty) == 0)
             {
-                if (id == null || id.CompareTo(string.Empty) == 0)
-                {
-                    return;
-                }
-                try
-                {
-                    var diadiem = DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == id).FirstOrDefault();
-                    diadiem.TEN = txtbxName.Text;
-                    diadiem.IDTINH = cbboxProvince.SelectedIndex.ToString();
-                    diadiem.CHITIET = rchtxtbxDetail.Text;
-                    diadiem.PICBI = img_data;
-                    DataProvider.Ins.DB.SaveChanges();
-                    showAll();
-                    Clear();
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                }
+                return;
             }
+            try
+            {
+                var diadiem = DataProvider.Ins.DB.KHACHSANs.Where(x => x.ID == id).FirstOrDefault();
+                diadiem.TEN = txtbxName.Text;
+                diadiem.IDTINH = cbboxProvince.SelectedIndex.ToString();
+                diadiem.CHITIET = rchtxtbxDetail.Text;
+                diadiem.PICBI = img_data;
+                DataProvider.Ins.DB.SaveChanges();
+                showAll();
+                Clear();
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
-        private void cbbxLocation_SelectedValueChanged(object sender, EventArgs e)
+
+        private void btnClear_Click(object sender, EventArgs e)
         {
-            int index = cbbxLocation.SelectedIndex;
-            DateTime Time = new DateTime();
-            string kind;
+            Clear();
+        }
+
+        private void Clear()
+        {
+            txtbxName.Text = rchtxtbxDetail.Text = txtbxDiaChi.Text = txtbxGia.Text =txtbxName.Text=txtbxSDT.Text=cbboxProvince.Text= "";
+            cbbxHotel.SelectedIndex = -1;
+            pcbxLocation.Image = null;
+        }
+
+        private void cbbxHotel_SelectedValueChanged(object sender, EventArgs e)
+        {
+            int index = cbbxHotel.SelectedIndex;
+
             if (index >= 0)
             {
-                DIADIEM selected_item = (DIADIEM)cbbxLocation.SelectedItem;
-                DIADIEM temp = DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == selected_item.ID).FirstOrDefault();
+                KHACHSAN selected_item = (KHACHSAN)cbbxHotel.SelectedItem;
+                KHACHSAN temp = DataProvider.Ins.DB.KHACHSANs.Where(x => x.ID == selected_item.ID).FirstOrDefault();
                 pcbxLocation.Image = Converter.Instance.ByteArrayToImage(temp.PICBI);
                 id = temp.ID;
-                txtbxId.Text = id;
                 txtbxName.Text = temp.TEN;
                 cbboxProvince.Text = DataProvider.Ins.DB.TINHs.Where(x => x.ID == temp.IDTINH).FirstOrDefault().TEN;
                 img_data = temp.PICBI;
                 rchtxtbxDetail.Text = temp.CHITIET;
+                txtbxGia.Text = temp.GIA.ToString();
+                txtbxDiaChi.Text = temp.DIACHI;
+                txtbxSDT.Text = temp.SDT;
             }
         }
     }

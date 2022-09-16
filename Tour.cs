@@ -112,14 +112,6 @@ namespace Tour
         {
             if (CheckData() == true)
             {
-                int Hour, Minute;
-                DateTime temp = new DateTime();
-                DateTime date = new DateTime();
-                tblChuyen route = new tblChuyen();
-                route.MaChuyen = Guid.NewGuid();
-                route.MaChuyenSearch = route.MaChuyen.ToString();
-                route.ThoiGianKhoiHanh = date;
-                route.GiaVe = Int32.Parse(tb_price.Text);
                 try
                 {
                     randomcode = Converter.Instance.RandomString(5);
