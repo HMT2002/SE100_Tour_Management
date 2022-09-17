@@ -35,6 +35,14 @@ namespace Tour
             this.btnPickPicture = new System.Windows.Forms.Button();
             this.pcbxLocation = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbboxProvince = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtbxSDT = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtbxGia = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtbxDiaChi = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.rchtxtbxDetail = new System.Windows.Forms.RichTextBox();
             this.txtbxName = new System.Windows.Forms.TextBox();
@@ -43,14 +51,6 @@ namespace Tour
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.txtbxDiaChi = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtbxGia = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtbxSDT = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbboxProvince = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxLocation)).BeginInit();
@@ -131,6 +131,71 @@ namespace Tour
             this.panel1.Size = new System.Drawing.Size(320, 344);
             this.panel1.TabIndex = 4;
             // 
+            // cbboxProvince
+            // 
+            this.cbboxProvince.FormattingEnabled = true;
+            this.cbboxProvince.Location = new System.Drawing.Point(85, 136);
+            this.cbboxProvince.Name = "cbboxProvince";
+            this.cbboxProvince.Size = new System.Drawing.Size(232, 21);
+            this.cbboxProvince.TabIndex = 18;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 144);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(76, 13);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Tỉnh/Quốc gia";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 117);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 13);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "SĐT";
+            // 
+            // txtbxSDT
+            // 
+            this.txtbxSDT.Location = new System.Drawing.Point(85, 110);
+            this.txtbxSDT.Name = "txtbxSDT";
+            this.txtbxSDT.Size = new System.Drawing.Size(232, 20);
+            this.txtbxSDT.TabIndex = 15;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 91);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Giá/ngày";
+            // 
+            // txtbxGia
+            // 
+            this.txtbxGia.Location = new System.Drawing.Point(85, 84);
+            this.txtbxGia.Name = "txtbxGia";
+            this.txtbxGia.Size = new System.Drawing.Size(232, 20);
+            this.txtbxGia.TabIndex = 13;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 65);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Địa chỉ";
+            // 
+            // txtbxDiaChi
+            // 
+            this.txtbxDiaChi.Location = new System.Drawing.Point(85, 58);
+            this.txtbxDiaChi.Name = "txtbxDiaChi";
+            this.txtbxDiaChi.Size = new System.Drawing.Size(232, 20);
+            this.txtbxDiaChi.TabIndex = 11;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -203,71 +268,6 @@ namespace Tour
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // txtbxDiaChi
-            // 
-            this.txtbxDiaChi.Location = new System.Drawing.Point(85, 58);
-            this.txtbxDiaChi.Name = "txtbxDiaChi";
-            this.txtbxDiaChi.Size = new System.Drawing.Size(232, 20);
-            this.txtbxDiaChi.TabIndex = 11;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 65);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Địa chỉ";
-            // 
-            // txtbxGia
-            // 
-            this.txtbxGia.Location = new System.Drawing.Point(85, 84);
-            this.txtbxGia.Name = "txtbxGia";
-            this.txtbxGia.Size = new System.Drawing.Size(232, 20);
-            this.txtbxGia.TabIndex = 13;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 91);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 13);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Giá";
-            // 
-            // txtbxSDT
-            // 
-            this.txtbxSDT.Location = new System.Drawing.Point(85, 110);
-            this.txtbxSDT.Name = "txtbxSDT";
-            this.txtbxSDT.Size = new System.Drawing.Size(232, 20);
-            this.txtbxSDT.TabIndex = 15;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 117);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "SĐT";
-            // 
-            // cbboxProvince
-            // 
-            this.cbboxProvince.FormattingEnabled = true;
-            this.cbboxProvince.Location = new System.Drawing.Point(85, 136);
-            this.cbboxProvince.Name = "cbboxProvince";
-            this.cbboxProvince.Size = new System.Drawing.Size(232, 21);
-            this.cbboxProvince.TabIndex = 18;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 144);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 13);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Tỉnh/Quốc gia";
             // 
             // Hotel
             // 

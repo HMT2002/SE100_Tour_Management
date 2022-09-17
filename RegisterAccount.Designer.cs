@@ -50,6 +50,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnPickPicture = new System.Windows.Forms.Button();
+            this.pcbxLocation = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbxLocation)).BeginInit();
             this.SuspendLayout();
             // 
             // label14
@@ -58,7 +61,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(578, 257);
+            this.label14.Location = new System.Drawing.Point(508, 255);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(19, 21);
             this.label14.TabIndex = 72;
@@ -69,7 +72,7 @@
             this.txbCode.BackColor = System.Drawing.Color.White;
             this.txbCode.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCode.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txbCode.Location = new System.Drawing.Point(239, 363);
+            this.txbCode.Location = new System.Drawing.Point(169, 361);
             this.txbCode.Name = "txbCode";
             this.txbCode.Size = new System.Drawing.Size(128, 29);
             this.txbCode.TabIndex = 71;
@@ -80,7 +83,7 @@
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(168, 366);
+            this.label13.Location = new System.Drawing.Point(98, 364);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(54, 21);
             this.label13.TabIndex = 70;
@@ -91,7 +94,7 @@
             this.btnSend.BackColor = System.Drawing.Color.Black;
             this.btnSend.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSend.ForeColor = System.Drawing.Color.MintCream;
-            this.btnSend.Location = new System.Drawing.Point(490, 191);
+            this.btnSend.Location = new System.Drawing.Point(420, 189);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(82, 28);
             this.btnSend.TabIndex = 69;
@@ -103,7 +106,7 @@
             // 
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(599, 192);
+            this.label12.Location = new System.Drawing.Point(508, 189);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(77, 28);
             this.label12.TabIndex = 68;
@@ -113,7 +116,7 @@
             this.Cancelbtn.BackColor = System.Drawing.Color.Black;
             this.Cancelbtn.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancelbtn.ForeColor = System.Drawing.Color.MintCream;
-            this.Cancelbtn.Location = new System.Drawing.Point(489, 366);
+            this.Cancelbtn.Location = new System.Drawing.Point(419, 364);
             this.Cancelbtn.Name = "Cancelbtn";
             this.Cancelbtn.Size = new System.Drawing.Size(83, 27);
             this.Cancelbtn.TabIndex = 67;
@@ -127,7 +130,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(457, 194);
+            this.label9.Location = new System.Drawing.Point(387, 192);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(19, 21);
             this.label9.TabIndex = 66;
@@ -138,7 +141,7 @@
             this.SignUpbtn.BackColor = System.Drawing.Color.Black;
             this.SignUpbtn.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUpbtn.ForeColor = System.Drawing.Color.MintCream;
-            this.SignUpbtn.Location = new System.Drawing.Point(388, 366);
+            this.SignUpbtn.Location = new System.Drawing.Point(318, 364);
             this.SignUpbtn.Name = "SignUpbtn";
             this.SignUpbtn.Size = new System.Drawing.Size(87, 27);
             this.SignUpbtn.TabIndex = 65;
@@ -152,7 +155,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(178, 241);
+            this.label8.Location = new System.Drawing.Point(108, 239);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(0, 13);
             this.label8.TabIndex = 64;
@@ -162,7 +165,7 @@
             this.txbConfirm.BackColor = System.Drawing.Color.White;
             this.txbConfirm.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbConfirm.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txbConfirm.Location = new System.Drawing.Point(239, 309);
+            this.txbConfirm.Location = new System.Drawing.Point(169, 307);
             this.txbConfirm.Name = "txbConfirm";
             this.txbConfirm.Size = new System.Drawing.Size(334, 29);
             this.txbConfirm.TabIndex = 63;
@@ -173,7 +176,7 @@
             this.txbPass.BackColor = System.Drawing.Color.White;
             this.txbPass.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbPass.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txbPass.Location = new System.Drawing.Point(239, 254);
+            this.txbPass.Location = new System.Drawing.Point(169, 252);
             this.txbPass.Name = "txbPass";
             this.txbPass.Size = new System.Drawing.Size(334, 29);
             this.txbPass.TabIndex = 62;
@@ -184,7 +187,7 @@
             this.txbGmail.BackColor = System.Drawing.Color.White;
             this.txbGmail.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbGmail.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txbGmail.Location = new System.Drawing.Point(239, 191);
+            this.txbGmail.Location = new System.Drawing.Point(169, 189);
             this.txbGmail.Name = "txbGmail";
             this.txbGmail.Size = new System.Drawing.Size(212, 29);
             this.txbGmail.TabIndex = 61;
@@ -196,7 +199,7 @@
             this.txbSDT.BackColor = System.Drawing.Color.White;
             this.txbSDT.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbSDT.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txbSDT.Location = new System.Drawing.Point(239, 137);
+            this.txbSDT.Location = new System.Drawing.Point(169, 135);
             this.txbSDT.MaxLength = 20;
             this.txbSDT.Name = "txbSDT";
             this.txbSDT.Size = new System.Drawing.Size(334, 29);
@@ -208,7 +211,7 @@
             this.txbTen.BackColor = System.Drawing.Color.White;
             this.txbTen.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTen.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txbTen.Location = new System.Drawing.Point(239, 81);
+            this.txbTen.Location = new System.Drawing.Point(169, 79);
             this.txbTen.Name = "txbTen";
             this.txbTen.Size = new System.Drawing.Size(334, 29);
             this.txbTen.TabIndex = 59;
@@ -218,7 +221,7 @@
             this.txbHo.BackColor = System.Drawing.Color.White;
             this.txbHo.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbHo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txbHo.Location = new System.Drawing.Point(239, 28);
+            this.txbHo.Location = new System.Drawing.Point(169, 26);
             this.txbHo.Name = "txbHo";
             this.txbHo.Size = new System.Drawing.Size(334, 29);
             this.txbHo.TabIndex = 58;
@@ -229,7 +232,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(78, 311);
+            this.label7.Location = new System.Drawing.Point(8, 309);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(151, 21);
             this.label7.TabIndex = 57;
@@ -241,7 +244,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(142, 257);
+            this.label6.Location = new System.Drawing.Point(72, 255);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 21);
             this.label6.TabIndex = 56;
@@ -253,7 +256,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(168, 194);
+            this.label4.Location = new System.Drawing.Point(98, 192);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 21);
             this.label4.TabIndex = 55;
@@ -265,7 +268,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(106, 140);
+            this.label3.Location = new System.Drawing.Point(36, 138);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(118, 21);
             this.label3.TabIndex = 54;
@@ -277,7 +280,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(136, 84);
+            this.label2.Location = new System.Drawing.Point(66, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 21);
             this.label2.TabIndex = 53;
@@ -289,11 +292,31 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(136, 30);
+            this.label1.Location = new System.Drawing.Point(66, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 21);
             this.label1.TabIndex = 52;
             this.label1.Text = "First name";
+            // 
+            // btnPickPicture
+            // 
+            this.btnPickPicture.Location = new System.Drawing.Point(574, 114);
+            this.btnPickPicture.Name = "btnPickPicture";
+            this.btnPickPicture.Size = new System.Drawing.Size(75, 23);
+            this.btnPickPicture.TabIndex = 4;
+            this.btnPickPicture.Text = "Chọn ảnh";
+            this.btnPickPicture.UseVisualStyleBackColor = true;
+            // 
+            // pcbxLocation
+            // 
+            this.pcbxLocation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pcbxLocation.Image = global::Tour.Properties.Resources.ic_image_empty_128;
+            this.pcbxLocation.Location = new System.Drawing.Point(543, 11);
+            this.pcbxLocation.Name = "pcbxLocation";
+            this.pcbxLocation.Size = new System.Drawing.Size(136, 97);
+            this.pcbxLocation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbxLocation.TabIndex = 0;
+            this.pcbxLocation.TabStop = false;
             // 
             // RegisterAccount
             // 
@@ -302,6 +325,8 @@
             this.BackgroundImage = global::Tour.Properties.Resources.Tour1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(691, 402);
+            this.Controls.Add(this.btnPickPicture);
+            this.Controls.Add(this.pcbxLocation);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txbCode);
             this.Controls.Add(this.label13);
@@ -328,6 +353,7 @@
             this.Name = "RegisterAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterAccount";
+            ((System.ComponentModel.ISupportInitialize)(this.pcbxLocation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,5 +382,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnPickPicture;
+        private System.Windows.Forms.PictureBox pcbxLocation;
     }
 }

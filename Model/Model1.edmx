@@ -90,6 +90,14 @@
           <Property Name="TEN" Type="nvarchar" MaxLength="30" />
           <Property Name="PICBI" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="tb_DIADIEM_DULICH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="IDDOAN" Type="char" MaxLength="7" />
+          <Property Name="IDDIADIEM" Type="char" MaxLength="7" />
+        </EntityType>
         <EntityType Name="tb_DOAN">
           <Key>
             <PropertyRef Name="ID" />
@@ -161,6 +169,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="LK_DIADIEM_DULICH">
+          <End Role="DIADIEM" Type="Self.DIADIEM" Multiplicity="0..1" />
+          <End Role="tb_DIADIEM_DULICH" Type="Self.tb_DIADIEM_DULICH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DIADIEM">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_DIADIEM_DULICH">
+              <PropertyRef Name="IDDIADIEM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="LK_DOAN_DOAN">
           <End Role="DOAN" Type="Self.DOAN" Multiplicity="0..1" />
           <End Role="tb_DOAN" Type="Self.tb_DOAN" Multiplicity="*" />
@@ -169,6 +189,18 @@
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="tb_DOAN">
+              <PropertyRef Name="IDDOAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_DOAN_DULICH">
+          <End Role="DOAN" Type="Self.DOAN" Multiplicity="0..1" />
+          <End Role="tb_DIADIEM_DULICH" Type="Self.tb_DIADIEM_DULICH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOAN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_DIADIEM_DULICH">
               <PropertyRef Name="IDDOAN" />
             </Dependent>
           </ReferentialConstraint>
@@ -338,6 +370,7 @@
           <EntitySet Name="KHACHSAN" EntityType="Self.KHACHSAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PHUONGTIEN" EntityType="Self.PHUONGTIEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_DIADIEM_DULICH" EntityType="Self.tb_DIADIEM_DULICH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_DOAN" EntityType="Self.tb_DOAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_KHACHSAN" EntityType="Self.tb_KHACHSAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_NHIEMVU" EntityType="Self.tb_NHIEMVU" Schema="dbo" store:Type="Tables" />
@@ -349,9 +382,17 @@
             <End Role="CHIPHI" EntitySet="CHIPHI" />
             <End Role="DOAN" EntitySet="DOAN" />
           </AssociationSet>
+          <AssociationSet Name="LK_DIADIEM_DULICH" Association="Self.LK_DIADIEM_DULICH">
+            <End Role="DIADIEM" EntitySet="DIADIEM" />
+            <End Role="tb_DIADIEM_DULICH" EntitySet="tb_DIADIEM_DULICH" />
+          </AssociationSet>
           <AssociationSet Name="LK_DOAN_DOAN" Association="Self.LK_DOAN_DOAN">
             <End Role="DOAN" EntitySet="DOAN" />
             <End Role="tb_DOAN" EntitySet="tb_DOAN" />
+          </AssociationSet>
+          <AssociationSet Name="LK_DOAN_DULICH" Association="Self.LK_DOAN_DULICH">
+            <End Role="DOAN" EntitySet="DOAN" />
+            <End Role="tb_DIADIEM_DULICH" EntitySet="tb_DIADIEM_DULICH" />
           </AssociationSet>
           <AssociationSet Name="LK_DOAN_KHACHSAN" Association="Self.LK_DOAN_KHACHSAN">
             <End Role="DOAN" EntitySet="DOAN" />
@@ -441,6 +482,7 @@
           <Property Name="IDTINH" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
           <Property Name="CHITIET" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="PICBI" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="tb_DIADIEM_DULICH" Relationship="Self.LK_DIADIEM_DULICH" FromRole="DIADIEM" ToRole="tb_DIADIEM_DULICH" />
           <NavigationProperty Name="TINH" Relationship="Self.LK_TINH" FromRole="DIADIEM" ToRole="TINH" />
         </EntityType>
         <EntityType Name="DOAN">
@@ -456,6 +498,7 @@
           <Property Name="IDTOUR" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
           <NavigationProperty Name="CHIPHI" Relationship="Self.LK_CHIPHI_DOAN" FromRole="DOAN" ToRole="CHIPHI" />
           <NavigationProperty Name="tb_DOAN" Relationship="Self.LK_DOAN_DOAN" FromRole="DOAN" ToRole="tb_DOAN" />
+          <NavigationProperty Name="tb_DIADIEM_DULICH" Relationship="Self.LK_DOAN_DULICH" FromRole="DOAN" ToRole="tb_DIADIEM_DULICH" />
           <NavigationProperty Name="tb_KHACHSAN" Relationship="Self.LK_DOAN_KHACHSAN" FromRole="DOAN" ToRole="tb_KHACHSAN" />
           <NavigationProperty Name="tb_NHIEMVU" Relationship="Self.LK_DOAN_NHIEMVU" FromRole="DOAN" ToRole="tb_NHIEMVU" />
           <NavigationProperty Name="tb_PHUONGTIEN" Relationship="Self.LK_DOAN_PHUONGTIEN" FromRole="DOAN" ToRole="tb_PHUONGTIEN" />
@@ -512,6 +555,16 @@
           <Property Name="TEN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="PICBI" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="tb_PHUONGTIEN" Relationship="Self.LK_PHUONGTIEN_PHUONGTIEN" FromRole="PHUONGTIEN" ToRole="tb_PHUONGTIEN" />
+        </EntityType>
+        <EntityType Name="tb_DIADIEM_DULICH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="IDDOAN" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="IDDIADIEM" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="DIADIEM" Relationship="Self.LK_DIADIEM_DULICH" FromRole="tb_DIADIEM_DULICH" ToRole="DIADIEM" />
+          <NavigationProperty Name="DOAN" Relationship="Self.LK_DOAN_DULICH" FromRole="tb_DIADIEM_DULICH" ToRole="DOAN" />
         </EntityType>
         <EntityType Name="tb_DOAN">
           <Key>
@@ -609,6 +662,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="LK_DIADIEM_DULICH">
+          <End Role="DIADIEM" Type="Self.DIADIEM" Multiplicity="0..1" />
+          <End Role="tb_DIADIEM_DULICH" Type="Self.tb_DIADIEM_DULICH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DIADIEM">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_DIADIEM_DULICH">
+              <PropertyRef Name="IDDIADIEM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="LK_TINH">
           <End Role="TINH" Type="Self.TINH" Multiplicity="0..1" />
           <End Role="DIADIEM" Type="Self.DIADIEM" Multiplicity="*" />
@@ -629,6 +694,18 @@
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="tb_DOAN">
+              <PropertyRef Name="IDDOAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_DOAN_DULICH">
+          <End Role="DOAN" Type="Self.DOAN" Multiplicity="0..1" />
+          <End Role="tb_DIADIEM_DULICH" Type="Self.tb_DIADIEM_DULICH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOAN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tb_DIADIEM_DULICH">
               <PropertyRef Name="IDDOAN" />
             </Dependent>
           </ReferentialConstraint>
@@ -774,6 +851,7 @@
           <EntitySet Name="KHACHSANs" EntityType="Self.KHACHSAN" />
           <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
           <EntitySet Name="PHUONGTIENs" EntityType="Self.PHUONGTIEN" />
+          <EntitySet Name="tb_DIADIEM_DULICH" EntityType="Self.tb_DIADIEM_DULICH" />
           <EntitySet Name="tb_DOAN" EntityType="Self.tb_DOAN" />
           <EntitySet Name="tb_KHACHSAN" EntityType="Self.tb_KHACHSAN" />
           <EntitySet Name="tb_NHIEMVU" EntityType="Self.tb_NHIEMVU" />
@@ -789,6 +867,10 @@
             <End Role="CHIPHI" EntitySet="CHIPHIs" />
             <End Role="DOAN" EntitySet="DOANs" />
           </AssociationSet>
+          <AssociationSet Name="LK_DIADIEM_DULICH" Association="Self.LK_DIADIEM_DULICH">
+            <End Role="DIADIEM" EntitySet="DIADIEMs" />
+            <End Role="tb_DIADIEM_DULICH" EntitySet="tb_DIADIEM_DULICH" />
+          </AssociationSet>
           <AssociationSet Name="LK_TINH" Association="Self.LK_TINH">
             <End Role="TINH" EntitySet="TINHs" />
             <End Role="DIADIEM" EntitySet="DIADIEMs" />
@@ -796,6 +878,10 @@
           <AssociationSet Name="LK_DOAN_DOAN" Association="Self.LK_DOAN_DOAN">
             <End Role="DOAN" EntitySet="DOANs" />
             <End Role="tb_DOAN" EntitySet="tb_DOAN" />
+          </AssociationSet>
+          <AssociationSet Name="LK_DOAN_DULICH" Association="Self.LK_DOAN_DULICH">
+            <End Role="DOAN" EntitySet="DOANs" />
+            <End Role="tb_DIADIEM_DULICH" EntitySet="tb_DIADIEM_DULICH" />
           </AssociationSet>
           <AssociationSet Name="LK_DOAN_KHACHSAN" Association="Self.LK_DOAN_KHACHSAN">
             <End Role="DOAN" EntitySet="DOANs" />
@@ -938,6 +1024,15 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TEN" ColumnName="TEN" />
                 <ScalarProperty Name="PICBI" ColumnName="PICBI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_DIADIEM_DULICH">
+            <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.tb_DIADIEM_DULICH">
+              <MappingFragment StoreEntitySet="tb_DIADIEM_DULICH">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDDOAN" ColumnName="IDDOAN" />
+                <ScalarProperty Name="IDDIADIEM" ColumnName="IDDIADIEM" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
