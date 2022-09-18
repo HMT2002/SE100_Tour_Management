@@ -255,6 +255,12 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\User.cs" />
+    <Compile Include="PhuongTien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhuongTien.Designer.cs">
+      <DependentUpon>PhuongTien.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegisterAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhuongTien.resx">
+      <DependentUpon>PhuongTien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterAccount.resx">
       <DependentUpon>RegisterAccount.cs</DependentUpon>

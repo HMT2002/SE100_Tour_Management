@@ -19,6 +19,7 @@ namespace Tour.Model
         {
             this.DIADIEMs = new HashSet<DIADIEM>();
             this.KHACHSANs = new HashSet<KHACHSAN>();
+            this.PHUONGTIENs = new HashSet<PHUONGTIEN>();
         }
     
         public string ID { get; set; }
@@ -28,5 +29,7 @@ namespace Tour.Model
         public virtual ICollection<DIADIEM> DIADIEMs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KHACHSAN> KHACHSANs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PHUONGTIEN> PHUONGTIENs { get; set; }
     }
 }

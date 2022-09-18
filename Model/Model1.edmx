@@ -89,6 +89,8 @@
           <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
           <Property Name="TEN" Type="nvarchar" MaxLength="30" />
           <Property Name="PICBI" Type="varbinary(max)" />
+          <Property Name="LOAI" Type="nvarchar" MaxLength="30" />
+          <Property Name="IDTINH" Type="char" MaxLength="7" />
         </EntityType>
         <EntityType Name="tb_DIADIEM_DULICH">
           <Key>
@@ -337,6 +339,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="LK_PHUONGTIEN_TINH">
+          <End Role="TINH" Type="Self.TINH" Multiplicity="0..1" />
+          <End Role="PHUONGTIEN" Type="Self.PHUONGTIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TINH">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PHUONGTIEN">
+              <PropertyRef Name="IDTINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="LK_TINH">
           <End Role="TINH" Type="Self.TINH" Multiplicity="0..1" />
           <End Role="DIADIEM" Type="Self.DIADIEM" Multiplicity="*" />
@@ -437,6 +451,10 @@
           <AssociationSet Name="LK_PHUONGTIEN_PHUONGTIEN" Association="Self.LK_PHUONGTIEN_PHUONGTIEN">
             <End Role="PHUONGTIEN" EntitySet="PHUONGTIEN" />
             <End Role="tb_PHUONGTIEN" EntitySet="tb_PHUONGTIEN" />
+          </AssociationSet>
+          <AssociationSet Name="LK_PHUONGTIEN_TINH" Association="Self.LK_PHUONGTIEN_TINH">
+            <End Role="TINH" EntitySet="TINH" />
+            <End Role="PHUONGTIEN" EntitySet="PHUONGTIEN" />
           </AssociationSet>
           <AssociationSet Name="LK_TINH" Association="Self.LK_TINH">
             <End Role="TINH" EntitySet="TINH" />
@@ -554,7 +572,10 @@
           <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="TEN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="PICBI" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="LOAI" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="IDTINH" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
           <NavigationProperty Name="tb_PHUONGTIEN" Relationship="Self.LK_PHUONGTIEN_PHUONGTIEN" FromRole="PHUONGTIEN" ToRole="tb_PHUONGTIEN" />
+          <NavigationProperty Name="TINH" Relationship="Self.LK_PHUONGTIEN_TINH" FromRole="PHUONGTIEN" ToRole="TINH" />
         </EntityType>
         <EntityType Name="tb_DIADIEM_DULICH">
           <Key>
@@ -626,6 +647,7 @@
           <Property Name="TEN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="DIADIEMs" Relationship="Self.LK_TINH" FromRole="TINH" ToRole="DIADIEM" />
           <NavigationProperty Name="KHACHSANs" Relationship="Self.LK_KHACHSAN_TINH" FromRole="TINH" ToRole="KHACHSAN" />
+          <NavigationProperty Name="PHUONGTIENs" Relationship="Self.LK_PHUONGTIEN_TINH" FromRole="TINH" ToRole="PHUONGTIEN" />
         </EntityType>
         <EntityType Name="TOUR">
           <Key>
@@ -842,6 +864,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="LK_PHUONGTIEN_TINH">
+          <End Role="TINH" Type="Self.TINH" Multiplicity="0..1" />
+          <End Role="PHUONGTIEN" Type="Self.PHUONGTIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TINH">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PHUONGTIEN">
+              <PropertyRef Name="IDTINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="QL_TOUR_DU_LICHEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ACCOUNTs" EntityType="Self.ACCOUNT" />
           <EntitySet Name="CHIPHIs" EntityType="Self.CHIPHI" />
@@ -926,6 +960,10 @@
           <AssociationSet Name="LK_PHUONGTIEN_PHUONGTIEN" Association="Self.LK_PHUONGTIEN_PHUONGTIEN">
             <End Role="PHUONGTIEN" EntitySet="PHUONGTIENs" />
             <End Role="tb_PHUONGTIEN" EntitySet="tb_PHUONGTIEN" />
+          </AssociationSet>
+          <AssociationSet Name="LK_PHUONGTIEN_TINH" Association="Self.LK_PHUONGTIEN_TINH">
+            <End Role="TINH" EntitySet="TINHs" />
+            <End Role="PHUONGTIEN" EntitySet="PHUONGTIENs" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -1024,6 +1062,8 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TEN" ColumnName="TEN" />
                 <ScalarProperty Name="PICBI" ColumnName="PICBI" />
+                <ScalarProperty Name="LOAI" ColumnName="LOAI" />
+                <ScalarProperty Name="IDTINH" ColumnName="IDTINH" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -51,8 +51,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnPickPicture = new System.Windows.Forms.Button();
-            this.pcbxLocation = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbxLocation)).BeginInit();
+            this.pcbxAvatar = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbxAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // label14
@@ -306,17 +306,18 @@
             this.btnPickPicture.TabIndex = 4;
             this.btnPickPicture.Text = "Chọn ảnh";
             this.btnPickPicture.UseVisualStyleBackColor = true;
+            this.btnPickPicture.Click += new System.EventHandler(this.btnPickPicture_Click);
             // 
-            // pcbxLocation
+            // pcbxAvatar
             // 
-            this.pcbxLocation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pcbxLocation.Image = global::Tour.Properties.Resources.ic_image_empty_128;
-            this.pcbxLocation.Location = new System.Drawing.Point(543, 11);
-            this.pcbxLocation.Name = "pcbxLocation";
-            this.pcbxLocation.Size = new System.Drawing.Size(136, 97);
-            this.pcbxLocation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcbxLocation.TabIndex = 0;
-            this.pcbxLocation.TabStop = false;
+            this.pcbxAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pcbxAvatar.Image = global::Tour.Properties.Resources.ic_image_empty_128;
+            this.pcbxAvatar.Location = new System.Drawing.Point(543, 11);
+            this.pcbxAvatar.Name = "pcbxAvatar";
+            this.pcbxAvatar.Size = new System.Drawing.Size(136, 97);
+            this.pcbxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbxAvatar.TabIndex = 0;
+            this.pcbxAvatar.TabStop = false;
             // 
             // RegisterAccount
             // 
@@ -326,7 +327,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(691, 402);
             this.Controls.Add(this.btnPickPicture);
-            this.Controls.Add(this.pcbxLocation);
+            this.Controls.Add(this.pcbxAvatar);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txbCode);
             this.Controls.Add(this.label13);
@@ -353,7 +354,7 @@
             this.Name = "RegisterAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterAccount";
-            ((System.ComponentModel.ISupportInitialize)(this.pcbxLocation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbxAvatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,6 +384,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnPickPicture;
-        private System.Windows.Forms.PictureBox pcbxLocation;
+        private System.Windows.Forms.PictureBox pcbxAvatar;
     }
 }

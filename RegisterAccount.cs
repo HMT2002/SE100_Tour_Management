@@ -21,6 +21,10 @@ namespace Tour
         string randomcode;
         public static string to;
         System.Text.RegularExpressions.Regex rEMail = new System.Text.RegularExpressions.Regex(@"^([a-zA-Z0-9_\-])([a-zA-Z0-9_\-\.]*)@(\[((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}|((([a-zA-Z0-9\-]+)\.)+))([a-zA-Z]{2,}|(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\])$");
+
+        Image img;
+        Byte[] img_data = null;
+
         public RegisterAccount()
         {
             InitializeComponent();
@@ -60,7 +64,7 @@ namespace Tour
                 try
                 {
 
-                    var nv = new NHANVIEN() { ID = randomcode,HO=txbHo.Text, TEN = txbTen.Text,SDT=txbSDT.Text,MAIL=txbGmail.Text };
+                    var nv = new NHANVIEN() { ID = randomcode, HO = txbHo.Text, TEN = txbTen.Text, SDT = txbSDT.Text, MAIL = txbGmail.Text,PICBI=img_data };
                     var account = new ACCOUNT() { ACC = txbGmail.Text, PASS = Converter.Instance.MD5Encrypt(Converter.Instance.Base64Encode(txbPass.Text)), ID = randomcode, IDNHANVIEN = randomcode };
                     DataProvider.Ins.DB.ACCOUNTs.Add(account);
                     DataProvider.Ins.DB.NHANVIENs.Add(nv);
@@ -168,6 +172,20 @@ namespace Tour
         private void Cancelbtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnPickPicture_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Chon anh(*.jpg; *.png; *.gif) | *.jpg; *.png; *.gif";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                Image image = Image.FromFile(dialog.FileName);
+                img = image;
+                img_data = Converter.Instance.ImageToByte(image);
+                pcbxAvatar.Image = image;
+
+            }
         }
     }
 }

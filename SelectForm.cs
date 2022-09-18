@@ -215,5 +215,19 @@ namespace Tour
             this.Show();
             hideSubmenu();
         }
+
+        private void btnVehicalDatabase_Click(object sender, EventArgs e)
+        {
+            PhuongTien h = new PhuongTien();
+            this.Hide();
+            h.ShowDialog();
+            this.Show();
+            hideSubmenu();
+        }
+
+        private void btnEmployyeDatabase_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

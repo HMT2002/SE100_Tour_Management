@@ -12,7 +12,7 @@ using Tour.Utils;
 
 namespace Tour
 {
-    public partial class Location : Form
+    public partial class PhuongTien : Form
     {
         List<string> ListProvince = new List<string>() {
             "",
@@ -80,26 +80,47 @@ namespace Tour
 "Vĩnh Phúc",
 "Yên Bái",
         };
+
         Image img;
         Byte[] img_data;
         string randomcode;
         string id;
 
-        public Location()
+
+
+        public PhuongTien()
         {
             InitializeComponent();
+            cbbxKind.DataSource = new List<string> { "Tàu", "Xe hai bánh", "Xe bốn bánh", "Xe buýt", "Máy bay" };
             cbboxProvince.DataSource = ListProvince;
-
             showAll();
-            cbbxLocation.SelectedIndex = -1;
             Clear();
 
         }
+
         public void showAll()
         {
-            cbbxLocation.DataSource = DataProvider.Ins.DB.DIADIEMs.Select(t =>t).ToList();
-            cbbxLocation.DisplayMember = "TEN";
+            cbbxVehical.DataSource = DataProvider.Ins.DB.PHUONGTIENs.Select(t => t).ToList();
+            cbbxVehical.DisplayMember = "TEN";
         }
+        private void Clear()
+        {
+            txtbxName.Text = "";
+            rchtxtbxDetail.Text = "";
+            cbboxProvince.Text = "";
+            cbbxVehical.Text = "";
+            cbbxKind.Text = "";
+            cbbxKind.SelectedIndex = -1;
+            cbbxVehical.SelectedIndex = -1;
+            cbboxProvince.SelectedIndex = -1;
+            pcbxVehical.Image = null;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btnPickPicture_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -109,42 +130,19 @@ namespace Tour
                 Image image = Image.FromFile(dialog.FileName);
                 img = image;
                 img_data = Converter.Instance.ImageToByte(image);
-                pcbxLocation.Image = image;
+                pcbxVehical.Image = image;
 
             }
         }
 
-        public bool CheckData()
+        private bool CheckData()
         {
-
-            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null)
+            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null||cbboxProvince.Text.Trim().CompareTo(string.Empty) == 0||cbbxKind.Text.Trim().CompareTo(string.Empty) == 0)
             {
                 return false;
             }
             return true;
         }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-
-            Clear();
-        }
-
-        private void Clear()
-        {
-            txtbxId.Text = "";
-            txtbxName.Text = "";
-            rchtxtbxDetail.Text = "";
-            cbboxProvince.Text = "";
-            cbbxLocation.SelectedIndex = -1;
-            pcbxLocation.Image = null;
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (CheckData() == true)
@@ -159,9 +157,9 @@ namespace Tour
                         DataProvider.Ins.DB.SaveChanges();
                     }
 
-                    var location = new DIADIEM() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), CHITIET = rchtxtbxDetail.Text, PICBI = img_data };
+                    var vehical = new PHUONGTIEN() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), PICBI = img_data,LOAI=cbbxKind.Text };
 
-                    DataProvider.Ins.DB.DIADIEMs.Add(location);
+                    DataProvider.Ins.DB.PHUONGTIENs.Add(vehical);
                     DataProvider.Ins.DB.SaveChanges();
                     Clear();
                     showAll();
@@ -185,6 +183,7 @@ namespace Tour
                     throw raise;
                 }
             }
+
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -197,8 +196,8 @@ namespace Tour
                 }
                 try
                 {
-                    DIADIEM diadiem = DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == id).FirstOrDefault();
-                    DataProvider.Ins.DB.DIADIEMs.Remove(diadiem);
+                    PHUONGTIEN diadiem = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault();
+                    DataProvider.Ins.DB.PHUONGTIENs.Remove(diadiem);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
                     Clear();
@@ -209,6 +208,7 @@ namespace Tour
 
                 }
             }
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -227,38 +227,55 @@ namespace Tour
                         DataProvider.Ins.DB.TINHs.Add(tinh);
                         DataProvider.Ins.DB.SaveChanges();
                     }
-                    var diadiem = DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == id).FirstOrDefault();
-                    diadiem.TEN = txtbxName.Text;
-                    diadiem.IDTINH = cbboxProvince.SelectedIndex.ToString();
-                    diadiem.CHITIET = rchtxtbxDetail.Text;
-                    diadiem.PICBI = img_data;
+                    var phuongtien = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault();
+                    phuongtien.TEN = txtbxName.Text;
+                    phuongtien.IDTINH = cbboxProvince.SelectedIndex.ToString();
+                    phuongtien.LOAI = cbbxKind.Text;
+                    phuongtien.PICBI = img_data;
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
                     Clear();
 
                 }
-                catch (Exception ex)
+                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
                 {
-                    MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                    Exception raise = dbEx;
+                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    {
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            string message = string.Format("{0}:{1}",
+                                validationErrors.Entry.Entity.ToString(),
+                                validationError.ErrorMessage);
+                            // raise a new exception nesting
+                            // the current instance as InnerException
+                            raise = new InvalidOperationException(message, raise);
+                        }
+                    }
+                    throw raise;
                 }
             }
 
         }
-        private void cbbxLocation_SelectedValueChanged(object sender, EventArgs e)
+
+        private void btnClear_Click(object sender, EventArgs e)
         {
-            int index = cbbxLocation.SelectedIndex;
+            Clear();
+        }
+
+        private void cbbxVehical_SelectedValueChanged(object sender, EventArgs e)
+        {
+            int index = cbbxVehical.SelectedIndex;
             if (index >= 0)
             {
-                DIADIEM selected_item = (DIADIEM)cbbxLocation.SelectedItem;
-                DIADIEM temp = DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == selected_item.ID).FirstOrDefault();
-                pcbxLocation.Image = Converter.Instance.ByteArrayToImage(temp.PICBI);
+                PHUONGTIEN selected_item = (PHUONGTIEN)cbbxVehical.SelectedItem;
+                PHUONGTIEN temp = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == selected_item.ID).FirstOrDefault();
+                pcbxVehical.Image = Converter.Instance.ByteArrayToImage(temp.PICBI);
                 id = temp.ID;
-                txtbxId.Text = id;
                 txtbxName.Text = temp.TEN;
+                cbbxKind.Text = temp.LOAI;
                 cbboxProvince.Text = DataProvider.Ins.DB.TINHs.Where(x => x.ID == temp.IDTINH).FirstOrDefault().TEN;
                 img_data = temp.PICBI;
-                rchtxtbxDetail.Text = temp.CHITIET;
             }
         }
     }
