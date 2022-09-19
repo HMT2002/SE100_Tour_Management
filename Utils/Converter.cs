@@ -28,6 +28,10 @@ namespace Tour.Utils
 
         public Image ByteArrayToImage(byte[] bytesArr)
         {
+            if (bytesArr == null)
+            {
+                return null;
+            }
             using (MemoryStream memstr = new MemoryStream(bytesArr))
             {
                 Image img = Image.FromStream(memstr);

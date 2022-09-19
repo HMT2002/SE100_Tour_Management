@@ -23,11 +23,10 @@ namespace Tour.Model
         }
     
         public string ID { get; set; }
-        public string TEN { get; set; }
-        public string HO { get; set; }
         public string MAIL { get; set; }
         public string SDT { get; set; }
         public byte[] PICBI { get; set; }
+        public string TEN { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ACCOUNT> ACCOUNTs { get; set; }

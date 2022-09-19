@@ -227,7 +227,11 @@ namespace Tour
 
         private void btnEmployyeDatabase_Click(object sender, EventArgs e)
         {
-
+            NhanVien h = new NhanVien();
+            this.Hide();
+            h.ShowDialog();
+            this.Show();
+            hideSubmenu();
         }
     }
 }
