@@ -59,7 +59,7 @@ namespace Tour
             this.panel3.Controls.Add(this.btnPickPicture);
             this.panel3.Controls.Add(this.pcbxVehical);
             this.panel3.Location = new System.Drawing.Point(16, 15);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(604, 423);
             this.panel3.TabIndex = 8;
@@ -67,11 +67,11 @@ namespace Tour
             // btnPickPicture
             // 
             this.btnPickPicture.Location = new System.Drawing.Point(256, 391);
-            this.btnPickPicture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPickPicture.Margin = new System.Windows.Forms.Padding(4);
             this.btnPickPicture.Name = "btnPickPicture";
             this.btnPickPicture.Size = new System.Drawing.Size(100, 28);
             this.btnPickPicture.TabIndex = 4;
-            this.btnPickPicture.Text = "Chọn ảnh";
+            this.btnPickPicture.Text = "Add picture";
             this.btnPickPicture.UseVisualStyleBackColor = true;
             this.btnPickPicture.Click += new System.EventHandler(this.btnPickPicture_Click);
             // 
@@ -80,7 +80,7 @@ namespace Tour
             this.pcbxVehical.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pcbxVehical.Image = global::Tour.Properties.Resources.ic_image_empty_128;
             this.pcbxVehical.Location = new System.Drawing.Point(4, 4);
-            this.pcbxVehical.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbxVehical.Margin = new System.Windows.Forms.Padding(4);
             this.pcbxVehical.Name = "pcbxVehical";
             this.pcbxVehical.Size = new System.Drawing.Size(596, 380);
             this.pcbxVehical.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -103,7 +103,7 @@ namespace Tour
             this.panel1.Controls.Add(this.btnXoa);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Location = new System.Drawing.Point(624, 15);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(431, 423);
             this.panel1.TabIndex = 7;
@@ -112,7 +112,7 @@ namespace Tour
             // 
             this.cbbxKind.FormattingEnabled = true;
             this.cbbxKind.Location = new System.Drawing.Point(113, 70);
-            this.cbbxKind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbxKind.Margin = new System.Windows.Forms.Padding(4);
             this.cbbxKind.Name = "cbbxKind";
             this.cbbxKind.Size = new System.Drawing.Size(308, 24);
             this.cbbxKind.TabIndex = 19;
@@ -121,7 +121,7 @@ namespace Tour
             // 
             this.cbboxProvince.FormattingEnabled = true;
             this.cbboxProvince.Location = new System.Drawing.Point(113, 103);
-            this.cbboxProvince.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbboxProvince.Margin = new System.Windows.Forms.Padding(4);
             this.cbboxProvince.Name = "cbboxProvince";
             this.cbboxProvince.Size = new System.Drawing.Size(308, 24);
             this.cbboxProvince.TabIndex = 18;
@@ -159,7 +159,7 @@ namespace Tour
             // rchtxtbxDetail
             // 
             this.rchtxtbxDetail.Location = new System.Drawing.Point(8, 137);
-            this.rchtxtbxDetail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rchtxtbxDetail.Margin = new System.Windows.Forms.Padding(4);
             this.rchtxtbxDetail.Name = "rchtxtbxDetail";
             this.rchtxtbxDetail.Size = new System.Drawing.Size(417, 246);
             this.rchtxtbxDetail.TabIndex = 8;
@@ -168,7 +168,7 @@ namespace Tour
             // txtbxName
             // 
             this.txtbxName.Location = new System.Drawing.Point(113, 39);
-            this.txtbxName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxName.Margin = new System.Windows.Forms.Padding(4);
             this.txtbxName.Name = "txtbxName";
             this.txtbxName.Size = new System.Drawing.Size(308, 22);
             this.txtbxName.TabIndex = 6;
@@ -177,7 +177,7 @@ namespace Tour
             // 
             this.cbbxVehical.FormattingEnabled = true;
             this.cbbxVehical.Location = new System.Drawing.Point(4, 6);
-            this.cbbxVehical.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbxVehical.Margin = new System.Windows.Forms.Padding(4);
             this.cbbxVehical.Name = "cbbxVehical";
             this.cbbxVehical.Size = new System.Drawing.Size(309, 24);
             this.cbbxVehical.TabIndex = 4;
@@ -186,44 +186,44 @@ namespace Tour
             // btnClear
             // 
             this.btnClear.Location = new System.Drawing.Point(323, 4);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(100, 28);
             this.btnClear.TabIndex = 3;
-            this.btnClear.Text = "Mới";
+            this.btnClear.Text = "New";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnUpdate
             // 
             this.btnUpdate.Location = new System.Drawing.Point(267, 391);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(100, 28);
             this.btnUpdate.TabIndex = 2;
-            this.btnUpdate.Text = "Sửa";
+            this.btnUpdate.Text = "Edit";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnXoa
             // 
             this.btnXoa.Location = new System.Drawing.Point(159, 391);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(100, 28);
             this.btnXoa.TabIndex = 1;
-            this.btnXoa.Text = "Xóa";
+            this.btnXoa.Text = "Delete";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(53, 391);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 28);
             this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Thêm";
+            this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -232,7 +232,7 @@ namespace Tour
             this.panel2.AutoSize = true;
             this.panel2.Controls.Add(this.btnExit);
             this.panel2.Location = new System.Drawing.Point(16, 446);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1035, 156);
             this.panel2.TabIndex = 6;
@@ -240,11 +240,11 @@ namespace Tour
             // btnExit
             // 
             this.btnExit.Location = new System.Drawing.Point(931, 124);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(100, 28);
             this.btnExit.TabIndex = 3;
-            this.btnExit.Text = "Thoát";
+            this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -257,7 +257,7 @@ namespace Tour
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PhuongTien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PhuongTien";
