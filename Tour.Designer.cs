@@ -34,7 +34,6 @@
             this.tb_search = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnAddLocation = new System.Windows.Forms.Button();
-            this.cbbxLocation = new System.Windows.Forms.ComboBox();
             this.lstbxLocation = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.richtbDetail = new System.Windows.Forms.RichTextBox();
@@ -56,11 +55,6 @@
             this.gotoregistbtn = new System.Windows.Forms.Button();
             this.backtoroutebtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.data_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DACDIEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_trip)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -84,12 +78,6 @@
             this.dgv_trip.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_trip.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_trip.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_trip.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.data_id,
-            this.TEN,
-            this.DACDIEM,
-            this.GIA,
-            this.LOAI});
             this.dgv_trip.Location = new System.Drawing.Point(14, 22);
             this.dgv_trip.Name = "dgv_trip";
             this.dgv_trip.ReadOnly = true;
@@ -112,7 +100,6 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnAddLocation);
-            this.groupBox2.Controls.Add(this.cbbxLocation);
             this.groupBox2.Controls.Add(this.lstbxLocation);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.richtbDetail);
@@ -145,26 +132,18 @@
             this.btnAddLocation.Image = ((System.Drawing.Image)(resources.GetObject("btnAddLocation.Image")));
             this.btnAddLocation.Location = new System.Drawing.Point(1354, 18);
             this.btnAddLocation.Name = "btnAddLocation";
-            this.btnAddLocation.Size = new System.Drawing.Size(22, 25);
+            this.btnAddLocation.Size = new System.Drawing.Size(51, 53);
             this.btnAddLocation.TabIndex = 48;
             this.btnAddLocation.UseVisualStyleBackColor = true;
             this.btnAddLocation.Click += new System.EventHandler(this.btnAddLocation_Click);
-            // 
-            // cbbxLocation
-            // 
-            this.cbbxLocation.FormattingEnabled = true;
-            this.cbbxLocation.Location = new System.Drawing.Point(844, 18);
-            this.cbbxLocation.Name = "cbbxLocation";
-            this.cbbxLocation.Size = new System.Drawing.Size(504, 27);
-            this.cbbxLocation.TabIndex = 53;
             // 
             // lstbxLocation
             // 
             this.lstbxLocation.FormattingEnabled = true;
             this.lstbxLocation.ItemHeight = 19;
-            this.lstbxLocation.Location = new System.Drawing.Point(844, 56);
+            this.lstbxLocation.Location = new System.Drawing.Point(844, 18);
             this.lstbxLocation.Name = "lstbxLocation";
-            this.lstbxLocation.Size = new System.Drawing.Size(504, 175);
+            this.lstbxLocation.Size = new System.Drawing.Size(504, 213);
             this.lstbxLocation.TabIndex = 52;
             // 
             // label1
@@ -433,41 +412,6 @@
             this.label8.Text = "TOUR MANAGEMENT";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // data_id
-            // 
-            this.data_id.DataPropertyName = "ID";
-            this.data_id.HeaderText = "ID";
-            this.data_id.Name = "data_id";
-            this.data_id.ReadOnly = true;
-            // 
-            // TEN
-            // 
-            this.TEN.DataPropertyName = "TEN";
-            this.TEN.HeaderText = "Tên";
-            this.TEN.Name = "TEN";
-            this.TEN.ReadOnly = true;
-            // 
-            // DACDIEM
-            // 
-            this.DACDIEM.DataPropertyName = "DACDIEM";
-            this.DACDIEM.HeaderText = "Chi tiết";
-            this.DACDIEM.Name = "DACDIEM";
-            this.DACDIEM.ReadOnly = true;
-            // 
-            // GIA
-            // 
-            this.GIA.DataPropertyName = "GIA";
-            this.GIA.HeaderText = "Giá";
-            this.GIA.Name = "GIA";
-            this.GIA.ReadOnly = true;
-            // 
-            // LOAI
-            // 
-            this.LOAI.DataPropertyName = "LOAI";
-            this.LOAI.HeaderText = "Loại";
-            this.LOAI.Name = "LOAI";
-            this.LOAI.ReadOnly = true;
-            // 
             // Tour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -531,12 +475,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gIADataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dOANsDataGridViewTextBoxColumn;
         private System.Windows.Forms.ListBox lstbxLocation;
-        private System.Windows.Forms.ComboBox cbbxLocation;
         private System.Windows.Forms.Button btnAddLocation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn data_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DACDIEM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GIA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LOAI;
     }
 }
