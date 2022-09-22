@@ -31,13 +31,6 @@ namespace Tour
 
         private void AddDataBinding()
         {
-            tb_idtrip.DataBindings.Add(new Binding("Text", dgv_trip.DataSource, "ID"));
-            tb_nametour.DataBindings.Add(new Binding("Text", dgv_trip.DataSource, "TEN"));
-            cb_typetour.DataBindings.Add(new Binding("Text", dgv_trip.DataSource, "LOAI"));
-            richtbDetail.DataBindings.Add(new Binding("Text", dgv_trip.DataSource, "DACDIEM"));
-            tb_price.DataBindings.Add(new Binding("Text", dgv_trip.DataSource, "GIA"));
-
-
 
         }
 
@@ -61,17 +54,9 @@ namespace Tour
         public void ShowAllChuyen()
         {
             dgv_trip.DataSource = DataProvider.Ins.DB.TOURs.Select(t=>t).ToList();
-            //List<string> y= DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(t => t.IDTOUR == id).AsParallel().GroupBy(p => p.IDTOUR).Select(t => t.Key).ToList();
-            //lstbxLocation.DataSource = y;
-            //lstbxLocation.DisplayMember = "TEN";
-
-            //lstbxLocation.DataSource = DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(t => t.IDTOUR == id).AsParallel<tb_DIADIEM_DULICH>().GroupBy(p => p.DIADIEM.TEN).Select(t => new { IDDIADIEM = t.Key }).ToList();
-            //lstbxLocation.DisplayMember = "IDDIADIEM";
 
             lstbxLocation.DataSource = LocationList;
             lstbxLocation.DisplayMember = "TEN";
-
-            AddDataBinding();
 
         }
         private void TRIPManageTour_Load(object sender, EventArgs e)
@@ -108,21 +93,9 @@ namespace Tour
                     tour.LOAI = cb_typetour.Text;
                     tour.GIA = Convert.ToDecimal(tb_price.Text);
                     tour.DACDIEM = richtbDetail.Text;
-
-                    foreach (var Location in DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(t => t.IDTOUR == id))
-                    {
-                        DataProvider.Ins.DB.tb_DIADIEM_DULICH.Remove(Location);
-                    }
-
-                    foreach (DIADIEM Location in LocationList)
-                    {
-                        string randomcode2 = Converter.Instance.RandomString(5);
-                        var diadiemdulich = new tb_DIADIEM_DULICH() { ID = randomcode2, IDDIADIEM = Location.ID, IDTOUR = id };
-                        DataProvider.Ins.DB.tb_DIADIEM_DULICH.Add(diadiemdulich);
-                    }
-
                     DataProvider.Ins.DB.SaveChanges();
                     ShowAllChuyen();
+
                 }
                 catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
                 {
@@ -141,6 +114,7 @@ namespace Tour
                     }
                     throw raise;
                 }
+
                 Clear();
             }
         }
@@ -195,7 +169,6 @@ namespace Tour
                     DataProvider.Ins.DB.TOURs.Remove(tour);
                     DataProvider.Ins.DB.SaveChanges();
                     ShowAllChuyen();
-                    AddDataBinding();
 
                 }
                 catch (Exception ex)
@@ -214,12 +187,12 @@ namespace Tour
 
             if (index >= 0)
             {
-                id = tb_idtrip.Text;
-                //tb_idtrip.Text = id;
-                //tb_nametour.Text= dgv_trip.Rows[index].Cells["TEN"].Value.ToString();
-                //tb_price.Text = dgv_trip.Rows[index].Cells["GIA"].Value.ToString();
-                //cb_typetour.Text = dgv_trip.Rows[index].Cells["LOAI"].Value.ToString();
-                //richtbDetail.Text = dgv_trip.Rows[index].Cells["DACDIEM"].Value.ToString();
+                id = dgv_trip.Rows[index].Cells["ID"].Value.ToString();
+                tb_idtrip.Text = id;
+                tb_nametour.Text = dgv_trip.Rows[index].Cells["TEN"].Value.ToString();
+                tb_price.Text = dgv_trip.Rows[index].Cells["GIA"].Value.ToString();
+                cb_typetour.Text = dgv_trip.Rows[index].Cells["LOAI"].Value.ToString();
+                richtbDetail.Text = dgv_trip.Rows[index].Cells["DACDIEM"].Value.ToString();
 
                 LocationList = new List<DIADIEM>();
                 foreach(var item in (from dd in DataProvider.Ins.DB.DIADIEMs 
@@ -287,39 +260,22 @@ namespace Tour
                 return;
             }
             AddLocationForTour h = new AddLocationForTour(id);
+            Clear();
             this.Hide();
             h.ShowDialog();
             this.Show();
         }
 
-        private void idTuyencb_Enter(object sender, EventArgs e)
-        {
-            //ShowAllChuyen();
-        }
-
         private void tb_idtrip_Enter(object sender, EventArgs e)
         {
-            //ShowAllChuyen();
-        }
-
-        private void rdbRegular_Enter(object sender, EventArgs e)
-        {
-            //ShowAllChuyen();
-        }
-
-        private void rdbPromotional_Enter(object sender, EventArgs e)
-        {
-            //ShowAllChuyen();
         }
 
         private void tb_price_Enter(object sender, EventArgs e)
         {
-            //ShowAllChuyen();
         }
 
         private void tb_search_Leave(object sender, EventArgs e)
         {
-            //ShowAllChuyen();
         }
 
         private void tb_search_KeyPress(object sender, KeyPressEventArgs e)

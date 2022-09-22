@@ -11,7 +11,7 @@ namespace Tour.Utils
 {
     class Converter
     {
-        public Random random;
+        public Random random = new Random();
         public string RandomString(int length)
         {
             string chars = "ABCDABCDEFGHIJKLMNOPQRSTUVWXYZ01234567FGHIJKLMNOPQRSTUVGHIJKLMNOPQRSTUVBCDEFGHIJKLMNOPQRSTUVWXYZ01234567ABCDEFGHIJKLMNOPQRS8967LABCDELMNOPQRSTUVWXYZ0123456789MNOPQRSTUVWXYZ0123456789";

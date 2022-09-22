@@ -151,20 +151,12 @@ namespace Tour
 
         private void button5_Click(object sender, EventArgs e)
         {
-            AboutUs au = new AboutUs();
-            this.Hide();
-            au.ShowDialog();
-            this.Show();
-            hideSubmenu();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Help h = new Help();
-            this.Hide();
-            h.ShowDialog();
-            this.Show();
-            hideSubmenu();
+
         }
 
         private void button7_Click(object sender, EventArgs e)
