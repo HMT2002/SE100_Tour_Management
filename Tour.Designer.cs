@@ -31,13 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tour));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv_trip = new System.Windows.Forms.DataGridView();
-            this.data_tourid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHITIET = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tb_search = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnAddLocation = new System.Windows.Forms.Button();
+            this.lstbxLocation = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.richtbDetail = new System.Windows.Forms.RichTextBox();
             this.btn_newid = new System.Windows.Forms.Button();
@@ -70,7 +67,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 399);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(810, 253);
+            this.groupBox1.Size = new System.Drawing.Size(1454, 253);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tour list";
@@ -81,54 +78,13 @@
             this.dgv_trip.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_trip.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_trip.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_trip.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.data_tourid,
-            this.TEN,
-            this.CHITIET,
-            this.LOAI,
-            this.GIA});
             this.dgv_trip.Location = new System.Drawing.Point(14, 22);
             this.dgv_trip.Name = "dgv_trip";
             this.dgv_trip.ReadOnly = true;
             this.dgv_trip.RowHeadersWidth = 51;
-            this.dgv_trip.Size = new System.Drawing.Size(787, 225);
+            this.dgv_trip.Size = new System.Drawing.Size(1434, 225);
             this.dgv_trip.TabIndex = 1;
             this.dgv_trip.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_trip_CellClick_1);
-            // 
-            // data_tourid
-            // 
-            this.data_tourid.DataPropertyName = "ID";
-            this.data_tourid.HeaderText = "ID";
-            this.data_tourid.Name = "data_tourid";
-            this.data_tourid.ReadOnly = true;
-            // 
-            // TEN
-            // 
-            this.TEN.DataPropertyName = "TEN";
-            this.TEN.HeaderText = "Tên tour";
-            this.TEN.Name = "TEN";
-            this.TEN.ReadOnly = true;
-            // 
-            // CHITIET
-            // 
-            this.CHITIET.DataPropertyName = "DACDIEM";
-            this.CHITIET.HeaderText = "Chi tiết";
-            this.CHITIET.Name = "CHITIET";
-            this.CHITIET.ReadOnly = true;
-            // 
-            // LOAI
-            // 
-            this.LOAI.DataPropertyName = "LOAI";
-            this.LOAI.HeaderText = "Loại";
-            this.LOAI.Name = "LOAI";
-            this.LOAI.ReadOnly = true;
-            // 
-            // GIA
-            // 
-            this.GIA.DataPropertyName = "GIA";
-            this.GIA.HeaderText = "Giá";
-            this.GIA.Name = "GIA";
-            this.GIA.ReadOnly = true;
             // 
             // tb_search
             // 
@@ -143,6 +99,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnAddLocation);
+            this.groupBox2.Controls.Add(this.lstbxLocation);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.richtbDetail);
             this.groupBox2.Controls.Add(this.btn_newid);
@@ -158,10 +116,35 @@
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(16, 94);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(805, 239);
+            this.groupBox2.Size = new System.Drawing.Size(1444, 239);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tour details";
+            // 
+            // btnAddLocation
+            // 
+            this.btnAddLocation.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddLocation.BackgroundImage = global::Tour.Properties.Resources.Btn3;
+            this.btnAddLocation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddLocation.FlatAppearance.BorderSize = 0;
+            this.btnAddLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddLocation.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddLocation.Image = ((System.Drawing.Image)(resources.GetObject("btnAddLocation.Image")));
+            this.btnAddLocation.Location = new System.Drawing.Point(1354, 18);
+            this.btnAddLocation.Name = "btnAddLocation";
+            this.btnAddLocation.Size = new System.Drawing.Size(51, 53);
+            this.btnAddLocation.TabIndex = 48;
+            this.btnAddLocation.UseVisualStyleBackColor = true;
+            this.btnAddLocation.Click += new System.EventHandler(this.btnAddLocation_Click);
+            // 
+            // lstbxLocation
+            // 
+            this.lstbxLocation.FormattingEnabled = true;
+            this.lstbxLocation.ItemHeight = 19;
+            this.lstbxLocation.Location = new System.Drawing.Point(844, 18);
+            this.lstbxLocation.Name = "lstbxLocation";
+            this.lstbxLocation.Size = new System.Drawing.Size(504, 213);
+            this.lstbxLocation.TabIndex = 52;
             // 
             // label1
             // 
@@ -382,7 +365,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(843, 77);
+            this.panel1.Size = new System.Drawing.Size(1478, 77);
             this.panel1.TabIndex = 47;
             // 
             // gotoregistbtn
@@ -434,7 +417,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(843, 656);
+            this.ClientSize = new System.Drawing.Size(1478, 656);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.panel1);
@@ -491,10 +474,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lOAIDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn gIADataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dOANsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn data_tourid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CHITIET;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LOAI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GIA;
+        private System.Windows.Forms.ListBox lstbxLocation;
+        private System.Windows.Forms.Button btnAddLocation;
     }
 }

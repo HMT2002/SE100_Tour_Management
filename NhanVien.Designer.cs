@@ -33,6 +33,8 @@ namespace Tour
             this.btnPickPicture = new System.Windows.Forms.Button();
             this.pcbxAvatar = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtbxMail = new System.Windows.Forms.TextBox();
             this.txtbxSDT = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,7 +42,6 @@ namespace Tour
             this.btnClear = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgv_trip = new System.Windows.Forms.DataGridView();
             this.data_employeeid = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,18 +61,16 @@ namespace Tour
             this.panel3.AutoSize = true;
             this.panel3.Controls.Add(this.btnPickPicture);
             this.panel3.Controls.Add(this.pcbxAvatar);
-            this.panel3.Location = new System.Drawing.Point(16, 15);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Location = new System.Drawing.Point(12, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(307, 209);
+            this.panel3.Size = new System.Drawing.Size(230, 170);
             this.panel3.TabIndex = 11;
             // 
             // btnPickPicture
             // 
-            this.btnPickPicture.Location = new System.Drawing.Point(113, 177);
-            this.btnPickPicture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPickPicture.Location = new System.Drawing.Point(85, 144);
             this.btnPickPicture.Name = "btnPickPicture";
-            this.btnPickPicture.Size = new System.Drawing.Size(100, 28);
+            this.btnPickPicture.Size = new System.Drawing.Size(75, 23);
             this.btnPickPicture.TabIndex = 4;
             this.btnPickPicture.Text = "Chọn ảnh";
             this.btnPickPicture.UseVisualStyleBackColor = true;
@@ -81,10 +80,9 @@ namespace Tour
             // 
             this.pcbxAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pcbxAvatar.Image = global::Tour.Properties.Resources.ic_image_empty_128;
-            this.pcbxAvatar.Location = new System.Drawing.Point(4, 4);
-            this.pcbxAvatar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbxAvatar.Location = new System.Drawing.Point(3, 3);
             this.pcbxAvatar.Name = "pcbxAvatar";
-            this.pcbxAvatar.Size = new System.Drawing.Size(297, 166);
+            this.pcbxAvatar.Size = new System.Drawing.Size(223, 135);
             this.pcbxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbxAvatar.TabIndex = 0;
             this.pcbxAvatar.TabStop = false;
@@ -92,6 +90,8 @@ namespace Tour
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtbxMail);
             this.panel1.Controls.Add(this.txtbxSDT);
             this.panel1.Controls.Add(this.label2);
@@ -99,64 +99,74 @@ namespace Tour
             this.panel1.Controls.Add(this.btnClear);
             this.panel1.Controls.Add(this.btnUpdate);
             this.panel1.Controls.Add(this.btnXoa);
-            this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Location = new System.Drawing.Point(331, 15);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(248, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(724, 209);
+            this.panel1.Size = new System.Drawing.Size(544, 170);
             this.panel1.TabIndex = 10;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 91);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Mail";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 65);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Số điện thoại";
             // 
             // txtbxMail
             // 
-            this.txtbxMail.Location = new System.Drawing.Point(113, 103);
-            this.txtbxMail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxMail.Location = new System.Drawing.Point(85, 84);
             this.txtbxMail.Name = "txtbxMail";
-            this.txtbxMail.Size = new System.Drawing.Size(308, 22);
+            this.txtbxMail.Size = new System.Drawing.Size(456, 20);
             this.txtbxMail.TabIndex = 12;
             // 
             // txtbxSDT
             // 
-            this.txtbxSDT.Location = new System.Drawing.Point(113, 71);
-            this.txtbxSDT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxSDT.Location = new System.Drawing.Point(85, 58);
             this.txtbxSDT.Name = "txtbxSDT";
-            this.txtbxSDT.Size = new System.Drawing.Size(308, 22);
+            this.txtbxSDT.Size = new System.Drawing.Size(456, 20);
             this.txtbxSDT.TabIndex = 11;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 43);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(3, 35);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 16);
+            this.label2.Size = new System.Drawing.Size(26, 13);
             this.label2.TabIndex = 10;
             this.label2.Text = "Tên";
             // 
             // txtbxName
             // 
-            this.txtbxName.Location = new System.Drawing.Point(113, 39);
-            this.txtbxName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxName.Location = new System.Drawing.Point(85, 32);
             this.txtbxName.Name = "txtbxName";
-            this.txtbxName.Size = new System.Drawing.Size(308, 22);
+            this.txtbxName.Size = new System.Drawing.Size(456, 20);
             this.txtbxName.TabIndex = 6;
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(323, 4);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClear.Location = new System.Drawing.Point(466, 3);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(100, 28);
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 3;
-            this.btnClear.Text = "Mới";
+            this.btnClear.Text = "Làm mới";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(323, 177);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdate.Location = new System.Drawing.Point(242, 144);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(100, 28);
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -164,35 +174,22 @@ namespace Tour
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(215, 177);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXoa.Location = new System.Drawing.Point(161, 144);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(100, 28);
+            this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(109, 177);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 28);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panel2
             // 
             this.panel2.AutoSize = true;
             this.panel2.Controls.Add(this.dgv_trip);
             this.panel2.Controls.Add(this.btnExit);
-            this.panel2.Location = new System.Drawing.Point(16, 231);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(12, 188);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1040, 370);
+            this.panel2.Size = new System.Drawing.Size(780, 301);
             this.panel2.TabIndex = 9;
             // 
             // dgv_trip
@@ -206,12 +203,11 @@ namespace Tour
             this.TEN,
             this.SDT,
             this.MAIL});
-            this.dgv_trip.Location = new System.Drawing.Point(12, 0);
-            this.dgv_trip.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_trip.Location = new System.Drawing.Point(9, 0);
             this.dgv_trip.Name = "dgv_trip";
             this.dgv_trip.ReadOnly = true;
             this.dgv_trip.RowHeadersWidth = 51;
-            this.dgv_trip.Size = new System.Drawing.Size(1024, 331);
+            this.dgv_trip.Size = new System.Drawing.Size(768, 269);
             this.dgv_trip.TabIndex = 4;
             this.dgv_trip.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_trip_CellClick);
             // 
@@ -219,7 +215,6 @@ namespace Tour
             // 
             this.data_employeeid.DataPropertyName = "ID";
             this.data_employeeid.HeaderText = "ID";
-            this.data_employeeid.MinimumWidth = 6;
             this.data_employeeid.Name = "data_employeeid";
             this.data_employeeid.ReadOnly = true;
             // 
@@ -227,7 +222,6 @@ namespace Tour
             // 
             this.TEN.DataPropertyName = "TEN";
             this.TEN.HeaderText = "Tên";
-            this.TEN.MinimumWidth = 6;
             this.TEN.Name = "TEN";
             this.TEN.ReadOnly = true;
             // 
@@ -235,7 +229,6 @@ namespace Tour
             // 
             this.SDT.DataPropertyName = "SDT";
             this.SDT.HeaderText = "Số điện thoại";
-            this.SDT.MinimumWidth = 6;
             this.SDT.Name = "SDT";
             this.SDT.ReadOnly = true;
             // 
@@ -243,16 +236,14 @@ namespace Tour
             // 
             this.MAIL.DataPropertyName = "MAIL";
             this.MAIL.HeaderText = "Mail";
-            this.MAIL.MinimumWidth = 6;
             this.MAIL.Name = "MAIL";
             this.MAIL.ReadOnly = true;
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(936, 338);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExit.Location = new System.Drawing.Point(702, 275);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(100, 28);
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -260,16 +251,14 @@ namespace Tour
             // 
             // NhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1072, 623);
+            this.ClientSize = new System.Drawing.Size(804, 506);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "NhanVien";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NhanVien";
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvatar)).EndInit();
@@ -293,7 +282,6 @@ namespace Tour
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.DataGridView dgv_trip;
@@ -303,5 +291,7 @@ namespace Tour
         private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAIL;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
     }
 }

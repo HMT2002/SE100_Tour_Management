@@ -16,19 +16,24 @@ namespace Tour
 {
     public partial class Tour : Form
     {
-        ChuyenBLL bllChuyen;
         string id;
         string randomcode;
+        List<DIADIEM> LocationList = new List<DIADIEM>();
 
         public Tour()
         {
             InitializeComponent();
-            bllChuyen = new ChuyenBLL();
             tb_search.ForeColor = Color.LightGray;
             tb_search.Text = "Enter Tour ID to search";
             this.tb_search.Leave += new System.EventHandler(this.textBox1_Leave);
             this.tb_search.Enter += new System.EventHandler(this.textBox1_Enter);
         }
+
+        private void AddDataBinding()
+        {
+
+        }
+
         private void textBox1_Leave(object sender, EventArgs e)
         {
             if (tb_search.Text == "")
@@ -48,21 +53,16 @@ namespace Tour
         }
         public void ShowAllChuyen()
         {
-            //dgv_trip.DataSource = bllChuyen.getAllChuyen();
-            dgv_trip.DataSource = DataProvider.Ins.DB.TOURs.Select(t => new
-            {
-                t.ID,
-                t.TEN,
-                t.LOAI,
-                t.DACDIEM,
-                t.GIA,
-            }
-                ).ToList();
+            dgv_trip.DataSource = DataProvider.Ins.DB.TOURs.Select(t=>t).ToList();
+
+            lstbxLocation.DataSource = LocationList;
+            lstbxLocation.DisplayMember = "TEN";
 
         }
         private void TRIPManageTour_Load(object sender, EventArgs e)
         {
             ShowAllChuyen();
+
         }
         public bool CheckData()
         {
@@ -75,6 +75,7 @@ namespace Tour
             {
                 return false;
             }
+            
             return true;
         }
         private void update_Click(object sender, EventArgs e)
@@ -94,19 +95,35 @@ namespace Tour
                     tour.DACDIEM = richtbDetail.Text;
                     DataProvider.Ins.DB.SaveChanges();
                     ShowAllChuyen();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
+                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+                {
+                    Exception raise = dbEx;
+                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    {
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            string message = string.Format("{0}:{1}",
+                                validationErrors.Entry.Entity.ToString(),
+                                validationError.ErrorMessage);
+                            // raise a new exception nesting
+                            // the current instance as InnerException
+                            raise = new InvalidOperationException(message, raise);
+                        }
+                    }
+                    throw raise;
+                }
+
                 Clear();
             }
         }
-        void Clear()
+        public void Clear()
         {
-            tb_price.Text = cb_typetour.Text = tb_nametour.Text = tb_idtrip.Text = cb_typetour.Text = richtbDetail.Text = "";
-            cb_typetour.SelectedItem = null;
+            cb_typetour.SelectedIndex =-1;
+            id= tb_price.Text = cb_typetour.Text = tb_nametour.Text = tb_idtrip.Text = cb_typetour.Text = richtbDetail.Text= "";
+            lstbxLocation.DataSource = null;
+            LocationList = new List<DIADIEM>();
         }
         private void add_Click(object sender, EventArgs e)
         {
@@ -117,8 +134,16 @@ namespace Tour
                     randomcode = Converter.Instance.RandomString(5);
                     var tour = new TOUR() { ID = randomcode, GIA = Convert.ToDecimal(tb_price.Text), TEN = tb_nametour.Text, LOAI = cb_typetour.Text, DACDIEM = richtbDetail.Text };
                     DataProvider.Ins.DB.TOURs.Add(tour);
+
+                    foreach (DIADIEM Location in LocationList)
+                    {
+                        string randomcode2 = Converter.Instance.RandomString2(5);
+                        var diadiemdulich = new tb_DIADIEM_DULICH() { ID = randomcode2, IDDIADIEM = Location.ID, IDTOUR = id };
+                        DataProvider.Ins.DB.tb_DIADIEM_DULICH.Add(diadiemdulich);
+                    }
                     DataProvider.Ins.DB.SaveChanges();
                     ShowAllChuyen();
+
                 }
                 catch (Exception ex)
                 {
@@ -140,10 +165,11 @@ namespace Tour
                 }
                 try
                 {
-                    TOUR tour= DataProvider.Ins.DB.TOURs.Where(x => x.ID == id).FirstOrDefault();
+                    TOUR tour = DataProvider.Ins.DB.TOURs.Where(x => x.ID == id).FirstOrDefault();
                     DataProvider.Ins.DB.TOURs.Remove(tour);
                     DataProvider.Ins.DB.SaveChanges();
                     ShowAllChuyen();
+
                 }
                 catch (Exception ex)
                 {
@@ -158,33 +184,37 @@ namespace Tour
         private void dgv_trip_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
-            DateTime Time = new DateTime();
-            string kind;
+
             if (index >= 0)
             {
-                id = dgv_trip.Rows[index].Cells["data_tourid"].Value.ToString();
-                tb_idtrip.Text = dgv_trip.Rows[index].Cells["data_tourid"].Value.ToString();
-                cb_typetour.Text = dgv_trip.Rows[index].Cells["LOAI"].Value.ToString();
-                tb_price.Text = dgv_trip.Rows[index].Cells["GIA"].Value.ToString();
-                richtbDetail.Text = dgv_trip.Rows[index].Cells["CHITIET"].Value.ToString();
+                id = dgv_trip.Rows[index].Cells["ID"].Value.ToString();
+                tb_idtrip.Text = id;
                 tb_nametour.Text = dgv_trip.Rows[index].Cells["TEN"].Value.ToString();
+                tb_price.Text = dgv_trip.Rows[index].Cells["GIA"].Value.ToString();
+                cb_typetour.Text = dgv_trip.Rows[index].Cells["LOAI"].Value.ToString();
+                richtbDetail.Text = dgv_trip.Rows[index].Cells["DACDIEM"].Value.ToString();
 
+                LocationList = new List<DIADIEM>();
+                foreach(var item in (from dd in DataProvider.Ins.DB.DIADIEMs 
+                                     join tb_belong in DataProvider.Ins.DB.tb_DIADIEM_DULICH on dd.ID equals tb_belong.IDDIADIEM
+                                     where tb_belong.IDTOUR == id select dd)
+                                     .ToList())
+                {
+                    LocationList.Add(item);
+                }
+                lstbxLocation.DataSource = LocationList;
+                lstbxLocation.DisplayMember = "TEN";
             }
         }
 
         private void tb_search_TextChanged_1(object sender, EventArgs e)
         {
-            string value = tb_search.Text;
-            if (!string.IsNullOrEmpty(value) && value != "Enter Tour ID to search")
-            {
-                dgv_trip.DataSource = bllChuyen.FindChuyen(value);
-            }
-            else { ShowAllChuyen(); }
-        }
+            //string value = tb_search.Text;
+            //if (!string.IsNullOrEmpty(value) && value != "Enter Tour ID to search")
+            //{
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            //}
+            //else { ShowAllChuyen(); }
         }
 
         private void backtoroutebtn_Click(object sender, EventArgs e)
@@ -218,64 +248,34 @@ namespace Tour
             }
         }
 
-        private void cbMinute_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_newid_Click(object sender, EventArgs e)
         {
             Clear();
         }
 
-        private void idTuyencb_Enter(object sender, EventArgs e)
+        private void btnAddLocation_Click(object sender, EventArgs e)
         {
-            ShowAllChuyen();
+            if (id == null)
+            {
+                return;
+            }
+            AddLocationForTour h = new AddLocationForTour(id);
+            Clear();
+            this.Hide();
+            h.ShowDialog();
+            this.Show();
         }
 
         private void tb_idtrip_Enter(object sender, EventArgs e)
         {
-            ShowAllChuyen();
-        }
-
-        private void rdbRegular_Enter(object sender, EventArgs e)
-        {
-            ShowAllChuyen();
-        }
-
-        private void rdbPromotional_Enter(object sender, EventArgs e)
-        {
-            ShowAllChuyen();
         }
 
         private void tb_price_Enter(object sender, EventArgs e)
         {
-            ShowAllChuyen();
-        }
-
-        private void dtpKhoiHanh_Enter(object sender, EventArgs e)
-        {
-            ShowAllChuyen();
-        }
-
-        private void cbHour_Enter(object sender, EventArgs e)
-        {
-            ShowAllChuyen();
-        }
-
-        private void cbMinute_Enter(object sender, EventArgs e)
-        {
-            ShowAllChuyen();
-        }
-
-        private void cbTTransporation_Enter(object sender, EventArgs e)
-        {
-            ShowAllChuyen();
         }
 
         private void tb_search_Leave(object sender, EventArgs e)
         {
-            ShowAllChuyen();
         }
 
         private void tb_search_KeyPress(object sender, KeyPressEventArgs e)

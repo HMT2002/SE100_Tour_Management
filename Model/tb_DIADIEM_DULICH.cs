@@ -15,10 +15,10 @@ namespace Tour.Model
     public partial class tb_DIADIEM_DULICH
     {
         public string ID { get; set; }
-        public string IDDOAN { get; set; }
+        public string IDTOUR { get; set; }
         public string IDDIADIEM { get; set; }
     
         public virtual DIADIEM DIADIEM { get; set; }
-        public virtual DOAN DOAN { get; set; }
+        public virtual TOUR TOUR { get; set; }
     }
 }

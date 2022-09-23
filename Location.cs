@@ -163,8 +163,8 @@ namespace Tour
 
                     DataProvider.Ins.DB.DIADIEMs.Add(location);
                     DataProvider.Ins.DB.SaveChanges();
-                    Clear();
                     showAll();
+                    Clear();
 
                 }
                 catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)

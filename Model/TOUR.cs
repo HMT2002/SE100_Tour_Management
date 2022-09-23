@@ -18,6 +18,7 @@ namespace Tour.Model
         public TOUR()
         {
             this.DOANs = new HashSet<DOAN>();
+            this.tb_DIADIEM_DULICH = new HashSet<tb_DIADIEM_DULICH>();
         }
     
         public string ID { get; set; }
@@ -28,5 +29,7 @@ namespace Tour.Model
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DOAN> DOANs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_DIADIEM_DULICH> tb_DIADIEM_DULICH { get; set; }
     }
 }

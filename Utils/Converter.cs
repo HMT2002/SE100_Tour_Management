@@ -11,13 +11,35 @@ namespace Tour.Utils
 {
     class Converter
     {
-        public Random random;
+        public Random random = new Random();
         public string RandomString(int length)
         {
-            string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            string chars = "ABCDABCDEFGHIJKLMNOPQRSTUVWXYZ01234567FGHIJKLMNOPQRSTUVGHIJKLMNOPQRSTUVBCDEFGHIJKLMNOPQRSTUVWXYZ01234567ABCDEFGHIJKLMNOPQRS8967LABCDELMNOPQRSTUVWXYZ0123456789MNOPQRSTUVWXYZ0123456789";
             random = new Random();
             return new string(Enumerable.Repeat(chars, length)
                 .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
+        public string RandomString2(int size, bool lowerCase = false)
+        {
+            var builder = new StringBuilder(size);
+
+            // Unicode/ASCII Letters are divided into two blocks
+            // (Letters 65–90 / 97–122):
+            // The first group containing the uppercase letters and
+            // the second group containing the lowercase.  
+
+            // char is a single Unicode character  
+            char offset = lowerCase ? 'a' : 'A';
+            const int lettersOffset = 26; // A...Z or a..z: length=26  
+
+            for (var i = 0; i < size; i++)
+            {
+                var @char = (char)random.Next(offset, offset + lettersOffset);
+                builder.Append(@char);
+            }
+
+            return lowerCase ? builder.ToString().ToLower() : builder.ToString();
         }
 
         public byte[] ImageToByte(Image img)

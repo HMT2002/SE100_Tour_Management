@@ -24,6 +24,7 @@ namespace Tour
         public NhanVien()
         {
             InitializeComponent();
+            dgv_trip.AutoGenerateColumns = false;
             showAll();
         }
 
@@ -61,8 +62,8 @@ namespace Tour
         }
         private void Clear()
         {
-            txtbxName.Text = "";
-
+            txtbxName.Text = txtbxSDT.Text = txtbxMail.Text = "";
+            img_data = null;
             pcbxAvatar.Image = null;
         }
 
@@ -104,12 +105,54 @@ namespace Tour
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure to delete this?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                if (id == null || id.CompareTo(string.Empty) == 0)
+                {
+                    return;
+                }
+                try
+                {
+                    ACCOUNT account = DataProvider.Ins.DB.ACCOUNTs.Where(x => x.ID == id).FirstOrDefault();
+                    DataProvider.Ins.DB.ACCOUNTs.Remove(account);
 
+                    NHANVIEN nhanvien = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault();
+                    DataProvider.Ins.DB.NHANVIENs.Remove(nhanvien);
+                    DataProvider.Ins.DB.SaveChanges();
+                    showAll();
+                    Clear();
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (id == null || id.CompareTo(string.Empty) == 0)
+            {
+                return;
+            }
+            try
+            {
+                var nhanvien = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault();
+                nhanvien.TEN = txtbxName.Text;
+                nhanvien.MAIL = txtbxMail.Text;
+                nhanvien.SDT = txtbxSDT.Text;
+                nhanvien.PICBI = img_data;
+                DataProvider.Ins.DB.SaveChanges();
+                showAll();
+                Clear();
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
