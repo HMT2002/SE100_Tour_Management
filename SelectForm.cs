@@ -225,5 +225,14 @@ namespace Tour
             this.Show();
             hideSubmenu();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            NhiemVuTrongDoan h = new NhiemVuTrongDoan();
+            this.Hide();
+            h.ShowDialog();
+            this.Show();
+            hideSubmenu();
+        }
     }
 }
