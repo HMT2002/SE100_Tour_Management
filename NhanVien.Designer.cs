@@ -49,6 +49,7 @@ namespace Tour
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExit = new System.Windows.Forms.Button();
+            this.tb_search = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvatar)).BeginInit();
             this.panel1.SuspendLayout();
@@ -90,6 +91,7 @@ namespace Tour
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.tb_search);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtbxMail);
@@ -164,7 +166,7 @@ namespace Tour
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(242, 144);
+            this.btnUpdate.Location = new System.Drawing.Point(466, 144);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 2;
@@ -174,7 +176,7 @@ namespace Tour
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(161, 144);
+            this.btnXoa.Location = new System.Drawing.Point(385, 144);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 1;
@@ -249,6 +251,15 @@ namespace Tour
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // tb_search
+            // 
+            this.tb_search.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_search.Location = new System.Drawing.Point(85, 138);
+            this.tb_search.Name = "tb_search";
+            this.tb_search.Size = new System.Drawing.Size(294, 29);
+            this.tb_search.TabIndex = 20;
+            this.tb_search.TextChanged += new System.EventHandler(this.tb_search_TextChanged);
+            // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,5 +304,6 @@ namespace Tour
         private System.Windows.Forms.DataGridViewTextBoxColumn MAIL;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tb_search;
     }
 }

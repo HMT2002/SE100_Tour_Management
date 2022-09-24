@@ -11,6 +11,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using Tour.Model;
 using Tour.Utils;
+using System.Data.Entity.SqlServer;
 
 namespace Tour
 {
@@ -207,14 +208,24 @@ namespace Tour
             }
         }
 
+        DataTable dt = new DataTable("TOUR");
+
         private void tb_search_TextChanged_1(object sender, EventArgs e)
         {
-            //string value = tb_search.Text;
-            //if (!string.IsNullOrEmpty(value) && value != "Enter Tour ID to search")
-            //{
+            string value = tb_search.Text;
+            if (!string.IsNullOrEmpty(value))
+            {
+                try
+                {
+                    dgv_trip.DataSource = DataProvider.Ins.DB.TOURs.Where(t => SqlFunctions.PatIndex("%"+value+"%", t.ID) > 0).Select(t => t).ToList();
+                    AddDataBinding();
+                }
+                catch
+                {
 
-            //}
-            //else { ShowAllChuyen(); }
+                }
+            }
+            else { ShowAllChuyen(); }
         }
 
         private void backtoroutebtn_Click(object sender, EventArgs e)

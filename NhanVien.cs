@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.SqlServer;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -153,6 +154,23 @@ namespace Tour
             {
                 MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void tb_search_TextChanged(object sender, EventArgs e)
+        {
+            string value = tb_search.Text;
+            if (!string.IsNullOrEmpty(value))
+            {
+                try
+                {
+                    dgv_trip.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t => SqlFunctions.PatIndex("%" + value + "%", t.ID) > 0).Select(t => t).ToList();
+                }
+                catch
+                {
+
+                }
+            }
+            else { showAll(); }
         }
     }
 }

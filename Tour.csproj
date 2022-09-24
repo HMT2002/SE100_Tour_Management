@@ -385,7 +385,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Tour.cqlsh" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
