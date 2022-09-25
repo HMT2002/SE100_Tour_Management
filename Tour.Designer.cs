@@ -55,6 +55,8 @@
             this.gotoregistbtn = new System.Windows.Forms.Button();
             this.backtoroutebtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.rdNameSearch = new System.Windows.Forms.RadioButton();
+            this.rdIDSearch = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_trip)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -412,12 +414,44 @@
             this.label8.Text = "TOUR MANAGEMENT";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // rdNameSearch
+            // 
+            this.rdNameSearch.AutoSize = true;
+            this.rdNameSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdNameSearch.ForeColor = System.Drawing.Color.Black;
+            this.rdNameSearch.Location = new System.Drawing.Point(860, 361);
+            this.rdNameSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.rdNameSearch.Name = "rdNameSearch";
+            this.rdNameSearch.Size = new System.Drawing.Size(64, 23);
+            this.rdNameSearch.TabIndex = 18;
+            this.rdNameSearch.Text = "Name";
+            this.rdNameSearch.UseVisualStyleBackColor = true;
+            this.rdNameSearch.Enter += new System.EventHandler(this.rdNameSearch_Enter);
+            // 
+            // rdIDSearch
+            // 
+            this.rdIDSearch.AutoSize = true;
+            this.rdIDSearch.Checked = true;
+            this.rdIDSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdIDSearch.ForeColor = System.Drawing.Color.Black;
+            this.rdIDSearch.Location = new System.Drawing.Point(809, 363);
+            this.rdIDSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.rdIDSearch.Name = "rdIDSearch";
+            this.rdIDSearch.Size = new System.Drawing.Size(43, 23);
+            this.rdIDSearch.TabIndex = 17;
+            this.rdIDSearch.TabStop = true;
+            this.rdIDSearch.Text = "ID";
+            this.rdIDSearch.UseVisualStyleBackColor = true;
+            this.rdIDSearch.Enter += new System.EventHandler(this.rdIDSearch_Enter);
+            // 
             // Tour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(1478, 656);
+            this.Controls.Add(this.rdNameSearch);
+            this.Controls.Add(this.rdIDSearch);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.panel1);
@@ -476,5 +510,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dOANsDataGridViewTextBoxColumn;
         private System.Windows.Forms.ListBox lstbxLocation;
         private System.Windows.Forms.Button btnAddLocation;
+        private System.Windows.Forms.RadioButton rdNameSearch;
+        private System.Windows.Forms.RadioButton rdIDSearch;
     }
 }

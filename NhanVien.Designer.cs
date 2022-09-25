@@ -33,6 +33,7 @@ namespace Tour
             this.btnPickPicture = new System.Windows.Forms.Button();
             this.pcbxAvatar = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tb_search = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtbxMail = new System.Windows.Forms.TextBox();
@@ -49,7 +50,8 @@ namespace Tour
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExit = new System.Windows.Forms.Button();
-            this.tb_search = new System.Windows.Forms.TextBox();
+            this.rdNameSearch = new System.Windows.Forms.RadioButton();
+            this.rdIDSearch = new System.Windows.Forms.RadioButton();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvatar)).BeginInit();
             this.panel1.SuspendLayout();
@@ -91,6 +93,8 @@ namespace Tour
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.rdNameSearch);
+            this.panel1.Controls.Add(this.rdIDSearch);
             this.panel1.Controls.Add(this.tb_search);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
@@ -105,6 +109,15 @@ namespace Tour
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(544, 170);
             this.panel1.TabIndex = 10;
+            // 
+            // tb_search
+            // 
+            this.tb_search.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_search.Location = new System.Drawing.Point(126, 138);
+            this.tb_search.Name = "tb_search";
+            this.tb_search.Size = new System.Drawing.Size(253, 29);
+            this.tb_search.TabIndex = 20;
+            this.tb_search.TextChanged += new System.EventHandler(this.tb_search_TextChanged);
             // 
             // label3
             // 
@@ -251,14 +264,33 @@ namespace Tour
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // tb_search
+            // rdNameSearch
             // 
-            this.tb_search.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_search.Location = new System.Drawing.Point(85, 138);
-            this.tb_search.Name = "tb_search";
-            this.tb_search.Size = new System.Drawing.Size(294, 29);
-            this.tb_search.TabIndex = 20;
-            this.tb_search.TextChanged += new System.EventHandler(this.tb_search_TextChanged);
+            this.rdNameSearch.AutoSize = true;
+            this.rdNameSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdNameSearch.ForeColor = System.Drawing.Color.Black;
+            this.rdNameSearch.Location = new System.Drawing.Point(57, 141);
+            this.rdNameSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.rdNameSearch.Name = "rdNameSearch";
+            this.rdNameSearch.Size = new System.Drawing.Size(64, 23);
+            this.rdNameSearch.TabIndex = 22;
+            this.rdNameSearch.Text = "Name";
+            this.rdNameSearch.UseVisualStyleBackColor = true;
+            // 
+            // rdIDSearch
+            // 
+            this.rdIDSearch.AutoSize = true;
+            this.rdIDSearch.Checked = true;
+            this.rdIDSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdIDSearch.ForeColor = System.Drawing.Color.Black;
+            this.rdIDSearch.Location = new System.Drawing.Point(6, 143);
+            this.rdIDSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.rdIDSearch.Name = "rdIDSearch";
+            this.rdIDSearch.Size = new System.Drawing.Size(43, 23);
+            this.rdIDSearch.TabIndex = 21;
+            this.rdIDSearch.TabStop = true;
+            this.rdIDSearch.Text = "ID";
+            this.rdIDSearch.UseVisualStyleBackColor = true;
             // 
             // NhanVien
             // 
@@ -305,5 +337,7 @@ namespace Tour
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_search;
+        private System.Windows.Forms.RadioButton rdNameSearch;
+        private System.Windows.Forms.RadioButton rdIDSearch;
     }
 }

@@ -163,7 +163,16 @@ namespace Tour
             {
                 try
                 {
-                    dgv_trip.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t => SqlFunctions.PatIndex("%" + value + "%", t.ID) > 0).Select(t => t).ToList();
+                    if (rdIDSearch.Checked)
+                    {
+                        dgv_trip.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t => SqlFunctions.PatIndex("%" + value + "%", t.ID) > 0).Select(t => t).ToList();
+
+                    }
+                    else if (rdNameSearch.Checked)
+                    {
+                        dgv_trip.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t => SqlFunctions.PatIndex("%" + value + "%", t.TEN) > 0).Select(t => t).ToList();
+
+                    }
                 }
                 catch
                 {
