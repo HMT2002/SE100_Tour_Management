@@ -103,6 +103,8 @@ namespace Tour
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btngotocsdl = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.backtotourbtn = new System.Windows.Forms.Button();
             this.lbDate = new System.Windows.Forms.Label();
@@ -110,8 +112,6 @@ namespace Tour
             this.btExit = new System.Windows.Forms.Button();
             this.btCreate = new System.Windows.Forms.Button();
             this.btnGo = new System.Windows.Forms.Button();
-            this.btngotocsdl = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel17.SuspendLayout();
@@ -974,6 +974,42 @@ namespace Tour
             this.panel2.Size = new System.Drawing.Size(447, 358);
             this.panel2.TabIndex = 2;
             // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(814, 709);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(137, 33);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "VIEW TOUR";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btngotocsdl
+            // 
+            this.btngotocsdl.BackColor = System.Drawing.Color.Transparent;
+            this.btngotocsdl.BackgroundImage = global::Tour.Properties.Resources.btn4;
+            this.btngotocsdl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btngotocsdl.FlatAppearance.BorderSize = 0;
+            this.btngotocsdl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btngotocsdl.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btngotocsdl.Location = new System.Drawing.Point(17, 710);
+            this.btngotocsdl.Margin = new System.Windows.Forms.Padding(4);
+            this.btngotocsdl.Name = "btngotocsdl";
+            this.btngotocsdl.Size = new System.Drawing.Size(292, 36);
+            this.btngotocsdl.TabIndex = 15;
+            this.btngotocsdl.Text = "Go to ticket database";
+            this.btngotocsdl.UseVisualStyleBackColor = false;
+            this.btngotocsdl.Click += new System.EventHandler(this.btngotocsdl_Click);
+            // 
             // panel5
             // 
             this.panel5.BackgroundImage = global::Tour.Properties.Resources.Tour1;
@@ -982,7 +1018,7 @@ namespace Tour
             this.panel5.Controls.Add(this.label22);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1312, 92);
             this.panel5.TabIndex = 14;
@@ -996,7 +1032,7 @@ namespace Tour
             this.backtotourbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backtotourbtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backtotourbtn.Location = new System.Drawing.Point(9, 15);
-            this.backtotourbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.backtotourbtn.Margin = new System.Windows.Forms.Padding(4);
             this.backtotourbtn.Name = "backtotourbtn";
             this.backtotourbtn.Size = new System.Drawing.Size(97, 47);
             this.backtotourbtn.TabIndex = 8;
@@ -1082,41 +1118,6 @@ namespace Tour
             this.btnGo.UseVisualStyleBackColor = true;
             this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
             // 
-            // btngotocsdl
-            // 
-            this.btngotocsdl.BackColor = System.Drawing.Color.Transparent;
-            this.btngotocsdl.BackgroundImage = global::Tour.Properties.Resources.btn4;
-            this.btngotocsdl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btngotocsdl.FlatAppearance.BorderSize = 0;
-            this.btngotocsdl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btngotocsdl.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btngotocsdl.Location = new System.Drawing.Point(17, 710);
-            this.btngotocsdl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btngotocsdl.Name = "btngotocsdl";
-            this.btngotocsdl.Size = new System.Drawing.Size(292, 36);
-            this.btngotocsdl.TabIndex = 15;
-            this.btngotocsdl.Text = "Go to ticket database";
-            this.btngotocsdl.UseVisualStyleBackColor = false;
-            this.btngotocsdl.Click += new System.EventHandler(this.btngotocsdl_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(814, 710);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 31);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "VIEW TOUR";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // DangKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1191,6 +1192,7 @@ namespace Tour
             this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
