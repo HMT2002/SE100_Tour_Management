@@ -1,13 +1,17 @@
 <head>
-Tour_Management
+Cần tạo database trước
+
 </head>
 <body>
+
 <div>
-Có 2 việc cần làm để tạo database
-1. Mở script.sql trong folder SQL, kéo chạy hết nguyên file
-2. Sửa lại ConnectionString trong App.config 
-      <connectionStrings><add name="QL_TOUR_DU_LICHEntities"...;data source=.\<h2>MSSQLSERVER01</h2>... /></connectionStrings>
+1. Mở file SQL/script.sql, execute hết file
+<br>
+2. Trong App.config, đổi connection string
+</div>
+<div>
+string=&quot;data source=.\ <b>mssqlserver01</b>
 thành
-      <connectionStrings><add name="QL_TOUR_DU_LICHEntities"...;data source=.\<h2>Tên server SQL trên máy</h2>... /></connectionStrings>
+string=&quot;data source=.\ <b>Your database name</b>
 </div>
 </body>
