@@ -162,6 +162,16 @@ namespace Tour
         public string SurName, Name, address, phonenumber,typeCus, gender,CMND,TourID,tourist,typeoftour,RouteID,TenChuyen;
         public int Year, Month, Day, vYear, vMonth, vDay,price,tienhoantra,lephihoantra;
         bool checkCus,checkRes;
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ViewTour v = new ViewTour();
+            this.Hide();
+            v.ShowDialog();
+            this.Show();
+
+        }
+
         public bool CreateCustomer()
         {
             tblTicket tk = new tblTicket();
