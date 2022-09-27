@@ -29,6 +29,7 @@ namespace Tour
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddLocationForTour));
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -44,14 +45,20 @@ namespace Tour
             this.panel2.Controls.Add(this.btnExit);
             this.panel2.Location = new System.Drawing.Point(12, 377);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(776, 66);
+            this.panel2.Size = new System.Drawing.Size(782, 66);
             this.panel2.TabIndex = 3;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(617, 40);
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::Tour.Properties.Resources.Btn3;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(573, 25);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 38);
             this.button1.TabIndex = 4;
             this.button1.Text = "Update";
             this.button1.UseVisualStyleBackColor = true;
@@ -59,9 +66,14 @@ namespace Tour
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(698, 40);
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.BackgroundImage = global::Tour.Properties.Resources.Btn3;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Location = new System.Drawing.Point(679, 25);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.Size = new System.Drawing.Size(100, 38);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "Cancel";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -70,9 +82,9 @@ namespace Tour
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(15, 12);
+            this.listView1.Location = new System.Drawing.Point(9, 12);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(770, 264);
+            this.listView1.Size = new System.Drawing.Size(785, 240);
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
@@ -80,9 +92,9 @@ namespace Tour
             // listView2
             // 
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(15, 282);
+            this.listView2.Location = new System.Drawing.Point(12, 271);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(773, 89);
+            this.listView2.Size = new System.Drawing.Size(782, 100);
             this.listView2.TabIndex = 5;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView2_ItemSelectionChanged);
@@ -91,6 +103,7 @@ namespace Tour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.listView1);

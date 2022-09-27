@@ -181,5 +181,17 @@ namespace Tour
             }
             else { showAll(); }
         }
+
+        private void rdNameSearch_Enter(object sender, EventArgs e)
+        {
+            tb_search.Text = "";
+
+        }
+
+        private void rdIDSearch_Enter(object sender, EventArgs e)
+        {
+            tb_search.Text = "";
+
+        }
     }
 }

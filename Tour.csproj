@@ -151,6 +151,12 @@
     <Compile Include="CSDLPhieuDatCho.Designer.cs">
       <DependentUpon>CSDLPhieuDatCho.cs</DependentUpon>
     </Compile>
+    <Compile Include="DoanDuLich.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoanDuLich.Designer.cs">
+      <DependentUpon>DoanDuLich.cs</DependentUpon>
+    </Compile>
     <Compile Include="Hotel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -321,6 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DangKy.resx">
       <DependentUpon>DangKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoanDuLich.resx">
+      <DependentUpon>DoanDuLich.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forgotpass.resx">
       <DependentUpon>forgotpass.cs</DependentUpon>
