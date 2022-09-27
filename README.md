@@ -12,6 +12,6 @@ Cần tạo database trước
 <div>
 string=&quot;data source=.\ <b>mssqlserver01</b>
 thành
-string=&quot;data source=.\ <b>Your database name</b>
+string=&quot;data source=.\ <b>Tên sever SQL trên máy</b>
 </div>
 </body>
