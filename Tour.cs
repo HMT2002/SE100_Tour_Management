@@ -231,7 +231,6 @@ namespace Tour
                         dgv_trip.DataSource = DataProvider.Ins.DB.TOURs.Where(t => SqlFunctions.PatIndex("%" + value + "%", t.TEN) > 0).Select(t => t).ToList();
 
                     }
-                    AddDataBinding();
                 }
                 catch
                 {
