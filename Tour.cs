@@ -26,6 +26,7 @@ namespace Tour
             InitializeComponent();
             this.tb_search.Leave += new System.EventHandler(this.textBox1_Leave);
             this.tb_search.Enter += new System.EventHandler(this.textBox1_Enter);
+            dgv_trip.AutoGenerateColumns = false;
         }
 
         private void AddDataBinding()
@@ -178,7 +179,7 @@ namespace Tour
 
             if (index >= 0)
             {
-                id = dgv_trip.Rows[index].Cells["ID"].Value.ToString();
+                id = dgv_trip.Rows[index].Cells["data_ID"].Value.ToString();
                 tb_idtrip.Text = id;
                 tb_nametour.Text = dgv_trip.Rows[index].Cells["TEN"].Value.ToString();
                 tb_price.Text = dgv_trip.Rows[index].Cells["GIA"].Value.ToString();
@@ -203,12 +204,13 @@ namespace Tour
 
         private void rdIDSearch_Enter(object sender, EventArgs e)
         {
-
+            tb_search.Text = "";
 
         }
 
         private void rdNameSearch_Enter(object sender, EventArgs e)
         {
+            tb_search.Text = "";
 
         }
 

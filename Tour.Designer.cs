@@ -57,6 +57,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.rdNameSearch = new System.Windows.Forms.RadioButton();
             this.rdIDSearch = new System.Windows.Forms.RadioButton();
+            this.data_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DACDIEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_trip)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -80,6 +85,12 @@
             this.dgv_trip.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_trip.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_trip.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_trip.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.data_ID,
+            this.TEN,
+            this.GIA,
+            this.DACDIEM,
+            this.LOAI});
             this.dgv_trip.Location = new System.Drawing.Point(14, 22);
             this.dgv_trip.Name = "dgv_trip";
             this.dgv_trip.ReadOnly = true;
@@ -378,7 +389,7 @@
             this.gotoregistbtn.FlatAppearance.BorderSize = 0;
             this.gotoregistbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gotoregistbtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gotoregistbtn.Location = new System.Drawing.Point(669, 12);
+            this.gotoregistbtn.Location = new System.Drawing.Point(1286, 12);
             this.gotoregistbtn.Name = "gotoregistbtn";
             this.gotoregistbtn.Size = new System.Drawing.Size(174, 45);
             this.gotoregistbtn.TabIndex = 10;
@@ -443,6 +454,41 @@
             this.rdIDSearch.Text = "ID";
             this.rdIDSearch.UseVisualStyleBackColor = true;
             this.rdIDSearch.Enter += new System.EventHandler(this.rdIDSearch_Enter);
+            // 
+            // data_ID
+            // 
+            this.data_ID.DataPropertyName = "ID";
+            this.data_ID.HeaderText = "ID";
+            this.data_ID.Name = "data_ID";
+            this.data_ID.ReadOnly = true;
+            // 
+            // TEN
+            // 
+            this.TEN.DataPropertyName = "TEN";
+            this.TEN.HeaderText = "Tên tour du lịch";
+            this.TEN.Name = "TEN";
+            this.TEN.ReadOnly = true;
+            // 
+            // GIA
+            // 
+            this.GIA.DataPropertyName = "GIA";
+            this.GIA.HeaderText = "Giá";
+            this.GIA.Name = "GIA";
+            this.GIA.ReadOnly = true;
+            // 
+            // DACDIEM
+            // 
+            this.DACDIEM.DataPropertyName = "DACDIEM";
+            this.DACDIEM.HeaderText = "Đặc điểm";
+            this.DACDIEM.Name = "DACDIEM";
+            this.DACDIEM.ReadOnly = true;
+            // 
+            // LOAI
+            // 
+            this.LOAI.DataPropertyName = "LOAI";
+            this.LOAI.HeaderText = "Loại";
+            this.LOAI.Name = "LOAI";
+            this.LOAI.ReadOnly = true;
             // 
             // Tour
             // 
@@ -512,5 +558,10 @@
         private System.Windows.Forms.Button btnAddLocation;
         private System.Windows.Forms.RadioButton rdNameSearch;
         private System.Windows.Forms.RadioButton rdIDSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GIA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DACDIEM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LOAI;
     }
 }
