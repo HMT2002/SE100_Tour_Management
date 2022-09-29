@@ -128,5 +128,41 @@ namespace Tour
             }
             else { showAll(); }
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            showAll();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            showAll();
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            showAll();
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clear();
+
+        }
+
+        private void Clear()
+        {
+            textBox1.Text = textBox2.Text = textBox3.Text = comboBox1.Text=richTextBox1.Text="";
+            comboBox1.SelectedIndex = -1;
+            dateTimePicker1.Value = dateTimePicker2.Value = DateTime.Now;
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
