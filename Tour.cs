@@ -123,7 +123,7 @@ namespace Tour
             {
                 try
                 {
-                    randomcode = Converter.Instance.RandomString(5);
+                    randomcode = Converter.Instance.RandomString2(5);
                     var tour = new TOUR() { ID = randomcode, GIA = Convert.ToDecimal(tb_price.Text), TEN = tb_nametour.Text, LOAI = cb_typetour.Text, DACDIEM = richtbDetail.Text };
                     DataProvider.Ins.DB.TOURs.Add(tour);
 
