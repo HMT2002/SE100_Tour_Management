@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tour.Model;
+using Tour.Utils;
 
 namespace Tour
 {
@@ -124,33 +126,7 @@ namespace Tour
 
         public bool CheckData()
         {
-            DateTime date = GetTime(cbDes.Text);
-            DateTime current = DateTime.Now;
-            TimeSpan Interval = date.Subtract(current);
 
-            if (chuyen.TenLoaiChuyen == "National" && Interval.Days < 1)
-            {
-                MessageBox.Show("Ticket purchase deadline exceeded", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-
-            else if(chuyen.TenLoaiChuyen =="International" && Interval.Days < 7)
-            {
-                MessageBox.Show("Ticket purchase deadline exceeded", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-
-            if(RdForeign.Checked == true && PassEXP.Value.Date <= date.Date)
-            {
-                MessageBox.Show("Passport expire error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-
-            else if(RdForeign.Checked == true && VisaEXP.Value.Date <= date.Date)
-            {
-                MessageBox.Show("Visa expire error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
 
             if (String.IsNullOrEmpty(tbName.Text)|| String.IsNullOrEmpty(tbSurname.Text)|| String.IsNullOrEmpty(tbAddress.Text)||String.IsNullOrEmpty(tbCMND.Text))
             {
@@ -226,105 +202,19 @@ namespace Tour
 
             if (RdMale.Checked == true)
             {
-                gender = "Male";
+                gender = "Nam";
             }
-            else gender = "Female";
+            else gender = "Nữ";
 
             String Kind, Tourist;
-            if (RdForeign.Checked == true)
-            {
-                Kind = "Passport";
-                Tourist = "Foreign";
-                typeCus = "CUS002";
-            }
-            else
-            {
-                Kind = "CMND";
-                Tourist = "Domestic";
-                typeCus = "CUS001";
-            };
 
             if (CheckData())
             {
-                cus.MaDuKhach = Guid.NewGuid();
-                cus.HoTen = tbSurname.Text + " " + tbName.Text;
-                cus.DiaChi = tbAddress.Text;
-                cus.SDT = tbTelephone.Text;
-                cus.MaLoaiKhach = typeCus;
-                cus.GioiTinh = gender;
-                cus.CMND_Passport = tbCMND.Text;
-                cus.HanPassport = PassEXP.Value;
-                cus.HanVisa = VisaEXP.Value;
+                string randomcode = Converter.Instance.RandomString2(5);
+                var khachhang = new KHACHHANG() { ID = randomcode,TENKH=tbSurname.Text+tbName.Text,CMND=tbCMND.Text,GIOITINH=gender,DIACHI=tbAddress.Text,SDT=tbTelephone.Text, };
+                DataProvider.Ins.DB.KHACHHANGs.Add(khachhang);
 
-                if (RdForeign.Checked == true)
-                {
-                    checkCus = cusDAL.InsertForeign(cus);
-                }
-                else checkCus = cusDAL.InsertDomestic(cus);
-
-                res.MaChuyen = Guid.Parse(cbDes.Text);
-                res.MaPhieu = Guid.NewGuid();
-                //MaPhieu = res.MaPhieu.ToString();
-                checkRes = resDAL.Insert(res);
-
-                tk.MaVe = Guid.NewGuid();
-                tk.MaDuKhach = cus.MaDuKhach;
-                tk.MaPhieu = res.MaPhieu;
-                tk.GiaVe = Decimal.Parse(tbTotal.Text);
-                tk.HoTen = cus.HoTen;
-                tk.DiaChi = cus.DiaChi;
-                tk.SDT = cus.SDT;
-                tk.CMND_Passport = cus.CMND_Passport;
-                tk.HanPassport = cus.HanPassport;
-                tk.HanVisa = cus.HanVisa;
-                tk.GioiTinh = cus.GioiTinh;
-                tk.TenLoaiChuyen = chuyen.TenLoaiChuyen;
-                tk.TenLoaiKhach = Tourist;
-                tk.TenLoaiTuyen = chuyen.TenLoaiChuyen;
-                tk.TienHoanTra = TienHoanTra;
-
-                tk.LePhiHoanTra = LePhiHoanTra;
-                tk.MaChuyen = chuyen.MaChuyen;
-                tk.MaChuyenSearch = tk.MaChuyen.ToString();
-
-
-                if (checkCus && tkDAL.Insert(tk) && checkRes)
-                {
-                    MessageBox.Show("Successfull add", "information", MessageBoxButtons.OK);
-                }
-                else MessageBox.Show("Fail add", "information", MessageBoxButtons.OK);
-
-                Amount(cbDes.Text);
-
-                rtbreservation.AppendText("\t       RESERVATION TICKET:\n\n"
-                + "ID:\t\t\t\t" + MaPhieu
-                + "\n----------------------------------------------------------------------------------------"
-                + "\nTourID\t\t\t\t" + cbDes.Text
-                + "\nName\t\t\t\t" + tbName.Text
-                + "\nSurName\t\t\t\t" + tbSurname.Text
-                + "\nGender\t\t\t\t" + gender
-                + "\nPhoneNumber\t\t\t" + tbTelephone.Text
-                + "\nTourist\t\t\t\t" + Tourist
-                + "\n" + Kind + "\t\t\t\t" + tbCMND.Text
-                + "\n----------------------------------------------------------------------------------------"
-                + "\n" + lbDate.Text + "\t\t\t" + lbTime.Text
-                + "\n----------------------------------------------------------------------------------------"
-                + "\n\n\t       Thanks for Using \n\t       Travel Management System"
-                    ) ;
-
-                rtbTicket.AppendText("TICKET\n\n"
-                    + "ID:\t\t\t\t" + MaVe
-                    + "\n----------------------------------------------------------------------------------------"
-                    + "\nReservation ID\t\t\t" + MaPhieu
-                    + "\nName\t\t\t\t" + tbName.Text
-                    + "\nSurName\t\t\t\t" + tbSurname.Text 
-                    + "\nCost\t\t\t\t"+ tbTotal.Text + " VND"
-                    + "\n----------------------------------------------------------------------------------------"
-                    + "\n" + lbDate.Text + "\t\t\t" + lbTime.Text
-                    + "\n----------------------------------------------------------------------------------------"
-                    + "\n\n\t       Thanks for Using \n\t       Travel Management System"
-                    );
-                //Clear();
+                Clear();
             }
         }
         private void btnGo_Click(object sender, EventArgs e)

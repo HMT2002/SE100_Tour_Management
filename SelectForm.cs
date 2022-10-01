@@ -243,5 +243,14 @@ namespace Tour
             this.Show();
             hideSubmenu();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            KhachHang h = new KhachHang();
+            this.Hide();
+            h.ShowDialog();
+            this.Show();
+            hideSubmenu();
+        }
     }
 }
