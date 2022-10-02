@@ -226,20 +226,29 @@ namespace Tour
 
         private void LoadCombobox(ComboBox cb)
         {
-            string query = "Select MaChuyen From ChuyenDuLich";
+            cbDes.DataSource = (from tour in DataProvider.Ins.DB.TOURs
+                                        join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
+
+                                        select new
+                                        {
+                                            TEN = doan.TOUR.TEN,
+                                            TENDOAN = doan.TEN
+                                        }
+                            ).ToList();
+            cbDes.DisplayMember = "TEN";
         }
 
         private void cbDes_SelectedValueChanged(object sender, EventArgs e)
         {
             //MessageBox.Show(cbDes.)
-            ChuyenDAL chuyenDAL = new ChuyenDAL();
+            //ChuyenDAL chuyenDAL = new ChuyenDAL();
 
-            tbVehicle.Text = chuyen.PhuongTien;
-            tbDate.Text = chuyen.ThoiGianKhoiHanh.ToString();
+            //tbVehicle.Text = chuyen.PhuongTien;
+            //tbDate.Text = chuyen.ThoiGianKhoiHanh.ToString();
 
-            tbDuration.Text = ThoiGianToChuc;
-            tbPrice.Text = chuyen.GiaVe.ToString();
-            Amount(cbDes.Text);
+            //tbDuration.Text = ThoiGianToChuc;
+            //tbPrice.Text = chuyen.GiaVe.ToString();
+            //Amount(cbDes.Text);
         }
 
         private void backtotourbtn_Click(object sender, EventArgs e)
