@@ -119,6 +119,7 @@ namespace Tour
         }
         private void add_Click(object sender, EventArgs e)
         {
+            
             if (CheckData() == true)
             {
                 try

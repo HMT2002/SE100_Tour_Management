@@ -236,9 +236,9 @@ namespace Tour
         private void cbbxHotel_SelectedValueChanged(object sender, EventArgs e)
         {
             int index = cbbxHotel.SelectedIndex;
-
             if (index >= 0)
             {
+
                 KHACHSAN selected_item = (KHACHSAN)cbbxHotel.SelectedItem;
                 KHACHSAN temp = DataProvider.Ins.DB.KHACHSANs.Where(x => x.ID == selected_item.ID).FirstOrDefault();
                 pcbxLocation.Image = Converter.Instance.ByteArrayToImage(temp.PICBI);

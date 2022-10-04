@@ -58,11 +58,11 @@ namespace Tour
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.IDKHACHHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENKHACHHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.IDKHACHHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENKHACHHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -131,7 +131,7 @@ namespace Tour
             this.TENTOUR});
             this.dataGridView1.Location = new System.Drawing.Point(3, 33);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 244);
+            this.dataGridView1.Size = new System.Drawing.Size(776, 214);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -260,7 +260,7 @@ namespace Tour
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(12, 12);
+            this.btnExit.Location = new System.Drawing.Point(720, 253);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(61, 23);
             this.btnExit.TabIndex = 25;
@@ -330,14 +330,28 @@ namespace Tour
             this.TENKHACHHANG});
             this.dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(402, 152);
+            this.dataGridView2.Size = new System.Drawing.Size(466, 157);
             this.dataGridView2.TabIndex = 32;
+            // 
+            // IDKHACHHANG
+            // 
+            this.IDKHACHHANG.DataPropertyName = "ID";
+            this.IDKHACHHANG.HeaderText = "ID";
+            this.IDKHACHHANG.Name = "IDKHACHHANG";
+            // 
+            // TENKHACHHANG
+            // 
+            this.TENKHACHHANG.DataPropertyName = "TEN";
+            this.TENKHACHHANG.HeaderText = "Tên khách hàng";
+            this.TENKHACHHANG.Name = "TENKHACHHANG";
+            this.TENKHACHHANG.Width = 250;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.tb_search);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.rdIDSearch);
+            this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.rdNameSearch);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnXoa);
@@ -370,23 +384,10 @@ namespace Tour
             // panel3
             // 
             this.panel3.Controls.Add(this.dataGridView2);
-            this.panel3.Location = new System.Drawing.Point(79, 11);
+            this.panel3.Location = new System.Drawing.Point(15, 11);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(408, 163);
+            this.panel3.Size = new System.Drawing.Size(472, 163);
             this.panel3.TabIndex = 35;
-            // 
-            // IDKHACHHANG
-            // 
-            this.IDKHACHHANG.DataPropertyName = "ID";
-            this.IDKHACHHANG.HeaderText = "ID";
-            this.IDKHACHHANG.Name = "IDKHACHHANG";
-            // 
-            // TENKHACHHANG
-            // 
-            this.TENKHACHHANG.DataPropertyName = "TEN";
-            this.TENKHACHHANG.HeaderText = "Tên khách hàng";
-            this.TENKHACHHANG.Name = "TENKHACHHANG";
-            this.TENKHACHHANG.Width = 250;
             // 
             // DoanDuLich
             // 
@@ -396,7 +397,6 @@ namespace Tour
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnExit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DoanDuLich";
             this.Text = "DoanDuLich";

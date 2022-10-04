@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -30,11 +31,14 @@ namespace Tour
             InitializeComponent();
             tbCMND.ForeColor = Color.LightGray;
             tbCMND.Text = " Please Enter Identification Card Number";
+
         }
 
         private void DangKy_Load(object sender, EventArgs e)
         {
-            LoadCombobox(cbDes);
+            //LoadCombobox(cbDes);
+
+            showAll();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -211,7 +215,7 @@ namespace Tour
             if (CheckData())
             {
                 string randomcode = Converter.Instance.RandomString2(5);
-                var khachhang = new KHACHHANG() { ID = randomcode,TENKH=tbSurname.Text+tbName.Text,CMND=tbCMND.Text,GIOITINH=gender,DIACHI=tbAddress.Text,SDT=tbTelephone.Text, };
+                var khachhang = new KHACHHANG() { ID = randomcode,TENKH=tbSurname.Text+" "+tbName.Text,CMND=tbCMND.Text,GIOITINH=gender,DIACHI=tbAddress.Text,SDT=tbTelephone.Text, };
                 DataProvider.Ins.DB.KHACHHANGs.Add(khachhang);
 
                 Clear();
@@ -226,21 +230,36 @@ namespace Tour
 
         private void LoadCombobox(ComboBox cb)
         {
-            cbDes.DataSource = (from tour in DataProvider.Ins.DB.TOURs
-                                        join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
 
-                                        select new
-                                        {
-                                            TEN = doan.TOUR.TEN,
-                                            TENDOAN = doan.TEN
-                                        }
-                            ).ToList();
-            cbDes.DisplayMember = "TEN";
+        }
+
+        private void showAll()
+        {
+            cbDes.DataSource = (from tour in DataProvider.Ins.DB.TOURs
+                                join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
+                                select new
+                                {
+                                    TENTOUR = doan.TOUR.TEN,
+                                    TENDOAN = doan.TEN,
+                                    IDTOUR = tour.ID,
+                                    IDDOAN = doan.ID,
+                                }
+                ).ToList();
+            cbDes.ValueMember = "IDTOUR";
+            cbDes.DisplayMember = "TENTOUR";//DisplayMember phải trùng trên select new
         }
 
         private void cbDes_SelectedValueChanged(object sender, EventArgs e)
         {
-            //MessageBox.Show(cbDes.)
+            int index = cbDes.SelectedIndex;
+
+            if (index >= 0)
+            {
+                //PropertyInfo p = cbDes.SelectedItem.GetType().GetProperty("IDDOAN");
+                object v = cbDes.SelectedItem.GetType().GetProperty("IDDOAN").GetValue(cbDes.SelectedItem, null);
+
+
+            }
             //ChuyenDAL chuyenDAL = new ChuyenDAL();
 
             //tbVehicle.Text = chuyen.PhuongTien;
@@ -249,6 +268,7 @@ namespace Tour
             //tbDuration.Text = ThoiGianToChuc;
             //tbPrice.Text = chuyen.GiaVe.ToString();
             //Amount(cbDes.Text);
+
         }
 
         private void backtotourbtn_Click(object sender, EventArgs e)
