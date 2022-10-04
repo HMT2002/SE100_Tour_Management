@@ -243,6 +243,8 @@ namespace Tour
                                     TENDOAN = doan.TEN,
                                     IDTOUR = tour.ID,
                                     IDDOAN = doan.ID,
+                                    NGAYKHOIHANH=doan.NGAYKHOIHANH,
+                                    NGAYKETTHUC=doan.NGAYKETTHUC
                                 }
                 ).ToList();
             cbDes.ValueMember = "IDTOUR";
@@ -256,8 +258,11 @@ namespace Tour
             if (index >= 0)
             {
                 //PropertyInfo p = cbDes.SelectedItem.GetType().GetProperty("IDDOAN");
-                object v = cbDes.SelectedItem.GetType().GetProperty("IDDOAN").GetValue(cbDes.SelectedItem, null);
-
+                Type t = cbDes.SelectedItem.GetType();
+                object iddoan = t.GetProperty("IDDOAN").GetValue(cbDes.SelectedItem, null);
+                object ngaykhoihanh = t.GetProperty("NGAYKHOIHANH").GetValue(cbDes.SelectedItem, null);
+                object ngayketthuc = t.GetProperty("NGAYKETTHUC").GetValue(cbDes.SelectedItem, null);
+                tbDuration.Text = ((DateTime)ngayketthuc - (DateTime)ngaykhoihanh).ToString();
 
             }
             //ChuyenDAL chuyenDAL = new ChuyenDAL();
