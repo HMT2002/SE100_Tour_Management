@@ -18,6 +18,7 @@ namespace Tour.Model
         public KHACHHANG()
         {
             this.tb_DOAN = new HashSet<tb_DOAN>();
+            this.VEs = new HashSet<VE>();
         }
     
         public string ID { get; set; }
@@ -30,5 +31,7 @@ namespace Tour.Model
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_DOAN> tb_DOAN { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<VE> VEs { get; set; }
     }
 }

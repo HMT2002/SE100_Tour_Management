@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Tour
 {
-    class DataConnection
+    public class DataConnection
     {
         public static DataConnection Ins { 
             get {

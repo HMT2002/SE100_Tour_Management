@@ -22,6 +22,7 @@ namespace Tour.Model
             this.tb_NHIEMVU = new HashSet<tb_NHIEMVU>();
             this.tb_PHUONGTIEN = new HashSet<tb_PHUONGTIEN>();
             this.tb_PHUTRACH = new HashSet<tb_PHUTRACH>();
+            this.VEs = new HashSet<VE>();
         }
     
         public string ID { get; set; }
@@ -44,5 +45,7 @@ namespace Tour.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_PHUTRACH> tb_PHUTRACH { get; set; }
         public virtual TOUR TOUR { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<VE> VEs { get; set; }
     }
 }

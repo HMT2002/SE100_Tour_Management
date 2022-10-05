@@ -158,6 +158,16 @@
           <Property Name="LOAI" Type="nvarchar" MaxLength="30" />
           <Property Name="GIA" Type="money" />
         </EntityType>
+        <EntityType Name="VE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="NGAYMUA" Type="smalldatetime" />
+          <Property Name="GIA" Type="money" />
+          <Property Name="IDKHACH" Type="char" MaxLength="7" />
+          <Property Name="IDDOAN" Type="char" MaxLength="7" />
+        </EntityType>
         <Association Name="LK_CHIPHI_DOAN">
           <End Role="CHIPHI" Type="Self.CHIPHI" Multiplicity="0..1" />
           <End Role="DOAN" Type="Self.DOAN" Multiplicity="*" />
@@ -374,6 +384,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="LK_VE_DOAN">
+          <End Role="DOAN" Type="Self.DOAN" Multiplicity="0..1" />
+          <End Role="VE" Type="Self.VE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOAN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VE">
+              <PropertyRef Name="IDDOAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_VE_KHACH">
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+          <End Role="VE" Type="Self.VE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VE">
+              <PropertyRef Name="IDKHACH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="QL_TOUR_DU_LICHModelStoreContainer">
           <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CHIPHI" EntityType="Self.CHIPHI" Schema="dbo" store:Type="Tables" />
@@ -391,6 +425,7 @@
           <EntitySet Name="tb_PHUTRACH" EntityType="Self.tb_PHUTRACH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TINH" EntityType="Self.TINH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TOUR" EntityType="Self.TOUR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VE" EntityType="Self.VE" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="LK_CHIPHI_DOAN" Association="Self.LK_CHIPHI_DOAN">
             <End Role="CHIPHI" EntitySet="CHIPHI" />
             <End Role="DOAN" EntitySet="DOAN" />
@@ -463,6 +498,14 @@
             <End Role="TOUR" EntitySet="TOUR" />
             <End Role="tb_DIADIEM_DULICH" EntitySet="tb_DIADIEM_DULICH" />
           </AssociationSet>
+          <AssociationSet Name="LK_VE_DOAN" Association="Self.LK_VE_DOAN">
+            <End Role="DOAN" EntitySet="DOAN" />
+            <End Role="VE" EntitySet="VE" />
+          </AssociationSet>
+          <AssociationSet Name="LK_VE_KHACH" Association="Self.LK_VE_KHACH">
+            <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+            <End Role="VE" EntitySet="VE" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -520,6 +563,7 @@
           <NavigationProperty Name="tb_PHUONGTIEN" Relationship="Self.LK_DOAN_PHUONGTIEN" FromRole="DOAN" ToRole="tb_PHUONGTIEN" />
           <NavigationProperty Name="tb_PHUTRACH" Relationship="Self.LK_DOAN_PHUTRACH" FromRole="DOAN" ToRole="tb_PHUTRACH" />
           <NavigationProperty Name="TOUR" Relationship="Self.LK_TOUR_DOAN" FromRole="DOAN" ToRole="TOUR" />
+          <NavigationProperty Name="VEs" Relationship="Self.LK_VE_DOAN" FromRole="DOAN" ToRole="VE" />
         </EntityType>
         <EntityType Name="KHACHHANG">
           <Key>
@@ -533,6 +577,7 @@
           <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="PICBI" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="tb_DOAN" Relationship="Self.LK_KH_DOAN" FromRole="KHACHHANG" ToRole="tb_DOAN" />
+          <NavigationProperty Name="VEs" Relationship="Self.LK_VE_KHACH" FromRole="KHACHHANG" ToRole="VE" />
         </EntityType>
         <EntityType Name="KHACHSAN">
           <Key>
@@ -658,6 +703,18 @@
           <NavigationProperty Name="DOANs" Relationship="Self.LK_TOUR_DOAN" FromRole="TOUR" ToRole="DOAN" />
           <NavigationProperty Name="tb_DIADIEM_DULICH" Relationship="Self.LK_TOUR_DULICH" FromRole="TOUR" ToRole="tb_DIADIEM_DULICH" />
         </EntityType>
+        <EntityType Name="VE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="NGAYMUA" Type="DateTime" Precision="0" />
+          <Property Name="GIA" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="IDKHACH" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="IDDOAN" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="DOAN" Relationship="Self.LK_VE_DOAN" FromRole="VE" ToRole="DOAN" />
+          <NavigationProperty Name="KHACHHANG" Relationship="Self.LK_VE_KHACH" FromRole="VE" ToRole="KHACHHANG" />
+        </EntityType>
         <Association Name="LK_NHANVIEN_ACCOUNT">
           <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
           <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="*" />
@@ -778,6 +835,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="LK_VE_DOAN">
+          <End Role="DOAN" Type="Self.DOAN" Multiplicity="0..1" />
+          <End Role="VE" Type="Self.VE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOAN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VE">
+              <PropertyRef Name="IDDOAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="LK_KH_DOAN">
           <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
           <End Role="tb_DOAN" Type="Self.tb_DOAN" Multiplicity="*" />
@@ -787,6 +856,18 @@
             </Principal>
             <Dependent Role="tb_DOAN">
               <PropertyRef Name="IDKHACHHANG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LK_VE_KHACH">
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+          <End Role="VE" Type="Self.VE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VE">
+              <PropertyRef Name="IDKHACH" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -891,6 +972,7 @@
           <EntitySet Name="tb_PHUTRACH" EntityType="Self.tb_PHUTRACH" />
           <EntitySet Name="TINHs" EntityType="Self.TINH" />
           <EntitySet Name="TOURs" EntityType="Self.TOUR" />
+          <EntitySet Name="VEs" EntityType="Self.VE" />
           <AssociationSet Name="LK_NHANVIEN_ACCOUNT" Association="Self.LK_NHANVIEN_ACCOUNT">
             <End Role="NHANVIEN" EntitySet="NHANVIENs" />
             <End Role="ACCOUNT" EntitySet="ACCOUNTs" />
@@ -931,9 +1013,17 @@
             <End Role="TOUR" EntitySet="TOURs" />
             <End Role="DOAN" EntitySet="DOANs" />
           </AssociationSet>
+          <AssociationSet Name="LK_VE_DOAN" Association="Self.LK_VE_DOAN">
+            <End Role="DOAN" EntitySet="DOANs" />
+            <End Role="VE" EntitySet="VEs" />
+          </AssociationSet>
           <AssociationSet Name="LK_KH_DOAN" Association="Self.LK_KH_DOAN">
             <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
             <End Role="tb_DOAN" EntitySet="tb_DOAN" />
+          </AssociationSet>
+          <AssociationSet Name="LK_VE_KHACH" Association="Self.LK_VE_KHACH">
+            <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+            <End Role="VE" EntitySet="VEs" />
           </AssociationSet>
           <AssociationSet Name="LK_KHACHSAN_KHACHSAN" Association="Self.LK_KHACHSAN_KHACHSAN">
             <End Role="KHACHSAN" EntitySet="KHACHSANs" />
@@ -1136,6 +1226,17 @@
                 <ScalarProperty Name="DACDIEM" ColumnName="DACDIEM" />
                 <ScalarProperty Name="LOAI" ColumnName="LOAI" />
                 <ScalarProperty Name="GIA" ColumnName="GIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VEs">
+            <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.VE">
+              <MappingFragment StoreEntitySet="VE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NGAYMUA" ColumnName="NGAYMUA" />
+                <ScalarProperty Name="GIA" ColumnName="GIA" />
+                <ScalarProperty Name="IDKHACH" ColumnName="IDKHACH" />
+                <ScalarProperty Name="IDDOAN" ColumnName="IDDOAN" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

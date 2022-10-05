@@ -41,5 +41,6 @@ namespace Tour.Model
         public virtual DbSet<tb_PHUTRACH> tb_PHUTRACH { get; set; }
         public virtual DbSet<TINH> TINHs { get; set; }
         public virtual DbSet<TOUR> TOURs { get; set; }
+        public virtual DbSet<VE> VEs { get; set; }
     }
 }

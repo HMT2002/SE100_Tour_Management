@@ -106,12 +106,6 @@ namespace Tour
 
         private void reset()
         {
-            tbName.Clear();
-            tbSurname.Clear();
-            tbEmail.Clear();
-            tbTelephone.Clear();
-            tbAddress.Clear();
-            tbCMND.Clear();
             tbVehicle.Clear();
             tbAmount.Clear();
             tbDate.Clear();
@@ -144,59 +138,6 @@ namespace Tour
         public string SurName, Name, address, phonenumber,typeCus, gender,CMND,TourID,tourist,typeoftour,RouteID,TenChuyen;
         public int Year, Month, Day, vYear, vMonth, vDay,price,tienhoantra,lephihoantra;
         bool checkCus,checkRes;
-        public bool CreateCustomer()
-        {
-            tblTicket tk = new tblTicket();
-            Customer cus = new Customer();
-            DateTime date = new DateTime(Year, Month, Day);
-            DateTime datevisa = new DateTime(vYear, vMonth, vDay);
-            Reservation res = new Reservation();
-            cus.MaDuKhach = Guid.NewGuid();
-            cus.HoTen = SurName + " " + Name;
-            cus.DiaChi = address;
-            cus.SDT = phonenumber;
-            cus.MaLoaiKhach = typeCus;
-            cus.GioiTinh = gender;
-            cus.CMND_Passport = CMND;
-            cus.HanPassport = date;
-            cus.HanVisa = datevisa;
-            tk.TenLoaiKhach = tourist;
-            res.MaChuyen = Guid.Parse(TourID);
-            res.MaPhieu = Guid.NewGuid();
-            if (tk.TenLoaiKhach=="Foreign")
-            {
-
-                checkCus = cusDAL.InsertForeign(cus);
-            }
-            else checkCus = cusDAL.InsertDomestic(cus);
-            checkRes = resDAL.Insert(res);
-            tk.MaVe = Guid.NewGuid();
-            tk.MaDuKhach = cus.MaDuKhach;
-            tk.MaPhieu = res.MaPhieu;
-            tk.GiaVe = price;
-            tk.HoTen = cus.HoTen;
-            tk.DiaChi = cus.DiaChi;
-            tk.SDT = cus.SDT;
-            tk.CMND_Passport = cus.CMND_Passport;
-            tk.HanPassport = cus.HanPassport;
-            tk.HanVisa = cus.HanVisa;
-            tk.GioiTinh = cus.GioiTinh;
-            tk.TenLoaiChuyen = TenChuyen;
-
-            tk.TenLoaiTuyen = typeoftour;
-            tk.TienHoanTra = tienhoantra;
-
-            tk.LePhiHoanTra = lephihoantra ;
-            tk.MaChuyen = Guid.Parse(RouteID);
-            tk.MaChuyenSearch = tk.MaChuyen.ToString();
-
-
-            if (checkCus && tkDAL.Insert(tk) && checkRes)
-            {
-                return true;
-            }
-            return false;
-        }
 
         private void cbGroup_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -218,10 +159,6 @@ namespace Tour
 
         private void btCreate_Click(object sender, EventArgs e)
         {
-            string MaVe = "", MaPhieu = "";
-            tblTicket tk = new tblTicket();
-            Customer cus = new Customer();
-            Reservation res = new Reservation();
             String gender, typeCus;
             bool checkCus, checkRes;
 
@@ -236,17 +173,33 @@ namespace Tour
             if (CheckData())
             {
                 string randomcode = Converter.Instance.RandomString2(5);
-                var khachhang = new KHACHHANG() { ID = randomcode,TENKH=tbSurname.Text+" "+tbName.Text,CMND=tbCMND.Text,GIOITINH=gender,DIACHI=tbAddress.Text,SDT=tbTelephone.Text, };
+                string idkhach = randomcode;
+                var khachhang = new KHACHHANG() { ID = idkhach,
+                    TENKH=tbSurname.Text+" "+tbName.Text,
+                    CMND=tbCMND.Text,
+                    GIOITINH=gender,
+                    DIACHI=tbAddress.Text,
+                    SDT=tbTelephone.Text,
+                };
                 DataProvider.Ins.DB.KHACHHANGs.Add(khachhang);
 
+                randomcode = Converter.Instance.RandomString2(5);
+                var ve = new VE() { 
+                    ID = randomcode,
+                    IDKHACH = idkhach,
+                    IDDOAN= cbGroup.SelectedValue.ToString(),
+                    NGAYMUA=DateTime.Today,
+                    GIA=Convert.ToDecimal(tbPrice.Text),
+                };
+                DataProvider.Ins.DB.VEs.Add(ve);
+                DataProvider.Ins.DB.SaveChanges();
+                showAll();
                 Clear();
             }
         }
         private void btnGo_Click(object sender, EventArgs e)
         {
-            CSDLPhieuDatCho csdl = new CSDLPhieuDatCho();
-            csdl.StartPosition = FormStartPosition.CenterParent;
-            csdl.ShowDialog();
+
         }
 
         private void LoadCombobox(ComboBox cb)
@@ -262,11 +215,15 @@ namespace Tour
                                 {
                                     TENTOUR = tour.TEN,
                                     IDTOUR = tour.ID,
-
+                                    GIA=tour.GIA,
                                 }
                 ).ToList();
             cbDes.ValueMember = "IDTOUR";
             cbDes.DisplayMember = "TENTOUR";//DisplayMember phải trùng trên select new
+            cbDes.SelectedIndex = -1;
+            reset();
+
+
         }
 
         private void cbDes_SelectedValueChanged(object sender, EventArgs e)
@@ -294,16 +251,8 @@ namespace Tour
                 cbGroup.DisplayMember = "TENDOAN";
                 cbGroup.SelectedIndex = -1;
                 reset();
-
+                tbPrice.Text = cbDes.SelectedItem.GetType().GetProperty("GIA").GetValue(cbDes.SelectedItem, null).ToString();
             }
-            //ChuyenDAL chuyenDAL = new ChuyenDAL();
-
-            //tbVehicle.Text = chuyen.PhuongTien;
-            //tbDate.Text = chuyen.ThoiGianKhoiHanh.ToString();
-
-            //tbDuration.Text = ThoiGianToChuc;
-            //tbPrice.Text = chuyen.GiaVe.ToString();
-            //Amount(cbDes.Text);
 
         }
 
@@ -312,24 +261,6 @@ namespace Tour
             Tour t = new Tour();
             this.Hide();
             t.ShowDialog();
-        }
-
-        private void Amount(String MaChuyen)
-        {
-            int result = 0;
-            result = GetMax(MaChuyen) - GetCount(MaChuyen);
-            tbAmount.Text = result.ToString(); 
-        }
-
-        private int GetMax(string MaChuyen)
-        {
-            return chuyen.SoLuongVeMax;
-        }
-        private int GetCount(string MaChuyen)
-        {
-            string query = "SELECT COUNT(*) FROM PhieuDatCho WHERE MaChuyen = " + Guid.Parse(MaChuyen);
-
-            return 0;
         }
         void Clear()
         {
@@ -367,26 +298,26 @@ namespace Tour
 
         private void tbPrice_TextChanged(object sender, EventArgs e)
         {
-            DateTime current = DateTime.Now;
-            DateTime date = GetTime(cbDes.Text);
-            TimeSpan interval = date - current;
-            if (interval.Days >= 3 && chuyen.TenLoaiChuyen == "National")
-            {
-                tbDiscount.Text = ((Int32.Parse(tbPrice.Text) * 20) / 100).ToString();
-            }
-            else if (interval.Days >= 10 && chuyen.TenLoaiChuyen == "International")
-            {
-                tbDiscount.Text = ((Int32.Parse(tbPrice.Text) * 20) / 100).ToString();
-            }
-            else tbDiscount.Text = "0";
-            if(String.IsNullOrEmpty(tbPrice.Text))
-            { 
-                tbDiscount.Text = tbTotal.Text = " "; 
-            }
-            else
-            {
-                tbTotal.Text = (Int32.Parse(tbPrice.Text) - Int32.Parse(tbDiscount.Text)).ToString();
-            }
+            //DateTime current = DateTime.Now;
+            //DateTime date = GetTime(cbDes.Text);
+            //TimeSpan interval = date - current;
+            //if (interval.Days >= 3 && chuyen.TenLoaiChuyen == "National")
+            //{
+            //    tbDiscount.Text = ((Int32.Parse(tbPrice.Text) * 20) / 100).ToString();
+            //}
+            //else if (interval.Days >= 10 && chuyen.TenLoaiChuyen == "International")
+            //{
+            //    tbDiscount.Text = ((Int32.Parse(tbPrice.Text) * 20) / 100).ToString();
+            //}
+            //else tbDiscount.Text = "0";
+            //if(String.IsNullOrEmpty(tbPrice.Text))
+            //{ 
+            //    tbDiscount.Text = tbTotal.Text = " "; 
+            //}
+            //else
+            //{
+            //    tbTotal.Text = (Int32.Parse(tbPrice.Text) - Int32.Parse(tbDiscount.Text)).ToString();
+            //}
         }
 
         public DateTime GetTime(string MaChuyen)

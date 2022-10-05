@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tour.Model
 {
-    class DataProvider
+    public class DataProvider
     {
         private static DataProvider _ins;
 
