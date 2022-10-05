@@ -111,6 +111,9 @@ namespace Tour
             this.btCreate = new System.Windows.Forms.Button();
             this.btnGo = new System.Windows.Forms.Button();
             this.btngotocsdl = new System.Windows.Forms.Button();
+            this.panel26 = new System.Windows.Forms.Panel();
+            this.cbGroup = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel17.SuspendLayout();
@@ -136,6 +139,7 @@ namespace Tour
             this.panel18.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel26.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -759,6 +763,8 @@ namespace Tour
             // 
             this.panel8.BackColor = System.Drawing.Color.Transparent;
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel8.Controls.Add(this.panel26);
+            this.panel8.Controls.Add(this.label9);
             this.panel8.Controls.Add(this.panel22);
             this.panel8.Controls.Add(this.panel21);
             this.panel8.Controls.Add(this.panel20);
@@ -866,7 +872,7 @@ namespace Tour
             // 
             this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel18.Controls.Add(this.cbDes);
-            this.panel18.Location = new System.Drawing.Point(146, 62);
+            this.panel18.Location = new System.Drawing.Point(146, 38);
             this.panel18.Margin = new System.Windows.Forms.Padding(2);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(180, 28);
@@ -879,7 +885,7 @@ namespace Tour
             this.cbDes.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDes.ForeColor = System.Drawing.Color.Black;
             this.cbDes.FormattingEnabled = true;
-            this.cbDes.Location = new System.Drawing.Point(0, 0);
+            this.cbDes.Location = new System.Drawing.Point(-2, -1);
             this.cbDes.Margin = new System.Windows.Forms.Padding(2);
             this.cbDes.Name = "cbDes";
             this.cbDes.Size = new System.Drawing.Size(178, 27);
@@ -951,12 +957,12 @@ namespace Tour
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(9, 63);
+            this.label12.Location = new System.Drawing.Point(9, 39);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(70, 21);
+            this.label12.Size = new System.Drawing.Size(46, 21);
             this.label12.TabIndex = 2;
-            this.label12.Text = "Tour ID";
+            this.label12.Text = "Tour";
             // 
             // label13
             // 
@@ -1103,6 +1109,42 @@ namespace Tour
             this.btngotocsdl.UseVisualStyleBackColor = false;
             this.btngotocsdl.Click += new System.EventHandler(this.btngotocsdl_Click);
             // 
+            // panel26
+            // 
+            this.panel26.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel26.Controls.Add(this.cbGroup);
+            this.panel26.Location = new System.Drawing.Point(146, 74);
+            this.panel26.Margin = new System.Windows.Forms.Padding(2);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(180, 28);
+            this.panel26.TabIndex = 33;
+            // 
+            // cbGroup
+            // 
+            this.cbGroup.BackColor = System.Drawing.SystemColors.Window;
+            this.cbGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGroup.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbGroup.ForeColor = System.Drawing.Color.Black;
+            this.cbGroup.FormattingEnabled = true;
+            this.cbGroup.Location = new System.Drawing.Point(-1, -2);
+            this.cbGroup.Margin = new System.Windows.Forms.Padding(2);
+            this.cbGroup.Name = "cbGroup";
+            this.cbGroup.Size = new System.Drawing.Size(178, 27);
+            this.cbGroup.TabIndex = 4;
+            this.cbGroup.SelectedValueChanged += new System.EventHandler(this.cbGroup_SelectedValueChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(7, 75);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(59, 21);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "Group";
+            // 
             // DangKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1175,6 +1217,7 @@ namespace Tour
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
+            this.panel26.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1260,5 +1303,8 @@ namespace Tour
         private System.Windows.Forms.DateTimePicker PassEXP;
         private System.Windows.Forms.DateTimePicker VisaEXP;
         private System.Windows.Forms.Button btngotocsdl;
+        private System.Windows.Forms.Panel panel26;
+        private System.Windows.Forms.ComboBox cbGroup;
+        private System.Windows.Forms.Label label9;
     }
 }

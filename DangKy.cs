@@ -39,6 +39,7 @@ namespace Tour
             //LoadCombobox(cbDes);
 
             showAll();
+            reset();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -122,6 +123,7 @@ namespace Tour
             rdDomestic.Checked = true;
             rtbreservation.Clear();
             rtbTicket.Clear();
+            tbDuration.Clear();
         }
         private void btReset_Click(object sender, EventArgs e)
         {
@@ -195,6 +197,25 @@ namespace Tour
             }
             return false;
         }
+
+        private void cbGroup_SelectedValueChanged(object sender, EventArgs e)
+        {
+
+            int index = cbGroup.SelectedIndex;
+
+            if (index >= 0)
+            {
+                Type t = cbGroup.SelectedItem.GetType();
+
+                object iddoan = t.GetProperty("IDDOAN").GetValue(cbGroup.SelectedItem, null);
+                object ngaykhoihanh = t.GetProperty("NGAYKHOIHANH").GetValue(cbGroup.SelectedItem, null);
+                object ngayketthuc = t.GetProperty("NGAYKETTHUC").GetValue(cbGroup.SelectedItem, null);
+                tbDuration.Text = ((DateTime)ngayketthuc - (DateTime)ngaykhoihanh).TotalDays.ToString();
+
+            }
+
+        }
+
         private void btCreate_Click(object sender, EventArgs e)
         {
             string MaVe = "", MaPhieu = "";
@@ -239,12 +260,9 @@ namespace Tour
                                 join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
                                 select new
                                 {
-                                    TENTOUR = doan.TOUR.TEN,
-                                    TENDOAN = doan.TEN,
+                                    TENTOUR = tour.TEN,
                                     IDTOUR = tour.ID,
-                                    IDDOAN = doan.ID,
-                                    NGAYKHOIHANH=doan.NGAYKHOIHANH,
-                                    NGAYKETTHUC=doan.NGAYKETTHUC
+
                                 }
                 ).ToList();
             cbDes.ValueMember = "IDTOUR";
@@ -257,12 +275,25 @@ namespace Tour
 
             if (index >= 0)
             {
-                //PropertyInfo p = cbDes.SelectedItem.GetType().GetProperty("IDDOAN");
+
                 Type t = cbDes.SelectedItem.GetType();
-                object iddoan = t.GetProperty("IDDOAN").GetValue(cbDes.SelectedItem, null);
-                object ngaykhoihanh = t.GetProperty("NGAYKHOIHANH").GetValue(cbDes.SelectedItem, null);
-                object ngayketthuc = t.GetProperty("NGAYKETTHUC").GetValue(cbDes.SelectedItem, null);
-                tbDuration.Text = ((DateTime)ngayketthuc - (DateTime)ngaykhoihanh).ToString();
+                string idtour=t.GetProperty("IDTOUR").GetValue(cbDes.SelectedItem, null).ToString();
+
+                cbGroup.DataSource = (from tour in DataProvider.Ins.DB.TOURs
+                                      join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
+                                      where tour.ID == idtour
+                                      select new
+                                      {
+                                          TENDOAN = doan.TEN,
+                                          IDDOAN = doan.ID,
+                                          NGAYKHOIHANH = doan.NGAYKHOIHANH,
+                                          NGAYKETTHUC = doan.NGAYKETTHUC
+                                      }
+                                            ).ToList();
+                cbGroup.ValueMember = "IDDOAN";
+                cbGroup.DisplayMember = "TENDOAN";
+                cbGroup.SelectedIndex = -1;
+                reset();
 
             }
             //ChuyenDAL chuyenDAL = new ChuyenDAL();
