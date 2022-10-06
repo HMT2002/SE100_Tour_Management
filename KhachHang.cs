@@ -20,15 +20,12 @@ namespace Tour
 
         private void showAll()
         {
-            dataGridView1.DataSource = (from khachhang in DataProvider.Ins.DB.KHACHHANGs
-                                        join tb_doan in DataProvider.Ins.DB.tb_DOAN on khachhang.ID equals tb_doan.IDKHACHHANG
-                                        join doan in DataProvider.Ins.DB.DOANs on tb_doan.IDDOAN equals doan.ID
-
+            dataGridView1.DataSource = (from ve in DataProvider.Ins.DB.VEs
                                         select new
                                         {
-                                            TENKH=khachhang.TENKH,
-                                            IDKHACH=khachhang.ID,
-                                            TENDOAN=doan.TEN
+                                            TENKH=ve.KHACHHANG.TENKH,
+                                            IDKHACH=ve.KHACHHANG.ID,
+                                            TENDOAN=ve.DOAN.TEN
                                         }
                                         ).ToList();
         }

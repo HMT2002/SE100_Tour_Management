@@ -17,7 +17,6 @@ namespace Tour.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KHACHHANG()
         {
-            this.tb_DOAN = new HashSet<tb_DOAN>();
             this.VEs = new HashSet<VE>();
         }
     
@@ -29,8 +28,6 @@ namespace Tour.Model
         public string SDT { get; set; }
         public byte[] PICBI { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_DOAN> tb_DOAN { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VE> VEs { get; set; }
     }

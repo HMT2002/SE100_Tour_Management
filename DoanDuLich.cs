@@ -48,6 +48,7 @@ namespace Tour
              }).ToList();
             comboBox1.DataSource = DataProvider.Ins.DB.TOURs.Select(t => t).ToList();
             comboBox1.DisplayMember = "TEN";
+
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -65,13 +66,12 @@ namespace Tour
                 textBox2.Text= dataGridView1.Rows[index].Cells["TEN"].Value.ToString();
                 textBox3.Text = dataGridView1.Rows[index].Cells["CHIPHI"].Value.ToString();
                 comboBox1.Text = dataGridView1.Rows[index].Cells["TENTOUR"].Value.ToString();
-                dataGridView2.DataSource= (from tb_doan in DataProvider.Ins.DB.tb_DOAN
-                                           join khachhang in DataProvider.Ins.DB.KHACHHANGs on tb_doan.IDKHACHHANG equals khachhang.ID
-                                           where tb_doan.IDDOAN == id
+                dataGridView2.DataSource= (from ve in DataProvider.Ins.DB.VEs
+                                           where ve.IDDOAN == id
                                            select new
                                            {
-                                               ID = khachhang.ID,
-                                               TEN = khachhang.TENKH,
+                                               ID = ve.KHACHHANG.ID,
+                                               TEN = ve.KHACHHANG.TENKH,
                                            }).ToList();
                 
             }
@@ -190,10 +190,22 @@ namespace Tour
                 showAll();
 
             }
-            catch (Exception ex)
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
             {
-                MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                Exception raise = dbEx;
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        string message = string.Format("{0}:{1}",
+                            validationErrors.Entry.Entity.ToString(),
+                            validationError.ErrorMessage);
+                        // raise a new exception nesting
+                        // the current instance as InnerException
+                        raise = new InvalidOperationException(message, raise);
+                    }
+                }
+                throw raise;
             }
             Clear();
         }
@@ -236,6 +248,8 @@ namespace Tour
             textBox1.Text = textBox2.Text = textBox3.Text = comboBox1.Text="";
             comboBox1.SelectedIndex = -1;
             dateTimePicker1.Value = dateTimePicker2.Value = DateTime.Now;
+            id = "";
+            dataGridView2.DataSource = null;
 
         }
 

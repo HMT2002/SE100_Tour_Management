@@ -239,9 +239,6 @@
     <Compile Include="Model\tb_DIADIEM_DULICH.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\tb_DOAN.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\tb_KHACHSAN.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
