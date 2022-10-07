@@ -16,15 +16,6 @@ namespace Tour
 {
     public partial class DangKy : Form
     {
-        CustomerDAL cusDAL = new CustomerDAL();
-        ticketDAL tkDAL = new ticketDAL();
-        ReservationDAL resDAL = new ReservationDAL();
-        DataConnection dc;// = new DataConnection();
-
-        tblChuyen chuyen;
-        decimal TienHoanTra;
-        int LePhiHoanTra;
-        string ThoiGianToChuc;
         System.Text.RegularExpressions.Regex rEMail = new System.Text.RegularExpressions.Regex(@"^([a-zA-Z0-9_\-])([a-zA-Z0-9_\-\.]*)@(\[((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}|((([a-zA-Z0-9\-]+)\.)+))([a-zA-Z]{2,}|(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\])$");
         public DangKy()
         {
@@ -135,9 +126,8 @@ namespace Tour
             }
             return true;
         }
-        public string SurName, Name, address, phonenumber,typeCus, gender,CMND,TourID,tourist,typeoftour,RouteID,TenChuyen;
+        public string SurName, address, phonenumber,typeCus, gender,CMND,TourID,tourist,typeoftour,RouteID,TenChuyen;
         public int Year, Month, Day, vYear, vMonth, vDay,price,tienhoantra,lephihoantra;
-        bool checkCus,checkRes;
 
         private void cbGroup_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -159,8 +149,6 @@ namespace Tour
 
         private void btCreate_Click(object sender, EventArgs e)
         {
-            String gender, typeCus;
-            bool checkCus, checkRes;
 
             if (RdMale.Checked == true)
             {
@@ -168,10 +156,10 @@ namespace Tour
             }
             else gender = "Nữ";
 
-            String Kind, Tourist;
 
             if (CheckData())
             {
+
                 string randomcode = Converter.Instance.RandomString2(5);
                 string idkhach = randomcode;
                 var khachhang = new KHACHHANG() { ID = idkhach,
@@ -207,17 +195,22 @@ namespace Tour
 
         }
 
+        static string sqlconnectStr = @"Data Source=.\mssqlserver01;initial catalog=QL_TOUR_DU_LICH;integrated security=True";
+        SqlConnection sqlconnect = new SqlConnection(sqlconnectStr);
+
         private void showAll()
         {
+            cbDes.Refresh();
             cbDes.DataSource = (from tour in DataProvider.Ins.DB.TOURs
                                 join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
                                 select new
                                 {
                                     TENTOUR = tour.TEN,
                                     IDTOUR = tour.ID,
-                                    GIA=tour.GIA,
+                                    GIA = tour.GIA,
                                 }
                 ).ToList();
+
             cbDes.ValueMember = "IDTOUR";
             cbDes.DisplayMember = "TENTOUR";//DisplayMember phải trùng trên select new
             cbDes.SelectedIndex = -1;
@@ -234,7 +227,7 @@ namespace Tour
             {
 
                 Type t = cbDes.SelectedItem.GetType();
-                string idtour=t.GetProperty("IDTOUR").GetValue(cbDes.SelectedItem, null).ToString();
+                string idtour = t.GetProperty("IDTOUR").GetValue(cbDes.SelectedItem, null).ToString();
 
                 cbGroup.DataSource = (from tour in DataProvider.Ins.DB.TOURs
                                       join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
@@ -298,31 +291,7 @@ namespace Tour
 
         private void tbPrice_TextChanged(object sender, EventArgs e)
         {
-            //DateTime current = DateTime.Now;
-            //DateTime date = GetTime(cbDes.Text);
-            //TimeSpan interval = date - current;
-            //if (interval.Days >= 3 && chuyen.TenLoaiChuyen == "National")
-            //{
-            //    tbDiscount.Text = ((Int32.Parse(tbPrice.Text) * 20) / 100).ToString();
-            //}
-            //else if (interval.Days >= 10 && chuyen.TenLoaiChuyen == "International")
-            //{
-            //    tbDiscount.Text = ((Int32.Parse(tbPrice.Text) * 20) / 100).ToString();
-            //}
-            //else tbDiscount.Text = "0";
-            //if(String.IsNullOrEmpty(tbPrice.Text))
-            //{ 
-            //    tbDiscount.Text = tbTotal.Text = " "; 
-            //}
-            //else
-            //{
-            //    tbTotal.Text = (Int32.Parse(tbPrice.Text) - Int32.Parse(tbDiscount.Text)).ToString();
-            //}
-        }
 
-        public DateTime GetTime(string MaChuyen)
-        {
-            return chuyen.ThoiGianKhoiHanh;
         }
         private void tbSurname_KeyPress(object sender, KeyPressEventArgs e)
         {
