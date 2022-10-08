@@ -184,6 +184,7 @@ namespace Tour
             }
             try
             {
+                DataProvider.Ins.DB.VEs.RemoveRange(DataProvider.Ins.DB.VEs.Where(x => x.IDDOAN == id));
                 DOAN doan = DataProvider.Ins.DB.DOANs.Where(x => x.ID == id).FirstOrDefault();
                 DataProvider.Ins.DB.DOANs.Remove(doan);
                 DataProvider.Ins.DB.SaveChanges();

@@ -63,7 +63,7 @@ namespace Tour
                 MessageBox.Show(Convert.ToDecimal(tb_price.Text).ToString());
                 return false;
             }
-            if (tb_price.Text.Trim().CompareTo(string.Empty) == 0)
+            if (tb_price.Text.Trim().CompareTo(string.Empty) == 0||cb_typetour.Text.Trim().CompareTo(string.Empty) == 0)
             {
                 return false;
             }
@@ -158,6 +158,8 @@ namespace Tour
                 }
                 try
                 {
+                    DataProvider.Ins.DB.DOANs.RemoveRange(DataProvider.Ins.DB.DOANs.Where(x => x.IDTOUR == id));
+
                     TOUR tour = DataProvider.Ins.DB.TOURs.Where(x => x.ID == id).FirstOrDefault();
                     DataProvider.Ins.DB.TOURs.Remove(tour);
                     DataProvider.Ins.DB.SaveChanges();
