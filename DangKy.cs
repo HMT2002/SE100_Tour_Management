@@ -20,8 +20,8 @@ namespace Tour
         public DangKy()
         {
             InitializeComponent();
-            tbCMND.ForeColor = Color.LightGray;
-            tbCMND.Text = " Please Enter Identification Card Number";
+            //tbCMND.ForeColor = Color.LightGray;
+            //tbCMND.Text = "Please Enter Identification Card Number";
 
         }
 
@@ -46,40 +46,40 @@ namespace Tour
         {
             if (rdDomestic.Checked == true)
             {
-                tbCMND.Text = "Please Enter Identification Card Number";
-                tbCMND.ForeColor = Color.LightGray;
+                //tbCMND.Text = "Please Enter Identification Card Number";
+                //tbCMND.ForeColor = Color.LightGray;
                 PnFore.Visible = false;
             }
             else
             {
                 PnFore.Visible = true;
-                tbCMND.Text = "Please Enter Passport Number";
-                tbCMND.ForeColor = Color.LightGray;
+                //tbCMND.Text = "Please Enter Passport Number";
+                //tbCMND.ForeColor = Color.LightGray;
             }
         }
 
         private void tbCMND_Enter(object sender, EventArgs e)
         {
-            if (rdDomestic.Checked == true && tbCMND.Text == "Please Enter Identification Card Number")
-            {
-                tbCMND.Text = "";
-                tbCMND.ForeColor = Color.Black;
-            }
-            else tbCMND.Text = ""; tbCMND.ForeColor = Color.Black;
+            //if (rdDomestic.Checked == true && tbCMND.Text == "Please Enter Identification Card Number")
+            //{
+            //    tbCMND.Text = "";
+            //    tbCMND.ForeColor = Color.Black;
+            //}
+            //else tbCMND.Text = ""; tbCMND.ForeColor = Color.Black;
         }
 
         private void tbCMND_Leave(object sender, EventArgs e)
         {
-            if(rdDomestic.Checked == true && tbCMND.Text == "")
-            {
-                tbCMND.Text = "Please Enter Identification Card Number";
-                tbCMND.ForeColor = Color.LightGray;
-            }
-            else if(RdForeign.Checked == true && tbCMND.Text=="")
-            {
-                tbCMND.Text = "Please Enter Passport Number";
-                tbCMND.ForeColor = Color.LightGray;
-            }
+            //if(rdDomestic.Checked == true && tbCMND.Text == "")
+            //{
+            //    tbCMND.Text = "Please Enter Identification Card Number";
+            //    tbCMND.ForeColor = Color.LightGray;
+            //}
+            //else if(RdForeign.Checked == true && tbCMND.Text=="")
+            //{
+            //    tbCMND.Text = "Please Enter Passport Number";
+            //    tbCMND.ForeColor = Color.LightGray;
+            //}
         }
 
         private void btExit_Click(object sender, EventArgs e)
@@ -119,7 +119,7 @@ namespace Tour
         {
 
 
-            if (String.IsNullOrEmpty(tbName.Text)|| String.IsNullOrEmpty(tbSurname.Text)|| String.IsNullOrEmpty(tbAddress.Text)||String.IsNullOrEmpty(tbCMND.Text))
+            if (tbName.Text.Trim().CompareTo(string.Empty) == 0 || tbSurname.Text.Trim().CompareTo(string.Empty) == 0 || tbAddress.Text.Trim().CompareTo(string.Empty) == 0 || tbCMND.Text.Trim().CompareTo(string.Empty) == 0)
             {
                 MessageBox.Show("Please fill in all the information", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
@@ -159,7 +159,8 @@ namespace Tour
 
             if (CheckData())
             {
-
+                try
+                {
                 string randomcode = Converter.Instance.RandomString2(5);
                 string idkhach = randomcode;
                 var khachhang = new KHACHHANG() { ID = idkhach,
@@ -183,6 +184,25 @@ namespace Tour
                 DataProvider.Ins.DB.SaveChanges();
                 showAll();
                 Clear();
+                }
+                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+                {
+                    Exception raise = dbEx;
+                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    {
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            string message = string.Format("{0}:{1}",
+                                validationErrors.Entry.Entity.ToString(),
+                                validationError.ErrorMessage);
+                            // raise a new exception nesting
+                            // the current instance as InnerException
+                            raise = new InvalidOperationException(message, raise);
+                        }
+                    }
+                    throw raise;
+                }
+
             }
         }
         private void btnGo_Click(object sender, EventArgs e)

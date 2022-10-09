@@ -128,20 +128,26 @@ namespace Tour
                     var tour = new TOUR() { ID = randomcode, GIA = Convert.ToDecimal(tb_price.Text), TEN = tb_nametour.Text, LOAI = cb_typetour.Text, DACDIEM = richtbDetail.Text };
                     DataProvider.Ins.DB.TOURs.Add(tour);
 
-                    foreach (DIADIEM Location in LocationList)
-                    {
-                        string randomcode2 = Converter.Instance.RandomString2(5);
-                        var diadiemdulich = new tb_DIADIEM_DULICH() { ID = randomcode2, IDDIADIEM = Location.ID, IDTOUR = id };
-                        DataProvider.Ins.DB.tb_DIADIEM_DULICH.Add(diadiemdulich);
-                    }
                     DataProvider.Ins.DB.SaveChanges();
                     ShowAllChuyen();
 
                 }
-                catch (Exception ex)
+                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
                 {
-                    MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                    Exception raise = dbEx;
+                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    {
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            string message = string.Format("{0}:{1}",
+                                validationErrors.Entry.Entity.ToString(),
+                                validationError.ErrorMessage);
+                            // raise a new exception nesting
+                            // the current instance as InnerException
+                            raise = new InvalidOperationException(message, raise);
+                        }
+                    }
+                    throw raise;
                 }
 
                 Clear();
@@ -158,18 +164,35 @@ namespace Tour
                 }
                 try
                 {
+                    foreach(var khachhang in DataProvider.Ins.DB.VEs.Where(x => x.DOAN.IDTOUR == id))
+                    {
+                        DataProvider.Ins.DB.KHACHHANGs.Remove(DataProvider.Ins.DB.KHACHHANGs.Where(x => x.ID == khachhang.IDKHACH).FirstOrDefault());
+                    }
+                    DataProvider.Ins.DB.VEs.RemoveRange(DataProvider.Ins.DB.VEs.Where(x => x.DOAN.IDTOUR == id));
                     DataProvider.Ins.DB.DOANs.RemoveRange(DataProvider.Ins.DB.DOANs.Where(x => x.IDTOUR == id));
-
+                    DataProvider.Ins.DB.tb_DIADIEM_DULICH.RemoveRange(DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.IDTOUR == id));
                     TOUR tour = DataProvider.Ins.DB.TOURs.Where(x => x.ID == id).FirstOrDefault();
                     DataProvider.Ins.DB.TOURs.Remove(tour);
                     DataProvider.Ins.DB.SaveChanges();
                     ShowAllChuyen();
 
                 }
-                catch (Exception ex)
+                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
                 {
-                    MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                    Exception raise = dbEx;
+                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    {
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            string message = string.Format("{0}:{1}",
+                                validationErrors.Entry.Entity.ToString(),
+                                validationError.ErrorMessage);
+                            // raise a new exception nesting
+                            // the current instance as InnerException
+                            raise = new InvalidOperationException(message, raise);
+                        }
+                    }
+                    throw raise;
                 }
                 Clear();
             }
