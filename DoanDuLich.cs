@@ -73,7 +73,15 @@ namespace Tour
                                                ID = ve.KHACHHANG.ID,
                                                TEN = ve.KHACHHANG.TENKH,
                                            }).ToList();
-                
+
+                dataGridView3.DataSource = (from ks in DataProvider.Ins.DB.KHACHSANs
+                                            join tb_belong in DataProvider.Ins.DB.tb_KHACHSAN on ks.ID equals tb_belong.IDKHACHSAN
+                                            where tb_belong.IDDOAN == id
+                                            select new
+                                            {
+                                                ID = ks.ID,
+                                                TEN = ks.TEN,
+                                            }).ToList();
             }
 
         }
@@ -184,10 +192,6 @@ namespace Tour
             }
             try
             {
-                foreach (var khachhang in DataProvider.Ins.DB.VEs.Where(x => x.IDDOAN == id))
-                {
-                    DataProvider.Ins.DB.KHACHHANGs.Remove(DataProvider.Ins.DB.KHACHHANGs.Where(x => x.ID == khachhang.IDKHACH).FirstOrDefault());
-                }
                 DataProvider.Ins.DB.VEs.RemoveRange(DataProvider.Ins.DB.VEs.Where(x => x.IDDOAN == id));
                 DOAN doan = DataProvider.Ins.DB.DOANs.Where(x => x.ID == id).FirstOrDefault();
                 DataProvider.Ins.DB.DOANs.Remove(doan);
@@ -255,7 +259,7 @@ namespace Tour
             dateTimePicker1.Value = dateTimePicker2.Value = DateTime.Now;
             id = "";
             dataGridView2.DataSource = null;
-
+            dataGridView3.DataSource = null;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -273,6 +277,20 @@ namespace Tour
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnAddHotelForGroup_Click(object sender, EventArgs e)
+        {
+            if (id == null || id.CompareTo(string.Empty) == 0)
+            {
+                return;
+            }
+            Clear();
+
+            AddHotelForGroup h = new AddHotelForGroup(id);
+            this.Hide();
+            h.ShowDialog();
+            this.Show();
         }
     }
 }

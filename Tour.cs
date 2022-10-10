@@ -19,6 +19,7 @@ namespace Tour
     {
         string id;
         string randomcode;
+
         List<DIADIEM> LocationList = new List<DIADIEM>();
 
         public Tour()
@@ -164,13 +165,13 @@ namespace Tour
                 }
                 try
                 {
-                    foreach(var khachhang in DataProvider.Ins.DB.VEs.Where(x => x.DOAN.IDTOUR == id))
-                    {
-                        DataProvider.Ins.DB.KHACHHANGs.Remove(DataProvider.Ins.DB.KHACHHANGs.Where(x => x.ID == khachhang.IDKHACH).FirstOrDefault());
-                    }
-                    DataProvider.Ins.DB.VEs.RemoveRange(DataProvider.Ins.DB.VEs.Where(x => x.DOAN.IDTOUR == id));
-                    DataProvider.Ins.DB.DOANs.RemoveRange(DataProvider.Ins.DB.DOANs.Where(x => x.IDTOUR == id));
-                    DataProvider.Ins.DB.tb_DIADIEM_DULICH.RemoveRange(DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.IDTOUR == id));
+                    //foreach(var khachhang in DataProvider.Ins.DB.VEs.Where(x => x.DOAN.IDTOUR == id))
+                    //{
+                    //    DataProvider.Ins.DB.KHACHHANGs.Remove(DataProvider.Ins.DB.KHACHHANGs.Where(x => x.ID == khachhang.IDKHACH).FirstOrDefault());
+                    //}
+                    //DataProvider.Ins.DB.VEs.RemoveRange(DataProvider.Ins.DB.VEs.Where(x => x.DOAN.IDTOUR == id));
+                    //DataProvider.Ins.DB.DOANs.RemoveRange(DataProvider.Ins.DB.DOANs.Where(x => x.IDTOUR == id));
+                    //DataProvider.Ins.DB.tb_DIADIEM_DULICH.RemoveRange(DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.IDTOUR == id));
                     TOUR tour = DataProvider.Ins.DB.TOURs.Where(x => x.ID == id).FirstOrDefault();
                     DataProvider.Ins.DB.TOURs.Remove(tour);
                     DataProvider.Ins.DB.SaveChanges();

@@ -84,12 +84,9 @@ namespace Tour
 
         private void btExit_Click(object sender, EventArgs e)
         {
-            DialogResult msExit;
 
-            msExit = MessageBox.Show("Confirm if you want to exit ?", "Travel Management System", 
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if(msExit ==DialogResult.Yes)
+            if(MessageBox.Show("Confirm if you want to exit ?", "Travel Management System",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
             }

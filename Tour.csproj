@@ -131,6 +131,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddHotelForGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddHotelForGroup.Designer.cs">
+      <DependentUpon>AddHotelForGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddLocationForTour.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +242,9 @@
     <Compile Include="Model\PHUONGTIEN.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\tb_DIADIEM_DULICH.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -322,6 +331,9 @@
     <Compile Include="Model\typeCustomer.cs" />
     <Compile Include="DAL\typeCustomerDAL.cs" />
     <Compile Include="Utils\Converter.cs" />
+    <EmbeddedResource Include="AddHotelForGroup.resx">
+      <DependentUpon>AddHotelForGroup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddLocationForTour.resx">
       <DependentUpon>AddLocationForTour.cs</DependentUpon>
     </EmbeddedResource>
