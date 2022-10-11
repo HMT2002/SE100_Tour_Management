@@ -182,6 +182,7 @@ namespace Tour
                 }
                 try
                 {
+                    DataProvider.Ins.DB.tb_KHACHSAN.RemoveRange(DataProvider.Ins.DB.tb_KHACHSAN.Where(x=>x.IDKHACHSAN==id));
                     KHACHSAN khachsan = DataProvider.Ins.DB.KHACHSANs.Where(x => x.ID == id).FirstOrDefault();
                     DataProvider.Ins.DB.KHACHSANs.Remove(khachsan);
                     DataProvider.Ins.DB.SaveChanges();
