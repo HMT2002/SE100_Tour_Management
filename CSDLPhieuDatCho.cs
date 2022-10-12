@@ -9,17 +9,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tour.Model;
 
 namespace Tour
 {
     public partial class CSDLPhieuDatCho : Form
     {
-
-        ticketDAL tkDAL = new ticketDAL();
-        CustomerDAL cusDAL = new CustomerDAL();
-        ReservationDAL resDAL = new ReservationDAL();
-        DataConnection dc;
-        SqlDataAdapter adapter;
 
 
         void Clear()
@@ -31,15 +26,7 @@ namespace Tour
         {
 
             InitializeComponent();
-            tkDAL = new ticketDAL();
-            tbSearchTicket.ForeColor = Color.LightGray;
-            tbSearchTicket.Text = "Enter Tour ID to search";
-            this.tbSearchTicket.Leave += new System.EventHandler(this.textBox1_Leave);
-            this.tbSearchTicket.Enter += new System.EventHandler(this.textBox1_Enter);
-            tbSearchResID.ForeColor = Color.LightGray;
-            tbSearchResID.Text = "Enter Tour ID to search";
-            this.tbSearchResID.Leave += new System.EventHandler(this.textBox2_Leave);
-            this.tbSearchResID.Enter += new System.EventHandler(this.textBox2_Enter);
+
         }
         private void textBox1_Leave(object sender, EventArgs e)
         {
@@ -79,8 +66,19 @@ namespace Tour
         }
         public void ShowTicket()
         {
-            string query = "SELECT MaDuKhach, HanPassport, HanVisa, MaChuyen, TenLoaiTuyen, TenLoaiChuyen, LePhiHoanTra, TienHoanTra, MaVe, MaPhieu, HoTen, DiaChi, SDT, GioiTinh, TenLoaiKhach, CMND_Passport, GiaVe FROM Ve";
 
+            dgvDatCho.DataSource = (from ve in DataProvider.Ins.DB.VEs
+                                    join doan in DataProvider.Ins.DB.DOANs on ve.IDDOAN equals doan.ID
+                                    join khachhang in DataProvider.Ins.DB.KHACHHANGs on ve.IDKHACH equals khachhang.ID
+                                    join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
+
+                                    select new
+                                    {
+                                        IDVE = ve.ID,
+                                        TENKHACHHANG = khachhang.TENKH,
+                                        TENTOUR=tour.TEN,
+
+                                    }).ToList();
 
         }
 
@@ -94,7 +92,6 @@ namespace Tour
         }
 
 
-        Guid TicketID, CustomerID, ReservationID, TourID;
         decimal CostTicket;
         string NameOfRouteType, NameOfTourType;
 
@@ -104,10 +101,6 @@ namespace Tour
             String gender, tourist;
             if (index >= 0)
             {
-                CustomerID = Guid.Parse(dgvQuanLy.Rows[index].Cells["MaDuKhach"].Value.ToString());
-                TicketID = Guid.Parse(dgvQuanLy.Rows[index].Cells["MaVe"].Value.ToString());
-                ReservationID = Guid.Parse(dgvQuanLy.Rows[index].Cells["MaPhieuDatCho"].Value.ToString());
-                TourID = Guid.Parse(dgvQuanLy.Rows[index].Cells["MaChuyen"].Value.ToString());
                 NameOfTourType = dgvQuanLy.Rows[index].Cells["TenLoaiChuyen"].Value.ToString();
                 NameOfRouteType = dgvQuanLy.Rows[index].Cells["TenloaiTuyen"].Value.ToString();
                 CostTicket = decimal.Parse(dgvQuanLy.Rows[index].Cells["GiaVe"].Value.ToString());
@@ -158,36 +151,8 @@ namespace Tour
         {
             if (CheckData())
             {
-                Customer cus = new Customer();
 
-                cus.MaDuKhach = CustomerID;
-                cus.HoTen = tbName.Text;
-                cus.DiaChi = tbAddress.Text;
-                cus.SDT = tbphone.Text;
-
-                cus.GioiTinh = "Male";
-                if (rdbFemale.Checked == true)
-                {
-                    cus.GioiTinh = "Female";
-                }
-
-                if (rdbDomestic.Checked == true)
-                {
-                    cus.MaLoaiKhach = "CUS001";
-                }
-                else cus.MaLoaiKhach = "CUS002";
-
-                cus.CMND_Passport = tbICN.Text;
-                cus.HanPassport = dtpPassport.Value;
-                cus.HanVisa = dtpVisa.Value;
-
-                if (cusDAL.Update(cus) && tkDAL.UpdateCustomerInTicket(cus, TicketID, ReservationID))
-                {
-                    ShowTicket();
-                    MessageBox.Show("Cập nhật thông tin hoàn tất", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else MessageBox.Show("Error", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
-                //Clear();
+                Clear();
             }
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -201,23 +166,10 @@ namespace Tour
 
         public bool CheckData()
         {
-            DateTime date = GetTime(TourID);
 
             if (String.IsNullOrEmpty(tbName.Text) || String.IsNullOrEmpty(tbphone.Text) || String.IsNullOrEmpty(tbAddress.Text))
             {
                 MessageBox.Show("Please fill in all the information", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return false;
-            }
-
-            if (rdbForeign.Checked == true && dtpPassport.Value.Date <= date.Date)
-            {
-                MessageBox.Show("Passport expire error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-
-            else if (rdbForeign.Checked == true && dtpVisa.Value.Date <= date.Date)
-            {
-                MessageBox.Show("Visa expire error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -294,20 +246,9 @@ namespace Tour
 
         private void btnTraVe_Click(object sender, EventArgs e)
         {
-            DateTime current = DateTime.Now;
-            DateTime date = GetTime(TourID);
-            TimeSpan interval = date - current;
-            tblTicket tk = new tblTicket();
-            tk.MaVe = TicketID;
-            tk.MaPhieu = ReservationID;
-            tk.MaDuKhach = CustomerID;
 
             Customer cus = new Customer();
-            cus.MaDuKhach = CustomerID;
 
-            Reservation res = new Reservation();
-            res.MaPhieu = ReservationID;
-            res.MaChuyen = TourID;
 
 
             decimal result;
@@ -326,14 +267,12 @@ namespace Tour
                 MessageBox.Show("You have to pay extra " + result * (-1) + " for ticket refund ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
+            else
+            {
+                MessageBox.Show("Error", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             Clear();
 
-            if (tkDAL.Delete(tk) && cusDAL.Delete(cus) && resDAL.Delete(res))
-            {
-                ShowTicket();
-                ShowTicketv2();
-            }
-            else MessageBox.Show("Error", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
         public string mave,maphieu,madukhach,tourID;
         public bool XoaKhach()
@@ -347,10 +286,8 @@ namespace Tour
             Reservation res = new Reservation();
             res.MaPhieu = Guid.Parse(maphieu);
             res.MaChuyen = Guid.Parse(tourID);
-            if (tkDAL.Delete(tk) && cusDAL.Delete(cus) && resDAL.Delete(res))
-            {
-                return true;
-            }           
+
+
             tientong();
             return false;
         }
@@ -358,27 +295,16 @@ namespace Tour
         {
             if (MessageBox.Show("are you sure ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                tblTicket tk = new tblTicket();
-                tk.MaVe = TicketID;
-                tk.MaPhieu = ReservationID;
-                tk.MaDuKhach = CustomerID;
 
-                Customer cus = new Customer();
-                cus.MaDuKhach = CustomerID;
+            }
+            else { 
+                MessageBox.Show("Error", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); 
 
-                Reservation res = new Reservation();
-                res.MaPhieu = ReservationID;
-                res.MaChuyen = TourID;
+            }
 
-                if (tkDAL.Delete(tk) && cusDAL.Delete(cus) && resDAL.Delete(res))
-                {
-                    ShowTicket();
-                    ShowTicketv2();
-                }
-                else MessageBox.Show("Error", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 tientong();
                 Clear();
-            }
+
         }
         public float getTienHoantra(string TenLoaiChuyen)
         {
