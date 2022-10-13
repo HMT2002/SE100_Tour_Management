@@ -16,7 +16,7 @@ namespace Tour
     public partial class CSDLPhieuDatCho : Form
     {
 
-
+        string id;
         void Clear()
         {
             tbName.Text=tbAddress.Text = tbID.Text = tbICN.Text = tbphone.Text = tbAddress.Text = "";
@@ -71,7 +71,7 @@ namespace Tour
                                     join doan in DataProvider.Ins.DB.DOANs on ve.IDDOAN equals doan.ID
                                     join khachhang in DataProvider.Ins.DB.KHACHHANGs on ve.IDKHACH equals khachhang.ID
                                     join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-
+                                    where doan.ID==id
                                     select new
                                     {
                                         IDVE = ve.ID,
@@ -84,9 +84,6 @@ namespace Tour
 
         public void ShowTicketv2()
         {
-            
-            string query = "Select MaPhieu, HoTen from ve";
-
 
 
         }
@@ -101,6 +98,9 @@ namespace Tour
             String gender, tourist;
             if (index >= 0)
             {
+                id= dgvQuanLy.Rows[index].Cells["IDTOUR"].Value.ToString();
+
+
                 NameOfTourType = dgvQuanLy.Rows[index].Cells["TenLoaiChuyen"].Value.ToString();
                 NameOfRouteType = dgvQuanLy.Rows[index].Cells["TenloaiTuyen"].Value.ToString();
                 CostTicket = decimal.Parse(dgvQuanLy.Rows[index].Cells["GiaVe"].Value.ToString());
