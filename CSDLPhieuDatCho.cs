@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.Data.Entity.SqlServer;
+using System.Data.Linq.SqlClient;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -161,7 +163,30 @@ namespace Tour
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+            string value = tbSearchResID.Text.Trim();
+            if (!string.IsNullOrEmpty(value))
+            {
+                try
+                {
+                        dgvDatCho.DataSource = (from ve in DataProvider.Ins.DB.VEs
+                                                join doan in DataProvider.Ins.DB.DOANs on ve.IDDOAN equals doan.ID
+                                                join khachhang in DataProvider.Ins.DB.KHACHHANGs on ve.IDKHACH equals khachhang.ID
+                                                join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
+                                                where SqlMethods.Like(ve.ID, "%" + value + "%")
+                                                select new
+                                                {
+                                                    IDVE = ve.ID,
+                                                    TENKHACHHANG = khachhang.TENKH,
+                                                    TENTOUR = tour.TEN,
 
+                                                }).ToList();
+                }
+                catch
+                {
+
+                }
+            }
+            else { ShowTicket(); }
         }
 
         public bool CheckData()
