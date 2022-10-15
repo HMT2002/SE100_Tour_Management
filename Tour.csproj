@@ -144,6 +144,12 @@
     <Compile Include="AddLocationForTour.Designer.cs">
       <DependentUpon>AddLocationForTour.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddVehicalForGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddVehicalForGroup.Designer.cs">
+      <DependentUpon>AddVehicalForGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChangePass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -337,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddLocationForTour.resx">
       <DependentUpon>AddLocationForTour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddVehicalForGroup.resx">
+      <DependentUpon>AddVehicalForGroup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangePass.resx">
       <DependentUpon>ChangePass.cs</DependentUpon>
