@@ -149,7 +149,7 @@ namespace Tour
             {
                 try
                 {
-                    randomcode = Converter.Instance.RandomString(5);
+                    randomcode = Converter.Instance.RandomString2(5);
                     if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
                     {
                         var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text };

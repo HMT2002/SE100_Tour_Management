@@ -21,8 +21,8 @@ namespace Tour
         ImageList listView_ImageList1 = new ImageList();
         ImageList listView_ImageList2 = new ImageList();
 
-        List<KHACHSAN> ListKhachSan = new List<KHACHSAN>();
-        List<KHACHSAN> ListTatCaKhachSan = new List<KHACHSAN>();
+        List<PHUONGTIEN> ListPhuongTien = new List<PHUONGTIEN>();
+        List<PHUONGTIEN> ListTatCaPhuongTien = new List<PHUONGTIEN>();
 
 
         public AddVehicalForGroup(string id)
@@ -35,30 +35,30 @@ namespace Tour
 
         private void Init()
         {
-            var result2 = (from ks in DataProvider.Ins.DB.KHACHSANs
-                           join tb_belong in DataProvider.Ins.DB.tb_KHACHSAN on ks.ID equals tb_belong.IDKHACHSAN
+            var result2 = (from pt in DataProvider.Ins.DB.PHUONGTIENs
+                           join tb_belong in DataProvider.Ins.DB.tb_PHUONGTIEN on pt.ID equals tb_belong.IDPHUONGTIEN
                            where tb_belong.IDDOAN == ID
-                           select ks)
+                           select pt)
                                      .ToList();
-            var result = (from ks in DataProvider.Ins.DB.KHACHSANs
-                          select ks)
+            var result = (from pt in DataProvider.Ins.DB.PHUONGTIENs
+                          select pt)
                          .ToList();
             int i = 0;
-            foreach (KHACHSAN khachsan in result2)
+            foreach (PHUONGTIEN phuongtien in result2)
             {
-                ListKhachSan.Add(khachsan);
-                var listViewItem = listView2.Items.Add(khachsan.TEN);
-                listView_ImageList2.Images.Add(i.ToString(), Converter.Instance.ByteArrayToImage(khachsan.PICBI));
+                ListPhuongTien.Add(phuongtien);
+                var listViewItem = listView2.Items.Add(phuongtien.TEN);
+                listView_ImageList2.Images.Add(i.ToString(), Converter.Instance.ByteArrayToImage(phuongtien.PICBI));
                 listViewItem.ImageKey = i.ToString();
                 i++;
             }
             i = 0;
-            foreach (KHACHSAN khachsan in result)
+            foreach (PHUONGTIEN phuongtien in result)
             {
-                ListTatCaKhachSan.Add(khachsan);
+                ListTatCaPhuongTien.Add(phuongtien);
 
-                var listViewItem = listView1.Items.Add(khachsan.TEN);
-                listView_ImageList1.Images.Add(i.ToString(), Converter.Instance.ByteArrayToImage(khachsan.PICBI));
+                var listViewItem = listView1.Items.Add(phuongtien.TEN);
+                listView_ImageList1.Images.Add(i.ToString(), Converter.Instance.ByteArrayToImage(phuongtien.PICBI));
                 listViewItem.ImageKey = i.ToString();
                 i++;
             }
@@ -73,17 +73,18 @@ namespace Tour
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataProvider.Ins.DB.tb_KHACHSAN.RemoveRange(DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.IDDOAN == ID));
+            DataProvider.Ins.DB.tb_PHUONGTIEN.RemoveRange(DataProvider.Ins.DB.tb_PHUONGTIEN.Where(x => x.IDDOAN == ID));
 
-            foreach (KHACHSAN khachsan in ListKhachSan)
+            string random1;
+            foreach (PHUONGTIEN phuongtien in ListPhuongTien)
             {
-                string random1 = Converter.Instance.RandomString2(5);
-                while (DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.ID == random1).FirstOrDefault() != null)
+                random1 = Converter.Instance.RandomString2(5);
+                while (DataProvider.Ins.DB.tb_PHUONGTIEN.Where(x => x.ID == random1).FirstOrDefault() != null)
                 {
                     random1 = Converter.Instance.RandomString2(5);
                 }
 
-                DataProvider.Ins.DB.tb_KHACHSAN.Add(new tb_KHACHSAN() { ID = random1, IDKHACHSAN = khachsan.ID, IDDOAN = ID });
+                DataProvider.Ins.DB.tb_PHUONGTIEN.Add(new tb_PHUONGTIEN() { ID = random1, IDPHUONGTIEN = phuongtien.ID, IDDOAN = ID });
                 DataProvider.Ins.DB.SaveChanges();
 
 
@@ -106,16 +107,16 @@ namespace Tour
         {
             try
             {
-                KHACHSAN ks = ListTatCaKhachSan[listView1.SelectedItems[0].Index];
-                if (ListKhachSan.Contains(ks))
+                PHUONGTIEN pt = ListTatCaPhuongTien[listView1.SelectedItems[0].Index];
+                if (ListPhuongTien.Contains(pt))
                 {
                     return;
                 }
 
-                ListKhachSan.Add(ks);
+                ListPhuongTien.Add(pt);
                 string randomkey = Converter.Instance.RandomString(5);
-                var listViewItem = listView2.Items.Add(ks.TEN);
-                listView_ImageList2.Images.Add(randomkey, Converter.Instance.ByteArrayToImage(ks.PICBI));
+                var listViewItem = listView2.Items.Add(pt.TEN);
+                listView_ImageList2.Images.Add(randomkey, Converter.Instance.ByteArrayToImage(pt.PICBI));
                 listViewItem.ImageKey = randomkey;
             }
             catch (Exception ex)
@@ -128,7 +129,7 @@ namespace Tour
         {
             try
             {
-                ListKhachSan.Remove(ListKhachSan[listView2.SelectedItems[0].Index]);
+                ListPhuongTien.Remove(ListPhuongTien[listView2.SelectedItems[0].Index]);
                 listView_ImageList2.Images.RemoveAt(listView2.SelectedItems[0].Index);
                 listView2.Items.RemoveAt(listView2.SelectedItems[0].Index);
             }

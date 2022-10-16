@@ -64,10 +64,15 @@ namespace Tour
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnAddHotelForGroup = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.IDKHACHHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENKHACHHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDKHACHHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENKHACHHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnAddVehicalForGroup = new System.Windows.Forms.Button();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -75,6 +80,8 @@ namespace Tour
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -139,7 +146,7 @@ namespace Tour
             this.TENTOUR});
             this.dataGridView1.Location = new System.Drawing.Point(3, 33);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1202, 214);
+            this.dataGridView1.Size = new System.Drawing.Size(1393, 214);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -196,7 +203,7 @@ namespace Tour
             // 
             this.tb_search.Location = new System.Drawing.Point(6, 6);
             this.tb_search.Name = "tb_search";
-            this.tb_search.Size = new System.Drawing.Size(731, 20);
+            this.tb_search.Size = new System.Drawing.Size(938, 20);
             this.tb_search.TabIndex = 10;
             this.tb_search.TextChanged += new System.EventHandler(this.tb_search_TextChanged);
             // 
@@ -205,7 +212,7 @@ namespace Tour
             this.rdNameSearch.AutoSize = true;
             this.rdNameSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdNameSearch.ForeColor = System.Drawing.Color.Black;
-            this.rdNameSearch.Location = new System.Drawing.Point(802, 4);
+            this.rdNameSearch.Location = new System.Drawing.Point(1000, 5);
             this.rdNameSearch.Margin = new System.Windows.Forms.Padding(2);
             this.rdNameSearch.Name = "rdNameSearch";
             this.rdNameSearch.Size = new System.Drawing.Size(64, 23);
@@ -220,7 +227,7 @@ namespace Tour
             this.rdIDSearch.Checked = true;
             this.rdIDSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdIDSearch.ForeColor = System.Drawing.Color.Black;
-            this.rdIDSearch.Location = new System.Drawing.Point(751, 6);
+            this.rdIDSearch.Location = new System.Drawing.Point(949, 7);
             this.rdIDSearch.Margin = new System.Windows.Forms.Padding(2);
             this.rdIDSearch.Name = "rdIDSearch";
             this.rdIDSearch.Size = new System.Drawing.Size(43, 23);
@@ -232,7 +239,7 @@ namespace Tour
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(1123, 3);
+            this.btnUpdate.Location = new System.Drawing.Point(1321, 4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 23;
@@ -242,7 +249,7 @@ namespace Tour
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(1042, 3);
+            this.btnXoa.Location = new System.Drawing.Point(1240, 4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 22;
@@ -252,7 +259,7 @@ namespace Tour
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(963, 3);
+            this.btnAdd.Location = new System.Drawing.Point(1161, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 21;
@@ -262,7 +269,7 @@ namespace Tour
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(882, 3);
+            this.btnClear.Location = new System.Drawing.Point(1080, 4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 24;
@@ -272,7 +279,7 @@ namespace Tour
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(1137, 255);
+            this.btnExit.Location = new System.Drawing.Point(1335, 253);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(61, 23);
             this.btnExit.TabIndex = 25;
@@ -345,7 +352,7 @@ namespace Tour
             this.TENKHACHHANG});
             this.dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(466, 157);
+            this.dataGridView2.Size = new System.Drawing.Size(418, 157);
             this.dataGridView2.TabIndex = 32;
             // 
             // panel1
@@ -361,7 +368,7 @@ namespace Tour
             this.panel1.Controls.Add(this.btnClear);
             this.panel1.Location = new System.Drawing.Point(12, 180);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1214, 283);
+            this.panel1.Size = new System.Drawing.Size(1405, 283);
             this.panel1.TabIndex = 33;
             // 
             // panel2
@@ -378,7 +385,7 @@ namespace Tour
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(923, 14);
+            this.panel2.Location = new System.Drawing.Point(1114, 11);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(303, 163);
             this.panel2.TabIndex = 34;
@@ -388,21 +395,21 @@ namespace Tour
             this.panel3.Controls.Add(this.dataGridView2);
             this.panel3.Location = new System.Drawing.Point(15, 11);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(472, 163);
+            this.panel3.Size = new System.Drawing.Size(425, 163);
             this.panel3.TabIndex = 35;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.btnAddHotelForGroup);
             this.panel4.Controls.Add(this.dataGridView3);
-            this.panel4.Location = new System.Drawing.Point(490, 12);
+            this.panel4.Location = new System.Drawing.Point(446, 11);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(427, 163);
+            this.panel4.Size = new System.Drawing.Size(328, 163);
             this.panel4.TabIndex = 36;
             // 
             // btnAddHotelForGroup
             // 
-            this.btnAddHotelForGroup.Location = new System.Drawing.Point(394, 2);
+            this.btnAddHotelForGroup.Location = new System.Drawing.Point(295, 3);
             this.btnAddHotelForGroup.Name = "btnAddHotelForGroup";
             this.btnAddHotelForGroup.Size = new System.Drawing.Size(28, 23);
             this.btnAddHotelForGroup.TabIndex = 26;
@@ -421,28 +428,15 @@ namespace Tour
             this.dataGridViewTextBoxColumn2});
             this.dataGridView3.Location = new System.Drawing.Point(3, 3);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(385, 157);
+            this.dataGridView3.Size = new System.Drawing.Size(286, 157);
             this.dataGridView3.TabIndex = 32;
-            // 
-            // IDKHACHHANG
-            // 
-            this.IDKHACHHANG.DataPropertyName = "ID";
-            this.IDKHACHHANG.HeaderText = "ID";
-            this.IDKHACHHANG.Name = "IDKHACHHANG";
-            this.IDKHACHHANG.Width = 120;
-            // 
-            // TENKHACHHANG
-            // 
-            this.TENKHACHHANG.DataPropertyName = "TEN";
-            this.TENKHACHHANG.HeaderText = "Tên khách hàng";
-            this.TENKHACHHANG.Name = "TENKHACHHANG";
-            this.TENKHACHHANG.Width = 300;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 5;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -451,11 +445,73 @@ namespace Tour
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 230;
             // 
+            // IDKHACHHANG
+            // 
+            this.IDKHACHHANG.DataPropertyName = "ID";
+            this.IDKHACHHANG.HeaderText = "ID";
+            this.IDKHACHHANG.Name = "IDKHACHHANG";
+            this.IDKHACHHANG.Width = 70;
+            // 
+            // TENKHACHHANG
+            // 
+            this.TENKHACHHANG.DataPropertyName = "TEN";
+            this.TENKHACHHANG.HeaderText = "Tên khách hàng";
+            this.TENKHACHHANG.Name = "TENKHACHHANG";
+            this.TENKHACHHANG.Width = 300;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.btnAddVehicalForGroup);
+            this.panel5.Controls.Add(this.dataGridView4);
+            this.panel5.Location = new System.Drawing.Point(780, 11);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(328, 163);
+            this.panel5.TabIndex = 37;
+            // 
+            // btnAddVehicalForGroup
+            // 
+            this.btnAddVehicalForGroup.Location = new System.Drawing.Point(295, 3);
+            this.btnAddVehicalForGroup.Name = "btnAddVehicalForGroup";
+            this.btnAddVehicalForGroup.Size = new System.Drawing.Size(28, 23);
+            this.btnAddVehicalForGroup.TabIndex = 26;
+            this.btnAddVehicalForGroup.Text = "+";
+            this.btnAddVehicalForGroup.UseVisualStyleBackColor = true;
+            this.btnAddVehicalForGroup.Click += new System.EventHandler(this.btnAddVehicalForGroup_Click);
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.dataGridView4.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.Size = new System.Drawing.Size(286, 157);
+            this.dataGridView4.TabIndex = 32;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn3.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 5;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "TEN";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Tên phương tiện";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 230;
+            // 
             // DoanDuLich
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1238, 470);
+            this.ClientSize = new System.Drawing.Size(1436, 470);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -473,6 +529,8 @@ namespace Tour
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -518,5 +576,10 @@ namespace Tour
         private System.Windows.Forms.DataGridViewTextBoxColumn TENKHACHHANG;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button btnAddVehicalForGroup;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }

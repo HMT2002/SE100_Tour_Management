@@ -82,6 +82,15 @@ namespace Tour
                                                 ID = ks.ID,
                                                 TEN = ks.TEN,
                                             }).ToList();
+
+                dataGridView4.DataSource = (from pt in DataProvider.Ins.DB.PHUONGTIENs
+                                            join tb_belong in DataProvider.Ins.DB.tb_PHUONGTIEN on pt.ID equals tb_belong.IDPHUONGTIEN
+                                            where tb_belong.IDDOAN == id
+                                            select new
+                                            {
+                                                ID = pt.ID,
+                                                TEN = pt.TEN,
+                                            }).ToList();
             }
 
         }
@@ -260,6 +269,8 @@ namespace Tour
             id = "";
             dataGridView2.DataSource = null;
             dataGridView3.DataSource = null;
+            dataGridView4.DataSource = null;
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -285,12 +296,29 @@ namespace Tour
             {
                 return;
             }
-            Clear();
 
             AddHotelForGroup h = new AddHotelForGroup(id);
             this.Hide();
             h.ShowDialog();
             this.Show();
+            Clear();
+
+        }
+
+        private void btnAddVehicalForGroup_Click(object sender, EventArgs e)
+        {
+            if (id == null || id.CompareTo(string.Empty) == 0)
+            {
+                return;
+            }
+
+            AddVehicalForGroup h = new AddVehicalForGroup(id);
+            this.Hide();
+            h.ShowDialog();
+            this.Show();
+            Clear();
+
+
         }
     }
 }
