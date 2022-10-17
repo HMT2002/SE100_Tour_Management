@@ -29,6 +29,7 @@ namespace Tour
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DoanDuLich));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -58,6 +59,8 @@ namespace Tour
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.IDKHACHHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENKHACHHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -66,8 +69,6 @@ namespace Tour
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDKHACHHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENKHACHHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnAddVehicalForGroup = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
@@ -183,21 +184,21 @@ namespace Tour
             this.CHITIETCHUONGTRINH.DataPropertyName = "CHITIETCHUONGTRINH";
             this.CHITIETCHUONGTRINH.HeaderText = "Chi tiết chương trình";
             this.CHITIETCHUONGTRINH.Name = "CHITIETCHUONGTRINH";
-            this.CHITIETCHUONGTRINH.Width = 150;
+            this.CHITIETCHUONGTRINH.Width = 250;
             // 
             // CHIPHI
             // 
             this.CHIPHI.DataPropertyName = "TONG";
             this.CHIPHI.HeaderText = "Chi phí";
             this.CHIPHI.Name = "CHIPHI";
-            this.CHIPHI.Width = 130;
+            this.CHIPHI.Width = 200;
             // 
             // TENTOUR
             // 
             this.TENTOUR.DataPropertyName = "TEN_TOUR";
             this.TENTOUR.HeaderText = "Tour";
             this.TENTOUR.Name = "TENTOUR";
-            this.TENTOUR.Width = 200;
+            this.TENTOUR.Width = 220;
             // 
             // tb_search
             // 
@@ -355,6 +356,20 @@ namespace Tour
             this.dataGridView2.Size = new System.Drawing.Size(418, 157);
             this.dataGridView2.TabIndex = 32;
             // 
+            // IDKHACHHANG
+            // 
+            this.IDKHACHHANG.DataPropertyName = "ID";
+            this.IDKHACHHANG.HeaderText = "ID";
+            this.IDKHACHHANG.Name = "IDKHACHHANG";
+            this.IDKHACHHANG.Width = 70;
+            // 
+            // TENKHACHHANG
+            // 
+            this.TENKHACHHANG.DataPropertyName = "TEN";
+            this.TENKHACHHANG.HeaderText = "Tên khách hàng";
+            this.TENKHACHHANG.Name = "TENKHACHHANG";
+            this.TENKHACHHANG.Width = 300;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.tb_search);
@@ -445,20 +460,6 @@ namespace Tour
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 230;
             // 
-            // IDKHACHHANG
-            // 
-            this.IDKHACHHANG.DataPropertyName = "ID";
-            this.IDKHACHHANG.HeaderText = "ID";
-            this.IDKHACHHANG.Name = "IDKHACHHANG";
-            this.IDKHACHHANG.Width = 70;
-            // 
-            // TENKHACHHANG
-            // 
-            this.TENKHACHHANG.DataPropertyName = "TEN";
-            this.TENKHACHHANG.HeaderText = "Tên khách hàng";
-            this.TENKHACHHANG.Name = "TENKHACHHANG";
-            this.TENKHACHHANG.Width = 300;
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.btnAddVehicalForGroup);
@@ -510,6 +511,8 @@ namespace Tour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1436, 470);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -562,13 +565,6 @@ namespace Tour
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn data_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYKHOIHANH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYKETTHUC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CHITIETCHUONGTRINH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CHIPHI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENTOUR;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Button btnAddHotelForGroup;
@@ -581,5 +577,12 @@ namespace Tour
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYKHOIHANH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYKETTHUC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHITIETCHUONGTRINH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHIPHI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENTOUR;
     }
 }
