@@ -29,10 +29,10 @@ namespace Tour
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhuongTien));
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnPickPicture = new System.Windows.Forms.Button();
             this.pcbxVehical = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.cbbxKind = new System.Windows.Forms.ComboBox();
             this.cbboxProvince = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,12 +45,9 @@ namespace Tour
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxVehical)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -84,30 +81,10 @@ namespace Tour
             this.pcbxVehical.TabIndex = 0;
             this.pcbxVehical.TabStop = false;
             // 
-            // panel1
-            // 
-            this.panel1.AutoSize = true;
-            this.panel1.Controls.Add(this.cbbxKind);
-            this.panel1.Controls.Add(this.cbboxProvince);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.rchtxtbxDetail);
-            this.panel1.Controls.Add(this.txtbxName);
-            this.panel1.Controls.Add(this.cbbxVehical);
-            this.panel1.Controls.Add(this.btnClear);
-            this.panel1.Controls.Add(this.btnUpdate);
-            this.panel1.Controls.Add(this.btnXoa);
-            this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Location = new System.Drawing.Point(468, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(323, 344);
-            this.panel1.TabIndex = 7;
-            // 
             // cbbxKind
             // 
             this.cbbxKind.FormattingEnabled = true;
-            this.cbbxKind.Location = new System.Drawing.Point(85, 57);
+            this.cbbxKind.Location = new System.Drawing.Point(553, 69);
             this.cbbxKind.Name = "cbbxKind";
             this.cbbxKind.Size = new System.Drawing.Size(232, 21);
             this.cbbxKind.TabIndex = 19;
@@ -115,7 +92,7 @@ namespace Tour
             // cbboxProvince
             // 
             this.cbboxProvince.FormattingEnabled = true;
-            this.cbboxProvince.Location = new System.Drawing.Point(85, 84);
+            this.cbboxProvince.Location = new System.Drawing.Point(553, 96);
             this.cbboxProvince.Name = "cbboxProvince";
             this.cbboxProvince.Size = new System.Drawing.Size(232, 21);
             this.cbboxProvince.TabIndex = 18;
@@ -123,7 +100,8 @@ namespace Tour
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 92);
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Location = new System.Drawing.Point(471, 104);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 13);
             this.label5.TabIndex = 17;
@@ -132,7 +110,8 @@ namespace Tour
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 65);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Location = new System.Drawing.Point(471, 77);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(27, 13);
             this.label4.TabIndex = 16;
@@ -141,7 +120,8 @@ namespace Tour
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 35);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(471, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 10;
@@ -149,7 +129,7 @@ namespace Tour
             // 
             // rchtxtbxDetail
             // 
-            this.rchtxtbxDetail.Location = new System.Drawing.Point(6, 111);
+            this.rchtxtbxDetail.Location = new System.Drawing.Point(474, 123);
             this.rchtxtbxDetail.Name = "rchtxtbxDetail";
             this.rchtxtbxDetail.Size = new System.Drawing.Size(314, 201);
             this.rchtxtbxDetail.TabIndex = 8;
@@ -157,7 +137,7 @@ namespace Tour
             // 
             // txtbxName
             // 
-            this.txtbxName.Location = new System.Drawing.Point(85, 32);
+            this.txtbxName.Location = new System.Drawing.Point(553, 44);
             this.txtbxName.Name = "txtbxName";
             this.txtbxName.Size = new System.Drawing.Size(232, 20);
             this.txtbxName.TabIndex = 6;
@@ -165,7 +145,7 @@ namespace Tour
             // cbbxVehical
             // 
             this.cbbxVehical.FormattingEnabled = true;
-            this.cbbxVehical.Location = new System.Drawing.Point(3, 5);
+            this.cbbxVehical.Location = new System.Drawing.Point(471, 17);
             this.cbbxVehical.Name = "cbbxVehical";
             this.cbbxVehical.Size = new System.Drawing.Size(233, 21);
             this.cbbxVehical.TabIndex = 4;
@@ -173,7 +153,7 @@ namespace Tour
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(242, 3);
+            this.btnClear.Location = new System.Drawing.Point(710, 15);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 3;
@@ -183,7 +163,7 @@ namespace Tour
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(200, 318);
+            this.btnUpdate.Location = new System.Drawing.Point(668, 330);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 2;
@@ -193,7 +173,7 @@ namespace Tour
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(119, 318);
+            this.btnXoa.Location = new System.Drawing.Point(587, 330);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 1;
@@ -203,7 +183,7 @@ namespace Tour
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(40, 318);
+            this.btnAdd.Location = new System.Drawing.Point(508, 330);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 0;
@@ -211,18 +191,9 @@ namespace Tour
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // panel2
-            // 
-            this.panel2.AutoSize = true;
-            this.panel2.Controls.Add(this.btnExit);
-            this.panel2.Location = new System.Drawing.Point(12, 362);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(776, 127);
-            this.panel2.TabIndex = 6;
-            // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(698, 101);
+            this.btnExit.Location = new System.Drawing.Point(713, 465);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 3;
@@ -234,19 +205,29 @@ namespace Tour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(803, 500);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(800, 500);
+            this.Controls.Add(this.cbbxKind);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.cbboxProvince);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.rchtxtbxDetail);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.txtbxName);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.cbbxVehical);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PhuongTien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PhuongTien";
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbxVehical)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,7 +238,6 @@ namespace Tour
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnPickPicture;
         private System.Windows.Forms.PictureBox pcbxVehical;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cbboxProvince;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -269,7 +249,6 @@ namespace Tour
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.ComboBox cbbxKind;
     }

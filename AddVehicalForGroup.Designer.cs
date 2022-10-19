@@ -31,10 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddVehicalForGroup));
             this.listView2 = new System.Windows.Forms.ListView();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // listView2
@@ -50,22 +48,12 @@
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(8, 10);
+            this.listView1.Location = new System.Drawing.Point(467, 10);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(785, 240);
+            this.listView1.Size = new System.Drawing.Size(326, 240);
             this.listView1.TabIndex = 10;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
-            // panel2
-            // 
-            this.panel2.AutoSize = true;
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.btnExit);
-            this.panel2.Location = new System.Drawing.Point(11, 375);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(782, 66);
-            this.panel2.TabIndex = 9;
             // 
             // button1
             // 
@@ -75,7 +63,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(573, 25);
+            this.button1.Location = new System.Drawing.Point(582, 400);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 38);
             this.button1.TabIndex = 4;
@@ -90,7 +78,7 @@
             this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Location = new System.Drawing.Point(679, 25);
+            this.btnExit.Location = new System.Drawing.Point(688, 400);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(100, 38);
             this.btnExit.TabIndex = 3;
@@ -103,17 +91,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.listView2);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddVehicalForGroup";
             this.Text = "AddVehicalForGroup";
             this.Load += new System.EventHandler(this.AddVehicalForGroup_Load);
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -121,7 +109,6 @@
 
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnExit;
     }
