@@ -87,10 +87,9 @@ namespace Tour
                 }
 
                 DataProvider.Ins.DB.tb_KHACHSAN.Add(new tb_KHACHSAN() { ID = random1, IDKHACHSAN = khachsan.ID, IDDOAN = ID });
-                DataProvider.Ins.DB.SaveChanges();
-
-
             }
+            DataProvider.Ins.DB.SaveChanges();
+
             this.Close();
         }
 

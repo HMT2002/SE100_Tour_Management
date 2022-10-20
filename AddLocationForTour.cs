@@ -93,10 +93,10 @@ namespace Tour
                 }
 
                 DataProvider.Ins.DB.tb_DIADIEM_DULICH.Add(new tb_DIADIEM_DULICH() { ID = random1, IDDIADIEM = diadiem.ID, IDTOUR = ID });
-                DataProvider.Ins.DB.SaveChanges();
-
 
             }
+            DataProvider.Ins.DB.SaveChanges();
+
             this.Close();
 
         }

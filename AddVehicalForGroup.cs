@@ -85,10 +85,10 @@ namespace Tour
                 }
 
                 DataProvider.Ins.DB.tb_PHUONGTIEN.Add(new tb_PHUONGTIEN() { ID = random1, IDPHUONGTIEN = phuongtien.ID, IDDOAN = ID });
-                DataProvider.Ins.DB.SaveChanges();
-
-
             }
+            DataProvider.Ins.DB.SaveChanges();
+
+
             this.Close();
         }
 
