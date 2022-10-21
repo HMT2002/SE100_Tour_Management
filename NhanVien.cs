@@ -95,7 +95,6 @@ namespace Tour
                 txtbxName.Text = temp.TEN;
                 txtbxMail.Text = temp.MAIL;
                 txtbxSDT.Text = temp.SDT;
-
             }
         }
 

@@ -157,6 +157,12 @@
     <Compile Include="CSDLPhieuDatCho.Designer.cs">
       <DependentUpon>CSDLPhieuDatCho.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhSachTour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhSachTour.Designer.cs">
+      <DependentUpon>DanhSachTour.cs</DependentUpon>
+    </Compile>
     <Compile Include="DoanDuLich.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,6 +308,12 @@
     <Compile Include="SelectForm.Designer.cs">
       <DependentUpon>SelectForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SLDiTour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SLDiTour.Designer.cs">
+      <DependentUpon>SLDiTour.cs</DependentUpon>
+    </Compile>
     <Compile Include="StaffProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -346,6 +358,9 @@
     <EmbeddedResource Include="DangKy.resx">
       <DependentUpon>DangKy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DanhSachTour.resx">
+      <DependentUpon>DanhSachTour.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DoanDuLich.resx">
       <DependentUpon>DoanDuLich.cs</DependentUpon>
     </EmbeddedResource>
@@ -378,6 +393,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelectForm.resx">
       <DependentUpon>SelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SLDiTour.resx">
+      <DependentUpon>SLDiTour.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StaffProfile.resx">
       <DependentUpon>StaffProfile.cs</DependentUpon>
