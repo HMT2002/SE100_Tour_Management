@@ -26,6 +26,7 @@ namespace Tour.Model
         public string DACDIEM { get; set; }
         public string LOAI { get; set; }
         public Nullable<decimal> GIA { get; set; }
+        public Nullable<bool> IsDeleted { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DOAN> DOANs { get; set; }

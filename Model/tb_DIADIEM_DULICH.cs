@@ -17,6 +17,7 @@ namespace Tour.Model
         public string ID { get; set; }
         public string IDTOUR { get; set; }
         public string IDDIADIEM { get; set; }
+        public Nullable<bool> IsDeleted { get; set; }
     
         public virtual DIADIEM DIADIEM { get; set; }
         public virtual TOUR TOUR { get; set; }
