@@ -31,7 +31,7 @@ namespace Tour
 
         private void showAll()
         {
-            dgv_trip.DataSource = DataProvider.Ins.DB.NHANVIENs.Select(t => new
+            dgv_trip.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t=>t.IsDeleted==false).Select(t => new
             {
                 t.ID,
                 t.TEN,
@@ -115,10 +115,10 @@ namespace Tour
                 try
                 {
                     ACCOUNT account = DataProvider.Ins.DB.ACCOUNTs.Where(x => x.ID == id).FirstOrDefault();
-                    DataProvider.Ins.DB.ACCOUNTs.Remove(account);
+                    account.IsDeleted = true;
 
                     NHANVIEN nhanvien = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault();
-                    DataProvider.Ins.DB.NHANVIENs.Remove(nhanvien);
+                    nhanvien.IsDeleted = true;
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
                     Clear();

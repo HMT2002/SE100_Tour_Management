@@ -48,6 +48,7 @@
           <Property Name="CHITIETCHUONGTRINH" Type="nvarchar" MaxLength="500" />
           <Property Name="IDCHIPHI" Type="char" MaxLength="7" />
           <Property Name="IDTOUR" Type="char" MaxLength="7" />
+          <Property Name="IsDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="KHACHHANG">
           <Key>
@@ -544,6 +545,7 @@
           <Property Name="CHITIETCHUONGTRINH" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="IDCHIPHI" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
           <Property Name="IDTOUR" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="IsDeleted" Type="Boolean" />
           <NavigationProperty Name="CHIPHI" Relationship="Self.LK_CHIPHI_DOAN" FromRole="DOAN" ToRole="CHIPHI" />
           <NavigationProperty Name="tb_KHACHSAN" Relationship="Self.LK_DOAN_KHACHSAN" FromRole="DOAN" ToRole="tb_KHACHSAN" />
           <NavigationProperty Name="tb_NHIEMVU" Relationship="Self.LK_DOAN_NHIEMVU" FromRole="DOAN" ToRole="tb_NHIEMVU" />
@@ -1071,6 +1073,7 @@
                 <ScalarProperty Name="CHITIETCHUONGTRINH" ColumnName="CHITIETCHUONGTRINH" />
                 <ScalarProperty Name="IDCHIPHI" ColumnName="IDCHIPHI" />
                 <ScalarProperty Name="IDTOUR" ColumnName="IDTOUR" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

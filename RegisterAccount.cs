@@ -65,7 +65,7 @@ namespace Tour
                 {
 
                     var nv = new NHANVIEN() { ID = randomcode,  TEN = txbHo.Text+" "+ txbTen.Text, SDT = txbSDT.Text, MAIL = txbGmail.Text,PICBI=img_data };
-                    var account = new ACCOUNT() { ACC = txbGmail.Text, PASS = Converter.Instance.MD5Encrypt(Converter.Instance.Base64Encode(txbPass.Text)), ID = randomcode, IDNHANVIEN = randomcode };
+                    var account = new ACCOUNT() { ACC = txbGmail.Text, PASS = Converter.Instance.MD5Encrypt(Converter.Instance.Base64Encode(txbPass.Text)), ID = randomcode, IDNHANVIEN = randomcode,IsDeleted=false };
                     DataProvider.Ins.DB.ACCOUNTs.Add(account);
                     DataProvider.Ins.DB.NHANVIENs.Add(nv);
 
@@ -155,8 +155,7 @@ namespace Tour
                     try
                     {
                         Utils.Features.Instance.SendMail(listto, "Verify code", randomcode);
-                        MessageBox.Show("Code send success!!!");
-                        label12.Text = "";
+                        label12.Text = "Code send success!!!";
                     }
                     catch (Exception ex)
                     {

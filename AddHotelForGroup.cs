@@ -33,7 +33,7 @@ namespace Tour
         {
             var result2 = (from ks in DataProvider.Ins.DB.KHACHSANs
                            join tb_belong in DataProvider.Ins.DB.tb_KHACHSAN on ks.ID equals tb_belong.IDKHACHSAN
-                           where tb_belong.IDDOAN == ID
+                           where tb_belong.IDDOAN == ID && tb_belong.IsDeleted==false
                            select ks)
                                      .ToList();
             var result = (from ks in DataProvider.Ins.DB.KHACHSANs
@@ -76,7 +76,10 @@ namespace Tour
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataProvider.Ins.DB.tb_KHACHSAN.RemoveRange(DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.IDDOAN == ID));
+            foreach(var tb_ks in DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.IDDOAN == ID))
+            {
+                tb_ks.IsDeleted = true;
+            }
 
             foreach (KHACHSAN khachsan in ListKhachSan)
             {
@@ -86,8 +89,9 @@ namespace Tour
                     random1 = Converter.Instance.RandomString2(5);
                 }
 
-                DataProvider.Ins.DB.tb_KHACHSAN.Add(new tb_KHACHSAN() { ID = random1, IDKHACHSAN = khachsan.ID, IDDOAN = ID });
+                DataProvider.Ins.DB.tb_KHACHSAN.Add(new tb_KHACHSAN() { ID = random1, IDKHACHSAN = khachsan.ID, IDDOAN = ID,IsDeleted=false });
             }
+
             DataProvider.Ins.DB.SaveChanges();
 
             this.Close();

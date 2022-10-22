@@ -37,7 +37,7 @@ namespace Tour
         {
             var result2 = (from pt in DataProvider.Ins.DB.PHUONGTIENs
                            join tb_belong in DataProvider.Ins.DB.tb_PHUONGTIEN on pt.ID equals tb_belong.IDPHUONGTIEN
-                           where tb_belong.IDDOAN == ID
+                           where tb_belong.IDDOAN == ID && tb_belong.IsDeleted == false
                            select pt)
                                      .ToList();
             var result = (from pt in DataProvider.Ins.DB.PHUONGTIENs
@@ -73,8 +73,10 @@ namespace Tour
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataProvider.Ins.DB.tb_PHUONGTIEN.RemoveRange(DataProvider.Ins.DB.tb_PHUONGTIEN.Where(x => x.IDDOAN == ID));
-
+            foreach(var tb_pt in DataProvider.Ins.DB.tb_PHUONGTIEN.Where(x => x.IDDOAN == ID))
+            {
+                tb_pt.IsDeleted = true;
+            }
             string random1;
             foreach (PHUONGTIEN phuongtien in ListPhuongTien)
             {
@@ -84,7 +86,7 @@ namespace Tour
                     random1 = Converter.Instance.RandomString2(5);
                 }
 
-                DataProvider.Ins.DB.tb_PHUONGTIEN.Add(new tb_PHUONGTIEN() { ID = random1, IDPHUONGTIEN = phuongtien.ID, IDDOAN = ID });
+                DataProvider.Ins.DB.tb_PHUONGTIEN.Add(new tb_PHUONGTIEN() { ID = random1, IDPHUONGTIEN = phuongtien.ID, IDDOAN = ID,IsDeleted=false });
             }
             DataProvider.Ins.DB.SaveChanges();
 

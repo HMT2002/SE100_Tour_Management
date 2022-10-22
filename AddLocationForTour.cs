@@ -42,7 +42,7 @@ namespace Tour
             //}
             var result2 = (from dd in DataProvider.Ins.DB.DIADIEMs
                           join tb_belong in DataProvider.Ins.DB.tb_DIADIEM_DULICH on dd.ID equals tb_belong.IDDIADIEM
-                          where tb_belong.IDTOUR == ID
+                          where tb_belong.IDTOUR == ID && tb_belong.IsDeleted==false
                           select dd)
                                      .ToList();
             var result = (from dd in DataProvider.Ins.DB.DIADIEMs
@@ -82,8 +82,10 @@ namespace Tour
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataProvider.Ins.DB.tb_DIADIEM_DULICH.RemoveRange(DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.IDTOUR == ID));
-
+            foreach(var tb_diadiem in DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.IDTOUR == ID))
+            {
+                tb_diadiem.IsDeleted = true;
+            }
             foreach (DIADIEM diadiem in ListDiaDiem)
             {
                 string random1 = Converter.Instance.RandomString2(5);
@@ -92,7 +94,7 @@ namespace Tour
                     random1 = Converter.Instance.RandomString2(5);
                 }
 
-                DataProvider.Ins.DB.tb_DIADIEM_DULICH.Add(new tb_DIADIEM_DULICH() { ID = random1, IDDIADIEM = diadiem.ID, IDTOUR = ID });
+                DataProvider.Ins.DB.tb_DIADIEM_DULICH.Add(new tb_DIADIEM_DULICH() { ID = random1, IDDIADIEM = diadiem.ID, IDTOUR = ID,IsDeleted=false });
 
             }
             DataProvider.Ins.DB.SaveChanges();

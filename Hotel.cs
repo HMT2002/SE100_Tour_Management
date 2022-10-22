@@ -127,7 +127,7 @@ namespace Tour
 
         public void showAll()
         {
-            cbbxHotel.DataSource = DataProvider.Ins.DB.KHACHSANs.Select(t => t).ToList();
+            cbbxHotel.DataSource = DataProvider.Ins.DB.KHACHSANs.Select(t => t).Where(t=>t.IsDeleted==false).ToList();
             cbbxHotel.DisplayMember = "TEN";
         }
 
@@ -139,12 +139,12 @@ namespace Tour
                 {
                     if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
                     {
-                        var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text };
+                        var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text,IsDeleted=false };
                         DataProvider.Ins.DB.TINHs.Add(tinh);
                         DataProvider.Ins.DB.SaveChanges();
                     }
                     randomcode = Converter.Instance.RandomString(5);
-                    var location = new KHACHSAN() { ID = randomcode, DIACHI = txtbxName.Text, PICBI = img_data,CHITIET=rchtxtbxDetail.Text,GIA=Convert.ToDecimal( txtbxGia.Text ),IDTINH=cbboxProvince.SelectedIndex.ToString(),SDT=txtbxSDT.Text,TEN=txtbxName.Text};
+                    var location = new KHACHSAN() { ID = randomcode, DIACHI = txtbxName.Text, PICBI = img_data,CHITIET=rchtxtbxDetail.Text,GIA=Convert.ToDecimal( txtbxGia.Text ),IDTINH=cbboxProvince.SelectedIndex.ToString(),SDT=txtbxSDT.Text,TEN=txtbxName.Text,IsDeleted=false};
                     DataProvider.Ins.DB.KHACHSANs.Add(location);
                     DataProvider.Ins.DB.SaveChanges();
                     Clear();
@@ -182,9 +182,12 @@ namespace Tour
                 }
                 try
                 {
-                    DataProvider.Ins.DB.tb_KHACHSAN.RemoveRange(DataProvider.Ins.DB.tb_KHACHSAN.Where(x=>x.IDKHACHSAN==id));
+                    foreach(var tb_ks in DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.IDKHACHSAN == id))
+                    {
+                        tb_ks.IsDeleted = true;
+                    }
                     KHACHSAN khachsan = DataProvider.Ins.DB.KHACHSANs.Where(x => x.ID == id).FirstOrDefault();
-                    DataProvider.Ins.DB.KHACHSANs.Remove(khachsan);
+                    khachsan.IsDeleted = true;
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
                     Clear();
