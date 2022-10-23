@@ -36,7 +36,7 @@ namespace Tour
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDoan = new System.Windows.Forms.DataGridView();
             this.data_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYKHOIHANH = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,7 +58,7 @@ namespace Tour
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvKhachHang = new System.Windows.Forms.DataGridView();
             this.IDKHACHHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENKHACHHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -66,23 +66,23 @@ namespace Tour
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnAddHotelForGroup = new System.Windows.Forms.Button();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dgvKhachSan = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnAddVehicalForGroup = new System.Windows.Forms.Button();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.dgvPhuongTien = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDoan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachSan)).BeginInit();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhuongTien)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -131,13 +131,13 @@ namespace Tour
             this.comboBox1.Size = new System.Drawing.Size(200, 21);
             this.comboBox1.TabIndex = 6;
             // 
-            // dataGridView1
+            // dgvDoan
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDoan.AllowUserToAddRows = false;
+            this.dgvDoan.AllowUserToDeleteRows = false;
+            this.dgvDoan.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvDoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDoan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.data_ID,
             this.TEN,
             this.NGAYKHOIHANH,
@@ -145,11 +145,11 @@ namespace Tour
             this.CHITIETCHUONGTRINH,
             this.CHIPHI,
             this.TENTOUR});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 33);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1393, 214);
-            this.dataGridView1.TabIndex = 8;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dgvDoan.Location = new System.Drawing.Point(3, 33);
+            this.dgvDoan.Name = "dgvDoan";
+            this.dgvDoan.Size = new System.Drawing.Size(1393, 214);
+            this.dgvDoan.TabIndex = 8;
+            this.dgvDoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // data_ID
             // 
@@ -342,19 +342,19 @@ namespace Tour
             this.label6.TabIndex = 31;
             this.label6.Text = "Chi phí";
             // 
-            // dataGridView2
+            // dgvKhachHang
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvKhachHang.AllowUserToAddRows = false;
+            this.dgvKhachHang.AllowUserToDeleteRows = false;
+            this.dgvKhachHang.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDKHACHHANG,
             this.TENKHACHHANG});
-            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(418, 157);
-            this.dataGridView2.TabIndex = 32;
+            this.dgvKhachHang.Location = new System.Drawing.Point(3, 3);
+            this.dgvKhachHang.Name = "dgvKhachHang";
+            this.dgvKhachHang.Size = new System.Drawing.Size(418, 157);
+            this.dgvKhachHang.TabIndex = 32;
             // 
             // IDKHACHHANG
             // 
@@ -373,7 +373,7 @@ namespace Tour
             // panel1
             // 
             this.panel1.Controls.Add(this.tb_search);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dgvDoan);
             this.panel1.Controls.Add(this.rdIDSearch);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.rdNameSearch);
@@ -407,7 +407,7 @@ namespace Tour
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.dataGridView2);
+            this.panel3.Controls.Add(this.dgvKhachHang);
             this.panel3.Location = new System.Drawing.Point(15, 11);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(425, 163);
@@ -416,7 +416,7 @@ namespace Tour
             // panel4
             // 
             this.panel4.Controls.Add(this.btnAddHotelForGroup);
-            this.panel4.Controls.Add(this.dataGridView3);
+            this.panel4.Controls.Add(this.dgvKhachSan);
             this.panel4.Location = new System.Drawing.Point(446, 11);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(328, 163);
@@ -432,19 +432,19 @@ namespace Tour
             this.btnAddHotelForGroup.UseVisualStyleBackColor = true;
             this.btnAddHotelForGroup.Click += new System.EventHandler(this.btnAddHotelForGroup_Click);
             // 
-            // dataGridView3
+            // dgvKhachSan
             // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvKhachSan.AllowUserToAddRows = false;
+            this.dgvKhachSan.AllowUserToDeleteRows = false;
+            this.dgvKhachSan.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvKhachSan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKhachSan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
-            this.dataGridView3.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(286, 157);
-            this.dataGridView3.TabIndex = 32;
+            this.dgvKhachSan.Location = new System.Drawing.Point(3, 3);
+            this.dgvKhachSan.Name = "dgvKhachSan";
+            this.dgvKhachSan.Size = new System.Drawing.Size(286, 157);
+            this.dgvKhachSan.TabIndex = 32;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -463,7 +463,7 @@ namespace Tour
             // panel5
             // 
             this.panel5.Controls.Add(this.btnAddVehicalForGroup);
-            this.panel5.Controls.Add(this.dataGridView4);
+            this.panel5.Controls.Add(this.dgvPhuongTien);
             this.panel5.Location = new System.Drawing.Point(780, 11);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(328, 163);
@@ -479,19 +479,19 @@ namespace Tour
             this.btnAddVehicalForGroup.UseVisualStyleBackColor = true;
             this.btnAddVehicalForGroup.Click += new System.EventHandler(this.btnAddVehicalForGroup_Click);
             // 
-            // dataGridView4
+            // dgvPhuongTien
             // 
-            this.dataGridView4.AllowUserToAddRows = false;
-            this.dataGridView4.AllowUserToDeleteRows = false;
-            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvPhuongTien.AllowUserToAddRows = false;
+            this.dgvPhuongTien.AllowUserToDeleteRows = false;
+            this.dgvPhuongTien.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvPhuongTien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPhuongTien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.dataGridView4.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(286, 157);
-            this.dataGridView4.TabIndex = 32;
+            this.dgvPhuongTien.Location = new System.Drawing.Point(3, 3);
+            this.dgvPhuongTien.Name = "dgvPhuongTien";
+            this.dgvPhuongTien.Size = new System.Drawing.Size(286, 157);
+            this.dgvPhuongTien.TabIndex = 32;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -523,17 +523,17 @@ namespace Tour
             this.Name = "DoanDuLich";
             this.Text = "DoanDuLich";
             this.Load += new System.EventHandler(this.DoanDuLich_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDoan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachSan)).EndInit();
             this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhuongTien)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -546,7 +546,7 @@ namespace Tour
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDoan;
         private System.Windows.Forms.TextBox tb_search;
         private System.Windows.Forms.RadioButton rdNameSearch;
         private System.Windows.Forms.RadioButton rdIDSearch;
@@ -561,12 +561,12 @@ namespace Tour
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvKhachHang;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dgvKhachSan;
         private System.Windows.Forms.Button btnAddHotelForGroup;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDKHACHHANG;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENKHACHHANG;
@@ -574,7 +574,7 @@ namespace Tour
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnAddVehicalForGroup;
-        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridView dgvPhuongTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn data_ID;

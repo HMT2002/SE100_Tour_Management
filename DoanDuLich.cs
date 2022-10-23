@@ -21,7 +21,7 @@ namespace Tour
         public DoanDuLich()
         {
             InitializeComponent();
-            dataGridView1.AutoGenerateColumns = false;
+            dgvDoan.AutoGenerateColumns = false;
 
         }
 
@@ -34,10 +34,10 @@ namespace Tour
         private void showAll()
         {
 
-            dataGridView1.DataSource = (from doan in DataProvider.Ins.DB.DOANs
+            dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
                                         join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
                                         join chiphi in DataProvider.Ins.DB.CHIPHIs on doan.IDCHIPHI equals chiphi.ID
-                                        where doan.IsDeleted==false && tour.IsDeleted==false && chiphi.IsDeleted==false
+                                        where doan.IsDeleted==false && tour.IsDeleted==false
              select new {
                  ID = doan.ID,
                  TEN = doan.TEN,
@@ -58,35 +58,35 @@ namespace Tour
 
             if (index >= 0)
             {
-                id = dataGridView1.Rows[index].Cells["data_ID"].Value.ToString();
+                id = dgvDoan.Rows[index].Cells["data_ID"].Value.ToString();
                 textBox1.Text = id;
 
-                dateTimePicker1.Value = (DateTime)dataGridView1.Rows[index].Cells["NGAYKHOIHANH"].Value;
-                dateTimePicker2.Value = (DateTime)dataGridView1.Rows[index].Cells["NGAYKETTHUC"].Value;
+                dateTimePicker1.Value = (DateTime)dgvDoan.Rows[index].Cells["NGAYKHOIHANH"].Value;
+                dateTimePicker2.Value = (DateTime)dgvDoan.Rows[index].Cells["NGAYKETTHUC"].Value;
 
-                textBox2.Text= dataGridView1.Rows[index].Cells["TEN"].Value.ToString();
-                textBox3.Text = dataGridView1.Rows[index].Cells["CHIPHI"].Value.ToString();
-                comboBox1.Text = dataGridView1.Rows[index].Cells["TENTOUR"].Value.ToString();
-                dataGridView2.DataSource= (from ve in DataProvider.Ins.DB.VEs
-                                           where ve.IDDOAN == id
+                textBox2.Text= dgvDoan.Rows[index].Cells["TEN"].Value.ToString();
+                textBox3.Text = dgvDoan.Rows[index].Cells["CHIPHI"].Value.ToString();
+                comboBox1.Text = dgvDoan.Rows[index].Cells["TENTOUR"].Value.ToString();
+                dgvKhachHang.DataSource= (from ve in DataProvider.Ins.DB.VEs
+                                           where ve.IDDOAN == id && ve.IsDeleted==false
                                            select new
                                            {
                                                ID = ve.KHACHHANG.ID,
                                                TEN = ve.KHACHHANG.TENKH,
                                            }).ToList();
 
-                dataGridView3.DataSource = (from ks in DataProvider.Ins.DB.KHACHSANs
+                dgvKhachSan.DataSource = (from ks in DataProvider.Ins.DB.KHACHSANs
                                             join tb_belong in DataProvider.Ins.DB.tb_KHACHSAN on ks.ID equals tb_belong.IDKHACHSAN
-                                            where tb_belong.IDDOAN == id && ks.IsDeleted==false && tb_belong.IsDeleted==false
+                                            where tb_belong.IDDOAN == id && tb_belong.IsDeleted==false
                                             select new
                                             {
                                                 ID = ks.ID,
                                                 TEN = ks.TEN,
                                             }).ToList();
 
-                dataGridView4.DataSource = (from pt in DataProvider.Ins.DB.PHUONGTIENs
+                dgvPhuongTien.DataSource = (from pt in DataProvider.Ins.DB.PHUONGTIENs
                                             join tb_belong in DataProvider.Ins.DB.tb_PHUONGTIEN on pt.ID equals tb_belong.IDPHUONGTIEN
-                                            where tb_belong.IDDOAN == id && pt.IsDeleted == false && tb_belong.IsDeleted==false
+                                            where tb_belong.IDDOAN == id && tb_belong.IsDeleted==false
                                             select new
                                             {
                                                 ID = pt.ID,
@@ -117,7 +117,7 @@ namespace Tour
                 {
                     if (rdIDSearch.Checked)
                     {
-                        dataGridView1.DataSource = (from doan in DataProvider.Ins.DB.DOANs
+                        dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
                                                     join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
                                                     join chiphi in DataProvider.Ins.DB.CHIPHIs on doan.IDCHIPHI equals chiphi.ID
                                                     where doan.ID.Contains(value) && doan.IsDeleted==false
@@ -135,7 +135,7 @@ namespace Tour
                     }
                     else if (rdNameSearch.Checked)
                     {
-                        dataGridView1.DataSource = (from doan in DataProvider.Ins.DB.DOANs
+                        dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
                                                     join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
                                                     join chiphi in DataProvider.Ins.DB.CHIPHIs on doan.IDCHIPHI equals chiphi.ID
                                                     where doan.TEN.Contains(value) &&doan.IsDeleted==false
@@ -271,9 +271,9 @@ namespace Tour
             comboBox1.SelectedIndex = -1;
             dateTimePicker1.Value = dateTimePicker2.Value = DateTime.Now;
             id = "";
-            dataGridView2.DataSource = null;
-            dataGridView3.DataSource = null;
-            dataGridView4.DataSource = null;
+            dgvKhachHang.DataSource = null;
+            dgvKhachSan.DataSource = null;
+            dgvPhuongTien.DataSource = null;
 
         }
 
