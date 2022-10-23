@@ -73,9 +73,6 @@ namespace Tour
             this.rdbMale = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvDatCho = new System.Windows.Forms.DataGridView();
-            this.MaPhieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbSearchTicket = new System.Windows.Forms.TextBox();
             this.tbSearchResID = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -87,6 +84,9 @@ namespace Tour
             this.panelTime = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.IDVE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENKHACHHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENTOUR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Information.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuanLy)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -605,9 +605,9 @@ namespace Tour
             this.dgvDatCho.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvDatCho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatCho.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaPhieu,
-            this.ten,
-            this.ID});
+            this.IDVE,
+            this.TENKHACHHANG,
+            this.TENTOUR});
             this.dgvDatCho.Location = new System.Drawing.Point(5, 18);
             this.dgvDatCho.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDatCho.Name = "dgvDatCho";
@@ -616,33 +616,6 @@ namespace Tour
             this.dgvDatCho.RowTemplate.Height = 24;
             this.dgvDatCho.Size = new System.Drawing.Size(304, 184);
             this.dgvDatCho.TabIndex = 0;
-            // 
-            // MaPhieu
-            // 
-            this.MaPhieu.DataPropertyName = "MaPhieu";
-            this.MaPhieu.HeaderText = "Reservation ID";
-            this.MaPhieu.MinimumWidth = 6;
-            this.MaPhieu.Name = "MaPhieu";
-            this.MaPhieu.ReadOnly = true;
-            this.MaPhieu.Width = 125;
-            // 
-            // ten
-            // 
-            this.ten.DataPropertyName = "HoTen";
-            this.ten.HeaderText = "Name";
-            this.ten.MinimumWidth = 6;
-            this.ten.Name = "ten";
-            this.ten.ReadOnly = true;
-            this.ten.Width = 125;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "MaChuyen";
-            this.ID.HeaderText = "Tour ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 125;
             // 
             // tbSearchTicket
             // 
@@ -768,6 +741,33 @@ namespace Tour
             this.label8.TabIndex = 23;
             this.label8.Text = "Pass Exp";
             // 
+            // IDVE
+            // 
+            this.IDVE.DataPropertyName = "IDVE";
+            this.IDVE.HeaderText = "Reservation ID";
+            this.IDVE.MinimumWidth = 6;
+            this.IDVE.Name = "IDVE";
+            this.IDVE.ReadOnly = true;
+            this.IDVE.Width = 125;
+            // 
+            // TENKHACHHANG
+            // 
+            this.TENKHACHHANG.DataPropertyName = "TENKHACHHANG";
+            this.TENKHACHHANG.HeaderText = "Name";
+            this.TENKHACHHANG.MinimumWidth = 6;
+            this.TENKHACHHANG.Name = "TENKHACHHANG";
+            this.TENKHACHHANG.ReadOnly = true;
+            this.TENKHACHHANG.Width = 125;
+            // 
+            // TENTOUR
+            // 
+            this.TENTOUR.DataPropertyName = "TENTOUR";
+            this.TENTOUR.HeaderText = "Tour ID";
+            this.TENTOUR.MinimumWidth = 6;
+            this.TENTOUR.Name = "TENTOUR";
+            this.TENTOUR.ReadOnly = true;
+            this.TENTOUR.Width = 125;
+            // 
             // CSDLPhieuDatCho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -864,8 +864,8 @@ namespace Tour
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaVe;
         private System.Windows.Forms.DataGridViewTextBoxColumn LePhiHoanTra;
         private System.Windows.Forms.DataGridViewTextBoxColumn TienHoanTra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhieu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ten;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDVE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENKHACHHANG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENTOUR;
     }
 }

@@ -100,7 +100,7 @@ namespace Tour
 
         public void showAll()
         {
-            cbbxVehical.DataSource = DataProvider.Ins.DB.PHUONGTIENs.Select(t => t).ToList();
+            cbbxVehical.DataSource = DataProvider.Ins.DB.PHUONGTIENs.Where(t=>t.IsDeleted==false).Select(t => t).ToList();
             cbbxVehical.DisplayMember = "TEN";
         }
         private void Clear()
@@ -149,15 +149,15 @@ namespace Tour
             {
                 try
                 {
-                    randomcode = Converter.Instance.RandomString(5);
+                    randomcode = Converter.Instance.RandomString2(5);
                     if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
                     {
-                        var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text };
+                        var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text ,IsDeleted=false};
                         DataProvider.Ins.DB.TINHs.Add(tinh);
                         DataProvider.Ins.DB.SaveChanges();
                     }
 
-                    var vehical = new PHUONGTIEN() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), PICBI = img_data,LOAI=cbbxKind.Text };
+                    var vehical = new PHUONGTIEN() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), PICBI = img_data,LOAI=cbbxKind.Text,IsDeleted=false };
 
                     DataProvider.Ins.DB.PHUONGTIENs.Add(vehical);
                     DataProvider.Ins.DB.SaveChanges();
@@ -196,8 +196,8 @@ namespace Tour
                 }
                 try
                 {
-                    PHUONGTIEN diadiem = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault();
-                    DataProvider.Ins.DB.PHUONGTIENs.Remove(diadiem);
+                    PHUONGTIEN phuongtien = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault();
+                    phuongtien.IsDeleted = true;
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
                     Clear();

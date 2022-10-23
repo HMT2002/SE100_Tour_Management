@@ -13,6 +13,7 @@
           <Property Name="ACC" Type="nvarchar" MaxLength="50" />
           <Property Name="PASS" Type="nvarchar(max)" />
           <Property Name="IDNHANVIEN" Type="char" MaxLength="7" />
+          <Property Name="IsDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="CHIPHI">
           <Key>
@@ -23,6 +24,7 @@
           <Property Name="PHICHOI" Type="money" />
           <Property Name="PHIKHAC" Type="money" />
           <Property Name="TONG" Type="money" />
+          <Property Name="IsDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="DIADIEM">
           <Key>
@@ -33,6 +35,7 @@
           <Property Name="IDTINH" Type="char" MaxLength="7" />
           <Property Name="CHITIET" Type="nvarchar" MaxLength="500" />
           <Property Name="PICBI" Type="varbinary(max)" />
+          <Property Name="IsDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="DOAN">
           <Key>
@@ -45,6 +48,7 @@
           <Property Name="CHITIETCHUONGTRINH" Type="nvarchar" MaxLength="500" />
           <Property Name="IDCHIPHI" Type="char" MaxLength="7" />
           <Property Name="IDTOUR" Type="char" MaxLength="7" />
+          <Property Name="IsDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="KHACHHANG">
           <Key>
@@ -57,6 +61,7 @@
           <Property Name="GIOITINH" Type="nvarchar" MaxLength="15" />
           <Property Name="SDT" Type="nvarchar" MaxLength="15" />
           <Property Name="PICBI" Type="varbinary(max)" />
+          <Property Name="IsDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="KHACHSAN">
           <Key>
@@ -70,6 +75,7 @@
           <Property Name="GIA" Type="money" />
           <Property Name="IDTINH" Type="char" MaxLength="7" />
           <Property Name="TEN" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="NHANVIEN">
           <Key>
@@ -80,6 +86,7 @@
           <Property Name="SDT" Type="nvarchar" MaxLength="20" />
           <Property Name="PICBI" Type="varbinary(max)" />
           <Property Name="TEN" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="PHUONGTIEN">
           <Key>
@@ -90,6 +97,7 @@
           <Property Name="PICBI" Type="varbinary(max)" />
           <Property Name="LOAI" Type="nvarchar" MaxLength="30" />
           <Property Name="IDTINH" Type="char" MaxLength="7" />
+          <Property Name="IsDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -108,6 +116,7 @@
           <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
           <Property Name="IDTOUR" Type="char" MaxLength="7" />
           <Property Name="IDDIADIEM" Type="char" MaxLength="7" />
+          <Property Name="IsDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="tb_KHACHSAN">
           <Key>
@@ -116,6 +125,7 @@
           <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
           <Property Name="IDDOAN" Type="char" MaxLength="7" />
           <Property Name="IDKHACHSAN" Type="char" MaxLength="7" />
+          <Property Name="IsDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="tb_NHIEMVU">
           <Key>
@@ -125,6 +135,7 @@
           <Property Name="IDDOAN" Type="char" MaxLength="7" />
           <Property Name="IDNHANVIEN" Type="char" MaxLength="7" />
           <Property Name="NHIEMVU" Type="nvarchar" MaxLength="20" />
+          <Property Name="IsDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="tb_PHUONGTIEN">
           <Key>
@@ -133,6 +144,7 @@
           <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
           <Property Name="IDDOAN" Type="char" MaxLength="7" />
           <Property Name="IDPHUONGTIEN" Type="char" MaxLength="7" />
+          <Property Name="IsDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="tb_PHUTRACH">
           <Key>
@@ -142,6 +154,7 @@
           <Property Name="IDDOAN" Type="char" MaxLength="7" />
           <Property Name="IDNHANVIEN" Type="char" MaxLength="7" />
           <Property Name="PHUTRACH" Type="nvarchar" MaxLength="20" />
+          <Property Name="IsDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="TINH">
           <Key>
@@ -149,6 +162,7 @@
           </Key>
           <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
           <Property Name="TEN" Type="nvarchar" MaxLength="30" />
+          <Property Name="IsDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="TOUR">
           <Key>
@@ -159,6 +173,7 @@
           <Property Name="DACDIEM" Type="nvarchar" MaxLength="50" />
           <Property Name="LOAI" Type="nvarchar" MaxLength="30" />
           <Property Name="GIA" Type="money" />
+          <Property Name="IsDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="VE">
           <Key>
@@ -169,6 +184,7 @@
           <Property Name="GIA" Type="money" />
           <Property Name="IDKHACH" Type="char" MaxLength="7" />
           <Property Name="IDDOAN" Type="char" MaxLength="7" />
+          <Property Name="IsDeleted" Type="bit" />
         </EntityType>
         <Association Name="LK_CHIPHI_DOAN">
           <End Role="CHIPHI" Type="Self.CHIPHI" Multiplicity="0..1" />
@@ -490,6 +506,7 @@
           <Property Name="ACC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PASS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="IDNHANVIEN" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="IsDeleted" Type="Boolean" />
           <NavigationProperty Name="NHANVIEN" Relationship="Self.LK_NHANVIEN_ACCOUNT" FromRole="ACCOUNT" ToRole="NHANVIEN" />
         </EntityType>
         <EntityType Name="CHIPHI">
@@ -501,6 +518,7 @@
           <Property Name="PHICHOI" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="PHIKHAC" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="TONG" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="IsDeleted" Type="Boolean" />
           <NavigationProperty Name="DOANs" Relationship="Self.LK_CHIPHI_DOAN" FromRole="CHIPHI" ToRole="DOAN" />
         </EntityType>
         <EntityType Name="DIADIEM">
@@ -512,6 +530,7 @@
           <Property Name="IDTINH" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
           <Property Name="CHITIET" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="PICBI" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="IsDeleted" Type="Boolean" />
           <NavigationProperty Name="tb_DIADIEM_DULICH" Relationship="Self.LK_DIADIEM_DULICH" FromRole="DIADIEM" ToRole="tb_DIADIEM_DULICH" />
           <NavigationProperty Name="TINH" Relationship="Self.LK_TINH" FromRole="DIADIEM" ToRole="TINH" />
         </EntityType>
@@ -526,6 +545,7 @@
           <Property Name="CHITIETCHUONGTRINH" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="IDCHIPHI" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
           <Property Name="IDTOUR" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="IsDeleted" Type="Boolean" />
           <NavigationProperty Name="CHIPHI" Relationship="Self.LK_CHIPHI_DOAN" FromRole="DOAN" ToRole="CHIPHI" />
           <NavigationProperty Name="tb_KHACHSAN" Relationship="Self.LK_DOAN_KHACHSAN" FromRole="DOAN" ToRole="tb_KHACHSAN" />
           <NavigationProperty Name="tb_NHIEMVU" Relationship="Self.LK_DOAN_NHIEMVU" FromRole="DOAN" ToRole="tb_NHIEMVU" />
@@ -545,6 +565,7 @@
           <Property Name="GIOITINH" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="PICBI" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="IsDeleted" Type="Boolean" />
           <NavigationProperty Name="VEs" Relationship="Self.LK_VE_KHACH" FromRole="KHACHHANG" ToRole="VE" />
         </EntityType>
         <EntityType Name="KHACHSAN">
@@ -559,6 +580,7 @@
           <Property Name="GIA" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="IDTINH" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
           <Property Name="TEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" />
           <NavigationProperty Name="tb_KHACHSAN" Relationship="Self.LK_KHACHSAN_KHACHSAN" FromRole="KHACHSAN" ToRole="tb_KHACHSAN" />
           <NavigationProperty Name="TINH" Relationship="Self.LK_KHACHSAN_TINH" FromRole="KHACHSAN" ToRole="TINH" />
         </EntityType>
@@ -571,6 +593,7 @@
           <Property Name="SDT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="PICBI" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="TEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" />
           <NavigationProperty Name="ACCOUNTs" Relationship="Self.LK_NHANVIEN_ACCOUNT" FromRole="NHANVIEN" ToRole="ACCOUNT" />
           <NavigationProperty Name="tb_NHIEMVU" Relationship="Self.LK_NHANVIEN_NHIEMVU" FromRole="NHANVIEN" ToRole="tb_NHIEMVU" />
           <NavigationProperty Name="tb_PHUTRACH" Relationship="Self.LK_NHANVIEN_PHUTRACH" FromRole="NHANVIEN" ToRole="tb_PHUTRACH" />
@@ -584,6 +607,7 @@
           <Property Name="PICBI" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="LOAI" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="IDTINH" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="IsDeleted" Type="Boolean" />
           <NavigationProperty Name="tb_PHUONGTIEN" Relationship="Self.LK_PHUONGTIEN_PHUONGTIEN" FromRole="PHUONGTIEN" ToRole="tb_PHUONGTIEN" />
           <NavigationProperty Name="TINH" Relationship="Self.LK_PHUONGTIEN_TINH" FromRole="PHUONGTIEN" ToRole="TINH" />
         </EntityType>
@@ -604,6 +628,7 @@
           <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="IDTOUR" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
           <Property Name="IDDIADIEM" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="IsDeleted" Type="Boolean" />
           <NavigationProperty Name="DIADIEM" Relationship="Self.LK_DIADIEM_DULICH" FromRole="tb_DIADIEM_DULICH" ToRole="DIADIEM" />
           <NavigationProperty Name="TOUR" Relationship="Self.LK_TOUR_DULICH" FromRole="tb_DIADIEM_DULICH" ToRole="TOUR" />
         </EntityType>
@@ -614,6 +639,7 @@
           <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="IDDOAN" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
           <Property Name="IDKHACHSAN" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="IsDeleted" Type="Boolean" />
           <NavigationProperty Name="DOAN" Relationship="Self.LK_DOAN_KHACHSAN" FromRole="tb_KHACHSAN" ToRole="DOAN" />
           <NavigationProperty Name="KHACHSAN" Relationship="Self.LK_KHACHSAN_KHACHSAN" FromRole="tb_KHACHSAN" ToRole="KHACHSAN" />
         </EntityType>
@@ -625,6 +651,7 @@
           <Property Name="IDDOAN" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
           <Property Name="IDNHANVIEN" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
           <Property Name="NHIEMVU" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" />
           <NavigationProperty Name="DOAN" Relationship="Self.LK_DOAN_NHIEMVU" FromRole="tb_NHIEMVU" ToRole="DOAN" />
           <NavigationProperty Name="NHANVIEN" Relationship="Self.LK_NHANVIEN_NHIEMVU" FromRole="tb_NHIEMVU" ToRole="NHANVIEN" />
         </EntityType>
@@ -635,6 +662,7 @@
           <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="IDDOAN" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
           <Property Name="IDPHUONGTIEN" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="IsDeleted" Type="Boolean" />
           <NavigationProperty Name="DOAN" Relationship="Self.LK_DOAN_PHUONGTIEN" FromRole="tb_PHUONGTIEN" ToRole="DOAN" />
           <NavigationProperty Name="PHUONGTIEN" Relationship="Self.LK_PHUONGTIEN_PHUONGTIEN" FromRole="tb_PHUONGTIEN" ToRole="PHUONGTIEN" />
         </EntityType>
@@ -646,6 +674,7 @@
           <Property Name="IDDOAN" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
           <Property Name="IDNHANVIEN" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
           <Property Name="PHUTRACH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" />
           <NavigationProperty Name="DOAN" Relationship="Self.LK_DOAN_PHUTRACH" FromRole="tb_PHUTRACH" ToRole="DOAN" />
           <NavigationProperty Name="NHANVIEN" Relationship="Self.LK_NHANVIEN_PHUTRACH" FromRole="tb_PHUTRACH" ToRole="NHANVIEN" />
         </EntityType>
@@ -655,6 +684,7 @@
           </Key>
           <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="TEN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" />
           <NavigationProperty Name="DIADIEMs" Relationship="Self.LK_TINH" FromRole="TINH" ToRole="DIADIEM" />
           <NavigationProperty Name="KHACHSANs" Relationship="Self.LK_KHACHSAN_TINH" FromRole="TINH" ToRole="KHACHSAN" />
           <NavigationProperty Name="PHUONGTIENs" Relationship="Self.LK_PHUONGTIEN_TINH" FromRole="TINH" ToRole="PHUONGTIEN" />
@@ -668,6 +698,7 @@
           <Property Name="DACDIEM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LOAI" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="GIA" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="IsDeleted" Type="Boolean" />
           <NavigationProperty Name="DOANs" Relationship="Self.LK_TOUR_DOAN" FromRole="TOUR" ToRole="DOAN" />
           <NavigationProperty Name="tb_DIADIEM_DULICH" Relationship="Self.LK_TOUR_DULICH" FromRole="TOUR" ToRole="tb_DIADIEM_DULICH" />
         </EntityType>
@@ -680,6 +711,7 @@
           <Property Name="GIA" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="IDKHACH" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
           <Property Name="IDDOAN" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="IsDeleted" Type="Boolean" />
           <NavigationProperty Name="DOAN" Relationship="Self.LK_VE_DOAN" FromRole="VE" ToRole="DOAN" />
           <NavigationProperty Name="KHACHHANG" Relationship="Self.LK_VE_KHACH" FromRole="VE" ToRole="KHACHHANG" />
         </EntityType>
@@ -780,11 +812,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="LK_TOUR_DOAN">
-          <End Role="TOUR" Type="Self.TOUR" Multiplicity="0..1" >
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="DOAN" Type="Self.DOAN" Multiplicity="*" >
-          </End>
+          <End Role="TOUR" Type="Self.TOUR" Multiplicity="0..1" />
+          <End Role="DOAN" Type="Self.DOAN" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TOUR">
               <PropertyRef Name="ID" />
@@ -795,10 +824,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="LK_VE_DOAN">
-          <End Role="DOAN" Type="Self.DOAN" Multiplicity="0..1" >
-          </End>
-          <End Role="VE" Type="Self.VE" Multiplicity="*" >
-          </End>
+          <End Role="DOAN" Type="Self.DOAN" Multiplicity="0..1" />
+          <End Role="VE" Type="Self.VE" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DOAN">
               <PropertyRef Name="ID" />
@@ -809,11 +836,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="LK_VE_KHACH">
-          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" >
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="VE" Type="Self.VE" Multiplicity="*" >
-          </End>
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+          <End Role="VE" Type="Self.VE" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="KHACHHANG">
               <PropertyRef Name="ID" />
@@ -897,8 +921,7 @@
         </Association>
         <Association Name="LK_TOUR_DULICH">
           <End Role="TOUR" Type="Self.TOUR" Multiplicity="0..1" />
-          <End Role="tb_DIADIEM_DULICH" Type="Self.tb_DIADIEM_DULICH" Multiplicity="*" >
-          </End>
+          <End Role="tb_DIADIEM_DULICH" Type="Self.tb_DIADIEM_DULICH" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TOUR">
               <PropertyRef Name="ID" />
@@ -1012,6 +1035,7 @@
                 <ScalarProperty Name="ACC" ColumnName="ACC" />
                 <ScalarProperty Name="PASS" ColumnName="PASS" />
                 <ScalarProperty Name="IDNHANVIEN" ColumnName="IDNHANVIEN" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1023,6 +1047,7 @@
                 <ScalarProperty Name="PHICHOI" ColumnName="PHICHOI" />
                 <ScalarProperty Name="PHIKHAC" ColumnName="PHIKHAC" />
                 <ScalarProperty Name="TONG" ColumnName="TONG" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1034,6 +1059,7 @@
                 <ScalarProperty Name="IDTINH" ColumnName="IDTINH" />
                 <ScalarProperty Name="CHITIET" ColumnName="CHITIET" />
                 <ScalarProperty Name="PICBI" ColumnName="PICBI" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1047,6 +1073,7 @@
                 <ScalarProperty Name="CHITIETCHUONGTRINH" ColumnName="CHITIETCHUONGTRINH" />
                 <ScalarProperty Name="IDCHIPHI" ColumnName="IDCHIPHI" />
                 <ScalarProperty Name="IDTOUR" ColumnName="IDTOUR" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1060,6 +1087,7 @@
                 <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
                 <ScalarProperty Name="SDT" ColumnName="SDT" />
                 <ScalarProperty Name="PICBI" ColumnName="PICBI" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1074,6 +1102,7 @@
                 <ScalarProperty Name="GIA" ColumnName="GIA" />
                 <ScalarProperty Name="IDTINH" ColumnName="IDTINH" />
                 <ScalarProperty Name="TEN" ColumnName="TEN" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1085,6 +1114,7 @@
                 <ScalarProperty Name="SDT" ColumnName="SDT" />
                 <ScalarProperty Name="PICBI" ColumnName="PICBI" />
                 <ScalarProperty Name="TEN" ColumnName="TEN" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1096,6 +1126,7 @@
                 <ScalarProperty Name="PICBI" ColumnName="PICBI" />
                 <ScalarProperty Name="LOAI" ColumnName="LOAI" />
                 <ScalarProperty Name="IDTINH" ColumnName="IDTINH" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1116,6 +1147,7 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="IDTOUR" ColumnName="IDTOUR" />
                 <ScalarProperty Name="IDDIADIEM" ColumnName="IDDIADIEM" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1125,6 +1157,7 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="IDDOAN" ColumnName="IDDOAN" />
                 <ScalarProperty Name="IDKHACHSAN" ColumnName="IDKHACHSAN" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1135,6 +1168,7 @@
                 <ScalarProperty Name="IDDOAN" ColumnName="IDDOAN" />
                 <ScalarProperty Name="IDNHANVIEN" ColumnName="IDNHANVIEN" />
                 <ScalarProperty Name="NHIEMVU" ColumnName="NHIEMVU" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1144,6 +1178,7 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="IDDOAN" ColumnName="IDDOAN" />
                 <ScalarProperty Name="IDPHUONGTIEN" ColumnName="IDPHUONGTIEN" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1154,6 +1189,7 @@
                 <ScalarProperty Name="IDDOAN" ColumnName="IDDOAN" />
                 <ScalarProperty Name="IDNHANVIEN" ColumnName="IDNHANVIEN" />
                 <ScalarProperty Name="PHUTRACH" ColumnName="PHUTRACH" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1162,6 +1198,7 @@
               <MappingFragment StoreEntitySet="TINH">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TEN" ColumnName="TEN" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1173,6 +1210,7 @@
                 <ScalarProperty Name="DACDIEM" ColumnName="DACDIEM" />
                 <ScalarProperty Name="LOAI" ColumnName="LOAI" />
                 <ScalarProperty Name="GIA" ColumnName="GIA" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1184,6 +1222,7 @@
                 <ScalarProperty Name="GIA" ColumnName="GIA" />
                 <ScalarProperty Name="IDKHACH" ColumnName="IDKHACH" />
                 <ScalarProperty Name="IDDOAN" ColumnName="IDDOAN" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

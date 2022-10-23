@@ -65,7 +65,7 @@ namespace Tour
                 {
 
                     var nv = new NHANVIEN() { ID = randomcode,  TEN = txbHo.Text+" "+ txbTen.Text, SDT = txbSDT.Text, MAIL = txbGmail.Text,PICBI=img_data };
-                    var account = new ACCOUNT() { ACC = txbGmail.Text, PASS = Converter.Instance.MD5Encrypt(Converter.Instance.Base64Encode(txbPass.Text)), ID = randomcode, IDNHANVIEN = randomcode };
+                    var account = new ACCOUNT() { ACC = txbGmail.Text, PASS = Converter.Instance.MD5Encrypt(Converter.Instance.Base64Encode(txbPass.Text)), ID = randomcode, IDNHANVIEN = randomcode,IsDeleted=false };
                     DataProvider.Ins.DB.ACCOUNTs.Add(account);
                     DataProvider.Ins.DB.NHANVIENs.Add(nv);
 
@@ -124,6 +124,8 @@ namespace Tour
             }
         }
 
+
+
         private void btnSend_Click(object sender, EventArgs e)
         {
             if (txbGmail.Text.Length > 0)
@@ -134,31 +136,31 @@ namespace Tour
                     string from, pass, messageBody;
                     Random random = new Random();
                     randomcode = Converter.Instance.RandomString(5);
-                    MailMessage message = new MailMessage();
-                    to = (txbGmail.Text).ToString();
-                    from = "PTS.UIT.Group@gmail.com";
-                    pass = "PTS@uitGroup";
-                    messageBody = "Verification code exists for your email :" + randomcode;
-                    message.To.Add(to);
-                    message.From = new MailAddress(from);
-                    message.Body = messageBody;
-                    message.Subject = "Confirm Email Code";
-                    SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-                    smtp.EnableSsl = true;
-                    smtp.Port = 587;
-                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                    smtp.Credentials = new NetworkCredential(from, pass);
-                    //try
-                    //{
-                    //    smtp.Send(message);
-                    //    MessageBox.Show("Code send success!!!");
-                    //    label12.Text = "";
-                    //}
-                    //catch (Exception ex)
-                    //{
-                    //    MessageBox.Show(ex.Message);
-                    //}
-                    label12.Text = randomcode;
+                    List<string> listto = new List<string>();
+                    listto.Add(email);
+                    //MailMessage message = new MailMessage();
+                    //to = (txbGmail.Text).ToString();
+                    //from = "PTS.UIT.Group@gmail.com";
+                    //pass = "PTS@uitGroup";
+                    //messageBody = "Verification code exists for your email :" + randomcode;
+                    //message.To.Add(to);
+                    //message.From = new MailAddress(from);
+                    //message.Body = messageBody;
+                    //message.Subject = "Confirm Email Code";
+                    //SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+                    //smtp.EnableSsl = true;
+                    //smtp.Port = 587;
+                    //smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    //smtp.Credentials = new NetworkCredential(from, pass);
+                    try
+                    {
+                        Utils.Features.Instance.SendMail(listto, "Verify code", randomcode);
+                        label12.Text = "Code send success!!!";
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
 
                 }
             }

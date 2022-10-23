@@ -46,7 +46,7 @@ namespace Tour
         }
         public void ShowAllChuyen()
         {
-            dgv_trip.DataSource = DataProvider.Ins.DB.TOURs.Select(t => t).ToList();
+            dgv_trip.DataSource = DataProvider.Ins.DB.TOURs.Where(t=>t.IsDeleted==false).ToList();
 
             lstbxLocation.DataSource = LocationList;
             lstbxLocation.DisplayMember = "TEN";
@@ -126,7 +126,7 @@ namespace Tour
                 try
                 {
                     randomcode = Converter.Instance.RandomString2(5);
-                    var tour = new TOUR() { ID = randomcode, GIA = Convert.ToDecimal(tb_price.Text), TEN = tb_nametour.Text, LOAI = cb_typetour.Text, DACDIEM = richtbDetail.Text };
+                    var tour = new TOUR() { ID = randomcode, GIA = Convert.ToDecimal(tb_price.Text), TEN = tb_nametour.Text, LOAI = cb_typetour.Text, DACDIEM = richtbDetail.Text,IsDeleted=false };
                     DataProvider.Ins.DB.TOURs.Add(tour);
 
                     DataProvider.Ins.DB.SaveChanges();
@@ -165,15 +165,8 @@ namespace Tour
                 }
                 try
                 {
-                    //foreach(var khachhang in DataProvider.Ins.DB.VEs.Where(x => x.DOAN.IDTOUR == id))
-                    //{
-                    //    DataProvider.Ins.DB.KHACHHANGs.Remove(DataProvider.Ins.DB.KHACHHANGs.Where(x => x.ID == khachhang.IDKHACH).FirstOrDefault());
-                    //}
-                    //DataProvider.Ins.DB.VEs.RemoveRange(DataProvider.Ins.DB.VEs.Where(x => x.DOAN.IDTOUR == id));
-                    //DataProvider.Ins.DB.DOANs.RemoveRange(DataProvider.Ins.DB.DOANs.Where(x => x.IDTOUR == id));
-                    //DataProvider.Ins.DB.tb_DIADIEM_DULICH.RemoveRange(DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.IDTOUR == id));
                     TOUR tour = DataProvider.Ins.DB.TOURs.Where(x => x.ID == id).FirstOrDefault();
-                    DataProvider.Ins.DB.TOURs.Remove(tour);
+                    tour.IsDeleted = true;
                     DataProvider.Ins.DB.SaveChanges();
                     ShowAllChuyen();
 
@@ -216,7 +209,7 @@ namespace Tour
                 LocationList = new List<DIADIEM>();
                 foreach (var item in (from dd in DataProvider.Ins.DB.DIADIEMs
                                       join tb_belong in DataProvider.Ins.DB.tb_DIADIEM_DULICH on dd.ID equals tb_belong.IDDIADIEM
-                                      where tb_belong.IDTOUR == id
+                                      where tb_belong.IDTOUR == id && tb_belong.IsDeleted == false
                                       select dd)
                                      .ToList())
                 {
@@ -250,12 +243,12 @@ namespace Tour
                 {
                     if (rdIDSearch.Checked)
                     {
-                        dgv_trip.DataSource = DataProvider.Ins.DB.TOURs.Where(t => SqlFunctions.PatIndex("%" + value + "%", t.ID) > 0).Select(t => t).ToList();
+                        dgv_trip.DataSource = DataProvider.Ins.DB.TOURs.Where(t => (SqlFunctions.PatIndex("%" + value + "%", t.ID) > 0) && (t.IsDeleted == false)).Select(t => t).ToList();
 
                     }
                     else if(rdNameSearch.Checked)
                     {
-                        dgv_trip.DataSource = DataProvider.Ins.DB.TOURs.Where(t => SqlFunctions.PatIndex("%" + value + "%", t.TEN) > 0).Select(t => t).ToList();
+                        dgv_trip.DataSource = DataProvider.Ins.DB.TOURs.Where(t =>( SqlFunctions.PatIndex("%" + value + "%", t.TEN) > 0) && (t.IsDeleted==false)).Select(t => t).ToList();
 
                     }
                 }

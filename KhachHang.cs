@@ -21,6 +21,7 @@ namespace Tour
         private void showAll()
         {
             dataGridView1.DataSource = (from ve in DataProvider.Ins.DB.VEs
+                                        where ve.IsDeleted==false
                                         select new
                                         {
                                             TENKH=ve.KHACHHANG.TENKH,

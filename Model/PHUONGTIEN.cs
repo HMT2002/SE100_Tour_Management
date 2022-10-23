@@ -25,6 +25,7 @@ namespace Tour.Model
         public byte[] PICBI { get; set; }
         public string LOAI { get; set; }
         public string IDTINH { get; set; }
+        public Nullable<bool> IsDeleted { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_PHUONGTIEN> tb_PHUONGTIEN { get; set; }

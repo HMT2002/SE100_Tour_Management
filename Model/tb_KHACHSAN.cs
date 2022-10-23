@@ -17,6 +17,7 @@ namespace Tour.Model
         public string ID { get; set; }
         public string IDDOAN { get; set; }
         public string IDKHACHSAN { get; set; }
+        public Nullable<bool> IsDeleted { get; set; }
     
         public virtual DOAN DOAN { get; set; }
         public virtual KHACHSAN KHACHSAN { get; set; }

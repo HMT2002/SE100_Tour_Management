@@ -18,6 +18,7 @@ namespace Tour.Model
         public string ACC { get; set; }
         public string PASS { get; set; }
         public string IDNHANVIEN { get; set; }
+        public Nullable<bool> IsDeleted { get; set; }
     
         public virtual NHANVIEN NHANVIEN { get; set; }
     }

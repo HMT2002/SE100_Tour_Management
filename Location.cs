@@ -97,7 +97,7 @@ namespace Tour
         }
         public void showAll()
         {
-            cbbxLocation.DataSource = DataProvider.Ins.DB.DIADIEMs.Select(t =>t).ToList();
+            cbbxLocation.DataSource = DataProvider.Ins.DB.DIADIEMs.Select(t =>t).Where(t=>t.IsDeleted==false).ToList();
             cbbxLocation.DisplayMember = "TEN";
         }
         private void btnPickPicture_Click(object sender, EventArgs e)
@@ -154,12 +154,12 @@ namespace Tour
                     randomcode = Converter.Instance.RandomString(5);
                     if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
                     {
-                        var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text };
+                        var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text,IsDeleted=false };
                         DataProvider.Ins.DB.TINHs.Add(tinh);
                         DataProvider.Ins.DB.SaveChanges();
                     }
 
-                    var location = new DIADIEM() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), CHITIET = rchtxtbxDetail.Text, PICBI = img_data };
+                    var location = new DIADIEM() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), CHITIET = rchtxtbxDetail.Text, PICBI = img_data,IsDeleted=false };
 
                     DataProvider.Ins.DB.DIADIEMs.Add(location);
                     DataProvider.Ins.DB.SaveChanges();
@@ -198,7 +198,7 @@ namespace Tour
                 try
                 {
                     DIADIEM diadiem = DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == id).FirstOrDefault();
-                    DataProvider.Ins.DB.DIADIEMs.Remove(diadiem);
+                    diadiem.IsDeleted = true;
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
                     Clear();

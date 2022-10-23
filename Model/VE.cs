@@ -19,6 +19,7 @@ namespace Tour.Model
         public Nullable<decimal> GIA { get; set; }
         public string IDKHACH { get; set; }
         public string IDDOAN { get; set; }
+        public Nullable<bool> IsDeleted { get; set; }
     
         public virtual DOAN DOAN { get; set; }
         public virtual KHACHHANG KHACHHANG { get; set; }

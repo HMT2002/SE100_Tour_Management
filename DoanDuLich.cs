@@ -21,7 +21,7 @@ namespace Tour
         public DoanDuLich()
         {
             InitializeComponent();
-            dataGridView1.AutoGenerateColumns = false;
+            dgvDoan.AutoGenerateColumns = false;
 
         }
 
@@ -34,17 +34,18 @@ namespace Tour
         private void showAll()
         {
 
-            dataGridView1.DataSource= (from doan in DataProvider.Ins.DB.DOANs
-             join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-             join chiphi in DataProvider.Ins.DB.CHIPHIs on doan.IDCHIPHI equals chiphi.ID
+            dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
+                                        join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
+                                        join chiphi in DataProvider.Ins.DB.CHIPHIs on doan.IDCHIPHI equals chiphi.ID
+                                        where doan.IsDeleted==false && tour.IsDeleted==false
              select new {
-                 ID=doan.ID,
-                 TEN=doan.TEN,
-                 NGAYKHOIHANH=doan.NGAYKHOIHANH,
-                 NGAYKETTHUC=doan.NGAYKETTHUC,
+                 ID = doan.ID,
+                 TEN = doan.TEN,
+                 NGAYKHOIHANH = doan.NGAYKHOIHANH,
+                 NGAYKETTHUC = doan.NGAYKETTHUC,
                  CHITIETCHUONGTRINH = doan.CHITIETCHUONGTRINH,
-                 TONG=chiphi.TONG,
-                 TEN_TOUR=tour.TEN 
+                 TONG = chiphi.TONG,
+                 TEN_TOUR = tour.TEN
              }).ToList();
             comboBox1.DataSource = DataProvider.Ins.DB.TOURs.Select(t => t).ToList();
             comboBox1.DisplayMember = "TEN";
@@ -57,30 +58,39 @@ namespace Tour
 
             if (index >= 0)
             {
-                id = dataGridView1.Rows[index].Cells["data_ID"].Value.ToString();
+                id = dgvDoan.Rows[index].Cells["data_ID"].Value.ToString();
                 textBox1.Text = id;
 
-                dateTimePicker1.Value = (DateTime)dataGridView1.Rows[index].Cells["NGAYKHOIHANH"].Value;
-                dateTimePicker2.Value = (DateTime)dataGridView1.Rows[index].Cells["NGAYKETTHUC"].Value;
+                dateTimePicker1.Value = (DateTime)dgvDoan.Rows[index].Cells["NGAYKHOIHANH"].Value;
+                dateTimePicker2.Value = (DateTime)dgvDoan.Rows[index].Cells["NGAYKETTHUC"].Value;
 
-                textBox2.Text= dataGridView1.Rows[index].Cells["TEN"].Value.ToString();
-                textBox3.Text = dataGridView1.Rows[index].Cells["CHIPHI"].Value.ToString();
-                comboBox1.Text = dataGridView1.Rows[index].Cells["TENTOUR"].Value.ToString();
-                dataGridView2.DataSource= (from ve in DataProvider.Ins.DB.VEs
-                                           where ve.IDDOAN == id
+                textBox2.Text= dgvDoan.Rows[index].Cells["TEN"].Value.ToString();
+                textBox3.Text = dgvDoan.Rows[index].Cells["CHIPHI"].Value.ToString();
+                comboBox1.Text = dgvDoan.Rows[index].Cells["TENTOUR"].Value.ToString();
+                dgvKhachHang.DataSource= (from ve in DataProvider.Ins.DB.VEs
+                                           where ve.IDDOAN == id && ve.IsDeleted==false
                                            select new
                                            {
                                                ID = ve.KHACHHANG.ID,
                                                TEN = ve.KHACHHANG.TENKH,
                                            }).ToList();
 
-                dataGridView3.DataSource = (from ks in DataProvider.Ins.DB.KHACHSANs
+                dgvKhachSan.DataSource = (from ks in DataProvider.Ins.DB.KHACHSANs
                                             join tb_belong in DataProvider.Ins.DB.tb_KHACHSAN on ks.ID equals tb_belong.IDKHACHSAN
-                                            where tb_belong.IDDOAN == id
+                                            where tb_belong.IDDOAN == id && tb_belong.IsDeleted==false
                                             select new
                                             {
                                                 ID = ks.ID,
                                                 TEN = ks.TEN,
+                                            }).ToList();
+
+                dgvPhuongTien.DataSource = (from pt in DataProvider.Ins.DB.PHUONGTIENs
+                                            join tb_belong in DataProvider.Ins.DB.tb_PHUONGTIEN on pt.ID equals tb_belong.IDPHUONGTIEN
+                                            where tb_belong.IDDOAN == id && tb_belong.IsDeleted==false
+                                            select new
+                                            {
+                                                ID = pt.ID,
+                                                TEN = pt.TEN,
                                             }).ToList();
             }
 
@@ -107,10 +117,10 @@ namespace Tour
                 {
                     if (rdIDSearch.Checked)
                     {
-                        dataGridView1.DataSource = (from doan in DataProvider.Ins.DB.DOANs
+                        dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
                                                     join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
                                                     join chiphi in DataProvider.Ins.DB.CHIPHIs on doan.IDCHIPHI equals chiphi.ID
-                                                    where doan.ID.Contains(value)
+                                                    where doan.ID.Contains(value) && doan.IsDeleted==false
                                                     select new
                                                     {
                                                         ID = doan.ID,
@@ -125,10 +135,10 @@ namespace Tour
                     }
                     else if (rdNameSearch.Checked)
                     {
-                        dataGridView1.DataSource = (from doan in DataProvider.Ins.DB.DOANs
+                        dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
                                                     join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
                                                     join chiphi in DataProvider.Ins.DB.CHIPHIs on doan.IDCHIPHI equals chiphi.ID
-                                                    where doan.TEN.Contains(value)
+                                                    where doan.TEN.Contains(value) &&doan.IsDeleted==false
                                                     select new
                                                     {
                                                         ID = doan.ID,
@@ -170,7 +180,7 @@ namespace Tour
                 try
                 {
                     randomcode = Converter.Instance.RandomString2(5);
-                    var doan = new DOAN() { ID = randomcode, TEN = textBox2.Text, NGAYKHOIHANH = dateTimePicker1.Value, NGAYKETTHUC = dateTimePicker2.Value,IDTOUR= ((TOUR)(comboBox1.SelectedItem)).ID,IDCHIPHI="0" };
+                    var doan = new DOAN() { ID = randomcode, TEN = textBox2.Text, NGAYKHOIHANH = dateTimePicker1.Value, NGAYKETTHUC = dateTimePicker2.Value,IDTOUR= ((TOUR)(comboBox1.SelectedItem)).ID,IDCHIPHI="0" ,IsDeleted=false};
                     DataProvider.Ins.DB.DOANs.Add(doan);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
@@ -192,9 +202,12 @@ namespace Tour
             }
             try
             {
-                DataProvider.Ins.DB.VEs.RemoveRange(DataProvider.Ins.DB.VEs.Where(x => x.IDDOAN == id));
+                foreach(var ve in DataProvider.Ins.DB.VEs.Where(x => x.IDDOAN == id))
+                {
+                    ve.IsDeleted = true;
+                }
                 DOAN doan = DataProvider.Ins.DB.DOANs.Where(x => x.ID == id).FirstOrDefault();
-                DataProvider.Ins.DB.DOANs.Remove(doan);
+                doan.IsDeleted = true;
                 DataProvider.Ins.DB.SaveChanges();
                 showAll();
 
@@ -258,8 +271,10 @@ namespace Tour
             comboBox1.SelectedIndex = -1;
             dateTimePicker1.Value = dateTimePicker2.Value = DateTime.Now;
             id = "";
-            dataGridView2.DataSource = null;
-            dataGridView3.DataSource = null;
+            dgvKhachHang.DataSource = null;
+            dgvKhachSan.DataSource = null;
+            dgvPhuongTien.DataSource = null;
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -285,12 +300,29 @@ namespace Tour
             {
                 return;
             }
-            Clear();
 
             AddHotelForGroup h = new AddHotelForGroup(id);
             this.Hide();
             h.ShowDialog();
             this.Show();
+            Clear();
+
+        }
+
+        private void btnAddVehicalForGroup_Click(object sender, EventArgs e)
+        {
+            if (id == null || id.CompareTo(string.Empty) == 0)
+            {
+                return;
+            }
+
+            AddVehicalForGroup h = new AddVehicalForGroup(id);
+            this.Hide();
+            h.ShowDialog();
+            this.Show();
+            Clear();
+
+
         }
     }
 }

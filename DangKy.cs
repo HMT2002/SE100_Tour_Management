@@ -166,6 +166,7 @@ namespace Tour
                     GIOITINH=gender,
                     DIACHI=tbAddress.Text,
                     SDT=tbTelephone.Text,
+                    IsDeleted=true,
                 };
                 DataProvider.Ins.DB.KHACHHANGs.Add(khachhang);
 
@@ -176,6 +177,7 @@ namespace Tour
                     IDDOAN= cbGroup.SelectedValue.ToString(),
                     NGAYMUA=DateTime.Today,
                     GIA=Convert.ToDecimal(tbPrice.Text),
+                    IsDeleted=false,
                 };
                 DataProvider.Ins.DB.VEs.Add(ve);
                 DataProvider.Ins.DB.SaveChanges();
@@ -220,6 +222,8 @@ namespace Tour
             cbDes.Refresh();
             cbDes.DataSource = (from tour in DataProvider.Ins.DB.TOURs
                                 join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
+                                where tour.IsDeleted == false && doan.IsDeleted == false
+
                                 select new
                                 {
                                     TENTOUR = tour.TEN,
@@ -248,7 +252,7 @@ namespace Tour
 
                 cbGroup.DataSource = (from tour in DataProvider.Ins.DB.TOURs
                                       join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
-                                      where tour.ID == idtour
+                                      where tour.ID == idtour && tour.IsDeleted == false && doan.IsDeleted == false
                                       select new
                                       {
                                           TENDOAN = doan.TEN,

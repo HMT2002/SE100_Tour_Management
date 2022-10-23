@@ -79,7 +79,7 @@ namespace Tour
             }
 
 
-            if (DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass)).SingleOrDefault() != null)
+            if (DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted==false)).SingleOrDefault() != null)
             {
                 Properties.Settings.Default.UserName = emailtxb.Text;
                 Properties.Settings.Default.Password = passwordtxb.Text;
