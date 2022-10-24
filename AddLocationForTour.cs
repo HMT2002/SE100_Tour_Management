@@ -88,6 +88,7 @@ namespace Tour
             }
             foreach (DIADIEM diadiem in ListDiaDiem)
             {
+
                 string random1 = Converter.Instance.RandomString2(5);
                 while (DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.ID == random1).FirstOrDefault() != null)
                 {
