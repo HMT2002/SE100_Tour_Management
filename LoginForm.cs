@@ -83,6 +83,8 @@ namespace Tour
             {
                 Properties.Settings.Default.UserName = emailtxb.Text;
                 Properties.Settings.Default.Password = passwordtxb.Text;
+                Properties.Settings.Default.CurUserId = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().IDNHANVIEN;
+
                 Properties.Settings.Default.Save();
                 SelectForm menuF = new SelectForm();
                 this.Hide();
