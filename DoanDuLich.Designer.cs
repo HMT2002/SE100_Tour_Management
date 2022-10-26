@@ -280,7 +280,7 @@ namespace Tour
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(1335, 253);
+            this.btnExit.Location = new System.Drawing.Point(1347, 450);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(61, 23);
             this.btnExit.TabIndex = 25;
@@ -375,7 +375,6 @@ namespace Tour
             this.panel1.Controls.Add(this.tb_search);
             this.panel1.Controls.Add(this.dgvDoan);
             this.panel1.Controls.Add(this.rdIDSearch);
-            this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.rdNameSearch);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnXoa);
@@ -383,7 +382,7 @@ namespace Tour
             this.panel1.Controls.Add(this.btnClear);
             this.panel1.Location = new System.Drawing.Point(12, 180);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1405, 283);
+            this.panel1.Size = new System.Drawing.Size(1405, 252);
             this.panel1.TabIndex = 33;
             // 
             // panel2
@@ -415,6 +414,7 @@ namespace Tour
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Controls.Add(this.btnAddHotelForGroup);
             this.panel4.Controls.Add(this.dgvKhachSan);
             this.panel4.Location = new System.Drawing.Point(446, 11);
@@ -462,6 +462,7 @@ namespace Tour
             // 
             // panel5
             // 
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.Controls.Add(this.btnAddVehicalForGroup);
             this.panel5.Controls.Add(this.dgvPhuongTien);
             this.panel5.Location = new System.Drawing.Point(780, 11);
@@ -517,6 +518,7 @@ namespace Tour
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

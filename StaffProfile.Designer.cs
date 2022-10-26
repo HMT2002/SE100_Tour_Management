@@ -34,11 +34,13 @@
             this.txbGmail = new System.Windows.Forms.TextBox();
             this.txbSDT = new System.Windows.Forms.TextBox();
             this.txbTen = new System.Windows.Forms.TextBox();
-            this.txbHo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtbxID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pcbxAvatar = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbxAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // backbtn
@@ -74,7 +76,7 @@
             this.txbGmail.BackColor = System.Drawing.Color.White;
             this.txbGmail.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbGmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.txbGmail.Location = new System.Drawing.Point(222, 108);
+            this.txbGmail.Location = new System.Drawing.Point(222, 172);
             this.txbGmail.Name = "txbGmail";
             this.txbGmail.ReadOnly = true;
             this.txbGmail.Size = new System.Drawing.Size(334, 29);
@@ -85,7 +87,7 @@
             this.txbSDT.BackColor = System.Drawing.Color.White;
             this.txbSDT.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbSDT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.txbSDT.Location = new System.Drawing.Point(222, 310);
+            this.txbSDT.Location = new System.Drawing.Point(222, 275);
             this.txbSDT.MaxLength = 20;
             this.txbSDT.Name = "txbSDT";
             this.txbSDT.ReadOnly = true;
@@ -97,22 +99,11 @@
             this.txbTen.BackColor = System.Drawing.Color.White;
             this.txbTen.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.txbTen.Location = new System.Drawing.Point(222, 243);
+            this.txbTen.Location = new System.Drawing.Point(222, 224);
             this.txbTen.Name = "txbTen";
             this.txbTen.ReadOnly = true;
             this.txbTen.Size = new System.Drawing.Size(334, 29);
             this.txbTen.TabIndex = 70;
-            // 
-            // txbHo
-            // 
-            this.txbHo.BackColor = System.Drawing.Color.White;
-            this.txbHo.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbHo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.txbHo.Location = new System.Drawing.Point(222, 170);
-            this.txbHo.Name = "txbHo";
-            this.txbHo.ReadOnly = true;
-            this.txbHo.Size = new System.Drawing.Size(334, 29);
-            this.txbHo.TabIndex = 69;
             // 
             // label4
             // 
@@ -120,7 +111,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(114, 111);
+            this.label4.Location = new System.Drawing.Point(114, 175);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 21);
             this.label4.TabIndex = 68;
@@ -132,7 +123,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(58, 313);
+            this.label3.Location = new System.Drawing.Point(58, 278);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(118, 21);
             this.label3.TabIndex = 67;
@@ -144,11 +135,22 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(88, 246);
+            this.label2.Location = new System.Drawing.Point(88, 227);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 21);
+            this.label2.Size = new System.Drawing.Size(82, 21);
             this.label2.TabIndex = 66;
-            this.label2.Text = "Last name";
+            this.label2.Text = "Full name";
+            // 
+            // txtbxID
+            // 
+            this.txtbxID.BackColor = System.Drawing.Color.White;
+            this.txtbxID.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.txtbxID.Location = new System.Drawing.Point(222, 117);
+            this.txtbxID.Name = "txtbxID";
+            this.txtbxID.ReadOnly = true;
+            this.txtbxID.Size = new System.Drawing.Size(334, 29);
+            this.txtbxID.TabIndex = 76;
             // 
             // label1
             // 
@@ -156,11 +158,23 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(88, 178);
+            this.label1.Location = new System.Drawing.Point(114, 120);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 21);
-            this.label1.TabIndex = 65;
-            this.label1.Text = "First name";
+            this.label1.Size = new System.Drawing.Size(29, 21);
+            this.label1.TabIndex = 75;
+            this.label1.Text = "ID";
+            // 
+            // pcbxAvatar
+            // 
+            this.pcbxAvatar.BackColor = System.Drawing.Color.Transparent;
+            this.pcbxAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcbxAvatar.Image = global::Tour.Properties.Resources.ic_image_empty_128;
+            this.pcbxAvatar.Location = new System.Drawing.Point(611, 117);
+            this.pcbxAvatar.Name = "pcbxAvatar";
+            this.pcbxAvatar.Size = new System.Drawing.Size(223, 135);
+            this.pcbxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbxAvatar.TabIndex = 0;
+            this.pcbxAvatar.TabStop = false;
             // 
             // StaffProfile
             // 
@@ -168,23 +182,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Tour.Properties.Resources.Tour1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(654, 380);
+            this.ClientSize = new System.Drawing.Size(846, 380);
+            this.Controls.Add(this.pcbxAvatar);
+            this.Controls.Add(this.txtbxID);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.backbtn);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txbGmail);
             this.Controls.Add(this.txbSDT);
             this.Controls.Add(this.txbTen);
-            this.Controls.Add(this.txbHo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StaffProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StaffProfile";
             this.Load += new System.EventHandler(this.StaffProfile_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pcbxAvatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,10 +213,11 @@
         private System.Windows.Forms.TextBox txbGmail;
         private System.Windows.Forms.TextBox txbSDT;
         private System.Windows.Forms.TextBox txbTen;
-        private System.Windows.Forms.TextBox txbHo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtbxID;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pcbxAvatar;
     }
 }
