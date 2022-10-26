@@ -45,15 +45,17 @@ namespace Tour
             this.btnClear = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.dgv_trip = new System.Windows.Forms.DataGridView();
+            this.dgv_nhanvien = new System.Windows.Forms.DataGridView();
             this.data_employeeid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExit = new System.Windows.Forms.Button();
+            this.txtbxID = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvatar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_trip)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_nhanvien)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -130,7 +132,7 @@ namespace Tour
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(298, 105);
+            this.label3.Location = new System.Drawing.Point(298, 133);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(26, 13);
             this.label3.TabIndex = 14;
@@ -140,7 +142,7 @@ namespace Tour
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(254, 79);
+            this.label1.Location = new System.Drawing.Point(254, 107);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 13;
@@ -148,14 +150,14 @@ namespace Tour
             // 
             // txtbxMail
             // 
-            this.txtbxMail.Location = new System.Drawing.Point(336, 98);
+            this.txtbxMail.Location = new System.Drawing.Point(336, 126);
             this.txtbxMail.Name = "txtbxMail";
             this.txtbxMail.Size = new System.Drawing.Size(456, 20);
             this.txtbxMail.TabIndex = 12;
             // 
             // txtbxSDT
             // 
-            this.txtbxSDT.Location = new System.Drawing.Point(336, 72);
+            this.txtbxSDT.Location = new System.Drawing.Point(336, 100);
             this.txtbxSDT.Name = "txtbxSDT";
             this.txtbxSDT.Size = new System.Drawing.Size(456, 20);
             this.txtbxSDT.TabIndex = 11;
@@ -164,7 +166,7 @@ namespace Tour
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(298, 49);
+            this.label2.Location = new System.Drawing.Point(298, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 13);
             this.label2.TabIndex = 10;
@@ -172,7 +174,7 @@ namespace Tour
             // 
             // txtbxName
             // 
-            this.txtbxName.Location = new System.Drawing.Point(336, 46);
+            this.txtbxName.Location = new System.Drawing.Point(336, 74);
             this.txtbxName.Name = "txtbxName";
             this.txtbxName.Size = new System.Drawing.Size(456, 20);
             this.txtbxName.TabIndex = 6;
@@ -189,9 +191,9 @@ namespace Tour
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(717, 158);
+            this.btnUpdate.Location = new System.Drawing.Point(717, 152);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(75, 29);
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -199,32 +201,32 @@ namespace Tour
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(636, 158);
+            this.btnXoa.Location = new System.Drawing.Point(636, 152);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.Size = new System.Drawing.Size(75, 29);
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // dgv_trip
+            // dgv_nhanvien
             // 
-            this.dgv_trip.AllowUserToAddRows = false;
-            this.dgv_trip.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_trip.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgv_trip.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_trip.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_nhanvien.AllowUserToAddRows = false;
+            this.dgv_nhanvien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_nhanvien.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgv_nhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_nhanvien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.data_employeeid,
             this.TEN,
             this.SDT,
             this.MAIL});
-            this.dgv_trip.Location = new System.Drawing.Point(12, 188);
-            this.dgv_trip.Name = "dgv_trip";
-            this.dgv_trip.ReadOnly = true;
-            this.dgv_trip.RowHeadersWidth = 51;
-            this.dgv_trip.Size = new System.Drawing.Size(780, 269);
-            this.dgv_trip.TabIndex = 4;
-            this.dgv_trip.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_trip_CellClick);
+            this.dgv_nhanvien.Location = new System.Drawing.Point(12, 188);
+            this.dgv_nhanvien.Name = "dgv_nhanvien";
+            this.dgv_nhanvien.ReadOnly = true;
+            this.dgv_nhanvien.RowHeadersWidth = 51;
+            this.dgv_nhanvien.Size = new System.Drawing.Size(780, 269);
+            this.dgv_nhanvien.TabIndex = 4;
+            this.dgv_nhanvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_trip_CellClick);
             // 
             // data_employeeid
             // 
@@ -264,6 +266,24 @@ namespace Tour
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // txtbxID
+            // 
+            this.txtbxID.Location = new System.Drawing.Point(659, 46);
+            this.txtbxID.Name = "txtbxID";
+            this.txtbxID.ReadOnly = true;
+            this.txtbxID.Size = new System.Drawing.Size(133, 20);
+            this.txtbxID.TabIndex = 23;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Location = new System.Drawing.Point(298, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(18, 13);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "ID";
+            // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,10 +291,12 @@ namespace Tour
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(810, 506);
+            this.Controls.Add(this.txtbxID);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.rdNameSearch);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.rdIDSearch);
-            this.Controls.Add(this.dgv_trip);
+            this.Controls.Add(this.dgv_nhanvien);
             this.Controls.Add(this.tb_search);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label3);
@@ -291,7 +313,7 @@ namespace Tour
             this.Text = "NhanVien";
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvatar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_trip)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_nhanvien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,7 +330,7 @@ namespace Tour
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.DataGridView dgv_trip;
+        private System.Windows.Forms.DataGridView dgv_nhanvien;
         private System.Windows.Forms.TextBox txtbxMail;
         private System.Windows.Forms.TextBox txtbxSDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn data_employeeid;
@@ -320,5 +342,7 @@ namespace Tour
         private System.Windows.Forms.TextBox tb_search;
         private System.Windows.Forms.RadioButton rdNameSearch;
         private System.Windows.Forms.RadioButton rdIDSearch;
+        private System.Windows.Forms.TextBox txtbxID;
+        private System.Windows.Forms.Label label4;
     }
 }

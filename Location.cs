@@ -164,7 +164,6 @@ namespace Tour
                     DataProvider.Ins.DB.DIADIEMs.Add(location);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
-                    Clear();
 
                 }
                 catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
@@ -184,6 +183,8 @@ namespace Tour
                     }
                     throw raise;
                 }
+                Clear();
+
             }
         }
 
@@ -201,13 +202,14 @@ namespace Tour
                     diadiem.IsDeleted = true;
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
-                    Clear();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
+                Clear();
+
             }
         }
 
@@ -234,7 +236,6 @@ namespace Tour
                     diadiem.PICBI = img_data;
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
-                    Clear();
 
                 }
                 catch (Exception ex)
@@ -242,6 +243,8 @@ namespace Tour
                     MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
+                Clear();
+
             }
 
         }

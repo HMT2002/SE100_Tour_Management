@@ -14,6 +14,7 @@ using System.Net.Mail;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 using Tour.Model;
+using Tour.Utils;
 
 namespace Tour
 {
@@ -28,12 +29,15 @@ namespace Tour
         private void StaffProfile_Load(object sender, EventArgs e)
         {
 
-            if (Properties.Settings.Default.UserName != string.Empty)
+            if (Properties.Settings.Default.CurUserId != string.Empty)
             {
-                txbGmail.Text = Properties.Settings.Default.UserName;
+                NHANVIEN nv = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == Properties.Settings.Default.CurUserId).FirstOrDefault();
+                txbGmail.Text = nv.MAIL;
+                txbTen.Text = nv.TEN;
+                txbSDT.Text = nv.SDT;
+                txtbxID.Text=nv.ID;
+                pcbxAvatar.Image = Converter.Instance.ByteArrayToImage(nv.PICBI);
             }
-
-            string query = "Select Ho,Ten,SDT from User where Email='" + Properties.Settings.Default.UserName + "'";
 
             //MessageBox.Show(Properties.Settings.Default.UserName + " " + )
 

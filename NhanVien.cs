@@ -25,13 +25,13 @@ namespace Tour
         public NhanVien()
         {
             InitializeComponent();
-            dgv_trip.AutoGenerateColumns = false;
+            dgv_nhanvien.AutoGenerateColumns = false;
             showAll();
         }
 
         private void showAll()
         {
-            dgv_trip.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t=>t.IsDeleted==false).Select(t => new
+            dgv_nhanvien.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t=>t.IsDeleted==false).Select(t => new
             {
                 t.ID,
                 t.TEN,
@@ -88,10 +88,11 @@ namespace Tour
             int index = e.RowIndex;
             if (index >= 0)
             {
-                id = dgv_trip.Rows[index].Cells["data_employeeid"].Value.ToString();
+                id = dgv_nhanvien.Rows[index].Cells["data_employeeid"].Value.ToString();
                 NHANVIEN temp = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault();
                 pcbxAvatar.Image = Converter.Instance.ByteArrayToImage(temp.PICBI);
 
+                txtbxID.Text = temp.ID;
                 txtbxName.Text = temp.TEN;
                 txtbxMail.Text = temp.MAIL;
                 txtbxSDT.Text = temp.SDT;
@@ -165,12 +166,12 @@ namespace Tour
                 {
                     if (rdIDSearch.Checked)
                     {
-                        dgv_trip.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t => SqlFunctions.PatIndex("%" + value + "%", t.ID) > 0).Select(t => t).ToList();
+                        dgv_nhanvien.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t => SqlFunctions.PatIndex("%" + value + "%", t.ID) > 0 && t.IsDeleted == false).Select(t => t).ToList();
 
                     }
                     else if (rdNameSearch.Checked)
                     {
-                        dgv_trip.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t => SqlFunctions.PatIndex("%" + value + "%", t.TEN) > 0).Select(t => t).ToList();
+                        dgv_nhanvien.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t => SqlFunctions.PatIndex("%" + value + "%", t.TEN) > 0 && t.IsDeleted == false).Select(t => t).ToList();
 
                     }
                 }
