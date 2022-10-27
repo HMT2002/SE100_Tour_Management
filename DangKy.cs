@@ -116,7 +116,7 @@ namespace Tour
         {
 
 
-            if (tbName.Text.Trim().CompareTo(string.Empty) == 0 || tbSurname.Text.Trim().CompareTo(string.Empty) == 0 || tbAddress.Text.Trim().CompareTo(string.Empty) == 0 || tbCMND.Text.Trim().CompareTo(string.Empty) == 0)
+            if (tbName.Text.Trim().CompareTo(string.Empty) == 0 || tbSurname.Text.Trim().CompareTo(string.Empty) == 0 || tbAddress.Text.Trim().CompareTo(string.Empty) == 0 || tbCMND.Text.Trim().CompareTo(string.Empty)==0 || cbGroup.SelectedValue == null || cbDes.SelectedValue == null)
             {
                 MessageBox.Show("Please fill in all the information", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;

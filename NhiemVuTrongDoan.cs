@@ -21,5 +21,9 @@ namespace Tour
         {
             this.Close();
         }
+        public void setTextBox(string s)
+        {
+            textBox1.Text = s;
+        }
     }
 }

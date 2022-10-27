@@ -337,5 +337,16 @@ namespace Tour
 
 
         }
+
+        private void dgvDoan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            NhiemVuTrongDoan nv = new NhiemVuTrongDoan();
+            this.Hide();
+            int index;
+            index = e.RowIndex;
+            nv.setTextBox(dgvDoan.Rows[index].Cells[0].Value.ToString().Trim());
+            nv.ShowDialog();
+            this.Show();
+        }
     }
 }
