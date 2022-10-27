@@ -61,7 +61,6 @@ namespace Tour
         {
             if (Convert.ToDecimal(tb_price.Text) == 0)
             {
-                MessageBox.Show(Convert.ToDecimal(tb_price.Text).ToString());
                 return false;
             }
             if (tb_price.Text.Trim().CompareTo(string.Empty) == 0||cb_typetour.Text.Trim().CompareTo(string.Empty) == 0)

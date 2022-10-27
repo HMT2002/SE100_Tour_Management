@@ -231,7 +231,7 @@ namespace Tour
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(200, 318);
+            this.btnUpdate.Location = new System.Drawing.Point(252, 318);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 2;
@@ -241,7 +241,7 @@ namespace Tour
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(119, 318);
+            this.btnXoa.Location = new System.Drawing.Point(171, 318);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 1;
@@ -251,7 +251,7 @@ namespace Tour
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(40, 318);
+            this.btnAdd.Location = new System.Drawing.Point(92, 318);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 0;

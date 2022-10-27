@@ -30,12 +30,12 @@ namespace Tour
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DoanDuLich));
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtbxIDDoan = new System.Windows.Forms.TextBox();
+            this.txtbxTenDoan = new System.Windows.Forms.TextBox();
+            this.txtbxChiPhi = new System.Windows.Forms.TextBox();
+            this.datetimeNgayKhoiHanh = new System.Windows.Forms.DateTimePicker();
+            this.datetimeNgayKetThuc = new System.Windows.Forms.DateTimePicker();
+            this.cbbxTour = new System.Windows.Forms.ComboBox();
             this.dgvDoan = new System.Windows.Forms.DataGridView();
             this.data_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,51 +85,51 @@ namespace Tour
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhuongTien)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtbxIDDoan
             // 
-            this.textBox1.Location = new System.Drawing.Point(94, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtbxIDDoan.Location = new System.Drawing.Point(94, 4);
+            this.txtbxIDDoan.Name = "txtbxIDDoan";
+            this.txtbxIDDoan.ReadOnly = true;
+            this.txtbxIDDoan.Size = new System.Drawing.Size(200, 20);
+            this.txtbxIDDoan.TabIndex = 0;
             // 
-            // textBox2
+            // txtbxTenDoan
             // 
-            this.textBox2.Location = new System.Drawing.Point(94, 109);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 20);
-            this.textBox2.TabIndex = 1;
+            this.txtbxTenDoan.Location = new System.Drawing.Point(94, 109);
+            this.txtbxTenDoan.Name = "txtbxTenDoan";
+            this.txtbxTenDoan.Size = new System.Drawing.Size(200, 20);
+            this.txtbxTenDoan.TabIndex = 1;
             // 
-            // textBox3
+            // txtbxChiPhi
             // 
-            this.textBox3.Location = new System.Drawing.Point(94, 135);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(200, 20);
-            this.textBox3.TabIndex = 2;
-            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
+            this.txtbxChiPhi.Location = new System.Drawing.Point(94, 135);
+            this.txtbxChiPhi.Name = "txtbxChiPhi";
+            this.txtbxChiPhi.ReadOnly = true;
+            this.txtbxChiPhi.Size = new System.Drawing.Size(200, 20);
+            this.txtbxChiPhi.TabIndex = 2;
+            this.txtbxChiPhi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
-            // dateTimePicker1
+            // datetimeNgayKhoiHanh
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(94, 30);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 4;
+            this.datetimeNgayKhoiHanh.Location = new System.Drawing.Point(94, 30);
+            this.datetimeNgayKhoiHanh.Name = "datetimeNgayKhoiHanh";
+            this.datetimeNgayKhoiHanh.Size = new System.Drawing.Size(200, 20);
+            this.datetimeNgayKhoiHanh.TabIndex = 4;
             // 
-            // dateTimePicker2
+            // datetimeNgayKetThuc
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(94, 56);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 5;
+            this.datetimeNgayKetThuc.Location = new System.Drawing.Point(94, 56);
+            this.datetimeNgayKetThuc.Name = "datetimeNgayKetThuc";
+            this.datetimeNgayKetThuc.Size = new System.Drawing.Size(200, 20);
+            this.datetimeNgayKetThuc.TabIndex = 5;
             // 
-            // comboBox1
+            // cbbxTour
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(94, 82);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 6;
+            this.cbbxTour.FormattingEnabled = true;
+            this.cbbxTour.Location = new System.Drawing.Point(94, 82);
+            this.cbbxTour.Name = "cbbxTour";
+            this.cbbxTour.Size = new System.Drawing.Size(200, 21);
+            this.cbbxTour.TabIndex = 6;
             // 
             // dgvDoan
             // 
@@ -387,15 +387,15 @@ namespace Tour
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.datetimeNgayKhoiHanh);
+            this.panel2.Controls.Add(this.txtbxIDDoan);
+            this.panel2.Controls.Add(this.txtbxTenDoan);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.txtbxChiPhi);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.dateTimePicker2);
+            this.panel2.Controls.Add(this.datetimeNgayKetThuc);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.cbbxTour);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
@@ -542,12 +542,12 @@ namespace Tour
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtbxIDDoan;
+        private System.Windows.Forms.TextBox txtbxTenDoan;
+        private System.Windows.Forms.TextBox txtbxChiPhi;
+        private System.Windows.Forms.DateTimePicker datetimeNgayKhoiHanh;
+        private System.Windows.Forms.DateTimePicker datetimeNgayKetThuc;
+        private System.Windows.Forms.ComboBox cbbxTour;
         private System.Windows.Forms.DataGridView dgvDoan;
         private System.Windows.Forms.TextBox tb_search;
         private System.Windows.Forms.RadioButton rdNameSearch;

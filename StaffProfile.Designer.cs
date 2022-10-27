@@ -40,6 +40,7 @@
             this.txtbxID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pcbxAvatar = new System.Windows.Forms.PictureBox();
+            this.btnPickPicture = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvatar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,6 +75,7 @@
             // txbGmail
             // 
             this.txbGmail.BackColor = System.Drawing.Color.White;
+            this.txbGmail.Enabled = false;
             this.txbGmail.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbGmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.txbGmail.Location = new System.Drawing.Point(222, 172);
@@ -85,6 +87,7 @@
             // txbSDT
             // 
             this.txbSDT.BackColor = System.Drawing.Color.White;
+            this.txbSDT.Enabled = false;
             this.txbSDT.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbSDT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.txbSDT.Location = new System.Drawing.Point(222, 275);
@@ -97,6 +100,7 @@
             // txbTen
             // 
             this.txbTen.BackColor = System.Drawing.Color.White;
+            this.txbTen.Enabled = false;
             this.txbTen.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.txbTen.Location = new System.Drawing.Point(222, 224);
@@ -144,6 +148,7 @@
             // txtbxID
             // 
             this.txtbxID.BackColor = System.Drawing.Color.White;
+            this.txtbxID.Enabled = false;
             this.txtbxID.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.txtbxID.Location = new System.Drawing.Point(222, 117);
@@ -176,6 +181,16 @@
             this.pcbxAvatar.TabIndex = 0;
             this.pcbxAvatar.TabStop = false;
             // 
+            // btnPickPicture
+            // 
+            this.btnPickPicture.Location = new System.Drawing.Point(688, 258);
+            this.btnPickPicture.Name = "btnPickPicture";
+            this.btnPickPicture.Size = new System.Drawing.Size(75, 23);
+            this.btnPickPicture.TabIndex = 77;
+            this.btnPickPicture.Text = "Chọn ảnh";
+            this.btnPickPicture.UseVisualStyleBackColor = true;
+            this.btnPickPicture.Click += new System.EventHandler(this.btnPickPicture_Click);
+            // 
             // StaffProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,6 +198,7 @@
             this.BackgroundImage = global::Tour.Properties.Resources.Tour1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(846, 380);
+            this.Controls.Add(this.btnPickPicture);
             this.Controls.Add(this.pcbxAvatar);
             this.Controls.Add(this.txtbxID);
             this.Controls.Add(this.label1);
@@ -219,5 +235,6 @@
         private System.Windows.Forms.TextBox txtbxID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pcbxAvatar;
+        private System.Windows.Forms.Button btnPickPicture;
     }
 }

@@ -47,8 +47,8 @@ namespace Tour
                  TONG = chiphi.TONG,
                  TEN_TOUR = tour.TEN
              }).ToList();
-            comboBox1.DataSource = DataProvider.Ins.DB.TOURs.Select(t => t).ToList();
-            comboBox1.DisplayMember = "TEN";
+            cbbxTour.DataSource = DataProvider.Ins.DB.TOURs.Select(t => t).ToList();
+            cbbxTour.DisplayMember = "TEN";
 
         }
 
@@ -59,14 +59,14 @@ namespace Tour
             if (index >= 0)
             {
                 id = dgvDoan.Rows[index].Cells["data_ID"].Value.ToString();
-                textBox1.Text = id;
+                txtbxIDDoan.Text = id;
 
-                dateTimePicker1.Value = (DateTime)dgvDoan.Rows[index].Cells["NGAYKHOIHANH"].Value;
-                dateTimePicker2.Value = (DateTime)dgvDoan.Rows[index].Cells["NGAYKETTHUC"].Value;
+                datetimeNgayKhoiHanh.Value = (DateTime)dgvDoan.Rows[index].Cells["NGAYKHOIHANH"].Value;
+                datetimeNgayKetThuc.Value = (DateTime)dgvDoan.Rows[index].Cells["NGAYKETTHUC"].Value;
 
-                textBox2.Text= dgvDoan.Rows[index].Cells["TEN"].Value.ToString();
-                textBox3.Text = dgvDoan.Rows[index].Cells["CHIPHI"].Value.ToString();
-                comboBox1.Text = dgvDoan.Rows[index].Cells["TENTOUR"].Value.ToString();
+                txtbxTenDoan.Text= dgvDoan.Rows[index].Cells["TEN"].Value.ToString();
+                txtbxChiPhi.Text = dgvDoan.Rows[index].Cells["CHIPHI"].Value.ToString();
+                cbbxTour.Text = dgvDoan.Rows[index].Cells["TENTOUR"].Value.ToString();
                 dgvKhachHang.DataSource= (from ve in DataProvider.Ins.DB.VEs
                                            where ve.IDDOAN == id && ve.IsDeleted==false
                                            select new
@@ -160,12 +160,12 @@ namespace Tour
         }
         public bool CheckData()
         {
-            if (DateTime.Compare(dateTimePicker1.Value,dateTimePicker2.Value)>0)
+            if (DateTime.Compare(datetimeNgayKhoiHanh.Value,datetimeNgayKetThuc.Value)>0)
             {
                 return false;
             }
 
-            if (textBox2.Text.Trim().CompareTo(string.Empty) == 0 || comboBox1.Text.Trim().CompareTo(string.Empty) == 0  )
+            if (txtbxTenDoan.Text.Trim().CompareTo(string.Empty) == 0 || cbbxTour.Text.Trim().CompareTo(string.Empty) == 0|| (TOUR)(cbbxTour.SelectedItem) == null  )
             {
                 return false;
             }
@@ -180,16 +180,16 @@ namespace Tour
                 try
                 {
                     randomcode = Converter.Instance.RandomString2(5);
-                    var doan = new DOAN() { ID = randomcode, TEN = textBox2.Text, NGAYKHOIHANH = dateTimePicker1.Value, NGAYKETTHUC = dateTimePicker2.Value,IDTOUR= ((TOUR)(comboBox1.SelectedItem)).ID,IDCHIPHI="0" ,IsDeleted=false};
+                    var doan = new DOAN() { ID = randomcode, TEN = txtbxTenDoan.Text, NGAYKHOIHANH = datetimeNgayKhoiHanh.Value, NGAYKETTHUC = datetimeNgayKetThuc.Value,IDTOUR= ((TOUR)(cbbxTour.SelectedItem)).ID,IDCHIPHI="0" ,IsDeleted=false};
                     DataProvider.Ins.DB.DOANs.Add(doan);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
+                    Clear();
                 }
                 catch
                 {
 
                 }
-                Clear();
 
             }
         }
@@ -243,10 +243,10 @@ namespace Tour
                 try
                 {
                     var doan = DataProvider.Ins.DB.DOANs.Where(x => x.ID == id).FirstOrDefault();
-                    doan.TEN = textBox2.Text;
-                    doan.NGAYKHOIHANH = dateTimePicker1.Value;
-                    doan.NGAYKETTHUC = dateTimePicker2.Value;
-                    doan.IDTOUR = ((TOUR)(comboBox1.SelectedItem)).ID;
+                    doan.TEN = txtbxTenDoan.Text;
+                    doan.NGAYKHOIHANH = datetimeNgayKhoiHanh.Value;
+                    doan.NGAYKETTHUC = datetimeNgayKetThuc.Value;
+                    doan.IDTOUR = ((TOUR)(cbbxTour.SelectedItem)).ID;
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
 
@@ -267,9 +267,9 @@ namespace Tour
 
         private void Clear()
         {
-            textBox1.Text = textBox2.Text = textBox3.Text = comboBox1.Text="";
-            comboBox1.SelectedIndex = -1;
-            dateTimePicker1.Value = dateTimePicker2.Value = DateTime.Now;
+            txtbxIDDoan.Text = txtbxTenDoan.Text = txtbxChiPhi.Text = cbbxTour.Text="";
+            cbbxTour.SelectedIndex = -1;
+            datetimeNgayKhoiHanh.Value = datetimeNgayKetThuc.Value = DateTime.Now;
             id = "";
             dgvKhachHang.DataSource = null;
             dgvKhachSan.DataSource = null;

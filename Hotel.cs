@@ -118,7 +118,7 @@ namespace Tour
         }
         public bool CheckData()
         {
-            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null||txtbxDiaChi.Text.Trim().CompareTo(string.Empty) == 0|| Convert.ToDecimal(txtbxGia.Text) == 0)
+            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null||txtbxDiaChi.Text.Trim().CompareTo(string.Empty) == 0|| Convert.ToDecimal(txtbxGia.Text) == 0 || cbboxProvince.SelectedIndex == -1)
             {
                 return false;
             }

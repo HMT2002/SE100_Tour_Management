@@ -117,7 +117,7 @@ namespace Tour
         public bool CheckData()
         {
 
-            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null)
+            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null||cbboxProvince.SelectedIndex==-1)
             {
                 return false;
             }
