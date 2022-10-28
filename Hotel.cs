@@ -202,7 +202,7 @@ namespace Tour
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (id == null || id.CompareTo(string.Empty) == 0)
+            if (id == null || id.CompareTo(string.Empty) == 0||cbboxProvince.Text.Trim().CompareTo(string.Empty) == 0)
             {
                 return;
             }

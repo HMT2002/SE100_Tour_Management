@@ -165,7 +165,7 @@ namespace Tour
                 return false;
             }
 
-            if (txtbxTenDoan.Text.Trim().CompareTo(string.Empty) == 0 || cbbxTour.Text.Trim().CompareTo(string.Empty) == 0|| (TOUR)(cbbxTour.SelectedItem) == null  )
+            if (txtbxTenDoan.Text.Trim().CompareTo(string.Empty) == 0 || cbbxTour.Text.Trim().CompareTo(string.Empty) == 0)
             {
                 return false;
             }
@@ -242,7 +242,7 @@ namespace Tour
                 }
                 try
                 {
-                    var doan = DataProvider.Ins.DB.DOANs.Where(x => x.ID == id).FirstOrDefault();
+                    var doan = DataProvider.Ins.DB.DOANs.Where(x => x.ID == id&&x.IsDeleted==false).FirstOrDefault();
                     doan.TEN = txtbxTenDoan.Text;
                     doan.NGAYKHOIHANH = datetimeNgayKhoiHanh.Value;
                     doan.NGAYKETTHUC = datetimeNgayKetThuc.Value;
