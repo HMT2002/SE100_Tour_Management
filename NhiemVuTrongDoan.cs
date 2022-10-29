@@ -23,7 +23,26 @@ namespace Tour
         }
         public void setTextBox(string s)
         {
+            //TextBox txt = new TextBox();
+            //txt.TabIndex = 
             textBox1.Text = s;
+            txtDriver.Text = s;
+        }
+
+        private void bttAssign_Click(object sender, EventArgs e)
+        {
+            NhanVien nv = new NhanVien();
+            this.Hide();
+            nv.ShowDialog();
+            this.Show();
+        }
+
+        private void txtDriver_MouseClick(object sender, MouseEventArgs e)
+        {
+            NhanVien nv = new NhanVien("Driver");
+            this.Hide();
+            nv.ShowDialog();
+            this.Show();
         }
     }
 }

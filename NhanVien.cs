@@ -20,12 +20,20 @@ namespace Tour
         Byte[] img_data;
         string randomcode;
         string id;
-
+        string phutrach;
 
         public NhanVien()
         {
             InitializeComponent();
             dgv_nhanvien.AutoGenerateColumns = false;
+            showAll();
+        }
+
+        public NhanVien(string phutrach)
+        {
+            InitializeComponent();
+            dgv_nhanvien.AutoGenerateColumns = false;
+            this.phutrach = phutrach;
             showAll();
         }
 
@@ -37,9 +45,12 @@ namespace Tour
                 t.TEN,
                 t.SDT,
                 t.MAIL,
+                t.isAvailable,
                 t.PICBI,
+                t.SLDI,
             }
     ).ToList();
+
 
         }
 
@@ -83,10 +94,15 @@ namespace Tour
             Clear();
         }
 
+        public string getID(string ID)
+        {
+            return ID;
+        }
+
         private void dgv_trip_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
-            if (index >= 0)
+            if (index >= 0 && e.ColumnIndex.ToString() != "5")
             {
                 id = dgv_nhanvien.Rows[index].Cells["data_employeeid"].Value.ToString();
                 NHANVIEN temp = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault();
@@ -96,6 +112,30 @@ namespace Tour
                 txtbxName.Text = temp.TEN;
                 txtbxMail.Text = temp.MAIL;
                 txtbxSDT.Text = temp.SDT;
+            }
+            else
+            {
+                if (e.ColumnIndex.ToString()== "5" && dgv_nhanvien.Rows[index].Cells["isAvailable"].Value.ToString() == "1")
+                {
+                    DialogResult dr =  MessageBox.Show("Do you want to assign this person to that role", "Assign", MessageBoxButtons.OKCancel);
+                    switch(dr)
+                    {
+                        case DialogResult.OK:
+                            tb_PHUTRACH nv = new tb_PHUTRACH() { ID=Converter.Instance.RandomString2(5),IDDOAN=,IDNHANVIEN= dgv_nhanvien.Rows[index].Cells["data_employeeid"].Value.ToString() ,PHUTRACH=phutrach, IsDeleted=false};
+                            NhiemVuTrongDoan nvd = new NhiemVuTrongDoan();
+                            nvd.setTextBox(dgv_nhanvien.Rows[index].Cells["ID"].Value.ToString());
+                            break;
+                        case DialogResult.Cancel:
+                            break;
+                        default:
+                            break;
+                            
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("IsNotAvailable");
+                }
             }
         }
 
@@ -192,6 +232,42 @@ namespace Tour
         {
             tb_search.Text = "";
 
+        }
+        // chưa tô màu được
+
+        private void dgv_nhanvien_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            try
+            {
+                int index;
+                index = e.RowIndex;
+                //if (this.dgv_nhanvien.Columns[e.ColumnIndex].Name == "isAvailable")
+                //{
+                //    if (e.Value != null)
+                //    {
+                //        string stringValue = e.Value.ToString();
+                //        if (stringValue == '1')
+                //        {
+                //            e.CellStyle.BackColor = Color.Red;
+                //        }
+                //    }
+                //}
+                //foreach(DataGridViewRow row in dgv_nhanvien.Rows)
+                //{
+                //    if (row.Cells[5].Value.ToString() == "0")
+                //    {
+                //        row.DefaultCellStyle.BackColor = Color.Red;
+                //    }
+                //    else if (row.Cells[5].Value.ToString() == "1")
+                //    {
+                //        row.DefaultCellStyle.BackColor = Color.Green;
+                //    }
+                //}
+            }
+            catch(Exception s)
+            {
+                MessageBox.Show(s.ToString());
+            }
         }
     }
 }

@@ -87,6 +87,8 @@
           <Property Name="PICBI" Type="varbinary(max)" />
           <Property Name="TEN" Type="nvarchar" MaxLength="50" />
           <Property Name="IsDeleted" Type="bit" />
+          <Property Name="isAvailable" Type="bit" />
+          <Property Name="SLDI" Type="int" />
         </EntityType>
         <EntityType Name="PHUONGTIEN">
           <Key>
@@ -583,6 +585,8 @@
           <Property Name="PICBI" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="TEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="isAvailable" Type="Boolean" />
+          <Property Name="SLDI" Type="Int32" />
           <NavigationProperty Name="ACCOUNTs" Relationship="Self.LK_NHANVIEN_ACCOUNT" FromRole="NHANVIEN" ToRole="ACCOUNT" />
           <NavigationProperty Name="tb_NHIEMVU" Relationship="Self.LK_NHANVIEN_NHIEMVU" FromRole="NHANVIEN" ToRole="tb_NHIEMVU" />
           <NavigationProperty Name="tb_PHUTRACH" Relationship="Self.LK_NHANVIEN_PHUTRACH" FromRole="NHANVIEN" ToRole="tb_PHUTRACH" />
@@ -1093,6 +1097,8 @@
                 <ScalarProperty Name="PICBI" ColumnName="PICBI" />
                 <ScalarProperty Name="TEN" ColumnName="TEN" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="isAvailable" ColumnName="isAvailable" />
+                <ScalarProperty Name="SLDI" ColumnName="SLDI" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
