@@ -57,16 +57,39 @@ namespace Tour
             ShowAllChuyen();
 
         }
+
+        public string price, typetour, nametour;
+
         public bool CheckData()
         {
-            if (Convert.ToDecimal(tb_price.Text) == 0)
+            if (this.price == null || this.typetour == null || this.price == null)
+            {
+                this.price = tb_price.Text;
+                this.typetour = cb_typetour.Text;
+                this.nametour = tb_nametour.Text;
+            }
+
+
+            if (price.Trim().CompareTo(string.Empty) == 0||typetour.Trim().CompareTo(string.Empty) == 0 || nametour.Trim().CompareTo(string.Empty) == 0)
+            {
+
+                return false;
+            }
+            else
+            {
+
+            }
+
+            try
+            {
+                Convert.ToDecimal(this.price);
+            }
+            catch
             {
                 return false;
             }
-            if (tb_price.Text.Trim().CompareTo(string.Empty) == 0||cb_typetour.Text.Trim().CompareTo(string.Empty) == 0)
-            {
-                return false;
-            }
+
+
 
             return true;
         }
@@ -116,6 +139,11 @@ namespace Tour
             id = tb_price.Text = cb_typetour.Text = tb_nametour.Text = tb_idtrip.Text = cb_typetour.Text = richtbDetail.Text = "";
             lstbxLocation.DataSource = null;
             LocationList = new List<DIADIEM>();
+
+            this.price = null;
+            this.typetour = null;
+            this.nametour = null;
+
         }
         private void add_Click(object sender, EventArgs e)
         {
