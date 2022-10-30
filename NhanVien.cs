@@ -21,6 +21,7 @@ namespace Tour
         string randomcode;
         string id;
         string phutrach;
+        string doanid;
 
         public NhanVien()
         {
@@ -29,11 +30,12 @@ namespace Tour
             showAll();
         }
 
-        public NhanVien(string phutrach)
+        public NhanVien(string phutrach, string doanid)
         {
             InitializeComponent();
             dgv_nhanvien.AutoGenerateColumns = false;
             this.phutrach = phutrach;
+            this.doanid = doanid;
             showAll();
         }
 
@@ -114,16 +116,21 @@ namespace Tour
                 txtbxSDT.Text = temp.SDT;
             }
             else
-            {
-                if (e.ColumnIndex.ToString()== "5" && dgv_nhanvien.Rows[index].Cells["isAvailable"].Value.ToString() == "1")
+            {// nhấn vào isAvailable
+                if (e.ColumnIndex.ToString() == "5" && dgv_nhanvien.Rows[index].Cells["isAvailable"].Value.ToString() == "True")
                 {
                     DialogResult dr =  MessageBox.Show("Do you want to assign this person to that role", "Assign", MessageBoxButtons.OKCancel);
                     switch(dr)
                     {
                         case DialogResult.OK:
-                            tb_PHUTRACH nv = new tb_PHUTRACH() { ID=Converter.Instance.RandomString2(5),IDDOAN=,IDNHANVIEN= dgv_nhanvien.Rows[index].Cells["data_employeeid"].Value.ToString() ,PHUTRACH=phutrach, IsDeleted=false};
-                            NhiemVuTrongDoan nvd = new NhiemVuTrongDoan();
-                            nvd.setTextBox(dgv_nhanvien.Rows[index].Cells["ID"].Value.ToString());
+                            string id_nhanvien = dgv_nhanvien.Rows[index].Cells["data_employeeid"].Value.ToString();
+                            var nvu = new tb_PHUTRACH() { ID=Converter.Instance.RandomString2(5),IDDOAN=doanid,IDNHANVIEN=id_nhanvien,PHUTRACH=phutrach, IsDeleted=false};
+                            DataProvider.Ins.DB.tb_PHUTRACH.Add(nvu);
+                            DataProvider.Ins.DB.SaveChanges();
+                            this.Close();
+                            NhiemVuTrongDoan nv = new NhiemVuTrongDoan(doanid, id_nhanvien,"","","");
+                            nv.setTextBox(doanid, false);
+                            nv.ShowDialog();
                             break;
                         case DialogResult.Cancel:
                             break;

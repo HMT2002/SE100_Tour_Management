@@ -17,6 +17,7 @@ namespace Tour
     {
         string id;
         string randomcode;
+        NhiemVuTrongDoan nhiemVu;
 
         public DoanDuLich()
         {
@@ -340,13 +341,17 @@ namespace Tour
 
         private void dgvDoan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            NhiemVuTrongDoan nv = new NhiemVuTrongDoan();
-            this.Hide();
             int index;
             index = e.RowIndex;
-            nv.setTextBox(dgvDoan.Rows[index].Cells[0].Value.ToString().Trim());
+            string doanid = dgvDoan.Rows[index].Cells[0].Value.ToString().Trim();
+            NhiemVuTrongDoan nv = new NhiemVuTrongDoan();
+            this.Hide();
+            nv.setTextBox(doanid, false);
             nv.ShowDialog();
+            //ngưng thực hiện lệnh bên dưới cho tới khi form đóng lại
+            //Show() tiếp tục thực hiện các lệnh bên dưới
             this.Show();
+            
         }
     }
 }
