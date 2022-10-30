@@ -125,11 +125,11 @@ namespace Tour
             // 
             // cbbxTour
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(94, 82);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 6;
+            this.cbbxTour.FormattingEnabled = true;
+            this.cbbxTour.Location = new System.Drawing.Point(94, 82);
+            this.cbbxTour.Name = "cbbxTour";
+            this.cbbxTour.Size = new System.Drawing.Size(200, 21);
+            this.cbbxTour.TabIndex = 6;
             // 
             // dgvDoan
             // 
