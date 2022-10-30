@@ -23,6 +23,8 @@ namespace Tour
         string phutrach;
         string doanid;
 
+        public string seleted_nhanvien_phutrach = "";
+
         public NhanVien()
         {
             InitializeComponent();
@@ -119,6 +121,9 @@ namespace Tour
             {// nhấn vào isAvailable
                 if (e.ColumnIndex.ToString() == "5" && dgv_nhanvien.Rows[index].Cells["isAvailable"].Value.ToString() == "True")
                 {
+                    id = dgv_nhanvien.Rows[index].Cells["data_employeeid"].Value.ToString();
+                    NHANVIEN temp = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault();
+
                     DialogResult dr =  MessageBox.Show("Do you want to assign this person to that role", "Assign", MessageBoxButtons.OKCancel);
                     switch(dr)
                     {
@@ -127,10 +132,8 @@ namespace Tour
                             var nvu = new tb_PHUTRACH() { ID=Converter.Instance.RandomString2(5),IDDOAN=doanid,IDNHANVIEN=id_nhanvien,PHUTRACH=phutrach, IsDeleted=false};
                             DataProvider.Ins.DB.tb_PHUTRACH.Add(nvu);
                             DataProvider.Ins.DB.SaveChanges();
+                            seleted_nhanvien_phutrach = nvu.NHANVIEN.TEN;
                             this.Close();
-                            NhiemVuTrongDoan nv = new NhiemVuTrongDoan(doanid, id_nhanvien,"","","");
-                            nv.setTextBox(doanid, false);
-                            nv.ShowDialog();
                             break;
                         case DialogResult.Cancel:
                             break;
@@ -274,6 +277,42 @@ namespace Tour
             catch(Exception s)
             {
                 MessageBox.Show(s.ToString());
+            }
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            if (CheckData())
+            {
+                try
+                {
+                    string randomcode = Converter.Instance.RandomString2(5);
+                    var nv = new NHANVIEN() { ID = randomcode,  TEN = txtbxName.Text, MAIL=txtbxMail.Text, SDT=txtbxSDT.Text, IsDeleted = false,isAvailable=true };
+                    DataProvider.Ins.DB.NHANVIENs.Add(nv);
+
+                    DataProvider.Ins.DB.SaveChanges();
+
+                    showAll();
+                }
+                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+                {
+                    Exception raise = dbEx;
+                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    {
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            string message = string.Format("{0}:{1}",
+                                validationErrors.Entry.Entity.ToString(),
+                                validationError.ErrorMessage);
+                            // raise a new exception nesting
+                            // the current instance as InnerException
+                            raise = new InvalidOperationException(message, raise);
+                        }
+                    }
+                    throw raise;
+                }
+
+                Clear();
             }
         }
     }

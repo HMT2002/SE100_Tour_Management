@@ -23,7 +23,6 @@ namespace Tour
         private string translator;
         public NhiemVuTrongDoan()
         {
-
             InitializeComponent();
         }
 
@@ -99,10 +98,15 @@ namespace Tour
         // nhấn vô txtDriver
         private void txtDriver_MouseClick(object sender, MouseEventArgs e)
         {
-            NhanVien nv = new NhanVien("Driver", doanID);
-            this.Hide();
-            nv.ShowDialog();
-            this.Show();
+            ;
+            using (NhanVien nv = new NhanVien("Driver", doanID))
+            {
+                this.Hide();
+                nv.ShowDialog();
+                txtDriver.Text = nv.seleted_nhanvien_phutrach;
+                this.Show();
+
+            }
         }
 
     }

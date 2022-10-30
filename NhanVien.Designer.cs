@@ -55,6 +55,7 @@ namespace Tour
             this.btnExit = new System.Windows.Forms.Button();
             this.txtbxID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnThem = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_nhanvien)).BeginInit();
@@ -65,18 +66,16 @@ namespace Tour
             this.panel3.AutoSize = true;
             this.panel3.Controls.Add(this.btnPickPicture);
             this.panel3.Controls.Add(this.pcbxAvatar);
-            this.panel3.Location = new System.Drawing.Point(16, 15);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Location = new System.Drawing.Point(12, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(307, 209);
+            this.panel3.Size = new System.Drawing.Size(230, 170);
             this.panel3.TabIndex = 11;
             // 
             // btnPickPicture
             // 
-            this.btnPickPicture.Location = new System.Drawing.Point(113, 177);
-            this.btnPickPicture.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPickPicture.Location = new System.Drawing.Point(85, 144);
             this.btnPickPicture.Name = "btnPickPicture";
-            this.btnPickPicture.Size = new System.Drawing.Size(100, 28);
+            this.btnPickPicture.Size = new System.Drawing.Size(75, 23);
             this.btnPickPicture.TabIndex = 4;
             this.btnPickPicture.Text = "Chọn ảnh";
             this.btnPickPicture.UseVisualStyleBackColor = true;
@@ -86,10 +85,9 @@ namespace Tour
             // 
             this.pcbxAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pcbxAvatar.Image = global::Tour.Properties.Resources.ic_image_empty_128;
-            this.pcbxAvatar.Location = new System.Drawing.Point(4, 4);
-            this.pcbxAvatar.Margin = new System.Windows.Forms.Padding(4);
+            this.pcbxAvatar.Location = new System.Drawing.Point(3, 3);
             this.pcbxAvatar.Name = "pcbxAvatar";
-            this.pcbxAvatar.Size = new System.Drawing.Size(297, 166);
+            this.pcbxAvatar.Size = new System.Drawing.Size(223, 135);
             this.pcbxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbxAvatar.TabIndex = 0;
             this.pcbxAvatar.TabStop = false;
@@ -99,10 +97,10 @@ namespace Tour
             this.rdNameSearch.AutoSize = true;
             this.rdNameSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdNameSearch.ForeColor = System.Drawing.Color.Black;
-            this.rdNameSearch.Location = new System.Drawing.Point(411, 191);
-            this.rdNameSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rdNameSearch.Location = new System.Drawing.Point(297, 155);
+            this.rdNameSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rdNameSearch.Name = "rdNameSearch";
-            this.rdNameSearch.Size = new System.Drawing.Size(77, 26);
+            this.rdNameSearch.Size = new System.Drawing.Size(64, 23);
             this.rdNameSearch.TabIndex = 22;
             this.rdNameSearch.Text = "Name";
             this.rdNameSearch.UseVisualStyleBackColor = true;
@@ -114,10 +112,10 @@ namespace Tour
             this.rdIDSearch.Checked = true;
             this.rdIDSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdIDSearch.ForeColor = System.Drawing.Color.Black;
-            this.rdIDSearch.Location = new System.Drawing.Point(343, 193);
-            this.rdIDSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rdIDSearch.Location = new System.Drawing.Point(246, 157);
+            this.rdIDSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rdIDSearch.Name = "rdIDSearch";
-            this.rdIDSearch.Size = new System.Drawing.Size(51, 26);
+            this.rdIDSearch.Size = new System.Drawing.Size(43, 23);
             this.rdIDSearch.TabIndex = 21;
             this.rdIDSearch.TabStop = true;
             this.rdIDSearch.Text = "ID";
@@ -127,10 +125,9 @@ namespace Tour
             // tb_search
             // 
             this.tb_search.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_search.Location = new System.Drawing.Point(503, 187);
-            this.tb_search.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_search.Location = new System.Drawing.Point(366, 152);
             this.tb_search.Name = "tb_search";
-            this.tb_search.Size = new System.Drawing.Size(336, 34);
+            this.tb_search.Size = new System.Drawing.Size(162, 29);
             this.tb_search.TabIndex = 20;
             this.tb_search.TextChanged += new System.EventHandler(this.tb_search_TextChanged);
             // 
@@ -138,10 +135,9 @@ namespace Tour
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(397, 164);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(298, 133);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 16);
+            this.label3.Size = new System.Drawing.Size(26, 13);
             this.label3.TabIndex = 14;
             this.label3.Text = "Mail";
             // 
@@ -149,54 +145,48 @@ namespace Tour
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(339, 132);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(254, 107);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 16);
+            this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 13;
             this.label1.Text = "Số điện thoại";
             // 
             // txtbxMail
             // 
-            this.txtbxMail.Location = new System.Drawing.Point(448, 155);
-            this.txtbxMail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtbxMail.Location = new System.Drawing.Point(336, 126);
             this.txtbxMail.Name = "txtbxMail";
-            this.txtbxMail.Size = new System.Drawing.Size(607, 22);
+            this.txtbxMail.Size = new System.Drawing.Size(456, 20);
             this.txtbxMail.TabIndex = 12;
             // 
             // txtbxSDT
             // 
-            this.txtbxSDT.Location = new System.Drawing.Point(448, 123);
-            this.txtbxSDT.Margin = new System.Windows.Forms.Padding(4);
+            this.txtbxSDT.Location = new System.Drawing.Point(336, 100);
             this.txtbxSDT.Name = "txtbxSDT";
-            this.txtbxSDT.Size = new System.Drawing.Size(607, 22);
+            this.txtbxSDT.Size = new System.Drawing.Size(456, 20);
             this.txtbxSDT.TabIndex = 11;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(397, 95);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(298, 77);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 16);
+            this.label2.Size = new System.Drawing.Size(26, 13);
             this.label2.TabIndex = 10;
             this.label2.Text = "Tên";
             // 
             // txtbxName
             // 
-            this.txtbxName.Location = new System.Drawing.Point(448, 91);
-            this.txtbxName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtbxName.Location = new System.Drawing.Point(336, 74);
             this.txtbxName.Name = "txtbxName";
-            this.txtbxName.Size = new System.Drawing.Size(607, 22);
+            this.txtbxName.Size = new System.Drawing.Size(456, 20);
             this.txtbxName.TabIndex = 6;
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(956, 21);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClear.Location = new System.Drawing.Point(717, 17);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(100, 28);
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 3;
             this.btnClear.Text = "Làm mới";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -204,10 +194,9 @@ namespace Tour
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(956, 187);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUpdate.Location = new System.Drawing.Point(717, 152);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(100, 36);
+            this.btnUpdate.Size = new System.Drawing.Size(75, 29);
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -215,10 +204,9 @@ namespace Tour
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(848, 187);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
+            this.btnXoa.Location = new System.Drawing.Point(636, 152);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(100, 36);
+            this.btnXoa.Size = new System.Drawing.Size(75, 29);
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -237,12 +225,11 @@ namespace Tour
             this.MAIL,
             this.SLDi,
             this.isAvailable});
-            this.dgv_nhanvien.Location = new System.Drawing.Point(16, 231);
-            this.dgv_nhanvien.Margin = new System.Windows.Forms.Padding(4);
+            this.dgv_nhanvien.Location = new System.Drawing.Point(12, 188);
             this.dgv_nhanvien.Name = "dgv_nhanvien";
             this.dgv_nhanvien.ReadOnly = true;
             this.dgv_nhanvien.RowHeadersWidth = 51;
-            this.dgv_nhanvien.Size = new System.Drawing.Size(1040, 331);
+            this.dgv_nhanvien.Size = new System.Drawing.Size(780, 269);
             this.dgv_nhanvien.TabIndex = 4;
             this.dgv_nhanvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_trip_CellClick);
             this.dgv_nhanvien.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_nhanvien_CellFormatting);
@@ -297,10 +284,9 @@ namespace Tour
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(956, 570);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExit.Location = new System.Drawing.Point(717, 463);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(100, 28);
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -308,31 +294,40 @@ namespace Tour
             // 
             // txtbxID
             // 
-            this.txtbxID.Location = new System.Drawing.Point(879, 57);
-            this.txtbxID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtbxID.Location = new System.Drawing.Point(659, 46);
             this.txtbxID.Name = "txtbxID";
             this.txtbxID.ReadOnly = true;
-            this.txtbxID.Size = new System.Drawing.Size(176, 22);
+            this.txtbxID.Size = new System.Drawing.Size(133, 20);
             this.txtbxID.TabIndex = 23;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(397, 60);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(298, 49);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(20, 16);
+            this.label4.Size = new System.Drawing.Size(18, 13);
             this.label4.TabIndex = 24;
             this.label4.Text = "ID";
             // 
+            // btnThem
+            // 
+            this.btnThem.Location = new System.Drawing.Point(555, 152);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(75, 29);
+            this.btnThem.TabIndex = 25;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
             // NhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1080, 623);
+            this.ClientSize = new System.Drawing.Size(810, 506);
+            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.txtbxID);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.rdNameSearch);
@@ -351,7 +346,6 @@ namespace Tour
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnClear);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NhanVien";
             this.Text = "NhanVien";
             this.panel3.ResumeLayout(false);
@@ -389,5 +383,6 @@ namespace Tour
         private System.Windows.Forms.DataGridViewTextBoxColumn MAIL;
         private System.Windows.Forms.DataGridViewTextBoxColumn SLDi;
         private System.Windows.Forms.DataGridViewTextBoxColumn isAvailable;
+        private System.Windows.Forms.Button btnThem;
     }
 }
