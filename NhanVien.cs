@@ -20,12 +20,24 @@ namespace Tour
         Byte[] img_data;
         string randomcode;
         string id;
+        string phutrach;
+        string doanid;
 
+        public string seleted_nhanvien_phutrach = "";
 
         public NhanVien()
         {
             InitializeComponent();
             dgv_nhanvien.AutoGenerateColumns = false;
+            showAll();
+        }
+
+        public NhanVien(string phutrach, string doanid)
+        {
+            InitializeComponent();
+            dgv_nhanvien.AutoGenerateColumns = false;
+            this.phutrach = phutrach;
+            this.doanid = doanid;
             showAll();
         }
 
@@ -37,9 +49,12 @@ namespace Tour
                 t.TEN,
                 t.SDT,
                 t.MAIL,
+                t.isAvailable,
                 t.PICBI,
+                t.SLDI,
             }
     ).ToList();
+
 
         }
 
@@ -83,10 +98,15 @@ namespace Tour
             Clear();
         }
 
+        public string getID(string ID)
+        {
+            return ID;
+        }
+
         private void dgv_trip_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
-            if (index >= 0)
+            if (index >= 0 && e.ColumnIndex.ToString() != "5")
             {
                 id = dgv_nhanvien.Rows[index].Cells["data_employeeid"].Value.ToString();
                 NHANVIEN temp = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault();
@@ -96,7 +116,36 @@ namespace Tour
                 txtbxName.Text = temp.TEN;
                 txtbxMail.Text = temp.MAIL;
                 txtbxSDT.Text = temp.SDT;
+            }
+            else
+            {// nhấn vào isAvailable
+                if (e.ColumnIndex.ToString() == "5" && dgv_nhanvien.Rows[index].Cells["isAvailable"].Value.ToString() == "True")
+                {
+                    id = dgv_nhanvien.Rows[index].Cells["data_employeeid"].Value.ToString();
+                    NHANVIEN temp = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault();
 
+                    DialogResult dr =  MessageBox.Show("Do you want to assign this person to that role", "Assign", MessageBoxButtons.OKCancel);
+                    switch(dr)
+                    {
+                        case DialogResult.OK:
+                            string id_nhanvien = dgv_nhanvien.Rows[index].Cells["data_employeeid"].Value.ToString();
+                            var nvu = new tb_PHUTRACH() { ID=Converter.Instance.RandomString2(5),IDDOAN=doanid,IDNHANVIEN=id_nhanvien,PHUTRACH=phutrach, IsDeleted=false};
+                            DataProvider.Ins.DB.tb_PHUTRACH.Add(nvu);
+                            DataProvider.Ins.DB.SaveChanges();
+                            seleted_nhanvien_phutrach = nvu.NHANVIEN.TEN;
+                            this.Close();
+                            break;
+                        case DialogResult.Cancel:
+                            break;
+                        default:
+                            break;
+                            
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("IsNotAvailable");
+                }
             }
         }
 
@@ -193,6 +242,78 @@ namespace Tour
         {
             tb_search.Text = "";
 
+        }
+        // chưa tô màu được
+
+        private void dgv_nhanvien_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            try
+            {
+                int index;
+                index = e.RowIndex;
+                //if (this.dgv_nhanvien.Columns[e.ColumnIndex].Name == "isAvailable")
+                //{
+                //    if (e.Value != null)
+                //    {
+                //        string stringValue = e.Value.ToString();
+                //        if (stringValue == '1')
+                //        {
+                //            e.CellStyle.BackColor = Color.Red;
+                //        }
+                //    }
+                //}
+                //foreach(DataGridViewRow row in dgv_nhanvien.Rows)
+                //{
+                //    if (row.Cells[5].Value.ToString() == "0")
+                //    {
+                //        row.DefaultCellStyle.BackColor = Color.Red;
+                //    }
+                //    else if (row.Cells[5].Value.ToString() == "1")
+                //    {
+                //        row.DefaultCellStyle.BackColor = Color.Green;
+                //    }
+                //}
+            }
+            catch(Exception s)
+            {
+                MessageBox.Show(s.ToString());
+            }
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            if (CheckData())
+            {
+                try
+                {
+                    string randomcode = Converter.Instance.RandomString2(5);
+                    var nv = new NHANVIEN() { ID = randomcode,  TEN = txtbxName.Text, MAIL=txtbxMail.Text, SDT=txtbxSDT.Text, IsDeleted = false,isAvailable=true };
+                    DataProvider.Ins.DB.NHANVIENs.Add(nv);
+
+                    DataProvider.Ins.DB.SaveChanges();
+
+                    showAll();
+                }
+                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+                {
+                    Exception raise = dbEx;
+                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    {
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            string message = string.Format("{0}:{1}",
+                                validationErrors.Entry.Entity.ToString(),
+                                validationError.ErrorMessage);
+                            // raise a new exception nesting
+                            // the current instance as InnerException
+                            raise = new InvalidOperationException(message, raise);
+                        }
+                    }
+                    throw raise;
+                }
+
+                Clear();
+            }
         }
     }
 }

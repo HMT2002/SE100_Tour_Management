@@ -17,6 +17,7 @@ namespace Tour
     {
         string id;
         string randomcode;
+        NhiemVuTrongDoan nhiemVu;
 
         public DoanDuLich()
         {
@@ -186,9 +187,22 @@ namespace Tour
                     showAll();
                     Clear();
                 }
-                catch
+                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
                 {
-
+                    Exception raise = dbEx;
+                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    {
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            string message = string.Format("{0}:{1}",
+                                validationErrors.Entry.Entity.ToString(),
+                                validationError.ErrorMessage);
+                            // raise a new exception nesting
+                            // the current instance as InnerException
+                            raise = new InvalidOperationException(message, raise);
+                        }
+                    }
+                    throw raise;
                 }
 
             }
@@ -323,6 +337,21 @@ namespace Tour
             Clear();
 
 
+        }
+
+        private void dgvDoan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index;
+            index = e.RowIndex;
+            string doanid = dgvDoan.Rows[index].Cells[0].Value.ToString().Trim();
+            NhiemVuTrongDoan nv = new NhiemVuTrongDoan();
+            this.Hide();
+            nv.setTextBox(doanid, false);
+            nv.ShowDialog();
+            //ngưng thực hiện lệnh bên dưới cho tới khi form đóng lại
+            //Show() tiếp tục thực hiện các lệnh bên dưới
+            this.Show();
+            
         }
     }
 }

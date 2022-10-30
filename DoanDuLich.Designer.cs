@@ -125,11 +125,11 @@ namespace Tour
             // 
             // cbbxTour
             // 
-            this.cbbxTour.FormattingEnabled = true;
-            this.cbbxTour.Location = new System.Drawing.Point(94, 82);
-            this.cbbxTour.Name = "cbbxTour";
-            this.cbbxTour.Size = new System.Drawing.Size(200, 21);
-            this.cbbxTour.TabIndex = 6;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(94, 82);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(200, 21);
+            this.comboBox1.TabIndex = 6;
             // 
             // dgvDoan
             // 
@@ -145,16 +145,20 @@ namespace Tour
             this.CHITIETCHUONGTRINH,
             this.CHIPHI,
             this.TENTOUR});
-            this.dgvDoan.Location = new System.Drawing.Point(3, 33);
+            this.dgvDoan.Location = new System.Drawing.Point(4, 41);
+            this.dgvDoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvDoan.Name = "dgvDoan";
-            this.dgvDoan.Size = new System.Drawing.Size(1393, 214);
+            this.dgvDoan.RowHeadersWidth = 51;
+            this.dgvDoan.Size = new System.Drawing.Size(1857, 263);
             this.dgvDoan.TabIndex = 8;
             this.dgvDoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dgvDoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDoan_CellContentClick);
             // 
             // data_ID
             // 
             this.data_ID.DataPropertyName = "ID";
             this.data_ID.HeaderText = "ID";
+            this.data_ID.MinimumWidth = 6;
             this.data_ID.Name = "data_ID";
             this.data_ID.Width = 90;
             // 
@@ -162,6 +166,7 @@ namespace Tour
             // 
             this.TEN.DataPropertyName = "TEN";
             this.TEN.HeaderText = "Tên đoàn";
+            this.TEN.MinimumWidth = 6;
             this.TEN.Name = "TEN";
             this.TEN.Width = 150;
             // 
@@ -169,6 +174,7 @@ namespace Tour
             // 
             this.NGAYKHOIHANH.DataPropertyName = "NGAYKHOIHANH";
             this.NGAYKHOIHANH.HeaderText = "Ngày khởi hành";
+            this.NGAYKHOIHANH.MinimumWidth = 6;
             this.NGAYKHOIHANH.Name = "NGAYKHOIHANH";
             this.NGAYKHOIHANH.Width = 220;
             // 
@@ -176,6 +182,7 @@ namespace Tour
             // 
             this.NGAYKETTHUC.DataPropertyName = "NGAYKETTHUC";
             this.NGAYKETTHUC.HeaderText = "Ngày kết thúc";
+            this.NGAYKETTHUC.MinimumWidth = 6;
             this.NGAYKETTHUC.Name = "NGAYKETTHUC";
             this.NGAYKETTHUC.Width = 200;
             // 
@@ -183,6 +190,7 @@ namespace Tour
             // 
             this.CHITIETCHUONGTRINH.DataPropertyName = "CHITIETCHUONGTRINH";
             this.CHITIETCHUONGTRINH.HeaderText = "Chi tiết chương trình";
+            this.CHITIETCHUONGTRINH.MinimumWidth = 6;
             this.CHITIETCHUONGTRINH.Name = "CHITIETCHUONGTRINH";
             this.CHITIETCHUONGTRINH.Width = 250;
             // 
@@ -190,6 +198,7 @@ namespace Tour
             // 
             this.CHIPHI.DataPropertyName = "TONG";
             this.CHIPHI.HeaderText = "Chi phí";
+            this.CHIPHI.MinimumWidth = 6;
             this.CHIPHI.Name = "CHIPHI";
             this.CHIPHI.Width = 200;
             // 
@@ -197,14 +206,16 @@ namespace Tour
             // 
             this.TENTOUR.DataPropertyName = "TEN_TOUR";
             this.TENTOUR.HeaderText = "Tour";
+            this.TENTOUR.MinimumWidth = 6;
             this.TENTOUR.Name = "TENTOUR";
             this.TENTOUR.Width = 220;
             // 
             // tb_search
             // 
-            this.tb_search.Location = new System.Drawing.Point(6, 6);
+            this.tb_search.Location = new System.Drawing.Point(8, 7);
+            this.tb_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_search.Name = "tb_search";
-            this.tb_search.Size = new System.Drawing.Size(938, 20);
+            this.tb_search.Size = new System.Drawing.Size(1249, 22);
             this.tb_search.TabIndex = 10;
             this.tb_search.TextChanged += new System.EventHandler(this.tb_search_TextChanged);
             // 
@@ -213,10 +224,10 @@ namespace Tour
             this.rdNameSearch.AutoSize = true;
             this.rdNameSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdNameSearch.ForeColor = System.Drawing.Color.Black;
-            this.rdNameSearch.Location = new System.Drawing.Point(1000, 5);
-            this.rdNameSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.rdNameSearch.Location = new System.Drawing.Point(1333, 6);
+            this.rdNameSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdNameSearch.Name = "rdNameSearch";
-            this.rdNameSearch.Size = new System.Drawing.Size(64, 23);
+            this.rdNameSearch.Size = new System.Drawing.Size(77, 26);
             this.rdNameSearch.TabIndex = 20;
             this.rdNameSearch.Text = "Name";
             this.rdNameSearch.UseVisualStyleBackColor = true;
@@ -228,10 +239,10 @@ namespace Tour
             this.rdIDSearch.Checked = true;
             this.rdIDSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdIDSearch.ForeColor = System.Drawing.Color.Black;
-            this.rdIDSearch.Location = new System.Drawing.Point(949, 7);
-            this.rdIDSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.rdIDSearch.Location = new System.Drawing.Point(1265, 9);
+            this.rdIDSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdIDSearch.Name = "rdIDSearch";
-            this.rdIDSearch.Size = new System.Drawing.Size(43, 23);
+            this.rdIDSearch.Size = new System.Drawing.Size(51, 26);
             this.rdIDSearch.TabIndex = 19;
             this.rdIDSearch.TabStop = true;
             this.rdIDSearch.Text = "ID";
@@ -240,9 +251,10 @@ namespace Tour
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(1321, 4);
+            this.btnUpdate.Location = new System.Drawing.Point(1761, 5);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(100, 28);
             this.btnUpdate.TabIndex = 23;
             this.btnUpdate.Text = "Sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -250,9 +262,10 @@ namespace Tour
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(1240, 4);
+            this.btnXoa.Location = new System.Drawing.Point(1653, 5);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.Size = new System.Drawing.Size(100, 28);
             this.btnXoa.TabIndex = 22;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -260,9 +273,10 @@ namespace Tour
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(1161, 4);
+            this.btnAdd.Location = new System.Drawing.Point(1548, 5);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(100, 28);
             this.btnAdd.TabIndex = 21;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -270,9 +284,10 @@ namespace Tour
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(1080, 4);
+            this.btnClear.Location = new System.Drawing.Point(1440, 5);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.Size = new System.Drawing.Size(100, 28);
             this.btnClear.TabIndex = 24;
             this.btnClear.Text = "Mới";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -280,9 +295,10 @@ namespace Tour
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(1347, 450);
+            this.btnExit.Location = new System.Drawing.Point(1796, 554);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(61, 23);
+            this.btnExit.Size = new System.Drawing.Size(81, 28);
             this.btnExit.TabIndex = 25;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -291,54 +307,60 @@ namespace Tour
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 37);
+            this.label1.Location = new System.Drawing.Point(8, 46);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
+            this.label1.Size = new System.Drawing.Size(100, 16);
             this.label1.TabIndex = 26;
             this.label1.Text = "Ngày khởi hành";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 63);
+            this.label2.Location = new System.Drawing.Point(8, 78);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.Size = new System.Drawing.Size(76, 16);
             this.label2.TabIndex = 27;
             this.label2.Text = "Ngày trở về";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 90);
+            this.label3.Location = new System.Drawing.Point(8, 111);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.Size = new System.Drawing.Size(35, 16);
             this.label3.TabIndex = 28;
             this.label3.Text = "Tour";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 11);
+            this.label4.Location = new System.Drawing.Point(8, 14);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.Size = new System.Drawing.Size(54, 16);
             this.label4.TabIndex = 29;
             this.label4.Text = "ID đoàn";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 116);
+            this.label5.Location = new System.Drawing.Point(8, 143);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 13);
+            this.label5.Size = new System.Drawing.Size(65, 16);
             this.label5.TabIndex = 30;
             this.label5.Text = "Tên đoàn";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 142);
+            this.label6.Location = new System.Drawing.Point(8, 175);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 13);
+            this.label6.Size = new System.Drawing.Size(47, 16);
             this.label6.TabIndex = 31;
             this.label6.Text = "Chi phí";
             // 
@@ -351,15 +373,18 @@ namespace Tour
             this.dgvKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDKHACHHANG,
             this.TENKHACHHANG});
-            this.dgvKhachHang.Location = new System.Drawing.Point(3, 3);
+            this.dgvKhachHang.Location = new System.Drawing.Point(4, 4);
+            this.dgvKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvKhachHang.Name = "dgvKhachHang";
-            this.dgvKhachHang.Size = new System.Drawing.Size(418, 157);
+            this.dgvKhachHang.RowHeadersWidth = 51;
+            this.dgvKhachHang.Size = new System.Drawing.Size(557, 193);
             this.dgvKhachHang.TabIndex = 32;
             // 
             // IDKHACHHANG
             // 
             this.IDKHACHHANG.DataPropertyName = "ID";
             this.IDKHACHHANG.HeaderText = "ID";
+            this.IDKHACHHANG.MinimumWidth = 6;
             this.IDKHACHHANG.Name = "IDKHACHHANG";
             this.IDKHACHHANG.Width = 70;
             // 
@@ -367,6 +392,7 @@ namespace Tour
             // 
             this.TENKHACHHANG.DataPropertyName = "TEN";
             this.TENKHACHHANG.HeaderText = "Tên khách hàng";
+            this.TENKHACHHANG.MinimumWidth = 6;
             this.TENKHACHHANG.Name = "TENKHACHHANG";
             this.TENKHACHHANG.Width = 300;
             // 
@@ -380,9 +406,10 @@ namespace Tour
             this.panel1.Controls.Add(this.btnXoa);
             this.panel1.Controls.Add(this.btnUpdate);
             this.panel1.Controls.Add(this.btnClear);
-            this.panel1.Location = new System.Drawing.Point(12, 180);
+            this.panel1.Location = new System.Drawing.Point(16, 222);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1405, 252);
+            this.panel1.Size = new System.Drawing.Size(1873, 310);
             this.panel1.TabIndex = 33;
             // 
             // panel2
@@ -399,17 +426,19 @@ namespace Tour
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(1114, 11);
+            this.panel2.Location = new System.Drawing.Point(1485, 14);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(303, 163);
+            this.panel2.Size = new System.Drawing.Size(404, 201);
             this.panel2.TabIndex = 34;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.dgvKhachHang);
-            this.panel3.Location = new System.Drawing.Point(15, 11);
+            this.panel3.Location = new System.Drawing.Point(20, 14);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(425, 163);
+            this.panel3.Size = new System.Drawing.Size(567, 201);
             this.panel3.TabIndex = 35;
             // 
             // panel4
@@ -417,16 +446,18 @@ namespace Tour
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Controls.Add(this.btnAddHotelForGroup);
             this.panel4.Controls.Add(this.dgvKhachSan);
-            this.panel4.Location = new System.Drawing.Point(446, 11);
+            this.panel4.Location = new System.Drawing.Point(595, 14);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(328, 163);
+            this.panel4.Size = new System.Drawing.Size(437, 201);
             this.panel4.TabIndex = 36;
             // 
             // btnAddHotelForGroup
             // 
-            this.btnAddHotelForGroup.Location = new System.Drawing.Point(295, 3);
+            this.btnAddHotelForGroup.Location = new System.Drawing.Point(393, 4);
+            this.btnAddHotelForGroup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddHotelForGroup.Name = "btnAddHotelForGroup";
-            this.btnAddHotelForGroup.Size = new System.Drawing.Size(28, 23);
+            this.btnAddHotelForGroup.Size = new System.Drawing.Size(37, 28);
             this.btnAddHotelForGroup.TabIndex = 26;
             this.btnAddHotelForGroup.Text = "+";
             this.btnAddHotelForGroup.UseVisualStyleBackColor = true;
@@ -441,22 +472,26 @@ namespace Tour
             this.dgvKhachSan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
-            this.dgvKhachSan.Location = new System.Drawing.Point(3, 3);
+            this.dgvKhachSan.Location = new System.Drawing.Point(4, 4);
+            this.dgvKhachSan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvKhachSan.Name = "dgvKhachSan";
-            this.dgvKhachSan.Size = new System.Drawing.Size(286, 157);
+            this.dgvKhachSan.RowHeadersWidth = 51;
+            this.dgvKhachSan.Size = new System.Drawing.Size(381, 193);
             this.dgvKhachSan.TabIndex = 32;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 5;
+            this.dataGridViewTextBoxColumn1.Width = 6;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "TEN";
             this.dataGridViewTextBoxColumn2.HeaderText = "Tên khách sạn";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 230;
             // 
@@ -465,16 +500,18 @@ namespace Tour
             this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.Controls.Add(this.btnAddVehicalForGroup);
             this.panel5.Controls.Add(this.dgvPhuongTien);
-            this.panel5.Location = new System.Drawing.Point(780, 11);
+            this.panel5.Location = new System.Drawing.Point(1040, 14);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(328, 163);
+            this.panel5.Size = new System.Drawing.Size(437, 201);
             this.panel5.TabIndex = 37;
             // 
             // btnAddVehicalForGroup
             // 
-            this.btnAddVehicalForGroup.Location = new System.Drawing.Point(295, 3);
+            this.btnAddVehicalForGroup.Location = new System.Drawing.Point(393, 4);
+            this.btnAddVehicalForGroup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddVehicalForGroup.Name = "btnAddVehicalForGroup";
-            this.btnAddVehicalForGroup.Size = new System.Drawing.Size(28, 23);
+            this.btnAddVehicalForGroup.Size = new System.Drawing.Size(37, 28);
             this.btnAddVehicalForGroup.TabIndex = 26;
             this.btnAddVehicalForGroup.Text = "+";
             this.btnAddVehicalForGroup.UseVisualStyleBackColor = true;
@@ -489,32 +526,36 @@ namespace Tour
             this.dgvPhuongTien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.dgvPhuongTien.Location = new System.Drawing.Point(3, 3);
+            this.dgvPhuongTien.Location = new System.Drawing.Point(4, 4);
+            this.dgvPhuongTien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvPhuongTien.Name = "dgvPhuongTien";
-            this.dgvPhuongTien.Size = new System.Drawing.Size(286, 157);
+            this.dgvPhuongTien.RowHeadersWidth = 51;
+            this.dgvPhuongTien.Size = new System.Drawing.Size(381, 193);
             this.dgvPhuongTien.TabIndex = 32;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "ID";
             this.dataGridViewTextBoxColumn3.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 5;
+            this.dataGridViewTextBoxColumn3.Width = 6;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "TEN";
             this.dataGridViewTextBoxColumn4.HeaderText = "Tên phương tiện";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.Width = 230;
             // 
             // DoanDuLich
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1436, 470);
+            this.ClientSize = new System.Drawing.Size(1915, 578);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -522,6 +563,7 @@ namespace Tour
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DoanDuLich";
             this.Text = "DoanDuLich";
             this.Load += new System.EventHandler(this.DoanDuLich_Load);

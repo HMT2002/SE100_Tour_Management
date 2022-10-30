@@ -18,6 +18,7 @@ namespace Tour
             Application.SetCompatibleTextRenderingDefault(false);
 
             Application.Run(new LoginForm());
+            //Application.Run(new SLDiTour());
         }
     }
 }

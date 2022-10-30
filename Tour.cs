@@ -133,6 +133,7 @@ namespace Tour
                 Clear();
             }
         }
+
         public void Clear()
         {
             cb_typetour.SelectedIndex = -1;
