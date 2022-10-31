@@ -58,39 +58,19 @@ namespace Tour
 
         }
 
-        public string price, typetour, nametour;
+        public string price = null, typetour = null, nametour = null;
 
         public bool CheckData()
         {
-            if (this.price == null || this.typetour == null || this.price == null)
-            {
+
                 this.price = tb_price.Text;
                 this.typetour = cb_typetour.Text;
                 this.nametour = tb_nametour.Text;
-            }
 
-
-            if (price.Trim().CompareTo(string.Empty) == 0||typetour.Trim().CompareTo(string.Empty) == 0 || nametour.Trim().CompareTo(string.Empty) == 0)
-            {
-
-                return false;
-            }
-            else
-            {
-
-            }
-
-            try
-            {
-                Convert.ToDecimal(this.price);
-            }
-            catch
+            if (this.price.Trim().CompareTo(string.Empty) == 0|| this.typetour.Trim().CompareTo(string.Empty) == 0 || this.nametour.Trim().CompareTo(string.Empty) == 0)
             {
                 return false;
             }
-
-
-
             return true;
         }
         private void update_Click(object sender, EventArgs e)
@@ -130,7 +110,7 @@ namespace Tour
                     throw raise;
                 }
 
-                Clear();
+                Clear() ;
             }
         }
 
@@ -141,25 +121,23 @@ namespace Tour
             lstbxLocation.DataSource = null;
             LocationList = new List<DIADIEM>();
 
-            this.price = null;
-            this.typetour = null;
-            this.nametour = null;
+            this.price = this.typetour = this.nametour = null;
 
         }
         private void add_Click(object sender, EventArgs e)
         {
-            
+
             if (CheckData() == true)
             {
                 try
                 {
                     randomcode = Converter.Instance.RandomString2(5);
-                    var tour = new TOUR() { ID = randomcode, GIA = Convert.ToDecimal(tb_price.Text), TEN = tb_nametour.Text, LOAI = cb_typetour.Text, DACDIEM = richtbDetail.Text,IsDeleted=false };
+                    var tour = new TOUR() { ID = randomcode, GIA = Convert.ToDecimal(tb_price.Text), TEN = tb_nametour.Text, LOAI = cb_typetour.Text, DACDIEM = richtbDetail.Text, IsDeleted = false };
                     DataProvider.Ins.DB.TOURs.Add(tour);
 
                     DataProvider.Ins.DB.SaveChanges();
                     ShowAllChuyen();
-
+                    Clear();
                 }
                 catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
                 {
@@ -179,7 +157,6 @@ namespace Tour
                     throw raise;
                 }
 
-                Clear();
             }
         }
 
