@@ -55,18 +55,15 @@ namespace Tour
             this.IDKHACHHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENKHACHHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnNhiemVu = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnAddHotelForGroup = new System.Windows.Forms.Button();
             this.dgvKhachSan = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnAddVehicalForGroup = new System.Windows.Forms.Button();
             this.dgvPhuongTien = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.data_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYKHOIHANH = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,7 +71,9 @@ namespace Tour
             this.CHITIETCHUONGTRINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHIPHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENTOUR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnNhiemVu = new System.Windows.Forms.Button();
+            this.idtour = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.panel1.SuspendLayout();
@@ -88,8 +87,8 @@ namespace Tour
             // 
             // txtbxIDDoan
             // 
-            this.txtbxIDDoan.Location = new System.Drawing.Point(70, 3);
-            this.txtbxIDDoan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxIDDoan.Location = new System.Drawing.Point(138, 3);
+            this.txtbxIDDoan.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxIDDoan.Name = "txtbxIDDoan";
             this.txtbxIDDoan.ReadOnly = true;
             this.txtbxIDDoan.Size = new System.Drawing.Size(151, 20);
@@ -97,16 +96,16 @@ namespace Tour
             // 
             // txtbxTenDoan
             // 
-            this.txtbxTenDoan.Location = new System.Drawing.Point(70, 89);
-            this.txtbxTenDoan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxTenDoan.Location = new System.Drawing.Point(138, 89);
+            this.txtbxTenDoan.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxTenDoan.Name = "txtbxTenDoan";
             this.txtbxTenDoan.Size = new System.Drawing.Size(151, 20);
             this.txtbxTenDoan.TabIndex = 1;
             // 
             // txtbxChiPhi
             // 
-            this.txtbxChiPhi.Location = new System.Drawing.Point(70, 110);
-            this.txtbxChiPhi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxChiPhi.Location = new System.Drawing.Point(138, 110);
+            this.txtbxChiPhi.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxChiPhi.Name = "txtbxChiPhi";
             this.txtbxChiPhi.ReadOnly = true;
             this.txtbxChiPhi.Size = new System.Drawing.Size(151, 20);
@@ -115,16 +114,16 @@ namespace Tour
             // 
             // datetimeNgayKhoiHanh
             // 
-            this.datetimeNgayKhoiHanh.Location = new System.Drawing.Point(70, 24);
-            this.datetimeNgayKhoiHanh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.datetimeNgayKhoiHanh.Location = new System.Drawing.Point(138, 24);
+            this.datetimeNgayKhoiHanh.Margin = new System.Windows.Forms.Padding(2);
             this.datetimeNgayKhoiHanh.Name = "datetimeNgayKhoiHanh";
             this.datetimeNgayKhoiHanh.Size = new System.Drawing.Size(151, 20);
             this.datetimeNgayKhoiHanh.TabIndex = 4;
             // 
             // datetimeNgayKetThuc
             // 
-            this.datetimeNgayKetThuc.Location = new System.Drawing.Point(70, 46);
-            this.datetimeNgayKetThuc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.datetimeNgayKetThuc.Location = new System.Drawing.Point(138, 46);
+            this.datetimeNgayKetThuc.Margin = new System.Windows.Forms.Padding(2);
             this.datetimeNgayKetThuc.Name = "datetimeNgayKetThuc";
             this.datetimeNgayKetThuc.Size = new System.Drawing.Size(151, 20);
             this.datetimeNgayKetThuc.TabIndex = 5;
@@ -132,8 +131,8 @@ namespace Tour
             // cbbxTour
             // 
             this.cbbxTour.FormattingEnabled = true;
-            this.cbbxTour.Location = new System.Drawing.Point(70, 67);
-            this.cbbxTour.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbxTour.Location = new System.Drawing.Point(138, 67);
+            this.cbbxTour.Margin = new System.Windows.Forms.Padding(2);
             this.cbbxTour.Name = "cbbxTour";
             this.cbbxTour.Size = new System.Drawing.Size(151, 21);
             this.cbbxTour.TabIndex = 6;
@@ -151,11 +150,12 @@ namespace Tour
             this.NGAYKETTHUC,
             this.CHITIETCHUONGTRINH,
             this.CHIPHI,
-            this.TENTOUR});
+            this.TENTOUR,
+            this.idtour});
             this.dgvDoan.Location = new System.Drawing.Point(3, 33);
             this.dgvDoan.Name = "dgvDoan";
             this.dgvDoan.RowHeadersWidth = 51;
-            this.dgvDoan.Size = new System.Drawing.Size(1187, 214);
+            this.dgvDoan.Size = new System.Drawing.Size(1277, 214);
             this.dgvDoan.TabIndex = 8;
             this.dgvDoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dgvDoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDoan_CellContentClick);
@@ -174,7 +174,7 @@ namespace Tour
             this.rdNameSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdNameSearch.ForeColor = System.Drawing.Color.Black;
             this.rdNameSearch.Location = new System.Drawing.Point(1000, 5);
-            this.rdNameSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdNameSearch.Margin = new System.Windows.Forms.Padding(2);
             this.rdNameSearch.Name = "rdNameSearch";
             this.rdNameSearch.Size = new System.Drawing.Size(64, 23);
             this.rdNameSearch.TabIndex = 20;
@@ -189,7 +189,7 @@ namespace Tour
             this.rdIDSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdIDSearch.ForeColor = System.Drawing.Color.Black;
             this.rdIDSearch.Location = new System.Drawing.Point(949, 7);
-            this.rdIDSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdIDSearch.Margin = new System.Windows.Forms.Padding(2);
             this.rdIDSearch.Name = "rdIDSearch";
             this.rdIDSearch.Size = new System.Drawing.Size(43, 23);
             this.rdIDSearch.TabIndex = 19;
@@ -240,7 +240,7 @@ namespace Tour
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(1347, 450);
+            this.btnExit.Location = new System.Drawing.Point(1347, 435);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(61, 23);
             this.btnExit.TabIndex = 25;
@@ -251,7 +251,7 @@ namespace Tour
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 37);
+            this.label1.Location = new System.Drawing.Point(6, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 26;
@@ -260,7 +260,7 @@ namespace Tour
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 63);
+            this.label2.Location = new System.Drawing.Point(6, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 27;
@@ -269,7 +269,7 @@ namespace Tour
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 90);
+            this.label3.Location = new System.Drawing.Point(6, 75);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 28;
@@ -287,7 +287,7 @@ namespace Tour
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 116);
+            this.label5.Location = new System.Drawing.Point(3, 96);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 13);
             this.label5.TabIndex = 30;
@@ -296,7 +296,7 @@ namespace Tour
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 142);
+            this.label6.Location = new System.Drawing.Point(6, 117);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 13);
             this.label6.TabIndex = 31;
@@ -348,6 +348,16 @@ namespace Tour
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1405, 252);
             this.panel1.TabIndex = 33;
+            // 
+            // btnNhiemVu
+            // 
+            this.btnNhiemVu.Location = new System.Drawing.Point(1286, 33);
+            this.btnNhiemVu.Name = "btnNhiemVu";
+            this.btnNhiemVu.Size = new System.Drawing.Size(105, 23);
+            this.btnNhiemVu.TabIndex = 33;
+            this.btnNhiemVu.Text = "Giao nhiệm vụ";
+            this.btnNhiemVu.UseVisualStyleBackColor = true;
+            this.btnNhiemVu.Click += new System.EventHandler(this.btnNhiemVu_Click);
             // 
             // panel2
             // 
@@ -403,29 +413,12 @@ namespace Tour
             this.dgvKhachSan.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvKhachSan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKhachSan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.dgvKhachSan.Location = new System.Drawing.Point(3, 3);
             this.dgvKhachSan.Name = "dgvKhachSan";
             this.dgvKhachSan.RowHeadersWidth = 51;
             this.dgvKhachSan.Size = new System.Drawing.Size(286, 157);
             this.dgvKhachSan.TabIndex = 32;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 6;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "TEN";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tên khách sạn";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 230;
             // 
             // panel5
             // 
@@ -454,29 +447,12 @@ namespace Tour
             this.dgvPhuongTien.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvPhuongTien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPhuongTien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.dgvPhuongTien.Location = new System.Drawing.Point(3, 3);
             this.dgvPhuongTien.Name = "dgvPhuongTien";
             this.dgvPhuongTien.RowHeadersWidth = 51;
             this.dgvPhuongTien.Size = new System.Drawing.Size(286, 157);
             this.dgvPhuongTien.TabIndex = 32;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn3.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 6;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "TEN";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Tên phương tiện";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 230;
             // 
             // data_ID
             // 
@@ -492,7 +468,7 @@ namespace Tour
             this.TEN.HeaderText = "Tên đoàn";
             this.TEN.MinimumWidth = 6;
             this.TEN.Name = "TEN";
-            this.TEN.Width = 150;
+            this.TEN.Width = 200;
             // 
             // NGAYKHOIHANH
             // 
@@ -516,7 +492,7 @@ namespace Tour
             this.CHITIETCHUONGTRINH.HeaderText = "Chi tiết chương trình";
             this.CHITIETCHUONGTRINH.MinimumWidth = 6;
             this.CHITIETCHUONGTRINH.Name = "CHITIETCHUONGTRINH";
-            this.CHITIETCHUONGTRINH.Width = 200;
+            this.CHITIETCHUONGTRINH.Width = 230;
             // 
             // CHIPHI
             // 
@@ -534,15 +510,28 @@ namespace Tour
             this.TENTOUR.Name = "TENTOUR";
             this.TENTOUR.Width = 180;
             // 
-            // btnNhiemVu
+            // idtour
             // 
-            this.btnNhiemVu.Location = new System.Drawing.Point(1196, 33);
-            this.btnNhiemVu.Name = "btnNhiemVu";
-            this.btnNhiemVu.Size = new System.Drawing.Size(105, 23);
-            this.btnNhiemVu.TabIndex = 33;
-            this.btnNhiemVu.Text = "Giao nhiệm vụ";
-            this.btnNhiemVu.UseVisualStyleBackColor = true;
-            this.btnNhiemVu.Click += new System.EventHandler(this.btnNhiemVu_Click);
+            this.idtour.DataPropertyName = "ID_TOUR";
+            this.idtour.HeaderText = "ID tour";
+            this.idtour.Name = "idtour";
+            this.idtour.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "TEN";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Tên phương tiện";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 230;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "TEN";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Tên khách sạn";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 230;
             // 
             // DoanDuLich
             // 
@@ -608,13 +597,10 @@ namespace Tour
         private System.Windows.Forms.Button btnAddHotelForGroup;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDKHACHHANG;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENKHACHHANG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnAddVehicalForGroup;
         private System.Windows.Forms.DataGridView dgvPhuongTien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.Button btnNhiemVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn data_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYKHOIHANH;
@@ -622,6 +608,8 @@ namespace Tour
         private System.Windows.Forms.DataGridViewTextBoxColumn CHITIETCHUONGTRINH;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHIPHI;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENTOUR;
-        private System.Windows.Forms.Button btnNhiemVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idtour;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }

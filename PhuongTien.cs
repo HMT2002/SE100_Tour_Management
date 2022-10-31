@@ -157,7 +157,7 @@ namespace Tour
                         DataProvider.Ins.DB.SaveChanges();
                     }
 
-                    var vehical = new PHUONGTIEN() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), PICBI = img_data,LOAI=cbbxKind.Text,IsDeleted=false };
+                    var vehical = new PHUONGTIEN() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), PICBI = img_data,LOAI=cbbxKind.Text,IsDeleted=false ,GIA=Convert.ToDecimal( txtbxGia.Text)};
 
                     DataProvider.Ins.DB.PHUONGTIENs.Add(vehical);
                     DataProvider.Ins.DB.SaveChanges();
@@ -196,8 +196,8 @@ namespace Tour
                 }
                 try
                 {
-                    PHUONGTIEN phuongtien = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault();
-                    phuongtien.IsDeleted = true;
+                    var tb_phuongtien = DataProvider.Ins.DB.tb_PHUONGTIEN.Where(x => x.DOAN.ID == id).FirstOrDefault();
+                    tb_phuongtien.IsDeleted = true;
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
                     Clear();
@@ -276,6 +276,18 @@ namespace Tour
                 cbbxKind.Text = temp.LOAI;
                 cbboxProvince.Text = DataProvider.Ins.DB.TINHs.Where(x => x.ID == temp.IDTINH).FirstOrDefault().TEN;
                 img_data = temp.PICBI;
+            }
+        }
+
+        private void txtbxGia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
             }
         }
     }

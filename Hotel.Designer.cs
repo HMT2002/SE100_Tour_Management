@@ -58,7 +58,7 @@ namespace Tour
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(710, 470);
+            this.btnExit.Location = new System.Drawing.Point(710, 461);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 3;
@@ -169,6 +169,7 @@ namespace Tour
             this.txtbxGia.Name = "txtbxGia";
             this.txtbxGia.Size = new System.Drawing.Size(288, 20);
             this.txtbxGia.TabIndex = 13;
+            this.txtbxGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxGia_KeyPress);
             // 
             // label3
             // 

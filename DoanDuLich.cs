@@ -16,6 +16,7 @@ namespace Tour
     public partial class DoanDuLich : Form
     {
         string id;
+        string id_tour;
         string randomcode;
         NhiemVuTrongDoan nhiemVu;
 
@@ -36,18 +37,19 @@ namespace Tour
         {
 
             dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
-                                        join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-                                        join chiphi in DataProvider.Ins.DB.CHIPHIs on doan.IDCHIPHI equals chiphi.ID
-                                        where doan.IsDeleted==false && tour.IsDeleted==false
-             select new {
-                 ID = doan.ID,
-                 TEN = doan.TEN,
-                 NGAYKHOIHANH = doan.NGAYKHOIHANH,
-                 NGAYKETTHUC = doan.NGAYKETTHUC,
-                 CHITIETCHUONGTRINH = doan.CHITIETCHUONGTRINH,
-                 TONG = chiphi.TONG,
-                 TEN_TOUR = tour.TEN
-             }).ToList();
+                                  join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
+                                  join chiphi in DataProvider.Ins.DB.CHIPHIs on doan.IDCHIPHI equals chiphi.ID
+                                  where doan.IsDeleted == false && tour.IsDeleted == false
+                                  select new {
+                                      ID = doan.ID,
+                                      TEN = doan.TEN,
+                                      NGAYKHOIHANH = doan.NGAYKHOIHANH,
+                                      NGAYKETTHUC = doan.NGAYKETTHUC,
+                                      CHITIETCHUONGTRINH = doan.CHITIETCHUONGTRINH,
+                                      TONG = chiphi.TONG,
+                                      TEN_TOUR = tour.TEN,
+                                      ID_TOUR = tour.ID,
+                                  }).ToList();
             cbbxTour.DataSource = DataProvider.Ins.DB.TOURs.Select(t => t).ToList();
             cbbxTour.DisplayMember = "TEN";
 
@@ -60,13 +62,20 @@ namespace Tour
             if (index >= 0)
             {
                 id = dgvDoan.Rows[index].Cells["data_ID"].Value.ToString();
+                id_tour = dgvDoan.Rows[index].Cells["idtour"].Value.ToString();
+
                 txtbxIDDoan.Text = id;
 
                 datetimeNgayKhoiHanh.Value = (DateTime)dgvDoan.Rows[index].Cells["NGAYKHOIHANH"].Value;
                 datetimeNgayKetThuc.Value = (DateTime)dgvDoan.Rows[index].Cells["NGAYKETTHUC"].Value;
+                int thoi_han =Convert.ToInt32(( datetimeNgayKetThuc.Value - datetimeNgayKhoiHanh.Value).TotalDays)+1;
 
                 txtbxTenDoan.Text= dgvDoan.Rows[index].Cells["TEN"].Value.ToString();
-                txtbxChiPhi.Text = dgvDoan.Rows[index].Cells["CHIPHI"].Value.ToString();
+
+                decimal tong_gia_tour = Convert.ToDecimal(DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.IDTOUR == id_tour && x.IsDeleted == false).Select(x => x.DIADIEM.GIA).Sum() * thoi_han);
+                decimal tong_gia_khach_san= Convert.ToDecimal(DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.IDDOAN == id && x.IsDeleted == false).Select(x => x.KHACHSAN.GIA).Sum() * thoi_han);
+                decimal tong_gia_phuong_tien = Convert.ToDecimal(DataProvider.Ins.DB.tb_PHUONGTIEN.Where(x => x.IDDOAN == id && x.IsDeleted == false).Select(x => x.PHUONGTIEN.GIA).Sum()*thoi_han);
+                txtbxChiPhi.Text =(tong_gia_khach_san + tong_gia_phuong_tien).ToString();
                 cbbxTour.Text = dgvDoan.Rows[index].Cells["TENTOUR"].Value.ToString();
                 dgvKhachHang.DataSource= (from ve in DataProvider.Ins.DB.VEs
                                            where ve.IDDOAN == id && ve.IsDeleted==false
@@ -341,16 +350,16 @@ namespace Tour
 
         private void dgvDoan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index;
-            index = e.RowIndex;
-            string doanid = dgvDoan.Rows[index].Cells[0].Value.ToString().Trim();
-            NhiemVuTrongDoan nv = new NhiemVuTrongDoan();
-            this.Hide();
-            nv.setTextBox(doanid, false);
-            nv.ShowDialog();
-            //ngưng thực hiện lệnh bên dưới cho tới khi form đóng lại
-            //Show() tiếp tục thực hiện các lệnh bên dưới
-            this.Show();
+            //int index;
+            //index = e.RowIndex;
+            //string doanid = dgvDoan.Rows[index].Cells[0].Value.ToString().Trim();
+            //NhiemVuTrongDoan nv = new NhiemVuTrongDoan();
+            //this.Hide();
+            //nv.setTextBox(doanid, false);
+            //nv.ShowDialog();
+            ////ngưng thực hiện lệnh bên dưới cho tới khi form đóng lại
+            ////Show() tiếp tục thực hiện các lệnh bên dưới
+            //this.Show();
             
         }
 

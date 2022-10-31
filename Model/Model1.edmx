@@ -36,6 +36,7 @@
           <Property Name="CHITIET" Type="nvarchar" MaxLength="500" />
           <Property Name="PICBI" Type="varbinary(max)" />
           <Property Name="IsDeleted" Type="bit" />
+          <Property Name="GIA" Type="money" />
         </EntityType>
         <EntityType Name="DOAN">
           <Key>
@@ -100,6 +101,7 @@
           <Property Name="LOAI" Type="nvarchar" MaxLength="30" />
           <Property Name="IDTINH" Type="char" MaxLength="7" />
           <Property Name="IsDeleted" Type="bit" />
+          <Property Name="GIA" Type="money" />
         </EntityType>
         <EntityType Name="tb_DIADIEM_DULICH">
           <Key>
@@ -522,6 +524,7 @@
           <Property Name="CHITIET" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="PICBI" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="GIA" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="tb_DIADIEM_DULICH" Relationship="Self.LK_DIADIEM_DULICH" FromRole="DIADIEM" ToRole="tb_DIADIEM_DULICH" />
           <NavigationProperty Name="TINH" Relationship="Self.LK_TINH" FromRole="DIADIEM" ToRole="TINH" />
         </EntityType>
@@ -601,6 +604,7 @@
           <Property Name="LOAI" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="IDTINH" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
           <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="GIA" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="tb_PHUONGTIEN" Relationship="Self.LK_PHUONGTIEN_PHUONGTIEN" FromRole="PHUONGTIEN" ToRole="tb_PHUONGTIEN" />
           <NavigationProperty Name="TINH" Relationship="Self.LK_PHUONGTIEN_TINH" FromRole="PHUONGTIEN" ToRole="TINH" />
         </EntityType>
@@ -1042,6 +1046,7 @@
                 <ScalarProperty Name="CHITIET" ColumnName="CHITIET" />
                 <ScalarProperty Name="PICBI" ColumnName="PICBI" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="GIA" ColumnName="GIA" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1111,6 +1116,7 @@
                 <ScalarProperty Name="LOAI" ColumnName="LOAI" />
                 <ScalarProperty Name="IDTINH" ColumnName="IDTINH" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="GIA" ColumnName="GIA" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
