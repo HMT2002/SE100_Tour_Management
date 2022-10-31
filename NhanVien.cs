@@ -122,17 +122,18 @@ namespace Tour
                 if (e.ColumnIndex.ToString() == "5" && dgv_nhanvien.Rows[index].Cells["isAvailable"].Value.ToString() == "True")
                 {
                     id = dgv_nhanvien.Rows[index].Cells["data_employeeid"].Value.ToString();
-                    NHANVIEN temp = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault();
+                    NHANVIEN temp_nv = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault();
 
                     DialogResult dr =  MessageBox.Show("Do you want to assign this person to that role", "Assign", MessageBoxButtons.OKCancel);
                     switch(dr)
                     {
                         case DialogResult.OK:
-                            string id_nhanvien = dgv_nhanvien.Rows[index].Cells["data_employeeid"].Value.ToString();
-                            var nvu = new tb_PHUTRACH() { ID=Converter.Instance.RandomString2(5),IDDOAN=doanid,IDNHANVIEN=id_nhanvien,PHUTRACH=phutrach, IsDeleted=false};
+                            var nvu = new tb_PHUTRACH() { ID=Converter.Instance.RandomString2(5),IDDOAN=doanid,IDNHANVIEN= temp_nv.ID, PHUTRACH=phutrach, IsDeleted=false};
                             DataProvider.Ins.DB.tb_PHUTRACH.Add(nvu);
-                            DataProvider.Ins.DB.SaveChanges();
                             seleted_nhanvien_phutrach = nvu.NHANVIEN.TEN;
+                            temp_nv.isAvailable = false;
+                            DataProvider.Ins.DB.SaveChanges();
+
                             this.Close();
                             break;
                         case DialogResult.Cancel:

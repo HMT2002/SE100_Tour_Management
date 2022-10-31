@@ -21,15 +21,18 @@ namespace Tour
         private string tour_guide;
         private string waiter;
         private string translator;
+
         public NhiemVuTrongDoan()
         {
             InitializeComponent();
         }
 
-        public NhiemVuTrongDoan(string s)
-        { 
-            driver = s;
+        public NhiemVuTrongDoan(string ID_doan)
+        {
+            doanID = ID_doan;
             InitializeComponent();
+            textBox1.Text = doanID;
+
         }
 
         public NhiemVuTrongDoan(string doanID, string driver, string tour_guide, string waiter, string translator)
@@ -96,9 +99,21 @@ namespace Tour
             }
         }
         // nhấn vô txtDriver
-        private void txtDriver_MouseClick(object sender, MouseEventArgs e)
+
+        private void txtTourGuide_Click(object sender, EventArgs e)
         {
-            ;
+            using (NhanVien nv = new NhanVien("Tour Guide", doanID))
+            {
+                this.Hide();
+                nv.ShowDialog();
+                txtTourGuide.Text = nv.seleted_nhanvien_phutrach;
+                this.Show();
+
+            }
+        }
+
+        private void txtDriver_Click(object sender, EventArgs e)
+        {
             using (NhanVien nv = new NhanVien("Driver", doanID))
             {
                 this.Hide();
@@ -109,5 +124,27 @@ namespace Tour
             }
         }
 
+        private void txtWaitor_Click(object sender, EventArgs e)
+        {
+            using (NhanVien nv = new NhanVien("Waitor", doanID))
+            {
+                this.Hide();
+                nv.ShowDialog();
+                txtWaitor.Text = nv.seleted_nhanvien_phutrach;
+                this.Show();
+
+            }
+        }
+
+        private void txtTranslator_Click(object sender, EventArgs e)
+        {
+            using (NhanVien nv = new NhanVien("Translator", doanID))
+            {
+                this.Hide();
+                nv.ShowDialog();
+                txtTranslator.Text = nv.seleted_nhanvien_phutrach;
+                this.Show();
+            }
+        }
     }
 }

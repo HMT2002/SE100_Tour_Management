@@ -353,5 +353,19 @@ namespace Tour
             this.Show();
             
         }
+
+        private void btnNhiemVu_Click(object sender, EventArgs e)
+        {
+            if (id.Trim().CompareTo(string.Empty) != 0)
+            {
+                using (NhiemVuTrongDoan nv = new NhiemVuTrongDoan(id))
+                {
+                    this.Hide();
+                    nv.ShowDialog();
+                    this.Show();
+                }
+            }
+
+        }
     }
 }
