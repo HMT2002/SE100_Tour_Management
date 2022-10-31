@@ -26,6 +26,7 @@ namespace Tour.Model
         public string CHITIET { get; set; }
         public byte[] PICBI { get; set; }
         public Nullable<bool> IsDeleted { get; set; }
+        public Nullable<decimal> GIA { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_DIADIEM_DULICH> tb_DIADIEM_DULICH { get; set; }

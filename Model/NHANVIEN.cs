@@ -28,6 +28,8 @@ namespace Tour.Model
         public byte[] PICBI { get; set; }
         public string TEN { get; set; }
         public Nullable<bool> IsDeleted { get; set; }
+        public Nullable<bool> isAvailable { get; set; }
+        public Nullable<int> SLDI { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ACCOUNT> ACCOUNTs { get; set; }
