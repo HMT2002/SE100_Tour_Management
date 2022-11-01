@@ -39,6 +39,7 @@ namespace Tour
                            select ks)
                                      .ToList();
             var result = (from ks in DataProvider.Ins.DB.KHACHSANs
+                          where ks.IsDeleted==false
                           select ks)
                          .ToList();
             int i = 0;

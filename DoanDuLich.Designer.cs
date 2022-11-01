@@ -61,19 +61,18 @@ namespace Tour
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnAddHotelForGroup = new System.Windows.Forms.Button();
             this.dgvKhachSan = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnAddVehicalForGroup = new System.Windows.Forms.Button();
             this.dgvPhuongTien = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.data_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYKHOIHANH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYKETTHUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHITIETCHUONGTRINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHIPHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENTOUR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idtour = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.panel1.SuspendLayout();
@@ -148,7 +147,6 @@ namespace Tour
             this.TEN,
             this.NGAYKHOIHANH,
             this.NGAYKETTHUC,
-            this.CHITIETCHUONGTRINH,
             this.CHIPHI,
             this.TENTOUR,
             this.idtour});
@@ -420,6 +418,14 @@ namespace Tour
             this.dgvKhachSan.Size = new System.Drawing.Size(286, 157);
             this.dgvKhachSan.TabIndex = 32;
             // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "TEN";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Tên khách sạn";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 230;
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Transparent;
@@ -454,6 +460,14 @@ namespace Tour
             this.dgvPhuongTien.Size = new System.Drawing.Size(286, 157);
             this.dgvPhuongTien.TabIndex = 32;
             // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "TEN";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Tên phương tiện";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 230;
+            // 
             // data_ID
             // 
             this.data_ID.DataPropertyName = "ID";
@@ -486,17 +500,9 @@ namespace Tour
             this.NGAYKETTHUC.Name = "NGAYKETTHUC";
             this.NGAYKETTHUC.Width = 180;
             // 
-            // CHITIETCHUONGTRINH
-            // 
-            this.CHITIETCHUONGTRINH.DataPropertyName = "CHITIETCHUONGTRINH";
-            this.CHITIETCHUONGTRINH.HeaderText = "Chi tiết chương trình";
-            this.CHITIETCHUONGTRINH.MinimumWidth = 6;
-            this.CHITIETCHUONGTRINH.Name = "CHITIETCHUONGTRINH";
-            this.CHITIETCHUONGTRINH.Width = 230;
-            // 
             // CHIPHI
             // 
-            this.CHIPHI.DataPropertyName = "TONG";
+            this.CHIPHI.DataPropertyName = "GIA_TOUR";
             this.CHIPHI.HeaderText = "Chi phí";
             this.CHIPHI.MinimumWidth = 6;
             this.CHIPHI.Name = "CHIPHI";
@@ -516,22 +522,6 @@ namespace Tour
             this.idtour.HeaderText = "ID tour";
             this.idtour.Name = "idtour";
             this.idtour.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "TEN";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Tên phương tiện";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 230;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "TEN";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tên khách sạn";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 230;
             // 
             // DoanDuLich
             // 
@@ -601,15 +591,14 @@ namespace Tour
         private System.Windows.Forms.Button btnAddVehicalForGroup;
         private System.Windows.Forms.DataGridView dgvPhuongTien;
         private System.Windows.Forms.Button btnNhiemVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn data_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYKHOIHANH;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYKETTHUC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CHITIETCHUONGTRINH;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHIPHI;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENTOUR;
         private System.Windows.Forms.DataGridViewTextBoxColumn idtour;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }

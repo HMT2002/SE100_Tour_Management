@@ -41,6 +41,7 @@ namespace Tour
                            select pt)
                                      .ToList();
             var result = (from pt in DataProvider.Ins.DB.PHUONGTIENs
+                          where pt.IsDeleted==false
                           select pt)
                          .ToList();
             int i = 0;

@@ -107,9 +107,9 @@ namespace Tour
         {
             txtbxName.Text = "";
             rchtxtbxDetail.Text = "";
-            cbboxProvince.Text = "";
             cbbxVehical.Text = "";
             cbbxKind.Text = "";
+            txtbxGia.Text = "";
             cbbxKind.SelectedIndex = -1;
             cbbxVehical.SelectedIndex = -1;
             cbboxProvince.SelectedIndex = -1;
@@ -161,8 +161,9 @@ namespace Tour
 
                     DataProvider.Ins.DB.PHUONGTIENs.Add(vehical);
                     DataProvider.Ins.DB.SaveChanges();
-                    Clear();
                     showAll();
+                    Clear();
+
 
                 }
                 catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
@@ -196,8 +197,8 @@ namespace Tour
                 }
                 try
                 {
-                    var tb_phuongtien = DataProvider.Ins.DB.tb_PHUONGTIEN.Where(x => x.DOAN.ID == id).FirstOrDefault();
-                    tb_phuongtien.IsDeleted = true;
+                    var phuongtien = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault();
+                    phuongtien.IsDeleted = true;
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
                     Clear();
@@ -232,6 +233,7 @@ namespace Tour
                     phuongtien.IDTINH = cbboxProvince.SelectedIndex.ToString();
                     phuongtien.LOAI = cbbxKind.Text;
                     phuongtien.PICBI = img_data;
+                    phuongtien.GIA =Convert.ToDecimal( txtbxGia.Text);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
                     Clear();
@@ -269,13 +271,15 @@ namespace Tour
             if (index >= 0)
             {
                 PHUONGTIEN selected_item = (PHUONGTIEN)cbbxVehical.SelectedItem;
+                id = selected_item.ID;
+
                 PHUONGTIEN temp = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == selected_item.ID).FirstOrDefault();
                 pcbxVehical.Image = Converter.Instance.ByteArrayToImage(temp.PICBI);
-                id = temp.ID;
                 txtbxName.Text = temp.TEN;
                 cbbxKind.Text = temp.LOAI;
                 cbboxProvince.Text = DataProvider.Ins.DB.TINHs.Where(x => x.ID == temp.IDTINH).FirstOrDefault().TEN;
                 img_data = temp.PICBI;
+                txtbxGia.Text = temp.GIA.ToString();
             }
         }
 
