@@ -38,6 +38,7 @@ namespace Tour
             this.passwordtxb = new System.Windows.Forms.TextBox();
             this.registaccountlb = new System.Windows.Forms.Label();
             this.cbghinho = new System.Windows.Forms.CheckBox();
+            this.cbGuest = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // emailtxb
@@ -70,7 +71,7 @@ namespace Tour
             this.loginbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginbtn.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginbtn.ForeColor = System.Drawing.Color.White;
-            this.loginbtn.Location = new System.Drawing.Point(444, 271);
+            this.loginbtn.Location = new System.Drawing.Point(444, 315);
             this.loginbtn.Name = "loginbtn";
             this.loginbtn.Size = new System.Drawing.Size(76, 24);
             this.loginbtn.TabIndex = 4;
@@ -84,7 +85,7 @@ namespace Tour
             this.exitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitbtn.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitbtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.exitbtn.Location = new System.Drawing.Point(537, 271);
+            this.exitbtn.Location = new System.Drawing.Point(537, 315);
             this.exitbtn.Name = "exitbtn";
             this.exitbtn.Size = new System.Drawing.Size(75, 24);
             this.exitbtn.TabIndex = 5;
@@ -121,7 +122,7 @@ namespace Tour
             this.registaccountlb.BackColor = System.Drawing.Color.Transparent;
             this.registaccountlb.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registaccountlb.ForeColor = System.Drawing.Color.White;
-            this.registaccountlb.Location = new System.Drawing.Point(453, 306);
+            this.registaccountlb.Location = new System.Drawing.Point(453, 350);
             this.registaccountlb.Name = "registaccountlb";
             this.registaccountlb.Size = new System.Drawing.Size(173, 22);
             this.registaccountlb.TabIndex = 16;
@@ -142,6 +143,21 @@ namespace Tour
             this.cbghinho.Text = "Remember ?";
             this.cbghinho.UseVisualStyleBackColor = false;
             // 
+            // cbGuest
+            // 
+            this.cbGuest.AutoSize = true;
+            this.cbGuest.BackColor = System.Drawing.Color.Transparent;
+            this.cbGuest.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbGuest.ForeColor = System.Drawing.Color.White;
+            this.cbGuest.Location = new System.Drawing.Point(347, 269);
+            this.cbGuest.Margin = new System.Windows.Forms.Padding(2);
+            this.cbGuest.Name = "cbGuest";
+            this.cbGuest.Size = new System.Drawing.Size(141, 24);
+            this.cbGuest.TabIndex = 17;
+            this.cbGuest.Text = "Are you guest? ";
+            this.cbGuest.UseVisualStyleBackColor = false;
+            this.cbGuest.CheckedChanged += new System.EventHandler(this.cbGuest_CheckedChanged);
+            // 
             // LoginForm
             // 
             this.AcceptButton = this.loginbtn;
@@ -150,6 +166,7 @@ namespace Tour
             this.BackgroundImage = global::Tour.Properties.Resources.tour4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(686, 430);
+            this.Controls.Add(this.cbGuest);
             this.Controls.Add(this.registaccountlb);
             this.Controls.Add(this.passwordtxb);
             this.Controls.Add(this.forgetlb);
@@ -179,6 +196,7 @@ namespace Tour
         private System.Windows.Forms.TextBox passwordtxb;
         private System.Windows.Forms.Label registaccountlb;
         private System.Windows.Forms.CheckBox cbghinho;
+        private System.Windows.Forms.CheckBox cbGuest;
     }
 }
 

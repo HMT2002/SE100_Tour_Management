@@ -144,5 +144,10 @@ namespace Tour
             this.Show();
         }
         public string password, email;
+
+        private void cbGuest_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
