@@ -166,7 +166,7 @@ namespace Tour
                         GIOITINH = gender,
                         DIACHI = tbAddress.Text,
                         SDT = tbTelephone.Text,
-                        IsDeleted = true,
+                        IsDeleted = false,
                     };
                     DataProvider.Ins.DB.KHACHHANGs.Add(khachhang);
 
