@@ -118,7 +118,7 @@ namespace Tour
         }
         public bool CheckData()
         {
-            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null||txtbxDiaChi.Text.Trim().CompareTo(string.Empty) == 0|| Convert.ToDecimal(txtbxGia.Text) == 0)
+            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null||txtbxDiaChi.Text.Trim().CompareTo(string.Empty) == 0|| Convert.ToDecimal(txtbxGia.Text) == 0 || cbboxProvince.SelectedIndex == -1)
             {
                 return false;
             }
@@ -147,8 +147,9 @@ namespace Tour
                     var location = new KHACHSAN() { ID = randomcode, DIACHI = txtbxName.Text, PICBI = img_data,CHITIET=rchtxtbxDetail.Text,GIA=Convert.ToDecimal( txtbxGia.Text ),IDTINH=cbboxProvince.SelectedIndex.ToString(),SDT=txtbxSDT.Text,TEN=txtbxName.Text,IsDeleted=false};
                     DataProvider.Ins.DB.KHACHSANs.Add(location);
                     DataProvider.Ins.DB.SaveChanges();
-                    Clear();
                     showAll();
+                    Clear();
+
 
                 }
                 catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
@@ -168,6 +169,7 @@ namespace Tour
                     }
                     throw raise;
                 }
+
             }
 
         }
@@ -202,17 +204,18 @@ namespace Tour
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (id == null || id.CompareTo(string.Empty) == 0)
+            if (id == null || id.CompareTo(string.Empty) == 0||cbboxProvince.Text.Trim().CompareTo(string.Empty) == 0)
             {
                 return;
             }
             try
             {
-                var diadiem = DataProvider.Ins.DB.KHACHSANs.Where(x => x.ID == id).FirstOrDefault();
-                diadiem.TEN = txtbxName.Text;
-                diadiem.IDTINH = cbboxProvince.SelectedIndex.ToString();
-                diadiem.CHITIET = rchtxtbxDetail.Text;
-                diadiem.PICBI = img_data;
+                var khachsan = DataProvider.Ins.DB.KHACHSANs.Where(x => x.ID == id).FirstOrDefault();
+                khachsan.TEN = txtbxName.Text;
+                khachsan.IDTINH = cbboxProvince.SelectedIndex.ToString();
+                khachsan.CHITIET = rchtxtbxDetail.Text;
+                khachsan.PICBI = img_data;
+                khachsan.GIA= Convert.ToDecimal(txtbxGia.Text);
                 DataProvider.Ins.DB.SaveChanges();
                 showAll();
                 Clear();
@@ -232,8 +235,8 @@ namespace Tour
 
         private void Clear()
         {
-            txtbxName.Text = rchtxtbxDetail.Text = txtbxDiaChi.Text = txtbxGia.Text =txtbxName.Text=txtbxSDT.Text=cbboxProvince.Text= "";
-            cbbxHotel.SelectedIndex = -1;
+            txtbxName.Text = rchtxtbxDetail.Text = txtbxDiaChi.Text = txtbxGia.Text =txtbxName.Text=txtbxSDT.Text= "";
+            cbboxProvince.SelectedIndex= cbbxHotel.SelectedIndex = -1;
             pcbxLocation.Image = null;
         }
 
@@ -254,6 +257,18 @@ namespace Tour
                 txtbxGia.Text = temp.GIA.ToString();
                 txtbxDiaChi.Text = temp.DIACHI;
                 txtbxSDT.Text = temp.SDT;
+            }
+        }
+
+        private void txtbxGia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
             }
         }
     }

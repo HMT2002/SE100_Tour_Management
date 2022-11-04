@@ -46,6 +46,8 @@ namespace Tour
             this.label3 = new System.Windows.Forms.Label();
             this.cbboxProvince = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtbxGia = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxLocation)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -83,7 +85,7 @@ namespace Tour
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(508, 280);
+            this.btnAdd.Location = new System.Drawing.Point(511, 314);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 0;
@@ -93,7 +95,7 @@ namespace Tour
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(587, 280);
+            this.btnXoa.Location = new System.Drawing.Point(590, 314);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 1;
@@ -103,7 +105,7 @@ namespace Tour
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(668, 280);
+            this.btnUpdate.Location = new System.Drawing.Point(671, 314);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 2;
@@ -147,7 +149,7 @@ namespace Tour
             // 
             // rchtxtbxDetail
             // 
-            this.rchtxtbxDetail.Location = new System.Drawing.Point(471, 120);
+            this.rchtxtbxDetail.Location = new System.Drawing.Point(474, 154);
             this.rchtxtbxDetail.Name = "rchtxtbxDetail";
             this.rchtxtbxDetail.Size = new System.Drawing.Size(314, 154);
             this.rchtxtbxDetail.TabIndex = 8;
@@ -156,7 +158,7 @@ namespace Tour
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(563, 49);
+            this.label1.Location = new System.Drawing.Point(505, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 9;
@@ -165,7 +167,7 @@ namespace Tour
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(555, 75);
+            this.label2.Location = new System.Drawing.Point(505, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 13);
             this.label2.TabIndex = 10;
@@ -174,7 +176,7 @@ namespace Tour
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(505, 101);
+            this.label3.Location = new System.Drawing.Point(505, 128);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 13);
             this.label3.TabIndex = 11;
@@ -183,7 +185,7 @@ namespace Tour
             // cbboxProvince
             // 
             this.cbboxProvince.FormattingEnabled = true;
-            this.cbboxProvince.Location = new System.Drawing.Point(587, 93);
+            this.cbboxProvince.Location = new System.Drawing.Point(587, 120);
             this.cbboxProvince.Name = "cbboxProvince";
             this.cbboxProvince.Size = new System.Drawing.Size(198, 21);
             this.cbboxProvince.TabIndex = 13;
@@ -198,6 +200,23 @@ namespace Tour
             this.panel3.Size = new System.Drawing.Size(453, 296);
             this.panel3.TabIndex = 3;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(505, 101);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 13);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Giá/ngày";
+            // 
+            // txtbxGia
+            // 
+            this.txtbxGia.Location = new System.Drawing.Point(587, 94);
+            this.txtbxGia.Name = "txtbxGia";
+            this.txtbxGia.Size = new System.Drawing.Size(198, 20);
+            this.txtbxGia.TabIndex = 14;
+            this.txtbxGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxGia_KeyPress);
+            // 
             // Location
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,6 +224,8 @@ namespace Tour
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(811, 450);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtbxGia);
             this.Controls.Add(this.cbboxProvince);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.label3);
@@ -248,5 +269,7 @@ namespace Tour
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbboxProvince;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtbxGia;
     }
 }

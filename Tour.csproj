@@ -314,6 +314,12 @@
     </Compile>
     <Compile Include="Model\Reservation.cs" />
     <Compile Include="DAL\ReservationDAL.cs" />
+    <Compile Include="SearchTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchTicket.Designer.cs">
+      <DependentUpon>SearchTicket.cs</DependentUpon>
+    </Compile>
     <Compile Include="SelectForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -397,6 +403,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterAccount.resx">
       <DependentUpon>RegisterAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchTicket.resx">
+      <DependentUpon>SearchTicket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectForm.resx">
       <DependentUpon>SelectForm.cs</DependentUpon>

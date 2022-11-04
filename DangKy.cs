@@ -94,8 +94,6 @@ namespace Tour
 
         private void reset()
         {
-            tbVehicle.Clear();
-            tbAmount.Clear();
             tbDate.Clear();
             tbPrice.Clear();
             tbDiscount.Clear();
@@ -116,7 +114,7 @@ namespace Tour
         {
 
 
-            if (tbName.Text.Trim().CompareTo(string.Empty) == 0 || tbSurname.Text.Trim().CompareTo(string.Empty) == 0 || tbAddress.Text.Trim().CompareTo(string.Empty) == 0 || tbCMND.Text.Trim().CompareTo(string.Empty) == 0)
+            if (tbName.Text.Trim().CompareTo(string.Empty) == 0 || tbSurname.Text.Trim().CompareTo(string.Empty) == 0 || tbAddress.Text.Trim().CompareTo(string.Empty) == 0 || tbCMND.Text.Trim().CompareTo(string.Empty) == 0||cbGroup.SelectedValue==null||cbDes.SelectedValue==null)
             {
                 MessageBox.Show("Please fill in all the information", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
@@ -138,8 +136,8 @@ namespace Tour
                 object iddoan = t.GetProperty("IDDOAN").GetValue(cbGroup.SelectedItem, null);
                 object ngaykhoihanh = t.GetProperty("NGAYKHOIHANH").GetValue(cbGroup.SelectedItem, null);
                 object ngayketthuc = t.GetProperty("NGAYKETTHUC").GetValue(cbGroup.SelectedItem, null);
+                tbDate.Text= t.GetProperty("NGAYKHOIHANH").GetValue(cbGroup.SelectedItem, null).ToString();
                 tbDuration.Text = ((DateTime)ngayketthuc - (DateTime)ngaykhoihanh).TotalDays.ToString();
-
             }
 
         }
@@ -158,48 +156,38 @@ namespace Tour
             {
                 try
                 {
-                string randomcode = Converter.Instance.RandomString2(5);
-                string idkhach = randomcode;
-                var khachhang = new KHACHHANG() { ID = idkhach,
-                    TENKH=tbSurname.Text+" "+tbName.Text,
-                    CMND=tbCMND.Text,
-                    GIOITINH=gender,
-                    DIACHI=tbAddress.Text,
-                    SDT=tbTelephone.Text,
-                    IsDeleted=true,
-                };
-                DataProvider.Ins.DB.KHACHHANGs.Add(khachhang);
-
-                randomcode = Converter.Instance.RandomString2(5);
-                var ve = new VE() { 
-                    ID = randomcode,
-                    IDKHACH = idkhach,
-                    IDDOAN= cbGroup.SelectedValue.ToString(),
-                    NGAYMUA=DateTime.Today,
-                    GIA=Convert.ToDecimal(tbPrice.Text),
-                    IsDeleted=false,
-                };
-                DataProvider.Ins.DB.VEs.Add(ve);
-                DataProvider.Ins.DB.SaveChanges();
-                showAll();
-                Clear();
-                }
-                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
-                {
-                    Exception raise = dbEx;
-                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    string randomcode = Converter.Instance.RandomString2(5);
+                    string idkhach = randomcode;
+                    var khachhang = new KHACHHANG()
                     {
-                        foreach (var validationError in validationErrors.ValidationErrors)
-                        {
-                            string message = string.Format("{0}:{1}",
-                                validationErrors.Entry.Entity.ToString(),
-                                validationError.ErrorMessage);
-                            // raise a new exception nesting
-                            // the current instance as InnerException
-                            raise = new InvalidOperationException(message, raise);
-                        }
-                    }
-                    throw raise;
+                        ID = idkhach,
+                        TENKH = tbSurname.Text + " " + tbName.Text,
+                        CMND = tbCMND.Text,
+                        GIOITINH = gender,
+                        DIACHI = tbAddress.Text,
+                        SDT = tbTelephone.Text,
+                        IsDeleted = false,
+                    };
+                    DataProvider.Ins.DB.KHACHHANGs.Add(khachhang);
+
+                    randomcode = Converter.Instance.RandomString2(5);
+                    var ve = new VE()
+                    {
+                        ID = randomcode,
+                        IDKHACH = idkhach,
+                        IDDOAN = cbGroup.SelectedValue.ToString(),
+                        NGAYMUA = DateTime.Today,
+                        GIA = Convert.ToDecimal(tbPrice.Text),
+                        IsDeleted = false,
+                    };
+                    DataProvider.Ins.DB.VEs.Add(ve);
+                    DataProvider.Ins.DB.SaveChanges();
+                    showAll();
+                    Clear();
+                }
+                catch (Exception ex)
+                {
+
                 }
 
             }

@@ -46,6 +46,8 @@ namespace Tour
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtbxGia = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxVehical)).BeginInit();
             this.SuspendLayout();
@@ -92,7 +94,7 @@ namespace Tour
             // cbboxProvince
             // 
             this.cbboxProvince.FormattingEnabled = true;
-            this.cbboxProvince.Location = new System.Drawing.Point(553, 96);
+            this.cbboxProvince.Location = new System.Drawing.Point(553, 122);
             this.cbboxProvince.Name = "cbboxProvince";
             this.cbboxProvince.Size = new System.Drawing.Size(232, 21);
             this.cbboxProvince.TabIndex = 18;
@@ -101,7 +103,7 @@ namespace Tour
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(471, 104);
+            this.label5.Location = new System.Drawing.Point(471, 130);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 13);
             this.label5.TabIndex = 17;
@@ -129,9 +131,9 @@ namespace Tour
             // 
             // rchtxtbxDetail
             // 
-            this.rchtxtbxDetail.Location = new System.Drawing.Point(474, 123);
+            this.rchtxtbxDetail.Location = new System.Drawing.Point(474, 149);
             this.rchtxtbxDetail.Name = "rchtxtbxDetail";
-            this.rchtxtbxDetail.Size = new System.Drawing.Size(314, 201);
+            this.rchtxtbxDetail.Size = new System.Drawing.Size(314, 175);
             this.rchtxtbxDetail.TabIndex = 8;
             this.rchtxtbxDetail.Text = "";
             // 
@@ -201,6 +203,23 @@ namespace Tour
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(471, 103);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Giá/ngày";
+            // 
+            // txtbxGia
+            // 
+            this.txtbxGia.Location = new System.Drawing.Point(553, 96);
+            this.txtbxGia.Name = "txtbxGia";
+            this.txtbxGia.Size = new System.Drawing.Size(235, 20);
+            this.txtbxGia.TabIndex = 20;
+            this.txtbxGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxGia_KeyPress);
+            // 
             // PhuongTien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,6 +227,8 @@ namespace Tour
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 500);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtbxGia);
             this.Controls.Add(this.cbbxKind);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.cbboxProvince);
@@ -251,5 +272,7 @@ namespace Tour
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.ComboBox cbbxKind;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtbxGia;
     }
 }

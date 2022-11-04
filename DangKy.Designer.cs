@@ -92,17 +92,11 @@ namespace Tour
             this.tbDuration = new System.Windows.Forms.TextBox();
             this.panel21 = new System.Windows.Forms.Panel();
             this.tbDate = new System.Windows.Forms.TextBox();
-            this.panel20 = new System.Windows.Forms.Panel();
-            this.tbAmount = new System.Windows.Forms.TextBox();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.tbVehicle = new System.Windows.Forms.TextBox();
             this.panel18 = new System.Windows.Forms.Panel();
             this.cbDes = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -135,8 +129,6 @@ namespace Tour
             this.panel26.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel21.SuspendLayout();
-            this.panel20.SuspendLayout();
-            this.panel19.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -767,14 +759,10 @@ namespace Tour
             this.panel8.Controls.Add(this.label9);
             this.panel8.Controls.Add(this.panel22);
             this.panel8.Controls.Add(this.panel21);
-            this.panel8.Controls.Add(this.panel20);
-            this.panel8.Controls.Add(this.panel19);
             this.panel8.Controls.Add(this.panel18);
             this.panel8.Controls.Add(this.label19);
-            this.panel8.Controls.Add(this.label15);
             this.panel8.Controls.Add(this.label11);
             this.panel8.Controls.Add(this.label16);
-            this.panel8.Controls.Add(this.label14);
             this.panel8.Controls.Add(this.label12);
             this.panel8.Controls.Add(this.label13);
             this.panel8.ForeColor = System.Drawing.Color.Black;
@@ -824,7 +812,7 @@ namespace Tour
             // 
             this.panel22.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel22.Controls.Add(this.tbDuration);
-            this.panel22.Location = new System.Drawing.Point(146, 254);
+            this.panel22.Location = new System.Drawing.Point(144, 160);
             this.panel22.Margin = new System.Windows.Forms.Padding(2);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(180, 28);
@@ -845,7 +833,7 @@ namespace Tour
             // 
             this.panel21.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel21.Controls.Add(this.tbDate);
-            this.panel21.Location = new System.Drawing.Point(146, 210);
+            this.panel21.Location = new System.Drawing.Point(144, 116);
             this.panel21.Margin = new System.Windows.Forms.Padding(2);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(180, 28);
@@ -861,48 +849,6 @@ namespace Tour
             this.tbDate.ReadOnly = true;
             this.tbDate.Size = new System.Drawing.Size(180, 26);
             this.tbDate.TabIndex = 7;
-            // 
-            // panel20
-            // 
-            this.panel20.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel20.Controls.Add(this.tbAmount);
-            this.panel20.Location = new System.Drawing.Point(146, 162);
-            this.panel20.Margin = new System.Windows.Forms.Padding(2);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(180, 28);
-            this.panel20.TabIndex = 29;
-            // 
-            // tbAmount
-            // 
-            this.tbAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbAmount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAmount.Location = new System.Drawing.Point(-2, 0);
-            this.tbAmount.MaxLength = 20;
-            this.tbAmount.Name = "tbAmount";
-            this.tbAmount.ReadOnly = true;
-            this.tbAmount.Size = new System.Drawing.Size(179, 26);
-            this.tbAmount.TabIndex = 7;
-            // 
-            // panel19
-            // 
-            this.panel19.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel19.Controls.Add(this.tbVehicle);
-            this.panel19.Location = new System.Drawing.Point(146, 114);
-            this.panel19.Margin = new System.Windows.Forms.Padding(2);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(180, 28);
-            this.panel19.TabIndex = 28;
-            // 
-            // tbVehicle
-            // 
-            this.tbVehicle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbVehicle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbVehicle.Location = new System.Drawing.Point(-2, 0);
-            this.tbVehicle.MaxLength = 20;
-            this.tbVehicle.Name = "tbVehicle";
-            this.tbVehicle.ReadOnly = true;
-            this.tbVehicle.Size = new System.Drawing.Size(180, 26);
-            this.tbVehicle.TabIndex = 7;
             // 
             // panel18
             // 
@@ -933,24 +879,12 @@ namespace Tour
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(9, 254);
+            this.label19.Location = new System.Drawing.Point(7, 160);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(74, 21);
             this.label19.TabIndex = 16;
             this.label19.Text = "Duration";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(8, 160);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(70, 21);
-            this.label15.TabIndex = 15;
-            this.label15.Text = "Amount";
             // 
             // label11
             // 
@@ -969,24 +903,12 @@ namespace Tour
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(8, 209);
+            this.label16.Location = new System.Drawing.Point(6, 115);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(44, 21);
             this.label16.TabIndex = 11;
             this.label16.Text = "Date";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(9, 115);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(63, 21);
-            this.label14.TabIndex = 7;
-            this.label14.Text = "Vehicle";
             // 
             // label12
             // 
@@ -1210,10 +1132,6 @@ namespace Tour
             this.panel22.PerformLayout();
             this.panel21.ResumeLayout(false);
             this.panel21.PerformLayout();
-            this.panel20.ResumeLayout(false);
-            this.panel20.PerformLayout();
-            this.panel19.ResumeLayout(false);
-            this.panel19.PerformLayout();
             this.panel18.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -1276,17 +1194,11 @@ namespace Tour
         private System.Windows.Forms.TextBox tbDuration;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.TextBox tbDate;
-        private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.TextBox tbAmount;
-        private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.TextBox tbVehicle;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.ComboBox cbDes;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel2;

@@ -50,9 +50,12 @@ namespace Tour
             this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SLDi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExit = new System.Windows.Forms.Button();
             this.txtbxID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnThem = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_nhanvien)).BeginInit();
@@ -94,8 +97,8 @@ namespace Tour
             this.rdNameSearch.AutoSize = true;
             this.rdNameSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdNameSearch.ForeColor = System.Drawing.Color.Black;
-            this.rdNameSearch.Location = new System.Drawing.Point(308, 155);
-            this.rdNameSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.rdNameSearch.Location = new System.Drawing.Point(297, 155);
+            this.rdNameSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rdNameSearch.Name = "rdNameSearch";
             this.rdNameSearch.Size = new System.Drawing.Size(64, 23);
             this.rdNameSearch.TabIndex = 22;
@@ -109,8 +112,8 @@ namespace Tour
             this.rdIDSearch.Checked = true;
             this.rdIDSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdIDSearch.ForeColor = System.Drawing.Color.Black;
-            this.rdIDSearch.Location = new System.Drawing.Point(257, 157);
-            this.rdIDSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.rdIDSearch.Location = new System.Drawing.Point(246, 157);
+            this.rdIDSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rdIDSearch.Name = "rdIDSearch";
             this.rdIDSearch.Size = new System.Drawing.Size(43, 23);
             this.rdIDSearch.TabIndex = 21;
@@ -122,9 +125,9 @@ namespace Tour
             // tb_search
             // 
             this.tb_search.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_search.Location = new System.Drawing.Point(377, 152);
+            this.tb_search.Location = new System.Drawing.Point(366, 152);
             this.tb_search.Name = "tb_search";
-            this.tb_search.Size = new System.Drawing.Size(253, 29);
+            this.tb_search.Size = new System.Drawing.Size(162, 29);
             this.tb_search.TabIndex = 20;
             this.tb_search.TextChanged += new System.EventHandler(this.tb_search_TextChanged);
             // 
@@ -219,7 +222,9 @@ namespace Tour
             this.data_employeeid,
             this.TEN,
             this.SDT,
-            this.MAIL});
+            this.MAIL,
+            this.SLDi,
+            this.isAvailable});
             this.dgv_nhanvien.Location = new System.Drawing.Point(12, 188);
             this.dgv_nhanvien.Name = "dgv_nhanvien";
             this.dgv_nhanvien.ReadOnly = true;
@@ -227,11 +232,13 @@ namespace Tour
             this.dgv_nhanvien.Size = new System.Drawing.Size(780, 269);
             this.dgv_nhanvien.TabIndex = 4;
             this.dgv_nhanvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_trip_CellClick);
+            this.dgv_nhanvien.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_nhanvien_CellFormatting);
             // 
             // data_employeeid
             // 
             this.data_employeeid.DataPropertyName = "ID";
             this.data_employeeid.HeaderText = "ID";
+            this.data_employeeid.MinimumWidth = 6;
             this.data_employeeid.Name = "data_employeeid";
             this.data_employeeid.ReadOnly = true;
             // 
@@ -239,6 +246,7 @@ namespace Tour
             // 
             this.TEN.DataPropertyName = "TEN";
             this.TEN.HeaderText = "Tên";
+            this.TEN.MinimumWidth = 6;
             this.TEN.Name = "TEN";
             this.TEN.ReadOnly = true;
             // 
@@ -246,6 +254,7 @@ namespace Tour
             // 
             this.SDT.DataPropertyName = "SDT";
             this.SDT.HeaderText = "Số điện thoại";
+            this.SDT.MinimumWidth = 6;
             this.SDT.Name = "SDT";
             this.SDT.ReadOnly = true;
             // 
@@ -253,8 +262,25 @@ namespace Tour
             // 
             this.MAIL.DataPropertyName = "MAIL";
             this.MAIL.HeaderText = "Mail";
+            this.MAIL.MinimumWidth = 6;
             this.MAIL.Name = "MAIL";
             this.MAIL.ReadOnly = true;
+            // 
+            // SLDi
+            // 
+            this.SLDi.DataPropertyName = "SLDi";
+            this.SLDi.HeaderText = "SLDi";
+            this.SLDi.MinimumWidth = 6;
+            this.SLDi.Name = "SLDi";
+            this.SLDi.ReadOnly = true;
+            // 
+            // isAvailable
+            // 
+            this.isAvailable.DataPropertyName = "isAvailable";
+            this.isAvailable.HeaderText = "isAvailable";
+            this.isAvailable.MinimumWidth = 6;
+            this.isAvailable.Name = "isAvailable";
+            this.isAvailable.ReadOnly = true;
             // 
             // btnExit
             // 
@@ -284,6 +310,16 @@ namespace Tour
             this.label4.TabIndex = 24;
             this.label4.Text = "ID";
             // 
+            // btnThem
+            // 
+            this.btnThem.Location = new System.Drawing.Point(555, 152);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(75, 29);
+            this.btnThem.TabIndex = 25;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,6 +327,7 @@ namespace Tour
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(810, 506);
+            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.txtbxID);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.rdNameSearch);
@@ -333,10 +370,6 @@ namespace Tour
         private System.Windows.Forms.DataGridView dgv_nhanvien;
         private System.Windows.Forms.TextBox txtbxMail;
         private System.Windows.Forms.TextBox txtbxSDT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn data_employeeid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MAIL;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_search;
@@ -344,5 +377,12 @@ namespace Tour
         private System.Windows.Forms.RadioButton rdIDSearch;
         private System.Windows.Forms.TextBox txtbxID;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data_employeeid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MAIL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SLDi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn isAvailable;
+        private System.Windows.Forms.Button btnThem;
     }
 }

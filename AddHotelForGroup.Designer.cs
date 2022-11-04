@@ -49,9 +49,9 @@ namespace Tour
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(427, 10);
+            this.listView1.Location = new System.Drawing.Point(410, 10);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(366, 253);
+            this.listView1.Size = new System.Drawing.Size(383, 253);
             this.listView1.TabIndex = 7;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);

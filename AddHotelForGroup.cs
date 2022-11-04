@@ -22,6 +22,8 @@ namespace Tour
         List<KHACHSAN> ListKhachSan = new List<KHACHSAN>();
         List<KHACHSAN> ListTatCaKhachSan = new List<KHACHSAN>();
 
+        public decimal tong_GIA=0;
+
         public AddHotelForGroup(string id)
         {
             InitializeComponent();
@@ -37,6 +39,7 @@ namespace Tour
                            select ks)
                                      .ToList();
             var result = (from ks in DataProvider.Ins.DB.KHACHSANs
+                          where ks.IsDeleted==false
                           select ks)
                          .ToList();
             int i = 0;
@@ -88,8 +91,11 @@ namespace Tour
                 {
                     random1 = Converter.Instance.RandomString2(5);
                 }
+                tong_GIA +=(decimal) khachsan.GIA;
 
                 DataProvider.Ins.DB.tb_KHACHSAN.Add(new tb_KHACHSAN() { ID = random1, IDKHACHSAN = khachsan.ID, IDDOAN = ID,IsDeleted=false });
+
+
             }
 
             DataProvider.Ins.DB.SaveChanges();

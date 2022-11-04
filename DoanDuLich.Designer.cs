@@ -30,20 +30,13 @@ namespace Tour
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DoanDuLich));
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtbxIDDoan = new System.Windows.Forms.TextBox();
+            this.txtbxTenDoan = new System.Windows.Forms.TextBox();
+            this.txtbxChiPhi = new System.Windows.Forms.TextBox();
+            this.datetimeNgayKhoiHanh = new System.Windows.Forms.DateTimePicker();
+            this.datetimeNgayKetThuc = new System.Windows.Forms.DateTimePicker();
+            this.cbbxTour = new System.Windows.Forms.ComboBox();
             this.dgvDoan = new System.Windows.Forms.DataGridView();
-            this.data_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYKHOIHANH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYKETTHUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHITIETCHUONGTRINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHIPHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENTOUR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tb_search = new System.Windows.Forms.TextBox();
             this.rdNameSearch = new System.Windows.Forms.RadioButton();
             this.rdIDSearch = new System.Windows.Forms.RadioButton();
@@ -62,18 +55,24 @@ namespace Tour
             this.IDKHACHHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENKHACHHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnNhiemVu = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnAddHotelForGroup = new System.Windows.Forms.Button();
             this.dgvKhachSan = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnAddVehicalForGroup = new System.Windows.Forms.Button();
             this.dgvPhuongTien = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYKHOIHANH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYKETTHUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHIPHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENTOUR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idtour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.panel1.SuspendLayout();
@@ -85,51 +84,57 @@ namespace Tour
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhuongTien)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtbxIDDoan
             // 
-            this.textBox1.Location = new System.Drawing.Point(94, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtbxIDDoan.Location = new System.Drawing.Point(138, 3);
+            this.txtbxIDDoan.Margin = new System.Windows.Forms.Padding(2);
+            this.txtbxIDDoan.Name = "txtbxIDDoan";
+            this.txtbxIDDoan.ReadOnly = true;
+            this.txtbxIDDoan.Size = new System.Drawing.Size(151, 20);
+            this.txtbxIDDoan.TabIndex = 0;
             // 
-            // textBox2
+            // txtbxTenDoan
             // 
-            this.textBox2.Location = new System.Drawing.Point(94, 109);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 20);
-            this.textBox2.TabIndex = 1;
+            this.txtbxTenDoan.Location = new System.Drawing.Point(138, 89);
+            this.txtbxTenDoan.Margin = new System.Windows.Forms.Padding(2);
+            this.txtbxTenDoan.Name = "txtbxTenDoan";
+            this.txtbxTenDoan.Size = new System.Drawing.Size(151, 20);
+            this.txtbxTenDoan.TabIndex = 1;
             // 
-            // textBox3
+            // txtbxChiPhi
             // 
-            this.textBox3.Location = new System.Drawing.Point(94, 135);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(200, 20);
-            this.textBox3.TabIndex = 2;
-            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
+            this.txtbxChiPhi.Location = new System.Drawing.Point(138, 110);
+            this.txtbxChiPhi.Margin = new System.Windows.Forms.Padding(2);
+            this.txtbxChiPhi.Name = "txtbxChiPhi";
+            this.txtbxChiPhi.ReadOnly = true;
+            this.txtbxChiPhi.Size = new System.Drawing.Size(151, 20);
+            this.txtbxChiPhi.TabIndex = 2;
+            this.txtbxChiPhi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
-            // dateTimePicker1
+            // datetimeNgayKhoiHanh
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(94, 30);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 4;
+            this.datetimeNgayKhoiHanh.Location = new System.Drawing.Point(138, 24);
+            this.datetimeNgayKhoiHanh.Margin = new System.Windows.Forms.Padding(2);
+            this.datetimeNgayKhoiHanh.Name = "datetimeNgayKhoiHanh";
+            this.datetimeNgayKhoiHanh.Size = new System.Drawing.Size(151, 20);
+            this.datetimeNgayKhoiHanh.TabIndex = 4;
             // 
-            // dateTimePicker2
+            // datetimeNgayKetThuc
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(94, 56);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 5;
+            this.datetimeNgayKetThuc.Location = new System.Drawing.Point(138, 46);
+            this.datetimeNgayKetThuc.Margin = new System.Windows.Forms.Padding(2);
+            this.datetimeNgayKetThuc.Name = "datetimeNgayKetThuc";
+            this.datetimeNgayKetThuc.Size = new System.Drawing.Size(151, 20);
+            this.datetimeNgayKetThuc.TabIndex = 5;
             // 
-            // comboBox1
+            // cbbxTour
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(94, 82);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 6;
+            this.cbbxTour.FormattingEnabled = true;
+            this.cbbxTour.Location = new System.Drawing.Point(138, 67);
+            this.cbbxTour.Margin = new System.Windows.Forms.Padding(2);
+            this.cbbxTour.Name = "cbbxTour";
+            this.cbbxTour.Size = new System.Drawing.Size(151, 21);
+            this.cbbxTour.TabIndex = 6;
             // 
             // dgvDoan
             // 
@@ -142,63 +147,16 @@ namespace Tour
             this.TEN,
             this.NGAYKHOIHANH,
             this.NGAYKETTHUC,
-            this.CHITIETCHUONGTRINH,
             this.CHIPHI,
-            this.TENTOUR});
+            this.TENTOUR,
+            this.idtour});
             this.dgvDoan.Location = new System.Drawing.Point(3, 33);
             this.dgvDoan.Name = "dgvDoan";
-            this.dgvDoan.Size = new System.Drawing.Size(1393, 214);
+            this.dgvDoan.RowHeadersWidth = 51;
+            this.dgvDoan.Size = new System.Drawing.Size(1277, 214);
             this.dgvDoan.TabIndex = 8;
             this.dgvDoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // data_ID
-            // 
-            this.data_ID.DataPropertyName = "ID";
-            this.data_ID.HeaderText = "ID";
-            this.data_ID.Name = "data_ID";
-            this.data_ID.Width = 90;
-            // 
-            // TEN
-            // 
-            this.TEN.DataPropertyName = "TEN";
-            this.TEN.HeaderText = "Tên đoàn";
-            this.TEN.Name = "TEN";
-            this.TEN.Width = 150;
-            // 
-            // NGAYKHOIHANH
-            // 
-            this.NGAYKHOIHANH.DataPropertyName = "NGAYKHOIHANH";
-            this.NGAYKHOIHANH.HeaderText = "Ngày khởi hành";
-            this.NGAYKHOIHANH.Name = "NGAYKHOIHANH";
-            this.NGAYKHOIHANH.Width = 220;
-            // 
-            // NGAYKETTHUC
-            // 
-            this.NGAYKETTHUC.DataPropertyName = "NGAYKETTHUC";
-            this.NGAYKETTHUC.HeaderText = "Ngày kết thúc";
-            this.NGAYKETTHUC.Name = "NGAYKETTHUC";
-            this.NGAYKETTHUC.Width = 200;
-            // 
-            // CHITIETCHUONGTRINH
-            // 
-            this.CHITIETCHUONGTRINH.DataPropertyName = "CHITIETCHUONGTRINH";
-            this.CHITIETCHUONGTRINH.HeaderText = "Chi tiết chương trình";
-            this.CHITIETCHUONGTRINH.Name = "CHITIETCHUONGTRINH";
-            this.CHITIETCHUONGTRINH.Width = 250;
-            // 
-            // CHIPHI
-            // 
-            this.CHIPHI.DataPropertyName = "TONG";
-            this.CHIPHI.HeaderText = "Chi phí";
-            this.CHIPHI.Name = "CHIPHI";
-            this.CHIPHI.Width = 200;
-            // 
-            // TENTOUR
-            // 
-            this.TENTOUR.DataPropertyName = "TEN_TOUR";
-            this.TENTOUR.HeaderText = "Tour";
-            this.TENTOUR.Name = "TENTOUR";
-            this.TENTOUR.Width = 220;
+            this.dgvDoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDoan_CellContentClick);
             // 
             // tb_search
             // 
@@ -280,7 +238,7 @@ namespace Tour
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(1347, 450);
+            this.btnExit.Location = new System.Drawing.Point(1347, 435);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(61, 23);
             this.btnExit.TabIndex = 25;
@@ -291,7 +249,7 @@ namespace Tour
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 37);
+            this.label1.Location = new System.Drawing.Point(6, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 26;
@@ -300,7 +258,7 @@ namespace Tour
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 63);
+            this.label2.Location = new System.Drawing.Point(6, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 27;
@@ -309,7 +267,7 @@ namespace Tour
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 90);
+            this.label3.Location = new System.Drawing.Point(6, 75);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 28;
@@ -327,7 +285,7 @@ namespace Tour
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 116);
+            this.label5.Location = new System.Drawing.Point(3, 96);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 13);
             this.label5.TabIndex = 30;
@@ -336,7 +294,7 @@ namespace Tour
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 142);
+            this.label6.Location = new System.Drawing.Point(6, 117);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 13);
             this.label6.TabIndex = 31;
@@ -353,6 +311,7 @@ namespace Tour
             this.TENKHACHHANG});
             this.dgvKhachHang.Location = new System.Drawing.Point(3, 3);
             this.dgvKhachHang.Name = "dgvKhachHang";
+            this.dgvKhachHang.RowHeadersWidth = 51;
             this.dgvKhachHang.Size = new System.Drawing.Size(418, 157);
             this.dgvKhachHang.TabIndex = 32;
             // 
@@ -360,6 +319,7 @@ namespace Tour
             // 
             this.IDKHACHHANG.DataPropertyName = "ID";
             this.IDKHACHHANG.HeaderText = "ID";
+            this.IDKHACHHANG.MinimumWidth = 6;
             this.IDKHACHHANG.Name = "IDKHACHHANG";
             this.IDKHACHHANG.Width = 70;
             // 
@@ -367,11 +327,13 @@ namespace Tour
             // 
             this.TENKHACHHANG.DataPropertyName = "TEN";
             this.TENKHACHHANG.HeaderText = "Tên khách hàng";
+            this.TENKHACHHANG.MinimumWidth = 6;
             this.TENKHACHHANG.Name = "TENKHACHHANG";
             this.TENKHACHHANG.Width = 300;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnNhiemVu);
             this.panel1.Controls.Add(this.tb_search);
             this.panel1.Controls.Add(this.dgvDoan);
             this.panel1.Controls.Add(this.rdIDSearch);
@@ -385,17 +347,27 @@ namespace Tour
             this.panel1.Size = new System.Drawing.Size(1405, 252);
             this.panel1.TabIndex = 33;
             // 
+            // btnNhiemVu
+            // 
+            this.btnNhiemVu.Location = new System.Drawing.Point(1286, 33);
+            this.btnNhiemVu.Name = "btnNhiemVu";
+            this.btnNhiemVu.Size = new System.Drawing.Size(105, 23);
+            this.btnNhiemVu.TabIndex = 33;
+            this.btnNhiemVu.Text = "Giao nhiệm vụ";
+            this.btnNhiemVu.UseVisualStyleBackColor = true;
+            this.btnNhiemVu.Click += new System.EventHandler(this.btnNhiemVu_Click);
+            // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.datetimeNgayKhoiHanh);
+            this.panel2.Controls.Add(this.txtbxIDDoan);
+            this.panel2.Controls.Add(this.txtbxTenDoan);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.txtbxChiPhi);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.dateTimePicker2);
+            this.panel2.Controls.Add(this.datetimeNgayKetThuc);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.cbbxTour);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
@@ -439,24 +411,18 @@ namespace Tour
             this.dgvKhachSan.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvKhachSan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKhachSan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.dgvKhachSan.Location = new System.Drawing.Point(3, 3);
             this.dgvKhachSan.Name = "dgvKhachSan";
+            this.dgvKhachSan.RowHeadersWidth = 51;
             this.dgvKhachSan.Size = new System.Drawing.Size(286, 157);
             this.dgvKhachSan.TabIndex = 32;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 5;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "TEN";
             this.dataGridViewTextBoxColumn2.HeaderText = "Tên khách sạn";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 230;
             // 
@@ -487,26 +453,75 @@ namespace Tour
             this.dgvPhuongTien.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvPhuongTien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPhuongTien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.dgvPhuongTien.Location = new System.Drawing.Point(3, 3);
             this.dgvPhuongTien.Name = "dgvPhuongTien";
+            this.dgvPhuongTien.RowHeadersWidth = 51;
             this.dgvPhuongTien.Size = new System.Drawing.Size(286, 157);
             this.dgvPhuongTien.TabIndex = 32;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn3.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 5;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "TEN";
             this.dataGridViewTextBoxColumn4.HeaderText = "Tên phương tiện";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.Width = 230;
+            // 
+            // data_ID
+            // 
+            this.data_ID.DataPropertyName = "ID";
+            this.data_ID.HeaderText = "ID";
+            this.data_ID.MinimumWidth = 6;
+            this.data_ID.Name = "data_ID";
+            this.data_ID.Width = 90;
+            // 
+            // TEN
+            // 
+            this.TEN.DataPropertyName = "TEN";
+            this.TEN.HeaderText = "Tên đoàn";
+            this.TEN.MinimumWidth = 6;
+            this.TEN.Name = "TEN";
+            this.TEN.Width = 200;
+            // 
+            // NGAYKHOIHANH
+            // 
+            this.NGAYKHOIHANH.DataPropertyName = "NGAYKHOIHANH";
+            this.NGAYKHOIHANH.HeaderText = "Ngày khởi hành";
+            this.NGAYKHOIHANH.MinimumWidth = 6;
+            this.NGAYKHOIHANH.Name = "NGAYKHOIHANH";
+            this.NGAYKHOIHANH.Width = 180;
+            // 
+            // NGAYKETTHUC
+            // 
+            this.NGAYKETTHUC.DataPropertyName = "NGAYKETTHUC";
+            this.NGAYKETTHUC.HeaderText = "Ngày kết thúc";
+            this.NGAYKETTHUC.MinimumWidth = 6;
+            this.NGAYKETTHUC.Name = "NGAYKETTHUC";
+            this.NGAYKETTHUC.Width = 180;
+            // 
+            // CHIPHI
+            // 
+            this.CHIPHI.DataPropertyName = "GIA_TOUR";
+            this.CHIPHI.HeaderText = "Chi phí";
+            this.CHIPHI.MinimumWidth = 6;
+            this.CHIPHI.Name = "CHIPHI";
+            this.CHIPHI.Width = 150;
+            // 
+            // TENTOUR
+            // 
+            this.TENTOUR.DataPropertyName = "TEN_TOUR";
+            this.TENTOUR.HeaderText = "Tour";
+            this.TENTOUR.MinimumWidth = 6;
+            this.TENTOUR.Name = "TENTOUR";
+            this.TENTOUR.Width = 180;
+            // 
+            // idtour
+            // 
+            this.idtour.DataPropertyName = "ID_TOUR";
+            this.idtour.HeaderText = "ID tour";
+            this.idtour.Name = "idtour";
+            this.idtour.Visible = false;
             // 
             // DoanDuLich
             // 
@@ -542,12 +557,12 @@ namespace Tour
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtbxIDDoan;
+        private System.Windows.Forms.TextBox txtbxTenDoan;
+        private System.Windows.Forms.TextBox txtbxChiPhi;
+        private System.Windows.Forms.DateTimePicker datetimeNgayKhoiHanh;
+        private System.Windows.Forms.DateTimePicker datetimeNgayKetThuc;
+        private System.Windows.Forms.ComboBox cbbxTour;
         private System.Windows.Forms.DataGridView dgvDoan;
         private System.Windows.Forms.TextBox tb_search;
         private System.Windows.Forms.RadioButton rdNameSearch;
@@ -572,19 +587,18 @@ namespace Tour
         private System.Windows.Forms.Button btnAddHotelForGroup;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDKHACHHANG;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENKHACHHANG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnAddVehicalForGroup;
         private System.Windows.Forms.DataGridView dgvPhuongTien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.Button btnNhiemVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn data_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYKHOIHANH;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYKETTHUC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CHITIETCHUONGTRINH;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHIPHI;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENTOUR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idtour;
     }
 }

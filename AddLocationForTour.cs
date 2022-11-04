@@ -46,6 +46,7 @@ namespace Tour
                           select dd)
                                      .ToList();
             var result = (from dd in DataProvider.Ins.DB.DIADIEMs
+                          where dd.IsDeleted==false
                            select dd)
                          .ToList();
             int i = 0;
@@ -82,14 +83,14 @@ namespace Tour
 
         private void button1_Click(object sender, EventArgs e)
         {
-            foreach(var tb_diadiem in DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.IDTOUR == ID))
+            foreach (var tb_diadiem in DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.IDTOUR == ID && x.IsDeleted == false))
             {
                 tb_diadiem.IsDeleted = true;
             }
             foreach (DIADIEM diadiem in ListDiaDiem)
             {
                 string random1 = Converter.Instance.RandomString2(5);
-                while (DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.ID == random1).FirstOrDefault() != null)
+                while (DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.ID == random1&& x.IsDeleted==false).FirstOrDefault() != null)
                 {
                     random1 = Converter.Instance.RandomString2(5);
                 }

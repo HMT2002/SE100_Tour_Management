@@ -107,9 +107,9 @@ namespace Tour
         {
             txtbxName.Text = "";
             rchtxtbxDetail.Text = "";
-            cbboxProvince.Text = "";
             cbbxVehical.Text = "";
             cbbxKind.Text = "";
+            txtbxGia.Text = "";
             cbbxKind.SelectedIndex = -1;
             cbbxVehical.SelectedIndex = -1;
             cbboxProvince.SelectedIndex = -1;
@@ -157,12 +157,13 @@ namespace Tour
                         DataProvider.Ins.DB.SaveChanges();
                     }
 
-                    var vehical = new PHUONGTIEN() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), PICBI = img_data,LOAI=cbbxKind.Text,IsDeleted=false };
+                    var vehical = new PHUONGTIEN() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), PICBI = img_data,LOAI=cbbxKind.Text,IsDeleted=false ,GIA=Convert.ToDecimal( txtbxGia.Text)};
 
                     DataProvider.Ins.DB.PHUONGTIENs.Add(vehical);
                     DataProvider.Ins.DB.SaveChanges();
-                    Clear();
                     showAll();
+                    Clear();
+
 
                 }
                 catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
@@ -196,7 +197,7 @@ namespace Tour
                 }
                 try
                 {
-                    PHUONGTIEN phuongtien = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault();
+                    var phuongtien = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault();
                     phuongtien.IsDeleted = true;
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
@@ -232,6 +233,7 @@ namespace Tour
                     phuongtien.IDTINH = cbboxProvince.SelectedIndex.ToString();
                     phuongtien.LOAI = cbbxKind.Text;
                     phuongtien.PICBI = img_data;
+                    phuongtien.GIA =Convert.ToDecimal( txtbxGia.Text);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
                     Clear();
@@ -269,13 +271,27 @@ namespace Tour
             if (index >= 0)
             {
                 PHUONGTIEN selected_item = (PHUONGTIEN)cbbxVehical.SelectedItem;
+                id = selected_item.ID;
+
                 PHUONGTIEN temp = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == selected_item.ID).FirstOrDefault();
                 pcbxVehical.Image = Converter.Instance.ByteArrayToImage(temp.PICBI);
-                id = temp.ID;
                 txtbxName.Text = temp.TEN;
                 cbbxKind.Text = temp.LOAI;
                 cbboxProvince.Text = DataProvider.Ins.DB.TINHs.Where(x => x.ID == temp.IDTINH).FirstOrDefault().TEN;
                 img_data = temp.PICBI;
+                txtbxGia.Text = temp.GIA.ToString();
+            }
+        }
+
+        private void txtbxGia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
             }
         }
     }

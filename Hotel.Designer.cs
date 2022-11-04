@@ -30,7 +30,6 @@ namespace Tour
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hotel));
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnPickPicture = new System.Windows.Forms.Button();
@@ -52,24 +51,14 @@ namespace Tour
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxLocation)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel2
-            // 
-            this.panel2.AutoSize = true;
-            this.panel2.Controls.Add(this.btnExit);
-            this.panel2.Location = new System.Drawing.Point(12, 357);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(776, 127);
-            this.panel2.TabIndex = 3;
-            // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(698, 101);
+            this.btnExit.Location = new System.Drawing.Point(710, 461);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 3;
@@ -84,12 +73,12 @@ namespace Tour
             this.panel3.Controls.Add(this.pcbxLocation);
             this.panel3.Location = new System.Drawing.Point(12, 7);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(453, 344);
+            this.panel3.Size = new System.Drawing.Size(394, 241);
             this.panel3.TabIndex = 5;
             // 
             // btnPickPicture
             // 
-            this.btnPickPicture.Location = new System.Drawing.Point(192, 318);
+            this.btnPickPicture.Location = new System.Drawing.Point(172, 213);
             this.btnPickPicture.Name = "btnPickPicture";
             this.btnPickPicture.Size = new System.Drawing.Size(75, 23);
             this.btnPickPicture.TabIndex = 4;
@@ -103,7 +92,7 @@ namespace Tour
             this.pcbxLocation.Image = global::Tour.Properties.Resources.ic_image_empty_128;
             this.pcbxLocation.Location = new System.Drawing.Point(3, 3);
             this.pcbxLocation.Name = "pcbxLocation";
-            this.pcbxLocation.Size = new System.Drawing.Size(447, 309);
+            this.pcbxLocation.Size = new System.Drawing.Size(385, 204);
             this.pcbxLocation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbxLocation.TabIndex = 0;
             this.pcbxLocation.TabStop = false;
@@ -127,9 +116,9 @@ namespace Tour
             this.panel1.Controls.Add(this.btnUpdate);
             this.panel1.Controls.Add(this.btnXoa);
             this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Location = new System.Drawing.Point(468, 7);
+            this.panel1.Location = new System.Drawing.Point(412, 7);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(320, 344);
+            this.panel1.Size = new System.Drawing.Size(376, 344);
             this.panel1.TabIndex = 4;
             // 
             // cbboxProvince
@@ -137,7 +126,7 @@ namespace Tour
             this.cbboxProvince.FormattingEnabled = true;
             this.cbboxProvince.Location = new System.Drawing.Point(85, 136);
             this.cbboxProvince.Name = "cbboxProvince";
-            this.cbboxProvince.Size = new System.Drawing.Size(232, 21);
+            this.cbboxProvince.Size = new System.Drawing.Size(288, 21);
             this.cbboxProvince.TabIndex = 18;
             // 
             // label5
@@ -162,7 +151,7 @@ namespace Tour
             // 
             this.txtbxSDT.Location = new System.Drawing.Point(85, 110);
             this.txtbxSDT.Name = "txtbxSDT";
-            this.txtbxSDT.Size = new System.Drawing.Size(232, 20);
+            this.txtbxSDT.Size = new System.Drawing.Size(288, 20);
             this.txtbxSDT.TabIndex = 15;
             // 
             // label1
@@ -178,8 +167,9 @@ namespace Tour
             // 
             this.txtbxGia.Location = new System.Drawing.Point(85, 84);
             this.txtbxGia.Name = "txtbxGia";
-            this.txtbxGia.Size = new System.Drawing.Size(232, 20);
+            this.txtbxGia.Size = new System.Drawing.Size(288, 20);
             this.txtbxGia.TabIndex = 13;
+            this.txtbxGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxGia_KeyPress);
             // 
             // label3
             // 
@@ -194,7 +184,7 @@ namespace Tour
             // 
             this.txtbxDiaChi.Location = new System.Drawing.Point(85, 58);
             this.txtbxDiaChi.Name = "txtbxDiaChi";
-            this.txtbxDiaChi.Size = new System.Drawing.Size(232, 20);
+            this.txtbxDiaChi.Size = new System.Drawing.Size(288, 20);
             this.txtbxDiaChi.TabIndex = 11;
             // 
             // label2
@@ -210,7 +200,7 @@ namespace Tour
             // 
             this.rchtxtbxDetail.Location = new System.Drawing.Point(3, 163);
             this.rchtxtbxDetail.Name = "rchtxtbxDetail";
-            this.rchtxtbxDetail.Size = new System.Drawing.Size(314, 149);
+            this.rchtxtbxDetail.Size = new System.Drawing.Size(370, 149);
             this.rchtxtbxDetail.TabIndex = 8;
             this.rchtxtbxDetail.Text = "";
             // 
@@ -218,21 +208,21 @@ namespace Tour
             // 
             this.txtbxName.Location = new System.Drawing.Point(85, 32);
             this.txtbxName.Name = "txtbxName";
-            this.txtbxName.Size = new System.Drawing.Size(232, 20);
+            this.txtbxName.Size = new System.Drawing.Size(288, 20);
             this.txtbxName.TabIndex = 6;
             // 
             // cbbxHotel
             // 
             this.cbbxHotel.FormattingEnabled = true;
-            this.cbbxHotel.Location = new System.Drawing.Point(3, 5);
+            this.cbbxHotel.Location = new System.Drawing.Point(85, 5);
             this.cbbxHotel.Name = "cbbxHotel";
-            this.cbbxHotel.Size = new System.Drawing.Size(233, 21);
+            this.cbbxHotel.Size = new System.Drawing.Size(207, 21);
             this.cbbxHotel.TabIndex = 4;
             this.cbbxHotel.SelectedValueChanged += new System.EventHandler(this.cbbxHotel_SelectedValueChanged);
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(242, 3);
+            this.btnClear.Location = new System.Drawing.Point(298, 5);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 3;
@@ -242,7 +232,7 @@ namespace Tour
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(200, 318);
+            this.btnUpdate.Location = new System.Drawing.Point(252, 318);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 2;
@@ -252,7 +242,7 @@ namespace Tour
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(119, 318);
+            this.btnXoa.Location = new System.Drawing.Point(171, 318);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 1;
@@ -262,7 +252,7 @@ namespace Tour
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(40, 318);
+            this.btnAdd.Location = new System.Drawing.Point(92, 318);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 0;
@@ -277,13 +267,12 @@ namespace Tour
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 496);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Hotel";
             this.Text = "Hotel";
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbxLocation)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -294,8 +283,6 @@ namespace Tour
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnPickPicture;
