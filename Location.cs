@@ -140,8 +140,9 @@ namespace Tour
             txtbxId.Text = "";
             txtbxName.Text = "";
             rchtxtbxDetail.Text = "";
-            cbboxProvince.Text = "";
-            cbbxLocation.SelectedIndex = -1;
+
+            cbboxProvince.SelectedIndex = cbbxLocation.SelectedIndex = -1;
+            txtbxGia.Text = "";
             pcbxLocation.Image = null;
         }
 
@@ -159,12 +160,12 @@ namespace Tour
                         DataProvider.Ins.DB.SaveChanges();
                     }
 
-                    var location = new DIADIEM() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), CHITIET = rchtxtbxDetail.Text, PICBI = img_data,IsDeleted=false };
+                    var location = new DIADIEM() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), CHITIET = rchtxtbxDetail.Text, PICBI = img_data,IsDeleted=false,GIA=Convert.ToDecimal(txtbxGia.Text) };
 
                     DataProvider.Ins.DB.DIADIEMs.Add(location);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
-
+                    Clear();
                 }
                 catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
                 {
@@ -202,13 +203,14 @@ namespace Tour
                     diadiem.IsDeleted = true;
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
+                    Clear();
+
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
-                Clear();
 
             }
         }
@@ -234,9 +236,10 @@ namespace Tour
                     diadiem.IDTINH = cbboxProvince.SelectedIndex.ToString();
                     diadiem.CHITIET = rchtxtbxDetail.Text;
                     diadiem.PICBI = img_data;
+                    diadiem.GIA= Convert.ToDecimal(txtbxGia.Text);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
-
+                    Clear();
                 }
                 catch (Exception ex)
                 {
@@ -262,6 +265,8 @@ namespace Tour
                 cbboxProvince.Text = DataProvider.Ins.DB.TINHs.Where(x => x.ID == temp.IDTINH).FirstOrDefault().TEN;
                 img_data = temp.PICBI;
                 rchtxtbxDetail.Text = temp.CHITIET;
+                txtbxGia.Text = temp.GIA.ToString();
+
             }
         }
 

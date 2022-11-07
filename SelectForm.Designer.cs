@@ -56,7 +56,6 @@ namespace Tour
             this.btnTour = new System.Windows.Forms.Button();
             this.btnManage = new System.Windows.Forms.Button();
             this.panel_logo = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.picBackground = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -64,13 +63,11 @@ namespace Tour
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel_slide.SuspendLayout();
             this.panel_Help.SuspendLayout();
             this.panel_staff.SuspendLayout();
             this.panelManage.SuspendLayout();
             this.panel_logo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).BeginInit();
             this.panel1.SuspendLayout();
@@ -81,7 +78,7 @@ namespace Tour
             // 
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(12, 141);
+            this.label1.Location = new System.Drawing.Point(1, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(243, 59);
             this.label1.TabIndex = 11;
@@ -114,7 +111,7 @@ namespace Tour
             this.button7.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.Red;
             this.button7.Image = global::Tour.Properties.Resources.doorexit;
-            this.button7.Location = new System.Drawing.Point(0, 1271);
+            this.button7.Location = new System.Drawing.Point(0, 1154);
             this.button7.Name = "button7";
             this.button7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button7.Size = new System.Drawing.Size(247, 54);
@@ -129,7 +126,7 @@ namespace Tour
             this.panel_Help.Controls.Add(this.button1);
             this.panel_Help.Controls.Add(this.button5);
             this.panel_Help.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_Help.Location = new System.Drawing.Point(0, 1153);
+            this.panel_Help.Location = new System.Drawing.Point(0, 1036);
             this.panel_Help.Name = "panel_Help";
             this.panel_Help.Size = new System.Drawing.Size(247, 118);
             this.panel_Help.TabIndex = 7;
@@ -180,7 +177,7 @@ namespace Tour
             this.button6.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.Black;
             this.button6.Image = global::Tour.Properties.Resources.help;
-            this.button6.Location = new System.Drawing.Point(0, 1104);
+            this.button6.Location = new System.Drawing.Point(0, 987);
             this.button6.Name = "button6";
             this.button6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button6.Size = new System.Drawing.Size(247, 49);
@@ -195,7 +192,7 @@ namespace Tour
             this.panel_staff.Controls.Add(this.button2);
             this.panel_staff.Controls.Add(this.button3);
             this.panel_staff.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_staff.Location = new System.Drawing.Point(0, 986);
+            this.panel_staff.Location = new System.Drawing.Point(0, 869);
             this.panel_staff.Name = "panel_staff";
             this.panel_staff.Size = new System.Drawing.Size(247, 118);
             this.panel_staff.TabIndex = 5;
@@ -246,7 +243,7 @@ namespace Tour
             this.button4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.Black;
             this.button4.Image = global::Tour.Properties.Resources.staff;
-            this.button4.Location = new System.Drawing.Point(0, 925);
+            this.button4.Location = new System.Drawing.Point(0, 808);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button4.Size = new System.Drawing.Size(247, 61);
@@ -270,7 +267,7 @@ namespace Tour
             this.panelManage.Controls.Add(this.btnTicket);
             this.panelManage.Controls.Add(this.btnTour);
             this.panelManage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelManage.Location = new System.Drawing.Point(0, 255);
+            this.panelManage.Location = new System.Drawing.Point(0, 138);
             this.panelManage.Name = "panelManage";
             this.panelManage.Size = new System.Drawing.Size(247, 670);
             this.panelManage.TabIndex = 3;
@@ -493,7 +490,7 @@ namespace Tour
             this.btnManage.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManage.ForeColor = System.Drawing.Color.Black;
             this.btnManage.Image = global::Tour.Properties.Resources.manageicon1;
-            this.btnManage.Location = new System.Drawing.Point(0, 206);
+            this.btnManage.Location = new System.Drawing.Point(0, 89);
             this.btnManage.Name = "btnManage";
             this.btnManage.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnManage.Size = new System.Drawing.Size(247, 49);
@@ -507,22 +504,11 @@ namespace Tour
             // 
             this.panel_logo.BackColor = System.Drawing.Color.LightCoral;
             this.panel_logo.Controls.Add(this.label1);
-            this.panel_logo.Controls.Add(this.pictureBox2);
             this.panel_logo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_logo.Location = new System.Drawing.Point(0, 0);
             this.panel_logo.Name = "panel_logo";
-            this.panel_logo.Size = new System.Drawing.Size(247, 206);
+            this.panel_logo.Size = new System.Drawing.Size(247, 89);
             this.panel_logo.TabIndex = 1;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Tour.Properties.Resources.ez1;
-            this.pictureBox2.Location = new System.Drawing.Point(78, 29);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(87, 62);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
             // 
             // panel4
             // 
@@ -546,7 +532,6 @@ namespace Tour
             // 
             // timer1
             // 
-            this.timer1.Enabled = true;
             this.timer1.Interval = 1500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
@@ -557,7 +542,6 @@ namespace Tour
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(264, 0);
             this.panel1.Name = "panel1";
@@ -600,18 +584,6 @@ namespace Tour
             this.label3.Text = "X";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label2.Location = new System.Drawing.Point(250, 1);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(575, 91);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "EZ - TRAVEL";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // SelectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -633,7 +605,6 @@ namespace Tour
             this.panel_staff.ResumeLayout(false);
             this.panelManage.ResumeLayout(false);
             this.panel_logo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -663,9 +634,7 @@ namespace Tour
         private System.Windows.Forms.Button btnRoute;
         private System.Windows.Forms.Button btnTicket;
         private System.Windows.Forms.Button btnTour;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox3;

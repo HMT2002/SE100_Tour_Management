@@ -64,37 +64,53 @@ namespace Tour
         }
         public void loginbtn_Click(object sender, EventArgs e)
         {
-            string ensryptedpass = Converter.Instance.MD5Encrypt(Converter.Instance.Base64Encode(passwordtxb.Text));
-            if (cbghinho.Checked == true)
+            if (cbGuest.Checked == true)
             {
-                Properties.Settings.Default.Email = emailtxb.Text;
-                Properties.Settings.Default.Password = passwordtxb.Text;
-                Properties.Settings.Default.Save();
-            }
-            if (cbghinho.Checked == false)
-            {
-                Properties.Settings.Default.Email = "";
-                Properties.Settings.Default.Password = "";
-                Properties.Settings.Default.Save();
-            }
-
-
-            if (DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted==false)).SingleOrDefault() != null)
-            {
-                Properties.Settings.Default.UserName = emailtxb.Text;
-                Properties.Settings.Default.Password = passwordtxb.Text;
-                Properties.Settings.Default.CurUserId = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().IDNHANVIEN;
-
-                Properties.Settings.Default.Save();
-                SelectForm menuF = new SelectForm();
+                string ticket_id = emailtxb.Text;
+                if(DataProvider.Ins.DB.VEs.Where(x => (x.ID == ticket_id && x.IsDeleted == false)).SingleOrDefault() == null)
+                {
+                    MessageBox.Show("Số vé không tồn tại!");
+                }
+                SearchTicket f = new SearchTicket(ticket_id);
                 this.Hide();
-                menuF.ShowDialog();
+                f.ShowDialog();
                 this.Show();
             }
             else
             {
-                MessageBox.Show("Wrong email or password!!!!");
+                string ensryptedpass = Converter.Instance.MD5Encrypt(Converter.Instance.Base64Encode(passwordtxb.Text));
+                if (cbghinho.Checked == true)
+                {
+                    Properties.Settings.Default.Email = emailtxb.Text;
+                    Properties.Settings.Default.Password = passwordtxb.Text;
+                    Properties.Settings.Default.Save();
+                }
+                if (cbghinho.Checked == false)
+                {
+                    Properties.Settings.Default.Email = "";
+                    Properties.Settings.Default.Password = "";
+                    Properties.Settings.Default.Save();
+                }
+
+
+                if (DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault() != null)
+                {
+                    Properties.Settings.Default.UserName = emailtxb.Text;
+                    Properties.Settings.Default.Password = passwordtxb.Text;
+                    Properties.Settings.Default.CurUserId = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().IDNHANVIEN;
+
+                    Properties.Settings.Default.Save();
+                    SelectForm menuF = new SelectForm();
+                    this.Hide();
+                    menuF.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Wrong email or password!!!!");
+                }
             }
+
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -144,5 +160,31 @@ namespace Tour
             this.Show();
         }
         public string password, email;
+
+        private void cbGuest_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbGuest.Checked == true)
+            {
+                emailtxb.Clear();
+                label2.Text = "Search Ticket";
+                loginbtn.Text = "SEARCH";
+                cbghinho.Visible = false;
+                forgetlb.Visible = false;
+                registaccountlb.Visible = false;
+                passwordtxb.Visible = false;
+            }
+            else
+            {
+                LoginForm_Load(sender, e);
+                label2.Text = "Login";
+                loginbtn.Text = "LOGIN";
+                cbghinho.Visible = true;
+                forgetlb.Visible = true;
+                registaccountlb.Visible = true;
+                passwordtxb.Visible = true;
+
+
+            }
+        }
     }
 }

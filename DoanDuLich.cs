@@ -38,19 +38,19 @@ namespace Tour
 
             dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
                                   join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-                                  join chiphi in DataProvider.Ins.DB.CHIPHIs on doan.IDCHIPHI equals chiphi.ID
                                   where doan.IsDeleted == false && tour.IsDeleted == false
+
                                   select new {
                                       ID = doan.ID,
                                       TEN = doan.TEN,
                                       NGAYKHOIHANH = doan.NGAYKHOIHANH,
                                       NGAYKETTHUC = doan.NGAYKETTHUC,
                                       CHITIETCHUONGTRINH = doan.CHITIETCHUONGTRINH,
-                                      TONG = chiphi.TONG,
+                                      GIA_TOUR =tour.GIA,
                                       TEN_TOUR = tour.TEN,
                                       ID_TOUR = tour.ID,
                                   }).ToList();
-            cbbxTour.DataSource = DataProvider.Ins.DB.TOURs.Select(t => t).ToList();
+            cbbxTour.DataSource = DataProvider.Ins.DB.TOURs.Where(t => t.IsDeleted == false).Select(t => t).ToList();
             cbbxTour.DisplayMember = "TEN";
 
         }
@@ -72,10 +72,13 @@ namespace Tour
 
                 txtbxTenDoan.Text= dgvDoan.Rows[index].Cells["TEN"].Value.ToString();
 
-                decimal tong_gia_tour = Convert.ToDecimal(DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.IDTOUR == id_tour && x.IsDeleted == false).Select(x => x.DIADIEM.GIA).Sum() * thoi_han);
+
+
+                decimal tong_gia_tour = Convert.ToDecimal(DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.IDTOUR == id_tour && x.IsDeleted == false).Select(x => x.DIADIEM.GIA).Sum());
                 decimal tong_gia_khach_san= Convert.ToDecimal(DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.IDDOAN == id && x.IsDeleted == false).Select(x => x.KHACHSAN.GIA).Sum() * thoi_han);
                 decimal tong_gia_phuong_tien = Convert.ToDecimal(DataProvider.Ins.DB.tb_PHUONGTIEN.Where(x => x.IDDOAN == id && x.IsDeleted == false).Select(x => x.PHUONGTIEN.GIA).Sum()*thoi_han);
-                txtbxChiPhi.Text =(tong_gia_khach_san + tong_gia_phuong_tien).ToString();
+                txtbxChiPhi.Text =(tong_gia_khach_san + tong_gia_phuong_tien + tong_gia_tour).ToString();
+
                 cbbxTour.Text = dgvDoan.Rows[index].Cells["TENTOUR"].Value.ToString();
                 dgvKhachHang.DataSource= (from ve in DataProvider.Ins.DB.VEs
                                            where ve.IDDOAN == id && ve.IsDeleted==false
@@ -129,8 +132,10 @@ namespace Tour
                     {
                         dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
                                                     join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-                                                    join chiphi in DataProvider.Ins.DB.CHIPHIs on doan.IDCHIPHI equals chiphi.ID
-                                                    where doan.ID.Contains(value) && doan.IsDeleted==false
+                                              join tb_diadiem in DataProvider.Ins.DB.tb_DIADIEM_DULICH on tour.ID equals tb_diadiem.IDTOUR
+                                              join tb_phuongtien in DataProvider.Ins.DB.tb_PHUONGTIEN on doan.ID equals tb_phuongtien.IDDOAN
+                                              join tb_khachsan in DataProvider.Ins.DB.tb_KHACHSAN on doan.ID equals tb_khachsan.IDDOAN
+                                              where doan.ID.Contains(value) && doan.IsDeleted==false
                                                     select new
                                                     {
                                                         ID = doan.ID,
@@ -138,17 +143,20 @@ namespace Tour
                                                         NGAYKHOIHANH = doan.NGAYKHOIHANH,
                                                         NGAYKETTHUC = doan.NGAYKETTHUC,
                                                         CHITIETCHUONGTRINH = tour.DACDIEM,
-                                                        TONG = chiphi.TONG,
+                                                        GIA_TOUR = tour.GIA,
                                                         TEN_TOUR = tour.TEN
                                                     }).ToList();
+
 
                     }
                     else if (rdNameSearch.Checked)
                     {
                         dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
                                                     join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-                                                    join chiphi in DataProvider.Ins.DB.CHIPHIs on doan.IDCHIPHI equals chiphi.ID
-                                                    where doan.TEN.Contains(value) &&doan.IsDeleted==false
+                                              join tb_diadiem in DataProvider.Ins.DB.tb_DIADIEM_DULICH on tour.ID equals tb_diadiem.IDTOUR
+                                              join tb_phuongtien in DataProvider.Ins.DB.tb_PHUONGTIEN on doan.ID equals tb_phuongtien.IDDOAN
+                                              join tb_khachsan in DataProvider.Ins.DB.tb_KHACHSAN on doan.ID equals tb_khachsan.IDDOAN
+                                              where doan.TEN.Contains(value) &&doan.IsDeleted==false
                                                     select new
                                                     {
                                                         ID = doan.ID,
@@ -156,7 +164,7 @@ namespace Tour
                                                         NGAYKHOIHANH = doan.NGAYKHOIHANH,
                                                         NGAYKETTHUC = doan.NGAYKETTHUC,
                                                         CHITIETCHUONGTRINH = tour.DACDIEM,
-                                                        TONG = chiphi.TONG,
+                                                        GIA_TOUR = tour.GIA,
                                                         TEN_TOUR = tour.TEN
                                                     }).ToList();
                     }
@@ -327,8 +335,9 @@ namespace Tour
             AddHotelForGroup h = new AddHotelForGroup(id);
             this.Hide();
             h.ShowDialog();
-            this.Show();
             Clear();
+
+            this.Show();
 
         }
 
@@ -342,8 +351,9 @@ namespace Tour
             AddVehicalForGroup h = new AddVehicalForGroup(id);
             this.Hide();
             h.ShowDialog();
-            this.Show();
             Clear();
+
+            this.Show();
 
 
         }

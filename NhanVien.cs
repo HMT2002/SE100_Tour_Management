@@ -78,7 +78,7 @@ namespace Tour
         }
         private void Clear()
         {
-            txtbxName.Text = txtbxSDT.Text = txtbxMail.Text = "";
+            txtbxName.Text = txtbxSDT.Text = txtbxMail.Text =txtbxID.Text= "";
             img_data = null;
             pcbxAvatar.Image = null;
         }
