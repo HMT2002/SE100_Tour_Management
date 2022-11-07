@@ -81,6 +81,7 @@ namespace Tour
             this.Close();
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
             foreach (var tb_diadiem in DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.IDTOUR == ID && x.IsDeleted == false))
