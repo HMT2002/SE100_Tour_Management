@@ -48,6 +48,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>Guna_UI_Framework_Ultimate_2.0.0.1_Downloadly.ir\Guna UI Framework Ultimate 2.0.0.1\Guna UI Framework Ultimate v2.0.0.1 Lib-Master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
+    </Reference>
     <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
       <HintPath>packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
     </Reference>
@@ -63,6 +66,7 @@
     <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Extensions.Logging.Abstractions.1.0.0\lib\netstandard1.1\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MimeKit, Version=3.4.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
       <HintPath>packages\MimeKit.3.4.1\lib\net47\MimeKit.dll</HintPath>
     </Reference>
