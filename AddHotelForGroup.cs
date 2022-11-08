@@ -79,28 +79,7 @@ namespace Tour
 
         private void button1_Click(object sender, EventArgs e)
         {
-            foreach(var tb_ks in DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.IDDOAN == ID))
-            {
-                tb_ks.IsDeleted = true;
-            }
 
-            foreach (KHACHSAN khachsan in ListKhachSan)
-            {
-                string random1 = Converter.Instance.RandomString2(5);
-                while (DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.ID == random1).FirstOrDefault() != null)
-                {
-                    random1 = Converter.Instance.RandomString2(5);
-                }
-                tong_GIA +=(decimal) khachsan.GIA;
-
-                DataProvider.Ins.DB.tb_KHACHSAN.Add(new tb_KHACHSAN() { ID = random1, IDKHACHSAN = khachsan.ID, IDDOAN = ID,IsDeleted=false });
-
-
-            }
-
-            DataProvider.Ins.DB.SaveChanges();
-
-            this.Close();
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -137,6 +116,37 @@ namespace Tour
             {
 
             }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            foreach(var tb_ks in DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.IDDOAN == ID))
+            {
+                tb_ks.IsDeleted = true;
+            }
+
+            foreach (KHACHSAN khachsan in ListKhachSan)
+            {
+                string random1 = Converter.Instance.RandomString2(5);
+                while (DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.ID == random1).FirstOrDefault() != null)
+                {
+                    random1 = Converter.Instance.RandomString2(5);
+                }
+                tong_GIA +=(decimal) khachsan.GIA;
+
+                DataProvider.Ins.DB.tb_KHACHSAN.Add(new tb_KHACHSAN() { ID = random1, IDKHACHSAN = khachsan.ID, IDDOAN = ID,IsDeleted=false });
+
+
+            }
+
+            DataProvider.Ins.DB.SaveChanges();
+
+            this.Close();
+        }
+
+        private void btngunaExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

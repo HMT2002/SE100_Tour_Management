@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddVehicalForGroup));
             this.listView2 = new System.Windows.Forms.ListView();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
+            this.btngunaExit = new Guna.UI2.WinForms.Guna2Button();
+            this.btngunaUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // listView2
@@ -48,43 +48,44 @@
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(467, 10);
+            this.listView1.Location = new System.Drawing.Point(12, 10);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(326, 240);
+            this.listView1.Size = new System.Drawing.Size(781, 240);
             this.listView1.TabIndex = 10;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
-            // button1
+            // btngunaExit
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::Tour.Properties.Resources.Btn3;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(582, 400);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 38);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Update";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btngunaExit.BackColor = System.Drawing.Color.Transparent;
+            this.btngunaExit.CheckedState.Parent = this.btngunaExit;
+            this.btngunaExit.CustomImages.Parent = this.btngunaExit;
+            this.btngunaExit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btngunaExit.ForeColor = System.Drawing.Color.White;
+            this.btngunaExit.HoverState.Parent = this.btngunaExit;
+            this.btngunaExit.Location = new System.Drawing.Point(624, 393);
+            this.btngunaExit.Name = "btngunaExit";
+            this.btngunaExit.ShadowDecoration.Parent = this.btngunaExit;
+            this.btngunaExit.Size = new System.Drawing.Size(164, 45);
+            this.btngunaExit.TabIndex = 14;
+            this.btngunaExit.Text = "Cancel";
+            this.btngunaExit.UseTransparentBackground = true;
+            this.btngunaExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnExit
+            // btngunaUpdate
             // 
-            this.btnExit.BackColor = System.Drawing.Color.Transparent;
-            this.btnExit.BackgroundImage = global::Tour.Properties.Resources.Btn3;
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Location = new System.Drawing.Point(688, 400);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(100, 38);
-            this.btnExit.TabIndex = 3;
-            this.btnExit.Text = "Cancel";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btngunaUpdate.CheckedState.Parent = this.btngunaUpdate;
+            this.btngunaUpdate.CustomImages.Parent = this.btngunaUpdate;
+            this.btngunaUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btngunaUpdate.ForeColor = System.Drawing.Color.White;
+            this.btngunaUpdate.HoverState.Parent = this.btngunaUpdate;
+            this.btngunaUpdate.Location = new System.Drawing.Point(438, 393);
+            this.btngunaUpdate.Name = "btngunaUpdate";
+            this.btngunaUpdate.ShadowDecoration.Parent = this.btngunaUpdate;
+            this.btngunaUpdate.Size = new System.Drawing.Size(180, 45);
+            this.btngunaUpdate.TabIndex = 13;
+            this.btngunaUpdate.Text = "Update";
+            this.btngunaUpdate.Click += new System.EventHandler(this.button1_Click);
             // 
             // AddVehicalForGroup
             // 
@@ -93,9 +94,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btngunaExit);
+            this.Controls.Add(this.btngunaUpdate);
             this.Controls.Add(this.listView2);
-            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.listView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddVehicalForGroup";
@@ -109,7 +110,7 @@
 
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnExit;
+        private Guna.UI2.WinForms.Guna2Button btngunaExit;
+        private Guna.UI2.WinForms.Guna2Button btngunaUpdate;
     }
 }

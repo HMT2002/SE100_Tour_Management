@@ -99,7 +99,7 @@ namespace Tour
             tbDiscount.Clear();
             tbTotal.Clear();
             cbDes.Text = "None";
-            RdMale.Checked = true;
+            RdFmale.Checked = true;
             rdDomestic.Checked = true;
             rtbreservation.Clear();
             rtbTicket.Clear();
@@ -114,7 +114,7 @@ namespace Tour
         {
 
 
-            if (tbName.Text.Trim().CompareTo(string.Empty) == 0 || tbSurname.Text.Trim().CompareTo(string.Empty) == 0 || tbAddress.Text.Trim().CompareTo(string.Empty) == 0 || tbCMND.Text.Trim().CompareTo(string.Empty) == 0||cbGroup.SelectedValue==null||cbDes.SelectedValue==null)
+            if (tbName.Text.Trim().CompareTo(string.Empty) == 0 || tbAddress.Text.Trim().CompareTo(string.Empty) == 0 || tbCMND.Text.Trim().CompareTo(string.Empty) == 0||cbGroup.SelectedValue==null||cbDes.SelectedValue==null)
             {
                 MessageBox.Show("Please fill in all the information", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
@@ -145,7 +145,7 @@ namespace Tour
         private void btCreate_Click(object sender, EventArgs e)
         {
 
-            if (RdMale.Checked == true)
+            if (RdFmale.Checked == true)
             {
                 gender = "Nam";
             }
@@ -161,7 +161,7 @@ namespace Tour
                     var khachhang = new KHACHHANG()
                     {
                         ID = idkhach,
-                        TENKH = tbSurname.Text + " " + tbName.Text,
+                        TENKH = tbName.Text,
                         CMND = tbCMND.Text,
                         GIOITINH = gender,
                         DIACHI = tbAddress.Text,
@@ -266,7 +266,7 @@ namespace Tour
         }
         void Clear()
         {
-            tbName.Text = tbSurname.Text = tbAddress.Text = tbTelephone.Text = tbEmail.Text = tbCMND.Text = "";
+            tbName.Text = tbAddress.Text = tbTelephone.Text = tbEmail.Text = tbCMND.Text = "";
         }
         private void tbTelephone_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -347,18 +347,11 @@ namespace Tour
 
         private void tbName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
             {
                 e.Handled = true;
             }
         }
 
-        private void tbSurname_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
     }
 }

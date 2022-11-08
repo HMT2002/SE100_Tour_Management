@@ -83,24 +83,7 @@ namespace Tour
 
         private void button1_Click(object sender, EventArgs e)
         {
-            foreach (var tb_diadiem in DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.IDTOUR == ID && x.IsDeleted == false))
-            {
-                tb_diadiem.IsDeleted = true;
-            }
-            foreach (DIADIEM diadiem in ListDiaDiem)
-            {
-                string random1 = Converter.Instance.RandomString2(5);
-                while (DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.ID == random1&& x.IsDeleted==false).FirstOrDefault() != null)
-                {
-                    random1 = Converter.Instance.RandomString2(5);
-                }
 
-                DataProvider.Ins.DB.tb_DIADIEM_DULICH.Add(new tb_DIADIEM_DULICH() { ID = random1, IDDIADIEM = diadiem.ID, IDTOUR = ID,IsDeleted=false });
-
-            }
-            DataProvider.Ins.DB.SaveChanges();
-
-            this.Close();
 
         }
 
@@ -138,6 +121,33 @@ namespace Tour
             {
 
             }
+        }
+
+        private void btngunaUpdate_Click(object sender, EventArgs e)
+        {
+            foreach (var tb_diadiem in DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.IDTOUR == ID && x.IsDeleted == false))
+            {
+                tb_diadiem.IsDeleted = true;
+            }
+            foreach (DIADIEM diadiem in ListDiaDiem)
+            {
+                string random1 = Converter.Instance.RandomString2(5);
+                while (DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.ID == random1&& x.IsDeleted==false).FirstOrDefault() != null)
+                {
+                    random1 = Converter.Instance.RandomString2(5);
+                }
+
+                DataProvider.Ins.DB.tb_DIADIEM_DULICH.Add(new tb_DIADIEM_DULICH() { ID = random1, IDDIADIEM = diadiem.ID, IDTOUR = ID,IsDeleted=false });
+
+            }
+            DataProvider.Ins.DB.SaveChanges();
+
+            this.Close();
+        }
+
+        private void btngunaExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
