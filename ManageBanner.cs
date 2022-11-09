@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tour.Model;
+using Tour.Utils;
 
 namespace Tour
 {
@@ -59,6 +60,23 @@ namespace Tour
         {
             ShowAll();
             Clear();
+        }
+
+
+        Image img;
+        Byte[] img_data;
+        private void pcbxBanner_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Chon anh(*.jpg; *.png; *.gif) | *.jpg; *.png; *.gif";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                Image image = Image.FromFile(dialog.FileName);
+                img = image;
+                img_data = Converter.Instance.ImageToByte(image);
+                pcbxBanner.Image = image;
+
+            }
         }
     }
 }

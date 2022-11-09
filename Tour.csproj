@@ -409,6 +409,9 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoyalCustomer.resx">
+      <DependentUpon>LoyalCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManageBanner.resx">
       <DependentUpon>ManageBanner.cs</DependentUpon>
     </EmbeddedResource>
