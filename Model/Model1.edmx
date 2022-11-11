@@ -12,8 +12,8 @@
           <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
           <Property Name="ACC" Type="nvarchar" MaxLength="50" />
           <Property Name="PASS" Type="nvarchar(max)" />
-          <Property Name="IDNHANVIEN" Type="char" MaxLength="7" />
           <Property Name="IsDeleted" Type="bit" />
+          <Property Name="ACCROLE" Type="nvarchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="CHIPHI">
           <Key>
@@ -63,6 +63,9 @@
           <Property Name="SDT" Type="nvarchar" MaxLength="15" />
           <Property Name="PICBI" Type="varbinary(max)" />
           <Property Name="IsDeleted" Type="bit" />
+          <Property Name="IsVIP" Type="bit" />
+          <Property Name="SPENDING" Type="money" />
+          <Property Name="PRI" Type="nvarchar" MaxLength="40" />
         </EntityType>
         <EntityType Name="KHACHSAN">
           <Key>
@@ -276,18 +279,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="LK_NHANVIEN_ACCOUNT">
-          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
-          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NHANVIEN">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="ACCOUNT">
-              <PropertyRef Name="IDNHANVIEN" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="LK_NHANVIEN_NHIEMVU">
           <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
           <End Role="tb_NHIEMVU" Type="Self.tb_NHIEMVU" Multiplicity="*" />
@@ -445,10 +436,6 @@
             <End Role="TINH" EntitySet="TINH" />
             <End Role="KHACHSAN" EntitySet="KHACHSAN" />
           </AssociationSet>
-          <AssociationSet Name="LK_NHANVIEN_ACCOUNT" Association="Self.LK_NHANVIEN_ACCOUNT">
-            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
-            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
-          </AssociationSet>
           <AssociationSet Name="LK_NHANVIEN_NHIEMVU" Association="Self.LK_NHANVIEN_NHIEMVU">
             <End Role="NHANVIEN" EntitySet="NHANVIEN" />
             <End Role="tb_NHIEMVU" EntitySet="tb_NHIEMVU" />
@@ -498,9 +485,8 @@
           <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="ACC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PASS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="IDNHANVIEN" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
           <Property Name="IsDeleted" Type="Boolean" />
-          <NavigationProperty Name="NHANVIEN" Relationship="Self.LK_NHANVIEN_ACCOUNT" FromRole="ACCOUNT" ToRole="NHANVIEN" />
+          <Property Name="ACCROLE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="CHIPHI">
           <Key>
@@ -560,6 +546,9 @@
           <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="PICBI" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="IsVIP" Type="Boolean" />
+          <Property Name="SPENDING" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PRI" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="VEs" Relationship="Self.LK_VE_KHACH" FromRole="KHACHHANG" ToRole="VE" />
         </EntityType>
         <EntityType Name="KHACHSAN">
@@ -590,7 +579,6 @@
           <Property Name="IsDeleted" Type="Boolean" />
           <Property Name="isAvailable" Type="Boolean" />
           <Property Name="SLDI" Type="Int32" />
-          <NavigationProperty Name="ACCOUNTs" Relationship="Self.LK_NHANVIEN_ACCOUNT" FromRole="NHANVIEN" ToRole="ACCOUNT" />
           <NavigationProperty Name="tb_NHIEMVU" Relationship="Self.LK_NHANVIEN_NHIEMVU" FromRole="NHANVIEN" ToRole="tb_NHIEMVU" />
           <NavigationProperty Name="tb_PHUTRACH" Relationship="Self.LK_NHANVIEN_PHUTRACH" FromRole="NHANVIEN" ToRole="tb_PHUTRACH" />
         </EntityType>
@@ -702,18 +690,6 @@
           <NavigationProperty Name="DOAN" Relationship="Self.LK_VE_DOAN" FromRole="VE" ToRole="DOAN" />
           <NavigationProperty Name="KHACHHANG" Relationship="Self.LK_VE_KHACH" FromRole="VE" ToRole="KHACHHANG" />
         </EntityType>
-        <Association Name="LK_NHANVIEN_ACCOUNT">
-          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
-          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NHANVIEN">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="ACCOUNT">
-              <PropertyRef Name="IDNHANVIEN" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="LK_CHIPHI_DOAN">
           <End Role="CHIPHI" Type="Self.CHIPHI" Multiplicity="0..1" />
           <End Role="DOAN" Type="Self.DOAN" Multiplicity="*" />
@@ -935,10 +911,6 @@
           <EntitySet Name="TINHs" EntityType="Self.TINH" />
           <EntitySet Name="TOURs" EntityType="Self.TOUR" />
           <EntitySet Name="VEs" EntityType="Self.VE" />
-          <AssociationSet Name="LK_NHANVIEN_ACCOUNT" Association="Self.LK_NHANVIEN_ACCOUNT">
-            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
-            <End Role="ACCOUNT" EntitySet="ACCOUNTs" />
-          </AssociationSet>
           <AssociationSet Name="LK_CHIPHI_DOAN" Association="Self.LK_CHIPHI_DOAN">
             <End Role="CHIPHI" EntitySet="CHIPHIs" />
             <End Role="DOAN" EntitySet="DOANs" />
@@ -1020,8 +992,8 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ACC" ColumnName="ACC" />
                 <ScalarProperty Name="PASS" ColumnName="PASS" />
-                <ScalarProperty Name="IDNHANVIEN" ColumnName="IDNHANVIEN" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="ACCROLE" ColumnName="ACCROLE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1075,6 +1047,9 @@
                 <ScalarProperty Name="SDT" ColumnName="SDT" />
                 <ScalarProperty Name="PICBI" ColumnName="PICBI" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsVIP" ColumnName="IsVIP" />
+                <ScalarProperty Name="SPENDING" ColumnName="SPENDING" />
+                <ScalarProperty Name="PRI" ColumnName="PRI" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
