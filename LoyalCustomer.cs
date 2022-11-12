@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tour.Model;
 using Tour.Utils;
 
 namespace Tour
@@ -18,14 +19,55 @@ namespace Tour
             InitializeComponent();
         }
 
+        public bool ChechData()
+        {
+            if(txtbxPassword.Text.Trim().CompareTo(string.Empty)==0|| txtbxRePassword.Text.Trim().CompareTo(string.Empty) == 0 || tbAddress.Text.Trim().CompareTo(string.Empty) == 0 || tbCMND.Text.Trim().CompareTo(string.Empty) == 0 || tbEmail.Text.Trim().CompareTo(string.Empty) == 0 || tbTelephone.Text.Trim().CompareTo(string.Empty) == 0 || tbName.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                return false;
+            }
+            if (txtbxPassword.Text.Trim().CompareTo(txtbxRePassword.Text.Trim()) == 0)
+            {
+                return false;
+            }
+            return true;
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (ChechData())
+            {
+                string gender = "Male";
+                if (RdFmale.Checked == true)
+                {
+                    gender = "Female";
+                }
+                string randomcode = Converter.Instance.RandomString2(5);
+                var kh = new KHACHHANG() { ID = randomcode, TENKH = tbName.Text, SDT = tbTelephone.Text, CMND = tbCMND.Text, DIACHI = tbAddress.Text, PICBI = img_data, GIOITINH = gender, IsDeleted = false, IsVIP = true, SPENDING = 0, PRI = "BRONZE" };
+                var account = new ACCOUNT() { ACC = tbEmail.Text, PASS = Converter.Instance.EncryptPassword((txtbxPassword.Text)), ID = randomcode, IsDeleted = false,ACCROLE="Customer" };
+                DataProvider.Ins.DB.ACCOUNTs.Add(account);
+                DataProvider.Ins.DB.KHACHHANGs.Add(kh);
 
+                DataProvider.Ins.DB.SaveChanges();
+                MessageBox.Show("SignUp success!!!");
+                Clear();
+            }
+        }
+
+        private void Clear()
+        {
+            tbAddress.Text = "";
+            tbCMND.Text = "";
+            tbEmail.Text = "";
+            tbName.Text = "";
+            tbTelephone.Text = "";
+            RdFmale.Checked = true;
+            txtbxPassword.Text = "";
+            txtbxRePassword.Text = "";
         }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-
+            Clear();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -47,6 +89,30 @@ namespace Tour
                 img_data = Converter.Instance.ImageToByte(image);
                 pcbxAvtatar.Image = image;
 
+            }
+        }
+
+        private void tbTelephone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
             }
         }
     }

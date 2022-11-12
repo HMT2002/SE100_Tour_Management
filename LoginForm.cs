@@ -78,7 +78,7 @@ namespace Tour
             }
             else
             {
-                string ensryptedpass = Converter.Instance.MD5Encrypt(Converter.Instance.Base64Encode(passwordtxb.Text));
+                string ensryptedpass = Converter.Instance.EncryptPassword( (passwordtxb.Text));
                 if (cbghinho.Checked == true)
                 {
                     Properties.Settings.Default.Email = emailtxb.Text;
@@ -97,7 +97,7 @@ namespace Tour
                 {
                     Properties.Settings.Default.UserName = emailtxb.Text;
                     Properties.Settings.Default.Password = passwordtxb.Text;
-                    Properties.Settings.Default.CurUserId = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().IDNHANVIEN;
+                    Properties.Settings.Default.CurUserId = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().ACC;
 
                     Properties.Settings.Default.Save();
                     SelectForm menuF = new SelectForm();

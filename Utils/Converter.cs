@@ -124,6 +124,18 @@ namespace Tour.Utils
             }
         }
 
+        public string EncryptPassword(string password)
+        {
+            string encrypt= MD5Encrypt(Base64Encode(password));
+
+            return encrypt;
+        }
+
+        public string DecryptEncrypt(string encrypt)
+        {
+            return Base64Decode(MD5Decrypt(encrypt));
+        }
+
         public string MD5Decrypt(string cipher)
         {
             using (var md5 = new MD5CryptoServiceProvider())

@@ -56,6 +56,12 @@
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnNew = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.txtbxRePassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.txtbxPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblNotes = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel1.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -67,6 +73,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvtatar)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -124,6 +131,7 @@
             this.tbEmail.ShadowDecoration.Parent = this.tbEmail;
             this.tbEmail.Size = new System.Drawing.Size(183, 27);
             this.tbEmail.TabIndex = 30;
+            this.tbEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbEmail_KeyPress);
             // 
             // panel16
             // 
@@ -157,6 +165,7 @@
             this.tbTelephone.ShadowDecoration.Parent = this.tbTelephone;
             this.tbTelephone.Size = new System.Drawing.Size(182, 28);
             this.tbTelephone.TabIndex = 30;
+            this.tbTelephone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTelephone_KeyPress);
             // 
             // label6
             // 
@@ -391,10 +400,12 @@
             // 
             // pcbxAvtatar
             // 
+            this.pcbxAvtatar.Image = global::Tour.Properties.Resources.ic_image_empty_128;
             this.pcbxAvtatar.Location = new System.Drawing.Point(4, 3);
             this.pcbxAvtatar.Name = "pcbxAvtatar";
             this.pcbxAvtatar.ShadowDecoration.Parent = this.pcbxAvtatar;
             this.pcbxAvtatar.Size = new System.Drawing.Size(295, 191);
+            this.pcbxAvtatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbxAvtatar.TabIndex = 0;
             this.pcbxAvtatar.TabStop = false;
             this.pcbxAvtatar.Click += new System.EventHandler(this.pcbxAvtatar_Click);
@@ -455,11 +466,102 @@
             this.panel3.Size = new System.Drawing.Size(306, 47);
             this.panel3.TabIndex = 30;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.txtbxRePassword);
+            this.panel4.Controls.Add(this.guna2HtmlLabel2);
+            this.panel4.Controls.Add(this.guna2HtmlLabel1);
+            this.panel4.Controls.Add(this.txtbxPassword);
+            this.panel4.Controls.Add(this.lblNotes);
+            this.panel4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel4.Location = new System.Drawing.Point(11, 331);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(616, 130);
+            this.panel4.TabIndex = 29;
+            // 
+            // txtbxRePassword
+            // 
+            this.txtbxRePassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbxRePassword.DefaultText = "";
+            this.txtbxRePassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbxRePassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbxRePassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxRePassword.DisabledState.Parent = this.txtbxRePassword;
+            this.txtbxRePassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxRePassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxRePassword.FocusedState.Parent = this.txtbxRePassword;
+            this.txtbxRePassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxRePassword.HoverState.Parent = this.txtbxRePassword;
+            this.txtbxRePassword.Location = new System.Drawing.Point(200, 44);
+            this.txtbxRePassword.Margin = new System.Windows.Forms.Padding(6);
+            this.txtbxRePassword.Name = "txtbxRePassword";
+            this.txtbxRePassword.PasswordChar = '\0';
+            this.txtbxRePassword.PlaceholderText = "";
+            this.txtbxRePassword.SelectedText = "";
+            this.txtbxRePassword.ShadowDecoration.Parent = this.txtbxRePassword;
+            this.txtbxRePassword.Size = new System.Drawing.Size(321, 30);
+            this.txtbxRePassword.TabIndex = 4;
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(9, 59);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(95, 15);
+            this.guna2HtmlLabel2.TabIndex = 3;
+            this.guna2HtmlLabel2.Text = "Re-enter password:";
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(9, 19);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(79, 15);
+            this.guna2HtmlLabel1.TabIndex = 2;
+            this.guna2HtmlLabel1.Text = "Enter password:";
+            // 
+            // txtbxPassword
+            // 
+            this.txtbxPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbxPassword.DefaultText = "";
+            this.txtbxPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbxPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbxPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxPassword.DisabledState.Parent = this.txtbxPassword;
+            this.txtbxPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxPassword.FocusedState.Parent = this.txtbxPassword;
+            this.txtbxPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxPassword.HoverState.Parent = this.txtbxPassword;
+            this.txtbxPassword.Location = new System.Drawing.Point(200, 4);
+            this.txtbxPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtbxPassword.Name = "txtbxPassword";
+            this.txtbxPassword.PasswordChar = '\0';
+            this.txtbxPassword.PlaceholderText = "";
+            this.txtbxPassword.SelectedText = "";
+            this.txtbxPassword.ShadowDecoration.Parent = this.txtbxPassword;
+            this.txtbxPassword.Size = new System.Drawing.Size(321, 30);
+            this.txtbxPassword.TabIndex = 1;
+            // 
+            // lblNotes
+            // 
+            this.lblNotes.BackColor = System.Drawing.Color.Transparent;
+            this.lblNotes.Location = new System.Drawing.Point(6, 102);
+            this.lblNotes.Name = "lblNotes";
+            this.lblNotes.Size = new System.Drawing.Size(141, 15);
+            this.lblNotes.TabIndex = 0;
+            this.lblNotes.Text = "_______________________";
+            // 
             // LoyalCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(635, 469);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel8);
@@ -481,6 +583,8 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvtatar)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -515,5 +619,11 @@
         private Guna.UI2.WinForms.Guna2Button btnUpdate;
         private Guna.UI2.WinForms.Guna2Button btnNew;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private Guna.UI2.WinForms.Guna2TextBox txtbxRePassword;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2TextBox txtbxPassword;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblNotes;
     }
 }
