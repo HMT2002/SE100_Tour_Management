@@ -60,6 +60,8 @@
           <Property Name="PICBI" Type="varbinary(max)" />
           <Property Name="IDTOUR" Type="char" MaxLength="7" />
           <Property Name="IsDeleted" Type="bit" />
+          <Property Name="NGAYBATDAU" Type="smalldatetime" />
+          <Property Name="NGAYKETTHUC" Type="smalldatetime" />
         </EntityType>
         <EntityType Name="KHACHHANG">
           <Key>
@@ -570,6 +572,8 @@
           <Property Name="PICBI" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="IDTOUR" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
           <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="NGAYBATDAU" Type="DateTime" Precision="0" />
+          <Property Name="NGAYKETTHUC" Type="DateTime" Precision="0" />
           <NavigationProperty Name="TOUR" Relationship="Self.LK_TOUR_GIAMGIA" FromRole="GIAMGIA" ToRole="TOUR" />
         </EntityType>
         <EntityType Name="KHACHHANG">
@@ -1100,6 +1104,8 @@
                 <ScalarProperty Name="PICBI" ColumnName="PICBI" />
                 <ScalarProperty Name="IDTOUR" ColumnName="IDTOUR" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="NGAYBATDAU" ColumnName="NGAYBATDAU" />
+                <ScalarProperty Name="NGAYKETTHUC" ColumnName="NGAYKETTHUC" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

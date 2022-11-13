@@ -40,14 +40,36 @@ namespace Tour
                 return;
             }
             GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == ID_tour && x.IsDeleted == false).FirstOrDefault();
-            if (giamgia.PICBI != null)
-            {
-                pcbxBanner.Image = Converter.Instance.ByteArrayToImage(giamgia.PICBI);
-            }
+
             txtbxDiscount.Text = giamgia.DISCOUNT.ToString();
             tbPrice.Text = giamgia.TOUR.GIA.ToString();
 
-            
+            if (giamgia.PICBI != null)
+            {
+                pcbxBanner.Image = Converter.Instance.ByteArrayToImage(giamgia.PICBI);
+                img_data = giamgia.PICBI;
+            }
+
+            if (giamgia.NGAYBATDAU == null)
+            {
+                datepckBegin.Value = DateTime.Now;
+            }
+            else
+            {
+                datepckBegin.Value = (DateTime)giamgia.NGAYBATDAU;
+
+            }
+
+            if (giamgia.NGAYKETTHUC == null)
+            {
+                datepckEnd.Value = DateTime.Now;
+            }
+            else
+            {
+                datepckEnd.Value = (DateTime)giamgia.NGAYKETTHUC;
+
+            }
+
 
             try
             {
@@ -158,10 +180,8 @@ namespace Tour
                 GIAMGIA temp= DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == ID_tour && x.IsDeleted == false).FirstOrDefault() ;
                 temp.IsDeleted = true;
                 DataProvider.Ins.DB.SaveChanges();
-
-
                 string randomecode = Converter.Instance.RandomString2(5);
-                GIAMGIA giamgia = new GIAMGIA() { ID = randomecode, IDTOUR = ID_tour, DISCOUNT = Convert.ToInt32(txtbxDiscount.Text), PICBI = img_data, IsDeleted = false };
+                GIAMGIA giamgia = new GIAMGIA() { ID = randomecode, IDTOUR = ID_tour, DISCOUNT = Convert.ToInt32(txtbxDiscount.Text), PICBI = img_data, NGAYBATDAU = datepckBegin.Value.Date, NGAYKETTHUC = datepckEnd.Value.Date, IsDeleted = false };
                 DataProvider.Ins.DB.GIAMGIAs.Add(giamgia);
                 DataProvider.Ins.DB.SaveChanges();
                 Clear();

@@ -19,6 +19,8 @@ namespace Tour.Model
         public byte[] PICBI { get; set; }
         public string IDTOUR { get; set; }
         public Nullable<bool> IsDeleted { get; set; }
+        public Nullable<System.DateTime> NGAYBATDAU { get; set; }
+        public Nullable<System.DateTime> NGAYKETTHUC { get; set; }
     
         public virtual TOUR TOUR { get; set; }
     }
