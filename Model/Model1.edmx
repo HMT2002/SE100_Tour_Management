@@ -51,6 +51,16 @@
           <Property Name="IDTOUR" Type="char" MaxLength="7" />
           <Property Name="IsDeleted" Type="bit" />
         </EntityType>
+        <EntityType Name="GIAMGIA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="DISCOUNT" Type="int" />
+          <Property Name="PICBI" Type="varbinary(max)" />
+          <Property Name="IDTOUR" Type="char" MaxLength="7" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
         <EntityType Name="KHACHHANG">
           <Key>
             <PropertyRef Name="ID" />
@@ -363,6 +373,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="LK_TOUR_GIAMGIA">
+          <End Role="TOUR" Type="Self.TOUR" Multiplicity="0..1" />
+          <End Role="GIAMGIA" Type="Self.GIAMGIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TOUR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GIAMGIA">
+              <PropertyRef Name="IDTOUR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="LK_VE_DOAN">
           <End Role="DOAN" Type="Self.DOAN" Multiplicity="0..1" />
           <End Role="VE" Type="Self.VE" Multiplicity="*" />
@@ -392,6 +414,7 @@
           <EntitySet Name="CHIPHI" EntityType="Self.CHIPHI" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DIADIEM" EntityType="Self.DIADIEM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DOAN" EntityType="Self.DOAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GIAMGIA" EntityType="Self.GIAMGIA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KHACHSAN" EntityType="Self.KHACHSAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
@@ -464,6 +487,10 @@
             <End Role="TOUR" EntitySet="TOUR" />
             <End Role="tb_DIADIEM_DULICH" EntitySet="tb_DIADIEM_DULICH" />
           </AssociationSet>
+          <AssociationSet Name="LK_TOUR_GIAMGIA" Association="Self.LK_TOUR_GIAMGIA">
+            <End Role="TOUR" EntitySet="TOUR" />
+            <End Role="GIAMGIA" EntitySet="GIAMGIA" />
+          </AssociationSet>
           <AssociationSet Name="LK_VE_DOAN" Association="Self.LK_VE_DOAN">
             <End Role="DOAN" EntitySet="DOAN" />
             <End Role="VE" EntitySet="VE" />
@@ -533,6 +560,17 @@
           <NavigationProperty Name="tb_PHUTRACH" Relationship="Self.LK_DOAN_PHUTRACH" FromRole="DOAN" ToRole="tb_PHUTRACH" />
           <NavigationProperty Name="TOUR" Relationship="Self.LK_TOUR_DOAN" FromRole="DOAN" ToRole="TOUR" />
           <NavigationProperty Name="VEs" Relationship="Self.LK_VE_DOAN" FromRole="DOAN" ToRole="VE" />
+        </EntityType>
+        <EntityType Name="GIAMGIA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DISCOUNT" Type="Int32" />
+          <Property Name="PICBI" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="IDTOUR" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <NavigationProperty Name="TOUR" Relationship="Self.LK_TOUR_GIAMGIA" FromRole="GIAMGIA" ToRole="TOUR" />
         </EntityType>
         <EntityType Name="KHACHHANG">
           <Key>
@@ -675,6 +713,7 @@
           <Property Name="GIA" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="IsDeleted" Type="Boolean" />
           <NavigationProperty Name="DOANs" Relationship="Self.LK_TOUR_DOAN" FromRole="TOUR" ToRole="DOAN" />
+          <NavigationProperty Name="GIAMGIAs" Relationship="Self.LK_TOUR_GIAMGIA" FromRole="TOUR" ToRole="GIAMGIA" />
           <NavigationProperty Name="tb_DIADIEM_DULICH" Relationship="Self.LK_TOUR_DULICH" FromRole="TOUR" ToRole="tb_DIADIEM_DULICH" />
         </EntityType>
         <EntityType Name="VE">
@@ -798,6 +837,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="LK_TOUR_GIAMGIA">
+          <End Role="TOUR" Type="Self.TOUR" Multiplicity="0..1" />
+          <End Role="GIAMGIA" Type="Self.GIAMGIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TOUR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GIAMGIA">
+              <PropertyRef Name="IDTOUR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="LK_VE_KHACH">
           <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
           <End Role="VE" Type="Self.VE" Multiplicity="*" />
@@ -899,6 +950,7 @@
           <EntitySet Name="CHIPHIs" EntityType="Self.CHIPHI" />
           <EntitySet Name="DIADIEMs" EntityType="Self.DIADIEM" />
           <EntitySet Name="DOANs" EntityType="Self.DOAN" />
+          <EntitySet Name="GIAMGIAs" EntityType="Self.GIAMGIA" />
           <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
           <EntitySet Name="KHACHSANs" EntityType="Self.KHACHSAN" />
           <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
@@ -946,6 +998,10 @@
           <AssociationSet Name="LK_VE_DOAN" Association="Self.LK_VE_DOAN">
             <End Role="DOAN" EntitySet="DOANs" />
             <End Role="VE" EntitySet="VEs" />
+          </AssociationSet>
+          <AssociationSet Name="LK_TOUR_GIAMGIA" Association="Self.LK_TOUR_GIAMGIA">
+            <End Role="TOUR" EntitySet="TOURs" />
+            <End Role="GIAMGIA" EntitySet="GIAMGIAs" />
           </AssociationSet>
           <AssociationSet Name="LK_VE_KHACH" Association="Self.LK_VE_KHACH">
             <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
@@ -1031,6 +1087,17 @@
                 <ScalarProperty Name="NGAYKETTHUC" ColumnName="NGAYKETTHUC" />
                 <ScalarProperty Name="CHITIETCHUONGTRINH" ColumnName="CHITIETCHUONGTRINH" />
                 <ScalarProperty Name="IDCHIPHI" ColumnName="IDCHIPHI" />
+                <ScalarProperty Name="IDTOUR" ColumnName="IDTOUR" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GIAMGIAs">
+            <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.GIAMGIA">
+              <MappingFragment StoreEntitySet="GIAMGIA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DISCOUNT" ColumnName="DISCOUNT" />
+                <ScalarProperty Name="PICBI" ColumnName="PICBI" />
                 <ScalarProperty Name="IDTOUR" ColumnName="IDTOUR" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
               </MappingFragment>

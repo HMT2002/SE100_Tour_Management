@@ -14,9 +14,56 @@ namespace Tour
 {
     public partial class ManageBanner : Form
     {
+        string ID_tour = "HKOIJ";
+
         public ManageBanner()
         {
             InitializeComponent();
+            ShowAll();
+            Clear();
+        }
+
+
+        public ManageBanner(string id_tour)
+        {
+            InitializeComponent();
+            ID_tour = id_tour;
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            lblTour.Text = ID_tour;
+            cbDes.Visible = false;
+            if(DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == ID_tour && x.IsDeleted == false).FirstOrDefault() == null)
+            {
+                return;
+            }
+            GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == ID_tour && x.IsDeleted == false).FirstOrDefault();
+            pcbxBanner.Image = Converter.Instance.ByteArrayToImage(giamgia.PICBI);
+            txtbxDiscount.Text = giamgia.DISCOUNT.ToString();
+            tbPrice.Text = giamgia.TOUR.GIA.ToString();
+
+            
+
+            try
+            {
+                if (Convert.ToInt32(txtbxDiscount.Text) != 0 || Convert.ToDecimal(tbPrice) != 0)
+                {
+                    decimal res = 0;
+                    double discount = Convert.ToInt64(txtbxDiscount.Text);
+                    decimal price = Convert.ToDecimal(tbPrice.Text);
+                    res = price - (price * (decimal)(discount / 100));
+
+                    tbTotal.Text = res.ToString();
+
+                }
+            }
+            catch
+            {
+
+                tbTotal.Text = tbPrice.Text;
+            }
         }
 
         private void cbDes_SelectedValueChanged(object sender, EventArgs e)
@@ -33,6 +80,11 @@ namespace Tour
 
         public void Clear()
         {
+            txtbxDiscount.Text = "";
+            datepckBegin.Value = DateTime.Now;
+            datepckEnd.Value = DateTime.Now;
+            pcbxBanner.Image = null;
+            img_data = null;
 
         }
 
@@ -58,10 +110,22 @@ namespace Tour
 
         private void ManageBanner_Load(object sender, EventArgs e)
         {
-            ShowAll();
-            Clear();
+
         }
 
+        public bool CheckData()
+        {
+            if (Convert.ToInt64(txtbxDiscount.Text)==0)
+            {
+                return false;
+            }
+            if (datepckBegin.Value.Date > datepckEnd.Value.Date || datepckBegin.Value.Date < DateTime.Now.Date)
+            {
+                return false;
+            }
+
+            return true;
+        }
 
         Image img;
         Byte[] img_data;
@@ -76,6 +140,64 @@ namespace Tour
                 img_data = Converter.Instance.ImageToByte(image);
                 pcbxBanner.Image = image;
 
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (CheckData())
+            {
+                GIAMGIA temp= DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == ID_tour && x.IsDeleted == false).FirstOrDefault() ;
+                temp.IsDeleted = true;
+                DataProvider.Ins.DB.SaveChanges();
+
+
+                string randomecode = Converter.Instance.RandomString2(5);
+                GIAMGIA giamgia = new GIAMGIA() { ID = randomecode, IDTOUR = ID_tour, DISCOUNT = Convert.ToInt32(txtbxDiscount.Text), PICBI = img_data, IsDeleted = false };
+                DataProvider.Ins.DB.GIAMGIAs.Add(giamgia);
+                DataProvider.Ins.DB.SaveChanges();
+                Clear();
+                this.Close();
+
+            }
+        }
+
+        private void txtbxDiscount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtbxDiscount_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if(Convert.ToInt32(txtbxDiscount.Text) != 0 || Convert.ToDecimal(tbPrice) != 0)
+                {
+                    decimal res = 0;
+                    double discount = Convert.ToInt64(txtbxDiscount.Text);
+                    decimal price=Convert.ToDecimal(tbPrice.Text);
+                    res = price - (price * (decimal)(discount / 100));
+
+                    tbTotal.Text = res.ToString();
+
+                }
+            }
+            catch
+            {
+
+                tbTotal.Text = tbPrice.Text;
             }
         }
     }

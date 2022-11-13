@@ -38,6 +38,8 @@
             this.LOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tb_search = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnBanner = new System.Windows.Forms.Button();
+            this.pcbxBanner = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnAddLocation = new System.Windows.Forms.Button();
             this.lstbxLocation = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,6 +67,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_trip)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbxBanner)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -147,6 +150,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnBanner);
+            this.groupBox2.Controls.Add(this.pcbxBanner);
             this.groupBox2.Controls.Add(this.btnAddLocation);
             this.groupBox2.Controls.Add(this.lstbxLocation);
             this.groupBox2.Controls.Add(this.label1);
@@ -169,6 +174,33 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tour details";
             // 
+            // btnBanner
+            // 
+            this.btnBanner.BackColor = System.Drawing.Color.Transparent;
+            this.btnBanner.BackgroundImage = global::Tour.Properties.Resources.Btn3;
+            this.btnBanner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBanner.FlatAppearance.BorderSize = 0;
+            this.btnBanner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBanner.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBanner.Location = new System.Drawing.Point(1270, 142);
+            this.btnBanner.Name = "btnBanner";
+            this.btnBanner.Size = new System.Drawing.Size(85, 53);
+            this.btnBanner.TabIndex = 54;
+            this.btnBanner.Text = "Banner";
+            this.btnBanner.UseVisualStyleBackColor = true;
+            this.btnBanner.Click += new System.EventHandler(this.btnBanner_Click);
+            // 
+            // pcbxBanner
+            // 
+            this.pcbxBanner.Image = global::Tour.Properties.Resources.ic_image_empty_128;
+            this.pcbxBanner.Location = new System.Drawing.Point(844, 142);
+            this.pcbxBanner.Name = "pcbxBanner";
+            this.pcbxBanner.ShadowDecoration.Parent = this.pcbxBanner;
+            this.pcbxBanner.Size = new System.Drawing.Size(414, 91);
+            this.pcbxBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbxBanner.TabIndex = 53;
+            this.pcbxBanner.TabStop = false;
+            // 
             // btnAddLocation
             // 
             this.btnAddLocation.BackColor = System.Drawing.Color.Transparent;
@@ -178,7 +210,7 @@
             this.btnAddLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddLocation.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddLocation.Image = ((System.Drawing.Image)(resources.GetObject("btnAddLocation.Image")));
-            this.btnAddLocation.Location = new System.Drawing.Point(1354, 18);
+            this.btnAddLocation.Location = new System.Drawing.Point(1270, 18);
             this.btnAddLocation.Name = "btnAddLocation";
             this.btnAddLocation.Size = new System.Drawing.Size(51, 53);
             this.btnAddLocation.TabIndex = 48;
@@ -191,7 +223,7 @@
             this.lstbxLocation.ItemHeight = 19;
             this.lstbxLocation.Location = new System.Drawing.Point(844, 18);
             this.lstbxLocation.Name = "lstbxLocation";
-            this.lstbxLocation.Size = new System.Drawing.Size(504, 213);
+            this.lstbxLocation.Size = new System.Drawing.Size(414, 118);
             this.lstbxLocation.TabIndex = 52;
             // 
             // label1
@@ -517,6 +549,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_trip)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbxBanner)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -563,5 +596,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GIA;
         private System.Windows.Forms.DataGridViewTextBoxColumn DACDIEM;
         private System.Windows.Forms.DataGridViewTextBoxColumn LOAI;
+        private System.Windows.Forms.Button btnBanner;
+        private Guna.UI2.WinForms.Guna2PictureBox pcbxBanner;
     }
 }

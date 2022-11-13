@@ -29,6 +29,7 @@ namespace Tour.Model
         public virtual DbSet<CHIPHI> CHIPHIs { get; set; }
         public virtual DbSet<DIADIEM> DIADIEMs { get; set; }
         public virtual DbSet<DOAN> DOANs { get; set; }
+        public virtual DbSet<GIAMGIA> GIAMGIAs { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
         public virtual DbSet<KHACHSAN> KHACHSANs { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
