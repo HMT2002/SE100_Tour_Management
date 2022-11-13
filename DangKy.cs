@@ -254,6 +254,24 @@ namespace Tour
                 cbGroup.SelectedIndex = -1;
                 reset();
                 tbPrice.Text = cbDes.SelectedItem.GetType().GetProperty("GIA").GetValue(cbDes.SelectedItem, null).ToString();
+                GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == idtour && x.IsDeleted == false).FirstOrDefault();
+                tbDiscount.Text = giamgia.DISCOUNT.ToString();
+
+                try
+                {
+                        decimal res = 0;
+                        double discount = Convert.ToInt64(giamgia.DISCOUNT);
+                        decimal price = Convert.ToDecimal(tbPrice.Text);
+                        res = price - (price * (decimal)(discount / 100));
+                        tbTotal.Text = res.ToString();
+
+                }
+                catch
+                {
+
+                    tbTotal.Text = tbPrice.Text;
+                }
+
             }
 
         }

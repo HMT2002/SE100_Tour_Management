@@ -40,7 +40,10 @@ namespace Tour
                 return;
             }
             GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == ID_tour && x.IsDeleted == false).FirstOrDefault();
-            pcbxBanner.Image = Converter.Instance.ByteArrayToImage(giamgia.PICBI);
+            if (giamgia.PICBI != null)
+            {
+                pcbxBanner.Image = Converter.Instance.ByteArrayToImage(giamgia.PICBI);
+            }
             txtbxDiscount.Text = giamgia.DISCOUNT.ToString();
             tbPrice.Text = giamgia.TOUR.GIA.ToString();
 
