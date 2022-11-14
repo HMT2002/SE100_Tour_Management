@@ -64,21 +64,25 @@ namespace Tour
         }
         public void loginbtn_Click(object sender, EventArgs e)
         {
-            if (cbGuest.Checked == true)
+
+            string ensryptedpass = Converter.Instance.EncryptPassword((passwordtxb.Text));
+
+            if (cbGuest.Checked)
             {
-                string ticket_id = emailtxb.Text;
-                if(DataProvider.Ins.DB.VEs.Where(x => (x.ID == ticket_id && x.IsDeleted == false)).SingleOrDefault() == null)
+
+                if (DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false && x.ACCROLE == "Customer")).SingleOrDefault() != null)
                 {
-                    MessageBox.Show("Số vé không tồn tại!");
+                    MessageBox.Show("Login as customer!");
+
                 }
-                SearchTicket f = new SearchTicket(ticket_id);
-                this.Hide();
-                f.ShowDialog();
-                this.Show();
+                else
+                {
+                    MessageBox.Show("Wrong email or password!!!!");
+                }
+
             }
             else
             {
-                string ensryptedpass = Converter.Instance.EncryptPassword( (passwordtxb.Text));
                 if (cbghinho.Checked == true)
                 {
                     Properties.Settings.Default.Email = emailtxb.Text;
@@ -93,7 +97,7 @@ namespace Tour
                 }
 
 
-                if (DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault() != null)
+                if (DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false && (x.ACCROLE == "Manager") || x.ACCROLE == "Employee")).SingleOrDefault() != null)
                 {
                     Properties.Settings.Default.UserName = emailtxb.Text;
                     Properties.Settings.Default.Password = passwordtxb.Text;
@@ -110,6 +114,8 @@ namespace Tour
                     MessageBox.Show("Wrong email or password!!!!");
                 }
             }
+
+
 
         }
 
@@ -161,28 +167,31 @@ namespace Tour
         }
         public string password, email;
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string ticket_id = emailtxb.Text;
+            if (DataProvider.Ins.DB.VEs.Where(x => (x.ID == ticket_id && x.IsDeleted == false)).SingleOrDefault() == null)
+            {
+                MessageBox.Show("Số vé không tồn tại!");
+            }
+            SearchTicket f = new SearchTicket(ticket_id);
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
         private void cbGuest_CheckedChanged(object sender, EventArgs e)
         {
             if (cbGuest.Checked == true)
             {
-                emailtxb.Clear();
-                label2.Text = "Search Ticket";
-                loginbtn.Text = "SEARCH";
-                cbghinho.Visible = false;
-                forgetlb.Visible = false;
-                registaccountlb.Visible = false;
-                passwordtxb.Visible = false;
+
+                pnSearchTicket.Visible = true;
             }
             else
             {
                 LoginForm_Load(sender, e);
-                label2.Text = "Login";
-                loginbtn.Text = "LOGIN";
-                cbghinho.Visible = true;
-                forgetlb.Visible = true;
-                registaccountlb.Visible = true;
-                passwordtxb.Visible = true;
 
+                pnSearchTicket.Visible = false;
 
             }
         }

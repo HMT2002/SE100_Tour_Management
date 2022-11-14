@@ -163,7 +163,7 @@ namespace Tour
                 Image image = Image.FromFile(dialog.FileName);
                 img = image;
                 img_data = Converter.Instance.ImageToByte(image);
-                pcbxBanner.Image = image;
+                pcbxBanner.Image = Properties.Resources.ic_image_empty_128;
 
             }
         }

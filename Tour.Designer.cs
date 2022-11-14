@@ -196,8 +196,8 @@
             this.pcbxBanner.Location = new System.Drawing.Point(844, 142);
             this.pcbxBanner.Name = "pcbxBanner";
             this.pcbxBanner.ShadowDecoration.Parent = this.pcbxBanner;
-            this.pcbxBanner.Size = new System.Drawing.Size(414, 91);
-            this.pcbxBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbxBanner.Size = new System.Drawing.Size(420, 97);
+            this.pcbxBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbxBanner.TabIndex = 53;
             this.pcbxBanner.TabStop = false;
             // 

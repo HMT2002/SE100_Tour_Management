@@ -124,7 +124,7 @@ namespace Tour
 
             this.price = this.typetour = this.nametour = null;
 
-            pcbxBanner.Image = null;
+            pcbxBanner.Image = Properties.Resources.ic_image_empty_128;
 
         }
         private void add_Click(object sender, EventArgs e)

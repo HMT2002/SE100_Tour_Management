@@ -63,6 +63,7 @@ namespace Tour
             RdFmale.Checked = true;
             txtbxPassword.Text = "";
             txtbxRePassword.Text = "";
+            pcbxAvtatar.Image = Properties.Resources.ic_image_empty_128;
         }
 
         private void btnNew_Click(object sender, EventArgs e)
