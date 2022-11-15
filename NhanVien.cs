@@ -58,24 +58,6 @@ namespace Tour
 
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnPickPicture_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Chon anh(*.jpg; *.png; *.gif) | *.jpg; *.png; *.gif";
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                Image image = Image.FromFile(dialog.FileName);
-                img = image;
-                img_data = Converter.Instance.ImageToByte(image);
-                pcbxAvatar.Image = image;
-
-            }
-        }
         private void Clear()
         {
             txtbxName.Text = txtbxSDT.Text = txtbxMail.Text =txtbxID.Text= "";
@@ -91,11 +73,6 @@ namespace Tour
                 return false;
             }
             return true;
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            Clear();
         }
 
         public string getID(string ID)
@@ -153,58 +130,6 @@ namespace Tour
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Are you sure to delete this?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                if (id == null || id.CompareTo(string.Empty) == 0)
-                {
-                    return;
-                }
-                try
-                {
-                    ACCOUNT account = DataProvider.Ins.DB.ACCOUNTs.Where(x => x.ID == id).FirstOrDefault();
-                    account.IsDeleted = true;
-
-                    NHANVIEN nhanvien = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault();
-                    nhanvien.IsDeleted = true;
-                    DataProvider.Ins.DB.SaveChanges();
-                    showAll();
-                    Clear();
-                    
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                }
-            }
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            if (id == null || id.CompareTo(string.Empty) == 0)
-            {
-                return;
-            }
-            try
-            {
-                var nhanvien = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault();
-                nhanvien.TEN = txtbxName.Text;
-                nhanvien.MAIL = txtbxMail.Text;
-                nhanvien.SDT = txtbxSDT.Text;
-                nhanvien.PICBI = img_data;
-                DataProvider.Ins.DB.SaveChanges();
-                showAll();
-                Clear();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void tb_search_TextChanged(object sender, EventArgs e)
@@ -281,6 +206,11 @@ namespace Tour
             }
         }
 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (CheckData())
@@ -288,7 +218,7 @@ namespace Tour
                 try
                 {
                     string randomcode = Converter.Instance.RandomString2(5);
-                    var nv = new NHANVIEN() { ID = randomcode,  TEN = txtbxName.Text, MAIL=txtbxMail.Text, SDT=txtbxSDT.Text, IsDeleted = false,isAvailable=true };
+                    var nv = new NHANVIEN() { ID = randomcode, TEN = txtbxName.Text, MAIL = txtbxMail.Text, SDT = txtbxSDT.Text, IsDeleted = false, isAvailable = true };
                     DataProvider.Ins.DB.NHANVIENs.Add(nv);
 
                     DataProvider.Ins.DB.SaveChanges();
@@ -316,5 +246,77 @@ namespace Tour
                 Clear();
             }
         }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure to delete this?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                if (id == null || id.CompareTo(string.Empty) == 0)
+                {
+                    return;
+                }
+                try
+                {
+                    ACCOUNT account = DataProvider.Ins.DB.ACCOUNTs.Where(x => x.ID == id).FirstOrDefault();
+                    account.IsDeleted = true;
+
+                    NHANVIEN nhanvien = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault();
+                    nhanvien.IsDeleted = true;
+                    DataProvider.Ins.DB.SaveChanges();
+                    showAll();
+                    Clear();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (id == null || id.CompareTo(string.Empty) == 0)
+            {
+                return;
+            }
+            try
+            {
+                var nhanvien = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault();
+                nhanvien.TEN = txtbxName.Text;
+                nhanvien.MAIL = txtbxMail.Text;
+                nhanvien.SDT = txtbxSDT.Text;
+                nhanvien.PICBI = img_data;
+                DataProvider.Ins.DB.SaveChanges();
+                showAll();
+                Clear();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnPickPicture_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Chon anh(*.jpg; *.png; *.gif) | *.jpg; *.png; *.gif";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                Image image = Image.FromFile(dialog.FileName);
+                img = image;
+                img_data = Converter.Instance.ImageToByte(image);
+                pcbxAvatar.Image = image;
+
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
     }
+
 }
