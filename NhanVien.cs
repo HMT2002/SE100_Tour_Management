@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.Entity.SqlServer;
 using System.Drawing;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,6 +23,7 @@ namespace Tour
         string id;
         string phutrach;
         string doanid;
+        bool searchID;
 
         public string seleted_nhanvien_phutrach = "";
 
@@ -29,6 +31,7 @@ namespace Tour
         {
             InitializeComponent();
             dgv_nhanvien.AutoGenerateColumns = false;
+            searchID = true;
             showAll();
         }
 
@@ -127,11 +130,6 @@ namespace Tour
             }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void tb_search_TextChanged(object sender, EventArgs e)
         {
             string value = tb_search.Text;
@@ -139,12 +137,14 @@ namespace Tour
             {
                 try
                 {
-                    if (rdIDSearch.Checked)
+                    //if (rdIDSearch.Checked)
+                    if (searchID == true)
                     {
                         dgv_nhanvien.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t => SqlFunctions.PatIndex("%" + value + "%", t.ID) > 0 && t.IsDeleted == false).Select(t => t).ToList();
 
                     }
-                    else if (rdNameSearch.Checked)
+                    //else if (rdNameSearch.Checked)
+                    else if (searchID == false)
                     {
                         dgv_nhanvien.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t => SqlFunctions.PatIndex("%" + value + "%", t.TEN) > 0 && t.IsDeleted == false).Select(t => t).ToList();
 
@@ -156,18 +156,6 @@ namespace Tour
                 }
             }
             else { showAll(); }
-        }
-
-        private void rdNameSearch_Enter(object sender, EventArgs e)
-        {
-            tb_search.Text = "";
-
-        }
-
-        private void rdIDSearch_Enter(object sender, EventArgs e)
-        {
-            tb_search.Text = "";
-
         }
         // chưa tô màu được
 
@@ -316,6 +304,56 @@ namespace Tour
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tb_search.Text = "";
+            if (guna2ComboBox1.SelectedIndex != -1)
+            {
+                try
+                {
+                    if (guna2ComboBox1.SelectedIndex == 0)
+                    {
+                        searchID = true;
+                    }
+                    else
+                        searchID = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            } 
+        }
+
+        private void NhanVien_Load(object sender, EventArgs e)
+        {
+            guna2DataGridView1.Rows.Add(4);
+
+            guna2DataGridView1.Rows[0].Cells[1].Value = "Vu Quang Huy";
+            guna2DataGridView1.Rows[0].Cells[2].Value = "0854021017";
+            guna2DataGridView1.Rows[0].Cells[3].Value = "20521419@gm.uit.edu.vn";
+            guna2DataGridView1.Rows[0].Cells[4].Value = 0;
+            guna2DataGridView1.Rows[0].Cells[5].Value = false;
+
+            guna2DataGridView1.Rows[1].Cells[1].Value = "Vu Quang Huy 1";
+            guna2DataGridView1.Rows[1].Cells[2].Value = "0854021017";
+            guna2DataGridView1.Rows[1].Cells[3].Value = "20521419@gm.uit.edu.vn";
+            guna2DataGridView1.Rows[1].Cells[4].Value = 0;
+            guna2DataGridView1.Rows[1].Cells[5].Value = false;
+
+            guna2DataGridView1.Rows[2].Cells[1].Value = "Vu Quang Huy 2";
+            guna2DataGridView1.Rows[2].Cells[2].Value = "0854021017";
+            guna2DataGridView1.Rows[2].Cells[3].Value = "20521419@gm.uit.edu.vn";
+            guna2DataGridView1.Rows[2].Cells[4].Value = 0;
+            guna2DataGridView1.Rows[2].Cells[5].Value = false;
+
+            guna2DataGridView1.Rows[2].Cells[1].Value = "Vu Quang Huy 3";
+            guna2DataGridView1.Rows[2].Cells[2].Value = "0854021017";
+            guna2DataGridView1.Rows[2].Cells[3].Value = "20521419@gm.uit.edu.vn";
+            guna2DataGridView1.Rows[2].Cells[4].Value = 0;
+            guna2DataGridView1.Rows[2].Cells[5].Value = false;
         }
     }
 
