@@ -69,11 +69,15 @@ namespace Tour
 
             if (cbGuest.Checked)
             {
-
-                if (DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false && x.ACCROLE == "Customer")).SingleOrDefault() != null)
+                ACCOUNT acc = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false && x.ACCROLE == "Customer")).SingleOrDefault();
+                if (acc != null)
                 {
                     MessageBox.Show("Login as customer!");
-
+                    KHACHHANG kh = DataProvider.Ins.DB.KHACHHANGs.Where(x => (x.IDACC == acc.ID&&x.IsDeleted==false )).SingleOrDefault();
+                    LoyalCustomer menuF = new LoyalCustomer(kh);
+                    this.Hide();
+                    menuF.ShowDialog();
+                    this.Show();
                 }
                 else
                 {
@@ -169,12 +173,13 @@ namespace Tour
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string ticket_id = emailtxb.Text;
+            string ticket_id =  txtbxSearchTicket.Text;
             if (DataProvider.Ins.DB.VEs.Where(x => (x.ID == ticket_id && x.IsDeleted == false)).SingleOrDefault() == null)
             {
                 MessageBox.Show("Số vé không tồn tại!");
+                return;
             }
-            SearchTicket f = new SearchTicket(ticket_id);
+            SearchTicket f = new SearchTicket(DataProvider.Ins.DB.VEs.Where(x => (x.ID == ticket_id && x.IsDeleted == false)).SingleOrDefault());
             this.Hide();
             f.ShowDialog();
             this.Show();

@@ -55,7 +55,7 @@
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnNew = new Guna.UI2.WinForms.Guna2Button();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnCRUD = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtbxRePassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -72,7 +72,7 @@
             this.panel8.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvtatar)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.pnCRUD.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,7 +131,6 @@
             this.tbEmail.ShadowDecoration.Parent = this.tbEmail;
             this.tbEmail.Size = new System.Drawing.Size(183, 27);
             this.tbEmail.TabIndex = 30;
-            this.tbEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbEmail_KeyPress);
             // 
             // panel16
             // 
@@ -158,6 +157,7 @@
             this.tbTelephone.HoverState.Parent = this.tbTelephone;
             this.tbTelephone.Location = new System.Drawing.Point(-2, -2);
             this.tbTelephone.Margin = new System.Windows.Forms.Padding(4);
+            this.tbTelephone.MaxLength = 12;
             this.tbTelephone.Name = "tbTelephone";
             this.tbTelephone.PasswordChar = '\0';
             this.tbTelephone.PlaceholderText = "";
@@ -262,10 +262,11 @@
             this.tbCMND.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCMND.Location = new System.Drawing.Point(-1, -2);
             this.tbCMND.Margin = new System.Windows.Forms.Padding(2);
-            this.tbCMND.MaxLength = 40;
+            this.tbCMND.MaxLength = 13;
             this.tbCMND.Name = "tbCMND";
             this.tbCMND.Size = new System.Drawing.Size(283, 26);
             this.tbCMND.TabIndex = 16;
+            this.tbCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCMND_KeyPress);
             // 
             // panel6
             // 
@@ -455,16 +456,16 @@
             this.btnNew.Text = "New";
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
-            // panel3
+            // pnCRUD
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.btnNew);
-            this.panel3.Controls.Add(this.btnAdd);
-            this.panel3.Controls.Add(this.btnUpdate);
-            this.panel3.Location = new System.Drawing.Point(321, 266);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(306, 47);
-            this.panel3.TabIndex = 30;
+            this.pnCRUD.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnCRUD.Controls.Add(this.btnNew);
+            this.pnCRUD.Controls.Add(this.btnAdd);
+            this.pnCRUD.Controls.Add(this.btnUpdate);
+            this.pnCRUD.Location = new System.Drawing.Point(321, 266);
+            this.pnCRUD.Name = "pnCRUD";
+            this.pnCRUD.Size = new System.Drawing.Size(306, 47);
+            this.pnCRUD.TabIndex = 30;
             // 
             // panel4
             // 
@@ -562,7 +563,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(635, 469);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.pnCRUD);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel1);
@@ -582,7 +583,7 @@
             this.panel8.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvtatar)).EndInit();
-            this.panel3.ResumeLayout(false);
+            this.pnCRUD.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
@@ -618,7 +619,7 @@
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2Button btnUpdate;
         private Guna.UI2.WinForms.Guna2Button btnNew;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnCRUD;
         private System.Windows.Forms.Panel panel4;
         private Guna.UI2.WinForms.Guna2TextBox txtbxRePassword;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;

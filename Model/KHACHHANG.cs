@@ -31,7 +31,10 @@ namespace Tour.Model
         public Nullable<bool> IsVIP { get; set; }
         public Nullable<decimal> SPENDING { get; set; }
         public string PRI { get; set; }
+        public string MAIL { get; set; }
+        public string IDACC { get; set; }
     
+        public virtual ACCOUNT ACCOUNT { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VE> VEs { get; set; }
     }

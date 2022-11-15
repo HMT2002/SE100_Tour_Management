@@ -19,13 +19,56 @@ namespace Tour
             InitializeComponent();
         }
 
+        KHACHHANG Khachhang=new KHACHHANG();
+
+        public LoyalCustomer(KHACHHANG khachhang)
+        {
+            InitializeComponent();
+
+            this.Khachhang = khachhang;
+
+            btnAdd.Visible = false;
+            btnNew.Visible = false;
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            tbName.Text = this.Khachhang.TENKH;
+            tbAddress.Text = this.Khachhang.DIACHI;
+            tbTelephone.Text = this.Khachhang.SDT;
+            tbEmail.Text = this.Khachhang.MAIL;
+
+            if (this.Khachhang.GIOITINH == "Male")
+            {
+                RdFmale.Checked = true;
+            }
+            else
+            {
+                RdFmale.Checked = true;
+            }
+
+            tbCMND.Text=this.Khachhang.CMND;
+
+            pcbxAvtatar.Image = Converter.Instance.ByteArrayToImage(this.Khachhang.PICBI);
+
+            string password = Converter.Instance.DecryptEncrypt(this.Khachhang.ACCOUNT.PASS);
+
+            string last3word = password.Substring(password.Length );
+
+            string display_pass = last3word;
+
+            lblNotes.Text = "********" + display_pass;
+
+        }
+
         public bool ChechData()
         {
             if(txtbxPassword.Text.Trim().CompareTo(string.Empty)==0|| txtbxRePassword.Text.Trim().CompareTo(string.Empty) == 0 || tbAddress.Text.Trim().CompareTo(string.Empty) == 0 || tbCMND.Text.Trim().CompareTo(string.Empty) == 0 || tbEmail.Text.Trim().CompareTo(string.Empty) == 0 || tbTelephone.Text.Trim().CompareTo(string.Empty) == 0 || tbName.Text.Trim().CompareTo(string.Empty) == 0)
             {
                 return false;
             }
-            if (txtbxPassword.Text.Trim().CompareTo(txtbxRePassword.Text.Trim()) == 0)
+            if (txtbxPassword.Text.Trim().CompareTo(txtbxRePassword.Text.Trim()) != 0)
             {
                 return false;
             }
@@ -42,11 +85,10 @@ namespace Tour
                     gender = "Female";
                 }
                 string randomcode = Converter.Instance.RandomString2(5);
-                var kh = new KHACHHANG() { ID = randomcode, TENKH = tbName.Text, SDT = tbTelephone.Text, CMND = tbCMND.Text, DIACHI = tbAddress.Text, PICBI = img_data, GIOITINH = gender, IsDeleted = false, IsVIP = true, SPENDING = 0, PRI = "BRONZE" };
                 var account = new ACCOUNT() { ACC = tbEmail.Text, PASS = Converter.Instance.EncryptPassword((txtbxPassword.Text)), ID = randomcode, IsDeleted = false,ACCROLE="Customer" };
                 DataProvider.Ins.DB.ACCOUNTs.Add(account);
+                var kh = new KHACHHANG() { ID = randomcode, TENKH = tbName.Text, SDT = tbTelephone.Text, CMND = tbCMND.Text, DIACHI = tbAddress.Text, PICBI = img_data, GIOITINH = gender,IDACC=randomcode,MAIL=tbEmail.Text, IsDeleted = false, IsVIP = true, SPENDING = 0, PRI = "BRONZE" };
                 DataProvider.Ins.DB.KHACHHANGs.Add(kh);
-
                 DataProvider.Ins.DB.SaveChanges();
                 MessageBox.Show("SignUp success!!!");
                 Clear();
@@ -105,7 +147,7 @@ namespace Tour
             }
         }
 
-        private void tbEmail_KeyPress(object sender, KeyPressEventArgs e)
+        private void tbCMND_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
