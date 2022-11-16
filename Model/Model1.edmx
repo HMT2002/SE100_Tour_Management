@@ -12,8 +12,8 @@
           <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
           <Property Name="ACC" Type="nvarchar" MaxLength="50" />
           <Property Name="PASS" Type="nvarchar(max)" />
-          <Property Name="IDNHANVIEN" Type="char" MaxLength="7" />
           <Property Name="IsDeleted" Type="bit" />
+          <Property Name="ACCROLE" Type="nvarchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="CHIPHI">
           <Key>
@@ -51,6 +51,18 @@
           <Property Name="IDTOUR" Type="char" MaxLength="7" />
           <Property Name="IsDeleted" Type="bit" />
         </EntityType>
+        <EntityType Name="GIAMGIA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="DISCOUNT" Type="int" />
+          <Property Name="PICBI" Type="varbinary(max)" />
+          <Property Name="IDTOUR" Type="char" MaxLength="7" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="NGAYBATDAU" Type="smalldatetime" />
+          <Property Name="NGAYKETTHUC" Type="smalldatetime" />
+        </EntityType>
         <EntityType Name="KHACHHANG">
           <Key>
             <PropertyRef Name="ID" />
@@ -63,6 +75,11 @@
           <Property Name="SDT" Type="nvarchar" MaxLength="15" />
           <Property Name="PICBI" Type="varbinary(max)" />
           <Property Name="IsDeleted" Type="bit" />
+          <Property Name="IsVIP" Type="bit" />
+          <Property Name="SPENDING" Type="money" />
+          <Property Name="PRI" Type="nvarchar" MaxLength="40" />
+          <Property Name="MAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDACC" Type="char" MaxLength="7" />
         </EntityType>
         <EntityType Name="KHACHSAN">
           <Key>
@@ -276,15 +293,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="LK_NHANVIEN_ACCOUNT">
-          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
-          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="*" />
+        <Association Name="LK_MAIL_ACCOUNT">
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="0..1" />
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="NHANVIEN">
+            <Principal Role="ACCOUNT">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="ACCOUNT">
-              <PropertyRef Name="IDNHANVIEN" />
+            <Dependent Role="KHACHHANG">
+              <PropertyRef Name="IDACC" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -372,6 +389,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="LK_TOUR_GIAMGIA">
+          <End Role="TOUR" Type="Self.TOUR" Multiplicity="0..1" />
+          <End Role="GIAMGIA" Type="Self.GIAMGIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TOUR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GIAMGIA">
+              <PropertyRef Name="IDTOUR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="LK_VE_DOAN">
           <End Role="DOAN" Type="Self.DOAN" Multiplicity="0..1" />
           <End Role="VE" Type="Self.VE" Multiplicity="*" />
@@ -401,6 +430,7 @@
           <EntitySet Name="CHIPHI" EntityType="Self.CHIPHI" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DIADIEM" EntityType="Self.DIADIEM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DOAN" EntityType="Self.DOAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GIAMGIA" EntityType="Self.GIAMGIA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KHACHSAN" EntityType="Self.KHACHSAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
@@ -445,9 +475,9 @@
             <End Role="TINH" EntitySet="TINH" />
             <End Role="KHACHSAN" EntitySet="KHACHSAN" />
           </AssociationSet>
-          <AssociationSet Name="LK_NHANVIEN_ACCOUNT" Association="Self.LK_NHANVIEN_ACCOUNT">
-            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+          <AssociationSet Name="LK_MAIL_ACCOUNT" Association="Self.LK_MAIL_ACCOUNT">
             <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+            <End Role="KHACHHANG" EntitySet="KHACHHANG" />
           </AssociationSet>
           <AssociationSet Name="LK_NHANVIEN_NHIEMVU" Association="Self.LK_NHANVIEN_NHIEMVU">
             <End Role="NHANVIEN" EntitySet="NHANVIEN" />
@@ -477,6 +507,10 @@
             <End Role="TOUR" EntitySet="TOUR" />
             <End Role="tb_DIADIEM_DULICH" EntitySet="tb_DIADIEM_DULICH" />
           </AssociationSet>
+          <AssociationSet Name="LK_TOUR_GIAMGIA" Association="Self.LK_TOUR_GIAMGIA">
+            <End Role="TOUR" EntitySet="TOUR" />
+            <End Role="GIAMGIA" EntitySet="GIAMGIA" />
+          </AssociationSet>
           <AssociationSet Name="LK_VE_DOAN" Association="Self.LK_VE_DOAN">
             <End Role="DOAN" EntitySet="DOAN" />
             <End Role="VE" EntitySet="VE" />
@@ -498,9 +532,9 @@
           <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="ACC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PASS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="IDNHANVIEN" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
           <Property Name="IsDeleted" Type="Boolean" />
-          <NavigationProperty Name="NHANVIEN" Relationship="Self.LK_NHANVIEN_ACCOUNT" FromRole="ACCOUNT" ToRole="NHANVIEN" />
+          <Property Name="ACCROLE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KHACHHANGs" Relationship="Self.LK_MAIL_ACCOUNT" FromRole="ACCOUNT" ToRole="KHACHHANG" />
         </EntityType>
         <EntityType Name="CHIPHI">
           <Key>
@@ -548,6 +582,19 @@
           <NavigationProperty Name="TOUR" Relationship="Self.LK_TOUR_DOAN" FromRole="DOAN" ToRole="TOUR" />
           <NavigationProperty Name="VEs" Relationship="Self.LK_VE_DOAN" FromRole="DOAN" ToRole="VE" />
         </EntityType>
+        <EntityType Name="GIAMGIA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DISCOUNT" Type="Int32" />
+          <Property Name="PICBI" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="IDTOUR" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="NGAYBATDAU" Type="DateTime" Precision="0" />
+          <Property Name="NGAYKETTHUC" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="TOUR" Relationship="Self.LK_TOUR_GIAMGIA" FromRole="GIAMGIA" ToRole="TOUR" />
+        </EntityType>
         <EntityType Name="KHACHHANG">
           <Key>
             <PropertyRef Name="ID" />
@@ -560,6 +607,12 @@
           <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="PICBI" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="IsVIP" Type="Boolean" />
+          <Property Name="SPENDING" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PRI" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="MAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IDACC" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="ACCOUNT" Relationship="Self.LK_MAIL_ACCOUNT" FromRole="KHACHHANG" ToRole="ACCOUNT" />
           <NavigationProperty Name="VEs" Relationship="Self.LK_VE_KHACH" FromRole="KHACHHANG" ToRole="VE" />
         </EntityType>
         <EntityType Name="KHACHSAN">
@@ -590,7 +643,6 @@
           <Property Name="IsDeleted" Type="Boolean" />
           <Property Name="isAvailable" Type="Boolean" />
           <Property Name="SLDI" Type="Int32" />
-          <NavigationProperty Name="ACCOUNTs" Relationship="Self.LK_NHANVIEN_ACCOUNT" FromRole="NHANVIEN" ToRole="ACCOUNT" />
           <NavigationProperty Name="tb_NHIEMVU" Relationship="Self.LK_NHANVIEN_NHIEMVU" FromRole="NHANVIEN" ToRole="tb_NHIEMVU" />
           <NavigationProperty Name="tb_PHUTRACH" Relationship="Self.LK_NHANVIEN_PHUTRACH" FromRole="NHANVIEN" ToRole="tb_PHUTRACH" />
         </EntityType>
@@ -687,6 +739,7 @@
           <Property Name="GIA" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="IsDeleted" Type="Boolean" />
           <NavigationProperty Name="DOANs" Relationship="Self.LK_TOUR_DOAN" FromRole="TOUR" ToRole="DOAN" />
+          <NavigationProperty Name="GIAMGIAs" Relationship="Self.LK_TOUR_GIAMGIA" FromRole="TOUR" ToRole="GIAMGIA" />
           <NavigationProperty Name="tb_DIADIEM_DULICH" Relationship="Self.LK_TOUR_DULICH" FromRole="TOUR" ToRole="tb_DIADIEM_DULICH" />
         </EntityType>
         <EntityType Name="VE">
@@ -702,15 +755,15 @@
           <NavigationProperty Name="DOAN" Relationship="Self.LK_VE_DOAN" FromRole="VE" ToRole="DOAN" />
           <NavigationProperty Name="KHACHHANG" Relationship="Self.LK_VE_KHACH" FromRole="VE" ToRole="KHACHHANG" />
         </EntityType>
-        <Association Name="LK_NHANVIEN_ACCOUNT">
-          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
-          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="*" />
+        <Association Name="LK_MAIL_ACCOUNT">
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="0..1" />
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="NHANVIEN">
+            <Principal Role="ACCOUNT">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="ACCOUNT">
-              <PropertyRef Name="IDNHANVIEN" />
+            <Dependent Role="KHACHHANG">
+              <PropertyRef Name="IDACC" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -822,6 +875,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="LK_TOUR_GIAMGIA">
+          <End Role="TOUR" Type="Self.TOUR" Multiplicity="0..1" />
+          <End Role="GIAMGIA" Type="Self.GIAMGIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TOUR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GIAMGIA">
+              <PropertyRef Name="IDTOUR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="LK_VE_KHACH">
           <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
           <End Role="VE" Type="Self.VE" Multiplicity="*" />
@@ -923,6 +988,7 @@
           <EntitySet Name="CHIPHIs" EntityType="Self.CHIPHI" />
           <EntitySet Name="DIADIEMs" EntityType="Self.DIADIEM" />
           <EntitySet Name="DOANs" EntityType="Self.DOAN" />
+          <EntitySet Name="GIAMGIAs" EntityType="Self.GIAMGIA" />
           <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
           <EntitySet Name="KHACHSANs" EntityType="Self.KHACHSAN" />
           <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
@@ -935,9 +1001,9 @@
           <EntitySet Name="TINHs" EntityType="Self.TINH" />
           <EntitySet Name="TOURs" EntityType="Self.TOUR" />
           <EntitySet Name="VEs" EntityType="Self.VE" />
-          <AssociationSet Name="LK_NHANVIEN_ACCOUNT" Association="Self.LK_NHANVIEN_ACCOUNT">
-            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+          <AssociationSet Name="LK_MAIL_ACCOUNT" Association="Self.LK_MAIL_ACCOUNT">
             <End Role="ACCOUNT" EntitySet="ACCOUNTs" />
+            <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
           </AssociationSet>
           <AssociationSet Name="LK_CHIPHI_DOAN" Association="Self.LK_CHIPHI_DOAN">
             <End Role="CHIPHI" EntitySet="CHIPHIs" />
@@ -974,6 +1040,10 @@
           <AssociationSet Name="LK_VE_DOAN" Association="Self.LK_VE_DOAN">
             <End Role="DOAN" EntitySet="DOANs" />
             <End Role="VE" EntitySet="VEs" />
+          </AssociationSet>
+          <AssociationSet Name="LK_TOUR_GIAMGIA" Association="Self.LK_TOUR_GIAMGIA">
+            <End Role="TOUR" EntitySet="TOURs" />
+            <End Role="GIAMGIA" EntitySet="GIAMGIAs" />
           </AssociationSet>
           <AssociationSet Name="LK_VE_KHACH" Association="Self.LK_VE_KHACH">
             <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
@@ -1020,8 +1090,8 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ACC" ColumnName="ACC" />
                 <ScalarProperty Name="PASS" ColumnName="PASS" />
-                <ScalarProperty Name="IDNHANVIEN" ColumnName="IDNHANVIEN" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="ACCROLE" ColumnName="ACCROLE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1064,6 +1134,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="GIAMGIAs">
+            <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.GIAMGIA">
+              <MappingFragment StoreEntitySet="GIAMGIA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DISCOUNT" ColumnName="DISCOUNT" />
+                <ScalarProperty Name="PICBI" ColumnName="PICBI" />
+                <ScalarProperty Name="IDTOUR" ColumnName="IDTOUR" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="NGAYBATDAU" ColumnName="NGAYBATDAU" />
+                <ScalarProperty Name="NGAYKETTHUC" ColumnName="NGAYKETTHUC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="KHACHHANGs">
             <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.KHACHHANG">
               <MappingFragment StoreEntitySet="KHACHHANG">
@@ -1075,6 +1158,11 @@
                 <ScalarProperty Name="SDT" ColumnName="SDT" />
                 <ScalarProperty Name="PICBI" ColumnName="PICBI" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsVIP" ColumnName="IsVIP" />
+                <ScalarProperty Name="SPENDING" ColumnName="SPENDING" />
+                <ScalarProperty Name="PRI" ColumnName="PRI" />
+                <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+                <ScalarProperty Name="IDACC" ColumnName="IDACC" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

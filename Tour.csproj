@@ -175,6 +175,12 @@
       <DependentUpon>ChangePass.cs</DependentUpon>
     </Compile>
     <Compile Include="BLL\ChuyenBLL.cs" />
+    <Compile Include="ChooseLoyalCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseLoyalCustomer.Designer.cs">
+      <DependentUpon>ChooseLoyalCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAL\ChuyenDAL.cs" />
     <Compile Include="CSDLPhieuDatCho.cs">
       <SubType>Form</SubType>
@@ -205,6 +211,18 @@
     </Compile>
     <Compile Include="Location.Designer.cs">
       <DependentUpon>Location.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoyalCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoyalCustomer.Designer.cs">
+      <DependentUpon>LoyalCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageBanner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageBanner.Designer.cs">
+      <DependentUpon>ManageBanner.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\ACCOUNT.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -238,6 +256,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\DOAN.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GIAMGIA.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\KHACHHANG.cs">
@@ -372,6 +393,9 @@
     <EmbeddedResource Include="ChangePass.resx">
       <DependentUpon>ChangePass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChooseLoyalCustomer.resx">
+      <DependentUpon>ChooseLoyalCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CSDLPhieuDatCho.resx">
       <DependentUpon>CSDLPhieuDatCho.cs</DependentUpon>
     </EmbeddedResource>
@@ -395,6 +419,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoyalCustomer.resx">
+      <DependentUpon>LoyalCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageBanner.resx">
+      <DependentUpon>ManageBanner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>

@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using Tour.Model;
 using Tour.Utils;
 using System.Data.Entity.SqlServer;
+using System.Data.Entity;
 
 namespace Tour
 {
@@ -123,6 +124,8 @@ namespace Tour
 
             this.price = this.typetour = this.nametour = null;
 
+            pcbxBanner.Image = Properties.Resources.ic_image_empty_128;
+
         }
         private void add_Click(object sender, EventArgs e)
         {
@@ -222,10 +225,30 @@ namespace Tour
                 }
                 lstbxLocation.DataSource = LocationList;
                 lstbxLocation.DisplayMember = "TEN";
+
+                if(DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == id && x.IsDeleted == false).FirstOrDefault() != null)
+                {
+                pcbxBanner.Image = Converter.Instance.ByteArrayToImage(DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == id && x.IsDeleted == false).FirstOrDefault().PICBI);
+
+                }
+
             }
         }
 
         DataTable dt = new DataTable("TOUR");
+
+        private void btnBanner_Click(object sender, EventArgs e)
+        {
+            if (id == null)
+            {
+                return;
+            }
+            ManageBanner h = new ManageBanner(id);
+            Clear();
+            this.Hide();
+            h.ShowDialog();
+            this.Show();
+        }
 
         private void rdIDSearch_Enter(object sender, EventArgs e)
         {

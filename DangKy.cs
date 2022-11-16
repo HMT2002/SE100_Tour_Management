@@ -17,6 +17,9 @@ namespace Tour
     public partial class DangKy : Form
     {
         System.Text.RegularExpressions.Regex rEMail = new System.Text.RegularExpressions.Regex(@"^([a-zA-Z0-9_\-])([a-zA-Z0-9_\-\.]*)@(\[((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}|((([a-zA-Z0-9\-]+)\.)+))([a-zA-Z]{2,}|(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\])$");
+
+        KHACHHANG khachhang ;
+        
         public DangKy()
         {
             InitializeComponent();
@@ -114,15 +117,95 @@ namespace Tour
         {
 
 
-            if (tbName.Text.Trim().CompareTo(string.Empty) == 0 || tbSurname.Text.Trim().CompareTo(string.Empty) == 0 || tbAddress.Text.Trim().CompareTo(string.Empty) == 0 || tbCMND.Text.Trim().CompareTo(string.Empty) == 0||cbGroup.SelectedValue==null||cbDes.SelectedValue==null)
+            if (tbName.Text.Trim().CompareTo(string.Empty) == 0 || tbAddress.Text.Trim().CompareTo(string.Empty) == 0 || tbCMND.Text.Trim().CompareTo(string.Empty) == 0||cbGroup.SelectedValue==null||cbDes.SelectedValue==null)
             {
                 MessageBox.Show("Please fill in all the information", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
+
             return true;
         }
         public string SurName, address, phonenumber,typeCus, gender,CMND,TourID,tourist,typeoftour,RouteID,TenChuyen;
         public int Year, Month, Day, vYear, vMonth, vDay,price,tienhoantra,lephihoantra;
+
+        private void tbID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public double customer_discount = 0;
+
+        public double banner_discount = 0;
+
+
+        public void OpenChooseLoyalCustomer()
+        {
+            using (ChooseLoyalCustomer t = new ChooseLoyalCustomer())
+            {
+
+                this.Hide();
+                t.ShowDialog();
+                this.Show();
+
+                khachhang = t.ChosedKhachHang;
+
+                lblChooseCustomer.Text = t.ChosedKhachHang.ID;
+
+                tbName.Text = t.ChosedKhachHang.TENKH;
+
+                tbAddress.Text = t.ChosedKhachHang.DIACHI;
+
+                tbCMND.Text = t.ChosedKhachHang.CMND;
+
+                tbTelephone.Text = t.ChosedKhachHang.SDT;
+
+                tbEmail.Text = t.ChosedKhachHang.MAIL;
+
+                if (t.ChosedKhachHang.GIOITINH == "Male")
+                {
+                    RdMale.Checked = true;
+                }
+                else
+                {
+                    RdFmale.Checked = true;
+                }
+
+                switch (t.ChosedKhachHang.PRI)
+                {
+                    case "BRONZE":
+                        customer_discount = 5;
+                        break;
+
+                    case "SILVER":
+                        customer_discount = 7;
+                        break;
+
+                    case "GOLD":
+                        customer_discount = 13;
+                        break;
+
+                    case "PLATINUM":
+                        customer_discount = 18;
+                        break;
+
+                    default:
+                        customer_discount = 0;
+                        break;
+                }
+
+                lblCustomerDiscount.Text = customer_discount.ToString();
+                if (tbDiscount.Text.CompareTo(string.Empty) != 0)
+                {
+                    tbDiscount.Text = (Convert.ToInt32(tbDiscount.Text) + customer_discount).ToString();
+                }
+
+            }
+        }
+
+        private void lblChooseCustomer_Click(object sender, EventArgs e)
+        {
+            OpenChooseLoyalCustomer();
+        }
 
         private void cbGroup_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -145,30 +228,41 @@ namespace Tour
         private void btCreate_Click(object sender, EventArgs e)
         {
 
-            if (RdMale.Checked == true)
+            if (RdFmale.Checked == true)
             {
-                gender = "Nam";
+                gender = "Male";
             }
-            else gender = "Nữ";
+            else gender = "Female";
 
 
             if (CheckData())
             {
                 try
                 {
+
+                    string idkhach=lblChooseCustomer.Text.Trim();
                     string randomcode = Converter.Instance.RandomString2(5);
-                    string idkhach = randomcode;
-                    var khachhang = new KHACHHANG()
+
+                    if (khachhang==null)
                     {
-                        ID = idkhach,
-                        TENKH = tbSurname.Text + " " + tbName.Text,
-                        CMND = tbCMND.Text,
-                        GIOITINH = gender,
-                        DIACHI = tbAddress.Text,
-                        SDT = tbTelephone.Text,
-                        IsDeleted = false,
-                    };
-                    DataProvider.Ins.DB.KHACHHANGs.Add(khachhang);
+                        idkhach = randomcode;
+                        khachhang = new KHACHHANG()
+                        {
+                            ID = idkhach,
+                            TENKH = tbName.Text,
+                            CMND = tbCMND.Text,
+                            GIOITINH = gender,
+                            DIACHI = tbAddress.Text,
+                            SDT = tbTelephone.Text,
+                            IsDeleted = false,
+                        };
+                        DataProvider.Ins.DB.KHACHHANGs.Add(khachhang);
+                    }
+                    else
+                    {
+                        khachhang.SPENDING += Convert.ToDecimal(tbPrice.Text);
+                    }
+
 
                     randomcode = Converter.Instance.RandomString2(5);
                     var ve = new VE()
@@ -254,6 +348,23 @@ namespace Tour
                 cbGroup.SelectedIndex = -1;
                 reset();
                 tbPrice.Text = cbDes.SelectedItem.GetType().GetProperty("GIA").GetValue(cbDes.SelectedItem, null).ToString();
+                GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == idtour && x.IsDeleted == false).FirstOrDefault();
+                tbDiscount.Text = (giamgia.DISCOUNT + customer_discount).ToString();
+
+                try
+                {
+                        decimal res = 0;
+                        double discount = Convert.ToInt64(giamgia.DISCOUNT);
+                        decimal price = Convert.ToDecimal(tbPrice.Text);
+                        res = price - (price * (decimal)(discount / 100));
+                        tbTotal.Text = res.ToString();
+                }
+                catch
+                {
+
+                    tbTotal.Text = tbPrice.Text;
+                }
+
             }
 
         }
@@ -266,7 +377,11 @@ namespace Tour
         }
         void Clear()
         {
-            tbName.Text = tbSurname.Text = tbAddress.Text = tbTelephone.Text = tbEmail.Text = tbCMND.Text = "";
+            tbName.Text = tbAddress.Text = tbTelephone.Text = tbEmail.Text = tbCMND.Text = "";
+            lblChooseCustomer.Text = "Click to choose customer";
+            khachhang = null;
+            banner_discount = 0;
+            customer_discount = 0;
         }
         private void tbTelephone_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -347,18 +462,11 @@ namespace Tour
 
         private void tbName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
             {
                 e.Handled = true;
             }
         }
 
-        private void tbSurname_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
     }
 }

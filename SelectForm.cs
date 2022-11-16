@@ -252,5 +252,23 @@ namespace Tour
             this.Show();
             hideSubmenu();
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            ManageBanner h = new ManageBanner();
+            this.Hide();
+            h.ShowDialog();
+            this.Show();
+            hideSubmenu();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            LoyalCustomer h = new LoyalCustomer();
+            this.Hide();
+            h.ShowDialog();
+            this.Show();
+            hideSubmenu();
+        }
     }
 }

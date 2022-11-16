@@ -237,7 +237,7 @@ namespace Tour
         {
             txtbxName.Text = rchtxtbxDetail.Text = txtbxDiaChi.Text = txtbxGia.Text =txtbxName.Text=txtbxSDT.Text= "";
             cbboxProvince.SelectedIndex= cbbxHotel.SelectedIndex = -1;
-            pcbxLocation.Image = null;
+            pcbxLocation.Image = Properties.Resources.ic_image_empty_128;
         }
 
         private void cbbxHotel_SelectedValueChanged(object sender, EventArgs e)

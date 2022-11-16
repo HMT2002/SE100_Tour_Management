@@ -12,21 +12,16 @@ namespace Tour.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class ACCOUNT
+    public partial class GIAMGIA
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ACCOUNT()
-        {
-            this.KHACHHANGs = new HashSet<KHACHHANG>();
-        }
-    
         public string ID { get; set; }
-        public string ACC { get; set; }
-        public string PASS { get; set; }
+        public Nullable<int> DISCOUNT { get; set; }
+        public byte[] PICBI { get; set; }
+        public string IDTOUR { get; set; }
         public Nullable<bool> IsDeleted { get; set; }
-        public string ACCROLE { get; set; }
+        public Nullable<System.DateTime> NGAYBATDAU { get; set; }
+        public Nullable<System.DateTime> NGAYKETTHUC { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KHACHHANG> KHACHHANGs { get; set; }
+        public virtual TOUR TOUR { get; set; }
     }
 }

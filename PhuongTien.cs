@@ -113,7 +113,7 @@ namespace Tour
             cbbxKind.SelectedIndex = -1;
             cbbxVehical.SelectedIndex = -1;
             cbboxProvince.SelectedIndex = -1;
-            pcbxVehical.Image = null;
+            pcbxVehical.Image = Properties.Resources.ic_image_empty_128;
         }
 
         private void btnExit_Click(object sender, EventArgs e)

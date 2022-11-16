@@ -31,7 +31,7 @@ namespace Tour
 
             if (Properties.Settings.Default.CurUserId != string.Empty)
             {
-                NHANVIEN nv = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == Properties.Settings.Default.CurUserId).FirstOrDefault();
+                NHANVIEN nv = DataProvider.Ins.DB.NHANVIENs.Where(x => x.MAIL == Properties.Settings.Default.CurUserId && x.IsDeleted == false).FirstOrDefault();
                 txbGmail.Text = nv.MAIL;
                 txbTen.Text = nv.TEN;
                 txbSDT.Text = nv.SDT;
@@ -39,7 +39,7 @@ namespace Tour
                 pcbxAvatar.Image = Converter.Instance.ByteArrayToImage(nv.PICBI);
             }
 
-            //MessageBox.Show(Properties.Settings.Default.UserName + " " + )
+            //MessageBox.Show(Properties.Settings.Default.UserName + " "  )
 
         }
 
