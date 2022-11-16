@@ -32,6 +32,8 @@ namespace Tour
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangKy));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblChooseCustomer = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.RdForeign = new System.Windows.Forms.RadioButton();
             this.rdDomestic = new System.Windows.Forms.RadioButton();
@@ -105,6 +107,7 @@ namespace Tour
             this.btExit = new System.Windows.Forms.Button();
             this.btCreate = new System.Windows.Forms.Button();
             this.btnGo = new System.Windows.Forms.Button();
+            this.lblCustomerDiscount = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel17.SuspendLayout();
@@ -133,6 +136,8 @@ namespace Tour
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.lblChooseCustomer);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.panel17);
             this.panel1.Controls.Add(this.panel16);
@@ -154,6 +159,29 @@ namespace Tour
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(302, 490);
             this.panel1.TabIndex = 1;
+            // 
+            // lblChooseCustomer
+            // 
+            this.lblChooseCustomer.BackColor = System.Drawing.Color.Transparent;
+            this.lblChooseCustomer.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChooseCustomer.Location = new System.Drawing.Point(107, 22);
+            this.lblChooseCustomer.Name = "lblChooseCustomer";
+            this.lblChooseCustomer.Size = new System.Drawing.Size(179, 21);
+            this.lblChooseCustomer.TabIndex = 31;
+            this.lblChooseCustomer.Text = "Click to choose customer";
+            this.lblChooseCustomer.Click += new System.EventHandler(this.lblChooseCustomer_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(2, 22);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 21);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "ID";
             // 
             // panel7
             // 
@@ -254,6 +282,7 @@ namespace Tour
             this.tbTelephone.HoverState.Parent = this.tbTelephone;
             this.tbTelephone.Location = new System.Drawing.Point(-2, -2);
             this.tbTelephone.Margin = new System.Windows.Forms.Padding(4);
+            this.tbTelephone.MaxLength = 13;
             this.tbTelephone.Name = "tbTelephone";
             this.tbTelephone.PasswordChar = '\0';
             this.tbTelephone.PlaceholderText = "";
@@ -324,7 +353,7 @@ namespace Tour
             // 
             this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel14.Controls.Add(this.tbName);
-            this.panel14.Location = new System.Drawing.Point(106, 13);
+            this.panel14.Location = new System.Drawing.Point(107, 68);
             this.panel14.Margin = new System.Windows.Forms.Padding(2);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(183, 28);
@@ -371,7 +400,7 @@ namespace Tour
             this.tbCMND.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCMND.Location = new System.Drawing.Point(-1, -2);
             this.tbCMND.Margin = new System.Windows.Forms.Padding(2);
-            this.tbCMND.MaxLength = 40;
+            this.tbCMND.MaxLength = 13;
             this.tbCMND.Name = "tbCMND";
             this.tbCMND.Size = new System.Drawing.Size(283, 26);
             this.tbCMND.TabIndex = 16;
@@ -533,7 +562,7 @@ namespace Tour
             this.lb1.AutoSize = true;
             this.lb1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb1.ForeColor = System.Drawing.Color.Black;
-            this.lb1.Location = new System.Drawing.Point(2, 15);
+            this.lb1.Location = new System.Drawing.Point(3, 70);
             this.lb1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb1.Name = "lb1";
             this.lb1.Size = new System.Drawing.Size(53, 21);
@@ -1089,6 +1118,16 @@ namespace Tour
             this.btnGo.UseVisualStyleBackColor = true;
             this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
             // 
+            // lblCustomerDiscount
+            // 
+            this.lblCustomerDiscount.BackColor = System.Drawing.Color.Transparent;
+            this.lblCustomerDiscount.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerDiscount.Location = new System.Drawing.Point(644, 580);
+            this.lblCustomerDiscount.Name = "lblCustomerDiscount";
+            this.lblCustomerDiscount.Size = new System.Drawing.Size(12, 21);
+            this.lblCustomerDiscount.TabIndex = 32;
+            this.lblCustomerDiscount.Text = "0";
+            // 
             // DangKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1097,6 +1136,7 @@ namespace Tour
             this.BackColor = System.Drawing.Color.Linen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(984, 611);
+            this.Controls.Add(this.lblCustomerDiscount);
             this.Controls.Add(this.btngotocsdl);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.btExit);
@@ -1152,6 +1192,7 @@ namespace Tour
             this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1230,5 +1271,8 @@ namespace Tour
         private Guna.UI2.WinForms.Guna2TextBox tbAddress;
         private Guna.UI2.WinForms.Guna2ComboBox cbDes;
         private Guna.UI2.WinForms.Guna2ComboBox cbGroup;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblChooseCustomer;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblCustomerDiscount;
     }
 }

@@ -56,14 +56,14 @@
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnNew = new Guna.UI2.WinForms.Guna2Button();
             this.pnCRUD = new System.Windows.Forms.Panel();
+            this.pnUpdateCustomer = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnCreateCustomer = new Guna.UI2.WinForms.Guna2Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtbxRePassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblRePeassword = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtbxPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblNotes = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.pnCreateCustomer = new Guna.UI2.WinForms.Guna2Panel();
-            this.pnUpdateCustomer = new Guna.UI2.WinForms.Guna2Panel();
             this.panel1.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -75,9 +75,9 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvtatar)).BeginInit();
             this.pnCRUD.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.pnCreateCustomer.SuspendLayout();
             this.pnUpdateCustomer.SuspendLayout();
+            this.pnCreateCustomer.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -161,6 +161,7 @@
             this.tbTelephone.HoverState.Parent = this.tbTelephone;
             this.tbTelephone.Location = new System.Drawing.Point(-2, -2);
             this.tbTelephone.Margin = new System.Windows.Forms.Padding(4);
+            this.tbTelephone.MaxLength = 13;
             this.tbTelephone.Name = "tbTelephone";
             this.tbTelephone.PasswordChar = '\0';
             this.tbTelephone.PlaceholderText = "";
@@ -469,6 +470,25 @@
             this.pnCRUD.Size = new System.Drawing.Size(306, 47);
             this.pnCRUD.TabIndex = 30;
             // 
+            // pnUpdateCustomer
+            // 
+            this.pnUpdateCustomer.Controls.Add(this.btnUpdate);
+            this.pnUpdateCustomer.Location = new System.Drawing.Point(3, 3);
+            this.pnUpdateCustomer.Name = "pnUpdateCustomer";
+            this.pnUpdateCustomer.ShadowDecoration.Parent = this.pnUpdateCustomer;
+            this.pnUpdateCustomer.Size = new System.Drawing.Size(301, 36);
+            this.pnUpdateCustomer.TabIndex = 5;
+            // 
+            // pnCreateCustomer
+            // 
+            this.pnCreateCustomer.Controls.Add(this.btnAdd);
+            this.pnCreateCustomer.Controls.Add(this.btnNew);
+            this.pnCreateCustomer.Location = new System.Drawing.Point(4, 3);
+            this.pnCreateCustomer.Name = "pnCreateCustomer";
+            this.pnCreateCustomer.ShadowDecoration.Parent = this.pnCreateCustomer;
+            this.pnCreateCustomer.Size = new System.Drawing.Size(295, 37);
+            this.pnCreateCustomer.TabIndex = 0;
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
@@ -561,25 +581,6 @@
             this.lblNotes.TabIndex = 0;
             this.lblNotes.Text = "_______________________";
             // 
-            // pnCreateCustomer
-            // 
-            this.pnCreateCustomer.Controls.Add(this.btnAdd);
-            this.pnCreateCustomer.Controls.Add(this.btnNew);
-            this.pnCreateCustomer.Location = new System.Drawing.Point(4, 3);
-            this.pnCreateCustomer.Name = "pnCreateCustomer";
-            this.pnCreateCustomer.ShadowDecoration.Parent = this.pnCreateCustomer;
-            this.pnCreateCustomer.Size = new System.Drawing.Size(295, 37);
-            this.pnCreateCustomer.TabIndex = 0;
-            // 
-            // pnUpdateCustomer
-            // 
-            this.pnUpdateCustomer.Controls.Add(this.btnUpdate);
-            this.pnUpdateCustomer.Location = new System.Drawing.Point(3, 3);
-            this.pnUpdateCustomer.Name = "pnUpdateCustomer";
-            this.pnUpdateCustomer.ShadowDecoration.Parent = this.pnUpdateCustomer;
-            this.pnUpdateCustomer.Size = new System.Drawing.Size(301, 36);
-            this.pnUpdateCustomer.TabIndex = 5;
-            // 
             // LoyalCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -607,10 +608,10 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvtatar)).EndInit();
             this.pnCRUD.ResumeLayout(false);
+            this.pnUpdateCustomer.ResumeLayout(false);
+            this.pnCreateCustomer.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.pnCreateCustomer.ResumeLayout(false);
-            this.pnUpdateCustomer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
