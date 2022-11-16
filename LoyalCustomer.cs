@@ -17,6 +17,7 @@ namespace Tour
         public LoyalCustomer()
         {
             InitializeComponent();
+            pnUpdateCustomer.Visible = false;
         }
 
         KHACHHANG Khachhang=new KHACHHANG();
@@ -29,6 +30,9 @@ namespace Tour
 
             btnAdd.Visible = false;
             btnNew.Visible = false;
+            txtbxRePassword.Visible = false;
+            lblRePeassword.Visible = false;
+            pnCreateCustomer.Visible = false;
             LoadData();
         }
 
@@ -51,14 +55,16 @@ namespace Tour
             tbCMND.Text=this.Khachhang.CMND;
 
             pcbxAvtatar.Image = Converter.Instance.ByteArrayToImage(this.Khachhang.PICBI);
-
+            img_data = Khachhang.PICBI;
             string password = Converter.Instance.DecryptEncrypt(this.Khachhang.ACCOUNT.PASS);
 
-            string last3word = password.Substring(password.Length );
+            string last3word = "";
+            if (password.Length >= 3)
+            {
+                last3word = password.Substring(password.Length - 3);
 
-            string display_pass = last3word;
-
-            lblNotes.Text = "********" + display_pass;
+            }
+            lblNotes.Text = "********" + last3word;
 
         }
 
@@ -69,6 +75,24 @@ namespace Tour
                 return false;
             }
             if (txtbxPassword.Text.Trim().CompareTo(txtbxRePassword.Text.Trim()) != 0)
+            {
+                return false;
+            }
+            if (txtbxPassword.Text.Length <= 5)
+            {
+                MessageBox.Show("Password have to be over 5 letters");
+                return false;
+            }
+            return true;
+        }
+
+        public bool ChechDataUpdate()
+        {
+            if (txtbxPassword.Text.Trim().CompareTo(string.Empty) == 0 || tbAddress.Text.Trim().CompareTo(string.Empty) == 0 || tbCMND.Text.Trim().CompareTo(string.Empty) == 0 || tbEmail.Text.Trim().CompareTo(string.Empty) == 0 || tbTelephone.Text.Trim().CompareTo(string.Empty) == 0 || tbName.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                return false;
+            }
+            if (txtbxPassword.Text.CompareTo(Converter.Instance.DecryptEncrypt( Khachhang.ACCOUNT.PASS)) != 0)
             {
                 return false;
             }
@@ -115,6 +139,31 @@ namespace Tour
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (ChechDataUpdate())
+            {
+                Khachhang.TENKH = tbName.Text;
+                Khachhang.SDT = tbTelephone.Text;
+                Khachhang.CMND = tbCMND.Text;
+                Khachhang.DIACHI = tbAddress.Text;
+                Khachhang.MAIL = tbEmail.Text;
+                Khachhang.PICBI = img_data;
+                if (RdMale.Checked == true)
+                {
+                    Khachhang.GIOITINH = "Male";
+                }
+                else
+                {
+                    Khachhang.GIOITINH = "Female";
+
+                }
+
+                ACCOUNT acc = DataProvider.Ins.DB.ACCOUNTs.Where(x => x.ID == Khachhang.IDACC && x.IsDeleted == false).FirstOrDefault();
+
+                acc.ACC = tbEmail.Text;
+
+                DataProvider.Ins.DB.SaveChanges();
+                MessageBox.Show("Update success");
+            }
 
         }
 

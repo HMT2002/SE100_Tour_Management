@@ -101,7 +101,7 @@ namespace Tour
                 }
 
 
-                if (DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false && (x.ACCROLE == "Manager") || x.ACCROLE == "Employee")).SingleOrDefault() != null)
+                if (DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false &&( (x.ACCROLE == "Manager") || (x.ACCROLE == "Employee")))).SingleOrDefault() != null)
                 {
                     Properties.Settings.Default.UserName = emailtxb.Text;
                     Properties.Settings.Default.Password = passwordtxb.Text;
@@ -185,18 +185,28 @@ namespace Tour
             this.Show();
         }
 
+        public void Clear()
+        {
+            txtbxSearchTicket.Text = "";
+            emailtxb.Text = "";
+            passwordtxb.Text = "";
+
+        }
+
         private void cbGuest_CheckedChanged(object sender, EventArgs e)
         {
             if (cbGuest.Checked == true)
             {
-
+                Clear();
                 pnSearchTicket.Visible = true;
+                registaccountlb.Visible = false;
             }
             else
             {
                 LoginForm_Load(sender, e);
 
                 pnSearchTicket.Visible = false;
+                registaccountlb.Visible = true;
 
             }
         }

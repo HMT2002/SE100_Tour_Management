@@ -58,10 +58,12 @@
             this.pnCRUD = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtbxRePassword = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblRePeassword = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtbxPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblNotes = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pnCreateCustomer = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnUpdateCustomer = new Guna.UI2.WinForms.Guna2Panel();
             this.panel1.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -74,6 +76,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvtatar)).BeginInit();
             this.pnCRUD.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.pnCreateCustomer.SuspendLayout();
+            this.pnUpdateCustomer.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -157,7 +161,6 @@
             this.tbTelephone.HoverState.Parent = this.tbTelephone;
             this.tbTelephone.Location = new System.Drawing.Point(-2, -2);
             this.tbTelephone.Margin = new System.Windows.Forms.Padding(4);
-            this.tbTelephone.MaxLength = 12;
             this.tbTelephone.Name = "tbTelephone";
             this.tbTelephone.PasswordChar = '\0';
             this.tbTelephone.PlaceholderText = "";
@@ -418,7 +421,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(16, 8);
+            this.btnAdd.Location = new System.Drawing.Point(59, 3);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
             this.btnAdd.Size = new System.Drawing.Size(88, 29);
@@ -433,7 +436,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.HoverState.Parent = this.btnUpdate;
-            this.btnUpdate.Location = new System.Drawing.Point(110, 8);
+            this.btnUpdate.Location = new System.Drawing.Point(108, 4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
             this.btnUpdate.Size = new System.Drawing.Size(88, 29);
@@ -448,7 +451,7 @@
             this.btnNew.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnNew.ForeColor = System.Drawing.Color.White;
             this.btnNew.HoverState.Parent = this.btnNew;
-            this.btnNew.Location = new System.Drawing.Point(204, 8);
+            this.btnNew.Location = new System.Drawing.Point(169, 3);
             this.btnNew.Name = "btnNew";
             this.btnNew.ShadowDecoration.Parent = this.btnNew;
             this.btnNew.Size = new System.Drawing.Size(88, 29);
@@ -459,9 +462,8 @@
             // pnCRUD
             // 
             this.pnCRUD.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnCRUD.Controls.Add(this.btnNew);
-            this.pnCRUD.Controls.Add(this.btnAdd);
-            this.pnCRUD.Controls.Add(this.btnUpdate);
+            this.pnCRUD.Controls.Add(this.pnUpdateCustomer);
+            this.pnCRUD.Controls.Add(this.pnCreateCustomer);
             this.pnCRUD.Location = new System.Drawing.Point(321, 266);
             this.pnCRUD.Name = "pnCRUD";
             this.pnCRUD.Size = new System.Drawing.Size(306, 47);
@@ -472,7 +474,7 @@
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.txtbxRePassword);
-            this.panel4.Controls.Add(this.guna2HtmlLabel2);
+            this.panel4.Controls.Add(this.lblRePeassword);
             this.panel4.Controls.Add(this.guna2HtmlLabel1);
             this.panel4.Controls.Add(this.txtbxPassword);
             this.panel4.Controls.Add(this.lblNotes);
@@ -506,15 +508,16 @@
             this.txtbxRePassword.ShadowDecoration.Parent = this.txtbxRePassword;
             this.txtbxRePassword.Size = new System.Drawing.Size(321, 30);
             this.txtbxRePassword.TabIndex = 4;
+            this.txtbxRePassword.UseSystemPasswordChar = true;
             // 
-            // guna2HtmlLabel2
+            // lblRePeassword
             // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(9, 59);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(95, 15);
-            this.guna2HtmlLabel2.TabIndex = 3;
-            this.guna2HtmlLabel2.Text = "Re-enter password:";
+            this.lblRePeassword.BackColor = System.Drawing.Color.Transparent;
+            this.lblRePeassword.Location = new System.Drawing.Point(9, 59);
+            this.lblRePeassword.Name = "lblRePeassword";
+            this.lblRePeassword.Size = new System.Drawing.Size(95, 15);
+            this.lblRePeassword.TabIndex = 3;
+            this.lblRePeassword.Text = "Re-enter password:";
             // 
             // guna2HtmlLabel1
             // 
@@ -547,6 +550,7 @@
             this.txtbxPassword.ShadowDecoration.Parent = this.txtbxPassword;
             this.txtbxPassword.Size = new System.Drawing.Size(321, 30);
             this.txtbxPassword.TabIndex = 1;
+            this.txtbxPassword.UseSystemPasswordChar = true;
             // 
             // lblNotes
             // 
@@ -556,6 +560,25 @@
             this.lblNotes.Size = new System.Drawing.Size(141, 15);
             this.lblNotes.TabIndex = 0;
             this.lblNotes.Text = "_______________________";
+            // 
+            // pnCreateCustomer
+            // 
+            this.pnCreateCustomer.Controls.Add(this.btnAdd);
+            this.pnCreateCustomer.Controls.Add(this.btnNew);
+            this.pnCreateCustomer.Location = new System.Drawing.Point(4, 3);
+            this.pnCreateCustomer.Name = "pnCreateCustomer";
+            this.pnCreateCustomer.ShadowDecoration.Parent = this.pnCreateCustomer;
+            this.pnCreateCustomer.Size = new System.Drawing.Size(295, 37);
+            this.pnCreateCustomer.TabIndex = 0;
+            // 
+            // pnUpdateCustomer
+            // 
+            this.pnUpdateCustomer.Controls.Add(this.btnUpdate);
+            this.pnUpdateCustomer.Location = new System.Drawing.Point(3, 3);
+            this.pnUpdateCustomer.Name = "pnUpdateCustomer";
+            this.pnUpdateCustomer.ShadowDecoration.Parent = this.pnUpdateCustomer;
+            this.pnUpdateCustomer.Size = new System.Drawing.Size(301, 36);
+            this.pnUpdateCustomer.TabIndex = 5;
             // 
             // LoyalCustomer
             // 
@@ -586,6 +609,8 @@
             this.pnCRUD.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.pnCreateCustomer.ResumeLayout(false);
+            this.pnUpdateCustomer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -622,9 +647,11 @@
         private System.Windows.Forms.Panel pnCRUD;
         private System.Windows.Forms.Panel panel4;
         private Guna.UI2.WinForms.Guna2TextBox txtbxRePassword;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblRePeassword;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2TextBox txtbxPassword;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblNotes;
+        private Guna.UI2.WinForms.Guna2Panel pnUpdateCustomer;
+        private Guna.UI2.WinForms.Guna2Panel pnCreateCustomer;
     }
 }
