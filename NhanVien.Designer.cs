@@ -46,6 +46,7 @@ namespace Tour
             this.label6 = new System.Windows.Forms.Label();
             this.btnPickPicture = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pcbxAvatar = new Guna.UI2.WinForms.Guna2PictureBox();
             this.dgv_nhanvien = new Guna.UI2.WinForms.Guna2DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.data_employeeid = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,10 +60,9 @@ namespace Tour
             this.txtbxSDT = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtbxName = new Guna.UI2.WinForms.Guna2TextBox();
             this.tb_search = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pcbxAvatar = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_nhanvien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvatar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_nhanvien)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -274,6 +274,20 @@ namespace Tour
             this.panel3.Size = new System.Drawing.Size(290, 214);
             this.panel3.TabIndex = 11;
             // 
+            // pcbxAvatar
+            // 
+            this.pcbxAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pcbxAvatar.Image = global::Tour.Properties.Resources.ic_image_empty_128;
+            this.pcbxAvatar.InitialImage = global::Tour.Properties.Resources.ic_image_empty_128;
+            this.pcbxAvatar.Location = new System.Drawing.Point(4, 4);
+            this.pcbxAvatar.Margin = new System.Windows.Forms.Padding(4);
+            this.pcbxAvatar.Name = "pcbxAvatar";
+            this.pcbxAvatar.ShadowDecoration.Parent = this.pcbxAvatar;
+            this.pcbxAvatar.Size = new System.Drawing.Size(280, 204);
+            this.pcbxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbxAvatar.TabIndex = 38;
+            this.pcbxAvatar.TabStop = false;
+            // 
             // dgv_nhanvien
             // 
             this.dgv_nhanvien.AllowUserToResizeRows = false;
@@ -287,12 +301,12 @@ namespace Tour
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DimGray;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_nhanvien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_nhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_nhanvien.ColumnHeadersHeight = 25;
             this.dgv_nhanvien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.data_employeeid,
@@ -336,7 +350,7 @@ namespace Tour
             this.dgv_nhanvien.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgv_nhanvien.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.dgv_nhanvien.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.DimGray;
-            this.dgv_nhanvien.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_nhanvien.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgv_nhanvien.ThemeStyle.HeaderStyle.Height = 25;
             this.dgv_nhanvien.ThemeStyle.ReadOnly = false;
             this.dgv_nhanvien.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
@@ -425,6 +439,7 @@ namespace Tour
             this.txtbxID.Name = "txtbxID";
             this.txtbxID.PasswordChar = '\0';
             this.txtbxID.PlaceholderText = "";
+            this.txtbxID.ReadOnly = true;
             this.txtbxID.SelectedText = "";
             this.txtbxID.ShadowDecoration.Parent = this.txtbxID;
             this.txtbxID.Size = new System.Drawing.Size(335, 30);
@@ -527,19 +542,6 @@ namespace Tour
             this.tb_search.TabIndex = 37;
             this.tb_search.TextChanged += new System.EventHandler(this.tb_search_TextChanged_1);
             // 
-            // pcbxAvatar
-            // 
-            this.pcbxAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pcbxAvatar.InitialImage = global::Tour.Properties.Resources.ic_image_empty_128;
-            this.pcbxAvatar.Location = new System.Drawing.Point(4, 4);
-            this.pcbxAvatar.Margin = new System.Windows.Forms.Padding(4);
-            this.pcbxAvatar.Name = "pcbxAvatar";
-            this.pcbxAvatar.ShadowDecoration.Parent = this.pcbxAvatar;
-            this.pcbxAvatar.Size = new System.Drawing.Size(280, 204);
-            this.pcbxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcbxAvatar.TabIndex = 38;
-            this.pcbxAvatar.TabStop = false;
-            // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -573,8 +575,8 @@ namespace Tour
             this.Text = " ";
             this.Load += new System.EventHandler(this.NhanVien_Load);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_nhanvien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_nhanvien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

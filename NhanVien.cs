@@ -339,7 +339,6 @@ namespace Tour
                             seleted_nhanvien_phutrach = nvu.NHANVIEN.TEN;
                             temp_nv.isAvailable = false;
                             DataProvider.Ins.DB.SaveChanges();
-
                             this.Close();
                             break;
                         case DialogResult.Cancel:
