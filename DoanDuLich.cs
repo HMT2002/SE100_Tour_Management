@@ -38,7 +38,7 @@ namespace Tour
 
             dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
                                   join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-                                  where doan.IsDeleted == false && tour.IsDeleted == false
+                                  where doan.IsDeleted == false && tour.IsDeleted == false &&doan.NGAYKETTHUC>=DateTime.Now
 
                                   select new {
                                       ID = doan.ID,
