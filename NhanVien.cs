@@ -83,53 +83,6 @@ namespace Tour
             return ID;
         }
 
-        private void dgv_trip_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int index = e.RowIndex;
-            if (index >= 0 && e.ColumnIndex.ToString() != "5")
-            {
-                id = dgv_nhanvien.Rows[index].Cells["data_employeeid"].Value.ToString();
-                NHANVIEN temp = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault();
-                pcbxAvatar.Image = Converter.Instance.ByteArrayToImage(temp.PICBI);
-
-                txtbxID.Text = temp.ID;
-                txtbxName.Text = temp.TEN;
-                txtbxMail.Text = temp.MAIL;
-                txtbxSDT.Text = temp.SDT;
-            }
-            else
-            {// nhấn vào isAvailable
-                if (e.ColumnIndex.ToString() == "5" && dgv_nhanvien.Rows[index].Cells["isAvailable"].Value.ToString() == "True")
-                {
-                    id = dgv_nhanvien.Rows[index].Cells["data_employeeid"].Value.ToString();
-                    NHANVIEN temp_nv = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault();
-
-                    DialogResult dr =  MessageBox.Show("Do you want to assign this person to that role", "Assign", MessageBoxButtons.OKCancel);
-                    switch(dr)
-                    {
-                        case DialogResult.OK:
-                            var nvu = new tb_PHUTRACH() { ID=Converter.Instance.RandomString2(5),IDDOAN=doanid,IDNHANVIEN= temp_nv.ID, PHUTRACH=phutrach, IsDeleted=false};
-                            DataProvider.Ins.DB.tb_PHUTRACH.Add(nvu);
-                            seleted_nhanvien_phutrach = nvu.NHANVIEN.TEN;
-                            temp_nv.isAvailable = false;
-                            DataProvider.Ins.DB.SaveChanges();
-
-                            this.Close();
-                            break;
-                        case DialogResult.Cancel:
-                            break;
-                        default:
-                            break;
-                            
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("IsNotAvailable");
-                }
-            }
-        }
-
         private void tb_search_TextChanged(object sender, EventArgs e)
         {
             string value = tb_search.Text;
@@ -329,31 +282,106 @@ namespace Tour
 
         private void NhanVien_Load(object sender, EventArgs e)
         {
-            guna2DataGridView1.Rows.Add(4);
+            //dgv_nhanvien1.Rows.Add(4);
 
-            guna2DataGridView1.Rows[0].Cells[1].Value = "Vu Quang Huy";
-            guna2DataGridView1.Rows[0].Cells[2].Value = "0854021017";
-            guna2DataGridView1.Rows[0].Cells[3].Value = "20521419@gm.uit.edu.vn";
-            guna2DataGridView1.Rows[0].Cells[4].Value = 0;
-            guna2DataGridView1.Rows[0].Cells[5].Value = false;
+            //dgv_nhanvien1.Rows[0].Cells[1].Value = "Vu Quang Huy";
+            //dgv_nhanvien1.Rows[0].Cells[2].Value = "0854021017";
+            //dgv_nhanvien1.Rows[0].Cells[3].Value = "20521419@gm.uit.edu.vn";
+            //dgv_nhanvien1.Rows[0].Cells[4].Value = 0;
+            //dgv_nhanvien1.Rows[0].Cells[5].Value = false;
 
-            guna2DataGridView1.Rows[1].Cells[1].Value = "Vu Quang Huy 1";
-            guna2DataGridView1.Rows[1].Cells[2].Value = "0854021017";
-            guna2DataGridView1.Rows[1].Cells[3].Value = "20521419@gm.uit.edu.vn";
-            guna2DataGridView1.Rows[1].Cells[4].Value = 0;
-            guna2DataGridView1.Rows[1].Cells[5].Value = false;
+            //dgv_nhanvien1.Rows[1].Cells[1].Value = "Vu Quang Huy 1";
+            //dgv_nhanvien1.Rows[1].Cells[2].Value = "0854021017";
+            //dgv_nhanvien1.Rows[1].Cells[3].Value = "20521419@gm.uit.edu.vn";
+            //dgv_nhanvien1.Rows[1].Cells[4].Value = 0;
+            //dgv_nhanvien1.Rows[1].Cells[5].Value = false;
 
-            guna2DataGridView1.Rows[2].Cells[1].Value = "Vu Quang Huy 2";
-            guna2DataGridView1.Rows[2].Cells[2].Value = "0854021017";
-            guna2DataGridView1.Rows[2].Cells[3].Value = "20521419@gm.uit.edu.vn";
-            guna2DataGridView1.Rows[2].Cells[4].Value = 0;
-            guna2DataGridView1.Rows[2].Cells[5].Value = false;
+            //dgv_nhanvien1.Rows[2].Cells[1].Value = "Vu Quang Huy 2";
+            //dgv_nhanvien1.Rows[2].Cells[2].Value = "0854021017";
+            //dgv_nhanvien1.Rows[2].Cells[3].Value = "20521419@gm.uit.edu.vn";
+            //dgv_nhanvien1.Rows[2].Cells[4].Value = 0;
+            //dgv_nhanvien1.Rows[2].Cells[5].Value = false;
 
-            guna2DataGridView1.Rows[2].Cells[1].Value = "Vu Quang Huy 3";
-            guna2DataGridView1.Rows[2].Cells[2].Value = "0854021017";
-            guna2DataGridView1.Rows[2].Cells[3].Value = "20521419@gm.uit.edu.vn";
-            guna2DataGridView1.Rows[2].Cells[4].Value = 0;
-            guna2DataGridView1.Rows[2].Cells[5].Value = false;
+            //dgv_nhanvien1.Rows[2].Cells[1].Value = "Vu Quang Huy 3";
+            //dgv_nhanvien1.Rows[2].Cells[2].Value = "0854021017";
+            //dgv_nhanvien1.Rows[2].Cells[3].Value = "20521419@gm.uit.edu.vn";
+            //dgv_nhanvien1.Rows[2].Cells[4].Value = 0;
+            //dgv_nhanvien1.Rows[2].Cells[5].Value = false;
+        }
+
+        private void dgv_nhanvien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            if (index >= 0 && e.ColumnIndex.ToString() != "6")
+            {
+                id = dgv_nhanvien.Rows[index].Cells["data_employeeid"].Value.ToString();
+                NHANVIEN temp = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault();
+                pcbxAvatar.Image = Converter.Instance.ByteArrayToImage(temp.PICBI);
+
+                txtbxID.Text = temp.ID;
+                txtbxName.Text = temp.TEN;
+                txtbxMail.Text = temp.MAIL;
+                txtbxSDT.Text = temp.SDT;
+            }
+            else
+            {// nhấn vào isAvailable
+                if (e.ColumnIndex.ToString() == "6" && dgv_nhanvien.Rows[index].Cells["isAvailable"].Value.ToString() == "True")
+                {
+                    id = dgv_nhanvien.Rows[index].Cells["data_employeeid"].Value.ToString();
+                    NHANVIEN temp_nv = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault();
+
+                    DialogResult dr = MessageBox.Show("Do you want to assign this person to that role", "Assign", MessageBoxButtons.OKCancel);
+                    switch (dr)
+                    {
+                        case DialogResult.OK:
+                            var nvu = new tb_PHUTRACH() { ID = Converter.Instance.RandomString2(5), IDDOAN = doanid, IDNHANVIEN = temp_nv.ID, PHUTRACH = phutrach, IsDeleted = false };
+                            DataProvider.Ins.DB.tb_PHUTRACH.Add(nvu);
+                            seleted_nhanvien_phutrach = nvu.NHANVIEN.TEN;
+                            temp_nv.isAvailable = false;
+                            DataProvider.Ins.DB.SaveChanges();
+
+                            this.Close();
+                            break;
+                        case DialogResult.Cancel:
+                            break;
+                        default:
+                            break;
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("IsNotAvailable");
+                }
+            }
+        }
+
+        private void tb_search_TextChanged_1(object sender, EventArgs e)
+        {
+            string value = tb_search.Text;
+            if (!string.IsNullOrEmpty(value))
+            {
+                try
+                {
+                    //if (rdIDSearch.Checked)
+                    if (searchID == true)
+                    {
+                        dgv_nhanvien.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t => SqlFunctions.PatIndex("%" + value + "%", t.ID) > 0 && t.IsDeleted == false).Select(t => t).ToList();
+
+                    }
+                    //else if (rdNameSearch.Checked)
+                    else if (searchID == false)
+                    {
+                        dgv_nhanvien.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t => SqlFunctions.PatIndex("%" + value + "%", t.TEN) > 0 && t.IsDeleted == false).Select(t => t).ToList();
+
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+            else { showAll(); }
         }
     }
 
