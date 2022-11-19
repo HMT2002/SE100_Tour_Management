@@ -14,7 +14,7 @@ namespace Tour.Utils
         public Random random = new Random();
         public string RandomString(int length)
         {
-            string chars = "ABCDABCDEFGHIJKLMNOPQRSTUVWXYZ01234567FGHIJKLMNOPQRSTUVGHIJKLMNOPQRSTUVBCDEFGHIJKLMNOPQRSTUVWXYZ01234567ABCDEFGHIJKLMNOPQRS8967LABCDELMNOPQRSTUVWXYZ0123456789MNOPQRSTUVWXYZ0123456789";
+            string chars = "ABCDABCDEFGHIJKLMNOPQRSTUVWXYZ01234567FGHIJKLMNOPQRSTUVGHIJKLMNOPQxXxTueDepTraiVipProxXxRSTUVBCDEFGHIJKLMNOPQRSTUVWXYZ01234567ABCDEFGHIJKLMNOPQRS8967LABCDELMNOPQRSTUVWXYZ0123456789MNOPQRSTUVWXYZ0123456789";
             random = new Random();
             return new string(Enumerable.Repeat(chars, length)
                 .Select(s => s[random.Next(s.Length)]).ToArray());
@@ -122,6 +122,18 @@ namespace Tour.Utils
                     }
                 }
             }
+        }
+
+        public string EncryptPassword(string password)
+        {
+            string encrypt= MD5Encrypt(Base64Encode(password));
+
+            return encrypt;
+        }
+
+        public string DecryptEncrypt(string encrypt)
+        {
+            return Base64Decode(MD5Decrypt(encrypt));
         }
 
         public string MD5Decrypt(string cipher)

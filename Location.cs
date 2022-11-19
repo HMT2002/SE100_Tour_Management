@@ -143,7 +143,7 @@ namespace Tour
 
             cbboxProvince.SelectedIndex = cbbxLocation.SelectedIndex = -1;
             txtbxGia.Text = "";
-            pcbxLocation.Image = null;
+            pcbxLocation.Image = Properties.Resources.ic_image_empty_128;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

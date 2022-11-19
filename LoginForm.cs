@@ -64,21 +64,29 @@ namespace Tour
         }
         public void loginbtn_Click(object sender, EventArgs e)
         {
-            if (cbGuest.Checked == true)
+
+            string ensryptedpass = Converter.Instance.EncryptPassword((passwordtxb.Text));
+
+            if (cbGuest.Checked)
             {
-                string ticket_id = emailtxb.Text;
-                if(DataProvider.Ins.DB.VEs.Where(x => (x.ID == ticket_id && x.IsDeleted == false)).SingleOrDefault() == null)
+                ACCOUNT acc = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false && x.ACCROLE == "Customer")).SingleOrDefault();
+                if (acc != null)
                 {
-                    MessageBox.Show("Số vé không tồn tại!");
+                    MessageBox.Show("Login as customer!");
+                    KHACHHANG kh = DataProvider.Ins.DB.KHACHHANGs.Where(x => (x.IDACC == acc.ID&&x.IsDeleted==false )).SingleOrDefault();
+                    LoyalCustomer menuF = new LoyalCustomer(kh);
+                    this.Hide();
+                    menuF.ShowDialog();
+                    this.Show();
                 }
-                SearchTicket f = new SearchTicket(ticket_id);
-                this.Hide();
-                f.ShowDialog();
-                this.Show();
+                else
+                {
+                    MessageBox.Show("Wrong email or password!!!!");
+                }
+
             }
             else
             {
-                string ensryptedpass = Converter.Instance.MD5Encrypt(Converter.Instance.Base64Encode(passwordtxb.Text));
                 if (cbghinho.Checked == true)
                 {
                     Properties.Settings.Default.Email = emailtxb.Text;
@@ -93,11 +101,11 @@ namespace Tour
                 }
 
 
-                if (DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault() != null)
+                if (DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false &&( (x.ACCROLE == "Manager") || (x.ACCROLE == "Employee")))).SingleOrDefault() != null)
                 {
                     Properties.Settings.Default.UserName = emailtxb.Text;
                     Properties.Settings.Default.Password = passwordtxb.Text;
-                    Properties.Settings.Default.CurUserId = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().IDNHANVIEN;
+                    Properties.Settings.Default.CurUserId = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().ACC;
 
                     Properties.Settings.Default.Save();
                     SelectForm menuF = new SelectForm();
@@ -110,6 +118,8 @@ namespace Tour
                     MessageBox.Show("Wrong email or password!!!!");
                 }
             }
+
+
 
         }
 
@@ -161,28 +171,57 @@ namespace Tour
         }
         public string password, email;
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string ticket_id =  txtbxSearchTicket.Text;
+            if (DataProvider.Ins.DB.VEs.Where(x => (x.ID == ticket_id && x.IsDeleted == false)).SingleOrDefault() == null)
+            {
+                MessageBox.Show("Số vé không tồn tại!");
+                return;
+            }
+            SearchTicket f = new SearchTicket(DataProvider.Ins.DB.VEs.Where(x => (x.ID == ticket_id && x.IsDeleted == false)).SingleOrDefault());
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        public void Clear()
+        {
+            txtbxSearchTicket.Text = "";
+            emailtxb.Text = "";
+            passwordtxb.Text = "";
+
+        }
+
+        private void passwordtxb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void cbGuest_CheckedChanged(object sender, EventArgs e)
         {
             if (cbGuest.Checked == true)
             {
-                emailtxb.Clear();
-                label2.Text = "Search Ticket";
-                loginbtn.Text = "SEARCH";
-                cbghinho.Visible = false;
-                forgetlb.Visible = false;
+                Clear();
+                label3.Visible = false;
                 registaccountlb.Visible = false;
-                passwordtxb.Visible = false;
             }
             else
             {
                 LoginForm_Load(sender, e);
-                label2.Text = "Login";
-                loginbtn.Text = "LOGIN";
-                cbghinho.Visible = true;
-                forgetlb.Visible = true;
-                registaccountlb.Visible = true;
-                passwordtxb.Visible = true;
 
+                label3.Visible = true;
+                registaccountlb.Visible = true;
 
             }
         }

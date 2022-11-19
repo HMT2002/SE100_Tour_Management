@@ -48,6 +48,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.3.5, Culture=neutral, PublicKeyToken=4015e4865bda28a4, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.3.5\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
     <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
       <HintPath>packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
     </Reference>
@@ -63,6 +66,7 @@
     <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Extensions.Logging.Abstractions.1.0.0\lib\netstandard1.1\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MimeKit, Version=3.4.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
       <HintPath>packages\MimeKit.3.4.1\lib\net47\MimeKit.dll</HintPath>
     </Reference>
@@ -171,6 +175,12 @@
       <DependentUpon>ChangePass.cs</DependentUpon>
     </Compile>
     <Compile Include="BLL\ChuyenBLL.cs" />
+    <Compile Include="ChooseLoyalCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseLoyalCustomer.Designer.cs">
+      <DependentUpon>ChooseLoyalCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAL\ChuyenDAL.cs" />
     <Compile Include="CSDLPhieuDatCho.cs">
       <SubType>Form</SubType>
@@ -201,6 +211,18 @@
     </Compile>
     <Compile Include="Location.Designer.cs">
       <DependentUpon>Location.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoyalCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoyalCustomer.Designer.cs">
+      <DependentUpon>LoyalCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageBanner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageBanner.Designer.cs">
+      <DependentUpon>ManageBanner.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\ACCOUNT.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -234,6 +256,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\DOAN.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GIAMGIA.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\KHACHHANG.cs">
@@ -368,6 +393,9 @@
     <EmbeddedResource Include="ChangePass.resx">
       <DependentUpon>ChangePass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChooseLoyalCustomer.resx">
+      <DependentUpon>ChooseLoyalCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CSDLPhieuDatCho.resx">
       <DependentUpon>CSDLPhieuDatCho.cs</DependentUpon>
     </EmbeddedResource>
@@ -391,6 +419,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoyalCustomer.resx">
+      <DependentUpon>LoyalCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageBanner.resx">
+      <DependentUpon>ManageBanner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>
@@ -552,6 +586,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\email.png" />
+    <None Include="Resources\password.png" />
+    <None Include="Resources\code.png" />
     <Content Include="tickets.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

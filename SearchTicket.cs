@@ -14,9 +14,14 @@ namespace Tour
     public partial class SearchTicket : Form
     {
         string Ticket_id;
+
+        VE Ve=new VE();
+
         public SearchTicket()
         {
             InitializeComponent();
+            showAll();
+
         }
 
         public SearchTicket(string ticket_id)
@@ -27,14 +32,34 @@ namespace Tour
 
         }
 
+        public SearchTicket(VE ve)
+        {
+            InitializeComponent();
+
+            this.Ve = ve;
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            txtbxTenKhachHang.Text = this.Ve.KHACHHANG.TENKH;
+            txtbxTenTour.Text = this.Ve.DOAN.TOUR.TEN;
+            txtbxTenDoan.Text = this.Ve.DOAN.TEN;
+
+            lblDay.Text = this.Ve.DOAN.NGAYKHOIHANH.Value.Day.ToString();
+            lblMonth.Text = this.Ve.DOAN.NGAYKHOIHANH.Value.Month.ToString();
+            lblTime.Text = this.Ve.DOAN.NGAYKHOIHANH.Value.TimeOfDay.ToString();
+
+
+        }
+
         private void SearchTicket_Load(object sender, EventArgs e)
         {
-            showAll();
         }
 
         private void showAll()
         {
-            dgvTicket.DataSource = (from doan in DataProvider.Ins.DB.DOANs
+            var l = (from doan in DataProvider.Ins.DB.DOANs
                                     join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
                                     join ve in DataProvider.Ins.DB.VEs on doan.ID equals ve.IDDOAN
                                     join khachhang in DataProvider.Ins.DB.KHACHHANGs on ve.IDKHACH equals khachhang.ID
