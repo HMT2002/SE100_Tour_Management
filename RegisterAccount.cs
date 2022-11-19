@@ -37,6 +37,61 @@ namespace Tour
             return false;
         }
 
+
+        void Clear()
+        {
+            txbHo.Text = txbTen.Text = txbSDT.Text = txbGmail.Text = txbPass.Text = txbConfirm.Text = "";
+        }
+
+        string email;
+
+
+        private void btnPickPicture_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Chon anh(*.jpg; *.png; *.gif) | *.jpg; *.png; *.gif";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                Image image = Image.FromFile(dialog.FileName);
+                img = image;
+                img_data = Converter.Instance.ImageToByte(image);
+                pcbxAvatar.Image = image;
+
+            }
+        }
+
+        private void txbSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                // the events is already handled, the keypress event won't happen if the character is neither digit nor control character
+            }
+        }
+
+        private void txbGmail_Validating(object sender, CancelEventArgs e)
+        {
+            if (txbGmail.Text.Length > 0)
+            {
+                if (!rEMail.IsMatch(txbGmail.Text))
+                {
+                    MessageBox.Show("Invalidate Email", "Error");
+                    txbGmail.SelectAll();
+                    SignUpbtn.Enabled = false;
+                    //e.Cancel = true;
+                }
+                else
+                {
+                    SignUpbtn.Enabled = true;
+                }
+            }
+        }
+
+        private void txbGmail_TextChanged(object sender, EventArgs e)
+        {
+            txbCode.Text = "";
+        }
+
         private void SignUpbtn_Click(object sender, EventArgs e)
         {
 
@@ -64,8 +119,8 @@ namespace Tour
                 try
                 {
 
-                    var nv = new NHANVIEN() { ID = randomcode,  TEN = txbHo.Text+" "+ txbTen.Text, SDT = txbSDT.Text, MAIL = txbGmail.Text,PICBI=img_data };
-                    var account = new ACCOUNT() { ACC = txbGmail.Text, PASS = Converter.Instance.MD5Encrypt(Converter.Instance.Base64Encode(txbPass.Text)), ID = randomcode, IDNHANVIEN = randomcode,IsDeleted=false };
+                    var nv = new NHANVIEN() { ID = randomcode, TEN = txbHo.Text + " " + txbTen.Text, SDT = txbSDT.Text, MAIL = txbGmail.Text, PICBI = img_data };
+                    var account = new ACCOUNT() { ACC = txbGmail.Text, PASS = Converter.Instance.MD5Encrypt(Converter.Instance.Base64Encode(txbPass.Text)), ID = randomcode, IDNHANVIEN = randomcode, IsDeleted = false };
                     DataProvider.Ins.DB.ACCOUNTs.Add(account);
                     DataProvider.Ins.DB.NHANVIENs.Add(nv);
 
@@ -93,42 +148,15 @@ namespace Tour
 
             }
         }
-        void Clear()
-        {
-            txbHo.Text = txbTen.Text = txbSDT.Text = txbGmail.Text = txbPass.Text = txbConfirm.Text = "";
-        }
 
-        private void txbSDT_KeyPress(object sender, KeyPressEventArgs e)
+        private void Cancelbtn_Click(object sender, EventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            this.Close();
         }
-        string email;
-        private void txbGmail_Validating(object sender, CancelEventArgs e)
-        {
-            if (txbGmail.Text.Length > 0)
-            {
-                if (!rEMail.IsMatch(txbGmail.Text))
-                {
-                    MessageBox.Show("Invalidate Email", "Error");
-                    txbGmail.SelectAll();
-                    SignUpbtn.Enabled = false;
-                    //e.Cancel = true;
-                }
-                else
-                {
-                    SignUpbtn.Enabled = true;
-                }
-            }
-        }
-
-
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            if (txbGmail.Text.Length > 0)
+            if (txbGmail.Text.Length > 0 && txbGmail.Text!="")
             {
                 if (rEMail.IsMatch(txbGmail.Text))
                 {
@@ -155,7 +183,7 @@ namespace Tour
                     try
                     {
                         Utils.Features.Instance.SendMail(listto, "Verify code", randomcode);
-                        label12.Text = "Code send success!!!";
+                        label12.Text = "Sent";
                     }
                     catch (Exception ex)
                     {
@@ -164,30 +192,11 @@ namespace Tour
 
                 }
             }
-        }
-
-        private void txbGmail_TextChanged(object sender, EventArgs e)
-        {
-            txbCode.Text = "";
-        }
-
-        private void Cancelbtn_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnPickPicture_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Chon anh(*.jpg; *.png; *.gif) | *.jpg; *.png; *.gif";
-            if (dialog.ShowDialog() == DialogResult.OK)
+            else
             {
-                Image image = Image.FromFile(dialog.FileName);
-                img = image;
-                img_data = Converter.Instance.ImageToByte(image);
-                pcbxAvatar.Image = image;
-
-            }
+                MessageBox.Show("Invalid Email !!!");
+            } 
+                
         }
     }
 }
