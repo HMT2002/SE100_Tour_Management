@@ -36,6 +36,7 @@ namespace Tour
             this.lblMonth = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblYear = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTime = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btnPrintTicket = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // txtbxTenKhachHang
@@ -143,11 +144,27 @@ namespace Tour
             this.lblTime.TabIndex = 6;
             this.lblTime.Text = "9:00:00";
             // 
+            // btnPrintTicket
+            // 
+            this.btnPrintTicket.CheckedState.Parent = this.btnPrintTicket;
+            this.btnPrintTicket.CustomImages.Parent = this.btnPrintTicket;
+            this.btnPrintTicket.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnPrintTicket.ForeColor = System.Drawing.Color.White;
+            this.btnPrintTicket.HoverState.Parent = this.btnPrintTicket;
+            this.btnPrintTicket.Location = new System.Drawing.Point(608, 12);
+            this.btnPrintTicket.Name = "btnPrintTicket";
+            this.btnPrintTicket.ShadowDecoration.Parent = this.btnPrintTicket;
+            this.btnPrintTicket.Size = new System.Drawing.Size(180, 45);
+            this.btnPrintTicket.TabIndex = 7;
+            this.btnPrintTicket.Text = "Print ticket";
+            this.btnPrintTicket.Click += new System.EventHandler(this.btnPrintTicket_Click);
+            // 
             // SearchTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPrintTicket);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lblYear);
             this.Controls.Add(this.lblMonth);
@@ -172,5 +189,6 @@ namespace Tour
         private Guna.UI2.WinForms.Guna2HtmlLabel lblMonth;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblYear;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTime;
+        private Guna.UI2.WinForms.Guna2Button btnPrintTicket;
     }
 }

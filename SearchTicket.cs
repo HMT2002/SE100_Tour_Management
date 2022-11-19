@@ -1,12 +1,16 @@
-﻿using System;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Compilation;
 using System.Windows.Forms;
+using Tour.CrystalReport;
 using Tour.Model;
 
 namespace Tour
@@ -75,6 +79,24 @@ namespace Tour
                                         GIA_TOUR = tour.GIA,
                                         TEN_TOUR = tour.TEN,
                                     }).ToList();
+        }
+
+        private void btnPrintTicket_Click(object sender, EventArgs e)
+        {
+            if (this.Ve == null)
+            {
+                return;
+            }
+            using(fPrint f=new fPrint(this.Ve))
+            {
+                rptTicket crys = new rptTicket();
+                crys.Load(@"rptTicket.rep");
+
+                f.rptViewer.ReportSource = crys;
+                f.rptViewer.SelectionFormula = "{VE.ID}='" + this.Ve.ID + "'";
+
+                f.ShowDialog();
+            }
         }
     }
 }
