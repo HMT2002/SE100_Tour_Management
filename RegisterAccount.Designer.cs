@@ -429,12 +429,13 @@
             // 
             // guna2Panel2
             // 
+            this.guna2Panel2.AutoSize = true;
             this.guna2Panel2.Controls.Add(this.guna2PictureBox1);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
-            this.guna2Panel2.Size = new System.Drawing.Size(449, 541);
+            this.guna2Panel2.Size = new System.Drawing.Size(452, 541);
             this.guna2Panel2.TabIndex = 84;
             // 
             // guna2PictureBox1
@@ -443,7 +444,7 @@
             this.guna2PictureBox1.Location = new System.Drawing.Point(0, 3);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(446, 538);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(449, 538);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;

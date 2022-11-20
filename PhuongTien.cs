@@ -116,24 +116,7 @@ namespace Tour
             pcbxVehical.Image = null;
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
-        private void btnPickPicture_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Chon anh(*.jpg; *.png; *.gif) | *.jpg; *.png; *.gif";
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                Image image = Image.FromFile(dialog.FileName);
-                img = image;
-                img_data = Converter.Instance.ImageToByte(image);
-                pcbxVehical.Image = image;
-
-            }
-        }
 
         private bool CheckData()
         {
@@ -143,6 +126,25 @@ namespace Tour
             }
             return true;
         }
+
+        private void cbbxVehical_SelectedValueChanged(object sender, EventArgs e)
+        {
+            int index = cbbxVehical.SelectedIndex;
+            if (index >= 0)
+            {
+                PHUONGTIEN selected_item = (PHUONGTIEN)cbbxVehical.SelectedItem;
+                id = selected_item.ID;
+
+                PHUONGTIEN temp = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == selected_item.ID).FirstOrDefault();
+                pcbxVehical.Image = Converter.Instance.ByteArrayToImage(temp.PICBI);
+                txtbxName.Text = temp.TEN;
+                cbbxKind.Text = temp.LOAI;
+                cbboxProvince.Text = DataProvider.Ins.DB.TINHs.Where(x => x.ID == temp.IDTINH).FirstOrDefault().TEN;
+                img_data = temp.PICBI;
+                txtbxGia.Text = temp.GIA.ToString();
+            }
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (CheckData() == true)
@@ -152,12 +154,12 @@ namespace Tour
                     randomcode = Converter.Instance.RandomString2(5);
                     if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
                     {
-                        var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text ,IsDeleted=false};
+                        var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text, IsDeleted = false };
                         DataProvider.Ins.DB.TINHs.Add(tinh);
                         DataProvider.Ins.DB.SaveChanges();
                     }
 
-                    var vehical = new PHUONGTIEN() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), PICBI = img_data,LOAI=cbbxKind.Text,IsDeleted=false ,GIA=Convert.ToDecimal( txtbxGia.Text)};
+                    var vehical = new PHUONGTIEN() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), PICBI = img_data, LOAI = cbbxKind.Text, IsDeleted = false, GIA = Convert.ToDecimal(txtbxGia.Text) };
 
                     DataProvider.Ins.DB.PHUONGTIENs.Add(vehical);
                     DataProvider.Ins.DB.SaveChanges();
@@ -184,7 +186,6 @@ namespace Tour
                     throw raise;
                 }
             }
-
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -209,7 +210,6 @@ namespace Tour
 
                 }
             }
-
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -233,7 +233,7 @@ namespace Tour
                     phuongtien.IDTINH = cbboxProvince.SelectedIndex.ToString();
                     phuongtien.LOAI = cbbxKind.Text;
                     phuongtien.PICBI = img_data;
-                    phuongtien.GIA =Convert.ToDecimal( txtbxGia.Text);
+                    phuongtien.GIA = Convert.ToDecimal(txtbxGia.Text);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
                     Clear();
@@ -257,30 +257,16 @@ namespace Tour
                     throw raise;
                 }
             }
+        }
 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clear();
-        }
-
-        private void cbbxVehical_SelectedValueChanged(object sender, EventArgs e)
-        {
-            int index = cbbxVehical.SelectedIndex;
-            if (index >= 0)
-            {
-                PHUONGTIEN selected_item = (PHUONGTIEN)cbbxVehical.SelectedItem;
-                id = selected_item.ID;
-
-                PHUONGTIEN temp = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == selected_item.ID).FirstOrDefault();
-                pcbxVehical.Image = Converter.Instance.ByteArrayToImage(temp.PICBI);
-                txtbxName.Text = temp.TEN;
-                cbbxKind.Text = temp.LOAI;
-                cbboxProvince.Text = DataProvider.Ins.DB.TINHs.Where(x => x.ID == temp.IDTINH).FirstOrDefault().TEN;
-                img_data = temp.PICBI;
-                txtbxGia.Text = temp.GIA.ToString();
-            }
         }
 
         private void txtbxGia_KeyPress(object sender, KeyPressEventArgs e)
@@ -292,6 +278,20 @@ namespace Tour
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void btnPickPicture_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Chon anh(*.jpg; *.png; *.gif) | *.jpg; *.png; *.gif";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                Image image = Image.FromFile(dialog.FileName);
+                img = image;
+                img_data = Converter.Instance.ImageToByte(image);
+                pcbxVehical.Image = image;
+
             }
         }
     }
