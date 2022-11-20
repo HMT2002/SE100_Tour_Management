@@ -13,6 +13,7 @@ using Tour.Model;
 using Tour.Utils;
 using System.Data.Entity.SqlServer;
 using System.Data.Entity;
+using Tour.CrystalReport;
 
 namespace Tour
 {
@@ -20,6 +21,8 @@ namespace Tour
     {
         string id;
         string randomcode;
+
+        TOUR selected_tour=new TOUR();
 
         List<DIADIEM> LocationList = new List<DIADIEM>();
 
@@ -55,6 +58,7 @@ namespace Tour
         }
         private void TRIPManageTour_Load(object sender, EventArgs e)
         {
+            Clear();
             ShowAllChuyen();
 
         }
@@ -125,6 +129,8 @@ namespace Tour
             this.price = this.typetour = this.nametour = null;
 
             pcbxBanner.Image = Properties.Resources.ic_image_empty_128;
+
+            this.selected_tour = null;
 
         }
         private void add_Click(object sender, EventArgs e)
@@ -207,6 +213,7 @@ namespace Tour
 
             if (index >= 0)
             {
+                Clear();
                 id = dgv_trip.Rows[index].Cells["data_ID"].Value.ToString();
                 tb_idtrip.Text = id;
                 tb_nametour.Text = dgv_trip.Rows[index].Cells["TEN"].Value.ToString();
@@ -226,16 +233,17 @@ namespace Tour
                 lstbxLocation.DataSource = LocationList;
                 lstbxLocation.DisplayMember = "TEN";
 
-                if(DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == id && x.IsDeleted == false).FirstOrDefault() != null)
+                if (DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == id && x.IsDeleted == false).FirstOrDefault() != null)
                 {
-                pcbxBanner.Image = Converter.Instance.ByteArrayToImage(DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == id && x.IsDeleted == false).FirstOrDefault().PICBI);
+                    pcbxBanner.Image = Converter.Instance.ByteArrayToImage(DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == id && x.IsDeleted == false).FirstOrDefault().PICBI);
 
                 }
 
+
+                selected_tour = DataProvider.Ins.DB.TOURs.Where(x => x.ID == id && x.IsDeleted == false).FirstOrDefault();
+
             }
         }
-
-        DataTable dt = new DataTable("TOUR");
 
         private void btnBanner_Click(object sender, EventArgs e)
         {
@@ -243,11 +251,30 @@ namespace Tour
             {
                 return;
             }
-            ManageBanner h = new ManageBanner(id);
+            ManageBanner h = new ManageBanner(DataProvider.Ins.DB.TOURs.Where(x=>x.ID==id&&x.IsDeleted==false).FirstOrDefault());
             Clear();
             this.Hide();
             h.ShowDialog();
             this.Show();
+        }
+
+        private void btnViewTourReport_Click(object sender, EventArgs e)
+        {
+            if (this.selected_tour == null)
+            {
+                return;
+            }
+
+            using (fPrint f = new fPrint(this.selected_tour))
+            {
+                rptTourIncome crys = new rptTourIncome();
+                crys.Load(@"rptTourIncome.rep");
+
+                f.rptViewer.ReportSource = crys;
+                f.rptViewer.SelectionFormula = "{TOUR.ID}='" + this.selected_tour.ID + "'";
+
+                f.ShowDialog();
+            }
         }
 
         private void rdIDSearch_Enter(object sender, EventArgs e)

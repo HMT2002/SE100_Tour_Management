@@ -64,6 +64,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.rdNameSearch = new System.Windows.Forms.RadioButton();
             this.rdIDSearch = new System.Windows.Forms.RadioButton();
+            this.btnViewTourReport = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_trip)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -169,7 +170,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(16, 94);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1444, 239);
+            this.groupBox2.Size = new System.Drawing.Size(1237, 239);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tour details";
@@ -182,9 +183,9 @@
             this.btnBanner.FlatAppearance.BorderSize = 0;
             this.btnBanner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBanner.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBanner.Location = new System.Drawing.Point(1270, 142);
+            this.btnBanner.Location = new System.Drawing.Point(1157, 142);
             this.btnBanner.Name = "btnBanner";
-            this.btnBanner.Size = new System.Drawing.Size(85, 53);
+            this.btnBanner.Size = new System.Drawing.Size(71, 47);
             this.btnBanner.TabIndex = 54;
             this.btnBanner.Text = "Banner";
             this.btnBanner.UseVisualStyleBackColor = true;
@@ -193,10 +194,10 @@
             // pcbxBanner
             // 
             this.pcbxBanner.Image = global::Tour.Properties.Resources.ic_image_empty_128;
-            this.pcbxBanner.Location = new System.Drawing.Point(844, 142);
+            this.pcbxBanner.Location = new System.Drawing.Point(731, 142);
             this.pcbxBanner.Name = "pcbxBanner";
             this.pcbxBanner.ShadowDecoration.Parent = this.pcbxBanner;
-            this.pcbxBanner.Size = new System.Drawing.Size(420, 97);
+            this.pcbxBanner.Size = new System.Drawing.Size(420, 91);
             this.pcbxBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbxBanner.TabIndex = 53;
             this.pcbxBanner.TabStop = false;
@@ -210,9 +211,9 @@
             this.btnAddLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddLocation.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddLocation.Image = ((System.Drawing.Image)(resources.GetObject("btnAddLocation.Image")));
-            this.btnAddLocation.Location = new System.Drawing.Point(1270, 18);
+            this.btnAddLocation.Location = new System.Drawing.Point(1157, 18);
             this.btnAddLocation.Name = "btnAddLocation";
-            this.btnAddLocation.Size = new System.Drawing.Size(51, 53);
+            this.btnAddLocation.Size = new System.Drawing.Size(51, 47);
             this.btnAddLocation.TabIndex = 48;
             this.btnAddLocation.UseVisualStyleBackColor = true;
             this.btnAddLocation.Click += new System.EventHandler(this.btnAddLocation_Click);
@@ -221,16 +222,16 @@
             // 
             this.lstbxLocation.FormattingEnabled = true;
             this.lstbxLocation.ItemHeight = 19;
-            this.lstbxLocation.Location = new System.Drawing.Point(844, 18);
+            this.lstbxLocation.Location = new System.Drawing.Point(731, 18);
             this.lstbxLocation.Name = "lstbxLocation";
-            this.lstbxLocation.Size = new System.Drawing.Size(414, 118);
+            this.lstbxLocation.Size = new System.Drawing.Size(414, 99);
             this.lstbxLocation.TabIndex = 52;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(458, 68);
+            this.label1.Location = new System.Drawing.Point(395, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 19);
             this.label1.TabIndex = 51;
@@ -238,7 +239,7 @@
             // 
             // richtbDetail
             // 
-            this.richtbDetail.Location = new System.Drawing.Point(462, 90);
+            this.richtbDetail.Location = new System.Drawing.Point(399, 90);
             this.richtbDetail.MaxLength = 499;
             this.richtbDetail.Name = "richtbDetail";
             this.richtbDetail.Size = new System.Drawing.Size(326, 143);
@@ -289,7 +290,7 @@
             // tb_price
             // 
             this.tb_price.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_price.Location = new System.Drawing.Point(536, 18);
+            this.tb_price.Location = new System.Drawing.Point(473, 18);
             this.tb_price.Margin = new System.Windows.Forms.Padding(2);
             this.tb_price.MaxLength = 25;
             this.tb_price.Name = "tb_price";
@@ -314,7 +315,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(744, 21);
+            this.label7.Location = new System.Drawing.Point(681, 21);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 19);
@@ -345,7 +346,7 @@
             // 
             this.lb_price.AutoSize = true;
             this.lb_price.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_price.Location = new System.Drawing.Point(456, 20);
+            this.lb_price.Location = new System.Drawing.Point(393, 20);
             this.lb_price.Name = "lb_price";
             this.lb_price.Size = new System.Drawing.Size(40, 19);
             this.lb_price.TabIndex = 5;
@@ -522,12 +523,28 @@
             this.rdIDSearch.UseVisualStyleBackColor = true;
             this.rdIDSearch.Enter += new System.EventHandler(this.rdIDSearch_Enter);
             // 
+            // btnViewTourReport
+            // 
+            this.btnViewTourReport.CheckedState.Parent = this.btnViewTourReport;
+            this.btnViewTourReport.CustomImages.Parent = this.btnViewTourReport;
+            this.btnViewTourReport.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnViewTourReport.ForeColor = System.Drawing.Color.White;
+            this.btnViewTourReport.HoverState.Parent = this.btnViewTourReport;
+            this.btnViewTourReport.Location = new System.Drawing.Point(1259, 112);
+            this.btnViewTourReport.Name = "btnViewTourReport";
+            this.btnViewTourReport.ShadowDecoration.Parent = this.btnViewTourReport;
+            this.btnViewTourReport.Size = new System.Drawing.Size(180, 215);
+            this.btnViewTourReport.TabIndex = 48;
+            this.btnViewTourReport.Text = "View Tour Report";
+            this.btnViewTourReport.Click += new System.EventHandler(this.btnViewTourReport_Click);
+            // 
             // Tour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(1478, 656);
+            this.Controls.Add(this.btnViewTourReport);
             this.Controls.Add(this.rdNameSearch);
             this.Controls.Add(this.rdIDSearch);
             this.Controls.Add(this.btn_add);
@@ -598,5 +615,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn LOAI;
         private System.Windows.Forms.Button btnBanner;
         private Guna.UI2.WinForms.Guna2PictureBox pcbxBanner;
+        private Guna.UI2.WinForms.Guna2Button btnViewTourReport;
     }
 }
