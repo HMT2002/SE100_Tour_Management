@@ -127,24 +127,6 @@ namespace Tour
             return true;
         }
 
-        private void cbbxVehical_SelectedValueChanged(object sender, EventArgs e)
-        {
-            int index = cbbxVehical.SelectedIndex;
-            if (index >= 0)
-            {
-                PHUONGTIEN selected_item = (PHUONGTIEN)cbbxVehical.SelectedItem;
-                id = selected_item.ID;
-
-                PHUONGTIEN temp = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == selected_item.ID).FirstOrDefault();
-                pcbxVehical.Image = Converter.Instance.ByteArrayToImage(temp.PICBI);
-                txtbxName.Text = temp.TEN;
-                cbbxKind.Text = temp.LOAI;
-                cbboxProvince.Text = DataProvider.Ins.DB.TINHs.Where(x => x.ID == temp.IDTINH).FirstOrDefault().TEN;
-                img_data = temp.PICBI;
-                txtbxGia.Text = temp.GIA.ToString();
-            }
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (CheckData() == true)
@@ -292,6 +274,24 @@ namespace Tour
                 img_data = Converter.Instance.ImageToByte(image);
                 pcbxVehical.Image = image;
 
+            }
+        }
+
+        private void cbbxVehical_SelectedValueChanged(object sender, EventArgs e)
+        {
+            int index = cbbxVehical.SelectedIndex;
+            if (index >= 0)
+            {
+                PHUONGTIEN selected_item = (PHUONGTIEN)cbbxVehical.SelectedItem;
+                id = selected_item.ID;
+
+                PHUONGTIEN temp = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == selected_item.ID).FirstOrDefault();
+                pcbxVehical.Image = Converter.Instance.ByteArrayToImage(temp.PICBI);
+                txtbxName.Text = temp.TEN;
+                cbbxKind.Text = temp.LOAI;
+                cbboxProvince.Text = DataProvider.Ins.DB.TINHs.Where(x => x.ID == temp.IDTINH).FirstOrDefault().TEN;
+                img_data = temp.PICBI;
+                txtbxGia.Text = temp.GIA.ToString();
             }
         }
     }
