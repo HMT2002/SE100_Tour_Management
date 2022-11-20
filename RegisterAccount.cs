@@ -155,7 +155,7 @@ namespace Tour
                     try
                     {
                         Utils.Features.Instance.SendMail(listto, "Verify code", randomcode);
-                        label12.Text = "Code send success!!!";
+                        label12.Text = "Sent!!!";
                     }
                     catch (Exception ex)
                     {

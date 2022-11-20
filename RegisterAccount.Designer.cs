@@ -74,7 +74,7 @@
             this.label12.Location = new System.Drawing.Point(428, 214);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(171, 28);
+            this.label12.Size = new System.Drawing.Size(100, 39);
             this.label12.TabIndex = 68;
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
