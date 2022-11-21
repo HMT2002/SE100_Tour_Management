@@ -13,7 +13,7 @@ namespace Tour
 {
     public partial class ChooseLoyalCustomer : Form
     {
-        public KHACHHANG ChosedKhachHang=new KHACHHANG();
+        public KHACHHANG ChosedKhachHang = null;
 
 
         public ChooseLoyalCustomer()
@@ -40,9 +40,27 @@ namespace Tour
 
                 ChosedKhachHang= DataProvider.Ins.DB.KHACHHANGs.Where(x => x.ID == id && x.IsDeleted == false).FirstOrDefault();
 
+                VIPCategory();
 
                 this.Close();
             }
+        }
+
+        private void VIPCategory()
+        {
+            if (ChosedKhachHang.SPENDING >= 15000000)
+            {
+                ChosedKhachHang.PRI = "SILVER";
+            }
+            if (ChosedKhachHang.SPENDING >= 30000000)
+            {
+                ChosedKhachHang.PRI = "GOLD";
+            }
+            if (ChosedKhachHang.SPENDING >= 50000000)
+            {
+                ChosedKhachHang.PRI = "PLATINUM";
+            }
+            DataProvider.Ins.DB.SaveChanges();
         }
     }
 }

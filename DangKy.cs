@@ -146,7 +146,11 @@ namespace Tour
                 this.Hide();
                 t.ShowDialog();
                 this.Show();
-
+                if (t.ChosedKhachHang == null)
+                {
+                    Clear();
+                    return;
+                }
                 khachhang = t.ChosedKhachHang;
 
                 lblChooseCustomer.Text = t.ChosedKhachHang.ID;
@@ -263,7 +267,6 @@ namespace Tour
                         khachhang.SPENDING += Convert.ToDecimal(tbPrice.Text);
                     }
 
-
                     randomcode = Converter.Instance.RandomString2(5);
                     var ve = new VE()
                     {
@@ -312,7 +315,7 @@ namespace Tour
                                     IDTOUR = tour.ID,
                                     GIA = tour.GIA,
                                 }
-                ).ToList();
+                ).Distinct().ToList();
 
             cbDes.ValueMember = "IDTOUR";
             cbDes.DisplayMember = "TENTOUR";//DisplayMember phải trùng trên select new
@@ -342,7 +345,7 @@ namespace Tour
                                           NGAYKHOIHANH = doan.NGAYKHOIHANH,
                                           NGAYKETTHUC = doan.NGAYKETTHUC
                                       }
-                                            ).ToList();
+                                            ).Distinct().ToList();
                 cbGroup.ValueMember = "IDDOAN";
                 cbGroup.DisplayMember = "TENDOAN";
                 cbGroup.SelectedIndex = -1;
@@ -382,6 +385,8 @@ namespace Tour
             khachhang = null;
             banner_discount = 0;
             customer_discount = 0;
+            RdMale.Checked = true;
+            lblCustomerDiscount.Text = customer_discount.ToString();
         }
         private void tbTelephone_KeyPress(object sender, KeyPressEventArgs e)
         {
