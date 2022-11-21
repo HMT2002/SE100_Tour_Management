@@ -50,6 +50,7 @@
             this.Controls.Add(this.rptViewer);
             this.Name = "fPrint";
             this.Text = "fPrint";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }
