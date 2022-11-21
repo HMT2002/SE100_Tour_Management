@@ -29,248 +29,358 @@ namespace Tour
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hotel));
-            this.btnExit = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnPickPicture = new System.Windows.Forms.Button();
+            this.btnPickPicture = new Guna.UI2.WinForms.Guna2Button();
             this.pcbxLocation = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbboxProvince = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtbxSDT = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtbxGia = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtbxDiaChi = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbbxHotel = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtbxName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtbxDiaChi = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtbxGia = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtbxSDT = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cbboxProvince = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.rchtxtbxDetail = new System.Windows.Forms.RichTextBox();
-            this.txtbxName = new System.Windows.Forms.TextBox();
-            this.cbbxHotel = new System.Windows.Forms.ComboBox();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
+            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxLocation)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(710, 461);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
-            this.btnExit.TabIndex = 3;
-            this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // panel3
             // 
             this.panel3.AutoSize = true;
             this.panel3.Controls.Add(this.btnPickPicture);
             this.panel3.Controls.Add(this.pcbxLocation);
-            this.panel3.Location = new System.Drawing.Point(12, 7);
+            this.panel3.Location = new System.Drawing.Point(540, 135);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(394, 241);
+            this.panel3.Size = new System.Drawing.Size(544, 528);
             this.panel3.TabIndex = 5;
             // 
             // btnPickPicture
             // 
-            this.btnPickPicture.Location = new System.Drawing.Point(172, 213);
+            this.btnPickPicture.BorderRadius = 20;
+            this.btnPickPicture.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPickPicture.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPickPicture.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPickPicture.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPickPicture.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnPickPicture.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnPickPicture.ForeColor = System.Drawing.Color.White;
+            this.btnPickPicture.Location = new System.Drawing.Point(185, 469);
             this.btnPickPicture.Name = "btnPickPicture";
-            this.btnPickPicture.Size = new System.Drawing.Size(75, 23);
-            this.btnPickPicture.TabIndex = 4;
+            this.btnPickPicture.Size = new System.Drawing.Size(180, 45);
+            this.btnPickPicture.TabIndex = 5;
             this.btnPickPicture.Text = "Chọn ảnh";
-            this.btnPickPicture.UseVisualStyleBackColor = true;
             this.btnPickPicture.Click += new System.EventHandler(this.btnPickPicture_Click);
             // 
             // pcbxLocation
             // 
             this.pcbxLocation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pcbxLocation.Image = global::Tour.Properties.Resources.ic_image_empty_128;
-            this.pcbxLocation.Location = new System.Drawing.Point(3, 3);
+            this.pcbxLocation.Location = new System.Drawing.Point(4, 14);
+            this.pcbxLocation.Margin = new System.Windows.Forms.Padding(4);
             this.pcbxLocation.Name = "pcbxLocation";
-            this.pcbxLocation.Size = new System.Drawing.Size(385, 204);
+            this.pcbxLocation.Size = new System.Drawing.Size(513, 436);
             this.pcbxLocation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbxLocation.TabIndex = 0;
             this.pcbxLocation.TabStop = false;
+            this.pcbxLocation.Click += new System.EventHandler(this.pcbxLocation_Click);
             // 
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.cbbxHotel);
+            this.panel1.Controls.Add(this.txtbxName);
+            this.panel1.Controls.Add(this.txtbxDiaChi);
+            this.panel1.Controls.Add(this.txtbxGia);
+            this.panel1.Controls.Add(this.txtbxSDT);
             this.panel1.Controls.Add(this.cbboxProvince);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.txtbxSDT);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txtbxGia);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txtbxDiaChi);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.rchtxtbxDetail);
-            this.panel1.Controls.Add(this.txtbxName);
-            this.panel1.Controls.Add(this.cbbxHotel);
-            this.panel1.Controls.Add(this.btnClear);
-            this.panel1.Controls.Add(this.btnUpdate);
-            this.panel1.Controls.Add(this.btnXoa);
-            this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Location = new System.Drawing.Point(412, 7);
+            this.panel1.Location = new System.Drawing.Point(17, 135);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(376, 344);
+            this.panel1.Size = new System.Drawing.Size(515, 528);
             this.panel1.TabIndex = 4;
-            // 
-            // cbboxProvince
-            // 
-            this.cbboxProvince.FormattingEnabled = true;
-            this.cbboxProvince.Location = new System.Drawing.Point(85, 136);
-            this.cbboxProvince.Name = "cbboxProvince";
-            this.cbboxProvince.Size = new System.Drawing.Size(288, 21);
-            this.cbboxProvince.TabIndex = 18;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 144);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 13);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Tỉnh/Quốc gia";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 117);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.Location = new System.Drawing.Point(10, 222);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "SĐT";
-            // 
-            // txtbxSDT
-            // 
-            this.txtbxSDT.Location = new System.Drawing.Point(85, 110);
-            this.txtbxSDT.Name = "txtbxSDT";
-            this.txtbxSDT.Size = new System.Drawing.Size(288, 20);
-            this.txtbxSDT.TabIndex = 15;
+            this.label4.Size = new System.Drawing.Size(114, 22);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "Số điện thoại";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 91);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(10, 171);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Giá/ngày";
-            // 
-            // txtbxGia
-            // 
-            this.txtbxGia.Location = new System.Drawing.Point(85, 84);
-            this.txtbxGia.Name = "txtbxGia";
-            this.txtbxGia.Size = new System.Drawing.Size(288, 20);
-            this.txtbxGia.TabIndex = 13;
-            this.txtbxGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxGia_KeyPress);
+            this.label1.Size = new System.Drawing.Size(86, 22);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Giá/Ngày";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 65);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(12, 120);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 12;
+            this.label3.Size = new System.Drawing.Size(68, 22);
+            this.label3.TabIndex = 31;
             this.label3.Text = "Địa chỉ";
-            // 
-            // txtbxDiaChi
-            // 
-            this.txtbxDiaChi.Location = new System.Drawing.Point(85, 58);
-            this.txtbxDiaChi.Name = "txtbxDiaChi";
-            this.txtbxDiaChi.Size = new System.Drawing.Size(288, 20);
-            this.txtbxDiaChi.TabIndex = 11;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 35);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(10, 68);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 13);
-            this.label2.TabIndex = 10;
+            this.label2.Size = new System.Drawing.Size(40, 22);
+            this.label2.TabIndex = 29;
             this.label2.Text = "Tên";
             // 
-            // rchtxtbxDetail
+            // label7
             // 
-            this.rchtxtbxDetail.Location = new System.Drawing.Point(3, 163);
-            this.rchtxtbxDetail.Name = "rchtxtbxDetail";
-            this.rchtxtbxDetail.Size = new System.Drawing.Size(370, 149);
-            this.rchtxtbxDetail.TabIndex = 8;
-            this.rchtxtbxDetail.Text = "";
-            // 
-            // txtbxName
-            // 
-            this.txtbxName.Location = new System.Drawing.Point(85, 32);
-            this.txtbxName.Name = "txtbxName";
-            this.txtbxName.Size = new System.Drawing.Size(288, 20);
-            this.txtbxName.TabIndex = 6;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label7.Location = new System.Drawing.Point(10, 17);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(91, 22);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Khách sạn";
             // 
             // cbbxHotel
             // 
-            this.cbbxHotel.FormattingEnabled = true;
-            this.cbbxHotel.Location = new System.Drawing.Point(85, 5);
+            this.cbbxHotel.BackColor = System.Drawing.Color.Transparent;
+            this.cbbxHotel.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbxHotel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbxHotel.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbxHotel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbxHotel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbxHotel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbxHotel.ItemHeight = 30;
+            this.cbbxHotel.Location = new System.Drawing.Point(148, 3);
             this.cbbxHotel.Name = "cbbxHotel";
-            this.cbbxHotel.Size = new System.Drawing.Size(207, 21);
-            this.cbbxHotel.TabIndex = 4;
+            this.cbbxHotel.Size = new System.Drawing.Size(354, 36);
+            this.cbbxHotel.TabIndex = 28;
             this.cbbxHotel.SelectedValueChanged += new System.EventHandler(this.cbbxHotel_SelectedValueChanged);
             // 
-            // btnClear
+            // txtbxName
             // 
-            this.btnClear.Location = new System.Drawing.Point(298, 5);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 3;
-            this.btnClear.Text = "Mới";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            this.txtbxName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbxName.DefaultText = "";
+            this.txtbxName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbxName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbxName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtbxName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxName.Location = new System.Drawing.Point(148, 54);
+            this.txtbxName.Name = "txtbxName";
+            this.txtbxName.PasswordChar = '\0';
+            this.txtbxName.PlaceholderText = "";
+            this.txtbxName.SelectedText = "";
+            this.txtbxName.Size = new System.Drawing.Size(354, 36);
+            this.txtbxName.TabIndex = 30;
             // 
-            // btnUpdate
+            // txtbxDiaChi
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(252, 318);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 2;
-            this.btnUpdate.Text = "Sửa";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.txtbxDiaChi.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbxDiaChi.DefaultText = "";
+            this.txtbxDiaChi.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbxDiaChi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbxDiaChi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxDiaChi.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxDiaChi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxDiaChi.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtbxDiaChi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxDiaChi.Location = new System.Drawing.Point(148, 106);
+            this.txtbxDiaChi.Name = "txtbxDiaChi";
+            this.txtbxDiaChi.PasswordChar = '\0';
+            this.txtbxDiaChi.PlaceholderText = "";
+            this.txtbxDiaChi.SelectedText = "";
+            this.txtbxDiaChi.Size = new System.Drawing.Size(354, 36);
+            this.txtbxDiaChi.TabIndex = 29;
             // 
-            // btnXoa
+            // txtbxGia
             // 
-            this.btnXoa.Location = new System.Drawing.Point(171, 318);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 23);
-            this.btnXoa.TabIndex = 1;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            this.txtbxGia.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbxGia.DefaultText = "";
+            this.txtbxGia.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbxGia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbxGia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxGia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxGia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxGia.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtbxGia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxGia.Location = new System.Drawing.Point(148, 157);
+            this.txtbxGia.Name = "txtbxGia";
+            this.txtbxGia.PasswordChar = '\0';
+            this.txtbxGia.PlaceholderText = "";
+            this.txtbxGia.SelectedText = "";
+            this.txtbxGia.Size = new System.Drawing.Size(354, 36);
+            this.txtbxGia.TabIndex = 30;
+            // 
+            // txtbxSDT
+            // 
+            this.txtbxSDT.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbxSDT.DefaultText = "";
+            this.txtbxSDT.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbxSDT.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbxSDT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxSDT.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxSDT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxSDT.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtbxSDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxSDT.Location = new System.Drawing.Point(148, 208);
+            this.txtbxSDT.Name = "txtbxSDT";
+            this.txtbxSDT.PasswordChar = '\0';
+            this.txtbxSDT.PlaceholderText = "";
+            this.txtbxSDT.SelectedText = "";
+            this.txtbxSDT.Size = new System.Drawing.Size(354, 36);
+            this.txtbxSDT.TabIndex = 28;
+            // 
+            // cbboxProvince
+            // 
+            this.cbboxProvince.BackColor = System.Drawing.Color.Transparent;
+            this.cbboxProvince.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbboxProvince.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbboxProvince.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbboxProvince.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbboxProvince.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbboxProvince.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbboxProvince.ItemHeight = 30;
+            this.cbboxProvince.Location = new System.Drawing.Point(148, 259);
+            this.cbboxProvince.Name = "cbboxProvince";
+            this.cbboxProvince.Size = new System.Drawing.Size(354, 36);
+            this.cbboxProvince.TabIndex = 25;
+            this.cbboxProvince.SelectedIndexChanged += new System.EventHandler(this.cbboxProvince_SelectedIndexChanged);
+            this.cbboxProvince.Click += new System.EventHandler(this.pcbxLocation_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Location = new System.Drawing.Point(10, 273);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(134, 22);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Tỉnh/Thành phố";
+            // 
+            // rchtxtbxDetail
+            // 
+            this.rchtxtbxDetail.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.rchtxtbxDetail.Location = new System.Drawing.Point(10, 312);
+            this.rchtxtbxDetail.Margin = new System.Windows.Forms.Padding(4);
+            this.rchtxtbxDetail.Name = "rchtxtbxDetail";
+            this.rchtxtbxDetail.Size = new System.Drawing.Size(492, 212);
+            this.rchtxtbxDetail.TabIndex = 8;
+            this.rchtxtbxDetail.Text = "";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.ForeColor = System.Drawing.Color.BlueViolet;
+            this.label6.Location = new System.Drawing.Point(321, 37);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(404, 55);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Quản lý khách sạn";
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(92, 318);
+            this.btnAdd.BorderRadius = 20;
+            this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAdd.FillColor = System.Drawing.Color.LimeGreen;
+            this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(280, 713);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Size = new System.Drawing.Size(138, 45);
+            this.btnAdd.TabIndex = 25;
             this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.BorderRadius = 20;
+            this.btnXoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXoa.FillColor = System.Drawing.Color.OrangeRed;
+            this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.Location = new System.Drawing.Point(484, 713);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(138, 45);
+            this.btnXoa.TabIndex = 26;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BorderRadius = 20;
+            this.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUpdate.FillColor = System.Drawing.Color.Gold;
+            this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnUpdate.Location = new System.Drawing.Point(681, 713);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(138, 45);
+            this.btnUpdate.TabIndex = 27;
+            this.btnUpdate.Text = "Sửa";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // Hotel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.Linen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 496);
-            this.Controls.Add(this.btnExit);
+            this.ClientSize = new System.Drawing.Size(1100, 784);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Hotel";
             this.Text = "Hotel";
             this.panel3.ResumeLayout(false);
@@ -283,26 +393,26 @@ namespace Tour
         }
 
         #endregion
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnPickPicture;
         private System.Windows.Forms.PictureBox pcbxLocation;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox rchtxtbxDetail;
-        private System.Windows.Forms.TextBox txtbxName;
-        private System.Windows.Forms.ComboBox cbbxHotel;
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtbxGia;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtbxDiaChi;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtbxSDT;
-        private System.Windows.Forms.ComboBox cbboxProvince;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private Guna.UI2.WinForms.Guna2ComboBox cbboxProvince;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbxHotel;
+        private Guna.UI2.WinForms.Guna2TextBox txtbxName;
+        private Guna.UI2.WinForms.Guna2TextBox txtbxDiaChi;
+        private Guna.UI2.WinForms.Guna2TextBox txtbxGia;
+        private Guna.UI2.WinForms.Guna2TextBox txtbxSDT;
+        private Guna.UI2.WinForms.Guna2Button btnAdd;
+        private Guna.UI2.WinForms.Guna2Button btnXoa;
+        private Guna.UI2.WinForms.Guna2Button btnUpdate;
+        private Guna.UI2.WinForms.Guna2Button btnPickPicture;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label7;
     }
 }

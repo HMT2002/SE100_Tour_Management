@@ -46,7 +46,10 @@ namespace Tour
         private void sendbtn_Click(object sender, EventArgs e)
         {
             string query = "Select * from User Where Email ='" + emailtxb.Text.Trim() + "'";
-
+            label2.Visible = true;
+            codetxb.Visible = true;
+            verifybtn.Visible = true;
+            sendbtn.Visible = false;
         }
 
         private void verifybtn_Click(object sender, EventArgs e)
@@ -88,6 +91,11 @@ namespace Tour
                     sendbtn.Enabled = true;
                 }
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

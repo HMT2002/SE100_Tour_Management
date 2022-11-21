@@ -107,7 +107,6 @@
           <Property Name="IsDeleted" Type="bit" />
           <Property Name="isAvailable" Type="bit" />
           <Property Name="SLDI" Type="int" />
-          <Property Name="IDACC" Type="char" MaxLength="7" />
         </EntityType>
         <EntityType Name="PHUONGTIEN">
           <Key>
@@ -306,18 +305,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="LK_MAIL_ACCOUNT_NV">
-          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="0..1" />
-          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ACCOUNT">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="NHANVIEN">
-              <PropertyRef Name="IDACC" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="LK_NHANVIEN_NHIEMVU">
           <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
           <End Role="tb_NHIEMVU" Type="Self.tb_NHIEMVU" Multiplicity="*" />
@@ -492,10 +479,6 @@
             <End Role="ACCOUNT" EntitySet="ACCOUNT" />
             <End Role="KHACHHANG" EntitySet="KHACHHANG" />
           </AssociationSet>
-          <AssociationSet Name="LK_MAIL_ACCOUNT_NV" Association="Self.LK_MAIL_ACCOUNT_NV">
-            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
-            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
-          </AssociationSet>
           <AssociationSet Name="LK_NHANVIEN_NHIEMVU" Association="Self.LK_NHANVIEN_NHIEMVU">
             <End Role="NHANVIEN" EntitySet="NHANVIEN" />
             <End Role="tb_NHIEMVU" EntitySet="tb_NHIEMVU" />
@@ -552,7 +535,6 @@
           <Property Name="IsDeleted" Type="Boolean" />
           <Property Name="ACCROLE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="KHACHHANGs" Relationship="Self.LK_MAIL_ACCOUNT" FromRole="ACCOUNT" ToRole="KHACHHANG" />
-          <NavigationProperty Name="NHANVIENs" Relationship="Self.LK_MAIL_ACCOUNT_NV" FromRole="ACCOUNT" ToRole="NHANVIEN" />
         </EntityType>
         <EntityType Name="CHIPHI">
           <Key>
@@ -661,8 +643,6 @@
           <Property Name="IsDeleted" Type="Boolean" />
           <Property Name="isAvailable" Type="Boolean" />
           <Property Name="SLDI" Type="Int32" />
-          <Property Name="IDACC" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="ACCOUNT" Relationship="Self.LK_MAIL_ACCOUNT_NV" FromRole="NHANVIEN" ToRole="ACCOUNT" />
           <NavigationProperty Name="tb_NHIEMVU" Relationship="Self.LK_NHANVIEN_NHIEMVU" FromRole="NHANVIEN" ToRole="tb_NHIEMVU" />
           <NavigationProperty Name="tb_PHUTRACH" Relationship="Self.LK_NHANVIEN_PHUTRACH" FromRole="NHANVIEN" ToRole="tb_PHUTRACH" />
         </EntityType>
@@ -783,18 +763,6 @@
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="KHACHHANG">
-              <PropertyRef Name="IDACC" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="LK_MAIL_ACCOUNT_NV">
-          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="0..1" />
-          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ACCOUNT">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="NHANVIEN">
               <PropertyRef Name="IDACC" />
             </Dependent>
           </ReferentialConstraint>
@@ -1037,10 +1005,6 @@
             <End Role="ACCOUNT" EntitySet="ACCOUNTs" />
             <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
           </AssociationSet>
-          <AssociationSet Name="LK_MAIL_ACCOUNT_NV" Association="Self.LK_MAIL_ACCOUNT_NV">
-            <End Role="ACCOUNT" EntitySet="ACCOUNTs" />
-            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
-          </AssociationSet>
           <AssociationSet Name="LK_CHIPHI_DOAN" Association="Self.LK_CHIPHI_DOAN">
             <End Role="CHIPHI" EntitySet="CHIPHIs" />
             <End Role="DOAN" EntitySet="DOANs" />
@@ -1228,7 +1192,6 @@
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
                 <ScalarProperty Name="isAvailable" ColumnName="isAvailable" />
                 <ScalarProperty Name="SLDI" ColumnName="SLDI" />
-                <ScalarProperty Name="IDACC" ColumnName="IDACC" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

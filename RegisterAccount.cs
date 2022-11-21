@@ -155,7 +155,7 @@ namespace Tour
                     try
                     {
                         Utils.Features.Instance.SendMail(listto, "Verify code", randomcode);
-                        label12.Text = "Sent!!!";
+                        label12.Text = "Code send success!!!";
                     }
                     catch (Exception ex)
                     {
@@ -188,32 +188,6 @@ namespace Tour
                 pcbxAvatar.Image = image;
 
             }
-        }
-
-        private void SignUpbtn_MouseHover(object sender, EventArgs e)
-        {
-            SignUpbtn.BackColor = Color.Green;
-            SignUpbtn.ForeColor = Color.White;
-            SignUpbtn.ShadowDecoration.Enabled = true;
-        }
-
-        private void SignUpbtn_MouseLeave(object sender, EventArgs e)
-        {
-            SignUpbtn.BackColor= Color.FromArgb(94, 148, 255);
-            SignUpbtn.ForeColor = Color.White;
-            SignUpbtn.ShadowDecoration.Enabled = false;
-        }
-
-        private void Cancelbtn_MouseHover(object sender, EventArgs e)
-        {
-            Cancelbtn.BackColor = Color.Red;
-            Cancelbtn.ForeColor = Color.White;
-        }
-
-        private void Cancelbtn_MouseLeave(object sender, EventArgs e)
-        {
-            Cancelbtn.BackColor = Color.Transparent;
-            Cancelbtn.ForeColor = Color.FromArgb(94, 148, 255);
         }
     }
 }

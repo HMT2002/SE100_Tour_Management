@@ -45,6 +45,10 @@ namespace Tour
             InitializeComponent();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         public void showAll()
         {
             NhiemVuTrongDoan nv= new NhiemVuTrongDoan();
@@ -52,6 +56,24 @@ namespace Tour
         }
         public void setTextBox(string s, bool flag)
         {
+            //dgv_trip.DataSource = DataProvider.Ins.DB.TOURs.Where(t => t.IsDeleted == false).ToList();
+
+            //lstbxLocation.DataSource = LocationList;
+            //lstbxLocation.DisplayMember = "TEN";
+
+            //DoanID = s;
+            //textBox1.Text = DoanID;
+            //var query = DataProvider.Ins.DB.tb_PHUTRACH
+            //                .Where(t => t.ID == DoanID)
+            //                .FirstOrDefault();
+            //if (query == null) return;
+            //textBox1.Text = query.IDDOAN;
+            //txtDriver.Text = query.IDNHANVIEN;
+            //if (DoanID == "" && flag == false)
+            //{
+            //    DoanID = s;
+            //    textBox1.Text = DoanID;
+            //}
             doanID = s;
             textBox1.Text = doanID;
             if (driver != null)
@@ -63,12 +85,10 @@ namespace Tour
             }
         }
 
-        // nhấn vô txtDriver
-
         private void bttAssign_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Do you want to complete the assignment?", "Assign", MessageBoxButtons.OKCancel);
-            switch (dr)
+            switch(dr)
             {
                 case DialogResult.Cancel:
                     break;
@@ -78,11 +98,7 @@ namespace Tour
                 default: break;
             }
         }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        // nhấn vô txtDriver
 
         private void txtTourGuide_Click(object sender, EventArgs e)
         {
@@ -92,6 +108,7 @@ namespace Tour
                 nv.ShowDialog();
                 txtTourGuide.Text = nv.seleted_nhanvien_phutrach;
                 this.Show();
+
             }
         }
 

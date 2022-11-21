@@ -29,51 +29,115 @@ namespace Tour
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVien));
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnPickPicture = new System.Windows.Forms.Button();
+            this.pcbxAvatar = new System.Windows.Forms.PictureBox();
+            this.rdNameSearch = new System.Windows.Forms.RadioButton();
+            this.rdIDSearch = new System.Windows.Forms.RadioButton();
+            this.tb_search = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtbxMail = new System.Windows.Forms.TextBox();
+            this.txtbxSDT = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
-            this.btnThem = new Guna.UI2.WinForms.Guna2Button();
-            this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
-            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
-            this.btnClear = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnPickPicture = new Guna.UI2.WinForms.Guna2Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pcbxAvatar = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.dgv_nhanvien = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtbxName = new System.Windows.Forms.TextBox();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.dgv_nhanvien = new System.Windows.Forms.DataGridView();
             this.data_employeeid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SLDi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtbxID = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtbxMail = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtbxSDT = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtbxName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tb_search = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.txtbxID = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnThem = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_nhanvien)).BeginInit();
             this.SuspendLayout();
             // 
+            // panel3
+            // 
+            this.panel3.AutoSize = true;
+            this.panel3.Controls.Add(this.btnPickPicture);
+            this.panel3.Controls.Add(this.pcbxAvatar);
+            this.panel3.Location = new System.Drawing.Point(12, 12);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(230, 170);
+            this.panel3.TabIndex = 11;
+            // 
+            // btnPickPicture
+            // 
+            this.btnPickPicture.Location = new System.Drawing.Point(85, 144);
+            this.btnPickPicture.Name = "btnPickPicture";
+            this.btnPickPicture.Size = new System.Drawing.Size(75, 23);
+            this.btnPickPicture.TabIndex = 4;
+            this.btnPickPicture.Text = "Chọn ảnh";
+            this.btnPickPicture.UseVisualStyleBackColor = true;
+            this.btnPickPicture.Click += new System.EventHandler(this.btnPickPicture_Click);
+            // 
+            // pcbxAvatar
+            // 
+            this.pcbxAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pcbxAvatar.Image = global::Tour.Properties.Resources.ic_image_empty_128;
+            this.pcbxAvatar.Location = new System.Drawing.Point(3, 3);
+            this.pcbxAvatar.Name = "pcbxAvatar";
+            this.pcbxAvatar.Size = new System.Drawing.Size(223, 135);
+            this.pcbxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbxAvatar.TabIndex = 0;
+            this.pcbxAvatar.TabStop = false;
+            // 
+            // rdNameSearch
+            // 
+            this.rdNameSearch.AutoSize = true;
+            this.rdNameSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdNameSearch.ForeColor = System.Drawing.Color.Black;
+            this.rdNameSearch.Location = new System.Drawing.Point(297, 155);
+            this.rdNameSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdNameSearch.Name = "rdNameSearch";
+            this.rdNameSearch.Size = new System.Drawing.Size(64, 23);
+            this.rdNameSearch.TabIndex = 22;
+            this.rdNameSearch.Text = "Name";
+            this.rdNameSearch.UseVisualStyleBackColor = true;
+            this.rdNameSearch.Enter += new System.EventHandler(this.rdNameSearch_Enter);
+            // 
+            // rdIDSearch
+            // 
+            this.rdIDSearch.AutoSize = true;
+            this.rdIDSearch.Checked = true;
+            this.rdIDSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdIDSearch.ForeColor = System.Drawing.Color.Black;
+            this.rdIDSearch.Location = new System.Drawing.Point(246, 157);
+            this.rdIDSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdIDSearch.Name = "rdIDSearch";
+            this.rdIDSearch.Size = new System.Drawing.Size(43, 23);
+            this.rdIDSearch.TabIndex = 21;
+            this.rdIDSearch.TabStop = true;
+            this.rdIDSearch.Text = "ID";
+            this.rdIDSearch.UseVisualStyleBackColor = true;
+            this.rdIDSearch.Enter += new System.EventHandler(this.rdIDSearch_Enter);
+            // 
+            // tb_search
+            // 
+            this.tb_search.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_search.Location = new System.Drawing.Point(366, 152);
+            this.tb_search.Name = "tb_search";
+            this.tb_search.Size = new System.Drawing.Size(162, 29);
+            this.tb_search.TabIndex = 20;
+            this.tb_search.TextChanged += new System.EventHandler(this.tb_search_TextChanged);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(389, 134);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(298, 133);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 28);
+            this.label3.Size = new System.Drawing.Size(26, 13);
             this.label3.TabIndex = 14;
             this.label3.Text = "Mail";
             // 
@@ -81,499 +145,209 @@ namespace Tour
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(389, 96);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(254, 107);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 28);
+            this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 13;
-            this.label1.Text = "Phone";
+            this.label1.Text = "Số điện thoại";
+            // 
+            // txtbxMail
+            // 
+            this.txtbxMail.Location = new System.Drawing.Point(336, 126);
+            this.txtbxMail.Name = "txtbxMail";
+            this.txtbxMail.Size = new System.Drawing.Size(456, 20);
+            this.txtbxMail.TabIndex = 12;
+            // 
+            // txtbxSDT
+            // 
+            this.txtbxSDT.Location = new System.Drawing.Point(336, 100);
+            this.txtbxSDT.Name = "txtbxSDT";
+            this.txtbxSDT.Size = new System.Drawing.Size(456, 20);
+            this.txtbxSDT.TabIndex = 11;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(389, 58);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(298, 77);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 28);
+            this.label2.Size = new System.Drawing.Size(26, 13);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Name";
+            this.label2.Text = "Tên";
             // 
-            // label4
+            // txtbxName
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(389, 20);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 28);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "ID";
-            // 
-            // btnExit
-            // 
-            this.btnExit.BorderRadius = 5;
-            this.btnExit.CheckedState.Parent = this.btnExit;
-            this.btnExit.CustomImages.Parent = this.btnExit;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.Black;
-            this.btnExit.HoverState.Parent = this.btnExit;
-            this.btnExit.Location = new System.Drawing.Point(928, 656);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.ShadowDecoration.Parent = this.btnExit;
-            this.btnExit.Size = new System.Drawing.Size(128, 36);
-            this.btnExit.TabIndex = 26;
-            this.btnExit.Text = "EXIT";
-            this.btnExit.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnThem
-            // 
-            this.btnThem.BorderRadius = 5;
-            this.btnThem.CheckedState.Parent = this.btnThem;
-            this.btnThem.CustomImages.Parent = this.btnThem;
-            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnThem.ForeColor = System.Drawing.Color.Black;
-            this.btnThem.HoverState.Parent = this.btnThem;
-            this.btnThem.Location = new System.Drawing.Point(21, 656);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.ShadowDecoration.Parent = this.btnThem;
-            this.btnThem.Size = new System.Drawing.Size(100, 36);
-            this.btnThem.TabIndex = 25;
-            this.btnThem.Text = "Add";
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.BorderRadius = 5;
-            this.btnXoa.CheckedState.Parent = this.btnXoa;
-            this.btnXoa.CustomImages.Parent = this.btnXoa;
-            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnXoa.ForeColor = System.Drawing.Color.Black;
-            this.btnXoa.HoverState.Parent = this.btnXoa;
-            this.btnXoa.Location = new System.Drawing.Point(129, 656);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.ShadowDecoration.Parent = this.btnXoa;
-            this.btnXoa.Size = new System.Drawing.Size(100, 36);
-            this.btnXoa.TabIndex = 27;
-            this.btnXoa.Text = "Delete";
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BorderRadius = 5;
-            this.btnUpdate.CheckedState.Parent = this.btnUpdate;
-            this.btnUpdate.CustomImages.Parent = this.btnUpdate;
-            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.HoverState.Parent = this.btnUpdate;
-            this.btnUpdate.Location = new System.Drawing.Point(928, 69);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
-            this.btnUpdate.Size = new System.Drawing.Size(100, 36);
-            this.btnUpdate.TabIndex = 28;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.txtbxName.Location = new System.Drawing.Point(336, 74);
+            this.txtbxName.Name = "txtbxName";
+            this.txtbxName.Size = new System.Drawing.Size(456, 20);
+            this.txtbxName.TabIndex = 6;
             // 
             // btnClear
             // 
-            this.btnClear.BorderRadius = 5;
-            this.btnClear.CheckedState.Parent = this.btnClear;
-            this.btnClear.CustomImages.Parent = this.btnClear;
-            this.btnClear.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnClear.ForeColor = System.Drawing.Color.Black;
-            this.btnClear.HoverState.Parent = this.btnClear;
-            this.btnClear.Location = new System.Drawing.Point(928, 25);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClear.Location = new System.Drawing.Point(717, 17);
             this.btnClear.Name = "btnClear";
-            this.btnClear.ShadowDecoration.Parent = this.btnClear;
-            this.btnClear.Size = new System.Drawing.Size(100, 36);
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 3;
-            this.btnClear.Text = "Clear";
+            this.btnClear.Text = "Làm mới";
+            this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // guna2ComboBox1
+            // btnUpdate
             // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.Empty;
-            this.guna2ComboBox1.FocusedState.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.FormattingEnabled = true;
-            this.guna2ComboBox1.HoverState.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Items.AddRange(new object[] {
-            "ID",
-            "NAME"});
-            this.guna2ComboBox1.ItemsAppearance.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(869, 166);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.ShadowDecoration.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Size = new System.Drawing.Size(140, 36);
-            this.guna2ComboBox1.StartIndex = 0;
-            this.guna2ComboBox1.TabIndex = 29;
-            this.guna2ComboBox1.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
+            this.btnUpdate.Location = new System.Drawing.Point(717, 152);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 29);
+            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.Text = "Sửa";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // label5
+            // btnXoa
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(767, 172);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 28);
-            this.label5.TabIndex = 30;
-            this.label5.Text = "Search By";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(383, 173);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 28);
-            this.label6.TabIndex = 31;
-            this.label6.Text = "Search";
-            // 
-            // btnPickPicture
-            // 
-            this.btnPickPicture.BorderRadius = 5;
-            this.btnPickPicture.CheckedState.Parent = this.btnPickPicture;
-            this.btnPickPicture.CustomImages.Parent = this.btnPickPicture;
-            this.btnPickPicture.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnPickPicture.ForeColor = System.Drawing.Color.Black;
-            this.btnPickPicture.HoverState.Parent = this.btnPickPicture;
-            this.btnPickPicture.Location = new System.Drawing.Point(928, 113);
-            this.btnPickPicture.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPickPicture.Name = "btnPickPicture";
-            this.btnPickPicture.ShadowDecoration.Parent = this.btnPickPicture;
-            this.btnPickPicture.Size = new System.Drawing.Size(124, 36);
-            this.btnPickPicture.TabIndex = 4;
-            this.btnPickPicture.Text = "Update Image";
-            this.btnPickPicture.Click += new System.EventHandler(this.btnPickPicture_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.AutoSize = true;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.pcbxAvatar);
-            this.panel3.Location = new System.Drawing.Point(16, 15);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(290, 214);
-            this.panel3.TabIndex = 11;
-            // 
-            // pcbxAvatar
-            // 
-            this.pcbxAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pcbxAvatar.Image = global::Tour.Properties.Resources.ic_image_empty_128;
-            this.pcbxAvatar.InitialImage = global::Tour.Properties.Resources.ic_image_empty_128;
-            this.pcbxAvatar.Location = new System.Drawing.Point(4, 4);
-            this.pcbxAvatar.Margin = new System.Windows.Forms.Padding(4);
-            this.pcbxAvatar.Name = "pcbxAvatar";
-            this.pcbxAvatar.ShadowDecoration.Parent = this.pcbxAvatar;
-            this.pcbxAvatar.Size = new System.Drawing.Size(280, 204);
-            this.pcbxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcbxAvatar.TabIndex = 38;
-            this.pcbxAvatar.TabStop = false;
+            this.btnXoa.Location = new System.Drawing.Point(636, 152);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 29);
+            this.btnXoa.TabIndex = 1;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // dgv_nhanvien
             // 
-            this.dgv_nhanvien.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgv_nhanvien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_nhanvien.AllowUserToAddRows = false;
             this.dgv_nhanvien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_nhanvien.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_nhanvien.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_nhanvien.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgv_nhanvien.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_nhanvien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_nhanvien.ColumnHeadersHeight = 25;
+            this.dgv_nhanvien.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgv_nhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_nhanvien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
             this.data_employeeid,
             this.TEN,
             this.SDT,
             this.MAIL,
             this.SLDi,
             this.isAvailable});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_nhanvien.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_nhanvien.EnableHeadersVisualStyles = false;
-            this.dgv_nhanvien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
-            this.dgv_nhanvien.Location = new System.Drawing.Point(16, 231);
+            this.dgv_nhanvien.Location = new System.Drawing.Point(12, 188);
             this.dgv_nhanvien.Name = "dgv_nhanvien";
-            this.dgv_nhanvien.RowHeadersVisible = false;
+            this.dgv_nhanvien.ReadOnly = true;
             this.dgv_nhanvien.RowHeadersWidth = 51;
-            this.dgv_nhanvien.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-            this.dgv_nhanvien.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.dgv_nhanvien.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.dgv_nhanvien.RowTemplate.DividerHeight = 5;
-            this.dgv_nhanvien.RowTemplate.Height = 40;
-            this.dgv_nhanvien.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgv_nhanvien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_nhanvien.Size = new System.Drawing.Size(1040, 418);
-            this.dgv_nhanvien.TabIndex = 32;
-            this.dgv_nhanvien.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
-            this.dgv_nhanvien.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgv_nhanvien.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgv_nhanvien.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgv_nhanvien.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgv_nhanvien.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgv_nhanvien.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgv_nhanvien.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
-            this.dgv_nhanvien.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
-            this.dgv_nhanvien.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgv_nhanvien.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.dgv_nhanvien.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.DimGray;
-            this.dgv_nhanvien.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgv_nhanvien.ThemeStyle.HeaderStyle.Height = 25;
-            this.dgv_nhanvien.ThemeStyle.ReadOnly = false;
-            this.dgv_nhanvien.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgv_nhanvien.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgv_nhanvien.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dgv_nhanvien.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgv_nhanvien.ThemeStyle.RowsStyle.Height = 40;
-            this.dgv_nhanvien.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgv_nhanvien.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgv_nhanvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_nhanvien_CellClick);
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column1.HeaderText = "";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 50;
+            this.dgv_nhanvien.Size = new System.Drawing.Size(780, 269);
+            this.dgv_nhanvien.TabIndex = 4;
+            this.dgv_nhanvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_trip_CellClick);
+            this.dgv_nhanvien.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_nhanvien_CellFormatting);
             // 
             // data_employeeid
             // 
-            this.data_employeeid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.data_employeeid.DataPropertyName = "ID";
-            this.data_employeeid.FillWeight = 288.7687F;
             this.data_employeeid.HeaderText = "ID";
             this.data_employeeid.MinimumWidth = 6;
             this.data_employeeid.Name = "data_employeeid";
-            this.data_employeeid.Width = 150;
+            this.data_employeeid.ReadOnly = true;
             // 
             // TEN
             // 
             this.TEN.DataPropertyName = "TEN";
-            this.TEN.FillWeight = 16.19263F;
-            this.TEN.HeaderText = "Name";
+            this.TEN.HeaderText = "Tên";
             this.TEN.MinimumWidth = 6;
             this.TEN.Name = "TEN";
+            this.TEN.ReadOnly = true;
             // 
             // SDT
             // 
             this.SDT.DataPropertyName = "SDT";
-            this.SDT.FillWeight = 16.19263F;
-            this.SDT.HeaderText = "Phone";
+            this.SDT.HeaderText = "Số điện thoại";
             this.SDT.MinimumWidth = 6;
             this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
             // 
             // MAIL
             // 
             this.MAIL.DataPropertyName = "MAIL";
-            this.MAIL.FillWeight = 16.19263F;
             this.MAIL.HeaderText = "Mail";
             this.MAIL.MinimumWidth = 6;
             this.MAIL.Name = "MAIL";
+            this.MAIL.ReadOnly = true;
             // 
             // SLDi
             // 
             this.SLDi.DataPropertyName = "SLDi";
-            this.SLDi.FillWeight = 16.19263F;
             this.SLDi.HeaderText = "SLDi";
             this.SLDi.MinimumWidth = 6;
             this.SLDi.Name = "SLDi";
+            this.SLDi.ReadOnly = true;
             // 
             // isAvailable
             // 
             this.isAvailable.DataPropertyName = "isAvailable";
-            this.isAvailable.FillWeight = 16.19263F;
             this.isAvailable.HeaderText = "isAvailable";
             this.isAvailable.MinimumWidth = 6;
             this.isAvailable.Name = "isAvailable";
+            this.isAvailable.ReadOnly = true;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(717, 463);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // txtbxID
             // 
-            this.txtbxID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbxID.DefaultText = "";
-            this.txtbxID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtbxID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtbxID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxID.DisabledState.Parent = this.txtbxID;
-            this.txtbxID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxID.FocusedState.Parent = this.txtbxID;
-            this.txtbxID.ForeColor = System.Drawing.Color.Black;
-            this.txtbxID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxID.HoverState.Parent = this.txtbxID;
-            this.txtbxID.Location = new System.Drawing.Point(493, 20);
-            this.txtbxID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxID.Location = new System.Drawing.Point(659, 46);
             this.txtbxID.Name = "txtbxID";
-            this.txtbxID.PasswordChar = '\0';
-            this.txtbxID.PlaceholderText = "";
             this.txtbxID.ReadOnly = true;
-            this.txtbxID.SelectedText = "";
-            this.txtbxID.ShadowDecoration.Parent = this.txtbxID;
-            this.txtbxID.Size = new System.Drawing.Size(335, 30);
-            this.txtbxID.TabIndex = 33;
+            this.txtbxID.Size = new System.Drawing.Size(133, 20);
+            this.txtbxID.TabIndex = 23;
             // 
-            // txtbxMail
+            // label4
             // 
-            this.txtbxMail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbxMail.DefaultText = "";
-            this.txtbxMail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtbxMail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtbxMail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxMail.DisabledState.Parent = this.txtbxMail;
-            this.txtbxMail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxMail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxMail.FocusedState.Parent = this.txtbxMail;
-            this.txtbxMail.ForeColor = System.Drawing.Color.Black;
-            this.txtbxMail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxMail.HoverState.Parent = this.txtbxMail;
-            this.txtbxMail.Location = new System.Drawing.Point(493, 134);
-            this.txtbxMail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtbxMail.Name = "txtbxMail";
-            this.txtbxMail.PasswordChar = '\0';
-            this.txtbxMail.PlaceholderText = "";
-            this.txtbxMail.SelectedText = "";
-            this.txtbxMail.ShadowDecoration.Parent = this.txtbxMail;
-            this.txtbxMail.Size = new System.Drawing.Size(335, 30);
-            this.txtbxMail.TabIndex = 34;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Location = new System.Drawing.Point(298, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(18, 13);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "ID";
             // 
-            // txtbxSDT
+            // btnThem
             // 
-            this.txtbxSDT.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbxSDT.DefaultText = "";
-            this.txtbxSDT.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtbxSDT.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtbxSDT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxSDT.DisabledState.Parent = this.txtbxSDT;
-            this.txtbxSDT.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxSDT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxSDT.FocusedState.Parent = this.txtbxSDT;
-            this.txtbxSDT.ForeColor = System.Drawing.Color.Black;
-            this.txtbxSDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxSDT.HoverState.Parent = this.txtbxSDT;
-            this.txtbxSDT.Location = new System.Drawing.Point(493, 96);
-            this.txtbxSDT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtbxSDT.Name = "txtbxSDT";
-            this.txtbxSDT.PasswordChar = '\0';
-            this.txtbxSDT.PlaceholderText = "";
-            this.txtbxSDT.SelectedText = "";
-            this.txtbxSDT.ShadowDecoration.Parent = this.txtbxSDT;
-            this.txtbxSDT.Size = new System.Drawing.Size(335, 30);
-            this.txtbxSDT.TabIndex = 35;
-            // 
-            // txtbxName
-            // 
-            this.txtbxName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbxName.DefaultText = "";
-            this.txtbxName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtbxName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtbxName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxName.DisabledState.Parent = this.txtbxName;
-            this.txtbxName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxName.FocusedState.Parent = this.txtbxName;
-            this.txtbxName.ForeColor = System.Drawing.Color.Black;
-            this.txtbxName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxName.HoverState.Parent = this.txtbxName;
-            this.txtbxName.Location = new System.Drawing.Point(493, 58);
-            this.txtbxName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtbxName.Name = "txtbxName";
-            this.txtbxName.PasswordChar = '\0';
-            this.txtbxName.PlaceholderText = "";
-            this.txtbxName.SelectedText = "";
-            this.txtbxName.ShadowDecoration.Parent = this.txtbxName;
-            this.txtbxName.Size = new System.Drawing.Size(335, 30);
-            this.txtbxName.TabIndex = 36;
-            // 
-            // tb_search
-            // 
-            this.tb_search.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb_search.DefaultText = "";
-            this.tb_search.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tb_search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tb_search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tb_search.DisabledState.Parent = this.tb_search;
-            this.tb_search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tb_search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb_search.FocusedState.Parent = this.tb_search;
-            this.tb_search.ForeColor = System.Drawing.Color.Black;
-            this.tb_search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb_search.HoverState.Parent = this.tb_search;
-            this.tb_search.Location = new System.Drawing.Point(493, 172);
-            this.tb_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tb_search.Name = "tb_search";
-            this.tb_search.PasswordChar = '\0';
-            this.tb_search.PlaceholderText = "";
-            this.tb_search.SelectedText = "";
-            this.tb_search.ShadowDecoration.Parent = this.tb_search;
-            this.tb_search.Size = new System.Drawing.Size(267, 30);
-            this.tb_search.TabIndex = 37;
-            this.tb_search.TextChanged += new System.EventHandler(this.tb_search_TextChanged_1);
+            this.btnThem.Location = new System.Drawing.Point(555, 152);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(75, 29);
+            this.btnThem.TabIndex = 25;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // NhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1080, 697);
-            this.Controls.Add(this.tb_search);
-            this.Controls.Add(this.btnPickPicture);
-            this.Controls.Add(this.txtbxName);
-            this.Controls.Add(this.txtbxSDT);
-            this.Controls.Add(this.txtbxMail);
-            this.Controls.Add(this.txtbxID);
-            this.Controls.Add(this.dgv_nhanvien);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.guna2ComboBox1);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnXoa);
+            this.ClientSize = new System.Drawing.Size(810, 506);
             this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.txtbxID);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.rdNameSearch);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.rdIDSearch);
+            this.Controls.Add(this.dgv_nhanvien);
+            this.Controls.Add(this.tb_search);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtbxName);
+            this.Controls.Add(this.txtbxMail);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.txtbxSDT);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnClear);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NhanVien";
-            this.Text = " ";
-            this.Load += new System.EventHandler(this.NhanVien_Load);
+            this.Text = "NhanVien";
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_nhanvien)).EndInit();
@@ -583,33 +357,32 @@ namespace Tour
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnPickPicture;
+        private System.Windows.Forms.PictureBox pcbxAvatar;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtbxName;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.DataGridView dgv_nhanvien;
+        private System.Windows.Forms.TextBox txtbxMail;
+        private System.Windows.Forms.TextBox txtbxSDT;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tb_search;
+        private System.Windows.Forms.RadioButton rdNameSearch;
+        private System.Windows.Forms.RadioButton rdIDSearch;
+        private System.Windows.Forms.TextBox txtbxID;
         private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2Button btnExit;
-        private Guna.UI2.WinForms.Guna2Button btnThem;
-        private Guna.UI2.WinForms.Guna2Button btnXoa;
-        private Guna.UI2.WinForms.Guna2Button btnUpdate;
-        private Guna.UI2.WinForms.Guna2Button btnClear;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2Button btnPickPicture;
-        private System.Windows.Forms.Panel panel3;
-        private Guna.UI2.WinForms.Guna2DataGridView dgv_nhanvien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn data_employeeid;
         private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAIL;
         private System.Windows.Forms.DataGridViewTextBoxColumn SLDi;
         private System.Windows.Forms.DataGridViewTextBoxColumn isAvailable;
-        private Guna.UI2.WinForms.Guna2TextBox txtbxID;
-        private Guna.UI2.WinForms.Guna2TextBox txtbxMail;
-        private Guna.UI2.WinForms.Guna2TextBox txtbxSDT;
-        private Guna.UI2.WinForms.Guna2TextBox txtbxName;
-        private Guna.UI2.WinForms.Guna2TextBox tb_search;
-        private Guna.UI2.WinForms.Guna2PictureBox pcbxAvatar;
+        private System.Windows.Forms.Button btnThem;
     }
 }

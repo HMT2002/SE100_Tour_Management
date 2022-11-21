@@ -193,19 +193,34 @@ namespace Tour
 
         }
 
+        private void passwordtxb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void cbGuest_CheckedChanged(object sender, EventArgs e)
         {
             if (cbGuest.Checked == true)
             {
                 Clear();
-                pnSearchTicket.Visible = true;
+                label3.Visible = false;
                 registaccountlb.Visible = false;
             }
             else
             {
                 LoginForm_Load(sender, e);
 
-                pnSearchTicket.Visible = false;
+                label3.Visible = true;
                 registaccountlb.Visible = true;
 
             }
