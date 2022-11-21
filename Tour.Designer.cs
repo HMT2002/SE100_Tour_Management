@@ -65,11 +65,18 @@
             this.rdNameSearch = new System.Windows.Forms.RadioButton();
             this.rdIDSearch = new System.Windows.Forms.RadioButton();
             this.btnViewTourReport = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.cbbxYear = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbbxMonth = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_trip)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxBanner)).BeginInit();
             this.panel1.SuspendLayout();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -170,7 +177,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(16, 94);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1237, 239);
+            this.groupBox2.Size = new System.Drawing.Size(1182, 239);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tour details";
@@ -183,7 +190,7 @@
             this.btnBanner.FlatAppearance.BorderSize = 0;
             this.btnBanner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBanner.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBanner.Location = new System.Drawing.Point(1157, 142);
+            this.btnBanner.Location = new System.Drawing.Point(1102, 142);
             this.btnBanner.Name = "btnBanner";
             this.btnBanner.Size = new System.Drawing.Size(71, 47);
             this.btnBanner.TabIndex = 54;
@@ -197,7 +204,7 @@
             this.pcbxBanner.Location = new System.Drawing.Point(731, 142);
             this.pcbxBanner.Name = "pcbxBanner";
             this.pcbxBanner.ShadowDecoration.Parent = this.pcbxBanner;
-            this.pcbxBanner.Size = new System.Drawing.Size(420, 91);
+            this.pcbxBanner.Size = new System.Drawing.Size(365, 91);
             this.pcbxBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbxBanner.TabIndex = 53;
             this.pcbxBanner.TabStop = false;
@@ -211,7 +218,7 @@
             this.btnAddLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddLocation.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddLocation.Image = ((System.Drawing.Image)(resources.GetObject("btnAddLocation.Image")));
-            this.btnAddLocation.Location = new System.Drawing.Point(1157, 18);
+            this.btnAddLocation.Location = new System.Drawing.Point(1102, 18);
             this.btnAddLocation.Name = "btnAddLocation";
             this.btnAddLocation.Size = new System.Drawing.Size(51, 47);
             this.btnAddLocation.TabIndex = 48;
@@ -224,7 +231,7 @@
             this.lstbxLocation.ItemHeight = 19;
             this.lstbxLocation.Location = new System.Drawing.Point(731, 18);
             this.lstbxLocation.Name = "lstbxLocation";
-            this.lstbxLocation.Size = new System.Drawing.Size(414, 99);
+            this.lstbxLocation.Size = new System.Drawing.Size(365, 99);
             this.lstbxLocation.TabIndex = 52;
             // 
             // label1
@@ -530,13 +537,95 @@
             this.btnViewTourReport.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnViewTourReport.ForeColor = System.Drawing.Color.White;
             this.btnViewTourReport.HoverState.Parent = this.btnViewTourReport;
-            this.btnViewTourReport.Location = new System.Drawing.Point(1259, 112);
+            this.btnViewTourReport.Location = new System.Drawing.Point(98, 155);
             this.btnViewTourReport.Name = "btnViewTourReport";
             this.btnViewTourReport.ShadowDecoration.Parent = this.btnViewTourReport;
-            this.btnViewTourReport.Size = new System.Drawing.Size(180, 215);
+            this.btnViewTourReport.Size = new System.Drawing.Size(77, 69);
             this.btnViewTourReport.TabIndex = 48;
-            this.btnViewTourReport.Text = "View Tour Report";
+            this.btnViewTourReport.Text = "View Report";
             this.btnViewTourReport.Click += new System.EventHandler(this.btnViewTourReport_Click);
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel3);
+            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel2);
+            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel1);
+            this.guna2Panel1.Controls.Add(this.cbbxYear);
+            this.guna2Panel1.Controls.Add(this.btnViewTourReport);
+            this.guna2Panel1.Controls.Add(this.cbbxMonth);
+            this.guna2Panel1.Location = new System.Drawing.Point(1204, 103);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
+            this.guna2Panel1.Size = new System.Drawing.Size(262, 230);
+            this.guna2Panel1.TabIndex = 49;
+            // 
+            // cbbxYear
+            // 
+            this.cbbxYear.BackColor = System.Drawing.Color.Transparent;
+            this.cbbxYear.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbxYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbxYear.FocusedColor = System.Drawing.Color.Empty;
+            this.cbbxYear.FocusedState.Parent = this.cbbxYear;
+            this.cbbxYear.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbxYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbxYear.FormattingEnabled = true;
+            this.cbbxYear.HoverState.Parent = this.cbbxYear;
+            this.cbbxYear.ItemHeight = 30;
+            this.cbbxYear.ItemsAppearance.Parent = this.cbbxYear;
+            this.cbbxYear.Location = new System.Drawing.Point(98, 108);
+            this.cbbxYear.Name = "cbbxYear";
+            this.cbbxYear.ShadowDecoration.Parent = this.cbbxYear;
+            this.cbbxYear.Size = new System.Drawing.Size(154, 36);
+            this.cbbxYear.TabIndex = 50;
+            // 
+            // cbbxMonth
+            // 
+            this.cbbxMonth.BackColor = System.Drawing.Color.Transparent;
+            this.cbbxMonth.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbxMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbxMonth.FocusedColor = System.Drawing.Color.Empty;
+            this.cbbxMonth.FocusedState.Parent = this.cbbxMonth;
+            this.cbbxMonth.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbxMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbxMonth.FormattingEnabled = true;
+            this.cbbxMonth.HoverState.Parent = this.cbbxMonth;
+            this.cbbxMonth.ItemHeight = 30;
+            this.cbbxMonth.ItemsAppearance.Parent = this.cbbxMonth;
+            this.cbbxMonth.Location = new System.Drawing.Point(98, 66);
+            this.cbbxMonth.Name = "cbbxMonth";
+            this.cbbxMonth.ShadowDecoration.Parent = this.cbbxMonth;
+            this.cbbxMonth.Size = new System.Drawing.Size(154, 36);
+            this.cbbxMonth.TabIndex = 49;
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(82, 11);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(135, 27);
+            this.guna2HtmlLabel1.TabIndex = 51;
+            this.guna2HtmlLabel1.Text = "Export Report";
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(3, 75);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(69, 27);
+            this.guna2HtmlLabel2.TabIndex = 52;
+            this.guna2HtmlLabel2.Text = "Month: ";
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(3, 117);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(55, 27);
+            this.guna2HtmlLabel3.TabIndex = 53;
+            this.guna2HtmlLabel3.Text = "Year: ";
             // 
             // Tour
             // 
@@ -544,7 +633,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(1478, 656);
-            this.Controls.Add(this.btnViewTourReport);
+            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.rdNameSearch);
             this.Controls.Add(this.rdIDSearch);
             this.Controls.Add(this.btn_add);
@@ -568,6 +657,8 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxBanner)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -616,5 +707,11 @@
         private System.Windows.Forms.Button btnBanner;
         private Guna.UI2.WinForms.Guna2PictureBox pcbxBanner;
         private Guna.UI2.WinForms.Guna2Button btnViewTourReport;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbxYear;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbxMonth;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     }
 }

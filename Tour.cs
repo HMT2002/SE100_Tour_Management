@@ -245,6 +245,25 @@ namespace Tour
                 {
                     pcbxBanner.Image = Converter.Instance.ByteArrayToImage(DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == id && x.IsDeleted == false).FirstOrDefault().PICBI);
                 }
+
+
+                var listMonth = (from tour in DataProvider.Ins.DB.TOURs
+                                 join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
+                                 join ve in DataProvider.Ins.DB.VEs on doan.ID equals ve.IDDOAN
+                                 where tour.ID == id && tour.IsDeleted == false
+                                 select ve.NGAYMUA.Value.Month)
+                         .Distinct().ToList();
+                var listYear = (from tour in DataProvider.Ins.DB.TOURs
+                                join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
+                                join ve in DataProvider.Ins.DB.VEs on doan.ID equals ve.IDDOAN
+                                where tour.ID == id && tour.IsDeleted == false
+                                select ve.NGAYMUA.Value.Year)
+                             .Distinct().ToList();
+
+                cbbxMonth.DataSource = listMonth;
+                cbbxYear.DataSource = listYear;
+
+
             }
         }
 
@@ -268,16 +287,15 @@ namespace Tour
                 return;
             }
 
-            using (ChooseReportRange f = new ChooseReportRange(this.selected_tour))
+            using (fPrint f = new fPrint(this.selected_tour))
             {
+                rptTourIncome crys = new rptTourIncome();
+                crys.Load(@"rptTourIncome.rep");
 
-                this.Hide();
+                f.rptViewer.ReportSource = crys;
+                f.rptViewer.Refresh();
+                f.rptViewer.SelectionFormula = "{Command.TourID}='" + this.selected_tour.ID + "' and {Command.NAM}=" + cbbxYear.SelectedValue.ToString() + " and {Command.THANG}=" + cbbxMonth.SelectedValue.ToString();
                 f.ShowDialog();
-                this.Show();
-
-
-
-
             }
         }
 

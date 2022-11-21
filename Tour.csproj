@@ -191,12 +191,6 @@
     <Compile Include="ChooseLoyalCustomer.Designer.cs">
       <DependentUpon>ChooseLoyalCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChooseReportRange.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChooseReportRange.Designer.cs">
-      <DependentUpon>ChooseReportRange.cs</DependentUpon>
-    </Compile>
     <Compile Include="CrystalReport\rptMonthly.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -447,9 +441,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChooseLoyalCustomer.resx">
       <DependentUpon>ChooseLoyalCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ChooseReportRange.resx">
-      <DependentUpon>ChooseReportRange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CrystalReport\rptMonthly.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
