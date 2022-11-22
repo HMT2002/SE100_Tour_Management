@@ -270,5 +270,14 @@ namespace Tour
             this.Show();
             hideSubmenu();
         }
+
+        private void button11_Click_1(object sender, EventArgs e)
+        {
+            ReportChart h = new ReportChart();
+            this.Hide();
+            h.ShowDialog();
+            this.Show();
+            hideSubmenu();
+        }
     }
 }

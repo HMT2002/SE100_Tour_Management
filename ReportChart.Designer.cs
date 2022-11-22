@@ -28,149 +28,152 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.chartYearRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chartHighestRevenueTour = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chartTourEmpParticipate = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chartMonthRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chartYearReport = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            ((System.ComponentModel.ISupportInitialize)(this.chartYearRevenue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartHighestRevenueTour)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartTourEmpParticipate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartMonthRevenue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartYearReport)).BeginInit();
+            this.cartesianchartYearly = new LiveCharts.WinForms.CartesianChart();
+            this.piechartTour = new LiveCharts.WinForms.PieChart();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.cbbxYear = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnViewYearlyReport = new Guna.UI2.WinForms.Guna2Button();
+            this.btnMonthlyReport = new Guna.UI2.WinForms.Guna2Button();
+            this.columnchartYearly = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.guna2GradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.columnchartYearly)).BeginInit();
             this.SuspendLayout();
             // 
-            // chartYearRevenue
+            // cartesianchartYearly
             // 
-            this.chartYearRevenue.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea1.Name = "ChartArea1";
-            this.chartYearRevenue.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartYearRevenue.Legends.Add(legend1);
-            this.chartYearRevenue.Location = new System.Drawing.Point(12, 12);
-            this.chartYearRevenue.Name = "chartYearRevenue";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartYearRevenue.Series.Add(series1);
-            this.chartYearRevenue.Size = new System.Drawing.Size(238, 222);
-            this.chartYearRevenue.TabIndex = 0;
-            this.chartYearRevenue.Text = "chart1";
+            this.cartesianchartYearly.Location = new System.Drawing.Point(12, 240);
+            this.cartesianchartYearly.Name = "cartesianchartYearly";
+            this.cartesianchartYearly.Size = new System.Drawing.Size(1192, 237);
+            this.cartesianchartYearly.TabIndex = 0;
+            this.cartesianchartYearly.Text = "cartesianChart1";
             // 
-            // chartHighestRevenueTour
+            // piechartTour
             // 
-            this.chartHighestRevenueTour.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            this.piechartTour.Location = new System.Drawing.Point(589, 12);
+            this.piechartTour.Name = "piechartTour";
+            this.piechartTour.Size = new System.Drawing.Size(323, 222);
+            this.piechartTour.TabIndex = 1;
+            this.piechartTour.Text = "pieChart1";
+            // 
+            // guna2GradientPanel1
+            // 
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel3);
+            this.guna2GradientPanel1.Controls.Add(this.cbbxYear);
+            this.guna2GradientPanel1.Controls.Add(this.btnViewYearlyReport);
+            this.guna2GradientPanel1.Controls.Add(this.btnMonthlyReport);
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(918, 12);
+            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(289, 222);
+            this.guna2GradientPanel1.TabIndex = 2;
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(37, 12);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(55, 27);
+            this.guna2HtmlLabel3.TabIndex = 57;
+            this.guna2HtmlLabel3.Text = "Year: ";
+            // 
+            // cbbxYear
+            // 
+            this.cbbxYear.BackColor = System.Drawing.Color.Transparent;
+            this.cbbxYear.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbxYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbxYear.FocusedColor = System.Drawing.Color.Empty;
+            this.cbbxYear.FocusedState.Parent = this.cbbxYear;
+            this.cbbxYear.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbxYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbxYear.FormattingEnabled = true;
+            this.cbbxYear.HoverState.Parent = this.cbbxYear;
+            this.cbbxYear.ItemHeight = 30;
+            this.cbbxYear.ItemsAppearance.Parent = this.cbbxYear;
+            this.cbbxYear.Location = new System.Drawing.Point(132, 3);
+            this.cbbxYear.Name = "cbbxYear";
+            this.cbbxYear.ShadowDecoration.Parent = this.cbbxYear;
+            this.cbbxYear.Size = new System.Drawing.Size(154, 36);
+            this.cbbxYear.TabIndex = 55;
+            this.cbbxYear.SelectedValueChanged += new System.EventHandler(this.cbbxYear_SelectedValueChanged);
+            // 
+            // btnViewYearlyReport
+            // 
+            this.btnViewYearlyReport.CheckedState.Parent = this.btnViewYearlyReport;
+            this.btnViewYearlyReport.CustomImages.Parent = this.btnViewYearlyReport;
+            this.btnViewYearlyReport.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnViewYearlyReport.ForeColor = System.Drawing.Color.White;
+            this.btnViewYearlyReport.HoverState.Parent = this.btnViewYearlyReport;
+            this.btnViewYearlyReport.Location = new System.Drawing.Point(106, 102);
+            this.btnViewYearlyReport.Name = "btnViewYearlyReport";
+            this.btnViewYearlyReport.ShadowDecoration.Parent = this.btnViewYearlyReport;
+            this.btnViewYearlyReport.Size = new System.Drawing.Size(180, 45);
+            this.btnViewYearlyReport.TabIndex = 1;
+            this.btnViewYearlyReport.Text = "View Tour Reports";
+            this.btnViewYearlyReport.Click += new System.EventHandler(this.btnViewYearlyReport_Click);
+            // 
+            // btnMonthlyReport
+            // 
+            this.btnMonthlyReport.CheckedState.Parent = this.btnMonthlyReport;
+            this.btnMonthlyReport.CustomImages.Parent = this.btnMonthlyReport;
+            this.btnMonthlyReport.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnMonthlyReport.ForeColor = System.Drawing.Color.White;
+            this.btnMonthlyReport.HoverState.Parent = this.btnMonthlyReport;
+            this.btnMonthlyReport.Location = new System.Drawing.Point(106, 153);
+            this.btnMonthlyReport.Name = "btnMonthlyReport";
+            this.btnMonthlyReport.ShadowDecoration.Parent = this.btnMonthlyReport;
+            this.btnMonthlyReport.Size = new System.Drawing.Size(180, 45);
+            this.btnMonthlyReport.TabIndex = 0;
+            this.btnMonthlyReport.Text = "View Monthly Reports";
+            this.btnMonthlyReport.Click += new System.EventHandler(this.btnMonthlyReport_Click);
+            // 
+            // columnchartYearly
+            // 
             chartArea2.Name = "ChartArea1";
-            this.chartHighestRevenueTour.ChartAreas.Add(chartArea2);
+            this.columnchartYearly.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
-            this.chartHighestRevenueTour.Legends.Add(legend2);
-            this.chartHighestRevenueTour.Location = new System.Drawing.Point(256, 12);
-            this.chartHighestRevenueTour.Name = "chartHighestRevenueTour";
+            this.columnchartYearly.Legends.Add(legend2);
+            this.columnchartYearly.Location = new System.Drawing.Point(12, 12);
+            this.columnchartYearly.Name = "columnchartYearly";
             series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartHighestRevenueTour.Series.Add(series2);
-            this.chartHighestRevenueTour.Size = new System.Drawing.Size(238, 222);
-            this.chartHighestRevenueTour.TabIndex = 1;
-            this.chartHighestRevenueTour.Text = "chart2";
-            // 
-            // chartTourEmpParticipate
-            // 
-            this.chartTourEmpParticipate.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea3.Name = "ChartArea1";
-            this.chartTourEmpParticipate.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartTourEmpParticipate.Legends.Add(legend3);
-            this.chartTourEmpParticipate.Location = new System.Drawing.Point(500, 12);
-            this.chartTourEmpParticipate.Name = "chartTourEmpParticipate";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartTourEmpParticipate.Series.Add(series3);
-            this.chartTourEmpParticipate.Size = new System.Drawing.Size(238, 222);
-            this.chartTourEmpParticipate.TabIndex = 2;
-            this.chartTourEmpParticipate.Text = "chart3";
-            // 
-            // chartMonthRevenue
-            // 
-            this.chartMonthRevenue.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea4.Name = "ChartArea1";
-            this.chartMonthRevenue.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartMonthRevenue.Legends.Add(legend4);
-            this.chartMonthRevenue.Location = new System.Drawing.Point(744, 12);
-            this.chartMonthRevenue.Name = "chartMonthRevenue";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartMonthRevenue.Series.Add(series4);
-            this.chartMonthRevenue.Size = new System.Drawing.Size(238, 222);
-            this.chartMonthRevenue.TabIndex = 3;
-            this.chartMonthRevenue.Text = "chart4";
-            // 
-            // chartYearReport
-            // 
-            this.chartYearReport.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea5.Name = "ChartArea1";
-            this.chartYearReport.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chartYearReport.Legends.Add(legend5);
-            this.chartYearReport.Location = new System.Drawing.Point(12, 240);
-            this.chartYearReport.Name = "chartYearReport";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            series5.YValuesPerPoint = 2;
-            this.chartYearReport.Series.Add(series5);
-            this.chartYearReport.Size = new System.Drawing.Size(970, 222);
-            this.chartYearReport.TabIndex = 4;
-            this.chartYearReport.Text = "chart1";
+            series2.Name = "Revenue";
+            this.columnchartYearly.Series.Add(series2);
+            this.columnchartYearly.Size = new System.Drawing.Size(571, 222);
+            this.columnchartYearly.TabIndex = 3;
+            this.columnchartYearly.Text = "chart1";
             // 
             // ReportChart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1078, 489);
-            this.Controls.Add(this.chartYearReport);
-            this.Controls.Add(this.chartMonthRevenue);
-            this.Controls.Add(this.chartTourEmpParticipate);
-            this.Controls.Add(this.chartHighestRevenueTour);
-            this.Controls.Add(this.chartYearRevenue);
+            this.ClientSize = new System.Drawing.Size(1219, 489);
+            this.Controls.Add(this.columnchartYearly);
+            this.Controls.Add(this.guna2GradientPanel1);
+            this.Controls.Add(this.piechartTour);
+            this.Controls.Add(this.cartesianchartYearly);
             this.Name = "ReportChart";
             this.Text = "ReportChart";
-            ((System.ComponentModel.ISupportInitialize)(this.chartYearRevenue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartHighestRevenueTour)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartTourEmpParticipate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartMonthRevenue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartYearReport)).EndInit();
+            this.guna2GradientPanel1.ResumeLayout(false);
+            this.guna2GradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.columnchartYearly)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartYearRevenue;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartHighestRevenueTour;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartTourEmpParticipate;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartMonthRevenue;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartYearReport;
+        private LiveCharts.WinForms.CartesianChart cartesianchartYearly;
+        private LiveCharts.WinForms.PieChart piechartTour;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Guna.UI2.WinForms.Guna2Button btnViewYearlyReport;
+        private Guna.UI2.WinForms.Guna2Button btnMonthlyReport;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbxYear;
+        private System.Windows.Forms.DataVisualization.Charting.Chart columnchartYearly;
     }
 }
