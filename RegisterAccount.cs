@@ -133,9 +133,7 @@ namespace Tour
                 if (rEMail.IsMatch(txbGmail.Text))
                 {
                     email = txbGmail.Text.ToString();
-                    string from, pass, messageBody;
-                    Random random = new Random();
-                    randomcode = Converter.Instance.RandomString(5);
+                    randomcode = Converter.Instance.RandomString2(5);
                     List<string> listto = new List<string>();
                     listto.Add(email);
                     //MailMessage message = new MailMessage();
@@ -154,7 +152,7 @@ namespace Tour
                     //smtp.Credentials = new NetworkCredential(from, pass);
                     try
                     {
-                        Utils.Features.Instance.SendMail(listto, "Verify code", randomcode);
+                        Utils.Features.Instance.SendMail(listto, "Verify code","Verify code to register account: "+ randomcode);
                         label12.Text = "Sent!!!";
                     }
                     catch (Exception ex)

@@ -60,10 +60,9 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(282, 285);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Location = new System.Drawing.Point(212, 232);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(24, 26);
+            this.label14.Size = new System.Drawing.Size(19, 21);
             this.label14.TabIndex = 72;
             this.label14.Text = "*";
             // 
@@ -71,10 +70,9 @@
             // 
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(428, 214);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(321, 174);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(100, 39);
+            this.label12.Size = new System.Drawing.Size(75, 32);
             this.label12.TabIndex = 68;
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -84,10 +82,9 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(282, 214);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(212, 174);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(24, 26);
+            this.label9.Size = new System.Drawing.Size(19, 21);
             this.label9.TabIndex = 66;
             this.label9.Text = "*";
             // 
@@ -97,18 +94,16 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(144, 294);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(108, 239);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(0, 17);
+            this.label8.Size = new System.Drawing.Size(0, 13);
             this.label8.TabIndex = 64;
             // 
             // btnPickPicture
             // 
-            this.btnPickPicture.Location = new System.Drawing.Point(373, 167);
-            this.btnPickPicture.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPickPicture.Location = new System.Drawing.Point(280, 136);
             this.btnPickPicture.Name = "btnPickPicture";
-            this.btnPickPicture.Size = new System.Drawing.Size(100, 28);
+            this.btnPickPicture.Size = new System.Drawing.Size(75, 23);
             this.btnPickPicture.TabIndex = 4;
             this.btnPickPicture.Text = "Chọn ảnh";
             this.btnPickPicture.UseVisualStyleBackColor = true;
@@ -133,16 +128,15 @@
             this.txbHo.ForeColor = System.Drawing.Color.Black;
             this.txbHo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbHo.HoverState.Parent = this.txbHo;
-            this.txbHo.Location = new System.Drawing.Point(17, 23);
-            this.txbHo.Margin = new System.Windows.Forms.Padding(4);
+            this.txbHo.Location = new System.Drawing.Point(13, 19);
             this.txbHo.Name = "txbHo";
-            this.txbHo.Padding = new System.Windows.Forms.Padding(3);
+            this.txbHo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbHo.PasswordChar = '\0';
             this.txbHo.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txbHo.PlaceholderText = "First Name";
             this.txbHo.SelectedText = "";
             this.txbHo.ShadowDecoration.Parent = this.txbHo;
-            this.txbHo.Size = new System.Drawing.Size(272, 45);
+            this.txbHo.Size = new System.Drawing.Size(204, 37);
             this.txbHo.TabIndex = 73;
             // 
             // txbTen
@@ -164,16 +158,15 @@
             this.txbTen.ForeColor = System.Drawing.Color.Black;
             this.txbTen.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbTen.HoverState.Parent = this.txbTen;
-            this.txbTen.Location = new System.Drawing.Point(17, 84);
-            this.txbTen.Margin = new System.Windows.Forms.Padding(4);
+            this.txbTen.Location = new System.Drawing.Point(13, 68);
             this.txbTen.Name = "txbTen";
-            this.txbTen.Padding = new System.Windows.Forms.Padding(3);
+            this.txbTen.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbTen.PasswordChar = '\0';
             this.txbTen.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txbTen.PlaceholderText = "Last Name";
             this.txbTen.SelectedText = "";
             this.txbTen.ShadowDecoration.Parent = this.txbTen;
-            this.txbTen.Size = new System.Drawing.Size(272, 45);
+            this.txbTen.Size = new System.Drawing.Size(204, 37);
             this.txbTen.TabIndex = 74;
             // 
             // txbSDT
@@ -195,16 +188,16 @@
             this.txbSDT.ForeColor = System.Drawing.Color.Black;
             this.txbSDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbSDT.HoverState.Parent = this.txbSDT;
-            this.txbSDT.Location = new System.Drawing.Point(17, 150);
-            this.txbSDT.Margin = new System.Windows.Forms.Padding(4);
+            this.txbSDT.Location = new System.Drawing.Point(13, 122);
+            this.txbSDT.MaxLength = 13;
             this.txbSDT.Name = "txbSDT";
-            this.txbSDT.Padding = new System.Windows.Forms.Padding(3);
+            this.txbSDT.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbSDT.PasswordChar = '\0';
             this.txbSDT.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txbSDT.PlaceholderText = "Phone";
             this.txbSDT.SelectedText = "";
             this.txbSDT.ShadowDecoration.Parent = this.txbSDT;
-            this.txbSDT.Size = new System.Drawing.Size(272, 45);
+            this.txbSDT.Size = new System.Drawing.Size(204, 37);
             this.txbSDT.TabIndex = 75;
             this.txbSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSDT_KeyPress);
             // 
@@ -227,16 +220,15 @@
             this.txbPass.ForeColor = System.Drawing.Color.Black;
             this.txbPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbPass.HoverState.Parent = this.txbPass;
-            this.txbPass.Location = new System.Drawing.Point(17, 280);
-            this.txbPass.Margin = new System.Windows.Forms.Padding(4);
+            this.txbPass.Location = new System.Drawing.Point(13, 228);
             this.txbPass.Name = "txbPass";
-            this.txbPass.Padding = new System.Windows.Forms.Padding(3);
+            this.txbPass.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbPass.PasswordChar = '\0';
             this.txbPass.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txbPass.PlaceholderText = "Password";
             this.txbPass.SelectedText = "";
             this.txbPass.ShadowDecoration.Parent = this.txbPass;
-            this.txbPass.Size = new System.Drawing.Size(272, 45);
+            this.txbPass.Size = new System.Drawing.Size(204, 37);
             this.txbPass.TabIndex = 76;
             // 
             // txbConfirm
@@ -258,16 +250,15 @@
             this.txbConfirm.ForeColor = System.Drawing.Color.Black;
             this.txbConfirm.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbConfirm.HoverState.Parent = this.txbConfirm;
-            this.txbConfirm.Location = new System.Drawing.Point(17, 344);
-            this.txbConfirm.Margin = new System.Windows.Forms.Padding(4);
+            this.txbConfirm.Location = new System.Drawing.Point(13, 280);
             this.txbConfirm.Name = "txbConfirm";
-            this.txbConfirm.Padding = new System.Windows.Forms.Padding(3);
+            this.txbConfirm.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbConfirm.PasswordChar = '\0';
             this.txbConfirm.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txbConfirm.PlaceholderText = "Confirm Password";
             this.txbConfirm.SelectedText = "";
             this.txbConfirm.ShadowDecoration.Parent = this.txbConfirm;
-            this.txbConfirm.Size = new System.Drawing.Size(272, 45);
+            this.txbConfirm.Size = new System.Drawing.Size(204, 37);
             this.txbConfirm.TabIndex = 77;
             // 
             // txbCode
@@ -289,16 +280,15 @@
             this.txbCode.ForeColor = System.Drawing.Color.Black;
             this.txbCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbCode.HoverState.Parent = this.txbCode;
-            this.txbCode.Location = new System.Drawing.Point(17, 405);
-            this.txbCode.Margin = new System.Windows.Forms.Padding(4);
+            this.txbCode.Location = new System.Drawing.Point(13, 329);
             this.txbCode.Name = "txbCode";
-            this.txbCode.Padding = new System.Windows.Forms.Padding(3);
+            this.txbCode.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbCode.PasswordChar = '\0';
             this.txbCode.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txbCode.PlaceholderText = "Verify Code";
             this.txbCode.SelectedText = "";
             this.txbCode.ShadowDecoration.Parent = this.txbCode;
-            this.txbCode.Size = new System.Drawing.Size(272, 45);
+            this.txbCode.Size = new System.Drawing.Size(204, 37);
             this.txbCode.TabIndex = 78;
             // 
             // txbGmail
@@ -320,16 +310,15 @@
             this.txbGmail.ForeColor = System.Drawing.Color.Black;
             this.txbGmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbGmail.HoverState.Parent = this.txbGmail;
-            this.txbGmail.Location = new System.Drawing.Point(17, 214);
-            this.txbGmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txbGmail.Location = new System.Drawing.Point(13, 174);
             this.txbGmail.Name = "txbGmail";
-            this.txbGmail.Padding = new System.Windows.Forms.Padding(3);
+            this.txbGmail.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbGmail.PasswordChar = '\0';
             this.txbGmail.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txbGmail.PlaceholderText = "Email";
             this.txbGmail.SelectedText = "";
             this.txbGmail.ShadowDecoration.Parent = this.txbGmail;
-            this.txbGmail.Size = new System.Drawing.Size(272, 45);
+            this.txbGmail.Size = new System.Drawing.Size(204, 37);
             this.txbGmail.TabIndex = 79;
             this.txbGmail.TextChanged += new System.EventHandler(this.txbGmail_TextChanged);
             this.txbGmail.Validating += new System.ComponentModel.CancelEventHandler(this.txbGmail_Validating);
@@ -343,14 +332,15 @@
             this.SignUpbtn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUpbtn.ForeColor = System.Drawing.Color.White;
             this.SignUpbtn.HoverState.Parent = this.SignUpbtn;
-            this.SignUpbtn.Location = new System.Drawing.Point(29, 476);
+            this.SignUpbtn.Location = new System.Drawing.Point(22, 387);
+            this.SignUpbtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SignUpbtn.Name = "SignUpbtn";
             this.SignUpbtn.ShadowDecoration.BorderRadius = 5;
             this.SignUpbtn.ShadowDecoration.Color = System.Drawing.Color.Gray;
             this.SignUpbtn.ShadowDecoration.Depth = 50;
             this.SignUpbtn.ShadowDecoration.Parent = this.SignUpbtn;
             this.SignUpbtn.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 6, 6);
-            this.SignUpbtn.Size = new System.Drawing.Size(109, 39);
+            this.SignUpbtn.Size = new System.Drawing.Size(82, 32);
             this.SignUpbtn.TabIndex = 80;
             this.SignUpbtn.Text = "Sign Up";
             this.SignUpbtn.Click += new System.EventHandler(this.SignUpbtn_Click);
@@ -366,10 +356,11 @@
             this.Cancelbtn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancelbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Cancelbtn.HoverState.Parent = this.Cancelbtn;
-            this.Cancelbtn.Location = new System.Drawing.Point(165, 476);
+            this.Cancelbtn.Location = new System.Drawing.Point(124, 387);
+            this.Cancelbtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Cancelbtn.Name = "Cancelbtn";
             this.Cancelbtn.ShadowDecoration.Parent = this.Cancelbtn;
-            this.Cancelbtn.Size = new System.Drawing.Size(109, 39);
+            this.Cancelbtn.Size = new System.Drawing.Size(82, 32);
             this.Cancelbtn.TabIndex = 81;
             this.Cancelbtn.Text = "Cancel";
             this.Cancelbtn.Click += new System.EventHandler(this.Cancelbtn_Click);
@@ -383,10 +374,11 @@
             this.btnSend.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSend.ForeColor = System.Drawing.Color.Black;
             this.btnSend.HoverState.Parent = this.btnSend;
-            this.btnSend.Location = new System.Drawing.Point(313, 214);
+            this.btnSend.Location = new System.Drawing.Point(235, 174);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSend.Name = "btnSend";
             this.btnSend.ShadowDecoration.Parent = this.btnSend;
-            this.btnSend.Size = new System.Drawing.Size(109, 39);
+            this.btnSend.Size = new System.Drawing.Size(82, 32);
             this.btnSend.TabIndex = 82;
             this.btnSend.Text = "Send code";
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
@@ -409,20 +401,20 @@
             this.guna2Panel1.Controls.Add(this.txbPass);
             this.guna2Panel1.Controls.Add(this.txbConfirm);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2Panel1.Location = new System.Drawing.Point(455, 0);
+            this.guna2Panel1.Location = new System.Drawing.Point(341, 0);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(541, 541);
+            this.guna2Panel1.Size = new System.Drawing.Size(406, 440);
             this.guna2Panel1.TabIndex = 83;
             // 
             // pcbxAvatar
             // 
             this.pcbxAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pcbxAvatar.Image = global::Tour.Properties.Resources.ic_image_empty_128;
-            this.pcbxAvatar.Location = new System.Drawing.Point(313, 23);
-            this.pcbxAvatar.Margin = new System.Windows.Forms.Padding(4);
+            this.pcbxAvatar.Location = new System.Drawing.Point(235, 19);
             this.pcbxAvatar.Name = "pcbxAvatar";
-            this.pcbxAvatar.Size = new System.Drawing.Size(200, 136);
+            this.pcbxAvatar.Size = new System.Drawing.Size(150, 110);
             this.pcbxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbxAvatar.TabIndex = 0;
             this.pcbxAvatar.TabStop = false;
@@ -433,35 +425,36 @@
             this.guna2Panel2.Controls.Add(this.guna2PictureBox1);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
-            this.guna2Panel2.Size = new System.Drawing.Size(452, 541);
+            this.guna2Panel2.Size = new System.Drawing.Size(339, 440);
             this.guna2Panel2.TabIndex = 84;
             // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.Image = global::Tour.Properties.Resources.person_working1;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 3);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 2);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(449, 538);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(337, 437);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
             // 
             // RegisterAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(996, 541);
+            this.ClientSize = new System.Drawing.Size(747, 440);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.label8);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RegisterAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterAccount";

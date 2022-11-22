@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.Data.SqlClient;
+using Tour.Model;
+using Tour.Utils;
 
 namespace Tour
 {
@@ -16,15 +18,26 @@ namespace Tour
     {
         string email = Properties.Settings.Default.UserName;
 
+        public ACCOUNT Account = new ACCOUNT();
+
         public ChangePass()
         {
             InitializeComponent();
+        }
+
+        public ChangePass(ACCOUNT account)
+        {
+            InitializeComponent();
+            this.Account = account;
         }
 
         private void Resetbtn_Click(object sender, EventArgs e)
         {
             if (newpasstxb.Text == confirmtxb.Text && newpasstxb.Text != "")
             {
+                Account.PASS = Converter.Instance.EncryptPassword(confirmtxb.Text);
+                DataProvider.Ins.DB.SaveChanges();
+
                 MessageBox.Show("Reset password success!!!");
                 this.Close();
             }
@@ -36,6 +49,7 @@ namespace Tour
 
         private void Cancelbtn_Click(object sender, EventArgs e)
         {
+
             this.Close();
         }
     }
