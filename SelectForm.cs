@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tour.Model;
 
 namespace Tour
 {
@@ -17,12 +18,63 @@ namespace Tour
             InitializeComponent();
             CustomizeDesign();
         }
+
+        public SelectForm(NHANVIEN nhanvien)
+        {
+            InitializeComponent();
+            CustomizeDesign();
+
+            if(nhanvien.ACCOUNT.ACCROLE.CompareTo("Manager") == null)
+            {
+                CustomizeDesignManager();
+
+            }
+            else if(nhanvien.ACCOUNT.ACCROLE.CompareTo("Employee") == 0)
+            {
+                CustomizeDesignEmployee();
+
+            }
+
+        }
+
         private void CustomizeDesign()
         {
             panelManage.Visible = false;
             panel_Help.Visible = false;
             panel_staff.Visible = false;
+
+
+
         }
+
+        private void CustomizeDesignManager()
+        {
+
+
+
+        }
+
+        private void CustomizeDesignEmployee()
+        {
+
+            //btndataCus.Visible = false;
+            //btnEmployyeDatabase.Visible = false;
+            //btnMission.Visible = false;
+            //btnStatistics.Visible = false;
+
+            panelManage.Controls.Remove(btndataCus);
+            btndataCus.Dispose();
+            panelManage.Controls.Remove(btnEmployyeDatabase);
+            btnEmployyeDatabase.Dispose();
+            panelManage.Controls.Remove(btnMission);
+            btnMission.Dispose();
+            panelManage.Controls.Remove(btnStatistics);
+            btnStatistics.Dispose();
+
+            panelManage.Height =60*8;
+
+        }
+
         private void hideSubmenu()
         {
             if (panelManage.Visible == true)
@@ -41,15 +93,6 @@ namespace Tour
             }
             else
                 submenu.Visible = false;
-        }
-        private void btnTour_Click(object sender, EventArgs e)
-        {
-            Route route = new Route();
-            this.Hide();
-            route.StartPosition = FormStartPosition.CenterParent;
-            route.ShowDialog();
-            this.Show();
-            hideSubmenu();
         }
 
         private void btnRoute_Click(object sender, EventArgs e)

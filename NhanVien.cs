@@ -65,7 +65,7 @@ namespace Tour
         {
             txtbxName.Text = txtbxSDT.Text = txtbxMail.Text =txtbxID.Text= "";
             img_data = null;
-            pcbxAvatar.Image = null;
+            pcbxAvatar.Image = Properties.Resources.ic_image_empty_128;
         }
 
 
@@ -159,7 +159,10 @@ namespace Tour
                 try
                 {
                     string randomcode = Converter.Instance.RandomString2(5);
-                    var nv = new NHANVIEN() { ID = randomcode, TEN = txtbxName.Text, MAIL = txtbxMail.Text, SDT = txtbxSDT.Text, IsDeleted = false, isAvailable = true };
+
+                    var nv = new NHANVIEN() { ID = randomcode, TEN = txtbxName.Text, MAIL = txtbxMail.Text, SDT = txtbxSDT.Text, IsDeleted = false, isAvailable = true,PICBI=img_data,IDACC=randomcode };
+                    var account = new ACCOUNT() { ACC = txtbxMail.Text, PASS = Converter.Instance.EncryptPassword((txtbxPassword.Text.Trim())), ID = randomcode, IsDeleted = false, ACCROLE = "Employee" };
+                    DataProvider.Ins.DB.ACCOUNTs.Add(account);
                     DataProvider.Ins.DB.NHANVIENs.Add(nv);
 
                     DataProvider.Ins.DB.SaveChanges();

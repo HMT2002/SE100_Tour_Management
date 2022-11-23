@@ -72,7 +72,6 @@ namespace Tour
                 ACCOUNT acc = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false && x.ACCROLE == "Customer")).SingleOrDefault();
                 if (acc != null)
                 {
-                    MessageBox.Show("Login as customer!");
                     KHACHHANG kh = DataProvider.Ins.DB.KHACHHANGs.Where(x => (x.IDACC == acc.ID&&x.IsDeleted==false )).SingleOrDefault();
                     LoyalCustomer menuF = new LoyalCustomer(kh);
                     this.Hide();
@@ -108,11 +107,12 @@ namespace Tour
                     Properties.Settings.Default.CurUserId = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().ACC;
 
                     Properties.Settings.Default.Save();
-                    SelectForm menuF = new SelectForm();
+                    SelectForm menuF = new SelectForm(DataProvider.Ins.DB.NHANVIENs.Where(x => x.ACCOUNT.ACC == emailtxb.Text && x.IsDeleted == false).FirstOrDefault());
                     this.Hide();
                     menuF.ShowDialog();
                     this.Show();
                 }
+
                 else
                 {
                     MessageBox.Show("Wrong email or password!!!!");

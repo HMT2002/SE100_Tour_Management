@@ -364,9 +364,7 @@ namespace Tour
 
         private void backtoroutebtn_Click(object sender, EventArgs e)
         {
-            Route r = new Route();
-            this.Hide();
-            r.ShowDialog();
+
         }
 
         private void gotoregistbtn_Click(object sender, EventArgs e)
