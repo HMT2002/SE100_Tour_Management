@@ -59,6 +59,7 @@ namespace Tour
 
         private void SearchTicket_Load(object sender, EventArgs e)
         {
+
         }
 
         private void showAll()
@@ -68,7 +69,6 @@ namespace Tour
                                     join ve in DataProvider.Ins.DB.VEs on doan.ID equals ve.IDDOAN
                                     join khachhang in DataProvider.Ins.DB.KHACHHANGs on ve.IDKHACH equals khachhang.ID
                                     where ve.ID==this.Ticket_id && doan.IsDeleted == false && tour.IsDeleted == false && ve.IsDeleted == false && khachhang.IsDeleted == false
-
                                     select new
                                     {
                                         ID = ve.ID,
@@ -87,13 +87,16 @@ namespace Tour
             {
                 return;
             }
+
             using(fPrint f=new fPrint(this.Ve))
             {
                 rptTicket crys = new rptTicket();
                 crys.Load(@"rptTicket.rep");
 
                 f.rptViewer.ReportSource = crys;
-                f.rptViewer.SelectionFormula = "{VE.ID}='" + this.Ve.ID + "'";
+                f.rptViewer.Refresh();
+
+                f.rptViewer.SelectionFormula = "{VE.ID} = '" + this.Ve.ID + "' ";
 
                 f.ShowDialog();
             }
