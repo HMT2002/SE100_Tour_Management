@@ -97,20 +97,62 @@ namespace Tour
 
         public bool ChechData()
         {
-            if(txtbxPassword.Text.Trim().CompareTo(string.Empty)==0|| txtbxRePassword.Text.Trim().CompareTo(string.Empty) == 0 || tbAddress.Text.Trim().CompareTo(string.Empty) == 0 || tbCMND.Text.Trim().CompareTo(string.Empty) == 0 || tbEmail.Text.Trim().CompareTo(string.Empty) == 0 || tbTelephone.Text.Trim().CompareTo(string.Empty) == 0 || tbName.Text.Trim().CompareTo(string.Empty) == 0)
+            bool flag = true;
+
+            if (txtbxPassword.Text.Trim().CompareTo(txtbxRePassword.Text.Trim()) != 0)
+            {
+                Notify.NotificationField(txtbxPassword);
+                Notify.NotificationField(txtbxRePassword);
+
+                flag = false;
+            }
+            if (txtbxPassword.Text.Length <= 5)
             {
                 return false;
             }
-            if (txtbxPassword.Text.Trim().CompareTo(txtbxRePassword.Text.Trim()) != 0)
+            if (txtbxPassword.Text.Trim().CompareTo(string.Empty) == 0 )
             {
-                return false;
+                Notify.NotificationField(txtbxPassword);
+                flag = false;
             }
             if (txtbxPassword.Text.Length <= 5)
             {
                 MessageBox.Show("Password have to be over 5 letters");
-                return false;
+                Notify.NotificationField(txtbxPassword);
+                flag = false;
             }
-            return true;
+            if (txtbxRePassword.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(txtbxRePassword);
+                flag = false;
+            }
+            if (tbName.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(tbName);
+                flag = false;
+            }
+            if (tbAddress.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(tbAddress);
+                flag = false;
+
+            }
+            if (tbTelephone.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(tbTelephone);
+                flag = false;
+            }
+            if (tbCMND.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(tbCMND);
+                flag = false;
+            }
+            if (tbEmail.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(tbEmail);
+                flag = false;
+            }
+            return flag;
         }
 
         public bool ChechDataUpdate()
@@ -148,6 +190,16 @@ namespace Tour
             }
         }
 
+        public void UnnotifyAllFields()
+        {
+            Notify.UnnotificationField(tbName);
+            Notify.UnnotificationField(tbAddress);
+            Notify.UnnotificationField(tbEmail);
+            Notify.UnnotificationField(tbCMND);
+            Notify.UnnotificationField(tbTelephone);
+
+        }
+
         private void Clear()
         {
             tbAddress.Text = "";
@@ -159,6 +211,7 @@ namespace Tour
             txtbxPassword.Text = "";
             txtbxRePassword.Text = "";
             pcbxAvtatar.Image = Properties.Resources.ic_image_empty_128;
+            UnnotifyAllFields();
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -229,6 +282,8 @@ namespace Tour
 
         private void tbTelephone_KeyPress(object sender, KeyPressEventArgs e)
         {
+            Utils.Notify.UnnotificationField(sender);
+
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
@@ -241,6 +296,8 @@ namespace Tour
 
         private void tbCMND_KeyPress(object sender, KeyPressEventArgs e)
         {
+            Utils.Notify.UnnotificationField(sender);
+
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
@@ -288,6 +345,32 @@ namespace Tour
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
             EnableChangePass();
+        }
+
+        private void tbName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utils.Notify.UnnotificationField(sender);
+
+            if (char.IsControl(e.KeyChar) || char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Space)
+            {
+                Utils.Validate.CapitaLetter(sender, e);
+
+                return;
+            }
+            e.Handled = true;
+
+        }
+
+        private void tbAddress_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utils.Notify.UnnotificationField(sender);
+
+        }
+
+        private void tbEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utils.Notify.UnnotificationField(sender);
+
         }
     }
 }

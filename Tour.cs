@@ -289,11 +289,11 @@ namespace Tour
 
         private void btnBanner_Click(object sender, EventArgs e)
         {
-            if (id == null)
+            if (selected_tour==null)
             {
                 return;
             }
-            ManageBanner h = new ManageBanner(DataProvider.Ins.DB.TOURs.Where(x => x.ID == id && x.IsDeleted == false).FirstOrDefault());
+            ManageBanner h = new ManageBanner(selected_tour);
             Clear();
             this.Hide();
             h.ShowDialog();
@@ -322,6 +322,12 @@ namespace Tour
             }
             OpenReport();
 
+        }
+
+        private void tb_price_TextChanged(object sender, EventArgs e)
+        {
+            var price = tb_price.Text;
+            tb_price.Text = String.Format("{ 0:0,0 vnđ}", price);
         }
 
         private void rdIDSearch_Enter(object sender, EventArgs e)

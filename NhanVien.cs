@@ -9,6 +9,7 @@ using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using Tour.Model;
 using Tour.Utils;
 
@@ -66,16 +67,47 @@ namespace Tour
             txtbxName.Text = txtbxSDT.Text = txtbxMail.Text =txtbxID.Text= "";
             img_data = null;
             pcbxAvatar.Image = Properties.Resources.ic_image_empty_128;
+            UnnotifyAllFields();
         }
 
+        public void UnnotifyAllFields()
+        {
+            Notify.UnnotificationField(txtbxName);
+            Notify.UnnotificationField(txtbxMail);
+            Notify.UnnotificationField(txtbxPassword);
+            Notify.UnnotificationField(txtbxSDT);
 
+        }
         private bool CheckData()
         {
-            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null )
+            bool flag = true;
+
+            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0)
             {
-                return false;
+                Notify.NotificationField(txtbxName);
+                flag = false;
             }
-            return true;
+
+            if (txtbxMail.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(txtbxMail);
+                flag = false;
+
+            }
+
+            if (txtbxSDT.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(txtbxSDT);
+                flag = false;
+            }
+
+            if (txtbxPassword.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(txtbxPassword);
+                flag = false;
+            }
+
+            return flag;
         }
 
         public string getID(string ID)
@@ -384,6 +416,48 @@ namespace Tour
                 }
             }
             else { showAll(); }
+        }
+
+
+
+        private void txtbxName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utils.Notify.UnnotificationField(sender);
+
+            if (char.IsControl(e.KeyChar) || char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Space)
+            {
+                Utils.Validate.CapitaLetter(sender, e);
+
+                return;
+            }
+            e.Handled = true;
+        }
+
+        private void txtbxSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utils.Notify.UnnotificationField(sender);
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+    (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtbxMail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utils.Notify.UnnotificationField(sender);
+
+        }
+
+        private void txtbxPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utils.Notify.UnnotificationField(sender);
+
         }
     }
 

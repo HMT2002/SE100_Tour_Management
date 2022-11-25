@@ -77,11 +77,22 @@ namespace Tour
                     break;
                 default: break;
             }
+
+
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult result = MessageBox.Show("You have to save your assignment. Do you really want to exit?", "Warning", MessageBoxButtons.YesNo);
+            if (result == DialogResult.OK)
+            {
+                this.Close();
+            }
+            else
+            {
+
+            }
         }
 
         private void txtTourGuide_Click(object sender, EventArgs e)

@@ -48,7 +48,7 @@ namespace Tour
             this.panel14 = new System.Windows.Forms.Panel();
             this.tbName = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.tbCMND = new System.Windows.Forms.TextBox();
+            this.tbCMND = new Guna.UI2.WinForms.Guna2TextBox();
             this.PnFore = new System.Windows.Forms.Panel();
             this.VisaEXP = new System.Windows.Forms.DateTimePicker();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -241,21 +241,20 @@ namespace Tour
             this.tbEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.tbEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tbEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbEmail.DisabledState.Parent = this.tbEmail;
             this.tbEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbEmail.FocusedState.Parent = this.tbEmail;
+            this.tbEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbEmail.ForeColor = System.Drawing.Color.Black;
             this.tbEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbEmail.HoverState.Parent = this.tbEmail;
             this.tbEmail.Location = new System.Drawing.Point(0, -1);
             this.tbEmail.Margin = new System.Windows.Forms.Padding(4);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.PasswordChar = '\0';
             this.tbEmail.PlaceholderText = "";
             this.tbEmail.SelectedText = "";
-            this.tbEmail.ShadowDecoration.Parent = this.tbEmail;
-            this.tbEmail.Size = new System.Drawing.Size(183, 27);
+            this.tbEmail.Size = new System.Drawing.Size(183, 26);
             this.tbEmail.TabIndex = 30;
+            this.tbEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbEmail_KeyPress);
             // 
             // panel16
             // 
@@ -274,12 +273,11 @@ namespace Tour
             this.tbTelephone.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.tbTelephone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tbTelephone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbTelephone.DisabledState.Parent = this.tbTelephone;
             this.tbTelephone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbTelephone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbTelephone.FocusedState.Parent = this.tbTelephone;
+            this.tbTelephone.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbTelephone.ForeColor = System.Drawing.Color.Black;
             this.tbTelephone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbTelephone.HoverState.Parent = this.tbTelephone;
             this.tbTelephone.Location = new System.Drawing.Point(-2, -2);
             this.tbTelephone.Margin = new System.Windows.Forms.Padding(4);
             this.tbTelephone.MaxLength = 13;
@@ -287,7 +285,6 @@ namespace Tour
             this.tbTelephone.PasswordChar = '\0';
             this.tbTelephone.PlaceholderText = "";
             this.tbTelephone.SelectedText = "";
-            this.tbTelephone.ShadowDecoration.Parent = this.tbTelephone;
             this.tbTelephone.Size = new System.Drawing.Size(182, 28);
             this.tbTelephone.TabIndex = 30;
             this.tbTelephone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTelephone_KeyPress_1);
@@ -333,21 +330,20 @@ namespace Tour
             this.tbAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.tbAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tbAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbAddress.DisabledState.Parent = this.tbAddress;
             this.tbAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbAddress.FocusedState.Parent = this.tbAddress;
+            this.tbAddress.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbAddress.ForeColor = System.Drawing.Color.Black;
             this.tbAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbAddress.HoverState.Parent = this.tbAddress;
             this.tbAddress.Location = new System.Drawing.Point(1, -1);
             this.tbAddress.Margin = new System.Windows.Forms.Padding(6);
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.PasswordChar = '\0';
             this.tbAddress.PlaceholderText = "";
             this.tbAddress.SelectedText = "";
-            this.tbAddress.ShadowDecoration.Parent = this.tbAddress;
             this.tbAddress.Size = new System.Drawing.Size(176, 27);
             this.tbAddress.TabIndex = 30;
+            this.tbAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAddress_KeyPress);
             // 
             // panel14
             // 
@@ -366,19 +362,17 @@ namespace Tour
             this.tbName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.tbName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tbName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbName.DisabledState.Parent = this.tbName;
             this.tbName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbName.FocusedState.Parent = this.tbName;
+            this.tbName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbName.ForeColor = System.Drawing.Color.Black;
             this.tbName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbName.HoverState.Parent = this.tbName;
             this.tbName.Location = new System.Drawing.Point(-2, -1);
             this.tbName.Margin = new System.Windows.Forms.Padding(4);
             this.tbName.Name = "tbName";
             this.tbName.PasswordChar = '\0';
             this.tbName.PlaceholderText = "";
             this.tbName.SelectedText = "";
-            this.tbName.ShadowDecoration.Parent = this.tbName;
             this.tbName.Size = new System.Drawing.Size(182, 26);
             this.tbName.TabIndex = 30;
             this.tbName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbName_KeyPress);
@@ -395,18 +389,26 @@ namespace Tour
             // 
             // tbCMND
             // 
-            this.tbCMND.BackColor = System.Drawing.SystemColors.Window;
-            this.tbCMND.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbCMND.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCMND.Location = new System.Drawing.Point(-1, -2);
-            this.tbCMND.Margin = new System.Windows.Forms.Padding(2);
+            this.tbCMND.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbCMND.DefaultText = "";
+            this.tbCMND.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbCMND.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbCMND.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbCMND.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbCMND.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbCMND.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbCMND.ForeColor = System.Drawing.Color.Black;
+            this.tbCMND.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbCMND.Location = new System.Drawing.Point(0, -2);
+            this.tbCMND.Margin = new System.Windows.Forms.Padding(6);
             this.tbCMND.MaxLength = 13;
             this.tbCMND.Name = "tbCMND";
-            this.tbCMND.Size = new System.Drawing.Size(283, 26);
-            this.tbCMND.TabIndex = 16;
-            this.tbCMND.Enter += new System.EventHandler(this.tbCMND_Enter);
+            this.tbCMND.PasswordChar = '\0';
+            this.tbCMND.PlaceholderText = "";
+            this.tbCMND.SelectedText = "";
+            this.tbCMND.Size = new System.Drawing.Size(282, 27);
+            this.tbCMND.TabIndex = 35;
             this.tbCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCMND_KeyPress);
-            this.tbCMND.Leave += new System.EventHandler(this.tbCMND_Leave);
             // 
             // PnFore
             // 
@@ -818,16 +820,12 @@ namespace Tour
             this.cbDes.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbDes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDes.FocusedColor = System.Drawing.Color.Empty;
-            this.cbDes.FocusedState.Parent = this.cbDes;
             this.cbDes.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbDes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbDes.FormattingEnabled = true;
-            this.cbDes.HoverState.Parent = this.cbDes;
             this.cbDes.ItemHeight = 20;
-            this.cbDes.ItemsAppearance.Parent = this.cbDes;
             this.cbDes.Location = new System.Drawing.Point(147, 39);
             this.cbDes.Name = "cbDes";
-            this.cbDes.ShadowDecoration.Parent = this.cbDes;
             this.cbDes.Size = new System.Drawing.Size(177, 26);
             this.cbDes.TabIndex = 34;
             this.cbDes.SelectedValueChanged += new System.EventHandler(this.cbDes_SelectedValueChanged);
@@ -845,19 +843,16 @@ namespace Tour
             // cbGroup
             // 
             this.cbGroup.BackColor = System.Drawing.Color.Transparent;
+            this.cbGroup.BorderColor = System.Drawing.Color.Black;
             this.cbGroup.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGroup.FocusedColor = System.Drawing.Color.Empty;
-            this.cbGroup.FocusedState.Parent = this.cbGroup;
             this.cbGroup.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbGroup.FormattingEnabled = true;
-            this.cbGroup.HoverState.Parent = this.cbGroup;
             this.cbGroup.ItemHeight = 20;
-            this.cbGroup.ItemsAppearance.Parent = this.cbGroup;
             this.cbGroup.Location = new System.Drawing.Point(-1, -1);
             this.cbGroup.Name = "cbGroup";
-            this.cbGroup.ShadowDecoration.Parent = this.cbGroup;
             this.cbGroup.Size = new System.Drawing.Size(177, 26);
             this.cbGroup.TabIndex = 35;
             this.cbGroup.SelectedValueChanged += new System.EventHandler(this.cbGroup_SelectedValueChanged);
@@ -1164,7 +1159,6 @@ namespace Tour
             this.panel15.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
             this.PnFore.ResumeLayout(false);
             this.PnFore.PerformLayout();
             this.panel11.ResumeLayout(false);
@@ -1205,7 +1199,6 @@ namespace Tour
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lb1;
-        private System.Windows.Forms.TextBox tbCMND;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.RadioButton rdDomestic;
@@ -1274,5 +1267,6 @@ namespace Tour
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblChooseCustomer;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblCustomerDiscount;
+        private Guna.UI2.WinForms.Guna2TextBox tbCMND;
     }
 }
