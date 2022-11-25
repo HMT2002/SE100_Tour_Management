@@ -283,6 +283,7 @@ namespace Tour
             }
         }
 
+<<<<<<< Updated upstream
         private void txtbxGia_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -293,6 +294,11 @@ namespace Tour
             {
                 e.Handled = true;
             }
+=======
+        private void pcbxVehical_Click(object sender, EventArgs e)
+        {
+
+>>>>>>> Stashed changes
         }
     }
 }

@@ -31,13 +31,23 @@ namespace Tour
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
+<<<<<<< Updated upstream
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.exitbtn = new Guna.UI2.WinForms.Guna2ControlBox();
+=======
+            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+>>>>>>> Stashed changes
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.cbGuest = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
+<<<<<<< Updated upstream
+=======
+            this.emailtxb = new Guna.UI2.WinForms.Guna2TextBox();
+            this.passwordtxb = new Guna.UI2.WinForms.Guna2TextBox();
+>>>>>>> Stashed changes
             this.loginbtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.forgetlb = new System.Windows.Forms.Label();
             this.registaccountlb = new System.Windows.Forms.Label();
@@ -45,6 +55,7 @@ namespace Tour
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
+<<<<<<< Updated upstream
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.emailtxb = new Guna.UI2.WinForms.Guna2TextBox();
             this.passwordtxb = new Guna.UI2.WinForms.Guna2TextBox();
@@ -69,13 +80,46 @@ namespace Tour
             this.exitbtn.Size = new System.Drawing.Size(32, 29);
             this.exitbtn.TabIndex = 21;
             this.exitbtn.Click += new System.EventHandler(this.exitbtn_Click);
+=======
+            this.txtbxSearchTicket = new Guna.UI2.WinForms.Guna2TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.guna2TabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // guna2ControlBox1
+            // 
+            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox1.FillColor = System.Drawing.Color.Red;
+            this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
+            this.guna2ControlBox1.Location = new System.Drawing.Point(882, -1);
+            this.guna2ControlBox1.Name = "guna2ControlBox1";
+            this.guna2ControlBox1.Size = new System.Drawing.Size(32, 29);
+            this.guna2ControlBox1.TabIndex = 23;
+            this.guna2ControlBox1.Click += new System.EventHandler(this.exitbtn_Click);
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(476, -1);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(438, 527);
+            this.guna2PictureBox1.TabIndex = 22;
+            this.guna2PictureBox1.TabStop = false;
+>>>>>>> Stashed changes
             // 
             // guna2TabControl1
             // 
             this.guna2TabControl1.Controls.Add(this.tabPage1);
             this.guna2TabControl1.Controls.Add(this.tabPage2);
             this.guna2TabControl1.ItemSize = new System.Drawing.Size(180, 40);
+<<<<<<< Updated upstream
             this.guna2TabControl1.Location = new System.Drawing.Point(2, 1);
+=======
+            this.guna2TabControl1.Location = new System.Drawing.Point(2, -1);
+>>>>>>> Stashed changes
             this.guna2TabControl1.Name = "guna2TabControl1";
             this.guna2TabControl1.SelectedIndex = 0;
             this.guna2TabControl1.Size = new System.Drawing.Size(487, 527);
@@ -95,7 +139,11 @@ namespace Tour
             this.guna2TabControl1.TabButtonSelectedState.ForeColor = System.Drawing.Color.White;
             this.guna2TabControl1.TabButtonSelectedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
             this.guna2TabControl1.TabButtonSize = new System.Drawing.Size(180, 40);
+<<<<<<< Updated upstream
             this.guna2TabControl1.TabIndex = 29;
+=======
+            this.guna2TabControl1.TabIndex = 30;
+>>>>>>> Stashed changes
             this.guna2TabControl1.TabMenuBackColor = System.Drawing.Color.Transparent;
             this.guna2TabControl1.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop;
             this.guna2TabControl1.TabStop = false;
@@ -161,6 +209,57 @@ namespace Tour
             this.label2.TabIndex = 6;
             this.label2.Text = "Login";
             // 
+            // emailtxb
+            // 
+            this.emailtxb.BorderColor = System.Drawing.Color.Black;
+            this.emailtxb.BorderRadius = 8;
+            this.emailtxb.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.emailtxb.DefaultText = "";
+            this.emailtxb.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.emailtxb.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.emailtxb.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.emailtxb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.emailtxb.FillColor = System.Drawing.SystemColors.ControlLightLight;
+            this.emailtxb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.emailtxb.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.emailtxb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.emailtxb.IconLeft = ((System.Drawing.Image)(resources.GetObject("emailtxb.IconLeft")));
+            this.emailtxb.IconLeftOffset = new System.Drawing.Point(10, 0);
+            this.emailtxb.Location = new System.Drawing.Point(56, 111);
+            this.emailtxb.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.emailtxb.Name = "emailtxb";
+            this.emailtxb.PasswordChar = '\0';
+            this.emailtxb.PlaceholderText = "Email";
+            this.emailtxb.SelectedText = "";
+            this.emailtxb.Size = new System.Drawing.Size(353, 44);
+            this.emailtxb.TabIndex = 19;
+            // 
+            // passwordtxb
+            // 
+            this.passwordtxb.BorderColor = System.Drawing.Color.Black;
+            this.passwordtxb.BorderRadius = 8;
+            this.passwordtxb.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.passwordtxb.DefaultText = "";
+            this.passwordtxb.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.passwordtxb.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.passwordtxb.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.passwordtxb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.passwordtxb.FillColor = System.Drawing.SystemColors.ControlLightLight;
+            this.passwordtxb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.passwordtxb.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.passwordtxb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.passwordtxb.IconLeft = ((System.Drawing.Image)(resources.GetObject("passwordtxb.IconLeft")));
+            this.passwordtxb.IconLeftOffset = new System.Drawing.Point(10, 0);
+            this.passwordtxb.Location = new System.Drawing.Point(56, 180);
+            this.passwordtxb.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.passwordtxb.Name = "passwordtxb";
+            this.passwordtxb.PasswordChar = '●';
+            this.passwordtxb.PlaceholderText = "Password";
+            this.passwordtxb.SelectedText = "";
+            this.passwordtxb.Size = new System.Drawing.Size(353, 44);
+            this.passwordtxb.TabIndex = 20;
+            this.passwordtxb.UseSystemPasswordChar = true;
+            // 
             // loginbtn
             // 
             this.loginbtn.BorderRadius = 20;
@@ -192,7 +291,10 @@ namespace Tour
             this.forgetlb.Size = new System.Drawing.Size(164, 23);
             this.forgetlb.TabIndex = 13;
             this.forgetlb.Text = "Forget password ?";
+<<<<<<< Updated upstream
             this.forgetlb.Click += new System.EventHandler(this.forgetlb_Click);
+=======
+>>>>>>> Stashed changes
             // 
             // registaccountlb
             // 
@@ -235,6 +337,7 @@ namespace Tour
             this.tabPage2.Size = new System.Drawing.Size(479, 479);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Guest";
+<<<<<<< Updated upstream
             // 
             // guna2Button1
             // 
@@ -253,6 +356,25 @@ namespace Tour
             this.guna2Button1.Text = "search";
             this.guna2Button1.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+=======
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BorderRadius = 20;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.BlueViolet;
+            this.guna2Button1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(144, 232);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(180, 45);
+            this.guna2Button1.TabIndex = 1;
+            this.guna2Button1.Text = "search";
+            // 
+>>>>>>> Stashed changes
             // label1
             // 
             this.label1.AutoSize = true;
@@ -264,6 +386,7 @@ namespace Tour
             this.label1.Size = new System.Drawing.Size(303, 55);
             this.label1.TabIndex = 29;
             this.label1.Text = "Search Ticket";
+<<<<<<< Updated upstream
             // 
             // guna2PictureBox1
             // 
@@ -325,6 +448,8 @@ namespace Tour
             this.passwordtxb.Size = new System.Drawing.Size(353, 44);
             this.passwordtxb.TabIndex = 20;
             this.passwordtxb.UseSystemPasswordChar = true;
+=======
+>>>>>>> Stashed changes
             // 
             // txtbxSearchTicket
             // 
@@ -351,12 +476,20 @@ namespace Tour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< Updated upstream
             this.BackColor = System.Drawing.Color.Linen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(915, 529);
             this.Controls.Add(this.exitbtn);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.guna2TabControl1);
+=======
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(915, 529);
+            this.Controls.Add(this.guna2TabControl1);
+            this.Controls.Add(this.guna2ControlBox1);
+            this.Controls.Add(this.guna2PictureBox1);
+>>>>>>> Stashed changes
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -364,21 +497,38 @@ namespace Tour
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.LoginForm_Load);
+<<<<<<< Updated upstream
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+>>>>>>> Stashed changes
             this.guna2TabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+<<<<<<< Updated upstream
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+=======
+>>>>>>> Stashed changes
             this.ResumeLayout(false);
 
         }
 
         #endregion
+<<<<<<< Updated upstream
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
         private Guna.UI2.WinForms.Guna2ControlBox exitbtn;
         private Guna.UI2.WinForms.Guna2TabControl guna2TabControl1;
         private System.Windows.Forms.TabPage tabPage1;
+=======
+
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2TabControl guna2TabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox cbGuest;
+>>>>>>> Stashed changes
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TextBox emailtxb;
         private Guna.UI2.WinForms.Guna2TextBox passwordtxb;

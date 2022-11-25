@@ -271,5 +271,10 @@ namespace Tour
                 e.Handled = true;
             }
         }
+
+        private void Hotel_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -73,7 +73,11 @@ namespace Tour
                 if (acc != null)
                 {
                     MessageBox.Show("Login as customer!");
+<<<<<<< Updated upstream
                     KHACHHANG kh = DataProvider.Ins.DB.KHACHHANGs.Where(x => (x.IDACC == acc.ID&&x.IsDeleted==false )).SingleOrDefault();
+=======
+                    KHACHHANG kh = DataProvider.Ins.DB.KHACHHANGs.Where(x => (x.IDACC == acc.ID && x.IsDeleted == false)).SingleOrDefault();
+>>>>>>> Stashed changes
                     LoyalCustomer menuF = new LoyalCustomer(kh);
                     this.Hide();
                     menuF.ShowDialog();
@@ -101,7 +105,7 @@ namespace Tour
                 }
 
 
-                if (DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false &&( (x.ACCROLE == "Manager") || (x.ACCROLE == "Employee")))).SingleOrDefault() != null)
+                if (DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false && ((x.ACCROLE == "Manager") || (x.ACCROLE == "Employee")))).SingleOrDefault() != null)
                 {
                     Properties.Settings.Default.UserName = emailtxb.Text;
                     Properties.Settings.Default.Password = passwordtxb.Text;
@@ -173,7 +177,7 @@ namespace Tour
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string ticket_id =  txtbxSearchTicket.Text;
+            string ticket_id = txtbxSearchTicket.Text;
             if (DataProvider.Ins.DB.VEs.Where(x => (x.ID == ticket_id && x.IsDeleted == false)).SingleOrDefault() == null)
             {
                 MessageBox.Show("Số vé không tồn tại!");
