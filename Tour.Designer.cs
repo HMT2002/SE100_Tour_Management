@@ -66,11 +66,11 @@
             this.rdIDSearch = new System.Windows.Forms.RadioButton();
             this.btnViewTourReport = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.cbbxYear = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbbxMonth = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_trip)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -303,6 +303,7 @@
             this.tb_price.Name = "tb_price";
             this.tb_price.Size = new System.Drawing.Size(204, 26);
             this.tb_price.TabIndex = 17;
+            this.tb_price.TextChanged += new System.EventHandler(this.tb_price_TextChanged);
             this.tb_price.Enter += new System.EventHandler(this.tb_price_Enter);
             this.tb_price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_price_KeyPress);
             // 
@@ -559,6 +560,36 @@
             this.guna2Panel1.Size = new System.Drawing.Size(262, 230);
             this.guna2Panel1.TabIndex = 49;
             // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(3, 117);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(55, 27);
+            this.guna2HtmlLabel3.TabIndex = 53;
+            this.guna2HtmlLabel3.Text = "Year: ";
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(3, 75);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(69, 27);
+            this.guna2HtmlLabel2.TabIndex = 52;
+            this.guna2HtmlLabel2.Text = "Month: ";
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(82, 11);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(135, 27);
+            this.guna2HtmlLabel1.TabIndex = 51;
+            this.guna2HtmlLabel1.Text = "Export Report";
+            // 
             // cbbxYear
             // 
             this.cbbxYear.BackColor = System.Drawing.Color.Transparent;
@@ -596,36 +627,6 @@
             this.cbbxMonth.ShadowDecoration.Parent = this.cbbxMonth;
             this.cbbxMonth.Size = new System.Drawing.Size(154, 36);
             this.cbbxMonth.TabIndex = 49;
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(82, 11);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(135, 27);
-            this.guna2HtmlLabel1.TabIndex = 51;
-            this.guna2HtmlLabel1.Text = "Export Report";
-            // 
-            // guna2HtmlLabel2
-            // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(3, 75);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(69, 27);
-            this.guna2HtmlLabel2.TabIndex = 52;
-            this.guna2HtmlLabel2.Text = "Month: ";
-            // 
-            // guna2HtmlLabel3
-            // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(3, 117);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(55, 27);
-            this.guna2HtmlLabel3.TabIndex = 53;
-            this.guna2HtmlLabel3.Text = "Year: ";
             // 
             // Tour
             // 

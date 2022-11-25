@@ -59,13 +59,13 @@
             this.pnUpdateCustomer = new Guna.UI2.WinForms.Guna2Panel();
             this.pnCreateCustomer = new Guna.UI2.WinForms.Guna2Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtbxNewPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnChangePassword = new Guna.UI2.WinForms.Guna2Button();
             this.txtbxRePassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblRePassword = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtbxPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblNotes = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btnChangePassword = new Guna.UI2.WinForms.Guna2Button();
-            this.txtbxNewPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -122,21 +122,19 @@
             this.tbEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.tbEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tbEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbEmail.DisabledState.Parent = this.tbEmail;
             this.tbEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbEmail.FocusedState.Parent = this.tbEmail;
+            this.tbEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbEmail.HoverState.Parent = this.tbEmail;
             this.tbEmail.Location = new System.Drawing.Point(-1, -2);
             this.tbEmail.Margin = new System.Windows.Forms.Padding(4);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.PasswordChar = '\0';
             this.tbEmail.PlaceholderText = "";
             this.tbEmail.SelectedText = "";
-            this.tbEmail.ShadowDecoration.Parent = this.tbEmail;
             this.tbEmail.Size = new System.Drawing.Size(183, 27);
             this.tbEmail.TabIndex = 30;
+            this.tbEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbEmail_KeyPress);
             // 
             // panel16
             // 
@@ -155,12 +153,10 @@
             this.tbTelephone.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.tbTelephone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tbTelephone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbTelephone.DisabledState.Parent = this.tbTelephone;
             this.tbTelephone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbTelephone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbTelephone.FocusedState.Parent = this.tbTelephone;
+            this.tbTelephone.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbTelephone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbTelephone.HoverState.Parent = this.tbTelephone;
             this.tbTelephone.Location = new System.Drawing.Point(-2, -2);
             this.tbTelephone.Margin = new System.Windows.Forms.Padding(4);
             this.tbTelephone.MaxLength = 13;
@@ -168,7 +164,6 @@
             this.tbTelephone.PasswordChar = '\0';
             this.tbTelephone.PlaceholderText = "";
             this.tbTelephone.SelectedText = "";
-            this.tbTelephone.ShadowDecoration.Parent = this.tbTelephone;
             this.tbTelephone.Size = new System.Drawing.Size(182, 28);
             this.tbTelephone.TabIndex = 30;
             this.tbTelephone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTelephone_KeyPress);
@@ -202,21 +197,19 @@
             this.tbAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.tbAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tbAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbAddress.DisabledState.Parent = this.tbAddress;
             this.tbAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbAddress.FocusedState.Parent = this.tbAddress;
+            this.tbAddress.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbAddress.HoverState.Parent = this.tbAddress;
             this.tbAddress.Location = new System.Drawing.Point(1, -1);
             this.tbAddress.Margin = new System.Windows.Forms.Padding(6);
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.PasswordChar = '\0';
             this.tbAddress.PlaceholderText = "";
             this.tbAddress.SelectedText = "";
-            this.tbAddress.ShadowDecoration.Parent = this.tbAddress;
             this.tbAddress.Size = new System.Drawing.Size(176, 27);
             this.tbAddress.TabIndex = 30;
+            this.tbAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAddress_KeyPress);
             // 
             // panel14
             // 
@@ -235,21 +228,19 @@
             this.tbName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.tbName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tbName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbName.DisabledState.Parent = this.tbName;
             this.tbName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbName.FocusedState.Parent = this.tbName;
+            this.tbName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbName.HoverState.Parent = this.tbName;
             this.tbName.Location = new System.Drawing.Point(-2, -1);
             this.tbName.Margin = new System.Windows.Forms.Padding(4);
             this.tbName.Name = "tbName";
             this.tbName.PasswordChar = '\0';
             this.tbName.PlaceholderText = "";
             this.tbName.SelectedText = "";
-            this.tbName.ShadowDecoration.Parent = this.tbName;
             this.tbName.Size = new System.Drawing.Size(182, 26);
             this.tbName.TabIndex = 30;
+            this.tbName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbName_KeyPress);
             // 
             // panel10
             // 
@@ -408,9 +399,9 @@
             // pcbxAvtatar
             // 
             this.pcbxAvtatar.Image = global::Tour.Properties.Resources.ic_image_empty_128;
+            this.pcbxAvtatar.ImageRotate = 0F;
             this.pcbxAvtatar.Location = new System.Drawing.Point(4, 3);
             this.pcbxAvtatar.Name = "pcbxAvtatar";
-            this.pcbxAvtatar.ShadowDecoration.Parent = this.pcbxAvtatar;
             this.pcbxAvtatar.Size = new System.Drawing.Size(295, 191);
             this.pcbxAvtatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbxAvtatar.TabIndex = 0;
@@ -419,14 +410,10 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.CheckedState.Parent = this.btnAdd;
-            this.btnAdd.CustomImages.Parent = this.btnAdd;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.HoverState.Parent = this.btnAdd;
             this.btnAdd.Location = new System.Drawing.Point(59, 3);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
             this.btnAdd.Size = new System.Drawing.Size(88, 29);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add";
@@ -434,14 +421,10 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.CheckedState.Parent = this.btnUpdate;
-            this.btnUpdate.CustomImages.Parent = this.btnUpdate;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.HoverState.Parent = this.btnUpdate;
             this.btnUpdate.Location = new System.Drawing.Point(108, 4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
             this.btnUpdate.Size = new System.Drawing.Size(88, 29);
             this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Update";
@@ -449,14 +432,10 @@
             // 
             // btnNew
             // 
-            this.btnNew.CheckedState.Parent = this.btnNew;
-            this.btnNew.CustomImages.Parent = this.btnNew;
             this.btnNew.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnNew.ForeColor = System.Drawing.Color.White;
-            this.btnNew.HoverState.Parent = this.btnNew;
             this.btnNew.Location = new System.Drawing.Point(169, 3);
             this.btnNew.Name = "btnNew";
-            this.btnNew.ShadowDecoration.Parent = this.btnNew;
             this.btnNew.Size = new System.Drawing.Size(88, 29);
             this.btnNew.TabIndex = 2;
             this.btnNew.Text = "New";
@@ -477,7 +456,6 @@
             this.pnUpdateCustomer.Controls.Add(this.btnUpdate);
             this.pnUpdateCustomer.Location = new System.Drawing.Point(3, 4);
             this.pnUpdateCustomer.Name = "pnUpdateCustomer";
-            this.pnUpdateCustomer.ShadowDecoration.Parent = this.pnUpdateCustomer;
             this.pnUpdateCustomer.Size = new System.Drawing.Size(301, 36);
             this.pnUpdateCustomer.TabIndex = 5;
             // 
@@ -487,7 +465,6 @@
             this.pnCreateCustomer.Controls.Add(this.btnNew);
             this.pnCreateCustomer.Location = new System.Drawing.Point(4, 3);
             this.pnCreateCustomer.Name = "pnCreateCustomer";
-            this.pnCreateCustomer.ShadowDecoration.Parent = this.pnCreateCustomer;
             this.pnCreateCustomer.Size = new System.Drawing.Size(295, 37);
             this.pnCreateCustomer.TabIndex = 0;
             // 
@@ -510,6 +487,38 @@
             this.panel4.Size = new System.Drawing.Size(616, 130);
             this.panel4.TabIndex = 29;
             // 
+            // txtbxNewPassword
+            // 
+            this.txtbxNewPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbxNewPassword.DefaultText = "";
+            this.txtbxNewPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbxNewPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbxNewPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxNewPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxNewPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxNewPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtbxNewPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxNewPassword.Location = new System.Drawing.Point(200, 87);
+            this.txtbxNewPassword.Margin = new System.Windows.Forms.Padding(9);
+            this.txtbxNewPassword.Name = "txtbxNewPassword";
+            this.txtbxNewPassword.PasswordChar = '●';
+            this.txtbxNewPassword.PlaceholderText = "";
+            this.txtbxNewPassword.SelectedText = "";
+            this.txtbxNewPassword.Size = new System.Drawing.Size(321, 30);
+            this.txtbxNewPassword.TabIndex = 7;
+            this.txtbxNewPassword.UseSystemPasswordChar = true;
+            // 
+            // btnChangePassword
+            // 
+            this.btnChangePassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnChangePassword.ForeColor = System.Drawing.Color.White;
+            this.btnChangePassword.Location = new System.Drawing.Point(539, 4);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.Size = new System.Drawing.Size(70, 33);
+            this.btnChangePassword.TabIndex = 5;
+            this.btnChangePassword.Text = "Change Password";
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
+            // 
             // txtbxRePassword
             // 
             this.txtbxRePassword.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -517,19 +526,16 @@
             this.txtbxRePassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtbxRePassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtbxRePassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxRePassword.DisabledState.Parent = this.txtbxRePassword;
             this.txtbxRePassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtbxRePassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxRePassword.FocusedState.Parent = this.txtbxRePassword;
+            this.txtbxRePassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtbxRePassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxRePassword.HoverState.Parent = this.txtbxRePassword;
             this.txtbxRePassword.Location = new System.Drawing.Point(200, 44);
             this.txtbxRePassword.Margin = new System.Windows.Forms.Padding(6);
             this.txtbxRePassword.Name = "txtbxRePassword";
-            this.txtbxRePassword.PasswordChar = '\0';
+            this.txtbxRePassword.PasswordChar = '●';
             this.txtbxRePassword.PlaceholderText = "";
             this.txtbxRePassword.SelectedText = "";
-            this.txtbxRePassword.ShadowDecoration.Parent = this.txtbxRePassword;
             this.txtbxRePassword.Size = new System.Drawing.Size(321, 30);
             this.txtbxRePassword.TabIndex = 4;
             this.txtbxRePassword.UseSystemPasswordChar = true;
@@ -559,19 +565,16 @@
             this.txtbxPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtbxPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtbxPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxPassword.DisabledState.Parent = this.txtbxPassword;
             this.txtbxPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtbxPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxPassword.FocusedState.Parent = this.txtbxPassword;
+            this.txtbxPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtbxPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxPassword.HoverState.Parent = this.txtbxPassword;
             this.txtbxPassword.Location = new System.Drawing.Point(200, 4);
             this.txtbxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtbxPassword.Name = "txtbxPassword";
-            this.txtbxPassword.PasswordChar = '\0';
+            this.txtbxPassword.PasswordChar = '●';
             this.txtbxPassword.PlaceholderText = "";
             this.txtbxPassword.SelectedText = "";
-            this.txtbxPassword.ShadowDecoration.Parent = this.txtbxPassword;
             this.txtbxPassword.Size = new System.Drawing.Size(321, 30);
             this.txtbxPassword.TabIndex = 1;
             this.txtbxPassword.UseSystemPasswordChar = true;
@@ -584,45 +587,6 @@
             this.lblNotes.Size = new System.Drawing.Size(141, 15);
             this.lblNotes.TabIndex = 0;
             this.lblNotes.Text = "_______________________";
-            // 
-            // btnChangePassword
-            // 
-            this.btnChangePassword.CheckedState.Parent = this.btnChangePassword;
-            this.btnChangePassword.CustomImages.Parent = this.btnChangePassword;
-            this.btnChangePassword.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnChangePassword.ForeColor = System.Drawing.Color.White;
-            this.btnChangePassword.HoverState.Parent = this.btnChangePassword;
-            this.btnChangePassword.Location = new System.Drawing.Point(539, 4);
-            this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.ShadowDecoration.Parent = this.btnChangePassword;
-            this.btnChangePassword.Size = new System.Drawing.Size(70, 33);
-            this.btnChangePassword.TabIndex = 5;
-            this.btnChangePassword.Text = "Change Password";
-            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
-            // 
-            // txtbxNewPassword
-            // 
-            this.txtbxNewPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbxNewPassword.DefaultText = "";
-            this.txtbxNewPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtbxNewPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtbxNewPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxNewPassword.DisabledState.Parent = this.txtbxNewPassword;
-            this.txtbxNewPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxNewPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxNewPassword.FocusedState.Parent = this.txtbxNewPassword;
-            this.txtbxNewPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxNewPassword.HoverState.Parent = this.txtbxNewPassword;
-            this.txtbxNewPassword.Location = new System.Drawing.Point(200, 87);
-            this.txtbxNewPassword.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
-            this.txtbxNewPassword.Name = "txtbxNewPassword";
-            this.txtbxNewPassword.PasswordChar = '\0';
-            this.txtbxNewPassword.PlaceholderText = "";
-            this.txtbxNewPassword.SelectedText = "";
-            this.txtbxNewPassword.ShadowDecoration.Parent = this.txtbxNewPassword;
-            this.txtbxNewPassword.Size = new System.Drawing.Size(321, 30);
-            this.txtbxNewPassword.TabIndex = 7;
-            this.txtbxNewPassword.UseSystemPasswordChar = true;
             // 
             // LoyalCustomer
             // 

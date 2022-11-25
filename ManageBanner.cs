@@ -44,7 +44,7 @@ namespace Tour
 
         private void LoadDataTour()
         {
-            lblTour.Text = Tour.ID;
+            lblTour.Text = this.Tour.ID;
             cbDes.Visible = false;
             tbPrice.Text = Tour.GIA.ToString();
 

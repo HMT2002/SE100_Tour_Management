@@ -107,23 +107,77 @@ namespace Tour
             rtbreservation.Clear();
             rtbTicket.Clear();
             tbDuration.Clear();
+            Notify.UnnotificationSelect(cbDes);
+            Notify.UnnotificationSelect(cbGroup);
+            cbGroup.DataSource = null;
         }
         private void btReset_Click(object sender, EventArgs e)
         {
             reset();
         }
 
+        public void UnnotifyAllFields()
+        {
+            Notify.UnnotificationField(tbName);
+            Notify.UnnotificationField(tbAddress);
+            Notify.UnnotificationField(tbEmail);
+            Notify.UnnotificationField(tbCMND);
+            Notify.UnnotificationField(tbTelephone);
+
+        }
+
+
         public bool CheckData()
         {
-
-
-            if (tbName.Text.Trim().CompareTo(string.Empty) == 0 || tbAddress.Text.Trim().CompareTo(string.Empty) == 0 || tbCMND.Text.Trim().CompareTo(string.Empty) == 0||cbGroup.SelectedValue==null||cbDes.SelectedValue==null)
+            bool flag = true;
+            if (tbName.Text.Trim().CompareTo(string.Empty) == 0)
             {
-                MessageBox.Show("Please fill in all the information", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return false;
+                Notify.NotificationField(tbName);
+                flag = false;
             }
 
-            return true;
+            if (tbAddress.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(tbAddress);
+                flag = false;
+
+            }
+
+            if (tbTelephone.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(tbTelephone);
+                flag = false;
+            }
+
+            if (tbCMND.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(tbCMND);
+                flag = false;
+            }
+
+            if (tbEmail.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(tbEmail);
+                flag = false;
+            }
+
+
+            if (cbDes.SelectedValue == null)
+            {
+                Notify.NotificationSelect(cbDes);
+                flag = false;
+            }
+
+
+            if (cbGroup.SelectedValue == null)
+            {
+                Notify.NotificationSelect(cbGroup);
+                flag = false;
+            }
+
+
+
+            return flag;
         }
         public string SurName, address, phonenumber,typeCus, gender,CMND,TourID,tourist,typeoftour,RouteID,TenChuyen;
         public int Year, Month, Day, vYear, vMonth, vDay,price,tienhoantra,lephihoantra;
@@ -134,7 +188,6 @@ namespace Tour
         }
 
         public double customer_discount = 0;
-
         public double banner_discount = 0;
 
 
@@ -202,8 +255,20 @@ namespace Tour
                 {
                     tbDiscount.Text = (Convert.ToInt32(tbDiscount.Text) + customer_discount).ToString();
                 }
-
+                UnnotifyAllFields();
             }
+        }
+
+        private void tbAddress_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utils.Notify.UnnotificationField(sender);
+
+        }
+
+        private void tbEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utils.Notify.UnnotificationField(sender);
+
         }
 
         private void lblChooseCustomer_Click(object sender, EventArgs e)
@@ -238,7 +303,6 @@ namespace Tour
             }
             else gender = "Female";
 
-
             if (CheckData())
             {
                 try
@@ -254,7 +318,7 @@ namespace Tour
                         {
                             ID = idkhach,
                             TENKH = tbName.Text,
-                            CMND = tbCMND.Text,
+                            CMND = this.tbCMND.Text,
                             GIOITINH = gender,
                             DIACHI = tbAddress.Text,
                             SDT = tbTelephone.Text,
@@ -331,10 +395,10 @@ namespace Tour
 
             if (index >= 0)
             {
+                reset();
 
                 Type t = cbDes.SelectedItem.GetType();
                 string idtour = t.GetProperty("IDTOUR").GetValue(cbDes.SelectedItem, null).ToString();
-
                 cbGroup.DataSource = (from tour in DataProvider.Ins.DB.TOURs
                                       join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
                                       where tour.ID == idtour && tour.IsDeleted == false && doan.IsDeleted == false
@@ -349,7 +413,6 @@ namespace Tour
                 cbGroup.ValueMember = "IDDOAN";
                 cbGroup.DisplayMember = "TENDOAN";
                 cbGroup.SelectedIndex = -1;
-                reset();
                 tbPrice.Text = cbDes.SelectedItem.GetType().GetProperty("GIA").GetValue(cbDes.SelectedItem, null).ToString();
                 GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == idtour && x.IsDeleted == false).FirstOrDefault();
                 tbDiscount.Text = (giamgia.DISCOUNT + customer_discount).ToString();
@@ -387,6 +450,8 @@ namespace Tour
             customer_discount = 0;
             RdMale.Checked = true;
             lblCustomerDiscount.Text = customer_discount.ToString();
+            UnnotifyAllFields();
+
         }
         private void tbTelephone_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -422,17 +487,12 @@ namespace Tour
         {
 
         }
-        private void tbSurname_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsControl(e.KeyChar) || char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Space)
-            {
-                return;
-            }
-            e.Handled = true;
-        }
+
 
         private void tbCMND_KeyPress(object sender, KeyPressEventArgs e)
         {
+            Utils.Notify.UnnotificationField(sender);
+
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
                 (e.KeyChar != '.'))
             {
@@ -446,6 +506,8 @@ namespace Tour
 
         private void tbTelephone_KeyPress_1(object sender, KeyPressEventArgs e)
         {
+            Utils.Notify.UnnotificationField(sender);
+
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
                 (e.KeyChar != '.'))
             {
@@ -465,12 +527,17 @@ namespace Tour
             this.Show();
         }
 
+
         private void tbName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            Utils.Notify.UnnotificationField(sender);
+
+            if (char.IsControl(e.KeyChar) || char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Space)
             {
-                e.Handled = true;
+                Utils.Validate.CapitaLetter(sender,e);
+                return;
             }
+            e.Handled = true;
         }
 
     }
