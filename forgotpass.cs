@@ -65,6 +65,10 @@ namespace Tour
                     {
                         Utils.Features.Instance.SendMail(listto, "Re-activate code","Re-activate code is: "+ randomcode);
                         MessageBox.Show("Code sent!");
+                        label2.Visible = true;
+                        codetxb.Visible = true;
+                        verifybtn.Visible = true;
+                        sendbtn.Visible = false;
                     }
                     catch (Exception ex)
                     {

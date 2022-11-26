@@ -107,7 +107,7 @@ namespace Tour
                     Properties.Settings.Default.CurUserId = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().ACC;
 
                     Properties.Settings.Default.Save();
-                    SelectForm menuF = new SelectForm(DataProvider.Ins.DB.NHANVIENs.Where(x => x.ACCOUNT.ACC == emailtxb.Text && x.IsDeleted == false).FirstOrDefault());
+                    SelectForm menuF = new SelectForm(DataProvider.Ins.DB.NHANVIENs.Where(x => x.ACCOUNT.ACC == emailtxb.Text).FirstOrDefault());
                     this.Hide();
                     menuF.ShowDialog();
                     this.Show();
@@ -198,14 +198,14 @@ namespace Tour
             if (cbGuest.Checked == true)
             {
                 Clear();
-                pnSearchTicket.Visible = true;
+                label3.Visible = true;
                 registaccountlb.Visible = false;
             }
             else
             {
                 LoginForm_Load(sender, e);
 
-                pnSearchTicket.Visible = false;
+                label3.Visible = false;
                 registaccountlb.Visible = true;
 
             }

@@ -63,12 +63,22 @@ namespace Tour
                 SignUpbtn.Enabled = true;
                 try
                 {
-
-                    var nv = new NHANVIEN() { ID = randomcode,  TEN = txbHo.Text+" "+ txbTen.Text, SDT = txbSDT.Text, MAIL = txbGmail.Text,PICBI=img_data };
-                    var account = new ACCOUNT() { ACC = txbGmail.Text, PASS = Converter.Instance.EncryptPassword( (txbPass.Text)), ID = randomcode,IsDeleted=false,ACCROLE="Employee" };
+                    String IDACC = randomcode;
+                    var nv = new NHANVIEN() { 
+                        ID = randomcode,  
+                        TEN = txbHo.Text+" "+ txbTen.Text, 
+                        SDT = txbSDT.Text, 
+                        MAIL = txbGmail.Text,PICBI=img_data,
+                        IDACC = IDACC
+                    };
+                    var account = new ACCOUNT() { 
+                        ACC = txbGmail.Text, 
+                        PASS = Converter.Instance.EncryptPassword( (txbPass.Text)), 
+                        ID = IDACC,
+                        IsDeleted=false,ACCROLE="Employee" 
+                    };
                     DataProvider.Ins.DB.ACCOUNTs.Add(account);
                     DataProvider.Ins.DB.NHANVIENs.Add(nv);
-
                     DataProvider.Ins.DB.SaveChanges();
                     MessageBox.Show("SignUp success!!!");
                     Clear();

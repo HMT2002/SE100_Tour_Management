@@ -79,9 +79,10 @@ namespace Tour
             // 
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(1, 9);
+            this.label1.Location = new System.Drawing.Point(1, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(243, 59);
+            this.label1.Size = new System.Drawing.Size(324, 73);
             this.label1.TabIndex = 11;
             this.label1.Text = "label1";
             // 
@@ -99,8 +100,9 @@ namespace Tour
             this.panel_slide.Controls.Add(this.panel_logo);
             this.panel_slide.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_slide.Location = new System.Drawing.Point(0, 0);
+            this.panel_slide.Margin = new System.Windows.Forms.Padding(4);
             this.panel_slide.Name = "panel_slide";
-            this.panel_slide.Size = new System.Drawing.Size(264, 640);
+            this.panel_slide.Size = new System.Drawing.Size(352, 788);
             this.panel_slide.TabIndex = 18;
             // 
             // button7
@@ -112,10 +114,11 @@ namespace Tour
             this.button7.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.Red;
             this.button7.Image = global::Tour.Properties.Resources.doorexit;
-            this.button7.Location = new System.Drawing.Point(0, 1206);
+            this.button7.Location = new System.Drawing.Point(0, 1484);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
-            this.button7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(247, 54);
+            this.button7.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.button7.Size = new System.Drawing.Size(331, 66);
             this.button7.TabIndex = 8;
             this.button7.Text = "Exit";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -127,9 +130,10 @@ namespace Tour
             this.panel_Help.Controls.Add(this.button1);
             this.panel_Help.Controls.Add(this.button5);
             this.panel_Help.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_Help.Location = new System.Drawing.Point(0, 1088);
+            this.panel_Help.Location = new System.Drawing.Point(0, 1339);
+            this.panel_Help.Margin = new System.Windows.Forms.Padding(4);
             this.panel_Help.Name = "panel_Help";
-            this.panel_Help.Size = new System.Drawing.Size(247, 118);
+            this.panel_Help.Size = new System.Drawing.Size(331, 145);
             this.panel_Help.TabIndex = 7;
             // 
             // button1
@@ -140,11 +144,11 @@ namespace Tour
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(0, 60);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(0, 74);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(247, 58);
+            this.button1.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(331, 71);
             this.button1.TabIndex = 2;
             this.button1.Text = "Guide";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -160,10 +164,10 @@ namespace Tour
             this.button5.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.Black;
             this.button5.Location = new System.Drawing.Point(0, 0);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(247, 60);
+            this.button5.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            this.button5.Size = new System.Drawing.Size(331, 74);
             this.button5.TabIndex = 1;
             this.button5.Text = "About us";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -178,10 +182,11 @@ namespace Tour
             this.button6.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.Black;
             this.button6.Image = global::Tour.Properties.Resources.help;
-            this.button6.Location = new System.Drawing.Point(0, 1039);
+            this.button6.Location = new System.Drawing.Point(0, 1279);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(247, 49);
+            this.button6.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.button6.Size = new System.Drawing.Size(331, 60);
             this.button6.TabIndex = 6;
             this.button6.Text = "Help";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -193,9 +198,10 @@ namespace Tour
             this.panel_staff.Controls.Add(this.button2);
             this.panel_staff.Controls.Add(this.button3);
             this.panel_staff.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_staff.Location = new System.Drawing.Point(0, 921);
+            this.panel_staff.Location = new System.Drawing.Point(0, 1134);
+            this.panel_staff.Margin = new System.Windows.Forms.Padding(4);
             this.panel_staff.Name = "panel_staff";
-            this.panel_staff.Size = new System.Drawing.Size(247, 118);
+            this.panel_staff.Size = new System.Drawing.Size(331, 145);
             this.panel_staff.TabIndex = 5;
             // 
             // button2
@@ -206,11 +212,11 @@ namespace Tour
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(0, 60);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Location = new System.Drawing.Point(0, 74);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(247, 58);
+            this.button2.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(331, 71);
             this.button2.TabIndex = 2;
             this.button2.Text = "Change Password";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -226,10 +232,10 @@ namespace Tour
             this.button3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Location = new System.Drawing.Point(0, 0);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(247, 60);
+            this.button3.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            this.button3.Size = new System.Drawing.Size(331, 74);
             this.button3.TabIndex = 1;
             this.button3.Text = "Profile";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -244,10 +250,11 @@ namespace Tour
             this.button4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.Black;
             this.button4.Image = global::Tour.Properties.Resources.staff;
-            this.button4.Location = new System.Drawing.Point(0, 860);
+            this.button4.Location = new System.Drawing.Point(0, 1059);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(247, 61);
+            this.button4.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.button4.Size = new System.Drawing.Size(331, 75);
             this.button4.TabIndex = 4;
             this.button4.Text = "Staff";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -269,9 +276,10 @@ namespace Tour
             this.panelManage.Controls.Add(this.btnRoute);
             this.panelManage.Controls.Add(this.btnTicket);
             this.panelManage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelManage.Location = new System.Drawing.Point(0, 138);
+            this.panelManage.Location = new System.Drawing.Point(0, 170);
+            this.panelManage.Margin = new System.Windows.Forms.Padding(4);
             this.panelManage.Name = "panelManage";
-            this.panelManage.Size = new System.Drawing.Size(247, 722);
+            this.panelManage.Size = new System.Drawing.Size(331, 889);
             this.panelManage.TabIndex = 3;
             // 
             // btnStatistics
@@ -282,16 +290,16 @@ namespace Tour
             this.btnStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStatistics.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStatistics.ForeColor = System.Drawing.Color.Black;
-            this.btnStatistics.Location = new System.Drawing.Point(0, 660);
-            this.btnStatistics.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStatistics.Location = new System.Drawing.Point(0, 814);
+            this.btnStatistics.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnStatistics.Name = "btnStatistics";
-            this.btnStatistics.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnStatistics.Size = new System.Drawing.Size(247, 60);
+            this.btnStatistics.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            this.btnStatistics.Size = new System.Drawing.Size(331, 74);
             this.btnStatistics.TabIndex = 13;
             this.btnStatistics.Text = "Statistics";
             this.btnStatistics.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStatistics.UseVisualStyleBackColor = false;
-            this.btnStatistics.Click += new System.EventHandler(this.button11_Click_1);
+            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
             // 
             // btnLoyalCustomer
             // 
@@ -301,16 +309,16 @@ namespace Tour
             this.btnLoyalCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoyalCustomer.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoyalCustomer.ForeColor = System.Drawing.Color.Black;
-            this.btnLoyalCustomer.Location = new System.Drawing.Point(0, 600);
-            this.btnLoyalCustomer.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLoyalCustomer.Location = new System.Drawing.Point(0, 740);
+            this.btnLoyalCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLoyalCustomer.Name = "btnLoyalCustomer";
-            this.btnLoyalCustomer.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnLoyalCustomer.Size = new System.Drawing.Size(247, 60);
+            this.btnLoyalCustomer.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            this.btnLoyalCustomer.Size = new System.Drawing.Size(331, 74);
             this.btnLoyalCustomer.TabIndex = 12;
             this.btnLoyalCustomer.Text = "Loyal Customer";
             this.btnLoyalCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLoyalCustomer.UseVisualStyleBackColor = false;
-            this.btnLoyalCustomer.Click += new System.EventHandler(this.button12_Click);
+            this.btnLoyalCustomer.Click += new System.EventHandler(this.btnLoyalCustomer_Click);
             // 
             // btnCustomer
             // 
@@ -320,16 +328,16 @@ namespace Tour
             this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomer.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomer.ForeColor = System.Drawing.Color.Black;
-            this.btnCustomer.Location = new System.Drawing.Point(0, 540);
-            this.btnCustomer.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCustomer.Location = new System.Drawing.Point(0, 666);
+            this.btnCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnCustomer.Size = new System.Drawing.Size(247, 60);
+            this.btnCustomer.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            this.btnCustomer.Size = new System.Drawing.Size(331, 74);
             this.btnCustomer.TabIndex = 10;
             this.btnCustomer.Text = "Customer Database";
             this.btnCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCustomer.UseVisualStyleBackColor = false;
-            this.btnCustomer.Click += new System.EventHandler(this.button10_Click);
+            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
             // btnGroup
             // 
@@ -339,16 +347,16 @@ namespace Tour
             this.btnGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGroup.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGroup.ForeColor = System.Drawing.Color.Black;
-            this.btnGroup.Location = new System.Drawing.Point(0, 480);
-            this.btnGroup.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGroup.Location = new System.Drawing.Point(0, 592);
+            this.btnGroup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGroup.Name = "btnGroup";
-            this.btnGroup.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnGroup.Size = new System.Drawing.Size(247, 60);
+            this.btnGroup.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            this.btnGroup.Size = new System.Drawing.Size(331, 74);
             this.btnGroup.TabIndex = 9;
             this.btnGroup.Text = "Group Database";
             this.btnGroup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGroup.UseVisualStyleBackColor = false;
-            this.btnGroup.Click += new System.EventHandler(this.button9_Click);
+            this.btnGroup.Click += new System.EventHandler(this.btnGroup_Click);
             // 
             // btnMission
             // 
@@ -358,16 +366,16 @@ namespace Tour
             this.btnMission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMission.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMission.ForeColor = System.Drawing.Color.Black;
-            this.btnMission.Location = new System.Drawing.Point(0, 420);
-            this.btnMission.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMission.Location = new System.Drawing.Point(0, 518);
+            this.btnMission.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMission.Name = "btnMission";
-            this.btnMission.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnMission.Size = new System.Drawing.Size(247, 60);
+            this.btnMission.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            this.btnMission.Size = new System.Drawing.Size(331, 74);
             this.btnMission.TabIndex = 8;
             this.btnMission.Text = "Misson Database";
             this.btnMission.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMission.UseVisualStyleBackColor = false;
-            this.btnMission.Click += new System.EventHandler(this.button8_Click);
+            this.btnMission.Click += new System.EventHandler(this.btnMission_Click);
             // 
             // btnEmployyeDatabase
             // 
@@ -377,11 +385,11 @@ namespace Tour
             this.btnEmployyeDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployyeDatabase.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmployyeDatabase.ForeColor = System.Drawing.Color.Black;
-            this.btnEmployyeDatabase.Location = new System.Drawing.Point(0, 360);
-            this.btnEmployyeDatabase.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEmployyeDatabase.Location = new System.Drawing.Point(0, 444);
+            this.btnEmployyeDatabase.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEmployyeDatabase.Name = "btnEmployyeDatabase";
-            this.btnEmployyeDatabase.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnEmployyeDatabase.Size = new System.Drawing.Size(247, 60);
+            this.btnEmployyeDatabase.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            this.btnEmployyeDatabase.Size = new System.Drawing.Size(331, 74);
             this.btnEmployyeDatabase.TabIndex = 7;
             this.btnEmployyeDatabase.Text = "Employee Database";
             this.btnEmployyeDatabase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -396,11 +404,11 @@ namespace Tour
             this.btnVehicalDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVehicalDatabase.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVehicalDatabase.ForeColor = System.Drawing.Color.Black;
-            this.btnVehicalDatabase.Location = new System.Drawing.Point(0, 300);
-            this.btnVehicalDatabase.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVehicalDatabase.Location = new System.Drawing.Point(0, 370);
+            this.btnVehicalDatabase.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVehicalDatabase.Name = "btnVehicalDatabase";
-            this.btnVehicalDatabase.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnVehicalDatabase.Size = new System.Drawing.Size(247, 60);
+            this.btnVehicalDatabase.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            this.btnVehicalDatabase.Size = new System.Drawing.Size(331, 74);
             this.btnVehicalDatabase.TabIndex = 6;
             this.btnVehicalDatabase.Text = "Vehical Database";
             this.btnVehicalDatabase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -415,11 +423,11 @@ namespace Tour
             this.btnHotelDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHotelDatabase.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHotelDatabase.ForeColor = System.Drawing.Color.Black;
-            this.btnHotelDatabase.Location = new System.Drawing.Point(0, 240);
-            this.btnHotelDatabase.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHotelDatabase.Location = new System.Drawing.Point(0, 296);
+            this.btnHotelDatabase.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHotelDatabase.Name = "btnHotelDatabase";
-            this.btnHotelDatabase.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnHotelDatabase.Size = new System.Drawing.Size(247, 60);
+            this.btnHotelDatabase.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            this.btnHotelDatabase.Size = new System.Drawing.Size(331, 74);
             this.btnHotelDatabase.TabIndex = 5;
             this.btnHotelDatabase.Text = "Hotel Database";
             this.btnHotelDatabase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -434,11 +442,11 @@ namespace Tour
             this.btnLocationDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLocationDatabase.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLocationDatabase.ForeColor = System.Drawing.Color.Black;
-            this.btnLocationDatabase.Location = new System.Drawing.Point(0, 180);
-            this.btnLocationDatabase.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLocationDatabase.Location = new System.Drawing.Point(0, 222);
+            this.btnLocationDatabase.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLocationDatabase.Name = "btnLocationDatabase";
-            this.btnLocationDatabase.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnLocationDatabase.Size = new System.Drawing.Size(247, 60);
+            this.btnLocationDatabase.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            this.btnLocationDatabase.Size = new System.Drawing.Size(331, 74);
             this.btnLocationDatabase.TabIndex = 4;
             this.btnLocationDatabase.Text = "Location Database";
             this.btnLocationDatabase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -453,11 +461,11 @@ namespace Tour
             this.btndataCus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btndataCus.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndataCus.ForeColor = System.Drawing.Color.Black;
-            this.btndataCus.Location = new System.Drawing.Point(0, 120);
-            this.btndataCus.Margin = new System.Windows.Forms.Padding(2);
+            this.btndataCus.Location = new System.Drawing.Point(0, 148);
+            this.btndataCus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btndataCus.Name = "btndataCus";
-            this.btndataCus.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btndataCus.Size = new System.Drawing.Size(247, 60);
+            this.btndataCus.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            this.btndataCus.Size = new System.Drawing.Size(331, 74);
             this.btndataCus.TabIndex = 3;
             this.btndataCus.Text = "Ticket Database";
             this.btndataCus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -472,11 +480,11 @@ namespace Tour
             this.btnRoute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRoute.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRoute.ForeColor = System.Drawing.Color.Black;
-            this.btnRoute.Location = new System.Drawing.Point(0, 60);
-            this.btnRoute.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRoute.Location = new System.Drawing.Point(0, 74);
+            this.btnRoute.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRoute.Name = "btnRoute";
-            this.btnRoute.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnRoute.Size = new System.Drawing.Size(247, 60);
+            this.btnRoute.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            this.btnRoute.Size = new System.Drawing.Size(331, 74);
             this.btnRoute.TabIndex = 0;
             this.btnRoute.Text = "Ticket Management";
             this.btnRoute.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -492,10 +500,10 @@ namespace Tour
             this.btnTicket.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTicket.ForeColor = System.Drawing.Color.Black;
             this.btnTicket.Location = new System.Drawing.Point(0, 0);
-            this.btnTicket.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTicket.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTicket.Name = "btnTicket";
-            this.btnTicket.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnTicket.Size = new System.Drawing.Size(247, 60);
+            this.btnTicket.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            this.btnTicket.Size = new System.Drawing.Size(331, 74);
             this.btnTicket.TabIndex = 2;
             this.btnTicket.Text = "Tour Management";
             this.btnTicket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -510,10 +518,11 @@ namespace Tour
             this.btnManage.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManage.ForeColor = System.Drawing.Color.Black;
             this.btnManage.Image = global::Tour.Properties.Resources.manageicon1;
-            this.btnManage.Location = new System.Drawing.Point(0, 89);
+            this.btnManage.Location = new System.Drawing.Point(0, 110);
+            this.btnManage.Margin = new System.Windows.Forms.Padding(4);
             this.btnManage.Name = "btnManage";
-            this.btnManage.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnManage.Size = new System.Drawing.Size(247, 49);
+            this.btnManage.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.btnManage.Size = new System.Drawing.Size(331, 60);
             this.btnManage.TabIndex = 2;
             this.btnManage.Text = "Manage";
             this.btnManage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -526,26 +535,29 @@ namespace Tour
             this.panel_logo.Controls.Add(this.label1);
             this.panel_logo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_logo.Location = new System.Drawing.Point(0, 0);
+            this.panel_logo.Margin = new System.Windows.Forms.Padding(4);
             this.panel_logo.Name = "panel_logo";
-            this.panel_logo.Size = new System.Drawing.Size(247, 89);
+            this.panel_logo.Size = new System.Drawing.Size(331, 110);
             this.panel_logo.TabIndex = 1;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.picBackground);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(264, -27);
+            this.panel4.Location = new System.Drawing.Point(352, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(776, 667);
+            this.panel4.Size = new System.Drawing.Size(1590, 788);
             this.panel4.TabIndex = 19;
             // 
             // picBackground
             // 
             this.picBackground.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.picBackground.Image = global::Tour.Properties.Resources._0;
-            this.picBackground.Location = new System.Drawing.Point(0, 122);
+            this.picBackground.Location = new System.Drawing.Point(0, 117);
+            this.picBackground.Margin = new System.Windows.Forms.Padding(4);
             this.picBackground.Name = "picBackground";
-            this.picBackground.Size = new System.Drawing.Size(776, 545);
+            this.picBackground.Size = new System.Drawing.Size(1590, 671);
             this.picBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBackground.TabIndex = 0;
             this.picBackground.TabStop = false;
@@ -563,18 +575,20 @@ namespace Tour
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(264, 0);
+            this.panel1.Location = new System.Drawing.Point(352, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(776, 92);
+            this.panel1.Size = new System.Drawing.Size(1590, 113);
             this.panel1.TabIndex = 20;
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::Tour.Properties.Resources.manageicon;
-            this.pictureBox3.Location = new System.Drawing.Point(249, 1);
+            this.pictureBox3.Location = new System.Drawing.Point(332, 1);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(108, 88);
+            this.pictureBox3.Size = new System.Drawing.Size(144, 108);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
@@ -584,9 +598,10 @@ namespace Tour
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(1014, -7);
+            this.label4.Location = new System.Drawing.Point(1352, -9);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(24, 24);
+            this.label4.Size = new System.Drawing.Size(32, 30);
             this.label4.TabIndex = 2;
             this.label4.Text = "-";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -597,25 +612,26 @@ namespace Tour
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(1053, 0);
+            this.label3.Location = new System.Drawing.Point(1404, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(25, 24);
+            this.label3.Size = new System.Drawing.Size(31, 29);
             this.label3.TabIndex = 1;
             this.label3.Text = "X";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // SelectForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1040, 640);
+            this.ClientSize = new System.Drawing.Size(1942, 788);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel_slide);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "SelectForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SelectForm";
