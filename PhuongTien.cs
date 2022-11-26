@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using Tour.Model;
 using Tour.Utils;
 
@@ -15,7 +16,6 @@ namespace Tour
     public partial class PhuongTien : Form
     {
         List<string> ListProvince = new List<string>() {
-            "",
 "An Giang",
 "Bà rịa – Vũng tàu",
 "Bắc Giang",
@@ -91,7 +91,7 @@ namespace Tour
         public PhuongTien()
         {
             InitializeComponent();
-            cbbxKind.DataSource = new List<string> { "Tàu", "Xe hai bánh", "Xe bốn bánh", "Xe buýt", "Máy bay" };
+            cbbxKind.DataSource = new List<string> { "Train", "Motorcycle", "Car", "Bus", "Plan", "Ship" };
             cbboxProvince.DataSource = ListProvince;
             showAll();
             Clear();
@@ -114,17 +114,46 @@ namespace Tour
             cbbxVehical.SelectedIndex = -1;
             cbboxProvince.SelectedIndex = -1;
             pcbxVehical.Image = Properties.Resources.ic_image_empty_128;
+            UnnotifyAllFields();
         }
 
+        public void UnnotifyAllFields()
+        {
+            Notify.UnnotificationField(txtbxName);
+            Notify.UnnotificationSelect(cbboxProvince);
+            Notify.UnnotificationSelect(cbbxKind);
+            Notify.UnnotificationField(txtbxGia);
 
+
+
+        }
 
         private bool CheckData()
         {
-            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null||cbboxProvince.Text.Trim().CompareTo(string.Empty) == 0||cbbxKind.Text.Trim().CompareTo(string.Empty) == 0)
+            bool flag = true;
+
+            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0)
             {
-                return false;
+                Notify.NotificationField(txtbxName);
+                flag = false;
             }
-            return true;
+            if (txtbxGia.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(txtbxGia);
+                flag = false;
+            }
+            if (cbboxProvince.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationSelect(cbboxProvince);
+                flag = false;
+            }
+            if (cbbxKind.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationSelect(cbbxKind);
+                flag = false;
+            }
+
+            return flag;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -253,6 +282,8 @@ namespace Tour
 
         private void txtbxGia_KeyPress(object sender, KeyPressEventArgs e)
         {
+            Notify.UnnotificationField(sender);
+
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
@@ -293,6 +324,24 @@ namespace Tour
                 img_data = temp.PICBI;
                 txtbxGia.Text = temp.GIA.ToString();
             }
+        }
+
+        private void cbbxKind_Enter(object sender, EventArgs e)
+        {
+            Notify.UnnotificationSelect(sender);
+
+        }
+
+        private void cbboxProvince_Enter(object sender, EventArgs e)
+        {
+            Notify.UnnotificationSelect(sender);
+
+        }
+
+        private void txtbxName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Notify.UnnotificationField(sender);
+
         }
     }
 }

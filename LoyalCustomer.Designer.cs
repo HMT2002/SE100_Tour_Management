@@ -39,7 +39,6 @@
             this.panel14 = new System.Windows.Forms.Panel();
             this.tbName = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.tbCMND = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.RdFmale = new System.Windows.Forms.RadioButton();
             this.RdMale = new System.Windows.Forms.RadioButton();
@@ -66,6 +65,7 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtbxPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblNotes = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.tbCMND = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -251,19 +251,6 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(284, 27);
             this.panel10.TabIndex = 22;
-            // 
-            // tbCMND
-            // 
-            this.tbCMND.BackColor = System.Drawing.SystemColors.Window;
-            this.tbCMND.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbCMND.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCMND.Location = new System.Drawing.Point(-1, -2);
-            this.tbCMND.Margin = new System.Windows.Forms.Padding(2);
-            this.tbCMND.MaxLength = 13;
-            this.tbCMND.Name = "tbCMND";
-            this.tbCMND.Size = new System.Drawing.Size(283, 26);
-            this.tbCMND.TabIndex = 16;
-            this.tbCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCMND_KeyPress);
             // 
             // panel6
             // 
@@ -507,14 +494,15 @@
             this.txtbxNewPassword.Size = new System.Drawing.Size(321, 30);
             this.txtbxNewPassword.TabIndex = 7;
             this.txtbxNewPassword.UseSystemPasswordChar = true;
+            this.txtbxNewPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxNewPassword_KeyPress);
             // 
             // btnChangePassword
             // 
             this.btnChangePassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnChangePassword.ForeColor = System.Drawing.Color.White;
-            this.btnChangePassword.Location = new System.Drawing.Point(539, 4);
+            this.btnChangePassword.Location = new System.Drawing.Point(530, 4);
             this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(70, 33);
+            this.btnChangePassword.Size = new System.Drawing.Size(79, 42);
             this.btnChangePassword.TabIndex = 5;
             this.btnChangePassword.Text = "Change Password";
             this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
@@ -539,6 +527,7 @@
             this.txtbxRePassword.Size = new System.Drawing.Size(321, 30);
             this.txtbxRePassword.TabIndex = 4;
             this.txtbxRePassword.UseSystemPasswordChar = true;
+            this.txtbxRePassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxRePassword_KeyPress);
             // 
             // lblRePassword
             // 
@@ -578,6 +567,7 @@
             this.txtbxPassword.Size = new System.Drawing.Size(321, 30);
             this.txtbxPassword.TabIndex = 1;
             this.txtbxPassword.UseSystemPasswordChar = true;
+            this.txtbxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxPassword_KeyPress);
             // 
             // lblNotes
             // 
@@ -587,6 +577,28 @@
             this.lblNotes.Size = new System.Drawing.Size(141, 15);
             this.lblNotes.TabIndex = 0;
             this.lblNotes.Text = "_______________________";
+            // 
+            // tbCMND
+            // 
+            this.tbCMND.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbCMND.DefaultText = "";
+            this.tbCMND.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbCMND.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbCMND.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbCMND.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbCMND.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbCMND.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbCMND.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbCMND.Location = new System.Drawing.Point(-2, -3);
+            this.tbCMND.Margin = new System.Windows.Forms.Padding(4);
+            this.tbCMND.MaxLength = 13;
+            this.tbCMND.Name = "tbCMND";
+            this.tbCMND.PasswordChar = '\0';
+            this.tbCMND.PlaceholderText = "";
+            this.tbCMND.SelectedText = "";
+            this.tbCMND.Size = new System.Drawing.Size(282, 27);
+            this.tbCMND.TabIndex = 31;
+            this.tbCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCMND_KeyPress);
             // 
             // LoyalCustomer
             // 
@@ -607,7 +619,6 @@
             this.panel15.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -636,7 +647,6 @@
         private System.Windows.Forms.Panel panel14;
         private Guna.UI2.WinForms.Guna2TextBox tbName;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.TextBox tbCMND;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.RadioButton RdFmale;
         private System.Windows.Forms.RadioButton RdMale;
@@ -663,5 +673,6 @@
         private Guna.UI2.WinForms.Guna2Panel pnCreateCustomer;
         private Guna.UI2.WinForms.Guna2Button btnChangePassword;
         private Guna.UI2.WinForms.Guna2TextBox txtbxNewPassword;
+        private Guna.UI2.WinForms.Guna2TextBox tbCMND;
     }
 }

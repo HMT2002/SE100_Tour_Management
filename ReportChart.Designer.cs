@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cartesianchartYearly = new LiveCharts.WinForms.CartesianChart();
             this.piechartTour = new LiveCharts.WinForms.PieChart();
             this.btnViewYearlyReport = new Guna.UI2.WinForms.Guna2Button();
@@ -42,11 +42,6 @@
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.cbbxYear = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.btnViewTourReport = new Guna.UI2.WinForms.Guna2Button();
-            this.cbbxMonth = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dgv_report = new Guna.UI2.WinForms.Guna2DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tour_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +49,11 @@
             this.Income = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Month = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btnViewTourReport = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.cbbxYear = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbbxMonth = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.columnchartYearly)).BeginInit();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -101,16 +101,16 @@
             // 
             // columnchartYearly
             // 
-            chartArea2.Name = "ChartArea1";
-            this.columnchartYearly.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.columnchartYearly.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.columnchartYearly.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.columnchartYearly.Legends.Add(legend1);
             this.columnchartYearly.Location = new System.Drawing.Point(6, 7);
             this.columnchartYearly.Name = "columnchartYearly";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Revenue";
-            this.columnchartYearly.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Revenue";
+            this.columnchartYearly.Series.Add(series1);
             this.columnchartYearly.Size = new System.Drawing.Size(956, 270);
             this.columnchartYearly.TabIndex = 3;
             this.columnchartYearly.Text = "chart1";
@@ -175,82 +175,19 @@
             this.tabPage2.Text = "Report";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // guna2HtmlLabel3
-            // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(12, 15);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(55, 27);
-            this.guna2HtmlLabel3.TabIndex = 58;
-            this.guna2HtmlLabel3.Text = "Year: ";
-            // 
-            // guna2HtmlLabel2
-            // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(200, 15);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(69, 27);
-            this.guna2HtmlLabel2.TabIndex = 57;
-            this.guna2HtmlLabel2.Text = "Month: ";
-            // 
-            // cbbxYear
-            // 
-            this.cbbxYear.BackColor = System.Drawing.Color.Transparent;
-            this.cbbxYear.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbxYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbxYear.FocusedColor = System.Drawing.Color.Empty;
-            this.cbbxYear.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbxYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbbxYear.FormattingEnabled = true;
-            this.cbbxYear.ItemHeight = 30;
-            this.cbbxYear.Location = new System.Drawing.Point(73, 15);
-            this.cbbxYear.Name = "cbbxYear";
-            this.cbbxYear.Size = new System.Drawing.Size(121, 36);
-            this.cbbxYear.TabIndex = 56;
-            this.cbbxYear.SelectedValueChanged += new System.EventHandler(this.cbbxYear_SelectedValueChanged);
-            // 
-            // btnViewTourReport
-            // 
-            this.btnViewTourReport.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnViewTourReport.ForeColor = System.Drawing.Color.White;
-            this.btnViewTourReport.Location = new System.Drawing.Point(519, 6);
-            this.btnViewTourReport.Name = "btnViewTourReport";
-            this.btnViewTourReport.Size = new System.Drawing.Size(180, 45);
-            this.btnViewTourReport.TabIndex = 54;
-            this.btnViewTourReport.Text = "View Tour Report";
-            this.btnViewTourReport.Click += new System.EventHandler(this.btnViewTourReport_Click);
-            // 
-            // cbbxMonth
-            // 
-            this.cbbxMonth.BackColor = System.Drawing.Color.Transparent;
-            this.cbbxMonth.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbxMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbxMonth.FocusedColor = System.Drawing.Color.Empty;
-            this.cbbxMonth.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbxMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbbxMonth.FormattingEnabled = true;
-            this.cbbxMonth.ItemHeight = 30;
-            this.cbbxMonth.Location = new System.Drawing.Point(275, 15);
-            this.cbbxMonth.Name = "cbbxMonth";
-            this.cbbxMonth.Size = new System.Drawing.Size(121, 36);
-            this.cbbxMonth.TabIndex = 55;
-            this.cbbxMonth.SelectedValueChanged += new System.EventHandler(this.cbbxMonth_SelectedValueChanged);
-            // 
             // dgv_report
             // 
             this.dgv_report.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgv_report.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_report.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgv_report.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_report.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_report.ColumnHeadersHeight = 25;
             this.dgv_report.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgv_report.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -260,16 +197,16 @@
             this.Income,
             this.Month,
             this.Year});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_report.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_report.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_report.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
-            this.dgv_report.Location = new System.Drawing.Point(5, 56);
+            this.dgv_report.Location = new System.Drawing.Point(5, 85);
             this.dgv_report.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_report.Name = "dgv_report";
             this.dgv_report.RowHeadersVisible = false;
@@ -280,7 +217,7 @@
             this.dgv_report.RowTemplate.DividerHeight = 5;
             this.dgv_report.RowTemplate.Height = 40;
             this.dgv_report.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgv_report.Size = new System.Drawing.Size(1253, 458);
+            this.dgv_report.Size = new System.Drawing.Size(1253, 429);
             this.dgv_report.TabIndex = 59;
             this.dgv_report.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_report.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -348,6 +285,69 @@
             this.Year.DataPropertyName = "YEAR";
             this.Year.HeaderText = "Year";
             this.Year.Name = "Year";
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(12, 15);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(55, 27);
+            this.guna2HtmlLabel3.TabIndex = 58;
+            this.guna2HtmlLabel3.Text = "Year: ";
+            // 
+            // btnViewTourReport
+            // 
+            this.btnViewTourReport.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnViewTourReport.ForeColor = System.Drawing.Color.White;
+            this.btnViewTourReport.Location = new System.Drawing.Point(519, 6);
+            this.btnViewTourReport.Name = "btnViewTourReport";
+            this.btnViewTourReport.Size = new System.Drawing.Size(180, 45);
+            this.btnViewTourReport.TabIndex = 54;
+            this.btnViewTourReport.Text = "View Tour Report";
+            this.btnViewTourReport.Click += new System.EventHandler(this.btnViewTourReport_Click);
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(200, 15);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(69, 27);
+            this.guna2HtmlLabel2.TabIndex = 57;
+            this.guna2HtmlLabel2.Text = "Month: ";
+            // 
+            // cbbxYear
+            // 
+            this.cbbxYear.BackColor = System.Drawing.Color.Transparent;
+            this.cbbxYear.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbxYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbxYear.FocusedColor = System.Drawing.Color.Empty;
+            this.cbbxYear.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbxYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbxYear.FormattingEnabled = true;
+            this.cbbxYear.ItemHeight = 30;
+            this.cbbxYear.Location = new System.Drawing.Point(73, 15);
+            this.cbbxYear.Name = "cbbxYear";
+            this.cbbxYear.Size = new System.Drawing.Size(121, 36);
+            this.cbbxYear.TabIndex = 56;
+            this.cbbxYear.SelectedValueChanged += new System.EventHandler(this.cbbxYear_SelectedValueChanged);
+            // 
+            // cbbxMonth
+            // 
+            this.cbbxMonth.BackColor = System.Drawing.Color.Transparent;
+            this.cbbxMonth.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbxMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbxMonth.FocusedColor = System.Drawing.Color.Empty;
+            this.cbbxMonth.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbxMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbxMonth.FormattingEnabled = true;
+            this.cbbxMonth.ItemHeight = 30;
+            this.cbbxMonth.Location = new System.Drawing.Point(275, 15);
+            this.cbbxMonth.Name = "cbbxMonth";
+            this.cbbxMonth.Size = new System.Drawing.Size(121, 36);
+            this.cbbxMonth.TabIndex = 55;
+            this.cbbxMonth.SelectedValueChanged += new System.EventHandler(this.cbbxMonth_SelectedValueChanged);
             // 
             // ReportChart
             // 

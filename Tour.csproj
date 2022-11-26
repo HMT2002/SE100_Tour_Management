@@ -429,10 +429,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Route.cs" />
-    <Compile Include="Route.Designer.cs">
-      <DependentUpon>Route.cs</DependentUpon>
-    </Compile>
     <Compile Include="BLL\TuyenBLL.cs" />
     <Compile Include="DAL\TuyenDAL.cs" />
     <Compile Include="Model\typeCustomer.cs" />
@@ -542,9 +538,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Route.resx">
-      <DependentUpon>Route.cs</DependentUpon>
-    </EmbeddedResource>
     <EntityDeploy Include="Model\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>

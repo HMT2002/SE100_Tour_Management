@@ -72,7 +72,7 @@ namespace Tour
 
             if (this.Khachhang.GIOITINH == "Male")
             {
-                RdFmale.Checked = true;
+                RdMale.Checked = true;
             }
             else
             {
@@ -103,12 +103,9 @@ namespace Tour
             {
                 Notify.NotificationField(txtbxPassword);
                 Notify.NotificationField(txtbxRePassword);
+                //MessageBox.Show("Password doesn't match");
 
                 flag = false;
-            }
-            if (txtbxPassword.Text.Length <= 5)
-            {
-                return false;
             }
             if (txtbxPassword.Text.Trim().CompareTo(string.Empty) == 0 )
             {
@@ -117,8 +114,9 @@ namespace Tour
             }
             if (txtbxPassword.Text.Length <= 5)
             {
-                MessageBox.Show("Password have to be over 5 letters");
+                //MessageBox.Show("Password have to be over 5 letters");
                 Notify.NotificationField(txtbxPassword);
+
                 flag = false;
             }
             if (txtbxRePassword.Text.Trim().CompareTo(string.Empty) == 0)
@@ -157,23 +155,84 @@ namespace Tour
 
         public bool ChechDataUpdate()
         {
-            if (txtbxPassword.Text.Trim().CompareTo(string.Empty) == 0 || tbAddress.Text.Trim().CompareTo(string.Empty) == 0 || tbCMND.Text.Trim().CompareTo(string.Empty) == 0 || tbEmail.Text.Trim().CompareTo(string.Empty) == 0 || tbTelephone.Text.Trim().CompareTo(string.Empty) == 0 || tbName.Text.Trim().CompareTo(string.Empty) == 0)
+            bool flag = true;
+
+            if (tbCMND.Text.Trim().CompareTo(string.Empty) == 0)
             {
-                return false;
+                Notify.NotificationField(tbCMND);
+                flag = false;
             }
-            if (txtbxPassword.Text.CompareTo(Converter.Instance.DecryptEncrypt( Khachhang.ACCOUNT.PASS)) != 0)
+
+            if (tbName.Text.Trim().CompareTo(string.Empty) == 0)
             {
-                return false;
+                Notify.NotificationField(tbName);
+                flag = false;
             }
-            return true;
+            if (tbAddress.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(tbAddress);
+                flag = false;
+
+            }
+            if (tbTelephone.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(tbTelephone);
+                flag = false;
+            }
+            if (tbCMND.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(tbCMND);
+                flag = false;
+            }
+            if (tbEmail.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(tbEmail);
+                flag = false;
+            }
+
+
+
+            if (txtbxPassword.Text.CompareTo(String.Empty) != 0)
+            {
+                if (txtbxPassword.Text.CompareTo(Converter.Instance.DecryptEncrypt(Khachhang.ACCOUNT.PASS)) != 0)
+                {
+                    Notify.NotificationField(txtbxPassword);
+                    Notify.NotificationField(txtbxRePassword);
+                    MessageBox.Show("Password doesn't match");
+
+                    flag = false;
+                }
+
+            }
+            else
+            {
+                Notify.NotificationField(txtbxPassword);
+                Notify.NotificationField(txtbxRePassword);
+                MessageBox.Show("Need to enter password in order to update");
+
+                flag = false;
+            }
+
+            if (txtbxPassword.Text.Trim().CompareTo(txtbxRePassword.Text.Trim()) != 0 && changepass == true)
+            {
+                Notify.NotificationField(txtbxPassword);
+                Notify.NotificationField(txtbxRePassword);
+
+                flag = false;
+            }
+            if (txtbxNewPassword.Text.Trim().CompareTo(string.Empty) == 0 && changepass == true)
+            {
+                Notify.NotificationField(txtbxNewPassword);
+                flag = false;
+            }
+
+
+
+            return flag;
         }
 
-
-
-        private void btnAdd_Click(object sender, EventArgs e)
+        public void AddNewCustomer()
         {
-            if (ChechData())
-            {
                 string gender = "Male";
                 if (RdFmale.Checked == true)
                 {
@@ -186,6 +245,13 @@ namespace Tour
                 DataProvider.Ins.DB.KHACHHANGs.Add(kh);
                 DataProvider.Ins.DB.SaveChanges();
                 MessageBox.Show("SignUp success!!!");
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (ChechData())
+            {
+                AddNewCustomer();
                 Clear();
             }
         }
@@ -197,7 +263,9 @@ namespace Tour
             Notify.UnnotificationField(tbEmail);
             Notify.UnnotificationField(tbCMND);
             Notify.UnnotificationField(tbTelephone);
-
+            Notify.UnnotificationField(txtbxPassword);
+            Notify.UnnotificationField(txtbxRePassword);
+            Notify.UnnotificationField(txtbxNewPassword);
         }
 
         private void Clear()
@@ -207,7 +275,7 @@ namespace Tour
             tbEmail.Text = "";
             tbName.Text = "";
             tbTelephone.Text = "";
-            RdFmale.Checked = true;
+            RdMale.Checked = true;
             txtbxPassword.Text = "";
             txtbxRePassword.Text = "";
             pcbxAvtatar.Image = Properties.Resources.ic_image_empty_128;
@@ -252,6 +320,7 @@ namespace Tour
 
             DataProvider.Ins.DB.SaveChanges();
             MessageBox.Show("Update success");
+            UnnotifyAllFields();
             LoadData();
         }
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -259,6 +328,8 @@ namespace Tour
             if (ChechDataUpdate())
             {
                 UpdateCustomer();
+                UnnotifyAllFields();
+
             }
 
         }
@@ -309,17 +380,19 @@ namespace Tour
         }
 
 
-
+        public bool changepass = false;
         public void EnableChangePass()
         {
+            UnnotifyAllFields();
             lblRePassword.Visible = !lblRePassword.Visible;
             txtbxRePassword.Visible = !txtbxRePassword.Visible;
             txtbxNewPassword.Visible = !txtbxNewPassword.Visible;
-
             if (lblNotes.Text.CompareTo("Enter new password") != 0)
             {
                 lblNotes.Text = "Enter new password";
 
+
+                changepass = true;
             }
             else
             {
@@ -332,6 +405,9 @@ namespace Tour
 
                 }
                 lblNotes.Text = "********" + last3word;
+
+                changepass = false;
+
             }
         }
 
@@ -368,6 +444,24 @@ namespace Tour
         }
 
         private void tbEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utils.Notify.UnnotificationField(sender);
+
+        }
+
+        private void txtbxRePassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utils.Notify.UnnotificationField(sender);
+
+        }
+
+        private void txtbxPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utils.Notify.UnnotificationField(sender);
+
+        }
+
+        private void txtbxNewPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utils.Notify.UnnotificationField(sender);
 

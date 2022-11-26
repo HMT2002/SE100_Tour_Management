@@ -17,6 +17,7 @@ namespace Tour
     public partial class ReportChart : Form
     {
         public int selected_year = 1;
+
         public int selected_month = 1;
 
 
@@ -29,7 +30,7 @@ namespace Tour
 
         //List<string> listMonth = new List<string>();
         List<string> listYear = new List<string>();
-        List<string> listMonth = new List<string>();
+        List<int> listMonth = new List<int>();
 
 
         public void EnableCalendarSource()
@@ -45,11 +46,14 @@ namespace Tour
                         join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
                         join ve in DataProvider.Ins.DB.VEs on doan.ID equals ve.IDDOAN
                         where tour.IsDeleted == false && ve.IsDeleted == false
-                        select ve.NGAYMUA.Value.Year.ToString())
+                        orderby ve.NGAYMUA.Value.Year descending
+                        select ve.NGAYMUA.Value.Year.ToString()
+                        
+                        )
                          .Distinct().ToList();
 
             cbbxYear.DataSource = listYear;
-            selected_year = Convert.ToInt32(cbbxYear.SelectedValue);
+            this.selected_year = Convert.ToInt32(cbbxYear.SelectedValue);
         }
 
         public void OpenReportYearly()
@@ -103,7 +107,7 @@ namespace Tour
 
                 f.rptViewer.ReportSource = crys;
                 f.rptViewer.Refresh();
-                f.rptViewer.SelectionFormula = "{Command.TourID}='" + this.selected_tour.ID + "' and {Command.NAM}=" + selected_year + " and {Command.THANG}=" + selected_month;
+                f.rptViewer.SelectionFormula = "{Command.TourID}='" + this.selected_tour.ID + "' and {Command.NAM}=" + this.selected_year + " and {Command.THANG}=" + this.selected_month;
                 f.ShowDialog();
             }
         }
@@ -145,7 +149,7 @@ namespace Tour
             var tours = (from tour in DataProvider.Ins.DB.TOURs
                          join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
                          join ve in DataProvider.Ins.DB.VEs on doan.ID equals ve.IDDOAN
-                         where tour.IsDeleted == false && ve.IsDeleted == false && doan.IsDeleted == false && ve.NGAYMUA.Value.Year == selected_year
+                         where tour.IsDeleted == false && ve.IsDeleted == false && doan.IsDeleted == false && ve.NGAYMUA.Value.Year == this.selected_year
                          group tour by new { tour.ID, tour.TEN } into g
                          select new
                          {
@@ -164,7 +168,7 @@ namespace Tour
                                where ve.IsDeleted == false
                                && ve.NGAYMUA.Value.Month == month
                                && ve.DOAN.TOUR.ID == tour.ID
-                               && ve.NGAYMUA.Value.Year == selected_year
+                               && ve.NGAYMUA.Value.Year == this.selected_year
                                && doan.IsDeleted == false
                                select ve)
                              .Distinct().ToList();
@@ -208,7 +212,7 @@ namespace Tour
             var tours = (from tour in DataProvider.Ins.DB.TOURs
                          join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
                          join ve in DataProvider.Ins.DB.VEs on doan.ID equals ve.IDDOAN
-                         where tour.IsDeleted == false && ve.IsDeleted == false && doan.IsDeleted == false && ve.NGAYMUA.Value.Year == selected_year
+                         where tour.IsDeleted == false && ve.IsDeleted == false && doan.IsDeleted == false && ve.NGAYMUA.Value.Year == this.selected_year
                          group tour by new { tour.ID, tour.TEN, ve.NGAYMUA.Value.Year } into g
                          select new
                          {
@@ -239,7 +243,7 @@ namespace Tour
                            where ve.IsDeleted == false
                            && ve.DOAN.TOUR.ID == tour.ID
                            && ve.DOAN.TOUR.ID == tour.ID
-                           && ve.NGAYMUA.Value.Year == selected_year
+                           && ve.NGAYMUA.Value.Year == this.selected_year
                            && doan.IsDeleted == false
                            select ve)
                          .Distinct().ToList();
@@ -283,7 +287,7 @@ namespace Tour
             {
 
                 var ves = (from ve in DataProvider.Ins.DB.VEs
-                           where ve.IsDeleted == false && ve.NGAYMUA.Value.Month == month && ve.NGAYMUA.Value.Year == selected_year
+                           where ve.IsDeleted == false && ve.NGAYMUA.Value.Month == month && ve.NGAYMUA.Value.Year == this.selected_year
                            select ve)
                             .Distinct().ToList();
                 decimal tong_ve = 0;
@@ -325,13 +329,18 @@ namespace Tour
             listMonth = (from tour in DataProvider.Ins.DB.TOURs
                          join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
                          join ve in DataProvider.Ins.DB.VEs on doan.ID equals ve.IDDOAN
-                         where tour.IsDeleted == false && ve.IsDeleted == false && ve.NGAYMUA.Value.Year == selected_year
-                         select ve.NGAYMUA.Value.Month.ToString())
+                         where tour.IsDeleted == false && ve.IsDeleted == false && ve.NGAYMUA.Value.Year == this.selected_year
+
+                         orderby ve.NGAYMUA.Value.Month ascending
+
+                         select ve.NGAYMUA.Value.Month
+
+                         )
                      .Distinct().ToList();
 
             cbbxMonth.DataSource = listMonth;
 
-            selected_month = Convert.ToInt32(cbbxMonth.SelectedValue);
+            this.selected_month = Convert.ToInt32(cbbxMonth.SelectedValue);
 
 
         }
@@ -341,8 +350,10 @@ namespace Tour
             var tours = (from tour in DataProvider.Ins.DB.TOURs
                          join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
                          join ve in DataProvider.Ins.DB.VEs on doan.ID equals ve.IDDOAN
-                         where tour.IsDeleted == false && ve.IsDeleted == false && doan.IsDeleted == false && ve.NGAYMUA.Value.Year == selected_year
+                         where tour.IsDeleted == false && ve.IsDeleted == false && doan.IsDeleted == false && ve.NGAYMUA.Value.Year == this.selected_year
+
                          group tour by new { tour.ID, tour.TEN, ve.NGAYMUA.Value.Year } into g
+
                          select new
                          {
                              ID = g.Key.ID,
@@ -352,7 +363,7 @@ namespace Tour
             dgv_report.DataSource = (from tour in DataProvider.Ins.DB.TOURs
                                      join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
                                      join ve in DataProvider.Ins.DB.VEs on doan.ID equals ve.IDDOAN
-                                     where tour.IsDeleted == false && ve.IsDeleted == false && ve.NGAYMUA.Value.Year== selected_year&& ve.NGAYMUA.Value.Month==selected_month
+                                     where tour.IsDeleted == false && ve.IsDeleted == false && ve.NGAYMUA.Value.Year== this.selected_year&& ve.NGAYMUA.Value.Month==this.selected_month
                                      group tour by new { tour.ID, tour.TEN,ve.GIA,ve.NGAYMUA.Value.Month,ve.NGAYMUA.Value.Year } into g
                                      select new
                                      {
@@ -371,7 +382,7 @@ namespace Tour
 
         private void cbbxMonth_SelectedValueChanged(object sender, EventArgs e)
         {
-            selected_month = Convert.ToInt32(cbbxMonth.SelectedValue);
+            this.selected_month = Convert.ToInt32(cbbxMonth.SelectedValue);
 
             showAll();
 

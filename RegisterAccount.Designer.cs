@@ -33,7 +33,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnPickPicture = new System.Windows.Forms.Button();
             this.txbHo = new Guna.UI2.WinForms.Guna2TextBox();
             this.txbTen = new Guna.UI2.WinForms.Guna2TextBox();
             this.txbSDT = new Guna.UI2.WinForms.Guna2TextBox();
@@ -70,7 +69,7 @@
             // 
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(321, 174);
+            this.label12.Location = new System.Drawing.Point(260, 208);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(75, 32);
             this.label12.TabIndex = 68;
@@ -99,16 +98,6 @@
             this.label8.Size = new System.Drawing.Size(0, 13);
             this.label8.TabIndex = 64;
             // 
-            // btnPickPicture
-            // 
-            this.btnPickPicture.Location = new System.Drawing.Point(280, 136);
-            this.btnPickPicture.Name = "btnPickPicture";
-            this.btnPickPicture.Size = new System.Drawing.Size(75, 23);
-            this.btnPickPicture.TabIndex = 4;
-            this.btnPickPicture.Text = "Chọn ảnh";
-            this.btnPickPicture.UseVisualStyleBackColor = true;
-            this.btnPickPicture.Click += new System.EventHandler(this.btnPickPicture_Click);
-            // 
             // txbHo
             // 
             this.txbHo.BackColor = System.Drawing.Color.Transparent;
@@ -120,24 +109,22 @@
             this.txbHo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txbHo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txbHo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txbHo.DisabledState.Parent = this.txbHo;
             this.txbHo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbHo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbHo.FocusedState.Parent = this.txbHo;
             this.txbHo.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbHo.ForeColor = System.Drawing.Color.Black;
             this.txbHo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbHo.HoverState.Parent = this.txbHo;
             this.txbHo.Location = new System.Drawing.Point(13, 19);
+            this.txbHo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbHo.Name = "txbHo";
-            this.txbHo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbHo.Padding = new System.Windows.Forms.Padding(2);
             this.txbHo.PasswordChar = '\0';
             this.txbHo.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txbHo.PlaceholderText = "First Name";
             this.txbHo.SelectedText = "";
-            this.txbHo.ShadowDecoration.Parent = this.txbHo;
             this.txbHo.Size = new System.Drawing.Size(204, 37);
             this.txbHo.TabIndex = 73;
+            this.txbHo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbHo_KeyPress);
             // 
             // txbTen
             // 
@@ -150,24 +137,22 @@
             this.txbTen.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txbTen.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txbTen.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txbTen.DisabledState.Parent = this.txbTen;
             this.txbTen.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbTen.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbTen.FocusedState.Parent = this.txbTen;
             this.txbTen.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTen.ForeColor = System.Drawing.Color.Black;
             this.txbTen.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbTen.HoverState.Parent = this.txbTen;
             this.txbTen.Location = new System.Drawing.Point(13, 68);
+            this.txbTen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbTen.Name = "txbTen";
-            this.txbTen.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbTen.Padding = new System.Windows.Forms.Padding(2);
             this.txbTen.PasswordChar = '\0';
             this.txbTen.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txbTen.PlaceholderText = "Last Name";
             this.txbTen.SelectedText = "";
-            this.txbTen.ShadowDecoration.Parent = this.txbTen;
             this.txbTen.Size = new System.Drawing.Size(204, 37);
             this.txbTen.TabIndex = 74;
+            this.txbTen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbTen_KeyPress);
             // 
             // txbSDT
             // 
@@ -180,23 +165,20 @@
             this.txbSDT.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txbSDT.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txbSDT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txbSDT.DisabledState.Parent = this.txbSDT;
             this.txbSDT.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbSDT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbSDT.FocusedState.Parent = this.txbSDT;
             this.txbSDT.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbSDT.ForeColor = System.Drawing.Color.Black;
             this.txbSDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbSDT.HoverState.Parent = this.txbSDT;
             this.txbSDT.Location = new System.Drawing.Point(13, 122);
+            this.txbSDT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbSDT.MaxLength = 13;
             this.txbSDT.Name = "txbSDT";
-            this.txbSDT.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbSDT.Padding = new System.Windows.Forms.Padding(2);
             this.txbSDT.PasswordChar = '\0';
             this.txbSDT.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txbSDT.PlaceholderText = "Phone";
             this.txbSDT.SelectedText = "";
-            this.txbSDT.ShadowDecoration.Parent = this.txbSDT;
             this.txbSDT.Size = new System.Drawing.Size(204, 37);
             this.txbSDT.TabIndex = 75;
             this.txbSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSDT_KeyPress);
@@ -212,24 +194,22 @@
             this.txbPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txbPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txbPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txbPass.DisabledState.Parent = this.txbPass;
             this.txbPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbPass.FocusedState.Parent = this.txbPass;
             this.txbPass.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbPass.ForeColor = System.Drawing.Color.Black;
             this.txbPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbPass.HoverState.Parent = this.txbPass;
             this.txbPass.Location = new System.Drawing.Point(13, 228);
+            this.txbPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbPass.Name = "txbPass";
-            this.txbPass.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbPass.Padding = new System.Windows.Forms.Padding(2);
             this.txbPass.PasswordChar = '\0';
             this.txbPass.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txbPass.PlaceholderText = "Password";
             this.txbPass.SelectedText = "";
-            this.txbPass.ShadowDecoration.Parent = this.txbPass;
             this.txbPass.Size = new System.Drawing.Size(204, 37);
             this.txbPass.TabIndex = 76;
+            this.txbPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPass_KeyPress);
             // 
             // txbConfirm
             // 
@@ -242,24 +222,22 @@
             this.txbConfirm.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txbConfirm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txbConfirm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txbConfirm.DisabledState.Parent = this.txbConfirm;
             this.txbConfirm.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbConfirm.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbConfirm.FocusedState.Parent = this.txbConfirm;
             this.txbConfirm.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbConfirm.ForeColor = System.Drawing.Color.Black;
             this.txbConfirm.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbConfirm.HoverState.Parent = this.txbConfirm;
             this.txbConfirm.Location = new System.Drawing.Point(13, 280);
+            this.txbConfirm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbConfirm.Name = "txbConfirm";
-            this.txbConfirm.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbConfirm.Padding = new System.Windows.Forms.Padding(2);
             this.txbConfirm.PasswordChar = '\0';
             this.txbConfirm.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txbConfirm.PlaceholderText = "Confirm Password";
             this.txbConfirm.SelectedText = "";
-            this.txbConfirm.ShadowDecoration.Parent = this.txbConfirm;
             this.txbConfirm.Size = new System.Drawing.Size(204, 37);
             this.txbConfirm.TabIndex = 77;
+            this.txbConfirm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbConfirm_KeyPress);
             // 
             // txbCode
             // 
@@ -272,24 +250,22 @@
             this.txbCode.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txbCode.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txbCode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txbCode.DisabledState.Parent = this.txbCode;
             this.txbCode.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbCode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbCode.FocusedState.Parent = this.txbCode;
             this.txbCode.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCode.ForeColor = System.Drawing.Color.Black;
             this.txbCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbCode.HoverState.Parent = this.txbCode;
             this.txbCode.Location = new System.Drawing.Point(13, 329);
+            this.txbCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbCode.Name = "txbCode";
-            this.txbCode.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbCode.Padding = new System.Windows.Forms.Padding(2);
             this.txbCode.PasswordChar = '\0';
             this.txbCode.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txbCode.PlaceholderText = "Verify Code";
             this.txbCode.SelectedText = "";
-            this.txbCode.ShadowDecoration.Parent = this.txbCode;
             this.txbCode.Size = new System.Drawing.Size(204, 37);
             this.txbCode.TabIndex = 78;
+            this.txbCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbCode_KeyPress);
             // 
             // txbGmail
             // 
@@ -302,45 +278,39 @@
             this.txbGmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txbGmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txbGmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txbGmail.DisabledState.Parent = this.txbGmail;
             this.txbGmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbGmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbGmail.FocusedState.Parent = this.txbGmail;
             this.txbGmail.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbGmail.ForeColor = System.Drawing.Color.Black;
             this.txbGmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbGmail.HoverState.Parent = this.txbGmail;
             this.txbGmail.Location = new System.Drawing.Point(13, 174);
+            this.txbGmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbGmail.Name = "txbGmail";
-            this.txbGmail.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbGmail.Padding = new System.Windows.Forms.Padding(2);
             this.txbGmail.PasswordChar = '\0';
             this.txbGmail.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txbGmail.PlaceholderText = "Email";
             this.txbGmail.SelectedText = "";
-            this.txbGmail.ShadowDecoration.Parent = this.txbGmail;
             this.txbGmail.Size = new System.Drawing.Size(204, 37);
             this.txbGmail.TabIndex = 79;
             this.txbGmail.TextChanged += new System.EventHandler(this.txbGmail_TextChanged);
+            this.txbGmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbGmail_KeyPress);
             this.txbGmail.Validating += new System.ComponentModel.CancelEventHandler(this.txbGmail_Validating);
             // 
             // SignUpbtn
             // 
             this.SignUpbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SignUpbtn.CheckedState.Parent = this.SignUpbtn;
-            this.SignUpbtn.CustomImages.Parent = this.SignUpbtn;
             this.SignUpbtn.FillColor = System.Drawing.Color.Transparent;
             this.SignUpbtn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUpbtn.ForeColor = System.Drawing.Color.White;
-            this.SignUpbtn.HoverState.Parent = this.SignUpbtn;
             this.SignUpbtn.Location = new System.Drawing.Point(22, 387);
-            this.SignUpbtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SignUpbtn.Margin = new System.Windows.Forms.Padding(2);
             this.SignUpbtn.Name = "SignUpbtn";
             this.SignUpbtn.ShadowDecoration.BorderRadius = 5;
             this.SignUpbtn.ShadowDecoration.Color = System.Drawing.Color.Gray;
             this.SignUpbtn.ShadowDecoration.Depth = 50;
-            this.SignUpbtn.ShadowDecoration.Parent = this.SignUpbtn;
             this.SignUpbtn.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 6, 6);
-            this.SignUpbtn.Size = new System.Drawing.Size(82, 32);
+            this.SignUpbtn.Size = new System.Drawing.Size(109, 32);
             this.SignUpbtn.TabIndex = 80;
             this.SignUpbtn.Text = "Sign Up";
             this.SignUpbtn.Click += new System.EventHandler(this.SignUpbtn_Click);
@@ -350,16 +320,12 @@
             // Cancelbtn
             // 
             this.Cancelbtn.BackColor = System.Drawing.Color.Transparent;
-            this.Cancelbtn.CheckedState.Parent = this.Cancelbtn;
-            this.Cancelbtn.CustomImages.Parent = this.Cancelbtn;
             this.Cancelbtn.FillColor = System.Drawing.Color.Transparent;
             this.Cancelbtn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancelbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Cancelbtn.HoverState.Parent = this.Cancelbtn;
-            this.Cancelbtn.Location = new System.Drawing.Point(124, 387);
-            this.Cancelbtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Cancelbtn.Location = new System.Drawing.Point(135, 387);
+            this.Cancelbtn.Margin = new System.Windows.Forms.Padding(2);
             this.Cancelbtn.Name = "Cancelbtn";
-            this.Cancelbtn.ShadowDecoration.Parent = this.Cancelbtn;
             this.Cancelbtn.Size = new System.Drawing.Size(82, 32);
             this.Cancelbtn.TabIndex = 81;
             this.Cancelbtn.Text = "Cancel";
@@ -369,16 +335,12 @@
             // 
             // btnSend
             // 
-            this.btnSend.CheckedState.Parent = this.btnSend;
-            this.btnSend.CustomImages.Parent = this.btnSend;
             this.btnSend.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSend.ForeColor = System.Drawing.Color.Black;
-            this.btnSend.HoverState.Parent = this.btnSend;
-            this.btnSend.Location = new System.Drawing.Point(235, 174);
-            this.btnSend.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSend.Location = new System.Drawing.Point(236, 174);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(2);
             this.btnSend.Name = "btnSend";
-            this.btnSend.ShadowDecoration.Parent = this.btnSend;
-            this.btnSend.Size = new System.Drawing.Size(82, 32);
+            this.btnSend.Size = new System.Drawing.Size(148, 32);
             this.btnSend.TabIndex = 82;
             this.btnSend.Text = "Send code";
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
@@ -389,7 +351,6 @@
             this.guna2Panel1.Controls.Add(this.label14);
             this.guna2Panel1.Controls.Add(this.label12);
             this.guna2Panel1.Controls.Add(this.btnSend);
-            this.guna2Panel1.Controls.Add(this.btnPickPicture);
             this.guna2Panel1.Controls.Add(this.label9);
             this.guna2Panel1.Controls.Add(this.Cancelbtn);
             this.guna2Panel1.Controls.Add(this.txbHo);
@@ -402,9 +363,8 @@
             this.guna2Panel1.Controls.Add(this.txbConfirm);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2Panel1.Location = new System.Drawing.Point(341, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(406, 440);
             this.guna2Panel1.TabIndex = 83;
             // 
@@ -418,6 +378,7 @@
             this.pcbxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbxAvatar.TabIndex = 0;
             this.pcbxAvatar.TabStop = false;
+            this.pcbxAvatar.Click += new System.EventHandler(this.pcbxAvatar_Click);
             // 
             // guna2Panel2
             // 
@@ -425,19 +386,18 @@
             this.guna2Panel2.Controls.Add(this.guna2PictureBox1);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
             this.guna2Panel2.Size = new System.Drawing.Size(339, 440);
             this.guna2Panel2.TabIndex = 84;
             // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.Image = global::Tour.Properties.Resources.person_working1;
+            this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(0, 2);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
             this.guna2PictureBox1.Size = new System.Drawing.Size(337, 437);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 0;
@@ -474,7 +434,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnPickPicture;
         private System.Windows.Forms.PictureBox pcbxAvatar;
         private Guna.UI2.WinForms.Guna2TextBox txbHo;
         private Guna.UI2.WinForms.Guna2TextBox txbTen;
