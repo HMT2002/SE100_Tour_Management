@@ -662,9 +662,14 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\hard-work.png" />
+    <None Include="Resources\hard-work1.png" />
+    <None Include="Resources\istockphoto-1183622464-612x612.jpg" />
     <Content Include="Resources\person-working.jpg" />
     <None Include="Resources\person-working1.jpg" />
     <None Include="Resources\person-working11.jpg" />
+    <None Include="Resources\pngtree-bright-poster-conduct-negotiations-cartoon-flat-image_1107239.jpg" />
+    <None Include="Resources\user%281%29.png" />
     <Content Include="tickets.ico" />
   </ItemGroup>
   <ItemGroup />

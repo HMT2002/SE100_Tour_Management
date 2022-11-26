@@ -317,31 +317,31 @@ namespace Tour
 
         private void NhanVien_Load(object sender, EventArgs e)
         {
-            //dgv_nhanvien1.Rows.Add(4);
+            //dgv_nhanvien.Rows.Add(4);
 
-            //dgv_nhanvien1.Rows[0].Cells[1].Value = "Vu Quang Huy";
-            //dgv_nhanvien1.Rows[0].Cells[2].Value = "0854021017";
-            //dgv_nhanvien1.Rows[0].Cells[3].Value = "20521419@gm.uit.edu.vn";
-            //dgv_nhanvien1.Rows[0].Cells[4].Value = 0;
-            //dgv_nhanvien1.Rows[0].Cells[5].Value = false;
+            //dgv_nhanvien.Rows[0].Cells[1].Value = "Vu Quang Huy";
+            //dgv_nhanvien.Rows[0].Cells[2].Value = "0854021017";
+            //dgv_nhanvien.Rows[0].Cells[3].Value = "20521419@gm.uit.edu.vn";
+            //dgv_nhanvien.Rows[0].Cells[4].Value = 0;
+            //dgv_nhanvien.Rows[0].Cells[5].Value = false;
 
-            //dgv_nhanvien1.Rows[1].Cells[1].Value = "Vu Quang Huy 1";
-            //dgv_nhanvien1.Rows[1].Cells[2].Value = "0854021017";
-            //dgv_nhanvien1.Rows[1].Cells[3].Value = "20521419@gm.uit.edu.vn";
-            //dgv_nhanvien1.Rows[1].Cells[4].Value = 0;
-            //dgv_nhanvien1.Rows[1].Cells[5].Value = false;
+            //dgv_nhanvien.Rows[1].Cells[1].Value = "Vu Quang Huy 1";
+            //dgv_nhanvien.Rows[1].Cells[2].Value = "0854021017";
+            //dgv_nhanvien.Rows[1].Cells[3].Value = "20521419@gm.uit.edu.vn";
+            //dgv_nhanvien.Rows[1].Cells[4].Value = 0;
+            //dgv_nhanvien.Rows[1].Cells[5].Value = false;
 
-            //dgv_nhanvien1.Rows[2].Cells[1].Value = "Vu Quang Huy 2";
-            //dgv_nhanvien1.Rows[2].Cells[2].Value = "0854021017";
-            //dgv_nhanvien1.Rows[2].Cells[3].Value = "20521419@gm.uit.edu.vn";
-            //dgv_nhanvien1.Rows[2].Cells[4].Value = 0;
-            //dgv_nhanvien1.Rows[2].Cells[5].Value = false;
+            //dgv_nhanvien.Rows[2].Cells[1].Value = "Vu Quang Huy 2";
+            //dgv_nhanvien.Rows[2].Cells[2].Value = "0854021017";
+            //dgv_nhanvien.Rows[2].Cells[3].Value = "20521419@gm.uit.edu.vn";
+            //dgv_nhanvien.Rows[2].Cells[4].Value = 0;
+            //dgv_nhanvien.Rows[2].Cells[5].Value = false;
 
-            //dgv_nhanvien1.Rows[2].Cells[1].Value = "Vu Quang Huy 3";
-            //dgv_nhanvien1.Rows[2].Cells[2].Value = "0854021017";
-            //dgv_nhanvien1.Rows[2].Cells[3].Value = "20521419@gm.uit.edu.vn";
-            //dgv_nhanvien1.Rows[2].Cells[4].Value = 0;
-            //dgv_nhanvien1.Rows[2].Cells[5].Value = false;
+            //dgv_nhanvien.Rows[2].Cells[1].Value = "Vu Quang Huy 3";
+            //dgv_nhanvien.Rows[2].Cells[2].Value = "0854021017";
+            //dgv_nhanvien.Rows[2].Cells[3].Value = "20521419@gm.uit.edu.vn";
+            //dgv_nhanvien.Rows[2].Cells[4].Value = 0;
+            //dgv_nhanvien.Rows[2].Cells[5].Value = false;
         }
 
         private void dgv_nhanvien_CellClick(object sender, DataGridViewCellEventArgs e)

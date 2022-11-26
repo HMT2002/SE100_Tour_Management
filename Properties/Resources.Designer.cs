@@ -263,6 +263,26 @@ namespace Tour.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hard_work {
+            get {
+                object obj = ResourceManager.GetObject("hard-work", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hard_work1 {
+            get {
+                object obj = ResourceManager.GetObject("hard-work1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap help {
             get {
                 object obj = ResourceManager.GetObject("help", resourceCulture);
@@ -276,6 +296,16 @@ namespace Tour.Properties {
         internal static System.Drawing.Bitmap ic_image_empty_128 {
             get {
                 object obj = ResourceManager.GetObject("ic_image_empty-128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap istockphoto_1183622464_612x612 {
+            get {
+                object obj = ResourceManager.GetObject("istockphoto-1183622464-612x612", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -336,6 +366,16 @@ namespace Tour.Properties {
         internal static System.Drawing.Bitmap person_working1 {
             get {
                 object obj = ResourceManager.GetObject("person-working1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_bright_poster_conduct_negotiations_cartoon_flat_image_1107239 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-bright-poster-conduct-negotiations-cartoon-flat-image_1107239", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -436,6 +476,16 @@ namespace Tour.Properties {
         internal static System.Drawing.Bitmap update {
             get {
                 object obj = ResourceManager.GetObject("update", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_1_ {
+            get {
+                object obj = ResourceManager.GetObject("user(1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
