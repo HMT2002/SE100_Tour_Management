@@ -70,5 +70,17 @@ namespace Tour.Properties {
                 this["CurUserId"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CurUserName {
+            get {
+                return ((string)(this["CurUserName"]));
+            }
+            set {
+                this["CurUserName"] = value;
+            }
+        }
     }
 }

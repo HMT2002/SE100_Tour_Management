@@ -105,6 +105,7 @@ namespace Tour
                     Properties.Settings.Default.UserName = emailtxb.Text;
                     Properties.Settings.Default.Password = passwordtxb.Text;
                     Properties.Settings.Default.CurUserId = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().ACC;
+                    Properties.Settings.Default.CurUserName = DataProvider.Ins.DB.NHANVIENs.Where(x => (x.ACCOUNT.ACC == emailtxb.Text && x.ACCOUNT.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().TEN;
 
                     Properties.Settings.Default.Save();
                     SelectForm menuF = new SelectForm(DataProvider.Ins.DB.NHANVIENs.Where(x => x.ACCOUNT.ACC == emailtxb.Text && x.IsDeleted == false).FirstOrDefault());

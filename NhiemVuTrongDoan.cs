@@ -188,6 +188,7 @@ namespace Tour
 
 
 
+
         }
 
         private void txtWaitor_Click(object sender, EventArgs e)
