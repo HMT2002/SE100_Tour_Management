@@ -119,7 +119,7 @@ namespace Tour
         {
             if (Properties.Settings.Default.UserName != string.Empty)
             {
-                label1.Text = "WELCOME: " + Properties.Settings.Default.UserName;
+                label1.Text = "WELCOME: " + Properties.Settings.Default.CurUserName;
             }
             listBtn.Add(btnTicket);
             listBtn.Add(btnRoute);
