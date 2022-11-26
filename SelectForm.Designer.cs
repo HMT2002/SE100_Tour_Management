@@ -100,7 +100,7 @@ namespace Tour
             this.panel_slide.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_slide.Location = new System.Drawing.Point(0, 0);
             this.panel_slide.Name = "panel_slide";
-            this.panel_slide.Size = new System.Drawing.Size(264, 640);
+            this.panel_slide.Size = new System.Drawing.Size(264, 679);
             this.panel_slide.TabIndex = 18;
             // 
             // button7
@@ -534,18 +534,18 @@ namespace Tour
             // 
             this.panel4.Controls.Add(this.picBackground);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(264, -27);
+            this.panel4.Location = new System.Drawing.Point(264, -21);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(776, 667);
+            this.panel4.Size = new System.Drawing.Size(1242, 700);
             this.panel4.TabIndex = 19;
             // 
             // picBackground
             // 
             this.picBackground.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.picBackground.Image = global::Tour.Properties.Resources._0;
-            this.picBackground.Location = new System.Drawing.Point(0, 122);
+            this.picBackground.Location = new System.Drawing.Point(0, 119);
             this.picBackground.Name = "picBackground";
-            this.picBackground.Size = new System.Drawing.Size(776, 545);
+            this.picBackground.Size = new System.Drawing.Size(1242, 581);
             this.picBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBackground.TabIndex = 0;
             this.picBackground.TabStop = false;
@@ -565,7 +565,7 @@ namespace Tour
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(264, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(776, 92);
+            this.panel1.Size = new System.Drawing.Size(1242, 92);
             this.panel1.TabIndex = 20;
             // 
             // pictureBox3
@@ -609,7 +609,7 @@ namespace Tour
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1040, 640);
+            this.ClientSize = new System.Drawing.Size(1506, 679);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel_slide);

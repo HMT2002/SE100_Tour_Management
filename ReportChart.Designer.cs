@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cartesianchartYearly = new LiveCharts.WinForms.CartesianChart();
             this.piechartTour = new LiveCharts.WinForms.PieChart();
             this.btnViewYearlyReport = new Guna.UI2.WinForms.Guna2Button();
@@ -63,15 +63,15 @@
             // 
             // cartesianchartYearly
             // 
-            this.cartesianchartYearly.Location = new System.Drawing.Point(6, 283);
+            this.cartesianchartYearly.Location = new System.Drawing.Point(6, 358);
             this.cartesianchartYearly.Name = "cartesianchartYearly";
-            this.cartesianchartYearly.Size = new System.Drawing.Size(1251, 230);
+            this.cartesianchartYearly.Size = new System.Drawing.Size(1045, 230);
             this.cartesianchartYearly.TabIndex = 0;
             this.cartesianchartYearly.Text = "cartesianChart1";
             // 
             // piechartTour
             // 
-            this.piechartTour.Location = new System.Drawing.Point(968, 7);
+            this.piechartTour.Location = new System.Drawing.Point(774, 7);
             this.piechartTour.Name = "piechartTour";
             this.piechartTour.Size = new System.Drawing.Size(289, 247);
             this.piechartTour.TabIndex = 1;
@@ -101,17 +101,17 @@
             // 
             // columnchartYearly
             // 
-            chartArea1.Name = "ChartArea1";
-            this.columnchartYearly.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.columnchartYearly.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.columnchartYearly.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.columnchartYearly.Legends.Add(legend2);
             this.columnchartYearly.Location = new System.Drawing.Point(6, 7);
             this.columnchartYearly.Name = "columnchartYearly";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Revenue";
-            this.columnchartYearly.Series.Add(series1);
-            this.columnchartYearly.Size = new System.Drawing.Size(956, 270);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Revenue";
+            this.columnchartYearly.Series.Add(series2);
+            this.columnchartYearly.Size = new System.Drawing.Size(762, 334);
             this.columnchartYearly.TabIndex = 3;
             this.columnchartYearly.Text = "chart1";
             // 
@@ -119,11 +119,12 @@
             // 
             this.guna2TabControl1.Controls.Add(this.tabPage1);
             this.guna2TabControl1.Controls.Add(this.tabPage2);
+            this.guna2TabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2TabControl1.ItemSize = new System.Drawing.Size(180, 40);
-            this.guna2TabControl1.Location = new System.Drawing.Point(12, 12);
+            this.guna2TabControl1.Location = new System.Drawing.Point(0, 0);
             this.guna2TabControl1.Name = "guna2TabControl1";
             this.guna2TabControl1.SelectedIndex = 0;
-            this.guna2TabControl1.Size = new System.Drawing.Size(1271, 567);
+            this.guna2TabControl1.Size = new System.Drawing.Size(1082, 650);
             this.guna2TabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.guna2TabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
             this.guna2TabControl1.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -152,7 +153,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 44);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1263, 519);
+            this.tabPage1.Size = new System.Drawing.Size(1074, 602);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Statistic";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -170,7 +171,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 44);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1263, 519);
+            this.tabPage2.Size = new System.Drawing.Size(1069, 595);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Report";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -178,16 +179,16 @@
             // dgv_report
             // 
             this.dgv_report.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgv_report.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_report.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgv_report.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_report.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_report.ColumnHeadersHeight = 25;
             this.dgv_report.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgv_report.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -197,14 +198,14 @@
             this.Income,
             this.Month,
             this.Year});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_report.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_report.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_report.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.dgv_report.Location = new System.Drawing.Point(5, 85);
             this.dgv_report.Margin = new System.Windows.Forms.Padding(2);
@@ -217,7 +218,7 @@
             this.dgv_report.RowTemplate.DividerHeight = 5;
             this.dgv_report.RowTemplate.Height = 40;
             this.dgv_report.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgv_report.Size = new System.Drawing.Size(1253, 429);
+            this.dgv_report.Size = new System.Drawing.Size(1059, 505);
             this.dgv_report.TabIndex = 59;
             this.dgv_report.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_report.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -353,9 +354,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1295, 587);
+            this.ClientSize = new System.Drawing.Size(1082, 650);
             this.Controls.Add(this.guna2TabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReportChart";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReportChart";
             ((System.ComponentModel.ISupportInitialize)(this.columnchartYearly)).EndInit();
             this.guna2TabControl1.ResumeLayout(false);
