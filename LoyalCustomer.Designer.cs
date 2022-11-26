@@ -60,10 +60,12 @@
             this.pnCreateCustomer = new Guna.UI2.WinForms.Guna2Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtbxRePassword = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblRePeassword = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblRePassword = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtbxPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblNotes = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btnChangePassword = new Guna.UI2.WinForms.Guna2Button();
+            this.txtbxNewPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -473,7 +475,7 @@
             // pnUpdateCustomer
             // 
             this.pnUpdateCustomer.Controls.Add(this.btnUpdate);
-            this.pnUpdateCustomer.Location = new System.Drawing.Point(3, 3);
+            this.pnUpdateCustomer.Location = new System.Drawing.Point(3, 4);
             this.pnUpdateCustomer.Name = "pnUpdateCustomer";
             this.pnUpdateCustomer.ShadowDecoration.Parent = this.pnUpdateCustomer;
             this.pnUpdateCustomer.Size = new System.Drawing.Size(301, 36);
@@ -493,8 +495,10 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.txtbxNewPassword);
+            this.panel4.Controls.Add(this.btnChangePassword);
             this.panel4.Controls.Add(this.txtbxRePassword);
-            this.panel4.Controls.Add(this.lblRePeassword);
+            this.panel4.Controls.Add(this.lblRePassword);
             this.panel4.Controls.Add(this.guna2HtmlLabel1);
             this.panel4.Controls.Add(this.txtbxPassword);
             this.panel4.Controls.Add(this.lblNotes);
@@ -530,14 +534,14 @@
             this.txtbxRePassword.TabIndex = 4;
             this.txtbxRePassword.UseSystemPasswordChar = true;
             // 
-            // lblRePeassword
+            // lblRePassword
             // 
-            this.lblRePeassword.BackColor = System.Drawing.Color.Transparent;
-            this.lblRePeassword.Location = new System.Drawing.Point(9, 59);
-            this.lblRePeassword.Name = "lblRePeassword";
-            this.lblRePeassword.Size = new System.Drawing.Size(95, 15);
-            this.lblRePeassword.TabIndex = 3;
-            this.lblRePeassword.Text = "Re-enter password:";
+            this.lblRePassword.BackColor = System.Drawing.Color.Transparent;
+            this.lblRePassword.Location = new System.Drawing.Point(9, 59);
+            this.lblRePassword.Name = "lblRePassword";
+            this.lblRePassword.Size = new System.Drawing.Size(95, 15);
+            this.lblRePassword.TabIndex = 3;
+            this.lblRePassword.Text = "Re-enter password:";
             // 
             // guna2HtmlLabel1
             // 
@@ -580,6 +584,45 @@
             this.lblNotes.Size = new System.Drawing.Size(141, 15);
             this.lblNotes.TabIndex = 0;
             this.lblNotes.Text = "_______________________";
+            // 
+            // btnChangePassword
+            // 
+            this.btnChangePassword.CheckedState.Parent = this.btnChangePassword;
+            this.btnChangePassword.CustomImages.Parent = this.btnChangePassword;
+            this.btnChangePassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnChangePassword.ForeColor = System.Drawing.Color.White;
+            this.btnChangePassword.HoverState.Parent = this.btnChangePassword;
+            this.btnChangePassword.Location = new System.Drawing.Point(539, 4);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.ShadowDecoration.Parent = this.btnChangePassword;
+            this.btnChangePassword.Size = new System.Drawing.Size(70, 33);
+            this.btnChangePassword.TabIndex = 5;
+            this.btnChangePassword.Text = "Change Password";
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
+            // 
+            // txtbxNewPassword
+            // 
+            this.txtbxNewPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbxNewPassword.DefaultText = "";
+            this.txtbxNewPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbxNewPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbxNewPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxNewPassword.DisabledState.Parent = this.txtbxNewPassword;
+            this.txtbxNewPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxNewPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxNewPassword.FocusedState.Parent = this.txtbxNewPassword;
+            this.txtbxNewPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxNewPassword.HoverState.Parent = this.txtbxNewPassword;
+            this.txtbxNewPassword.Location = new System.Drawing.Point(200, 87);
+            this.txtbxNewPassword.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
+            this.txtbxNewPassword.Name = "txtbxNewPassword";
+            this.txtbxNewPassword.PasswordChar = '\0';
+            this.txtbxNewPassword.PlaceholderText = "";
+            this.txtbxNewPassword.SelectedText = "";
+            this.txtbxNewPassword.ShadowDecoration.Parent = this.txtbxNewPassword;
+            this.txtbxNewPassword.Size = new System.Drawing.Size(321, 30);
+            this.txtbxNewPassword.TabIndex = 7;
+            this.txtbxNewPassword.UseSystemPasswordChar = true;
             // 
             // LoyalCustomer
             // 
@@ -648,11 +691,13 @@
         private System.Windows.Forms.Panel pnCRUD;
         private System.Windows.Forms.Panel panel4;
         private Guna.UI2.WinForms.Guna2TextBox txtbxRePassword;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblRePeassword;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblRePassword;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2TextBox txtbxPassword;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblNotes;
         private Guna.UI2.WinForms.Guna2Panel pnUpdateCustomer;
         private Guna.UI2.WinForms.Guna2Panel pnCreateCustomer;
+        private Guna.UI2.WinForms.Guna2Button btnChangePassword;
+        private Guna.UI2.WinForms.Guna2TextBox txtbxNewPassword;
     }
 }

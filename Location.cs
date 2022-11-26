@@ -281,10 +281,5 @@ namespace Tour
                 e.Handled = true;
             }
         }
-
-        private void txtbxId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

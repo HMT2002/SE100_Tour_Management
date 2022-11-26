@@ -17,22 +17,49 @@ namespace Tour
         public LoyalCustomer()
         {
             InitializeComponent();
+            EnableCustomer();
+        }
+
+        public void EnableCustomer()
+        {
             pnUpdateCustomer.Visible = false;
+            pnCreateCustomer.Visible = true;
+
+            btnAdd.Visible = true;
+            btnNew.Visible = true;
+            btnUpdate.Visible = false;
+
+            txtbxRePassword.Visible = true;
+            lblRePassword.Visible = true;
+
+            btnChangePassword.Visible = false;
+            txtbxNewPassword.Visible = false;
         }
 
         KHACHHANG Khachhang=new KHACHHANG();
 
-        public LoyalCustomer(KHACHHANG khachhang)
+        public void DisableCustomer()
         {
-            InitializeComponent();
-
-            this.Khachhang = khachhang;
+            pnCreateCustomer.Visible=false;
+            pnUpdateCustomer.Visible = true;
 
             btnAdd.Visible = false;
             btnNew.Visible = false;
+            btnUpdate.Visible = true;
+
             txtbxRePassword.Visible = false;
-            lblRePeassword.Visible = false;
-            pnCreateCustomer.Visible = false;
+            lblRePassword.Visible = false;
+
+            btnChangePassword.Visible = true;
+            txtbxNewPassword.Visible = false;
+        }
+
+        public LoyalCustomer(KHACHHANG khachhang)
+        {
+            InitializeComponent();
+            this.Khachhang = khachhang;
+
+            DisableCustomer();
             LoadData();
         }
 
@@ -65,7 +92,7 @@ namespace Tour
 
             }
             lblNotes.Text = "********" + last3word;
-
+            txtbxPassword.Text = "";
         }
 
         public bool ChechData()
@@ -98,6 +125,8 @@ namespace Tour
             }
             return true;
         }
+
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -136,33 +165,47 @@ namespace Tour
         {
             Clear();
         }
+        public void UpdateCustomer()
+        {
+            Khachhang.TENKH = tbName.Text;
+            Khachhang.SDT = tbTelephone.Text;
+            Khachhang.CMND = tbCMND.Text;
+            Khachhang.DIACHI = tbAddress.Text;
+            Khachhang.MAIL = tbEmail.Text;
+            Khachhang.PICBI = img_data;
+            if (RdMale.Checked == true)
+            {
+                Khachhang.GIOITINH = "Male";
+            }
+            else
+            {
+                Khachhang.GIOITINH = "Female";
 
+            }
+
+            ACCOUNT acc = DataProvider.Ins.DB.ACCOUNTs.Where(x => x.ID == Khachhang.IDACC && x.IsDeleted == false).FirstOrDefault();
+
+            acc.ACC = tbEmail.Text.Trim();
+            if (txtbxNewPassword.Visible == true)
+            {
+                if (txtbxNewPassword.Text.Length <= 5)
+                {
+                    MessageBox.Show("Password have to be over 5 letters");
+                    return;
+                }
+                acc.PASS =Converter.Instance.EncryptPassword( txtbxNewPassword.Text.Trim());
+                DisableChangePass();
+            }
+
+            DataProvider.Ins.DB.SaveChanges();
+            MessageBox.Show("Update success");
+            LoadData();
+        }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (ChechDataUpdate())
             {
-                Khachhang.TENKH = tbName.Text;
-                Khachhang.SDT = tbTelephone.Text;
-                Khachhang.CMND = tbCMND.Text;
-                Khachhang.DIACHI = tbAddress.Text;
-                Khachhang.MAIL = tbEmail.Text;
-                Khachhang.PICBI = img_data;
-                if (RdMale.Checked == true)
-                {
-                    Khachhang.GIOITINH = "Male";
-                }
-                else
-                {
-                    Khachhang.GIOITINH = "Female";
-
-                }
-
-                ACCOUNT acc = DataProvider.Ins.DB.ACCOUNTs.Where(x => x.ID == Khachhang.IDACC && x.IsDeleted == false).FirstOrDefault();
-
-                acc.ACC = tbEmail.Text;
-
-                DataProvider.Ins.DB.SaveChanges();
-                MessageBox.Show("Update success");
+                UpdateCustomer();
             }
 
         }
@@ -206,6 +249,45 @@ namespace Tour
             {
                 e.Handled = true;
             }
+        }
+
+
+
+        public void EnableChangePass()
+        {
+            lblRePassword.Visible = !lblRePassword.Visible;
+            txtbxRePassword.Visible = !txtbxRePassword.Visible;
+            txtbxNewPassword.Visible = !txtbxNewPassword.Visible;
+
+            if (lblNotes.Text.CompareTo("Enter new password") != 0)
+            {
+                lblNotes.Text = "Enter new password";
+
+            }
+            else
+            {
+                string password = Converter.Instance.DecryptEncrypt(this.Khachhang.ACCOUNT.PASS);
+
+                string last3word = "";
+                if (password.Length >= 3)
+                {
+                    last3word = password.Substring(password.Length - 3);
+
+                }
+                lblNotes.Text = "********" + last3word;
+            }
+        }
+
+        public void DisableChangePass()
+        {
+            lblRePassword.Visible = false;
+            txtbxRePassword.Visible = false;
+            txtbxNewPassword.Visible =false;
+        }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            EnableChangePass();
         }
     }
 }

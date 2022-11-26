@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tour.Model;
 
 namespace Tour
 {
@@ -18,12 +19,63 @@ namespace Tour
             InitializeComponent();
             CustomizeDesign();
         }
+
+        public SelectForm(NHANVIEN nhanvien)
+        {
+            InitializeComponent();
+            CustomizeDesign();
+
+            if(nhanvien.ACCOUNT.ACCROLE.CompareTo("Manager") == 0)
+            {
+                CustomizeDesignManager();
+
+            }
+            else if(nhanvien.ACCOUNT.ACCROLE.CompareTo("Employee") == 0)
+            {
+                CustomizeDesignEmployee();
+
+            }
+
+        }
+
         private void CustomizeDesign()
         {
             panelManage.Visible = false;
             panel_Help.Visible = false;
             panel_staff.Visible = false;
+
+
+
         }
+
+        private void CustomizeDesignManager()
+        {
+
+
+
+        }
+
+        private void CustomizeDesignEmployee()
+        {
+
+            //btndataCus.Visible = false;
+            //btnEmployyeDatabase.Visible = false;
+            //btnMission.Visible = false;
+            //btnStatistics.Visible = false;
+
+            panelManage.Controls.Remove(btndataCus);
+            btndataCus.Dispose();
+            panelManage.Controls.Remove(btnEmployyeDatabase);
+            btnEmployyeDatabase.Dispose();
+            panelManage.Controls.Remove(btnMission);
+            btnMission.Dispose();
+            panelManage.Controls.Remove(btnStatistics);
+            btnStatistics.Dispose();
+
+            panelManage.Height =60*8;
+
+        }
+
         private void hideSubmenu()
         {
             if (panelManage.Visible == true)
@@ -46,9 +98,9 @@ namespace Tour
 
         private void changeColorButton(Button button)
         {
-            for(int i = 0; i < listBtn.Count; i++)
+            for (int i = 0; i < listBtn.Count; i++)
             {
-                if(button == listBtn[i])
+                if (button == listBtn[i])
                 {
                     listBtn[i].BackColor = Color.Silver;
                 }
@@ -64,7 +116,6 @@ namespace Tour
             {
                 label1.Text = "WELCOME: " + Properties.Settings.Default.UserName;
             }
-            listBtn.Add(btnTour);
             listBtn.Add(btnTicket);
             listBtn.Add(btnRoute);
             listBtn.Add(btndataCus);
@@ -72,21 +123,21 @@ namespace Tour
             listBtn.Add(btnHotelDatabase);
             listBtn.Add(btnVehicalDatabase);
             listBtn.Add(btnEmployyeDatabase);
-            listBtn.Add(button8);
-            listBtn.Add(button9);
-            listBtn.Add(button10);
-            listBtn.Add(button11);
-            listBtn.Add(button12);
+            listBtn.Add(btnMission);
+            listBtn.Add(btnGroup);
+            listBtn.Add(btnCustomer);
+            listBtn.Add(btnLoyalCustomer);
+            listBtn.Add(btnStatistics);
         }
-        private int image =0;
+        private int image = 0;
         private void loadimage()
         {
-            if(image==5)
+            if (image == 5)
             {
                 image = 0;
             }
-            
-            switch(image)
+
+            switch (image)
             {
                 case 0:
                     picBackground.Image = Properties.Resources._0;
@@ -181,17 +232,6 @@ namespace Tour
             this.WindowState = FormWindowState.Minimized;
         }
         //Manage
-        private void btnTour_Click(object sender, EventArgs e)
-        {
-            this.panel4.Controls.Clear();
-            changeColorButton(btnTour);
-            Route route = new Route() { TopLevel = false, TopMost = true };
-            panel1.Visible = false;
-            picBackground.Visible = false;
-            route.StartPosition = FormStartPosition.CenterParent;
-            this.panel4.Controls.Add(route);
-            route.Show();
-        }
         private void btnRoute_Click(object sender, EventArgs e)
         {
             this.panel4.Controls.Clear();
@@ -232,6 +272,7 @@ namespace Tour
             Location h = new Location() { TopLevel = false, TopMost = true };
             panel1.Visible = false;
             picBackground.Visible = false;
+            h.StartPosition = FormStartPosition.CenterParent;
             this.panel4.Controls.Add(h);
             h.Show();
         }
@@ -271,10 +312,10 @@ namespace Tour
             h.Show();
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void btnMission_Click(object sender, EventArgs e)
         {
             this.panel4.Controls.Clear();
-            changeColorButton(button8);
+            changeColorButton(btnMission);
             NhiemVuTrongDoan h = new NhiemVuTrongDoan() { TopLevel = false, TopMost = true };
             panel1.Visible = false;
             picBackground.Visible = false;
@@ -282,10 +323,10 @@ namespace Tour
             h.Show();
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void btnGroup_Click(object sender, EventArgs e)
         {
             this.panel4.Controls.Clear();
-            changeColorButton(button9);
+            changeColorButton(btnGroup);
             DoanDuLich h = new DoanDuLich() { TopLevel = false, TopMost = true };
             panel1.Visible = false;
             picBackground.Visible = false;
@@ -293,10 +334,10 @@ namespace Tour
             h.Show();
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void btnCustomer_Click(object sender, EventArgs e)
         {
             this.panel4.Controls.Clear();
-            changeColorButton(button10);
+            changeColorButton(btnCustomer);
             KhachHang h = new KhachHang() { TopLevel = false, TopMost = true };
             panel1.Visible = false;
             picBackground.Visible = false;
@@ -304,21 +345,10 @@ namespace Tour
             h.Show();
         }
 
-        private void button11_Click(object sender, EventArgs e)
+        private void btnLoyalCustomer_Click(object sender, EventArgs e)
         {
             this.panel4.Controls.Clear();
-            changeColorButton(button11);
-            ManageBanner h = new ManageBanner() { TopLevel = false, TopMost = true };
-            panel1.Visible = false;
-            picBackground.Visible = false;
-            this.panel4.Controls.Add(h);
-            h.Show();
-        }
-
-        private void button12_Click(object sender, EventArgs e)
-        {
-            this.panel4.Controls.Clear();
-            changeColorButton(button12);
+            changeColorButton(btnLoyalCustomer);
             LoyalCustomer h = new LoyalCustomer() { TopLevel = false, TopMost = true };
             panel1.Visible = false;
             picBackground.Visible = false;
@@ -326,9 +356,15 @@ namespace Tour
             h.Show();
         }
 
-        private void picBackground_Click(object sender, EventArgs e)
+        private void btnStatistics_Click(object sender, EventArgs e)
         {
-
+            this.panel4.Controls.Clear();
+            changeColorButton(btnStatistics);
+            ManageBanner h = new ManageBanner() { TopLevel = false, TopMost = true };
+            panel1.Visible = false;
+            picBackground.Visible = false;
+            this.panel4.Controls.Add(h);
+            h.Show();
         }
     }
 }

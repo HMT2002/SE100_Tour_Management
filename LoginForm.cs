@@ -72,7 +72,6 @@ namespace Tour
                 ACCOUNT acc = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false && x.ACCROLE == "Customer")).SingleOrDefault();
                 if (acc != null)
                 {
-                    MessageBox.Show("Login as customer!");
                     KHACHHANG kh = DataProvider.Ins.DB.KHACHHANGs.Where(x => (x.IDACC == acc.ID&&x.IsDeleted==false )).SingleOrDefault();
                     LoyalCustomer menuF = new LoyalCustomer(kh);
                     this.Hide();
@@ -108,11 +107,12 @@ namespace Tour
                     Properties.Settings.Default.CurUserId = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().ACC;
 
                     Properties.Settings.Default.Save();
-                    SelectForm menuF = new SelectForm();
+                    SelectForm menuF = new SelectForm(DataProvider.Ins.DB.NHANVIENs.Where(x => x.ACCOUNT.ACC == emailtxb.Text).FirstOrDefault());
                     this.Hide();
                     menuF.ShowDialog();
                     this.Show();
                 }
+
                 else
                 {
                     MessageBox.Show("Wrong email or password!!!!");
@@ -193,34 +193,19 @@ namespace Tour
 
         }
 
-        private void passwordtxb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSearch_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void cbGuest_CheckedChanged(object sender, EventArgs e)
         {
             if (cbGuest.Checked == true)
             {
                 Clear();
-                label3.Visible = false;
+                label3.Visible = true;
                 registaccountlb.Visible = false;
             }
             else
             {
                 LoginForm_Load(sender, e);
 
-                label3.Visible = true;
+                label3.Visible = false;
                 registaccountlb.Visible = true;
 
             }

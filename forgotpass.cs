@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
 using System.Data.SqlClient;
+using Tour.Model;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using Tour.Utils;
 
 namespace Tour
 {
@@ -45,11 +48,36 @@ namespace Tour
         }
         private void sendbtn_Click(object sender, EventArgs e)
         {
-            string query = "Select * from User Where Email ='" + emailtxb.Text.Trim() + "'";
-            label2.Visible = true;
-            codetxb.Visible = true;
-            verifybtn.Visible = true;
-            sendbtn.Visible = false;
+            //string query = "Select * from User Where Email ='" + emailtxb.Text.Trim() + "'";
+
+            if (emailtxb.Text.Length > 0)
+            {
+                if (DataProvider.Ins.DB.ACCOUNTs.Where(x => x.ACC == emailtxb.Text.Trim()).FirstOrDefault() != null)
+                {
+                    string email = emailtxb.Text.Trim().ToString();
+                    string from, pass, messageBody;
+                    Random random = new Random();
+                    randomcode = Converter.Instance.RandomString2(5);
+                    List<string> listto = new List<string>();
+                    listto.Add(email);
+
+                    try
+                    {
+                        Utils.Features.Instance.SendMail(listto, "Re-activate code","Re-activate code is: "+ randomcode);
+                        MessageBox.Show("Code sent!");
+                        label2.Visible = true;
+                        codetxb.Visible = true;
+                        verifybtn.Visible = true;
+                        sendbtn.Visible = false;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Please check your internet connection. Error: " + ex.Message);
+                    }
+                }
+
+            }
+
         }
 
         private void verifybtn_Click(object sender, EventArgs e)
@@ -57,7 +85,7 @@ namespace Tour
             if (randomcode == (codetxb.Text).ToString())
             {
                 to = emailtxb.Text;
-                ChangePass change = new ChangePass();
+                ChangePass change = new ChangePass(DataProvider.Ins.DB.ACCOUNTs.Where(x => x.ACC == emailtxb.Text.Trim()).FirstOrDefault());
                 this.Close();
                 change.ShowDialog();
             }
@@ -91,11 +119,6 @@ namespace Tour
                     sendbtn.Enabled = true;
                 }
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

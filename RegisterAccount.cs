@@ -63,12 +63,22 @@ namespace Tour
                 SignUpbtn.Enabled = true;
                 try
                 {
-
-                    var nv = new NHANVIEN() { ID = randomcode,  TEN = txbHo.Text+" "+ txbTen.Text, SDT = txbSDT.Text, MAIL = txbGmail.Text,PICBI=img_data };
-                    var account = new ACCOUNT() { ACC = txbGmail.Text, PASS = Converter.Instance.EncryptPassword( (txbPass.Text)), ID = randomcode,IsDeleted=false,ACCROLE="Employee" };
+                    String IDACC = randomcode;
+                    var nv = new NHANVIEN() { 
+                        ID = randomcode,  
+                        TEN = txbHo.Text+" "+ txbTen.Text, 
+                        SDT = txbSDT.Text, 
+                        MAIL = txbGmail.Text,PICBI=img_data,
+                        IDACC = IDACC
+                    };
+                    var account = new ACCOUNT() { 
+                        ACC = txbGmail.Text, 
+                        PASS = Converter.Instance.EncryptPassword( (txbPass.Text)), 
+                        ID = IDACC,
+                        IsDeleted=false,ACCROLE="Employee" 
+                    };
                     DataProvider.Ins.DB.ACCOUNTs.Add(account);
                     DataProvider.Ins.DB.NHANVIENs.Add(nv);
-
                     DataProvider.Ins.DB.SaveChanges();
                     MessageBox.Show("SignUp success!!!");
                     Clear();
@@ -133,9 +143,7 @@ namespace Tour
                 if (rEMail.IsMatch(txbGmail.Text))
                 {
                     email = txbGmail.Text.ToString();
-                    string from, pass, messageBody;
-                    Random random = new Random();
-                    randomcode = Converter.Instance.RandomString(5);
+                    randomcode = Converter.Instance.RandomString2(5);
                     List<string> listto = new List<string>();
                     listto.Add(email);
                     //MailMessage message = new MailMessage();
@@ -154,8 +162,8 @@ namespace Tour
                     //smtp.Credentials = new NetworkCredential(from, pass);
                     try
                     {
-                        Utils.Features.Instance.SendMail(listto, "Verify code", randomcode);
-                        label12.Text = "Code send success!!!";
+                        Utils.Features.Instance.SendMail(listto, "Verify code","Verify code to register account: "+ randomcode);
+                        label12.Text = "Sent!!!";
                     }
                     catch (Exception ex)
                     {
@@ -188,6 +196,32 @@ namespace Tour
                 pcbxAvatar.Image = image;
 
             }
+        }
+
+        private void SignUpbtn_MouseHover(object sender, EventArgs e)
+        {
+            SignUpbtn.BackColor = Color.Green;
+            SignUpbtn.ForeColor = Color.White;
+            SignUpbtn.ShadowDecoration.Enabled = true;
+        }
+
+        private void SignUpbtn_MouseLeave(object sender, EventArgs e)
+        {
+            SignUpbtn.BackColor= Color.FromArgb(94, 148, 255);
+            SignUpbtn.ForeColor = Color.White;
+            SignUpbtn.ShadowDecoration.Enabled = false;
+        }
+
+        private void Cancelbtn_MouseHover(object sender, EventArgs e)
+        {
+            Cancelbtn.BackColor = Color.Red;
+            Cancelbtn.ForeColor = Color.White;
+        }
+
+        private void Cancelbtn_MouseLeave(object sender, EventArgs e)
+        {
+            Cancelbtn.BackColor = Color.Transparent;
+            Cancelbtn.ForeColor = Color.FromArgb(94, 148, 255);
         }
     }
 }

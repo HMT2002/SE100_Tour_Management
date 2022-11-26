@@ -52,7 +52,6 @@
             this.label1.Size = new System.Drawing.Size(72, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "Email";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -94,7 +93,6 @@
             this.codetxb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.codetxb.Font = new System.Drawing.Font("Times New Roman", 13.8F);
             this.codetxb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.codetxb.IconLeft = global::Tour.Properties.Resources.code;
             this.codetxb.IconLeftOffset = new System.Drawing.Point(10, 0);
             this.codetxb.Location = new System.Drawing.Point(131, 236);
             this.codetxb.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -120,7 +118,6 @@
             this.emailtxb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.emailtxb.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.emailtxb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.emailtxb.IconLeft = ((System.Drawing.Image)(resources.GetObject("emailtxb.IconLeft")));
             this.emailtxb.IconLeftOffset = new System.Drawing.Point(10, 0);
             this.emailtxb.Location = new System.Drawing.Point(131, 157);
             this.emailtxb.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -201,7 +198,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "forgotpass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "forgotpass";

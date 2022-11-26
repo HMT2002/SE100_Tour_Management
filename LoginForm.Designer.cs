@@ -38,6 +38,8 @@ namespace Tour
             this.label3 = new System.Windows.Forms.Label();
             this.cbGuest = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.emailtxb = new Guna.UI2.WinForms.Guna2TextBox();
+            this.passwordtxb = new Guna.UI2.WinForms.Guna2TextBox();
             this.loginbtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.forgetlb = new System.Windows.Forms.Label();
             this.registaccountlb = new System.Windows.Forms.Label();
@@ -45,10 +47,8 @@ namespace Tour
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.emailtxb = new Guna.UI2.WinForms.Guna2TextBox();
-            this.passwordtxb = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtbxSearchTicket = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -161,6 +161,55 @@ namespace Tour
             this.label2.TabIndex = 6;
             this.label2.Text = "Login";
             // 
+            // emailtxb
+            // 
+            this.emailtxb.BorderColor = System.Drawing.Color.Black;
+            this.emailtxb.BorderRadius = 8;
+            this.emailtxb.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.emailtxb.DefaultText = "";
+            this.emailtxb.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.emailtxb.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.emailtxb.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.emailtxb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.emailtxb.FillColor = System.Drawing.SystemColors.ControlLightLight;
+            this.emailtxb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.emailtxb.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.emailtxb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.emailtxb.IconLeftOffset = new System.Drawing.Point(10, 0);
+            this.emailtxb.Location = new System.Drawing.Point(56, 111);
+            this.emailtxb.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.emailtxb.Name = "emailtxb";
+            this.emailtxb.PasswordChar = '\0';
+            this.emailtxb.PlaceholderText = "Email";
+            this.emailtxb.SelectedText = "";
+            this.emailtxb.Size = new System.Drawing.Size(353, 44);
+            this.emailtxb.TabIndex = 19;
+            // 
+            // passwordtxb
+            // 
+            this.passwordtxb.BorderColor = System.Drawing.Color.Black;
+            this.passwordtxb.BorderRadius = 8;
+            this.passwordtxb.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.passwordtxb.DefaultText = "";
+            this.passwordtxb.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.passwordtxb.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.passwordtxb.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.passwordtxb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.passwordtxb.FillColor = System.Drawing.SystemColors.ControlLightLight;
+            this.passwordtxb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.passwordtxb.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.passwordtxb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.passwordtxb.IconLeftOffset = new System.Drawing.Point(10, 0);
+            this.passwordtxb.Location = new System.Drawing.Point(56, 180);
+            this.passwordtxb.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.passwordtxb.Name = "passwordtxb";
+            this.passwordtxb.PasswordChar = '●';
+            this.passwordtxb.PlaceholderText = "Password";
+            this.passwordtxb.SelectedText = "";
+            this.passwordtxb.Size = new System.Drawing.Size(353, 44);
+            this.passwordtxb.TabIndex = 20;
+            this.passwordtxb.UseSystemPasswordChar = true;
+            // 
             // loginbtn
             // 
             this.loginbtn.BorderRadius = 20;
@@ -265,67 +314,6 @@ namespace Tour
             this.label1.TabIndex = 29;
             this.label1.Text = "Search Ticket";
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(476, 1);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(438, 527);
-            this.guna2PictureBox1.TabIndex = 18;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // emailtxb
-            // 
-            this.emailtxb.BorderColor = System.Drawing.Color.Black;
-            this.emailtxb.BorderRadius = 8;
-            this.emailtxb.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.emailtxb.DefaultText = "";
-            this.emailtxb.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.emailtxb.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.emailtxb.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.emailtxb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.emailtxb.FillColor = System.Drawing.SystemColors.ControlLightLight;
-            this.emailtxb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.emailtxb.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.emailtxb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.emailtxb.IconLeft = ((System.Drawing.Image)(resources.GetObject("emailtxb.IconLeft")));
-            this.emailtxb.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.emailtxb.Location = new System.Drawing.Point(56, 111);
-            this.emailtxb.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.emailtxb.Name = "emailtxb";
-            this.emailtxb.PasswordChar = '\0';
-            this.emailtxb.PlaceholderText = "Email";
-            this.emailtxb.SelectedText = "";
-            this.emailtxb.Size = new System.Drawing.Size(353, 44);
-            this.emailtxb.TabIndex = 19;
-            // 
-            // passwordtxb
-            // 
-            this.passwordtxb.BorderColor = System.Drawing.Color.Black;
-            this.passwordtxb.BorderRadius = 8;
-            this.passwordtxb.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.passwordtxb.DefaultText = "";
-            this.passwordtxb.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.passwordtxb.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.passwordtxb.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.passwordtxb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.passwordtxb.FillColor = System.Drawing.SystemColors.ControlLightLight;
-            this.passwordtxb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.passwordtxb.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.passwordtxb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.passwordtxb.IconLeft = ((System.Drawing.Image)(resources.GetObject("passwordtxb.IconLeft")));
-            this.passwordtxb.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.passwordtxb.Location = new System.Drawing.Point(56, 180);
-            this.passwordtxb.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.passwordtxb.Name = "passwordtxb";
-            this.passwordtxb.PasswordChar = '●';
-            this.passwordtxb.PlaceholderText = "Password";
-            this.passwordtxb.SelectedText = "";
-            this.passwordtxb.Size = new System.Drawing.Size(353, 44);
-            this.passwordtxb.TabIndex = 20;
-            this.passwordtxb.UseSystemPasswordChar = true;
-            // 
             // txtbxSearchTicket
             // 
             this.txtbxSearchTicket.BorderRadius = 8;
@@ -346,6 +334,16 @@ namespace Tour
             this.txtbxSearchTicket.SelectedText = "";
             this.txtbxSearchTicket.Size = new System.Drawing.Size(283, 36);
             this.txtbxSearchTicket.TabIndex = 0;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::Tour.Properties.Resources.tour3;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(476, 1);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(438, 527);
+            this.guna2PictureBox1.TabIndex = 18;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // LoginForm
             // 

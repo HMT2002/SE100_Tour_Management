@@ -96,8 +96,6 @@ namespace Tour
             Clear();
         }
 
-
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -270,21 +268,6 @@ namespace Tour
             {
                 e.Handled = true;
             }
-        }
-
-        private void cbbxHotel_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pcbxLocation_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbboxProvince_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -18,6 +18,7 @@ namespace Tour.Model
         public ACCOUNT()
         {
             this.KHACHHANGs = new HashSet<KHACHHANG>();
+            this.NHANVIENs = new HashSet<NHANVIEN>();
         }
     
         public string ID { get; set; }
@@ -28,5 +29,7 @@ namespace Tour.Model
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KHACHHANG> KHACHHANGs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NHANVIEN> NHANVIENs { get; set; }
     }
 }
