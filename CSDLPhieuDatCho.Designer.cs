@@ -53,10 +53,6 @@ namespace Tour
             this.btnTraVe = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.btnDel = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.rdbForeign = new System.Windows.Forms.RadioButton();
-            this.rdbDomestic = new System.Windows.Forms.RadioButton();
-            this.label5 = new System.Windows.Forms.Label();
             this.tbICN = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -71,30 +67,13 @@ namespace Tour
             this.label6 = new System.Windows.Forms.Label();
             this.rdbFemale = new System.Windows.Forms.RadioButton();
             this.rdbMale = new System.Windows.Forms.RadioButton();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgvDatCho = new System.Windows.Forms.DataGridView();
             this.tbSearchTicket = new System.Windows.Forms.TextBox();
-            this.tbSearchResID = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.backbtn = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.dtpPassport = new System.Windows.Forms.DateTimePicker();
-            this.dtpVisa = new System.Windows.Forms.DateTimePicker();
-            this.panelTime = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.IDVE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENKHACHHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENTOUR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Information.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuanLy)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatCho)).BeginInit();
-            this.panelTime.SuspendLayout();
             this.SuspendLayout();
             // 
             // Information
@@ -308,7 +287,6 @@ namespace Tour
             this.groupBox1.Controls.Add(this.btnTraVe);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.btnDel);
-            this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Controls.Add(this.tbICN);
             this.groupBox1.Controls.Add(this.btnUpdate);
             this.groupBox1.Controls.Add(this.label4);
@@ -320,11 +298,11 @@ namespace Tour
             this.groupBox1.Controls.Add(this.tbID);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Location = new System.Drawing.Point(356, 150);
+            this.groupBox1.Location = new System.Drawing.Point(19, 150);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(580, 211);
+            this.groupBox1.Size = new System.Drawing.Size(1106, 211);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
@@ -370,54 +348,6 @@ namespace Tour
             this.btnDel.Text = "Delete";
             this.btnDel.UseVisualStyleBackColor = true;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.rdbForeign);
-            this.panel2.Controls.Add(this.rdbDomestic);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(311, 60);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(248, 37);
-            this.panel2.TabIndex = 17;
-            // 
-            // rdbForeign
-            // 
-            this.rdbForeign.AutoSize = true;
-            this.rdbForeign.Location = new System.Drawing.Point(169, 8);
-            this.rdbForeign.Margin = new System.Windows.Forms.Padding(2);
-            this.rdbForeign.Name = "rdbForeign";
-            this.rdbForeign.Size = new System.Drawing.Size(73, 23);
-            this.rdbForeign.TabIndex = 2;
-            this.rdbForeign.TabStop = true;
-            this.rdbForeign.Text = "Foreign";
-            this.rdbForeign.UseVisualStyleBackColor = true;
-            this.rdbForeign.CheckedChanged += new System.EventHandler(this.rdbForeign_CheckedChanged);
-            // 
-            // rdbDomestic
-            // 
-            this.rdbDomestic.AutoSize = true;
-            this.rdbDomestic.Location = new System.Drawing.Point(76, 8);
-            this.rdbDomestic.Margin = new System.Windows.Forms.Padding(2);
-            this.rdbDomestic.Name = "rdbDomestic";
-            this.rdbDomestic.Size = new System.Drawing.Size(84, 23);
-            this.rdbDomestic.TabIndex = 1;
-            this.rdbDomestic.TabStop = true;
-            this.rdbDomestic.Text = "Domestic";
-            this.rdbDomestic.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 10);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 19);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Tourist";
             // 
             // tbICN
             // 
@@ -585,38 +515,6 @@ namespace Tour
             this.rdbMale.Text = "Male";
             this.rdbMale.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.dgvDatCho);
-            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(9, 150);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(318, 211);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Reservations";
-            // 
-            // dgvDatCho
-            // 
-            this.dgvDatCho.AllowUserToAddRows = false;
-            this.dgvDatCho.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvDatCho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatCho.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDVE,
-            this.TENKHACHHANG,
-            this.TENTOUR});
-            this.dgvDatCho.Location = new System.Drawing.Point(5, 18);
-            this.dgvDatCho.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvDatCho.Name = "dgvDatCho";
-            this.dgvDatCho.ReadOnly = true;
-            this.dgvDatCho.RowHeadersWidth = 51;
-            this.dgvDatCho.RowTemplate.Height = 24;
-            this.dgvDatCho.Size = new System.Drawing.Size(304, 184);
-            this.dgvDatCho.TabIndex = 0;
-            // 
             // tbSearchTicket
             // 
             this.tbSearchTicket.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -626,16 +524,6 @@ namespace Tour
             this.tbSearchTicket.TabIndex = 6;
             this.tbSearchTicket.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.tbSearchTicket.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbSearchTicket_KeyPress);
-            // 
-            // tbSearchResID
-            // 
-            this.tbSearchResID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSearchResID.Location = new System.Drawing.Point(155, 128);
-            this.tbSearchResID.Name = "tbSearchResID";
-            this.tbSearchResID.Size = new System.Drawing.Size(164, 26);
-            this.tbSearchResID.TabIndex = 8;
-            this.tbSearchResID.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            this.tbSearchResID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbSearchResID_KeyPress);
             // 
             // label9
             // 
@@ -648,33 +536,6 @@ namespace Tour
             this.label9.TabIndex = 13;
             this.label9.Text = "Ticket search";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(197, 107);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(123, 19);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "Reservation search";
-            // 
-            // backbtn
-            // 
-            this.backbtn.BackColor = System.Drawing.Color.Transparent;
-            this.backbtn.BackgroundImage = global::Tour.Properties.Resources.Btn2;
-            this.backbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.backbtn.FlatAppearance.BorderSize = 0;
-            this.backbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backbtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backbtn.Location = new System.Drawing.Point(9, 13);
-            this.backbtn.Name = "backbtn";
-            this.backbtn.Size = new System.Drawing.Size(95, 37);
-            this.backbtn.TabIndex = 15;
-            this.backbtn.Text = "Back";
-            this.backbtn.UseVisualStyleBackColor = false;
-            this.backbtn.Click += new System.EventHandler(this.backbtn_Click);
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -683,90 +544,9 @@ namespace Tour
             this.label11.Location = new System.Drawing.Point(280, 35);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(582, 36);
+            this.label11.Size = new System.Drawing.Size(290, 36);
             this.label11.TabIndex = 16;
-            this.label11.Text = "MANAGE RESERVATION AND TICKETS";
-            // 
-            // dtpPassport
-            // 
-            this.dtpPassport.Location = new System.Drawing.Point(64, 34);
-            this.dtpPassport.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpPassport.Name = "dtpPassport";
-            this.dtpPassport.Size = new System.Drawing.Size(120, 20);
-            this.dtpPassport.TabIndex = 21;
-            // 
-            // dtpVisa
-            // 
-            this.dtpVisa.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpVisa.Location = new System.Drawing.Point(64, 2);
-            this.dtpVisa.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpVisa.Name = "dtpVisa";
-            this.dtpVisa.Size = new System.Drawing.Size(120, 21);
-            this.dtpVisa.TabIndex = 22;
-            // 
-            // panelTime
-            // 
-            this.panelTime.BackColor = System.Drawing.Color.Transparent;
-            this.panelTime.Controls.Add(this.label12);
-            this.panelTime.Controls.Add(this.label8);
-            this.panelTime.Controls.Add(this.dtpVisa);
-            this.panelTime.Controls.Add(this.dtpPassport);
-            this.panelTime.Location = new System.Drawing.Point(941, 222);
-            this.panelTime.Margin = new System.Windows.Forms.Padding(2);
-            this.panelTime.Name = "panelTime";
-            this.panelTime.Size = new System.Drawing.Size(191, 60);
-            this.panelTime.TabIndex = 24;
-            this.panelTime.Visible = false;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(2, 5);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(61, 17);
-            this.label12.TabIndex = 24;
-            this.label12.Text = "Visa Exp";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(1, 35);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 17);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Pass Exp";
-            // 
-            // IDVE
-            // 
-            this.IDVE.DataPropertyName = "IDVE";
-            this.IDVE.HeaderText = "Reservation ID";
-            this.IDVE.MinimumWidth = 6;
-            this.IDVE.Name = "IDVE";
-            this.IDVE.ReadOnly = true;
-            this.IDVE.Width = 125;
-            // 
-            // TENKHACHHANG
-            // 
-            this.TENKHACHHANG.DataPropertyName = "TENKHACHHANG";
-            this.TENKHACHHANG.HeaderText = "Name";
-            this.TENKHACHHANG.MinimumWidth = 6;
-            this.TENKHACHHANG.Name = "TENKHACHHANG";
-            this.TENKHACHHANG.ReadOnly = true;
-            this.TENKHACHHANG.Width = 125;
-            // 
-            // TENTOUR
-            // 
-            this.TENTOUR.DataPropertyName = "TENTOUR";
-            this.TENTOUR.HeaderText = "Tour ID";
-            this.TENTOUR.MinimumWidth = 6;
-            this.TENTOUR.Name = "TENTOUR";
-            this.TENTOUR.ReadOnly = true;
-            this.TENTOUR.Width = 125;
+            this.label11.Text = "MANAGE TICKETS";
             // 
             // CSDLPhieuDatCho
             // 
@@ -775,14 +555,9 @@ namespace Tour
             this.BackgroundImage = global::Tour.Properties.Resources.Tour1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1148, 677);
-            this.Controls.Add(this.panelTime);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.backbtn);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.tbSearchResID);
             this.Controls.Add(this.tbSearchTicket);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Information);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -796,14 +571,8 @@ namespace Tour
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuanLy)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatCho)).EndInit();
-            this.panelTime.ResumeLayout(false);
-            this.panelTime.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -826,27 +595,13 @@ namespace Tour
         private System.Windows.Forms.RadioButton rdbMale;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.TextBox tbICN;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton rdbForeign;
-        private System.Windows.Forms.RadioButton rdbDomestic;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dgvDatCho;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tbSearchTicket;
-        private System.Windows.Forms.TextBox tbSearchResID;
         private System.Windows.Forms.Button btnTraVe;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button backbtn;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker dtpPassport;
-        private System.Windows.Forms.DateTimePicker dtpVisa;
-        private System.Windows.Forms.Panel panelTime;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDuKhach;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaChuyen;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaVe;
@@ -864,8 +619,5 @@ namespace Tour
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaVe;
         private System.Windows.Forms.DataGridViewTextBoxColumn LePhiHoanTra;
         private System.Windows.Forms.DataGridViewTextBoxColumn TienHoanTra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDVE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENKHACHHANG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENTOUR;
     }
 }

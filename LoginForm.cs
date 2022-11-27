@@ -12,6 +12,7 @@ using System.Security.Cryptography;
 using System.Threading;
 using Tour.Model;
 using Tour.Utils;
+using Tour.CrystalReport;
 
 namespace Tour
 {
@@ -175,15 +176,25 @@ namespace Tour
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string ticket_id =  txtbxSearchTicket.Text;
-            if (DataProvider.Ins.DB.VEs.Where(x => (x.ID == ticket_id && x.IsDeleted == false)).SingleOrDefault() == null)
+            VE ve = DataProvider.Ins.DB.VEs.Where(x => (x.ID == ticket_id && x.IsDeleted == false)).SingleOrDefault();
+            if (ve == null)
             {
                 MessageBox.Show("Số vé không tồn tại!");
                 return;
             }
-            SearchTicket f = new SearchTicket(DataProvider.Ins.DB.VEs.Where(x => (x.ID == ticket_id && x.IsDeleted == false)).SingleOrDefault());
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+
+            using (fPrint f = new fPrint(ve))
+            {
+                rptTicket crys = new rptTicket();
+                crys.Load(@"rptTicket.rep");
+
+                f.rptViewer.ReportSource = crys;
+                f.rptViewer.Refresh();
+
+                f.rptViewer.SelectionFormula = "{VE.ID} = '" + ve.ID + "' ";
+
+                f.ShowDialog();
+            }
         }
 
         public void Clear()

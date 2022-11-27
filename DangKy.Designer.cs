@@ -32,37 +32,22 @@ namespace Tour
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangKy));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblCustomerDiscount = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblChooseCustomer = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.RdForeign = new System.Windows.Forms.RadioButton();
-            this.rdDomestic = new System.Windows.Forms.RadioButton();
             this.panel17 = new System.Windows.Forms.Panel();
             this.tbEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel16 = new System.Windows.Forms.Panel();
             this.tbTelephone = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
             this.tbAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel14 = new System.Windows.Forms.Panel();
             this.tbName = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.tbCMND = new Guna.UI2.WinForms.Guna2TextBox();
-            this.PnFore = new System.Windows.Forms.Panel();
-            this.VisaEXP = new System.Windows.Forms.DateTimePicker();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.PassEXP = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lb7 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.RdFmale = new System.Windows.Forms.RadioButton();
             this.RdMale = new System.Windows.Forms.RadioButton();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lb1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel25 = new System.Windows.Forms.Panel();
             this.tbTotal = new System.Windows.Forms.TextBox();
@@ -76,162 +61,129 @@ namespace Tour
             this.label17 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbTime = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.lbDate = new System.Windows.Forms.Label();
+            this.lblReciptPrice = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblReciptEndDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblReciptStartDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblReciptCustomerName = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblReciptGroupName = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblReciptTourName = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel15 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.label21 = new System.Windows.Forms.Label();
-            this.rtbreservation = new System.Windows.Forms.RichTextBox();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.rtbTicket = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.cbDes = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.panel26 = new System.Windows.Forms.Panel();
             this.cbGroup = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel22 = new System.Windows.Forms.Panel();
-            this.tbDuration = new System.Windows.Forms.TextBox();
-            this.panel21 = new System.Windows.Forms.Panel();
             this.tbDate = new System.Windows.Forms.TextBox();
-            this.panel18 = new System.Windows.Forms.Panel();
+            this.tbDuration = new System.Windows.Forms.TextBox();
+            this.cbDes = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btngotocsdl = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.backtotourbtn = new System.Windows.Forms.Button();
-            this.lbDate = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.btExit = new System.Windows.Forms.Button();
             this.btCreate = new System.Windows.Forms.Button();
-            this.btnGo = new System.Windows.Forms.Button();
-            this.lblCustomerDiscount = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.pcbxLogo = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lblReciptTicketID = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel17 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel1.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel10.SuspendLayout();
-            this.PnFore.SuspendLayout();
-            this.panel11.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel25.SuspendLayout();
             this.panel24.SuspendLayout();
             this.panel23.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel9.SuspendLayout();
+            this.guna2GradientPanel1.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.panel26.SuspendLayout();
-            this.panel22.SuspendLayout();
-            this.panel21.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.guna2HtmlLabel1);
+            this.panel1.Controls.Add(this.lblCustomerDiscount);
             this.panel1.Controls.Add(this.lblChooseCustomer);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.panel17);
             this.panel1.Controls.Add(this.panel16);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.panel15);
             this.panel1.Controls.Add(this.panel14);
             this.panel1.Controls.Add(this.panel10);
-            this.panel1.Controls.Add(this.PnFore);
             this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.lb1);
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(7, 80);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(302, 490);
+            this.panel1.Size = new System.Drawing.Size(302, 391);
             this.panel1.TabIndex = 1;
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(8, 345);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(184, 25);
+            this.guna2HtmlLabel1.TabIndex = 33;
+            this.guna2HtmlLabel1.Text = "Customer\'s Discount: ";
+            // 
+            // lblCustomerDiscount
+            // 
+            this.lblCustomerDiscount.BackColor = System.Drawing.Color.Transparent;
+            this.lblCustomerDiscount.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerDiscount.Location = new System.Drawing.Point(209, 345);
+            this.lblCustomerDiscount.Name = "lblCustomerDiscount";
+            this.lblCustomerDiscount.Size = new System.Drawing.Size(14, 25);
+            this.lblCustomerDiscount.TabIndex = 32;
+            this.lblCustomerDiscount.Text = "0";
             // 
             // lblChooseCustomer
             // 
+            this.lblChooseCustomer.AutoSize = false;
             this.lblChooseCustomer.BackColor = System.Drawing.Color.Transparent;
             this.lblChooseCustomer.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChooseCustomer.Location = new System.Drawing.Point(107, 22);
+            this.lblChooseCustomer.Location = new System.Drawing.Point(8, 22);
             this.lblChooseCustomer.Name = "lblChooseCustomer";
-            this.lblChooseCustomer.Size = new System.Drawing.Size(179, 21);
+            this.lblChooseCustomer.Size = new System.Drawing.Size(280, 21);
             this.lblChooseCustomer.TabIndex = 31;
-            this.lblChooseCustomer.Text = "Click to choose customer";
+            this.lblChooseCustomer.Text = "Click to choose registed customer";
+            this.lblChooseCustomer.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblChooseCustomer.Click += new System.EventHandler(this.lblChooseCustomer_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(2, 22);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 21);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "ID";
-            // 
-            // panel7
-            // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel7.Controls.Add(this.RdForeign);
-            this.panel7.Controls.Add(this.rdDomestic);
-            this.panel7.ForeColor = System.Drawing.Color.Black;
-            this.panel7.Location = new System.Drawing.Point(106, 309);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(184, 36);
-            this.panel7.TabIndex = 29;
-            // 
-            // RdForeign
-            // 
-            this.RdForeign.AutoSize = true;
-            this.RdForeign.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RdForeign.ForeColor = System.Drawing.Color.Black;
-            this.RdForeign.Location = new System.Drawing.Point(103, 2);
-            this.RdForeign.Margin = new System.Windows.Forms.Padding(2);
-            this.RdForeign.Name = "RdForeign";
-            this.RdForeign.Size = new System.Drawing.Size(73, 23);
-            this.RdForeign.TabIndex = 18;
-            this.RdForeign.Text = "Foreign";
-            this.RdForeign.UseVisualStyleBackColor = true;
-            // 
-            // rdDomestic
-            // 
-            this.rdDomestic.AutoSize = true;
-            this.rdDomestic.Checked = true;
-            this.rdDomestic.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdDomestic.ForeColor = System.Drawing.Color.Black;
-            this.rdDomestic.Location = new System.Drawing.Point(2, 1);
-            this.rdDomestic.Margin = new System.Windows.Forms.Padding(2);
-            this.rdDomestic.Name = "rdDomestic";
-            this.rdDomestic.Size = new System.Drawing.Size(84, 23);
-            this.rdDomestic.TabIndex = 17;
-            this.rdDomestic.TabStop = true;
-            this.rdDomestic.Text = "Domestic";
-            this.rdDomestic.UseVisualStyleBackColor = true;
-            this.rdDomestic.CheckedChanged += new System.EventHandler(this.rdIn_CheckedChanged);
             // 
             // panel17
             // 
             this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel17.Controls.Add(this.tbEmail);
-            this.panel17.Location = new System.Drawing.Point(105, 209);
+            this.panel17.Location = new System.Drawing.Point(4, 209);
             this.panel17.Margin = new System.Windows.Forms.Padding(2);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(183, 28);
+            this.panel17.Size = new System.Drawing.Size(284, 28);
             this.panel17.TabIndex = 28;
             // 
             // tbEmail
@@ -250,9 +202,10 @@ namespace Tour
             this.tbEmail.Margin = new System.Windows.Forms.Padding(4);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.PasswordChar = '\0';
-            this.tbEmail.PlaceholderText = "";
+            this.tbEmail.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.tbEmail.PlaceholderText = "Email";
             this.tbEmail.SelectedText = "";
-            this.tbEmail.Size = new System.Drawing.Size(183, 26);
+            this.tbEmail.Size = new System.Drawing.Size(282, 26);
             this.tbEmail.TabIndex = 30;
             this.tbEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbEmail_KeyPress);
             // 
@@ -260,10 +213,10 @@ namespace Tour
             // 
             this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel16.Controls.Add(this.tbTelephone);
-            this.panel16.Location = new System.Drawing.Point(106, 162);
+            this.panel16.Location = new System.Drawing.Point(6, 162);
             this.panel16.Margin = new System.Windows.Forms.Padding(2);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(183, 28);
+            this.panel16.Size = new System.Drawing.Size(283, 28);
             this.panel16.TabIndex = 27;
             // 
             // tbTelephone
@@ -283,44 +236,21 @@ namespace Tour
             this.tbTelephone.MaxLength = 13;
             this.tbTelephone.Name = "tbTelephone";
             this.tbTelephone.PasswordChar = '\0';
-            this.tbTelephone.PlaceholderText = "";
+            this.tbTelephone.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.tbTelephone.PlaceholderText = "Telephone";
             this.tbTelephone.SelectedText = "";
-            this.tbTelephone.Size = new System.Drawing.Size(182, 28);
+            this.tbTelephone.Size = new System.Drawing.Size(284, 28);
             this.tbTelephone.TabIndex = 30;
             this.tbTelephone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTelephone_KeyPress_1);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(2, 306);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 21);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Tourist";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(2, 255);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 21);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Gender";
             // 
             // panel15
             // 
             this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel15.Controls.Add(this.tbAddress);
-            this.panel15.Location = new System.Drawing.Point(107, 115);
+            this.panel15.Location = new System.Drawing.Point(8, 115);
             this.panel15.Margin = new System.Windows.Forms.Padding(2);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(183, 28);
+            this.panel15.Size = new System.Drawing.Size(282, 28);
             this.panel15.TabIndex = 26;
             // 
             // tbAddress
@@ -339,9 +269,10 @@ namespace Tour
             this.tbAddress.Margin = new System.Windows.Forms.Padding(6);
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.PasswordChar = '\0';
-            this.tbAddress.PlaceholderText = "";
+            this.tbAddress.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.tbAddress.PlaceholderText = "Address";
             this.tbAddress.SelectedText = "";
-            this.tbAddress.Size = new System.Drawing.Size(176, 27);
+            this.tbAddress.Size = new System.Drawing.Size(277, 27);
             this.tbAddress.TabIndex = 30;
             this.tbAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAddress_KeyPress);
             // 
@@ -349,10 +280,10 @@ namespace Tour
             // 
             this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel14.Controls.Add(this.tbName);
-            this.panel14.Location = new System.Drawing.Point(107, 68);
+            this.panel14.Location = new System.Drawing.Point(8, 68);
             this.panel14.Margin = new System.Windows.Forms.Padding(2);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(183, 28);
+            this.panel14.Size = new System.Drawing.Size(282, 28);
             this.panel14.TabIndex = 24;
             // 
             // tbName
@@ -371,17 +302,19 @@ namespace Tour
             this.tbName.Margin = new System.Windows.Forms.Padding(4);
             this.tbName.Name = "tbName";
             this.tbName.PasswordChar = '\0';
-            this.tbName.PlaceholderText = "";
+            this.tbName.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.tbName.PlaceholderText = "Name";
             this.tbName.SelectedText = "";
-            this.tbName.Size = new System.Drawing.Size(182, 26);
+            this.tbName.Size = new System.Drawing.Size(282, 26);
             this.tbName.TabIndex = 30;
+            this.tbName.TextChanged += new System.EventHandler(this.tbName_TextChanged);
             this.tbName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbName_KeyPress);
             // 
             // panel10
             // 
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel10.Controls.Add(this.tbCMND);
-            this.panel10.Location = new System.Drawing.Point(4, 361);
+            this.panel10.Location = new System.Drawing.Point(6, 309);
             this.panel10.Margin = new System.Windows.Forms.Padding(2);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(284, 27);
@@ -404,90 +337,12 @@ namespace Tour
             this.tbCMND.MaxLength = 13;
             this.tbCMND.Name = "tbCMND";
             this.tbCMND.PasswordChar = '\0';
-            this.tbCMND.PlaceholderText = "";
+            this.tbCMND.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.tbCMND.PlaceholderText = "Personal ID";
             this.tbCMND.SelectedText = "";
-            this.tbCMND.Size = new System.Drawing.Size(282, 27);
+            this.tbCMND.Size = new System.Drawing.Size(281, 27);
             this.tbCMND.TabIndex = 35;
             this.tbCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCMND_KeyPress);
-            // 
-            // PnFore
-            // 
-            this.PnFore.Controls.Add(this.VisaEXP);
-            this.PnFore.Controls.Add(this.panel12);
-            this.PnFore.Controls.Add(this.panel11);
-            this.PnFore.Controls.Add(this.label7);
-            this.PnFore.Controls.Add(this.lb7);
-            this.PnFore.Location = new System.Drawing.Point(-6, 401);
-            this.PnFore.Margin = new System.Windows.Forms.Padding(2);
-            this.PnFore.Name = "PnFore";
-            this.PnFore.Size = new System.Drawing.Size(295, 64);
-            this.PnFore.TabIndex = 21;
-            this.PnFore.Visible = false;
-            // 
-            // VisaEXP
-            // 
-            this.VisaEXP.CalendarFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VisaEXP.CustomFormat = "dd/MM/yyyy";
-            this.VisaEXP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VisaEXP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.VisaEXP.Location = new System.Drawing.Point(135, 37);
-            this.VisaEXP.Name = "VisaEXP";
-            this.VisaEXP.Size = new System.Drawing.Size(156, 26);
-            this.VisaEXP.TabIndex = 32;
-            // 
-            // panel12
-            // 
-            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel12.Location = new System.Drawing.Point(135, 37);
-            this.panel12.Margin = new System.Windows.Forms.Padding(2);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(157, 21);
-            this.panel12.TabIndex = 23;
-            // 
-            // panel11
-            // 
-            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel11.Controls.Add(this.PassEXP);
-            this.panel11.Location = new System.Drawing.Point(135, 6);
-            this.panel11.Margin = new System.Windows.Forms.Padding(2);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(157, 23);
-            this.panel11.TabIndex = 23;
-            // 
-            // PassEXP
-            // 
-            this.PassEXP.CalendarFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PassEXP.CustomFormat = "dd/MM/yyyy";
-            this.PassEXP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PassEXP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.PassEXP.Location = new System.Drawing.Point(-2, -2);
-            this.PassEXP.Name = "PassEXP";
-            this.PassEXP.Size = new System.Drawing.Size(156, 26);
-            this.PassEXP.TabIndex = 31;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(8, 35);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 21);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "Visa Exp";
-            // 
-            // lb7
-            // 
-            this.lb7.AutoSize = true;
-            this.lb7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb7.ForeColor = System.Drawing.Color.Black;
-            this.lb7.Location = new System.Drawing.Point(8, 6);
-            this.lb7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lb7.Name = "lb7";
-            this.lb7.Size = new System.Drawing.Size(111, 21);
-            this.lb7.TabIndex = 23;
-            this.lb7.Text = "Passport Exp";
             // 
             // panel6
             // 
@@ -495,10 +350,10 @@ namespace Tour
             this.panel6.Controls.Add(this.RdFmale);
             this.panel6.Controls.Add(this.RdMale);
             this.panel6.ForeColor = System.Drawing.Color.Black;
-            this.panel6.Location = new System.Drawing.Point(106, 254);
+            this.panel6.Location = new System.Drawing.Point(6, 254);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(184, 36);
+            this.panel6.Size = new System.Drawing.Size(284, 36);
             this.panel6.TabIndex = 19;
             // 
             // RdFmale
@@ -523,54 +378,6 @@ namespace Tour
             this.RdMale.Text = "Male";
             this.RdMale.UseVisualStyleBackColor = true;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(4, 209);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 21);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Email";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(2, 162);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 21);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Telephone";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(4, 115);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 21);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Address";
-            // 
-            // lb1
-            // 
-            this.lb1.AutoSize = true;
-            this.lb1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb1.ForeColor = System.Drawing.Color.Black;
-            this.lb1.Location = new System.Drawing.Point(3, 70);
-            this.lb1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lb1.Name = "lb1";
-            this.lb1.Size = new System.Drawing.Size(53, 21);
-            this.lb1.TabIndex = 0;
-            this.lb1.Text = "Name";
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.Control;
@@ -582,7 +389,7 @@ namespace Tour
             this.panel4.Controls.Add(this.label20);
             this.panel4.Controls.Add(this.label18);
             this.panel4.Controls.Add(this.label17);
-            this.panel4.Location = new System.Drawing.Point(320, 391);
+            this.panel4.Location = new System.Drawing.Point(320, 292);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(336, 179);
@@ -592,7 +399,7 @@ namespace Tour
             // 
             this.panel25.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel25.Controls.Add(this.tbTotal);
-            this.panel25.Location = new System.Drawing.Point(146, 123);
+            this.panel25.Location = new System.Drawing.Point(146, 114);
             this.panel25.Margin = new System.Windows.Forms.Padding(2);
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(180, 28);
@@ -613,7 +420,7 @@ namespace Tour
             // 
             this.panel24.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel24.Controls.Add(this.tbDiscount);
-            this.panel24.Location = new System.Drawing.Point(146, 72);
+            this.panel24.Location = new System.Drawing.Point(146, 63);
             this.panel24.Margin = new System.Windows.Forms.Padding(2);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(180, 28);
@@ -634,7 +441,7 @@ namespace Tour
             // 
             this.panel23.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel23.Controls.Add(this.tbPrice);
-            this.panel23.Location = new System.Drawing.Point(146, 23);
+            this.panel23.Location = new System.Drawing.Point(146, 14);
             this.panel23.Margin = new System.Windows.Forms.Padding(2);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(180, 28);
@@ -672,7 +479,7 @@ namespace Tour
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.Black;
-            this.label20.Location = new System.Drawing.Point(9, 123);
+            this.label20.Location = new System.Drawing.Point(9, 114);
             this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(48, 21);
@@ -684,7 +491,7 @@ namespace Tour
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(9, 72);
+            this.label18.Location = new System.Drawing.Point(9, 63);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(77, 21);
@@ -696,7 +503,7 @@ namespace Tour
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(9, 23);
+            this.label17.Location = new System.Drawing.Point(9, 14);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(48, 21);
@@ -713,30 +520,255 @@ namespace Tour
             this.lbTime.BackColor = System.Drawing.Color.Transparent;
             this.lbTime.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTime.ForeColor = System.Drawing.Color.Black;
-            this.lbTime.Location = new System.Drawing.Point(191, 11);
+            this.lbTime.Location = new System.Drawing.Point(807, 41);
             this.lbTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(106, 19);
+            this.lbTime.Size = new System.Drawing.Size(166, 37);
             this.lbTime.TabIndex = 6;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.guna2GradientPanel1);
             this.panel3.Controls.Add(this.label21);
-            this.panel3.Controls.Add(this.lbTime);
-            this.panel3.Controls.Add(this.rtbreservation);
             this.panel3.Location = new System.Drawing.Point(668, 80);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(317, 292);
+            this.panel3.Size = new System.Drawing.Size(317, 490);
             this.panel3.TabIndex = 9;
+            // 
+            // guna2GradientPanel1
+            // 
+            this.guna2GradientPanel1.BackColor = System.Drawing.Color.White;
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel14);
+            this.guna2GradientPanel1.Controls.Add(this.lblReciptTicketID);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel17);
+            this.guna2GradientPanel1.Controls.Add(this.lbDate);
+            this.guna2GradientPanel1.Controls.Add(this.lblReciptPrice);
+            this.guna2GradientPanel1.Controls.Add(this.lblReciptEndDate);
+            this.guna2GradientPanel1.Controls.Add(this.lblReciptStartDate);
+            this.guna2GradientPanel1.Controls.Add(this.lblReciptCustomerName);
+            this.guna2GradientPanel1.Controls.Add(this.lblReciptGroupName);
+            this.guna2GradientPanel1.Controls.Add(this.lblReciptTourName);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel15);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel13);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel12);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel11);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel10);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel9);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel8);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel7);
+            this.guna2GradientPanel1.Controls.Add(this.pcbxLogo);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel6);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel5);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel4);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel3);
+            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel2);
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(3, 43);
+            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(312, 445);
+            this.guna2GradientPanel1.TabIndex = 9;
+            // 
+            // lbDate
+            // 
+            this.lbDate.BackColor = System.Drawing.Color.Transparent;
+            this.lbDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.ForeColor = System.Drawing.Color.Black;
+            this.lbDate.Location = new System.Drawing.Point(43, 4);
+            this.lbDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbDate.Name = "lbDate";
+            this.lbDate.Size = new System.Drawing.Size(100, 20);
+            this.lbDate.TabIndex = 7;
+            // 
+            // lblReciptPrice
+            // 
+            this.lblReciptPrice.BackColor = System.Drawing.Color.Transparent;
+            this.lblReciptPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReciptPrice.Location = new System.Drawing.Point(75, 331);
+            this.lblReciptPrice.Name = "lblReciptPrice";
+            this.lblReciptPrice.Size = new System.Drawing.Size(60, 27);
+            this.lblReciptPrice.TabIndex = 21;
+            this.lblReciptPrice.Text = "-Price: ";
+            // 
+            // lblReciptEndDate
+            // 
+            this.lblReciptEndDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblReciptEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReciptEndDate.Location = new System.Drawing.Point(64, 290);
+            this.lblReciptEndDate.Name = "lblReciptEndDate";
+            this.lblReciptEndDate.Size = new System.Drawing.Size(36, 18);
+            this.lblReciptEndDate.TabIndex = 20;
+            this.lblReciptEndDate.Text = "-Date";
+            // 
+            // lblReciptStartDate
+            // 
+            this.lblReciptStartDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblReciptStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReciptStartDate.Location = new System.Drawing.Point(64, 266);
+            this.lblReciptStartDate.Name = "lblReciptStartDate";
+            this.lblReciptStartDate.Size = new System.Drawing.Size(36, 18);
+            this.lblReciptStartDate.TabIndex = 19;
+            this.lblReciptStartDate.Text = "-Date";
+            // 
+            // lblReciptCustomerName
+            // 
+            this.lblReciptCustomerName.BackColor = System.Drawing.Color.Transparent;
+            this.lblReciptCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReciptCustomerName.Location = new System.Drawing.Point(85, 242);
+            this.lblReciptCustomerName.Name = "lblReciptCustomerName";
+            this.lblReciptCustomerName.Size = new System.Drawing.Size(44, 18);
+            this.lblReciptCustomerName.TabIndex = 18;
+            this.lblReciptCustomerName.Text = "-Name";
+            // 
+            // lblReciptGroupName
+            // 
+            this.lblReciptGroupName.BackColor = System.Drawing.Color.Transparent;
+            this.lblReciptGroupName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReciptGroupName.Location = new System.Drawing.Point(59, 218);
+            this.lblReciptGroupName.Name = "lblReciptGroupName";
+            this.lblReciptGroupName.Size = new System.Drawing.Size(44, 18);
+            this.lblReciptGroupName.TabIndex = 17;
+            this.lblReciptGroupName.Text = "-Name";
+            // 
+            // lblReciptTourName
+            // 
+            this.lblReciptTourName.BackColor = System.Drawing.Color.Transparent;
+            this.lblReciptTourName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReciptTourName.Location = new System.Drawing.Point(56, 194);
+            this.lblReciptTourName.Name = "lblReciptTourName";
+            this.lblReciptTourName.Size = new System.Drawing.Size(44, 18);
+            this.lblReciptTourName.TabIndex = 16;
+            this.lblReciptTourName.Text = "-Name";
+            // 
+            // guna2HtmlLabel15
+            // 
+            this.guna2HtmlLabel15.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel15.Location = new System.Drawing.Point(95, 391);
+            this.guna2HtmlLabel15.Name = "guna2HtmlLabel15";
+            this.guna2HtmlLabel15.Size = new System.Drawing.Size(143, 31);
+            this.guna2HtmlLabel15.TabIndex = 15;
+            this.guna2HtmlLabel15.Text = "THANK YOU";
+            // 
+            // guna2HtmlLabel13
+            // 
+            this.guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel13.Location = new System.Drawing.Point(16, 331);
+            this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
+            this.guna2HtmlLabel13.Size = new System.Drawing.Size(53, 27);
+            this.guna2HtmlLabel13.TabIndex = 13;
+            this.guna2HtmlLabel13.Text = "Price: ";
+            // 
+            // guna2HtmlLabel12
+            // 
+            this.guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel12.Location = new System.Drawing.Point(64, 312);
+            this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
+            this.guna2HtmlLabel12.Size = new System.Drawing.Size(199, 15);
+            this.guna2HtmlLabel12.TabIndex = 12;
+            this.guna2HtmlLabel12.Text = "############################";
+            // 
+            // guna2HtmlLabel11
+            // 
+            this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel11.Location = new System.Drawing.Point(16, 290);
+            this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
+            this.guna2HtmlLabel11.Size = new System.Drawing.Size(23, 18);
+            this.guna2HtmlLabel11.TabIndex = 11;
+            this.guna2HtmlLabel11.Text = "To: ";
+            // 
+            // guna2HtmlLabel10
+            // 
+            this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel10.Location = new System.Drawing.Point(16, 266);
+            this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
+            this.guna2HtmlLabel10.Size = new System.Drawing.Size(37, 18);
+            this.guna2HtmlLabel10.TabIndex = 10;
+            this.guna2HtmlLabel10.Text = "From: ";
+            // 
+            // guna2HtmlLabel9
+            // 
+            this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(16, 242);
+            this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
+            this.guna2HtmlLabel9.Size = new System.Drawing.Size(63, 18);
+            this.guna2HtmlLabel9.TabIndex = 9;
+            this.guna2HtmlLabel9.Text = "Customer: ";
+            // 
+            // guna2HtmlLabel8
+            // 
+            this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(16, 218);
+            this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
+            this.guna2HtmlLabel8.Size = new System.Drawing.Size(43, 18);
+            this.guna2HtmlLabel8.TabIndex = 8;
+            this.guna2HtmlLabel8.Text = "Group: ";
+            // 
+            // guna2HtmlLabel7
+            // 
+            this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(16, 194);
+            this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
+            this.guna2HtmlLabel7.Size = new System.Drawing.Size(34, 18);
+            this.guna2HtmlLabel7.TabIndex = 7;
+            this.guna2HtmlLabel7.Text = "Tour: ";
+            // 
+            // guna2HtmlLabel6
+            // 
+            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(117, 52);
+            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(182, 18);
+            this.guna2HtmlLabel6.TabIndex = 4;
+            this.guna2HtmlLabel6.Text = "Mail: 20520850@gm.uit.edu.vn";
+            // 
+            // guna2HtmlLabel5
+            // 
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(180, 28);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(120, 18);
+            this.guna2HtmlLabel5.TabIndex = 3;
+            this.guna2HtmlLabel5.Text = "Tel: + 84-774623854";
+            // 
+            // guna2HtmlLabel4
+            // 
+            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(161, 4);
+            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(138, 18);
+            this.guna2HtmlLabel4.TabIndex = 2;
+            this.guna2HtmlLabel4.Text = "Thủ Đức City, Việt Nam";
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(118, 167);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(67, 22);
+            this.guna2HtmlLabel3.TabIndex = 1;
+            this.guna2HtmlLabel3.Text = "TICKET";
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(7, 4);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(35, 18);
+            this.guna2HtmlLabel2.TabIndex = 0;
+            this.guna2HtmlLabel2.Text = "Date: ";
             // 
             // label21
             // 
@@ -749,37 +781,6 @@ namespace Tour
             this.label21.Size = new System.Drawing.Size(67, 21);
             this.label21.TabIndex = 8;
             this.label21.Text = "Receipt";
-            // 
-            // rtbreservation
-            // 
-            this.rtbreservation.Location = new System.Drawing.Point(-2, 35);
-            this.rtbreservation.Margin = new System.Windows.Forms.Padding(2);
-            this.rtbreservation.Name = "rtbreservation";
-            this.rtbreservation.ReadOnly = true;
-            this.rtbreservation.Size = new System.Drawing.Size(316, 255);
-            this.rtbreservation.TabIndex = 0;
-            this.rtbreservation.Text = "";
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.Transparent;
-            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel9.Controls.Add(this.rtbTicket);
-            this.panel9.Location = new System.Drawing.Point(668, 391);
-            this.panel9.Margin = new System.Windows.Forms.Padding(2);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(316, 179);
-            this.panel9.TabIndex = 10;
-            // 
-            // rtbTicket
-            // 
-            this.rtbTicket.Location = new System.Drawing.Point(-2, -2);
-            this.rtbTicket.Margin = new System.Windows.Forms.Padding(2);
-            this.rtbTicket.Name = "rtbTicket";
-            this.rtbTicket.ReadOnly = true;
-            this.rtbTicket.Size = new System.Drawing.Size(316, 179);
-            this.rtbTicket.TabIndex = 0;
-            this.rtbTicket.Text = "";
             // 
             // label5
             // 
@@ -796,12 +797,11 @@ namespace Tour
             // 
             this.panel8.BackColor = System.Drawing.Color.Transparent;
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel8.Controls.Add(this.cbGroup);
+            this.panel8.Controls.Add(this.tbDate);
+            this.panel8.Controls.Add(this.tbDuration);
             this.panel8.Controls.Add(this.cbDes);
-            this.panel8.Controls.Add(this.panel26);
             this.panel8.Controls.Add(this.label9);
-            this.panel8.Controls.Add(this.panel22);
-            this.panel8.Controls.Add(this.panel21);
-            this.panel8.Controls.Add(this.panel18);
             this.panel8.Controls.Add(this.label19);
             this.panel8.Controls.Add(this.label11);
             this.panel8.Controls.Add(this.label16);
@@ -811,34 +811,8 @@ namespace Tour
             this.panel8.Location = new System.Drawing.Point(-2, -2);
             this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(336, 292);
+            this.panel8.Size = new System.Drawing.Size(336, 206);
             this.panel8.TabIndex = 6;
-            // 
-            // cbDes
-            // 
-            this.cbDes.BackColor = System.Drawing.Color.Transparent;
-            this.cbDes.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbDes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbDes.FocusedColor = System.Drawing.Color.Empty;
-            this.cbDes.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbDes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbDes.FormattingEnabled = true;
-            this.cbDes.ItemHeight = 20;
-            this.cbDes.Location = new System.Drawing.Point(147, 39);
-            this.cbDes.Name = "cbDes";
-            this.cbDes.Size = new System.Drawing.Size(177, 26);
-            this.cbDes.TabIndex = 34;
-            this.cbDes.SelectedValueChanged += new System.EventHandler(this.cbDes_SelectedValueChanged);
-            // 
-            // panel26
-            // 
-            this.panel26.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel26.Controls.Add(this.cbGroup);
-            this.panel26.Location = new System.Drawing.Point(146, 74);
-            this.panel26.Margin = new System.Windows.Forms.Padding(2);
-            this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(180, 28);
-            this.panel26.TabIndex = 33;
             // 
             // cbGroup
             // 
@@ -851,11 +825,49 @@ namespace Tour
             this.cbGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbGroup.FormattingEnabled = true;
             this.cbGroup.ItemHeight = 20;
-            this.cbGroup.Location = new System.Drawing.Point(-1, -1);
+            this.cbGroup.Location = new System.Drawing.Point(109, 75);
             this.cbGroup.Name = "cbGroup";
-            this.cbGroup.Size = new System.Drawing.Size(177, 26);
+            this.cbGroup.Size = new System.Drawing.Size(217, 26);
             this.cbGroup.TabIndex = 35;
             this.cbGroup.SelectedValueChanged += new System.EventHandler(this.cbGroup_SelectedValueChanged);
+            // 
+            // tbDate
+            // 
+            this.tbDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDate.Location = new System.Drawing.Point(107, 117);
+            this.tbDate.MaxLength = 20;
+            this.tbDate.Name = "tbDate";
+            this.tbDate.ReadOnly = true;
+            this.tbDate.Size = new System.Drawing.Size(220, 26);
+            this.tbDate.TabIndex = 7;
+            // 
+            // tbDuration
+            // 
+            this.tbDuration.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbDuration.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDuration.Location = new System.Drawing.Point(107, 161);
+            this.tbDuration.MaxLength = 20;
+            this.tbDuration.Name = "tbDuration";
+            this.tbDuration.ReadOnly = true;
+            this.tbDuration.Size = new System.Drawing.Size(220, 26);
+            this.tbDuration.TabIndex = 7;
+            // 
+            // cbDes
+            // 
+            this.cbDes.BackColor = System.Drawing.Color.Transparent;
+            this.cbDes.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbDes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDes.FocusedColor = System.Drawing.Color.Empty;
+            this.cbDes.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbDes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbDes.FormattingEnabled = true;
+            this.cbDes.ItemHeight = 20;
+            this.cbDes.Location = new System.Drawing.Point(109, 39);
+            this.cbDes.Name = "cbDes";
+            this.cbDes.Size = new System.Drawing.Size(217, 26);
+            this.cbDes.TabIndex = 34;
+            this.cbDes.SelectedValueChanged += new System.EventHandler(this.cbDes_SelectedValueChanged);
             // 
             // label9
             // 
@@ -868,57 +880,6 @@ namespace Tour
             this.label9.Size = new System.Drawing.Size(59, 21);
             this.label9.TabIndex = 32;
             this.label9.Text = "Group";
-            // 
-            // panel22
-            // 
-            this.panel22.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel22.Controls.Add(this.tbDuration);
-            this.panel22.Location = new System.Drawing.Point(144, 160);
-            this.panel22.Margin = new System.Windows.Forms.Padding(2);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(180, 28);
-            this.panel22.TabIndex = 31;
-            // 
-            // tbDuration
-            // 
-            this.tbDuration.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbDuration.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDuration.Location = new System.Drawing.Point(-2, 0);
-            this.tbDuration.MaxLength = 20;
-            this.tbDuration.Name = "tbDuration";
-            this.tbDuration.ReadOnly = true;
-            this.tbDuration.Size = new System.Drawing.Size(180, 26);
-            this.tbDuration.TabIndex = 7;
-            // 
-            // panel21
-            // 
-            this.panel21.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel21.Controls.Add(this.tbDate);
-            this.panel21.Location = new System.Drawing.Point(144, 116);
-            this.panel21.Margin = new System.Windows.Forms.Padding(2);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(180, 28);
-            this.panel21.TabIndex = 30;
-            // 
-            // tbDate
-            // 
-            this.tbDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDate.Location = new System.Drawing.Point(-2, 0);
-            this.tbDate.MaxLength = 20;
-            this.tbDate.Name = "tbDate";
-            this.tbDate.ReadOnly = true;
-            this.tbDate.Size = new System.Drawing.Size(180, 26);
-            this.tbDate.TabIndex = 7;
-            // 
-            // panel18
-            // 
-            this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel18.Location = new System.Drawing.Point(146, 38);
-            this.panel18.Margin = new System.Windows.Forms.Padding(2);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(180, 28);
-            this.panel18.TabIndex = 18;
             // 
             // label19
             // 
@@ -988,94 +949,20 @@ namespace Tour
             this.panel2.Location = new System.Drawing.Point(320, 80);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(336, 292);
+            this.panel2.Size = new System.Drawing.Size(336, 206);
             this.panel2.TabIndex = 2;
-            // 
-            // btngotocsdl
-            // 
-            this.btngotocsdl.BackColor = System.Drawing.Color.Transparent;
-            this.btngotocsdl.BackgroundImage = global::Tour.Properties.Resources.btn4;
-            this.btngotocsdl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btngotocsdl.FlatAppearance.BorderSize = 0;
-            this.btngotocsdl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btngotocsdl.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btngotocsdl.Location = new System.Drawing.Point(13, 577);
-            this.btngotocsdl.Name = "btngotocsdl";
-            this.btngotocsdl.Size = new System.Drawing.Size(219, 29);
-            this.btngotocsdl.TabIndex = 15;
-            this.btngotocsdl.Text = "Go to ticket database";
-            this.btngotocsdl.UseVisualStyleBackColor = false;
-            this.btngotocsdl.Click += new System.EventHandler(this.btngotocsdl_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.BackgroundImage = global::Tour.Properties.Resources.Tour1;
-            this.panel5.Controls.Add(this.backtotourbtn);
-            this.panel5.Controls.Add(this.lbDate);
-            this.panel5.Controls.Add(this.label22);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(984, 75);
-            this.panel5.TabIndex = 14;
-            // 
-            // backtotourbtn
-            // 
-            this.backtotourbtn.BackColor = System.Drawing.Color.Transparent;
-            this.backtotourbtn.BackgroundImage = global::Tour.Properties.Resources.Btn2;
-            this.backtotourbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.backtotourbtn.FlatAppearance.BorderSize = 0;
-            this.backtotourbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backtotourbtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backtotourbtn.Location = new System.Drawing.Point(7, 12);
-            this.backtotourbtn.Name = "backtotourbtn";
-            this.backtotourbtn.Size = new System.Drawing.Size(73, 38);
-            this.backtotourbtn.TabIndex = 8;
-            this.backtotourbtn.Text = "Back";
-            this.backtotourbtn.UseVisualStyleBackColor = false;
-            this.backtotourbtn.Click += new System.EventHandler(this.backtotourbtn_Click);
-            // 
-            // lbDate
-            // 
-            this.lbDate.BackColor = System.Drawing.Color.Transparent;
-            this.lbDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDate.ForeColor = System.Drawing.Color.Black;
-            this.lbDate.Location = new System.Drawing.Point(796, 46);
-            this.lbDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(186, 29);
-            this.lbDate.TabIndex = 7;
             // 
             // label22
             // 
             this.label22.BackColor = System.Drawing.Color.Transparent;
             this.label22.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.Red;
-            this.label22.Location = new System.Drawing.Point(251, 0);
+            this.label22.Location = new System.Drawing.Point(273, 3);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(502, 75);
             this.label22.TabIndex = 9;
             this.label22.Text = "TICKET REGISTER";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btExit
-            // 
-            this.btExit.BackColor = System.Drawing.Color.Transparent;
-            this.btExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btExit.BackgroundImage")));
-            this.btExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btExit.FlatAppearance.BorderSize = 0;
-            this.btExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btExit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btExit.ForeColor = System.Drawing.Color.Red;
-            this.btExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btExit.Location = new System.Drawing.Point(906, 576);
-            this.btExit.Margin = new System.Windows.Forms.Padding(2);
-            this.btExit.Name = "btExit";
-            this.btExit.Size = new System.Drawing.Size(67, 25);
-            this.btExit.TabIndex = 13;
-            this.btExit.Text = "EXIT";
-            this.btExit.UseVisualStyleBackColor = false;
-            this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
             // btCreate
             // 
@@ -1086,42 +973,72 @@ namespace Tour
             this.btCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCreate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCreate.ForeColor = System.Drawing.Color.Black;
-            this.btCreate.Location = new System.Drawing.Point(718, 576);
+            this.btCreate.Location = new System.Drawing.Point(720, 577);
             this.btCreate.Margin = new System.Windows.Forms.Padding(2);
             this.btCreate.Name = "btCreate";
-            this.btCreate.Size = new System.Drawing.Size(85, 25);
+            this.btCreate.Size = new System.Drawing.Size(127, 25);
             this.btCreate.TabIndex = 13;
             this.btCreate.Text = "CREATE";
             this.btCreate.UseVisualStyleBackColor = true;
             this.btCreate.Click += new System.EventHandler(this.btCreate_Click);
             // 
-            // btnGo
+            // btnClear
             // 
-            this.btnGo.BackColor = System.Drawing.Color.Transparent;
-            this.btnGo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGo.BackgroundImage")));
-            this.btnGo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGo.FlatAppearance.BorderSize = 0;
-            this.btnGo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGo.ForeColor = System.Drawing.Color.Black;
-            this.btnGo.Location = new System.Drawing.Point(807, 576);
-            this.btnGo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnGo.Name = "btnGo";
-            this.btnGo.Size = new System.Drawing.Size(95, 25);
-            this.btnGo.TabIndex = 13;
-            this.btnGo.Text = "MANAGE";
-            this.btnGo.UseVisualStyleBackColor = true;
-            this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
+            this.btnClear.BackColor = System.Drawing.Color.Transparent;
+            this.btnClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClear.BackgroundImage")));
+            this.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.Black;
+            this.btnClear.Location = new System.Drawing.Point(853, 577);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(119, 25);
+            this.btnClear.TabIndex = 13;
+            this.btnClear.Text = "CLEAR";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnGo_Click);
             // 
-            // lblCustomerDiscount
+            // pcbxLogo
             // 
-            this.lblCustomerDiscount.BackColor = System.Drawing.Color.Transparent;
-            this.lblCustomerDiscount.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomerDiscount.Location = new System.Drawing.Point(644, 580);
-            this.lblCustomerDiscount.Name = "lblCustomerDiscount";
-            this.lblCustomerDiscount.Size = new System.Drawing.Size(12, 21);
-            this.lblCustomerDiscount.TabIndex = 32;
-            this.lblCustomerDiscount.Text = "0";
+            this.pcbxLogo.Image = global::Tour.Properties.Resources.UIT;
+            this.pcbxLogo.ImageRotate = 0F;
+            this.pcbxLogo.Location = new System.Drawing.Point(105, 89);
+            this.pcbxLogo.Name = "pcbxLogo";
+            this.pcbxLogo.Size = new System.Drawing.Size(98, 72);
+            this.pcbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbxLogo.TabIndex = 6;
+            this.pcbxLogo.TabStop = false;
+            // 
+            // lblReciptTicketID
+            // 
+            this.lblReciptTicketID.BackColor = System.Drawing.Color.Transparent;
+            this.lblReciptTicketID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReciptTicketID.Location = new System.Drawing.Point(47, 34);
+            this.lblReciptTicketID.Name = "lblReciptTicketID";
+            this.lblReciptTicketID.Size = new System.Drawing.Size(20, 18);
+            this.lblReciptTicketID.TabIndex = 23;
+            this.lblReciptTicketID.Text = "-ID";
+            // 
+            // guna2HtmlLabel17
+            // 
+            this.guna2HtmlLabel17.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel17.Location = new System.Drawing.Point(7, 34);
+            this.guna2HtmlLabel17.Name = "guna2HtmlLabel17";
+            this.guna2HtmlLabel17.Size = new System.Drawing.Size(19, 18);
+            this.guna2HtmlLabel17.TabIndex = 22;
+            this.guna2HtmlLabel17.Text = "ID: ";
+            // 
+            // guna2HtmlLabel14
+            // 
+            this.guna2HtmlLabel14.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel14.Location = new System.Drawing.Point(64, 364);
+            this.guna2HtmlLabel14.Name = "guna2HtmlLabel14";
+            this.guna2HtmlLabel14.Size = new System.Drawing.Size(199, 15);
+            this.guna2HtmlLabel14.TabIndex = 24;
+            this.guna2HtmlLabel14.Text = "############################";
             // 
             // DangKy
             // 
@@ -1131,17 +1048,14 @@ namespace Tour
             this.BackColor = System.Drawing.Color.Linen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(984, 611);
-            this.Controls.Add(this.lblCustomerDiscount);
-            this.Controls.Add(this.btngotocsdl);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.btExit);
+            this.Controls.Add(this.lbTime);
+            this.Controls.Add(this.label22);
             this.Controls.Add(this.btCreate);
-            this.Controls.Add(this.btnGo);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel9);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1152,16 +1066,11 @@ namespace Tour
             this.Load += new System.EventHandler(this.DangKy_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.panel17.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
-            this.PnFore.ResumeLayout(false);
-            this.PnFore.PerformLayout();
-            this.panel11.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -1174,19 +1083,14 @@ namespace Tour
             this.panel23.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel9.ResumeLayout(false);
+            this.guna2GradientPanel1.ResumeLayout(false);
+            this.guna2GradientPanel1.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            this.panel26.ResumeLayout(false);
-            this.panel22.ResumeLayout(false);
-            this.panel22.PerformLayout();
-            this.panel21.ResumeLayout(false);
-            this.panel21.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pcbxLogo)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1195,46 +1099,23 @@ namespace Tour
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lbTime;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lb1;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.RadioButton rdDomestic;
-        private System.Windows.Forms.RadioButton RdForeign;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel PnFore;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lb7;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.RichTextBox rtbreservation;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.RichTextBox rtbTicket;
-        private System.Windows.Forms.Button btExit;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button btReset;
-        private System.Windows.Forms.Button backtotourbtn;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.TextBox tbDuration;
-        private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.TextBox tbDate;
-        private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label16;
@@ -1248,13 +1129,8 @@ namespace Tour
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.TextBox tbPrice;
         private System.Windows.Forms.Button btCreate;
-        private System.Windows.Forms.Button btnGo;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label lbDate;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.DateTimePicker PassEXP;
-        private System.Windows.Forms.DateTimePicker VisaEXP;
-        private System.Windows.Forms.Button btngotocsdl;
-        private System.Windows.Forms.Panel panel26;
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2TextBox tbName;
         private System.Windows.Forms.RadioButton RdFmale;
@@ -1264,9 +1140,33 @@ namespace Tour
         private Guna.UI2.WinForms.Guna2TextBox tbAddress;
         private Guna.UI2.WinForms.Guna2ComboBox cbDes;
         private Guna.UI2.WinForms.Guna2ComboBox cbGroup;
-        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblChooseCustomer;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblCustomerDiscount;
         private Guna.UI2.WinForms.Guna2TextBox tbCMND;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel15;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel13;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
+        private Guna.UI2.WinForms.Guna2PictureBox pcbxLogo;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblReciptPrice;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblReciptEndDate;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblReciptStartDate;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblReciptCustomerName;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblReciptGroupName;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblReciptTourName;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblReciptTicketID;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel17;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel14;
     }
 }

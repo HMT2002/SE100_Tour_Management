@@ -61,7 +61,6 @@ namespace Tour
             this.picBackground = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel_slide.SuspendLayout();
@@ -72,13 +71,12 @@ namespace Tour
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Yellow;
+            this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(1, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(243, 59);
@@ -522,7 +520,7 @@ namespace Tour
             // 
             // panel_logo
             // 
-            this.panel_logo.BackColor = System.Drawing.Color.LightCoral;
+            this.panel_logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel_logo.Controls.Add(this.label1);
             this.panel_logo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_logo.Location = new System.Drawing.Point(0, 0);
@@ -542,7 +540,7 @@ namespace Tour
             // picBackground
             // 
             this.picBackground.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.picBackground.Image = global::Tour.Properties.Resources._0;
+            this.picBackground.Image = ((System.Drawing.Image)(resources.GetObject("picBackground.Image")));
             this.picBackground.Location = new System.Drawing.Point(0, 119);
             this.picBackground.Name = "picBackground";
             this.picBackground.Size = new System.Drawing.Size(1242, 581);
@@ -558,8 +556,8 @@ namespace Tour
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Aqua;
-            this.panel1.BackgroundImage = global::Tour.Properties.Resources.Tour1;
-            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -568,23 +566,12 @@ namespace Tour
             this.panel1.Size = new System.Drawing.Size(1242, 92);
             this.panel1.TabIndex = 20;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = global::Tour.Properties.Resources.manageicon;
-            this.pictureBox3.Location = new System.Drawing.Point(249, 1);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(108, 88);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
-            // 
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(1014, -7);
+            this.label4.Location = new System.Drawing.Point(1151, 1);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(24, 24);
             this.label4.TabIndex = 2;
@@ -597,7 +584,7 @@ namespace Tour
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(1053, 0);
+            this.label3.Location = new System.Drawing.Point(1181, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(25, 24);
             this.label3.TabIndex = 1;
@@ -629,7 +616,6 @@ namespace Tour
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -656,7 +642,6 @@ namespace Tour
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button btndataCus;
         private System.Windows.Forms.PictureBox picBackground;
         private System.Windows.Forms.Button btnHotelDatabase;

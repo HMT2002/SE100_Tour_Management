@@ -22,7 +22,7 @@ namespace Tour
         void Clear()
         {
             tbName.Text=tbAddress.Text = tbID.Text = tbICN.Text = tbphone.Text = tbAddress.Text = "";
-            rdbDomestic.Checked = rdbFemale.Checked = rdbMale.Checked = rdbForeign.Checked = false;
+            rdbFemale.Checked = rdbMale.Checked = false;
         }
         public CSDLPhieuDatCho()
         {
@@ -30,63 +30,11 @@ namespace Tour
             InitializeComponent();
 
         }
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-            if (tbSearchTicket.Text == "")
-            {
-                tbSearchTicket.ForeColor = Color.LightGray;
-                tbSearchTicket.Text = "Enter Tour ID to search";
-                ShowTicket();
-            }
-        }
 
-        private void textBox1_Enter(object sender, EventArgs e)
-        {
-            if (tbSearchTicket.Text == "Enter Tour ID to search")
-            {
-                tbSearchTicket.Text = "";
-                tbSearchTicket.ForeColor = Color.Black;
-                ShowTicket();
-            }
-        }
-        private void textBox2_Leave(object sender, EventArgs e)
-        {
-            if (tbSearchResID.Text == "")
-            {
-                tbSearchResID.ForeColor = Color.LightGray;
-                tbSearchResID.Text = "Enter Tour ID to search";
-            }
-        }
 
-        private void textBox2_Enter(object sender, EventArgs e)
-        {
-            if (tbSearchResID.Text == "Enter Tour ID to search")
-            {
-                tbSearchResID.Text = "";
-                tbSearchResID.ForeColor = Color.Black;
-            }
-        }
+
         public void ShowTicket()
         {
-
-            dgvDatCho.DataSource = (from ve in DataProvider.Ins.DB.VEs
-                                    join doan in DataProvider.Ins.DB.DOANs on ve.IDDOAN equals doan.ID
-                                    join khachhang in DataProvider.Ins.DB.KHACHHANGs on ve.IDKHACH equals khachhang.ID
-                                    join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-                                    where doan.ID==id
-                                    select new
-                                    {
-                                        IDVE = ve.ID,
-                                        TENKHACHHANG = khachhang.TENKH,
-                                        TENTOUR=tour.TEN,
-
-                                    }).ToList();
-
-        }
-
-        public void ShowTicketv2()
-        {
-
 
         }
 
@@ -113,9 +61,6 @@ namespace Tour
                 tbphone.Text = dgvQuanLy.Rows[index].Cells["SDT"].Value.ToString();
                 tbICN.Text = dgvQuanLy.Rows[index].Cells["CMND_Passport"].Value.ToString();
 
-                dtpVisa.Value = DateTime.Parse(dgvQuanLy.Rows[index].Cells["HanVisa"].Value.ToString());
-                dtpPassport.Value = DateTime.Parse(dgvQuanLy.Rows[index].Cells["HanPassport"].Value.ToString());
-
                 gender = dgvQuanLy.Rows[index].Cells["GioiTinh"].Value.ToString();
                 if (gender == "Male")
                 {
@@ -125,21 +70,11 @@ namespace Tour
                 {
                     rdbFemale.Checked = true;
                 }
-                tourist = dgvQuanLy.Rows[index].Cells["TenLoaiKhach"].Value.ToString();
-                if (tourist == "Foreign")
-                {
-                    rdbForeign.Checked = true;
-                }
-                else if (tourist == "Domestic")
-                {
-                    rdbDomestic.Checked = true;
-                }
             }
         }
         private void CSDLPhieuDatCho_Load(object sender, EventArgs e)
         {
-            ShowTicket();
-            tientong();
+
         }
         void tientong()
         {
@@ -161,33 +96,6 @@ namespace Tour
         {
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            string value = tbSearchResID.Text.Trim();
-            if (!string.IsNullOrEmpty(value))
-            {
-                try
-                {
-                        dgvDatCho.DataSource = (from ve in DataProvider.Ins.DB.VEs
-                                                join doan in DataProvider.Ins.DB.DOANs on ve.IDDOAN equals doan.ID
-                                                join khachhang in DataProvider.Ins.DB.KHACHHANGs on ve.IDKHACH equals khachhang.ID
-                                                join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-                                                where SqlMethods.Like(ve.ID, "%" + value + "%")
-                                                select new
-                                                {
-                                                    IDVE = ve.ID,
-                                                    TENKHACHHANG = khachhang.TENKH,
-                                                    TENTOUR = tour.TEN,
-
-                                                }).ToList();
-                }
-                catch
-                {
-
-                }
-            }
-            else { ShowTicket(); }
-        }
 
         public bool CheckData()
         {
@@ -216,18 +124,6 @@ namespace Tour
         private void backbtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-        }
-
-        private void rdbForeign_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rdbDomestic.Checked)
-            {
-                panelTime.Visible = false;
-            }
-            else
-            {
-                panelTime.Visible = true;
-            }
         }
 
         private void tbName_KeyPress(object sender, KeyPressEventArgs e)
@@ -300,22 +196,7 @@ namespace Tour
 
         }
         public string mave,maphieu,madukhach,tourID;
-        public bool XoaKhach()
-        {
-            tblTicket tk = new tblTicket();
-            tk.MaVe = Guid.Parse(mave);
-            tk.MaPhieu =Guid.Parse(maphieu);
-            tk.MaDuKhach = Guid.Parse(madukhach);
-            Customer cus = new Customer();
-            cus.MaDuKhach= Guid.Parse(madukhach);
-            Reservation res = new Reservation();
-            res.MaPhieu = Guid.Parse(maphieu);
-            res.MaChuyen = Guid.Parse(tourID);
 
-
-            tientong();
-            return false;
-        }
         private void btnDel_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("are you sure ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)

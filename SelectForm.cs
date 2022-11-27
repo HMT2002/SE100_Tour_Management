@@ -188,21 +188,32 @@ namespace Tour
 
         private void button3_Click(object sender, EventArgs e)
         {
+            this.panel4.Controls.Clear();
             StaffProfile sp = new StaffProfile() { TopLevel = false, TopMost = true };
             panel1.Visible = false;
             picBackground.Visible = false;
+            sp.StartPosition = FormStartPosition.CenterParent;
+
             this.panel4.Controls.Add(sp);
             sp.Show();
+
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.panel4.Controls.Clear();
+            changeColorButton(button2);
+
             ChangePass cp = new ChangePass() { TopLevel = false, TopMost = true };
             panel1.Visible = false;
             picBackground.Visible = false;
+            cp.StartPosition = FormStartPosition.CenterParent;
+
             this.panel4.Controls.Add(cp);
             cp.Show();
+
+
         }
 
         private void button5_Click(object sender, EventArgs e)
