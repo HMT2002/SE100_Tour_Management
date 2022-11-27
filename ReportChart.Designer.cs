@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cartesianchartYearly = new LiveCharts.WinForms.CartesianChart();
             this.piechartTour = new LiveCharts.WinForms.PieChart();
             this.btnViewYearlyReport = new Guna.UI2.WinForms.Guna2Button();
@@ -81,7 +81,7 @@
             // 
             this.btnViewYearlyReport.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnViewYearlyReport.ForeColor = System.Drawing.Color.White;
-            this.btnViewYearlyReport.Location = new System.Drawing.Point(705, 6);
+            this.btnViewYearlyReport.Location = new System.Drawing.Point(831, 6);
             this.btnViewYearlyReport.Name = "btnViewYearlyReport";
             this.btnViewYearlyReport.Size = new System.Drawing.Size(180, 45);
             this.btnViewYearlyReport.TabIndex = 1;
@@ -92,7 +92,7 @@
             // 
             this.btnMonthlyReport.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnMonthlyReport.ForeColor = System.Drawing.Color.White;
-            this.btnMonthlyReport.Location = new System.Drawing.Point(891, 6);
+            this.btnMonthlyReport.Location = new System.Drawing.Point(1017, 6);
             this.btnMonthlyReport.Name = "btnMonthlyReport";
             this.btnMonthlyReport.Size = new System.Drawing.Size(180, 45);
             this.btnMonthlyReport.TabIndex = 0;
@@ -101,16 +101,16 @@
             // 
             // columnchartYearly
             // 
-            chartArea5.Name = "ChartArea1";
-            this.columnchartYearly.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.columnchartYearly.Legends.Add(legend5);
+            chartArea3.Name = "ChartArea1";
+            this.columnchartYearly.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.columnchartYearly.Legends.Add(legend3);
             this.columnchartYearly.Location = new System.Drawing.Point(6, 7);
             this.columnchartYearly.Name = "columnchartYearly";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Revenue";
-            this.columnchartYearly.Series.Add(series5);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Revenue";
+            this.columnchartYearly.Series.Add(series3);
             this.columnchartYearly.Size = new System.Drawing.Size(762, 334);
             this.columnchartYearly.TabIndex = 3;
             this.columnchartYearly.Text = "chart1";
@@ -171,7 +171,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 44);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1074, 602);
+            this.tabPage2.Size = new System.Drawing.Size(1251, 648);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Report";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -179,16 +179,16 @@
             // dgv_report
             // 
             this.dgv_report.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            this.dgv_report.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_report.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgv_report.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_report.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_report.ColumnHeadersHeight = 25;
             this.dgv_report.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgv_report.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -198,14 +198,14 @@
             this.Income,
             this.Month,
             this.Year});
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_report.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_report.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_report.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.dgv_report.Location = new System.Drawing.Point(5, 85);
             this.dgv_report.Margin = new System.Windows.Forms.Padding(2);
@@ -218,7 +218,7 @@
             this.dgv_report.RowTemplate.DividerHeight = 5;
             this.dgv_report.RowTemplate.Height = 40;
             this.dgv_report.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgv_report.Size = new System.Drawing.Size(1059, 505);
+            this.dgv_report.Size = new System.Drawing.Size(1239, 556);
             this.dgv_report.TabIndex = 59;
             this.dgv_report.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_report.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -301,7 +301,7 @@
             // 
             this.btnViewTourReport.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnViewTourReport.ForeColor = System.Drawing.Color.White;
-            this.btnViewTourReport.Location = new System.Drawing.Point(519, 6);
+            this.btnViewTourReport.Location = new System.Drawing.Point(645, 6);
             this.btnViewTourReport.Name = "btnViewTourReport";
             this.btnViewTourReport.Size = new System.Drawing.Size(180, 45);
             this.btnViewTourReport.TabIndex = 54;

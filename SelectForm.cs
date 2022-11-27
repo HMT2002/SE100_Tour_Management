@@ -257,9 +257,11 @@ namespace Tour
             this.panel4.Controls.Clear();
             changeColorButton(btnRoute);
             DangKy dk = new DangKy() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            panel1.Visible = false;
+            //panel1.Visible = false;
             picBackground.Visible = false;
             dk.StartPosition = FormStartPosition.CenterParent;
+            dk.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
+
             this.panel4.Controls.Add(dk);
             dk.Show();
 
@@ -269,9 +271,11 @@ namespace Tour
             this.panel4.Controls.Clear();
             changeColorButton(btnTicket);
             Tour tour = new Tour() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            panel1.Visible = false;
-            picBackground.Visible = false;
+            //panel1.Visible = false;
+            //picBackground.Visible = false;
             tour.StartPosition = FormStartPosition.CenterParent;
+            tour.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
+
             this.panel4.Controls.Add(tour);
             tour.Show();
         }
@@ -280,8 +284,10 @@ namespace Tour
             this.panel4.Controls.Clear();
             changeColorButton(btndataCus);
             CSDLPhieuDatCho h = new CSDLPhieuDatCho() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            panel1.Visible = false;
-            picBackground.Visible = false;
+            //panel1.Visible = false;
+            //picBackground.Visible = false;
+            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
+
             this.panel4.Controls.Add(h);
             h.Show();
         }
@@ -290,8 +296,10 @@ namespace Tour
             this.panel4.Controls.Clear();
             changeColorButton(btnLocationDatabase);
             Location h = new Location() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            panel1.Visible = false;
-            picBackground.Visible = false;
+            //panel1.Visible = false;
+            //picBackground.Visible = false;
+            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
+
             this.panel4.Controls.Add(h);
             h.Show();
         }
@@ -301,9 +309,9 @@ namespace Tour
             this.panel4.Controls.Clear();
             changeColorButton(btnHotelDatabase);
             Hotel h = new Hotel() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            panel1.Visible = false;
-            picBackground.Visible = false;
-            h.Size = new System.Drawing.Size(this.Width - panel_logo.Width, this.Height);
+            //panel1.Visible = false;
+            //picBackground.Visible = false;
+            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
             this.panel4.Controls.Add(h);
             h.Show();
         }
@@ -313,9 +321,9 @@ namespace Tour
             this.panel4.Controls.Clear();
             changeColorButton(btnVehicalDatabase);
             PhuongTien h = new PhuongTien() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            panel1.Visible = false;
-            picBackground.Visible = false;
-            h.Size = new System.Drawing.Size(this.Width - panel_logo.Width, this.Height);
+            //panel1.Visible = false;
+            //picBackground.Visible = false;
+            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
             this.panel4.Controls.Add(h);
             h.Show();
         }
@@ -325,9 +333,9 @@ namespace Tour
             this.panel4.Controls.Clear();
             changeColorButton(btnEmployyeDatabase);
             NhanVien h = new NhanVien() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            panel1.Visible = false;
-            picBackground.Visible = false;
-            h.Size = new System.Drawing.Size(this.Width - panel_logo.Width, this.Height);
+            //panel1.Visible = false;
+            //picBackground.Visible = false;
+            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
             this.panel4.Controls.Add(h);
             h.Show();
         }
@@ -337,9 +345,9 @@ namespace Tour
             this.panel4.Controls.Clear();
             changeColorButton(btnMission);
             NhiemVuTrongDoan h = new NhiemVuTrongDoan() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            panel1.Visible = false;
-            picBackground.Visible = false;
-            h.Size = new System.Drawing.Size(this.Width - panel_logo.Width, this.Height);
+            //panel1.Visible = false;
+            //picBackground.Visible = false;
+            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
             this.panel4.Controls.Add(h);
             h.Show();
         }
@@ -349,9 +357,9 @@ namespace Tour
             this.panel4.Controls.Clear();
             changeColorButton(btnGroup);
             DoanDuLich h = new DoanDuLich() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            panel1.Visible = false;
-            picBackground.Visible = false;
-            h.Size = new System.Drawing.Size(this.Width - panel_logo.Width, this.Height);
+            //panel1.Visible = false;
+            //picBackground.Visible = false;
+            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
             this.panel4.Controls.Add(h);
             h.Show();
         }
@@ -361,9 +369,9 @@ namespace Tour
             this.panel4.Controls.Clear();
             changeColorButton(btnCustomer);
             KhachHang h = new KhachHang() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            panel1.Visible = false;
-            picBackground.Visible = false;
-            h.Size = new System.Drawing.Size(this.Width - panel_logo.Width, this.Height);
+            //panel1.Visible = false;
+            //picBackground.Visible = false;
+            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
             this.panel4.Controls.Add(h);
             h.Show();
         }
@@ -373,9 +381,9 @@ namespace Tour
             this.panel4.Controls.Clear();
             changeColorButton(btnTicket);
             ManageBanner h = new ManageBanner() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            panel1.Visible = false;
-            picBackground.Visible = false;
-            h.Size = new System.Drawing.Size(this.Width - panel_logo.Width, this.Height);
+            //panel1.Visible = false;
+            //picBackground.Visible = false;
+            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
             this.panel4.Controls.Add(h);
             h.Show();
         }
@@ -385,9 +393,9 @@ namespace Tour
             this.panel4.Controls.Clear();
             changeColorButton(btnLoyalCustomer);
             LoyalCustomer h = new LoyalCustomer() { TopLevel = false, TopMost = true,FormBorderStyle = FormBorderStyle.None };
-            panel1.Visible = false;
-            picBackground.Visible = false;
-            h.Size = new System.Drawing.Size(this.Width - panel_logo.Width, this.Height);
+            //panel1.Visible = false;
+            //picBackground.Visible = false;
+            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
             this.panel4.Controls.Add(h);
             h.Show();
         }
@@ -402,9 +410,9 @@ namespace Tour
             this.panel4.Controls.Clear();
             changeColorButton(btnStatistics);
             ReportChart h = new ReportChart() { TopLevel = false, TopMost = true,FormBorderStyle=FormBorderStyle.None };
-            panel1.Visible = false;
-            picBackground.Visible = false;
-            h.Size = new System.Drawing.Size(this.Width - panelManage.Width, this.Height - panel1.Height);
+            //panel1.Visible = false;
+            //picBackground.Visible = false;
+            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
             this.panel4.Controls.Add(h);
             h.Show();
         }

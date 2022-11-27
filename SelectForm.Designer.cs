@@ -98,7 +98,7 @@ namespace Tour
             this.panel_slide.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_slide.Location = new System.Drawing.Point(0, 0);
             this.panel_slide.Name = "panel_slide";
-            this.panel_slide.Size = new System.Drawing.Size(264, 788);
+            this.panel_slide.Size = new System.Drawing.Size(264, 880);
             this.panel_slide.TabIndex = 18;
             // 
             // button7
@@ -284,7 +284,7 @@ namespace Tour
             this.btnStatistics.Margin = new System.Windows.Forms.Padding(2);
             this.btnStatistics.Name = "btnStatistics";
             this.btnStatistics.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnStatistics.Size = new System.Drawing.Size(247, 60);
+            this.btnStatistics.Size = new System.Drawing.Size(247, 57);
             this.btnStatistics.TabIndex = 13;
             this.btnStatistics.Text = "Statistics";
             this.btnStatistics.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -532,9 +532,9 @@ namespace Tour
             // 
             this.panel4.Controls.Add(this.picBackground);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(264, 89);
+            this.panel4.Location = new System.Drawing.Point(264, 101);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1242, 699);
+            this.panel4.Size = new System.Drawing.Size(1183, 779);
             this.panel4.TabIndex = 19;
             // 
             // picBackground
@@ -543,7 +543,7 @@ namespace Tour
             this.picBackground.Image = ((System.Drawing.Image)(resources.GetObject("picBackground.Image")));
             this.picBackground.Location = new System.Drawing.Point(0, 3);
             this.picBackground.Name = "picBackground";
-            this.picBackground.Size = new System.Drawing.Size(1242, 696);
+            this.picBackground.Size = new System.Drawing.Size(1183, 776);
             this.picBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBackground.TabIndex = 0;
             this.picBackground.TabStop = false;
@@ -563,17 +563,18 @@ namespace Tour
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(264, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1242, 92);
+            this.panel1.Size = new System.Drawing.Size(1183, 95);
             this.panel1.TabIndex = 20;
             // 
             // label4
             // 
+            this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(1151, 1);
+            this.label4.Location = new System.Drawing.Point(1055, 18);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(24, 24);
+            this.label4.Size = new System.Drawing.Size(46, 63);
             this.label4.TabIndex = 2;
             this.label4.Text = "-";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -582,11 +583,11 @@ namespace Tour
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(1181, 0);
+            this.label3.Location = new System.Drawing.Point(1107, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(25, 24);
+            this.label3.Size = new System.Drawing.Size(64, 63);
             this.label3.TabIndex = 1;
             this.label3.Text = "X";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -596,7 +597,7 @@ namespace Tour
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1506, 788);
+            this.ClientSize = new System.Drawing.Size(1447, 880);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel_slide);
