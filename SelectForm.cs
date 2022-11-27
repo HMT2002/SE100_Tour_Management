@@ -404,7 +404,7 @@ namespace Tour
             ReportChart h = new ReportChart() { TopLevel = false, TopMost = true,FormBorderStyle=FormBorderStyle.None };
             panel1.Visible = false;
             picBackground.Visible = false;
-            h.Size = new System.Drawing.Size(this.Width - panel_logo.Width, this.Height);
+            h.Size = new System.Drawing.Size(this.Width - panelManage.Width, this.Height - panel1.Height);
             this.panel4.Controls.Add(h);
             h.Show();
         }

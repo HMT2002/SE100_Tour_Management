@@ -42,8 +42,6 @@
             this.pcbxBanner = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnAddLocation = new System.Windows.Forms.Button();
             this.lstbxLocation = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.richtbDetail = new System.Windows.Forms.RichTextBox();
             this.btn_newid = new System.Windows.Forms.Button();
             this.cb_typetour = new System.Windows.Forms.ComboBox();
             this.tb_nametour = new System.Windows.Forms.TextBox();
@@ -59,24 +57,14 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.btn_update = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.gotoregistbtn = new System.Windows.Forms.Button();
-            this.backtoroutebtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.rdNameSearch = new System.Windows.Forms.RadioButton();
             this.rdIDSearch = new System.Windows.Forms.RadioButton();
-            this.btnViewTourReport = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.cbbxYear = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cbbxMonth = new Guna.UI2.WinForms.Guna2ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_trip)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxBanner)).BeginInit();
             this.panel1.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -85,7 +73,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 399);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1454, 253);
+            this.groupBox1.Size = new System.Drawing.Size(1043, 253);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tour list";
@@ -106,7 +94,7 @@
             this.dgv_trip.Name = "dgv_trip";
             this.dgv_trip.ReadOnly = true;
             this.dgv_trip.RowHeadersWidth = 51;
-            this.dgv_trip.Size = new System.Drawing.Size(1434, 225);
+            this.dgv_trip.Size = new System.Drawing.Size(1023, 225);
             this.dgv_trip.TabIndex = 1;
             this.dgv_trip.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_trip_CellClick_1);
             // 
@@ -162,8 +150,6 @@
             this.groupBox2.Controls.Add(this.pcbxBanner);
             this.groupBox2.Controls.Add(this.btnAddLocation);
             this.groupBox2.Controls.Add(this.lstbxLocation);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.richtbDetail);
             this.groupBox2.Controls.Add(this.btn_newid);
             this.groupBox2.Controls.Add(this.cb_typetour);
             this.groupBox2.Controls.Add(this.tb_nametour);
@@ -177,7 +163,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(16, 94);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1182, 239);
+            this.groupBox2.Size = new System.Drawing.Size(1033, 239);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tour details";
@@ -190,7 +176,7 @@
             this.btnBanner.FlatAppearance.BorderSize = 0;
             this.btnBanner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBanner.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBanner.Location = new System.Drawing.Point(1102, 142);
+            this.btnBanner.Location = new System.Drawing.Point(793, 142);
             this.btnBanner.Name = "btnBanner";
             this.btnBanner.Size = new System.Drawing.Size(71, 47);
             this.btnBanner.TabIndex = 54;
@@ -201,9 +187,9 @@
             // pcbxBanner
             // 
             this.pcbxBanner.Image = global::Tour.Properties.Resources.ic_image_empty_128;
-            this.pcbxBanner.Location = new System.Drawing.Point(731, 142);
+            this.pcbxBanner.ImageRotate = 0F;
+            this.pcbxBanner.Location = new System.Drawing.Point(422, 142);
             this.pcbxBanner.Name = "pcbxBanner";
-            this.pcbxBanner.ShadowDecoration.Parent = this.pcbxBanner;
             this.pcbxBanner.Size = new System.Drawing.Size(365, 91);
             this.pcbxBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbxBanner.TabIndex = 53;
@@ -218,7 +204,7 @@
             this.btnAddLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddLocation.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddLocation.Image = ((System.Drawing.Image)(resources.GetObject("btnAddLocation.Image")));
-            this.btnAddLocation.Location = new System.Drawing.Point(1102, 18);
+            this.btnAddLocation.Location = new System.Drawing.Point(793, 18);
             this.btnAddLocation.Name = "btnAddLocation";
             this.btnAddLocation.Size = new System.Drawing.Size(51, 47);
             this.btnAddLocation.TabIndex = 48;
@@ -229,29 +215,10 @@
             // 
             this.lstbxLocation.FormattingEnabled = true;
             this.lstbxLocation.ItemHeight = 19;
-            this.lstbxLocation.Location = new System.Drawing.Point(731, 18);
+            this.lstbxLocation.Location = new System.Drawing.Point(422, 18);
             this.lstbxLocation.Name = "lstbxLocation";
             this.lstbxLocation.Size = new System.Drawing.Size(365, 99);
             this.lstbxLocation.TabIndex = 52;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(395, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 19);
-            this.label1.TabIndex = 51;
-            this.label1.Text = "Detail ( max 500)";
-            // 
-            // richtbDetail
-            // 
-            this.richtbDetail.Location = new System.Drawing.Point(399, 90);
-            this.richtbDetail.MaxLength = 499;
-            this.richtbDetail.Name = "richtbDetail";
-            this.richtbDetail.Size = new System.Drawing.Size(326, 143);
-            this.richtbDetail.TabIndex = 50;
-            this.richtbDetail.Text = "";
             // 
             // btn_newid
             // 
@@ -262,7 +229,7 @@
             this.btn_newid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_newid.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_newid.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_newid.Location = new System.Drawing.Point(10, 33);
+            this.btn_newid.Location = new System.Drawing.Point(916, 18);
             this.btn_newid.Name = "btn_newid";
             this.btn_newid.Size = new System.Drawing.Size(100, 38);
             this.btn_newid.TabIndex = 49;
@@ -280,7 +247,7 @@
             "Văn hóa",
             "Ẩm thực",
             "Công tác"});
-            this.cb_typetour.Location = new System.Drawing.Point(128, 181);
+            this.cb_typetour.Location = new System.Drawing.Point(139, 115);
             this.cb_typetour.Name = "cb_typetour";
             this.cb_typetour.Size = new System.Drawing.Size(249, 27);
             this.cb_typetour.TabIndex = 48;
@@ -288,7 +255,7 @@
             // tb_nametour
             // 
             this.tb_nametour.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_nametour.Location = new System.Drawing.Point(128, 131);
+            this.tb_nametour.Location = new System.Drawing.Point(139, 65);
             this.tb_nametour.MaxLength = 30;
             this.tb_nametour.Name = "tb_nametour";
             this.tb_nametour.Size = new System.Drawing.Size(249, 26);
@@ -297,7 +264,7 @@
             // tb_price
             // 
             this.tb_price.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_price.Location = new System.Drawing.Point(473, 18);
+            this.tb_price.Location = new System.Drawing.Point(139, 163);
             this.tb_price.Margin = new System.Windows.Forms.Padding(2);
             this.tb_price.MaxLength = 25;
             this.tb_price.Name = "tb_price";
@@ -311,7 +278,7 @@
             // 
             this.tb_idtrip.Enabled = false;
             this.tb_idtrip.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_idtrip.Location = new System.Drawing.Point(128, 90);
+            this.tb_idtrip.Location = new System.Drawing.Point(139, 24);
             this.tb_idtrip.MaxLength = 15;
             this.tb_idtrip.Name = "tb_idtrip";
             this.tb_idtrip.ReadOnly = true;
@@ -323,7 +290,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(681, 21);
+            this.label7.Location = new System.Drawing.Point(347, 166);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 19);
@@ -334,7 +301,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(7, 189);
+            this.label4.Location = new System.Drawing.Point(18, 123);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 19);
             this.label4.TabIndex = 26;
@@ -344,7 +311,7 @@
             // 
             this.lb_idtrip.AutoSize = true;
             this.lb_idtrip.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_idtrip.Location = new System.Drawing.Point(7, 92);
+            this.lb_idtrip.Location = new System.Drawing.Point(18, 26);
             this.lb_idtrip.Name = "lb_idtrip";
             this.lb_idtrip.Size = new System.Drawing.Size(57, 19);
             this.lb_idtrip.TabIndex = 20;
@@ -354,7 +321,7 @@
             // 
             this.lb_price.AutoSize = true;
             this.lb_price.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_price.Location = new System.Drawing.Point(393, 20);
+            this.lb_price.Location = new System.Drawing.Point(18, 166);
             this.lb_price.Name = "lb_price";
             this.lb_price.Size = new System.Drawing.Size(40, 19);
             this.lb_price.TabIndex = 5;
@@ -364,7 +331,7 @@
             // 
             this.lb_idtour.AutoSize = true;
             this.lb_idtour.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_idtour.Location = new System.Drawing.Point(6, 138);
+            this.lb_idtour.Location = new System.Drawing.Point(17, 72);
             this.lb_idtour.Name = "lb_idtour";
             this.lb_idtour.Size = new System.Drawing.Size(78, 19);
             this.lb_idtour.TabIndex = 0;
@@ -448,46 +415,12 @@
             // panel1
             // 
             this.panel1.BackgroundImage = global::Tour.Properties.Resources.Tour1;
-            this.panel1.Controls.Add(this.gotoregistbtn);
-            this.panel1.Controls.Add(this.backtoroutebtn);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1478, 77);
+            this.panel1.Size = new System.Drawing.Size(1059, 77);
             this.panel1.TabIndex = 47;
-            // 
-            // gotoregistbtn
-            // 
-            this.gotoregistbtn.BackColor = System.Drawing.Color.Transparent;
-            this.gotoregistbtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("gotoregistbtn.BackgroundImage")));
-            this.gotoregistbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.gotoregistbtn.FlatAppearance.BorderSize = 0;
-            this.gotoregistbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gotoregistbtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gotoregistbtn.Location = new System.Drawing.Point(1286, 12);
-            this.gotoregistbtn.Name = "gotoregistbtn";
-            this.gotoregistbtn.Size = new System.Drawing.Size(174, 45);
-            this.gotoregistbtn.TabIndex = 10;
-            this.gotoregistbtn.Text = "Go to Ticket Register";
-            this.gotoregistbtn.UseVisualStyleBackColor = true;
-            this.gotoregistbtn.Click += new System.EventHandler(this.gotoregistbtn_Click);
-            // 
-            // backtoroutebtn
-            // 
-            this.backtoroutebtn.BackColor = System.Drawing.Color.Transparent;
-            this.backtoroutebtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backtoroutebtn.BackgroundImage")));
-            this.backtoroutebtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.backtoroutebtn.FlatAppearance.BorderSize = 0;
-            this.backtoroutebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backtoroutebtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backtoroutebtn.Location = new System.Drawing.Point(3, 12);
-            this.backtoroutebtn.Name = "backtoroutebtn";
-            this.backtoroutebtn.Size = new System.Drawing.Size(123, 45);
-            this.backtoroutebtn.TabIndex = 10;
-            this.backtoroutebtn.Text = "Back to Route";
-            this.backtoroutebtn.UseVisualStyleBackColor = true;
-            this.backtoroutebtn.Click += new System.EventHandler(this.backtoroutebtn_Click);
             // 
             // label8
             // 
@@ -531,110 +464,12 @@
             this.rdIDSearch.UseVisualStyleBackColor = true;
             this.rdIDSearch.Enter += new System.EventHandler(this.rdIDSearch_Enter);
             // 
-            // btnViewTourReport
-            // 
-            this.btnViewTourReport.CheckedState.Parent = this.btnViewTourReport;
-            this.btnViewTourReport.CustomImages.Parent = this.btnViewTourReport;
-            this.btnViewTourReport.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnViewTourReport.ForeColor = System.Drawing.Color.White;
-            this.btnViewTourReport.HoverState.Parent = this.btnViewTourReport;
-            this.btnViewTourReport.Location = new System.Drawing.Point(98, 155);
-            this.btnViewTourReport.Name = "btnViewTourReport";
-            this.btnViewTourReport.ShadowDecoration.Parent = this.btnViewTourReport;
-            this.btnViewTourReport.Size = new System.Drawing.Size(77, 69);
-            this.btnViewTourReport.TabIndex = 48;
-            this.btnViewTourReport.Text = "View Report";
-            this.btnViewTourReport.Click += new System.EventHandler(this.btnViewTourReport_Click);
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel3);
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel2);
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel1);
-            this.guna2Panel1.Controls.Add(this.cbbxYear);
-            this.guna2Panel1.Controls.Add(this.btnViewTourReport);
-            this.guna2Panel1.Controls.Add(this.cbbxMonth);
-            this.guna2Panel1.Location = new System.Drawing.Point(1204, 103);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(262, 230);
-            this.guna2Panel1.TabIndex = 49;
-            // 
-            // guna2HtmlLabel3
-            // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(3, 117);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(55, 27);
-            this.guna2HtmlLabel3.TabIndex = 53;
-            this.guna2HtmlLabel3.Text = "Year: ";
-            // 
-            // guna2HtmlLabel2
-            // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(3, 75);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(69, 27);
-            this.guna2HtmlLabel2.TabIndex = 52;
-            this.guna2HtmlLabel2.Text = "Month: ";
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(82, 11);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(135, 27);
-            this.guna2HtmlLabel1.TabIndex = 51;
-            this.guna2HtmlLabel1.Text = "Export Report";
-            // 
-            // cbbxYear
-            // 
-            this.cbbxYear.BackColor = System.Drawing.Color.Transparent;
-            this.cbbxYear.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbxYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbxYear.FocusedColor = System.Drawing.Color.Empty;
-            this.cbbxYear.FocusedState.Parent = this.cbbxYear;
-            this.cbbxYear.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbxYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbbxYear.FormattingEnabled = true;
-            this.cbbxYear.HoverState.Parent = this.cbbxYear;
-            this.cbbxYear.ItemHeight = 30;
-            this.cbbxYear.ItemsAppearance.Parent = this.cbbxYear;
-            this.cbbxYear.Location = new System.Drawing.Point(98, 108);
-            this.cbbxYear.Name = "cbbxYear";
-            this.cbbxYear.ShadowDecoration.Parent = this.cbbxYear;
-            this.cbbxYear.Size = new System.Drawing.Size(154, 36);
-            this.cbbxYear.TabIndex = 50;
-            // 
-            // cbbxMonth
-            // 
-            this.cbbxMonth.BackColor = System.Drawing.Color.Transparent;
-            this.cbbxMonth.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbxMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbxMonth.FocusedColor = System.Drawing.Color.Empty;
-            this.cbbxMonth.FocusedState.Parent = this.cbbxMonth;
-            this.cbbxMonth.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbxMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbbxMonth.FormattingEnabled = true;
-            this.cbbxMonth.HoverState.Parent = this.cbbxMonth;
-            this.cbbxMonth.ItemHeight = 30;
-            this.cbbxMonth.ItemsAppearance.Parent = this.cbbxMonth;
-            this.cbbxMonth.Location = new System.Drawing.Point(98, 66);
-            this.cbbxMonth.Name = "cbbxMonth";
-            this.cbbxMonth.ShadowDecoration.Parent = this.cbbxMonth;
-            this.cbbxMonth.Size = new System.Drawing.Size(154, 36);
-            this.cbbxMonth.TabIndex = 49;
-            // 
             // Tour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(1478, 656);
-            this.Controls.Add(this.guna2Panel1);
+            this.ClientSize = new System.Drawing.Size(1059, 656);
             this.Controls.Add(this.rdNameSearch);
             this.Controls.Add(this.rdIDSearch);
             this.Controls.Add(this.btn_add);
@@ -658,8 +493,6 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxBanner)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -673,9 +506,7 @@
         private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_add;
-        private System.Windows.Forms.Button backtoroutebtn;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button gotoregistbtn;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox tb_price;
         private System.Windows.Forms.TextBox tb_idtrip;
@@ -688,8 +519,6 @@
         private System.Windows.Forms.ComboBox cb_typetour;
         private System.Windows.Forms.TextBox tb_nametour;
         private System.Windows.Forms.Button btn_newid;
-        private System.Windows.Forms.RichTextBox richtbDetail;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tENDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dACDIEMDataGridViewTextBoxColumn;
@@ -707,12 +536,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn LOAI;
         private System.Windows.Forms.Button btnBanner;
         private Guna.UI2.WinForms.Guna2PictureBox pcbxBanner;
-        private Guna.UI2.WinForms.Guna2Button btnViewTourReport;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2ComboBox cbbxYear;
-        private Guna.UI2.WinForms.Guna2ComboBox cbbxMonth;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     }
 }

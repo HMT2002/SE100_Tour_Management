@@ -92,7 +92,7 @@ namespace Tour
                     tour.TEN = tb_nametour.Text;
                     tour.LOAI = cb_typetour.Text;
                     tour.GIA = Convert.ToDecimal(tb_price.Text);
-                    tour.DACDIEM = richtbDetail.Text;
+                    tour.DACDIEM = "";
                     DataProvider.Ins.DB.SaveChanges();
                     ShowAllChuyen();
 
@@ -122,7 +122,7 @@ namespace Tour
         public void Clear()
         {
             cb_typetour.SelectedIndex = -1;
-            id = tb_price.Text = cb_typetour.Text = tb_nametour.Text = tb_idtrip.Text = cb_typetour.Text = richtbDetail.Text = "";
+            id = tb_price.Text = cb_typetour.Text = tb_nametour.Text = tb_idtrip.Text = cb_typetour.Text = "";
             lstbxLocation.DataSource = null;
             LocationList = new List<DIADIEM>();
 
@@ -141,7 +141,7 @@ namespace Tour
                 try
                 {
                     randomcode = Converter.Instance.RandomString2(5);
-                    var tour = new TOUR() { ID = randomcode, GIA = Convert.ToDecimal(tb_price.Text), TEN = tb_nametour.Text, LOAI = cb_typetour.Text, DACDIEM = richtbDetail.Text, IsDeleted = false };
+                    var tour = new TOUR() { ID = randomcode, GIA = Convert.ToDecimal(tb_price.Text), TEN = tb_nametour.Text, LOAI = cb_typetour.Text, DACDIEM = "", IsDeleted = false };
                     DataProvider.Ins.DB.TOURs.Add(tour);
 
                     DataProvider.Ins.DB.SaveChanges();
@@ -225,7 +225,6 @@ namespace Tour
 
                 EnableBanner();
 
-                EnableCalendarSource();
             }
         }
 
@@ -235,7 +234,6 @@ namespace Tour
             tb_nametour.Text = selected_tour.TEN;
             tb_price.Text = selected_tour.GIA.ToString();
             cb_typetour.Text = selected_tour.LOAI;
-            richtbDetail.Text = selected_tour.DACDIEM;
         }
 
         public void EnableBanner()
@@ -267,26 +265,6 @@ namespace Tour
         }
 
 
-        public void EnableCalendarSource()
-        {
-
-            var listMonth = (from tour in DataProvider.Ins.DB.TOURs
-                             join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
-                             join ve in DataProvider.Ins.DB.VEs on doan.ID equals ve.IDDOAN
-                             where tour.ID == selected_tour.ID && tour.IsDeleted == false
-                             select ve.NGAYMUA.Value.Month)
-                     .Distinct().ToList();
-            var listYear = (from tour in DataProvider.Ins.DB.TOURs
-                            join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
-                            join ve in DataProvider.Ins.DB.VEs on doan.ID equals ve.IDDOAN
-                            where tour.ID == selected_tour.ID && tour.IsDeleted == false
-                            select ve.NGAYMUA.Value.Year)
-                         .Distinct().ToList();
-
-            cbbxMonth.DataSource = listMonth;
-            cbbxYear.DataSource = listYear;
-        }
-
         private void btnBanner_Click(object sender, EventArgs e)
         {
             if (selected_tour==null)
@@ -300,29 +278,6 @@ namespace Tour
             this.Show();
         }
 
-        public void OpenReport()
-        {
-            using (fPrint f = new fPrint(this.selected_tour))
-            {
-                rptTourIncome crys = new rptTourIncome();
-                crys.Load(@"rptTourIncome.rep");
-
-                f.rptViewer.ReportSource = crys;
-                f.rptViewer.Refresh();
-                f.rptViewer.SelectionFormula = "{Command.TourID}='" + this.selected_tour.ID + "' and {Command.NAM}=" + cbbxYear.SelectedValue.ToString() + " and {Command.THANG}=" + cbbxMonth.SelectedValue.ToString();
-                f.ShowDialog();
-            }
-        }
-
-        private void btnViewTourReport_Click(object sender, EventArgs e)
-        {
-            if (this.selected_tour == null)
-            {
-                return;
-            }
-            OpenReport();
-
-        }
 
         private void tb_price_TextChanged(object sender, EventArgs e)
         {
