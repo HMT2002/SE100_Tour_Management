@@ -157,7 +157,7 @@ namespace Tour
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(926, 317);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 21);
+            this.label5.Size = new System.Drawing.Size(96, 28);
             this.label5.TabIndex = 30;
             this.label5.Text = "Search By";
             // 
@@ -369,7 +369,7 @@ namespace Tour
             this.txtbxMail.PlaceholderText = "Mail";
             this.txtbxMail.SelectedText = "";
             this.txtbxMail.Size = new System.Drawing.Size(392, 45);
-            this.txtbxMail.TabIndex = 34;
+            this.txtbxMail.TabIndex = 36;
             this.txtbxMail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxMail_KeyPress);
             // 
             // txtbxSDT
@@ -414,7 +414,7 @@ namespace Tour
             this.txtbxName.PlaceholderText = "Name";
             this.txtbxName.SelectedText = "";
             this.txtbxName.Size = new System.Drawing.Size(392, 45);
-            this.txtbxName.TabIndex = 36;
+            this.txtbxName.TabIndex = 34;
             this.txtbxName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxName_KeyPress);
             // 
             // tb_search
@@ -436,7 +436,7 @@ namespace Tour
             this.tb_search.PlaceholderText = "Search";
             this.tb_search.SelectedText = "";
             this.tb_search.Size = new System.Drawing.Size(367, 45);
-            this.tb_search.TabIndex = 37;
+            this.tb_search.TabIndex = 38;
             this.tb_search.TextChanged += new System.EventHandler(this.tb_search_TextChanged_1);
             // 
             // txtbxPassword
@@ -458,12 +458,12 @@ namespace Tour
             this.txtbxPassword.PlaceholderText = "Password";
             this.txtbxPassword.SelectedText = "";
             this.txtbxPassword.Size = new System.Drawing.Size(392, 45);
-            this.txtbxPassword.TabIndex = 39;
+            this.txtbxPassword.TabIndex = 37;
             this.txtbxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxPassword_KeyPress);
             // 
             // NhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;

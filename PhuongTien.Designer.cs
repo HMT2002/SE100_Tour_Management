@@ -119,7 +119,7 @@ namespace Tour
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(350, 75);
-            this.btnAdd.TabIndex = 22;
+            this.btnAdd.TabIndex = 39;
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -137,7 +137,7 @@ namespace Tour
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(350, 75);
-            this.btnXoa.TabIndex = 23;
+            this.btnXoa.TabIndex = 40;
             this.btnXoa.Text = "Delete";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -155,7 +155,7 @@ namespace Tour
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(350, 75);
-            this.btnUpdate.TabIndex = 24;
+            this.btnUpdate.TabIndex = 41;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -173,7 +173,7 @@ namespace Tour
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(350, 75);
-            this.btnExit.TabIndex = 25;
+            this.btnExit.TabIndex = 42;
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -257,7 +257,7 @@ namespace Tour
             this.rchtxtbxDetail.PlaceholderText = "";
             this.rchtxtbxDetail.SelectedText = "";
             this.rchtxtbxDetail.Size = new System.Drawing.Size(280, 204);
-            this.rchtxtbxDetail.TabIndex = 32;
+            this.rchtxtbxDetail.TabIndex = 38;
             // 
             // cbboxProvince
             // 
@@ -277,7 +277,7 @@ namespace Tour
             this.cbboxProvince.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbboxProvince.Name = "cbboxProvince";
             this.cbboxProvince.Size = new System.Drawing.Size(267, 36);
-            this.cbboxProvince.TabIndex = 29;
+            this.cbboxProvince.TabIndex = 37;
             this.cbboxProvince.Enter += new System.EventHandler(this.cbboxProvince_Enter);
             // 
             // label6
@@ -308,7 +308,7 @@ namespace Tour
             this.cbbxKind.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbxKind.Name = "cbbxKind";
             this.cbbxKind.Size = new System.Drawing.Size(267, 36);
-            this.cbbxKind.TabIndex = 28;
+            this.cbbxKind.TabIndex = 35;
             this.cbbxKind.Enter += new System.EventHandler(this.cbbxKind_Enter);
             // 
             // txtbxGia
@@ -332,7 +332,7 @@ namespace Tour
             this.txtbxGia.PlaceholderText = "Cost/day";
             this.txtbxGia.SelectedText = "";
             this.txtbxGia.Size = new System.Drawing.Size(267, 44);
-            this.txtbxGia.TabIndex = 27;
+            this.txtbxGia.TabIndex = 36;
             this.txtbxGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxGia_KeyPress);
             // 
             // txtbxName
@@ -357,7 +357,7 @@ namespace Tour
             this.txtbxName.PlaceholderText = "Register Name";
             this.txtbxName.SelectedText = "";
             this.txtbxName.Size = new System.Drawing.Size(267, 44);
-            this.txtbxName.TabIndex = 10;
+            this.txtbxName.TabIndex = 34;
             this.txtbxName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxName_KeyPress);
             // 
             // guna2Panel2
@@ -414,7 +414,7 @@ namespace Tour
             this.pcbxVehical.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pcbxVehical.Image = global::Tour.Properties.Resources.ic_image_empty_128;
             this.pcbxVehical.Location = new System.Drawing.Point(27, 27);
-            this.pcbxVehical.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbxVehical.Margin = new System.Windows.Forms.Padding(4);
             this.pcbxVehical.Name = "pcbxVehical";
             this.pcbxVehical.Size = new System.Drawing.Size(300, 300);
             this.pcbxVehical.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -433,7 +433,7 @@ namespace Tour
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PhuongTien";
             this.Text = "PhuongTien";
             this.guna2Panel1.ResumeLayout(false);
