@@ -121,18 +121,18 @@ namespace Tour
             {
                 label1.Text = "WELCOME: " + Properties.Settings.Default.CurUserName;
             }
-            listBtn.Add(btnTicket);
-            listBtn.Add(btnRoute);
-            listBtn.Add(btndataCus);
-            listBtn.Add(btnLocationDatabase);
-            listBtn.Add(btnHotelDatabase);
-            listBtn.Add(btnVehicalDatabase);
-            listBtn.Add(btnEmployyeDatabase);
-            listBtn.Add(btnMission);
-            listBtn.Add(btnGroup);
-            listBtn.Add(btnCustomer);
-            listBtn.Add(btnStatistics);
-            listBtn.Add(btnLoyalCustomer);
+            //listBtn.Add(btnTicket);
+            //listBtn.Add(btnRoute);
+            //listBtn.Add(btndataCus);
+            //listBtn.Add(btnLocationDatabase);
+            //listBtn.Add(btnHotelDatabase);
+            //listBtn.Add(btnVehicalDatabase);
+            //listBtn.Add(btnEmployyeDatabase);
+            //listBtn.Add(btnMission);
+            //listBtn.Add(btnGroup);
+            //listBtn.Add(btnCustomer);
+            //listBtn.Add(btnStatistics);
+            //listBtn.Add(btnLoyalCustomer);
         }
         private int image =0;
         private void loadimage()
@@ -171,114 +171,22 @@ namespace Tour
         {
             this.Close();
         }
-        private void btnManage_Click(object sender, EventArgs e)
-        {
-            showSubmenu(panelManage);
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            showSubmenu(panel_staff);
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            showSubmenu(panel_Help);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.panel4.Controls.Clear();
-            StaffProfile sp = new StaffProfile() { TopLevel = false, TopMost = true };
-            panel1.Visible = false;
-            picBackground.Visible = false;
-            sp.StartPosition = FormStartPosition.CenterParent;
-
-            this.panel4.Controls.Add(sp);
-            sp.Show();
-
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.panel4.Controls.Clear();
-            changeColorButton(button2);
-
-            ChangePass cp = new ChangePass() { TopLevel = false, TopMost = true };
-            panel1.Visible = false;
-            picBackground.Visible = false;
-            cp.StartPosition = FormStartPosition.CenterParent;
-
-            this.panel4.Controls.Add(cp);
-            cp.Show();
-
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            hideSubmenu();
-            if (MessageBox.Show("Are you sure to log out your account?", "Nofitication", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
-            {
-                this.Close();
-            }
-        }
 
         private void label3_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure to log out your account?", "Nofitication", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
-            {
-                this.Close();
-            }
+
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+
         }
         //Manage
         private void btnTour_Click(object sender, EventArgs e)
         {
 
         }
-        private void btnRoute_Click(object sender, EventArgs e)
-        {
-            this.panel4.Controls.Clear();
-            changeColorButton(btnRoute);
-            DangKy dk = new DangKy() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            //panel1.Visible = false;
-            picBackground.Visible = false;
-            dk.StartPosition = FormStartPosition.CenterParent;
-            dk.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
 
-            this.panel4.Controls.Add(dk);
-            dk.Show();
-
-        }
-        private void btnTicket_Click(object sender, EventArgs e)
-        {
-            this.panel4.Controls.Clear();
-            changeColorButton(btnTicket);
-            Tour tour = new Tour() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            //panel1.Visible = false;
-            //picBackground.Visible = false;
-            tour.StartPosition = FormStartPosition.CenterParent;
-            tour.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
-
-            this.panel4.Controls.Add(tour);
-            tour.Show();
-        }
         private void btndataCus_Click(object sender, EventArgs e)
         {
             this.panel4.Controls.Clear();
@@ -328,71 +236,11 @@ namespace Tour
             h.Show();
         }
 
-        private void btnEmployyeDatabase_Click(object sender, EventArgs e)
-        {
-            this.panel4.Controls.Clear();
-            changeColorButton(btnEmployyeDatabase);
-            NhanVien h = new NhanVien() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            //panel1.Visible = false;
-            //picBackground.Visible = false;
-            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
-            this.panel4.Controls.Add(h);
-            h.Show();
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            this.panel4.Controls.Clear();
-            changeColorButton(btnMission);
-            NhiemVuTrongDoan h = new NhiemVuTrongDoan() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            //panel1.Visible = false;
-            //picBackground.Visible = false;
-            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
-            this.panel4.Controls.Add(h);
-            h.Show();
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            this.panel4.Controls.Clear();
-            changeColorButton(btnGroup);
-            DoanDuLich h = new DoanDuLich() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            //panel1.Visible = false;
-            //picBackground.Visible = false;
-            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
-            this.panel4.Controls.Add(h);
-            h.Show();
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            this.panel4.Controls.Clear();
-            changeColorButton(btnCustomer);
-            KhachHang h = new KhachHang() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            //panel1.Visible = false;
-            //picBackground.Visible = false;
-            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
-            this.panel4.Controls.Add(h);
-            h.Show();
-        }
-
         private void button11_Click(object sender, EventArgs e)
         {
             this.panel4.Controls.Clear();
-            changeColorButton(btnTicket);
+            //changeColorButton(btnTicket);
             ManageBanner h = new ManageBanner() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            //panel1.Visible = false;
-            //picBackground.Visible = false;
-            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
-            this.panel4.Controls.Add(h);
-            h.Show();
-        }
-
-        private void button12_Click(object sender, EventArgs e)
-        {
-            this.panel4.Controls.Clear();
-            changeColorButton(btnLoyalCustomer);
-            LoyalCustomer h = new LoyalCustomer() { TopLevel = false, TopMost = true,FormBorderStyle = FormBorderStyle.None };
             //panel1.Visible = false;
             //picBackground.Visible = false;
             h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
@@ -405,16 +253,181 @@ namespace Tour
 
         }
 
-        private void button11_Click_1(object sender, EventArgs e)
+        private void btnManage_Click(object sender, EventArgs e)
+        {
+            showSubmenu(panelManage);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            showSubmenu(panel_staff);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            showSubmenu(panel_Help);
+        }
+
+        private void panel_Help_Click(object sender, EventArgs e)
+        {
+            showSubmenu(panel_Help);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            hideSubmenu();
+            if (MessageBox.Show("Are you sure to log out your account?", "Nofitication", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+                this.Close();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
         {
             this.panel4.Controls.Clear();
-            changeColorButton(btnStatistics);
-            ReportChart h = new ReportChart() { TopLevel = false, TopMost = true,FormBorderStyle=FormBorderStyle.None };
+            StaffProfile sp = new StaffProfile() { TopLevel = false, TopMost = true };
+            panel1.Visible = false;
+            picBackground.Visible = false;
+            sp.StartPosition = FormStartPosition.CenterParent;
+
+            this.panel4.Controls.Add(sp);
+            sp.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTicket_Click(object sender, EventArgs e)
+        {
+            this.panel4.Controls.Clear();
+            //changeColorButton(btnTicket);
+            Tour tour = new Tour() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            //panel1.Visible = false;
+            //picBackground.Visible = false;
+            tour.StartPosition = FormStartPosition.CenterParent;
+            tour.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
+
+            this.panel4.Controls.Add(tour);
+            tour.Show();
+        }
+
+        private void btnRoute_Click(object sender, EventArgs e)
+        {
+            this.panel4.Controls.Clear();
+            //changeColorButton(btnRoute);
+            DangKy dk = new DangKy() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            //panel1.Visible = false;
+            picBackground.Visible = false;
+            dk.StartPosition = FormStartPosition.CenterParent;
+            dk.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
+
+            this.panel4.Controls.Add(dk);
+            dk.Show();
+
+        }
+
+        private void btnEmployyeDatabase_Click(object sender, EventArgs e)
+        {
+            this.panel4.Controls.Clear();
+            //changeColorButton(btnEmployyeDatabase);
+            NhanVien h = new NhanVien() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
             //panel1.Visible = false;
             //picBackground.Visible = false;
             h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
             this.panel4.Controls.Add(h);
             h.Show();
+        }
+
+        private void btnMission_Click(object sender, EventArgs e)
+        {
+            this.panel4.Controls.Clear();
+            //changeColorButton(btnMission);
+            NhiemVuTrongDoan h = new NhiemVuTrongDoan() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            //panel1.Visible = false;
+            //picBackground.Visible = false;
+            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
+            this.panel4.Controls.Add(h);
+            h.Show();
+        }
+
+        private void btnGroup_Click(object sender, EventArgs e)
+        {
+            this.panel4.Controls.Clear();
+            //changeColorButton(btnGroup);
+            DoanDuLich h = new DoanDuLich() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            //panel1.Visible = false;
+            //picBackground.Visible = false;
+            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
+            this.panel4.Controls.Add(h);
+            h.Show();
+        }
+
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            this.panel4.Controls.Clear();
+            //changeColorButton(btnCustomer);
+            KhachHang h = new KhachHang() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            //panel1.Visible = false;
+            //picBackground.Visible = false;
+            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
+            this.panel4.Controls.Add(h);
+            h.Show();
+        }
+
+        private void btnLoyalCustomer_Click(object sender, EventArgs e)
+        {
+            this.panel4.Controls.Clear();
+            //changeColorButton(btnLoyalCustomer);
+            LoyalCustomer h = new LoyalCustomer() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            //panel1.Visible = false;
+            //picBackground.Visible = false;
+            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
+            this.panel4.Controls.Add(h);
+            h.Show();
+        }
+
+        private void btnStatistics_Click(object sender, EventArgs e)
+        {
+            this.panel4.Controls.Clear();
+            //changeColorButton(btnStatistics);
+            ReportChart h = new ReportChart() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            //panel1.Visible = false;
+            //picBackground.Visible = false;
+            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
+            this.panel4.Controls.Add(h);
+            h.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.panel4.Controls.Clear();
+            //changeColorButton(button2);
+            ChangePass cp = new ChangePass() { TopLevel = false, TopMost = true };
+            panel1.Visible = false;
+            picBackground.Visible = false;
+            cp.StartPosition = FormStartPosition.CenterParent;
+            this.panel4.Controls.Add(cp);
+            cp.Show();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure to log out your account?", "Nofitication", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+                this.Close();
+            }
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

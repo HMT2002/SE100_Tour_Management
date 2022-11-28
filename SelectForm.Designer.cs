@@ -32,518 +32,158 @@ namespace Tour
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectForm));
             this.label1 = new System.Windows.Forms.Label();
-            this.panel_slide = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.panel_Help = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.panel_staff = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.panelManage = new System.Windows.Forms.Panel();
-            this.btnStatistics = new System.Windows.Forms.Button();
-            this.btnLoyalCustomer = new System.Windows.Forms.Button();
-            this.btnCustomer = new System.Windows.Forms.Button();
-            this.btnGroup = new System.Windows.Forms.Button();
-            this.btnMission = new System.Windows.Forms.Button();
-            this.btnEmployyeDatabase = new System.Windows.Forms.Button();
-            this.btnVehicalDatabase = new System.Windows.Forms.Button();
-            this.btnHotelDatabase = new System.Windows.Forms.Button();
-            this.btnLocationDatabase = new System.Windows.Forms.Button();
             this.btndataCus = new System.Windows.Forms.Button();
-            this.btnRoute = new System.Windows.Forms.Button();
-            this.btnTicket = new System.Windows.Forms.Button();
-            this.btnManage = new System.Windows.Forms.Button();
-            this.panel_logo = new System.Windows.Forms.Panel();
+            this.btnVehicalDatabase = new System.Windows.Forms.Button();
+            this.btnLocationDatabase = new System.Windows.Forms.Button();
+            this.btnHotelDatabase = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.picBackground = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel_slide = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.button7 = new Guna.UI2.WinForms.Guna2Button();
+            this.panel_Help = new Guna.UI2.WinForms.Guna2Panel();
+            this.button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.button5 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
+            this.button6 = new Guna.UI2.WinForms.Guna2Button();
+            this.panel_staff = new Guna.UI2.WinForms.Guna2Panel();
+            this.button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
+            this.button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.panelManage = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnStatistics = new Guna.UI2.WinForms.Guna2Button();
+            this.btnLoyalCustomer = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCustomer = new Guna.UI2.WinForms.Guna2Button();
+            this.btnGroup = new Guna.UI2.WinForms.Guna2Button();
+            this.btnMission = new Guna.UI2.WinForms.Guna2Button();
+            this.btnEmployyeDatabase = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRoute = new Guna.UI2.WinForms.Guna2Button();
+            this.btnTicket = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnManage = new Guna.UI2.WinForms.Guna2Button();
+            this.panel_logo = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnMinimize = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel_slide.SuspendLayout();
-            this.panel_Help.SuspendLayout();
-            this.panel_staff.SuspendLayout();
-            this.panelManage.SuspendLayout();
-            this.panel_logo.SuspendLayout();
+            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).BeginInit();
+            this.panel_slide.SuspendLayout();
+            this.guna2Panel2.SuspendLayout();
+            this.panel_Help.SuspendLayout();
+            this.guna2Panel9.SuspendLayout();
+            this.panel_staff.SuspendLayout();
+            this.guna2Panel8.SuspendLayout();
+            this.panelManage.SuspendLayout();
+            this.guna2Panel4.SuspendLayout();
+            this.panel_logo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(1, 9);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(13, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(243, 59);
+            this.label1.Size = new System.Drawing.Size(328, 105);
             this.label1.TabIndex = 11;
             this.label1.Text = "label1";
-            // 
-            // panel_slide
-            // 
-            this.panel_slide.AutoScroll = true;
-            this.panel_slide.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.panel_slide.Controls.Add(this.button7);
-            this.panel_slide.Controls.Add(this.panel_Help);
-            this.panel_slide.Controls.Add(this.button6);
-            this.panel_slide.Controls.Add(this.panel_staff);
-            this.panel_slide.Controls.Add(this.button4);
-            this.panel_slide.Controls.Add(this.panelManage);
-            this.panel_slide.Controls.Add(this.btnManage);
-            this.panel_slide.Controls.Add(this.panel_logo);
-            this.panel_slide.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel_slide.Location = new System.Drawing.Point(0, 0);
-            this.panel_slide.Name = "panel_slide";
-            this.panel_slide.Size = new System.Drawing.Size(264, 880);
-            this.panel_slide.TabIndex = 18;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.Red;
-            this.button7.Image = global::Tour.Properties.Resources.doorexit;
-            this.button7.Location = new System.Drawing.Point(0, 1206);
-            this.button7.Name = "button7";
-            this.button7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(247, 54);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "Exit";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // panel_Help
-            // 
-            this.panel_Help.Controls.Add(this.button1);
-            this.panel_Help.Controls.Add(this.button5);
-            this.panel_Help.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_Help.Location = new System.Drawing.Point(0, 1088);
-            this.panel_Help.Name = "panel_Help";
-            this.panel_Help.Size = new System.Drawing.Size(247, 118);
-            this.panel_Help.TabIndex = 7;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Linen;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(0, 60);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(247, 58);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Guide";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Linen;
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(0, 0);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(247, 60);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "About us";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Image = global::Tour.Properties.Resources.help;
-            this.button6.Location = new System.Drawing.Point(0, 1039);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(247, 49);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Help";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // panel_staff
-            // 
-            this.panel_staff.Controls.Add(this.button2);
-            this.panel_staff.Controls.Add(this.button3);
-            this.panel_staff.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_staff.Location = new System.Drawing.Point(0, 921);
-            this.panel_staff.Name = "panel_staff";
-            this.panel_staff.Size = new System.Drawing.Size(247, 118);
-            this.panel_staff.TabIndex = 5;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Linen;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(0, 60);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(247, 58);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Change Password";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Linen;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(0, 0);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(247, 60);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Profile";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Image = global::Tour.Properties.Resources.staff;
-            this.button4.Location = new System.Drawing.Point(0, 860);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(247, 61);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Staff";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // panelManage
-            // 
-            this.panelManage.Controls.Add(this.btnStatistics);
-            this.panelManage.Controls.Add(this.btnLoyalCustomer);
-            this.panelManage.Controls.Add(this.btnCustomer);
-            this.panelManage.Controls.Add(this.btnGroup);
-            this.panelManage.Controls.Add(this.btnMission);
-            this.panelManage.Controls.Add(this.btnEmployyeDatabase);
-            this.panelManage.Controls.Add(this.btnVehicalDatabase);
-            this.panelManage.Controls.Add(this.btnHotelDatabase);
-            this.panelManage.Controls.Add(this.btnLocationDatabase);
-            this.panelManage.Controls.Add(this.btndataCus);
-            this.panelManage.Controls.Add(this.btnRoute);
-            this.panelManage.Controls.Add(this.btnTicket);
-            this.panelManage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelManage.Location = new System.Drawing.Point(0, 138);
-            this.panelManage.Name = "panelManage";
-            this.panelManage.Size = new System.Drawing.Size(247, 722);
-            this.panelManage.TabIndex = 3;
-            // 
-            // btnStatistics
-            // 
-            this.btnStatistics.BackColor = System.Drawing.Color.Linen;
-            this.btnStatistics.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStatistics.FlatAppearance.BorderSize = 0;
-            this.btnStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStatistics.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStatistics.ForeColor = System.Drawing.Color.Black;
-            this.btnStatistics.Location = new System.Drawing.Point(0, 660);
-            this.btnStatistics.Margin = new System.Windows.Forms.Padding(2);
-            this.btnStatistics.Name = "btnStatistics";
-            this.btnStatistics.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnStatistics.Size = new System.Drawing.Size(247, 57);
-            this.btnStatistics.TabIndex = 13;
-            this.btnStatistics.Text = "Statistics";
-            this.btnStatistics.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStatistics.UseVisualStyleBackColor = false;
-            this.btnStatistics.Click += new System.EventHandler(this.button11_Click_1);
-            // 
-            // btnLoyalCustomer
-            // 
-            this.btnLoyalCustomer.BackColor = System.Drawing.Color.Linen;
-            this.btnLoyalCustomer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLoyalCustomer.FlatAppearance.BorderSize = 0;
-            this.btnLoyalCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoyalCustomer.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoyalCustomer.ForeColor = System.Drawing.Color.Black;
-            this.btnLoyalCustomer.Location = new System.Drawing.Point(0, 600);
-            this.btnLoyalCustomer.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLoyalCustomer.Name = "btnLoyalCustomer";
-            this.btnLoyalCustomer.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnLoyalCustomer.Size = new System.Drawing.Size(247, 60);
-            this.btnLoyalCustomer.TabIndex = 12;
-            this.btnLoyalCustomer.Text = "Loyal Customer";
-            this.btnLoyalCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLoyalCustomer.UseVisualStyleBackColor = false;
-            this.btnLoyalCustomer.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // btnCustomer
-            // 
-            this.btnCustomer.BackColor = System.Drawing.Color.Linen;
-            this.btnCustomer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCustomer.FlatAppearance.BorderSize = 0;
-            this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomer.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomer.ForeColor = System.Drawing.Color.Black;
-            this.btnCustomer.Location = new System.Drawing.Point(0, 540);
-            this.btnCustomer.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnCustomer.Size = new System.Drawing.Size(247, 60);
-            this.btnCustomer.TabIndex = 10;
-            this.btnCustomer.Text = "Customer Database";
-            this.btnCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCustomer.UseVisualStyleBackColor = false;
-            this.btnCustomer.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // btnGroup
-            // 
-            this.btnGroup.BackColor = System.Drawing.Color.Linen;
-            this.btnGroup.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGroup.FlatAppearance.BorderSize = 0;
-            this.btnGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGroup.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGroup.ForeColor = System.Drawing.Color.Black;
-            this.btnGroup.Location = new System.Drawing.Point(0, 480);
-            this.btnGroup.Margin = new System.Windows.Forms.Padding(2);
-            this.btnGroup.Name = "btnGroup";
-            this.btnGroup.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnGroup.Size = new System.Drawing.Size(247, 60);
-            this.btnGroup.TabIndex = 9;
-            this.btnGroup.Text = "Group Database";
-            this.btnGroup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGroup.UseVisualStyleBackColor = false;
-            this.btnGroup.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // btnMission
-            // 
-            this.btnMission.BackColor = System.Drawing.Color.Linen;
-            this.btnMission.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMission.FlatAppearance.BorderSize = 0;
-            this.btnMission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMission.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMission.ForeColor = System.Drawing.Color.Black;
-            this.btnMission.Location = new System.Drawing.Point(0, 420);
-            this.btnMission.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMission.Name = "btnMission";
-            this.btnMission.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnMission.Size = new System.Drawing.Size(247, 60);
-            this.btnMission.TabIndex = 8;
-            this.btnMission.Text = "Misson Database";
-            this.btnMission.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMission.UseVisualStyleBackColor = false;
-            this.btnMission.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // btnEmployyeDatabase
-            // 
-            this.btnEmployyeDatabase.BackColor = System.Drawing.Color.Linen;
-            this.btnEmployyeDatabase.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEmployyeDatabase.FlatAppearance.BorderSize = 0;
-            this.btnEmployyeDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmployyeDatabase.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmployyeDatabase.ForeColor = System.Drawing.Color.Black;
-            this.btnEmployyeDatabase.Location = new System.Drawing.Point(0, 360);
-            this.btnEmployyeDatabase.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEmployyeDatabase.Name = "btnEmployyeDatabase";
-            this.btnEmployyeDatabase.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnEmployyeDatabase.Size = new System.Drawing.Size(247, 60);
-            this.btnEmployyeDatabase.TabIndex = 7;
-            this.btnEmployyeDatabase.Text = "Employee Database";
-            this.btnEmployyeDatabase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmployyeDatabase.UseVisualStyleBackColor = false;
-            this.btnEmployyeDatabase.Click += new System.EventHandler(this.btnEmployyeDatabase_Click);
-            // 
-            // btnVehicalDatabase
-            // 
-            this.btnVehicalDatabase.BackColor = System.Drawing.Color.Linen;
-            this.btnVehicalDatabase.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnVehicalDatabase.FlatAppearance.BorderSize = 0;
-            this.btnVehicalDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVehicalDatabase.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVehicalDatabase.ForeColor = System.Drawing.Color.Black;
-            this.btnVehicalDatabase.Location = new System.Drawing.Point(0, 300);
-            this.btnVehicalDatabase.Margin = new System.Windows.Forms.Padding(2);
-            this.btnVehicalDatabase.Name = "btnVehicalDatabase";
-            this.btnVehicalDatabase.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnVehicalDatabase.Size = new System.Drawing.Size(247, 60);
-            this.btnVehicalDatabase.TabIndex = 6;
-            this.btnVehicalDatabase.Text = "Vehical Database";
-            this.btnVehicalDatabase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVehicalDatabase.UseVisualStyleBackColor = false;
-            this.btnVehicalDatabase.Click += new System.EventHandler(this.btnVehicalDatabase_Click);
-            // 
-            // btnHotelDatabase
-            // 
-            this.btnHotelDatabase.BackColor = System.Drawing.Color.Linen;
-            this.btnHotelDatabase.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHotelDatabase.FlatAppearance.BorderSize = 0;
-            this.btnHotelDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHotelDatabase.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHotelDatabase.ForeColor = System.Drawing.Color.Black;
-            this.btnHotelDatabase.Location = new System.Drawing.Point(0, 240);
-            this.btnHotelDatabase.Margin = new System.Windows.Forms.Padding(2);
-            this.btnHotelDatabase.Name = "btnHotelDatabase";
-            this.btnHotelDatabase.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnHotelDatabase.Size = new System.Drawing.Size(247, 60);
-            this.btnHotelDatabase.TabIndex = 5;
-            this.btnHotelDatabase.Text = "Hotel Database";
-            this.btnHotelDatabase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHotelDatabase.UseVisualStyleBackColor = false;
-            this.btnHotelDatabase.Click += new System.EventHandler(this.btnHotelDatabase_Click);
-            // 
-            // btnLocationDatabase
-            // 
-            this.btnLocationDatabase.BackColor = System.Drawing.Color.Linen;
-            this.btnLocationDatabase.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLocationDatabase.FlatAppearance.BorderSize = 0;
-            this.btnLocationDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLocationDatabase.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLocationDatabase.ForeColor = System.Drawing.Color.Black;
-            this.btnLocationDatabase.Location = new System.Drawing.Point(0, 180);
-            this.btnLocationDatabase.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLocationDatabase.Name = "btnLocationDatabase";
-            this.btnLocationDatabase.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnLocationDatabase.Size = new System.Drawing.Size(247, 60);
-            this.btnLocationDatabase.TabIndex = 4;
-            this.btnLocationDatabase.Text = "Location Database";
-            this.btnLocationDatabase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLocationDatabase.UseVisualStyleBackColor = false;
-            this.btnLocationDatabase.Click += new System.EventHandler(this.btnLocationDatabase_Click);
             // 
             // btndataCus
             // 
             this.btndataCus.BackColor = System.Drawing.Color.Linen;
-            this.btndataCus.Dock = System.Windows.Forms.DockStyle.Top;
             this.btndataCus.FlatAppearance.BorderSize = 0;
             this.btndataCus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btndataCus.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndataCus.ForeColor = System.Drawing.Color.Black;
-            this.btndataCus.Location = new System.Drawing.Point(0, 120);
-            this.btndataCus.Margin = new System.Windows.Forms.Padding(2);
+            this.btndataCus.Location = new System.Drawing.Point(548, 341);
+            this.btndataCus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btndataCus.Name = "btndataCus";
-            this.btndataCus.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btndataCus.Size = new System.Drawing.Size(247, 60);
+            this.btndataCus.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            this.btndataCus.Size = new System.Drawing.Size(352, 74);
             this.btndataCus.TabIndex = 3;
             this.btndataCus.Text = "Ticket Database";
             this.btndataCus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btndataCus.UseVisualStyleBackColor = false;
             this.btndataCus.Click += new System.EventHandler(this.btndataCus_Click);
             // 
-            // btnRoute
+            // btnVehicalDatabase
             // 
-            this.btnRoute.BackColor = System.Drawing.Color.Linen;
-            this.btnRoute.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRoute.FlatAppearance.BorderSize = 0;
-            this.btnRoute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRoute.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRoute.ForeColor = System.Drawing.Color.Black;
-            this.btnRoute.Location = new System.Drawing.Point(0, 60);
-            this.btnRoute.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRoute.Name = "btnRoute";
-            this.btnRoute.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnRoute.Size = new System.Drawing.Size(247, 60);
-            this.btnRoute.TabIndex = 0;
-            this.btnRoute.Text = "Ticket Management";
-            this.btnRoute.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRoute.UseVisualStyleBackColor = false;
-            this.btnRoute.Click += new System.EventHandler(this.btnRoute_Click);
+            this.btnVehicalDatabase.BackColor = System.Drawing.Color.Linen;
+            this.btnVehicalDatabase.FlatAppearance.BorderSize = 0;
+            this.btnVehicalDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVehicalDatabase.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVehicalDatabase.ForeColor = System.Drawing.Color.Black;
+            this.btnVehicalDatabase.Location = new System.Drawing.Point(535, 328);
+            this.btnVehicalDatabase.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVehicalDatabase.Name = "btnVehicalDatabase";
+            this.btnVehicalDatabase.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            this.btnVehicalDatabase.Size = new System.Drawing.Size(352, 74);
+            this.btnVehicalDatabase.TabIndex = 6;
+            this.btnVehicalDatabase.Text = "Vehical Database";
+            this.btnVehicalDatabase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVehicalDatabase.UseVisualStyleBackColor = false;
+            this.btnVehicalDatabase.Click += new System.EventHandler(this.btnVehicalDatabase_Click);
             // 
-            // btnTicket
+            // btnLocationDatabase
             // 
-            this.btnTicket.BackColor = System.Drawing.Color.Linen;
-            this.btnTicket.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTicket.FlatAppearance.BorderSize = 0;
-            this.btnTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTicket.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTicket.ForeColor = System.Drawing.Color.Black;
-            this.btnTicket.Location = new System.Drawing.Point(0, 0);
-            this.btnTicket.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTicket.Name = "btnTicket";
-            this.btnTicket.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnTicket.Size = new System.Drawing.Size(247, 60);
-            this.btnTicket.TabIndex = 2;
-            this.btnTicket.Text = "Tour Management";
-            this.btnTicket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTicket.UseVisualStyleBackColor = false;
-            this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click);
+            this.btnLocationDatabase.BackColor = System.Drawing.Color.Linen;
+            this.btnLocationDatabase.FlatAppearance.BorderSize = 0;
+            this.btnLocationDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLocationDatabase.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLocationDatabase.ForeColor = System.Drawing.Color.Black;
+            this.btnLocationDatabase.Location = new System.Drawing.Point(585, 341);
+            this.btnLocationDatabase.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLocationDatabase.Name = "btnLocationDatabase";
+            this.btnLocationDatabase.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            this.btnLocationDatabase.Size = new System.Drawing.Size(352, 74);
+            this.btnLocationDatabase.TabIndex = 4;
+            this.btnLocationDatabase.Text = "Location Database";
+            this.btnLocationDatabase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLocationDatabase.UseVisualStyleBackColor = false;
+            this.btnLocationDatabase.Click += new System.EventHandler(this.btnLocationDatabase_Click);
             // 
-            // btnManage
+            // btnHotelDatabase
             // 
-            this.btnManage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnManage.FlatAppearance.BorderSize = 0;
-            this.btnManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManage.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManage.ForeColor = System.Drawing.Color.Black;
-            this.btnManage.Image = global::Tour.Properties.Resources.manageicon1;
-            this.btnManage.Location = new System.Drawing.Point(0, 89);
-            this.btnManage.Name = "btnManage";
-            this.btnManage.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnManage.Size = new System.Drawing.Size(247, 49);
-            this.btnManage.TabIndex = 2;
-            this.btnManage.Text = "Manage";
-            this.btnManage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnManage.UseVisualStyleBackColor = true;
-            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
-            // 
-            // panel_logo
-            // 
-            this.panel_logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel_logo.Controls.Add(this.label1);
-            this.panel_logo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_logo.Location = new System.Drawing.Point(0, 0);
-            this.panel_logo.Name = "panel_logo";
-            this.panel_logo.Size = new System.Drawing.Size(247, 89);
-            this.panel_logo.TabIndex = 1;
+            this.btnHotelDatabase.BackColor = System.Drawing.Color.Linen;
+            this.btnHotelDatabase.FlatAppearance.BorderSize = 0;
+            this.btnHotelDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHotelDatabase.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHotelDatabase.ForeColor = System.Drawing.Color.Black;
+            this.btnHotelDatabase.Location = new System.Drawing.Point(585, 341);
+            this.btnHotelDatabase.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnHotelDatabase.Name = "btnHotelDatabase";
+            this.btnHotelDatabase.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            this.btnHotelDatabase.Size = new System.Drawing.Size(352, 74);
+            this.btnHotelDatabase.TabIndex = 5;
+            this.btnHotelDatabase.Text = "Hotel Database";
+            this.btnHotelDatabase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHotelDatabase.UseVisualStyleBackColor = false;
+            this.btnHotelDatabase.Click += new System.EventHandler(this.btnHotelDatabase_Click);
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.picBackground);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(264, 101);
+            this.panel4.Controls.Add(this.btndataCus);
+            this.panel4.Controls.Add(this.btnVehicalDatabase);
+            this.panel4.Controls.Add(this.btnLocationDatabase);
+            this.panel4.Controls.Add(this.btnHotelDatabase);
+            this.panel4.Location = new System.Drawing.Point(352, 124);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1183, 779);
+            this.panel4.Size = new System.Drawing.Size(1363, 959);
             this.panel4.TabIndex = 19;
             // 
             // picBackground
             // 
-            this.picBackground.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.picBackground.Image = ((System.Drawing.Image)(resources.GetObject("picBackground.Image")));
-            this.picBackground.Location = new System.Drawing.Point(0, 3);
+            this.picBackground.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picBackground.Location = new System.Drawing.Point(0, 0);
+            this.picBackground.Margin = new System.Windows.Forms.Padding(4);
             this.picBackground.Name = "picBackground";
-            this.picBackground.Size = new System.Drawing.Size(1183, 776);
+            this.picBackground.Size = new System.Drawing.Size(1363, 959);
             this.picBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBackground.TabIndex = 0;
             this.picBackground.TabStop = false;
@@ -553,106 +193,661 @@ namespace Tour
             this.timer1.Interval = 1500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // panel_slide
+            // 
+            this.panel_slide.AutoScroll = true;
+            this.panel_slide.BackColor = System.Drawing.Color.Linen;
+            this.panel_slide.Controls.Add(this.guna2Panel2);
+            this.panel_slide.Controls.Add(this.panel_Help);
+            this.panel_slide.Controls.Add(this.guna2Panel9);
+            this.panel_slide.Controls.Add(this.panel_staff);
+            this.panel_slide.Controls.Add(this.guna2Panel8);
+            this.panel_slide.Controls.Add(this.panelManage);
+            this.panel_slide.Controls.Add(this.guna2Panel4);
+            this.panel_slide.Controls.Add(this.panel_logo);
+            this.panel_slide.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel_slide.Location = new System.Drawing.Point(0, 0);
+            this.panel_slide.Name = "panel_slide";
+            this.panel_slide.Size = new System.Drawing.Size(352, 1083);
+            this.panel_slide.TabIndex = 15;
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.Controls.Add(this.button7);
+            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 1008);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(352, 57);
+            this.guna2Panel2.TabIndex = 20;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Transparent;
+            this.button7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.button7.BorderRadius = 10;
+            this.button7.BorderThickness = 2;
+            this.button7.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button7.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button7.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.button7.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.button7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.button7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.Black;
+            this.button7.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.button7.HoverState.FillColor = System.Drawing.Color.White;
+            this.button7.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.button7.HoverState.Image = global::Tour.Properties.Resources.logout_1_;
+            this.button7.Image = global::Tour.Properties.Resources.logout;
+            this.button7.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.button7.ImageOffset = new System.Drawing.Point(10, 0);
+            this.button7.Location = new System.Drawing.Point(28, 6);
+            this.button7.Name = "button7";
+            this.button7.PressedColor = System.Drawing.Color.Transparent;
+            this.button7.Size = new System.Drawing.Size(276, 45);
+            this.button7.TabIndex = 4;
+            this.button7.Text = "Exit";
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // panel_Help
+            // 
+            this.panel_Help.AutoSize = true;
+            this.panel_Help.Controls.Add(this.button1);
+            this.panel_Help.Controls.Add(this.button5);
+            this.panel_Help.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_Help.Location = new System.Drawing.Point(0, 888);
+            this.panel_Help.Name = "panel_Help";
+            this.panel_Help.Size = new System.Drawing.Size(352, 120);
+            this.panel_Help.TabIndex = 20;
+            this.panel_Help.Click += new System.EventHandler(this.panel_Help_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Linen;
+            this.button1.BorderRadius = 10;
+            this.button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.button1.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FillColor = System.Drawing.Color.Linen;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.button1.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.button1.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.button1.ImageOffset = new System.Drawing.Point(10, 0);
+            this.button1.Location = new System.Drawing.Point(0, 60);
+            this.button1.Name = "button1";
+            this.button1.PressedColor = System.Drawing.Color.Transparent;
+            this.button1.Size = new System.Drawing.Size(352, 60);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Guide";
+            this.button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.button1.TextOffset = new System.Drawing.Point(65, 0);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Linen;
+            this.button5.BorderRadius = 10;
+            this.button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.button5.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.FillColor = System.Drawing.Color.Linen;
+            this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.button5.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.button5.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.button5.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.button5.ImageOffset = new System.Drawing.Point(10, 0);
+            this.button5.Location = new System.Drawing.Point(0, 0);
+            this.button5.Name = "button5";
+            this.button5.PressedColor = System.Drawing.Color.Transparent;
+            this.button5.Size = new System.Drawing.Size(352, 60);
+            this.button5.TabIndex = 5;
+            this.button5.Text = "About us";
+            this.button5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.button5.TextOffset = new System.Drawing.Point(65, 0);
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // guna2Panel9
+            // 
+            this.guna2Panel9.Controls.Add(this.button6);
+            this.guna2Panel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel9.Location = new System.Drawing.Point(0, 831);
+            this.guna2Panel9.Name = "guna2Panel9";
+            this.guna2Panel9.Size = new System.Drawing.Size(352, 57);
+            this.guna2Panel9.TabIndex = 19;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Transparent;
+            this.button6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.button6.BorderRadius = 10;
+            this.button6.BorderThickness = 2;
+            this.button6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.button6.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.button6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.button6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.Black;
+            this.button6.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.button6.HoverState.FillColor = System.Drawing.Color.White;
+            this.button6.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.button6.HoverState.Image = global::Tour.Properties.Resources.question_1_;
+            this.button6.Image = global::Tour.Properties.Resources.question;
+            this.button6.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.button6.ImageOffset = new System.Drawing.Point(10, 0);
+            this.button6.Location = new System.Drawing.Point(28, 6);
+            this.button6.Name = "button6";
+            this.button6.PressedColor = System.Drawing.Color.Transparent;
+            this.button6.Size = new System.Drawing.Size(276, 45);
+            this.button6.TabIndex = 3;
+            this.button6.Text = "Help";
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // panel_staff
+            // 
+            this.panel_staff.AutoSize = true;
+            this.panel_staff.Controls.Add(this.button2);
+            this.panel_staff.Controls.Add(this.button3);
+            this.panel_staff.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_staff.Location = new System.Drawing.Point(0, 711);
+            this.panel_staff.Name = "panel_staff";
+            this.panel_staff.Size = new System.Drawing.Size(352, 120);
+            this.panel_staff.TabIndex = 18;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Linen;
+            this.button2.BorderRadius = 10;
+            this.button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.button2.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FillColor = System.Drawing.Color.Linen;
+            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.button2.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.button2.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.button2.ImageOffset = new System.Drawing.Point(10, 0);
+            this.button2.Location = new System.Drawing.Point(0, 60);
+            this.button2.Name = "button2";
+            this.button2.PressedColor = System.Drawing.Color.Transparent;
+            this.button2.Size = new System.Drawing.Size(352, 60);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Change Password";
+            this.button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.button2.TextOffset = new System.Drawing.Point(65, 0);
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Linen;
+            this.button3.BorderRadius = 10;
+            this.button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.button3.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FillColor = System.Drawing.Color.Linen;
+            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.button3.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.button3.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.button3.ImageOffset = new System.Drawing.Point(10, 0);
+            this.button3.Location = new System.Drawing.Point(0, 0);
+            this.button3.Name = "button3";
+            this.button3.PressedColor = System.Drawing.Color.Transparent;
+            this.button3.Size = new System.Drawing.Size(352, 60);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Profile";
+            this.button3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.button3.TextOffset = new System.Drawing.Point(65, 0);
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // guna2Panel8
+            // 
+            this.guna2Panel8.Controls.Add(this.button4);
+            this.guna2Panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel8.Location = new System.Drawing.Point(0, 654);
+            this.guna2Panel8.Name = "guna2Panel8";
+            this.guna2Panel8.Size = new System.Drawing.Size(352, 57);
+            this.guna2Panel8.TabIndex = 19;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.button4.BorderRadius = 10;
+            this.button4.BorderThickness = 2;
+            this.button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.button4.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.button4.HoverState.FillColor = System.Drawing.Color.White;
+            this.button4.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.button4.HoverState.Image = global::Tour.Properties.Resources.staff_1_;
+            this.button4.Image = global::Tour.Properties.Resources.staff1;
+            this.button4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.button4.ImageOffset = new System.Drawing.Point(10, 0);
+            this.button4.Location = new System.Drawing.Point(28, 6);
+            this.button4.Name = "button4";
+            this.button4.PressedColor = System.Drawing.Color.Transparent;
+            this.button4.Size = new System.Drawing.Size(276, 45);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Staff";
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // panelManage
+            // 
+            this.panelManage.AutoSize = true;
+            this.panelManage.Controls.Add(this.btnStatistics);
+            this.panelManage.Controls.Add(this.btnLoyalCustomer);
+            this.panelManage.Controls.Add(this.btnCustomer);
+            this.panelManage.Controls.Add(this.btnGroup);
+            this.panelManage.Controls.Add(this.btnMission);
+            this.panelManage.Controls.Add(this.btnEmployyeDatabase);
+            this.panelManage.Controls.Add(this.btnRoute);
+            this.panelManage.Controls.Add(this.btnTicket);
+            this.panelManage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelManage.Location = new System.Drawing.Point(0, 174);
+            this.panelManage.Name = "panelManage";
+            this.panelManage.Size = new System.Drawing.Size(352, 480);
+            this.panelManage.TabIndex = 19;
+            // 
+            // btnStatistics
+            // 
+            this.btnStatistics.BackColor = System.Drawing.Color.Linen;
+            this.btnStatistics.BorderRadius = 10;
+            this.btnStatistics.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnStatistics.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnStatistics.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.btnStatistics.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.btnStatistics.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStatistics.FillColor = System.Drawing.Color.Linen;
+            this.btnStatistics.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatistics.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnStatistics.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnStatistics.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnStatistics.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnStatistics.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnStatistics.Location = new System.Drawing.Point(0, 420);
+            this.btnStatistics.Name = "btnStatistics";
+            this.btnStatistics.PressedColor = System.Drawing.Color.Transparent;
+            this.btnStatistics.Size = new System.Drawing.Size(352, 60);
+            this.btnStatistics.TabIndex = 12;
+            this.btnStatistics.Text = "Statistics";
+            this.btnStatistics.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnStatistics.TextOffset = new System.Drawing.Point(65, 0);
+            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
+            // 
+            // btnLoyalCustomer
+            // 
+            this.btnLoyalCustomer.BackColor = System.Drawing.Color.Linen;
+            this.btnLoyalCustomer.BorderRadius = 10;
+            this.btnLoyalCustomer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoyalCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoyalCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.btnLoyalCustomer.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.btnLoyalCustomer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLoyalCustomer.FillColor = System.Drawing.Color.Linen;
+            this.btnLoyalCustomer.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoyalCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnLoyalCustomer.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnLoyalCustomer.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnLoyalCustomer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLoyalCustomer.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnLoyalCustomer.Location = new System.Drawing.Point(0, 360);
+            this.btnLoyalCustomer.Name = "btnLoyalCustomer";
+            this.btnLoyalCustomer.PressedColor = System.Drawing.Color.Transparent;
+            this.btnLoyalCustomer.Size = new System.Drawing.Size(352, 60);
+            this.btnLoyalCustomer.TabIndex = 11;
+            this.btnLoyalCustomer.Text = "Loyal";
+            this.btnLoyalCustomer.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLoyalCustomer.TextOffset = new System.Drawing.Point(65, 0);
+            this.btnLoyalCustomer.Click += new System.EventHandler(this.btnLoyalCustomer_Click);
+            // 
+            // btnCustomer
+            // 
+            this.btnCustomer.BackColor = System.Drawing.Color.Linen;
+            this.btnCustomer.BorderRadius = 10;
+            this.btnCustomer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.btnCustomer.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.btnCustomer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCustomer.FillColor = System.Drawing.Color.Linen;
+            this.btnCustomer.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnCustomer.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnCustomer.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnCustomer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnCustomer.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnCustomer.Location = new System.Drawing.Point(0, 300);
+            this.btnCustomer.Name = "btnCustomer";
+            this.btnCustomer.PressedColor = System.Drawing.Color.Transparent;
+            this.btnCustomer.Size = new System.Drawing.Size(352, 60);
+            this.btnCustomer.TabIndex = 10;
+            this.btnCustomer.Text = "Customer";
+            this.btnCustomer.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnCustomer.TextOffset = new System.Drawing.Point(65, 0);
+            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
+            // 
+            // btnGroup
+            // 
+            this.btnGroup.BackColor = System.Drawing.Color.Linen;
+            this.btnGroup.BorderRadius = 10;
+            this.btnGroup.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnGroup.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnGroup.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.btnGroup.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.btnGroup.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGroup.FillColor = System.Drawing.Color.Linen;
+            this.btnGroup.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnGroup.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnGroup.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnGroup.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnGroup.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnGroup.Location = new System.Drawing.Point(0, 240);
+            this.btnGroup.Name = "btnGroup";
+            this.btnGroup.PressedColor = System.Drawing.Color.Transparent;
+            this.btnGroup.Size = new System.Drawing.Size(352, 60);
+            this.btnGroup.TabIndex = 9;
+            this.btnGroup.Text = "Group";
+            this.btnGroup.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnGroup.TextOffset = new System.Drawing.Point(65, 0);
+            this.btnGroup.Click += new System.EventHandler(this.btnGroup_Click);
+            // 
+            // btnMission
+            // 
+            this.btnMission.BackColor = System.Drawing.Color.Linen;
+            this.btnMission.BorderRadius = 10;
+            this.btnMission.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnMission.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnMission.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.btnMission.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.btnMission.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMission.FillColor = System.Drawing.Color.Linen;
+            this.btnMission.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnMission.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnMission.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnMission.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnMission.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnMission.Location = new System.Drawing.Point(0, 180);
+            this.btnMission.Name = "btnMission";
+            this.btnMission.PressedColor = System.Drawing.Color.Transparent;
+            this.btnMission.Size = new System.Drawing.Size(352, 60);
+            this.btnMission.TabIndex = 8;
+            this.btnMission.Text = "Mission";
+            this.btnMission.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnMission.TextOffset = new System.Drawing.Point(65, 0);
+            this.btnMission.Click += new System.EventHandler(this.btnMission_Click);
+            // 
+            // btnEmployyeDatabase
+            // 
+            this.btnEmployyeDatabase.BackColor = System.Drawing.Color.Linen;
+            this.btnEmployyeDatabase.BorderRadius = 10;
+            this.btnEmployyeDatabase.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEmployyeDatabase.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEmployyeDatabase.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.btnEmployyeDatabase.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.btnEmployyeDatabase.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEmployyeDatabase.FillColor = System.Drawing.Color.Linen;
+            this.btnEmployyeDatabase.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmployyeDatabase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnEmployyeDatabase.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnEmployyeDatabase.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnEmployyeDatabase.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnEmployyeDatabase.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnEmployyeDatabase.Location = new System.Drawing.Point(0, 120);
+            this.btnEmployyeDatabase.Name = "btnEmployyeDatabase";
+            this.btnEmployyeDatabase.PressedColor = System.Drawing.Color.Transparent;
+            this.btnEmployyeDatabase.Size = new System.Drawing.Size(352, 60);
+            this.btnEmployyeDatabase.TabIndex = 7;
+            this.btnEmployyeDatabase.Text = "Employee";
+            this.btnEmployyeDatabase.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnEmployyeDatabase.TextOffset = new System.Drawing.Point(65, 0);
+            this.btnEmployyeDatabase.Click += new System.EventHandler(this.btnEmployyeDatabase_Click);
+            // 
+            // btnRoute
+            // 
+            this.btnRoute.BackColor = System.Drawing.Color.Linen;
+            this.btnRoute.BorderRadius = 10;
+            this.btnRoute.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRoute.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRoute.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.btnRoute.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.btnRoute.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRoute.FillColor = System.Drawing.Color.Linen;
+            this.btnRoute.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnRoute.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnRoute.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnRoute.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnRoute.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnRoute.Location = new System.Drawing.Point(0, 60);
+            this.btnRoute.Name = "btnRoute";
+            this.btnRoute.PressedColor = System.Drawing.Color.Transparent;
+            this.btnRoute.Size = new System.Drawing.Size(352, 60);
+            this.btnRoute.TabIndex = 6;
+            this.btnRoute.Text = "Ticket";
+            this.btnRoute.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnRoute.TextOffset = new System.Drawing.Point(65, 0);
+            this.btnRoute.Click += new System.EventHandler(this.btnRoute_Click);
+            // 
+            // btnTicket
+            // 
+            this.btnTicket.BackColor = System.Drawing.Color.Linen;
+            this.btnTicket.BorderRadius = 10;
+            this.btnTicket.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTicket.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTicket.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.btnTicket.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.btnTicket.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTicket.FillColor = System.Drawing.Color.Linen;
+            this.btnTicket.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTicket.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnTicket.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnTicket.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnTicket.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnTicket.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnTicket.Location = new System.Drawing.Point(0, 0);
+            this.btnTicket.Name = "btnTicket";
+            this.btnTicket.PressedColor = System.Drawing.Color.Transparent;
+            this.btnTicket.Size = new System.Drawing.Size(352, 60);
+            this.btnTicket.TabIndex = 5;
+            this.btnTicket.Text = "Tour";
+            this.btnTicket.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnTicket.TextOffset = new System.Drawing.Point(65, 0);
+            this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click);
+            // 
+            // guna2Panel4
+            // 
+            this.guna2Panel4.BackColor = System.Drawing.Color.Linen;
+            this.guna2Panel4.Controls.Add(this.btnManage);
+            this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel4.Location = new System.Drawing.Point(0, 117);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Size = new System.Drawing.Size(352, 57);
+            this.guna2Panel4.TabIndex = 17;
+            // 
+            // btnManage
+            // 
+            this.btnManage.BackColor = System.Drawing.Color.Transparent;
+            this.btnManage.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnManage.BorderRadius = 10;
+            this.btnManage.BorderThickness = 2;
+            this.btnManage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnManage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnManage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.btnManage.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.btnManage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.btnManage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManage.ForeColor = System.Drawing.Color.Black;
+            this.btnManage.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.btnManage.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnManage.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.btnManage.HoverState.Image = global::Tour.Properties.Resources.management_1_;
+            this.btnManage.Image = global::Tour.Properties.Resources.management;
+            this.btnManage.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnManage.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnManage.Location = new System.Drawing.Point(28, 6);
+            this.btnManage.Name = "btnManage";
+            this.btnManage.PressedColor = System.Drawing.Color.Transparent;
+            this.btnManage.Size = new System.Drawing.Size(276, 45);
+            this.btnManage.TabIndex = 1;
+            this.btnManage.Text = "Manage";
+            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
+            // 
+            // panel_logo
+            // 
+            this.panel_logo.BackColor = System.Drawing.Color.Transparent;
+            this.panel_logo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.panel_logo.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.panel_logo.BorderThickness = 2;
+            this.panel_logo.Controls.Add(this.label1);
+            this.panel_logo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_logo.Location = new System.Drawing.Point(0, 0);
+            this.panel_logo.Margin = new System.Windows.Forms.Padding(4);
+            this.panel_logo.Name = "panel_logo";
+            this.panel_logo.Size = new System.Drawing.Size(352, 117);
+            this.panel_logo.TabIndex = 17;
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnMinimize.BorderThickness = 1;
+            this.btnMinimize.CustomImages.Image = global::Tour.Properties.Resources.minus;
+            this.btnMinimize.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnMinimize.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnMinimize.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnMinimize.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnMinimize.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnMinimize.FillColor = System.Drawing.Color.Empty;
+            this.btnMinimize.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnMinimize.ForeColor = System.Drawing.Color.White;
+            this.btnMinimize.HoverState.FillColor = System.Drawing.Color.Gray;
+            this.btnMinimize.Location = new System.Drawing.Point(1014, 9);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(65, 45);
+            this.btnMinimize.TabIndex = 8;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Aqua;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(264, 0);
+            this.panel1.Controls.Add(this.btnMinimize);
+            this.panel1.Controls.Add(this.btnExit);
+            this.panel1.Location = new System.Drawing.Point(352, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1183, 95);
+            this.panel1.Size = new System.Drawing.Size(1576, 117);
             this.panel1.TabIndex = 20;
             // 
-            // label4
+            // btnExit
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(1055, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 63);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "-";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(1107, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 63);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "X";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnExit.CustomImages.Image = global::Tour.Properties.Resources.close;
+            this.btnExit.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExit.FillColor = System.Drawing.Color.Empty;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.HoverState.FillColor = System.Drawing.Color.Red;
+            this.btnExit.Location = new System.Drawing.Point(1082, 9);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(65, 45);
+            this.btnExit.TabIndex = 7;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // SelectForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1447, 880);
+            this.ClientSize = new System.Drawing.Size(1929, 1083);
+            this.Controls.Add(this.panel_slide);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel_slide);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "SelectForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SelectForm";
             this.Load += new System.EventHandler(this.SelectForm_Load);
-            this.panel_slide.ResumeLayout(false);
-            this.panel_Help.ResumeLayout(false);
-            this.panel_staff.ResumeLayout(false);
-            this.panelManage.ResumeLayout(false);
-            this.panel_logo.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).EndInit();
+            this.panel_slide.ResumeLayout(false);
+            this.panel_slide.PerformLayout();
+            this.guna2Panel2.ResumeLayout(false);
+            this.panel_Help.ResumeLayout(false);
+            this.guna2Panel9.ResumeLayout(false);
+            this.panel_staff.ResumeLayout(false);
+            this.guna2Panel8.ResumeLayout(false);
+            this.panelManage.ResumeLayout(false);
+            this.guna2Panel4.ResumeLayout(false);
+            this.panel_logo.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel_slide;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Panel panelManage;
-        private System.Windows.Forms.Button btnManage;
-        private System.Windows.Forms.Panel panel_logo;
-        private System.Windows.Forms.Panel panel_staff;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Panel panel_Help;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button btnRoute;
-        private System.Windows.Forms.Button btnTicket;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btndataCus;
         private System.Windows.Forms.PictureBox picBackground;
         private System.Windows.Forms.Button btnHotelDatabase;
         private System.Windows.Forms.Button btnLocationDatabase;
-        private System.Windows.Forms.Button btnEmployyeDatabase;
         private System.Windows.Forms.Button btnVehicalDatabase;
-        private System.Windows.Forms.Button btnMission;
-        private System.Windows.Forms.Button btnGroup;
-        private System.Windows.Forms.Button btnCustomer;
-        private System.Windows.Forms.Button btnLoyalCustomer;
-        private System.Windows.Forms.Button btnStatistics;
+        private Guna.UI2.WinForms.Guna2Button btnManage;
+        private Guna.UI2.WinForms.Guna2Panel panel_slide;
+        private Guna.UI2.WinForms.Guna2Button button7;
+        private Guna.UI2.WinForms.Guna2Button button6;
+        private Guna.UI2.WinForms.Guna2Button button4;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Panel panel_Help;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
+        private Guna.UI2.WinForms.Guna2Panel panel_staff;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
+        private Guna.UI2.WinForms.Guna2Panel panelManage;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
+        private Guna.UI2.WinForms.Guna2Panel panel_logo;
+        private Guna.UI2.WinForms.Guna2Button button3;
+        private Guna.UI2.WinForms.Guna2Button button2;
+        private Guna.UI2.WinForms.Guna2Button button1;
+        private Guna.UI2.WinForms.Guna2Button button5;
+        private Guna.UI2.WinForms.Guna2Button btnStatistics;
+        private Guna.UI2.WinForms.Guna2Button btnLoyalCustomer;
+        private Guna.UI2.WinForms.Guna2Button btnCustomer;
+        private Guna.UI2.WinForms.Guna2Button btnGroup;
+        private Guna.UI2.WinForms.Guna2Button btnMission;
+        private Guna.UI2.WinForms.Guna2Button btnEmployyeDatabase;
+        private Guna.UI2.WinForms.Guna2Button btnRoute;
+        private Guna.UI2.WinForms.Guna2Button btnTicket;
+        private Guna.UI2.WinForms.Guna2Button btnExit;
+        private Guna.UI2.WinForms.Guna2Button btnMinimize;
     }
 }
