@@ -220,6 +220,12 @@ namespace Tour
 
         }
 
+        private void checkbxShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            passwordtxb.PasswordChar = checkbxShowPassword.Checked ? '\0' : '●';
+
+        }
+
         private void cbGuest_CheckedChanged(object sender, EventArgs e)
         {
             if (cbGuest.Checked == true)

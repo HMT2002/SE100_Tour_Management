@@ -49,6 +49,7 @@ namespace Tour
             this.label1 = new System.Windows.Forms.Label();
             this.txtbxSearchTicket = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.checkbxShowPassword = new System.Windows.Forms.CheckBox();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -105,6 +106,7 @@ namespace Tour
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Linen;
+            this.tabPage1.Controls.Add(this.checkbxShowPassword);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.cbGuest);
             this.tabPage1.Controls.Add(this.label2);
@@ -129,7 +131,7 @@ namespace Tour
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(136, 318);
+            this.label3.Location = new System.Drawing.Point(129, 338);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 19);
             this.label3.TabIndex = 25;
@@ -141,7 +143,7 @@ namespace Tour
             this.cbGuest.BackColor = System.Drawing.Color.Transparent;
             this.cbGuest.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGuest.ForeColor = System.Drawing.Color.Black;
-            this.cbGuest.Location = new System.Drawing.Point(48, 229);
+            this.cbGuest.Location = new System.Drawing.Point(48, 216);
             this.cbGuest.Margin = new System.Windows.Forms.Padding(2);
             this.cbGuest.Name = "cbGuest";
             this.cbGuest.Size = new System.Drawing.Size(141, 24);
@@ -180,7 +182,7 @@ namespace Tour
             this.emailtxb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.emailtxb.IconLeft = ((System.Drawing.Image)(resources.GetObject("emailtxb.IconLeft")));
             this.emailtxb.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.emailtxb.Location = new System.Drawing.Point(42, 90);
+            this.emailtxb.Location = new System.Drawing.Point(42, 77);
             this.emailtxb.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.emailtxb.Name = "emailtxb";
             this.emailtxb.PasswordChar = '\0';
@@ -205,7 +207,7 @@ namespace Tour
             this.passwordtxb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.passwordtxb.IconLeft = ((System.Drawing.Image)(resources.GetObject("passwordtxb.IconLeft")));
             this.passwordtxb.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.passwordtxb.Location = new System.Drawing.Point(42, 146);
+            this.passwordtxb.Location = new System.Drawing.Point(42, 133);
             this.passwordtxb.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.passwordtxb.Name = "passwordtxb";
             this.passwordtxb.PasswordChar = '●';
@@ -213,7 +215,6 @@ namespace Tour
             this.passwordtxb.SelectedText = "";
             this.passwordtxb.Size = new System.Drawing.Size(265, 36);
             this.passwordtxb.TabIndex = 20;
-            this.passwordtxb.UseSystemPasswordChar = true;
             // 
             // loginbtn
             // 
@@ -227,7 +228,7 @@ namespace Tour
             this.loginbtn.FillColor2 = System.Drawing.Color.DeepSkyBlue;
             this.loginbtn.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
             this.loginbtn.ForeColor = System.Drawing.Color.White;
-            this.loginbtn.Location = new System.Drawing.Point(42, 267);
+            this.loginbtn.Location = new System.Drawing.Point(42, 248);
             this.loginbtn.Margin = new System.Windows.Forms.Padding(2);
             this.loginbtn.Name = "loginbtn";
             this.loginbtn.Size = new System.Drawing.Size(265, 36);
@@ -241,7 +242,7 @@ namespace Tour
             this.forgetlb.BackColor = System.Drawing.Color.Transparent;
             this.forgetlb.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.forgetlb.ForeColor = System.Drawing.Color.Black;
-            this.forgetlb.Location = new System.Drawing.Point(184, 198);
+            this.forgetlb.Location = new System.Drawing.Point(176, 301);
             this.forgetlb.Name = "forgetlb";
             this.forgetlb.Size = new System.Drawing.Size(131, 19);
             this.forgetlb.TabIndex = 13;
@@ -254,7 +255,7 @@ namespace Tour
             this.registaccountlb.BackColor = System.Drawing.Color.Transparent;
             this.registaccountlb.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.registaccountlb.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.registaccountlb.Location = new System.Drawing.Point(213, 318);
+            this.registaccountlb.Location = new System.Drawing.Point(206, 338);
             this.registaccountlb.Name = "registaccountlb";
             this.registaccountlb.Size = new System.Drawing.Size(101, 19);
             this.registaccountlb.TabIndex = 16;
@@ -267,7 +268,7 @@ namespace Tour
             this.cbghinho.BackColor = System.Drawing.Color.Transparent;
             this.cbghinho.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbghinho.ForeColor = System.Drawing.Color.Black;
-            this.cbghinho.Location = new System.Drawing.Point(48, 195);
+            this.cbghinho.Location = new System.Drawing.Point(48, 182);
             this.cbghinho.Margin = new System.Windows.Forms.Padding(2);
             this.cbghinho.Name = "cbghinho";
             this.cbghinho.Size = new System.Drawing.Size(120, 24);
@@ -355,6 +356,21 @@ namespace Tour
             this.guna2PictureBox1.TabIndex = 18;
             this.guna2PictureBox1.TabStop = false;
             // 
+            // checkbxShowPassword
+            // 
+            this.checkbxShowPassword.AutoSize = true;
+            this.checkbxShowPassword.BackColor = System.Drawing.Color.Transparent;
+            this.checkbxShowPassword.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkbxShowPassword.ForeColor = System.Drawing.Color.Black;
+            this.checkbxShowPassword.Location = new System.Drawing.Point(180, 182);
+            this.checkbxShowPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.checkbxShowPassword.Name = "checkbxShowPassword";
+            this.checkbxShowPassword.Size = new System.Drawing.Size(142, 24);
+            this.checkbxShowPassword.TabIndex = 26;
+            this.checkbxShowPassword.Text = "Show password";
+            this.checkbxShowPassword.UseVisualStyleBackColor = false;
+            this.checkbxShowPassword.CheckedChanged += new System.EventHandler(this.checkbxShowPassword_CheckedChanged);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -401,6 +417,7 @@ namespace Tour
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.CheckBox cbGuest;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox checkbxShowPassword;
     }
 }
 

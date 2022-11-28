@@ -49,6 +49,10 @@ namespace Tour
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             this.button4 = new Guna.UI2.WinForms.Guna2Button();
             this.panelManage = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnHotelDatabase = new Guna.UI2.WinForms.Guna2Button();
+            this.btnLocationDatabase = new Guna.UI2.WinForms.Guna2Button();
+            this.btnVehicalDatabase = new Guna.UI2.WinForms.Guna2Button();
+            this.btndataCus = new Guna.UI2.WinForms.Guna2Button();
             this.btnStatistics = new Guna.UI2.WinForms.Guna2Button();
             this.btnLoyalCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.btnCustomer = new Guna.UI2.WinForms.Guna2Button();
@@ -63,10 +67,6 @@ namespace Tour
             this.btnMinimize = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
-            this.btndataCus = new Guna.UI2.WinForms.Guna2Button();
-            this.btnVehicalDatabase = new Guna.UI2.WinForms.Guna2Button();
-            this.btnLocationDatabase = new Guna.UI2.WinForms.Guna2Button();
-            this.btnHotelDatabase = new Guna.UI2.WinForms.Guna2Button();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).BeginInit();
             this.panel_slide.SuspendLayout();
@@ -85,29 +85,27 @@ namespace Tour
             // 
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(13, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(10, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(328, 105);
+            this.label1.Size = new System.Drawing.Size(246, 85);
             this.label1.TabIndex = 11;
             this.label1.Text = "label1";
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.picBackground);
-            this.panel4.Location = new System.Drawing.Point(352, 124);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Location = new System.Drawing.Point(264, 101);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1363, 959);
+            this.panel4.Size = new System.Drawing.Size(1182, 779);
             this.panel4.TabIndex = 19;
             // 
             // picBackground
             // 
             this.picBackground.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picBackground.Image = ((System.Drawing.Image)(resources.GetObject("picBackground.Image")));
             this.picBackground.Location = new System.Drawing.Point(0, 0);
-            this.picBackground.Margin = new System.Windows.Forms.Padding(4);
             this.picBackground.Name = "picBackground";
-            this.picBackground.Size = new System.Drawing.Size(1363, 959);
+            this.picBackground.Size = new System.Drawing.Size(1182, 779);
             this.picBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBackground.TabIndex = 0;
             this.picBackground.TabStop = false;
@@ -130,17 +128,19 @@ namespace Tour
             this.panel_slide.Controls.Add(this.guna2Panel4);
             this.panel_slide.Controls.Add(this.panel_logo);
             this.panel_slide.Location = new System.Drawing.Point(0, 0);
+            this.panel_slide.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel_slide.Name = "panel_slide";
-            this.panel_slide.Size = new System.Drawing.Size(352, 1083);
+            this.panel_slide.Size = new System.Drawing.Size(264, 880);
             this.panel_slide.TabIndex = 15;
             // 
             // guna2Panel2
             // 
             this.guna2Panel2.Controls.Add(this.button7);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 1248);
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 1017);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(331, 57);
+            this.guna2Panel2.Size = new System.Drawing.Size(247, 46);
             this.guna2Panel2.TabIndex = 20;
             // 
             // button7
@@ -163,10 +163,11 @@ namespace Tour
             this.button7.Image = global::Tour.Properties.Resources.logout;
             this.button7.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.button7.ImageOffset = new System.Drawing.Point(10, 0);
-            this.button7.Location = new System.Drawing.Point(28, 6);
+            this.button7.Location = new System.Drawing.Point(21, 5);
+            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button7.Name = "button7";
             this.button7.PressedColor = System.Drawing.Color.Transparent;
-            this.button7.Size = new System.Drawing.Size(276, 45);
+            this.button7.Size = new System.Drawing.Size(207, 37);
             this.button7.TabIndex = 4;
             this.button7.Text = "Exit";
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -177,9 +178,10 @@ namespace Tour
             this.panel_Help.Controls.Add(this.button1);
             this.panel_Help.Controls.Add(this.button5);
             this.panel_Help.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_Help.Location = new System.Drawing.Point(0, 1128);
+            this.panel_Help.Location = new System.Drawing.Point(0, 919);
+            this.panel_Help.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel_Help.Name = "panel_Help";
-            this.panel_Help.Size = new System.Drawing.Size(331, 120);
+            this.panel_Help.Size = new System.Drawing.Size(247, 98);
             this.panel_Help.TabIndex = 20;
             this.panel_Help.Click += new System.EventHandler(this.panel_Help_Click);
             // 
@@ -199,10 +201,11 @@ namespace Tour
             this.button1.HoverState.ForeColor = System.Drawing.Color.Black;
             this.button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.button1.ImageOffset = new System.Drawing.Point(10, 0);
-            this.button1.Location = new System.Drawing.Point(0, 60);
+            this.button1.Location = new System.Drawing.Point(0, 49);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
             this.button1.PressedColor = System.Drawing.Color.Transparent;
-            this.button1.Size = new System.Drawing.Size(331, 60);
+            this.button1.Size = new System.Drawing.Size(247, 49);
             this.button1.TabIndex = 6;
             this.button1.Text = "Guide";
             this.button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -226,9 +229,10 @@ namespace Tour
             this.button5.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.button5.ImageOffset = new System.Drawing.Point(10, 0);
             this.button5.Location = new System.Drawing.Point(0, 0);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
             this.button5.PressedColor = System.Drawing.Color.Transparent;
-            this.button5.Size = new System.Drawing.Size(331, 60);
+            this.button5.Size = new System.Drawing.Size(247, 49);
             this.button5.TabIndex = 5;
             this.button5.Text = "About us";
             this.button5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -239,9 +243,10 @@ namespace Tour
             // 
             this.guna2Panel9.Controls.Add(this.button6);
             this.guna2Panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel9.Location = new System.Drawing.Point(0, 1071);
+            this.guna2Panel9.Location = new System.Drawing.Point(0, 873);
+            this.guna2Panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Panel9.Name = "guna2Panel9";
-            this.guna2Panel9.Size = new System.Drawing.Size(331, 57);
+            this.guna2Panel9.Size = new System.Drawing.Size(247, 46);
             this.guna2Panel9.TabIndex = 19;
             // 
             // button6
@@ -264,10 +269,11 @@ namespace Tour
             this.button6.Image = global::Tour.Properties.Resources.question;
             this.button6.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.button6.ImageOffset = new System.Drawing.Point(10, 0);
-            this.button6.Location = new System.Drawing.Point(28, 6);
+            this.button6.Location = new System.Drawing.Point(21, 5);
+            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button6.Name = "button6";
             this.button6.PressedColor = System.Drawing.Color.Transparent;
-            this.button6.Size = new System.Drawing.Size(276, 45);
+            this.button6.Size = new System.Drawing.Size(207, 37);
             this.button6.TabIndex = 3;
             this.button6.Text = "Help";
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -278,9 +284,10 @@ namespace Tour
             this.panel_staff.Controls.Add(this.button2);
             this.panel_staff.Controls.Add(this.button3);
             this.panel_staff.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_staff.Location = new System.Drawing.Point(0, 951);
+            this.panel_staff.Location = new System.Drawing.Point(0, 775);
+            this.panel_staff.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel_staff.Name = "panel_staff";
-            this.panel_staff.Size = new System.Drawing.Size(331, 120);
+            this.panel_staff.Size = new System.Drawing.Size(247, 98);
             this.panel_staff.TabIndex = 18;
             // 
             // button2
@@ -299,10 +306,11 @@ namespace Tour
             this.button2.HoverState.ForeColor = System.Drawing.Color.Black;
             this.button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.button2.ImageOffset = new System.Drawing.Point(10, 0);
-            this.button2.Location = new System.Drawing.Point(0, 60);
+            this.button2.Location = new System.Drawing.Point(0, 49);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
             this.button2.PressedColor = System.Drawing.Color.Transparent;
-            this.button2.Size = new System.Drawing.Size(331, 60);
+            this.button2.Size = new System.Drawing.Size(247, 49);
             this.button2.TabIndex = 4;
             this.button2.Text = "Change Password";
             this.button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -326,9 +334,10 @@ namespace Tour
             this.button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.button3.ImageOffset = new System.Drawing.Point(10, 0);
             this.button3.Location = new System.Drawing.Point(0, 0);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
             this.button3.PressedColor = System.Drawing.Color.Transparent;
-            this.button3.Size = new System.Drawing.Size(331, 60);
+            this.button3.Size = new System.Drawing.Size(247, 49);
             this.button3.TabIndex = 3;
             this.button3.Text = "Profile";
             this.button3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -339,9 +348,10 @@ namespace Tour
             // 
             this.guna2Panel8.Controls.Add(this.button4);
             this.guna2Panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel8.Location = new System.Drawing.Point(0, 894);
+            this.guna2Panel8.Location = new System.Drawing.Point(0, 729);
+            this.guna2Panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Panel8.Name = "guna2Panel8";
-            this.guna2Panel8.Size = new System.Drawing.Size(331, 57);
+            this.guna2Panel8.Size = new System.Drawing.Size(247, 46);
             this.guna2Panel8.TabIndex = 19;
             // 
             // button4
@@ -364,10 +374,11 @@ namespace Tour
             this.button4.Image = global::Tour.Properties.Resources.staff1;
             this.button4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.button4.ImageOffset = new System.Drawing.Point(10, 0);
-            this.button4.Location = new System.Drawing.Point(28, 6);
+            this.button4.Location = new System.Drawing.Point(21, 5);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
             this.button4.PressedColor = System.Drawing.Color.Transparent;
-            this.button4.Size = new System.Drawing.Size(276, 45);
+            this.button4.Size = new System.Drawing.Size(207, 37);
             this.button4.TabIndex = 2;
             this.button4.Text = "Staff";
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -388,10 +399,119 @@ namespace Tour
             this.panelManage.Controls.Add(this.btnRoute);
             this.panelManage.Controls.Add(this.btnTicket);
             this.panelManage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelManage.Location = new System.Drawing.Point(0, 174);
+            this.panelManage.Location = new System.Drawing.Point(0, 141);
+            this.panelManage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelManage.Name = "panelManage";
-            this.panelManage.Size = new System.Drawing.Size(331, 720);
+            this.panelManage.Size = new System.Drawing.Size(247, 588);
             this.panelManage.TabIndex = 19;
+            // 
+            // btnHotelDatabase
+            // 
+            this.btnHotelDatabase.BackColor = System.Drawing.Color.Linen;
+            this.btnHotelDatabase.BorderRadius = 10;
+            this.btnHotelDatabase.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHotelDatabase.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHotelDatabase.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.btnHotelDatabase.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.btnHotelDatabase.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHotelDatabase.FillColor = System.Drawing.Color.Linen;
+            this.btnHotelDatabase.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHotelDatabase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnHotelDatabase.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnHotelDatabase.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnHotelDatabase.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnHotelDatabase.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnHotelDatabase.Location = new System.Drawing.Point(0, 539);
+            this.btnHotelDatabase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHotelDatabase.Name = "btnHotelDatabase";
+            this.btnHotelDatabase.PressedColor = System.Drawing.Color.Transparent;
+            this.btnHotelDatabase.Size = new System.Drawing.Size(247, 49);
+            this.btnHotelDatabase.TabIndex = 16;
+            this.btnHotelDatabase.Text = "Hotel";
+            this.btnHotelDatabase.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnHotelDatabase.TextOffset = new System.Drawing.Point(65, 0);
+            this.btnHotelDatabase.Click += new System.EventHandler(this.btnHotelDatabase_Click);
+            // 
+            // btnLocationDatabase
+            // 
+            this.btnLocationDatabase.BackColor = System.Drawing.Color.Linen;
+            this.btnLocationDatabase.BorderRadius = 10;
+            this.btnLocationDatabase.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLocationDatabase.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLocationDatabase.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.btnLocationDatabase.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.btnLocationDatabase.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLocationDatabase.FillColor = System.Drawing.Color.Linen;
+            this.btnLocationDatabase.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLocationDatabase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnLocationDatabase.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnLocationDatabase.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnLocationDatabase.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLocationDatabase.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnLocationDatabase.Location = new System.Drawing.Point(0, 490);
+            this.btnLocationDatabase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLocationDatabase.Name = "btnLocationDatabase";
+            this.btnLocationDatabase.PressedColor = System.Drawing.Color.Transparent;
+            this.btnLocationDatabase.Size = new System.Drawing.Size(247, 49);
+            this.btnLocationDatabase.TabIndex = 15;
+            this.btnLocationDatabase.Text = "Location";
+            this.btnLocationDatabase.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLocationDatabase.TextOffset = new System.Drawing.Point(65, 0);
+            this.btnLocationDatabase.Click += new System.EventHandler(this.btnLocationDatabase_Click);
+            // 
+            // btnVehicalDatabase
+            // 
+            this.btnVehicalDatabase.BackColor = System.Drawing.Color.Linen;
+            this.btnVehicalDatabase.BorderRadius = 10;
+            this.btnVehicalDatabase.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnVehicalDatabase.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnVehicalDatabase.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.btnVehicalDatabase.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.btnVehicalDatabase.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVehicalDatabase.FillColor = System.Drawing.Color.Linen;
+            this.btnVehicalDatabase.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVehicalDatabase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnVehicalDatabase.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnVehicalDatabase.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnVehicalDatabase.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnVehicalDatabase.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnVehicalDatabase.Location = new System.Drawing.Point(0, 441);
+            this.btnVehicalDatabase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVehicalDatabase.Name = "btnVehicalDatabase";
+            this.btnVehicalDatabase.PressedColor = System.Drawing.Color.Transparent;
+            this.btnVehicalDatabase.Size = new System.Drawing.Size(247, 49);
+            this.btnVehicalDatabase.TabIndex = 14;
+            this.btnVehicalDatabase.Text = "Vehical";
+            this.btnVehicalDatabase.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnVehicalDatabase.TextOffset = new System.Drawing.Point(65, 0);
+            this.btnVehicalDatabase.Click += new System.EventHandler(this.btnVehicalDatabase_Click);
+            // 
+            // btndataCus
+            // 
+            this.btndataCus.BackColor = System.Drawing.Color.Linen;
+            this.btndataCus.BorderRadius = 10;
+            this.btndataCus.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btndataCus.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btndataCus.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
+            this.btndataCus.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.btndataCus.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btndataCus.FillColor = System.Drawing.Color.Linen;
+            this.btndataCus.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndataCus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btndataCus.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btndataCus.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btndataCus.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btndataCus.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btndataCus.Location = new System.Drawing.Point(0, 392);
+            this.btndataCus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btndataCus.Name = "btndataCus";
+            this.btndataCus.PressedColor = System.Drawing.Color.Transparent;
+            this.btndataCus.Size = new System.Drawing.Size(247, 49);
+            this.btndataCus.TabIndex = 13;
+            this.btndataCus.Text = "Ticket Database";
+            this.btndataCus.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btndataCus.TextOffset = new System.Drawing.Point(65, 0);
+            this.btndataCus.Click += new System.EventHandler(this.btndataCus_Click);
             // 
             // btnStatistics
             // 
@@ -409,10 +529,11 @@ namespace Tour
             this.btnStatistics.HoverState.ForeColor = System.Drawing.Color.Black;
             this.btnStatistics.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnStatistics.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnStatistics.Location = new System.Drawing.Point(0, 420);
+            this.btnStatistics.Location = new System.Drawing.Point(0, 343);
+            this.btnStatistics.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnStatistics.Name = "btnStatistics";
             this.btnStatistics.PressedColor = System.Drawing.Color.Transparent;
-            this.btnStatistics.Size = new System.Drawing.Size(331, 60);
+            this.btnStatistics.Size = new System.Drawing.Size(247, 49);
             this.btnStatistics.TabIndex = 12;
             this.btnStatistics.Text = "Statistics";
             this.btnStatistics.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -435,10 +556,11 @@ namespace Tour
             this.btnLoyalCustomer.HoverState.ForeColor = System.Drawing.Color.Black;
             this.btnLoyalCustomer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLoyalCustomer.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnLoyalCustomer.Location = new System.Drawing.Point(0, 360);
+            this.btnLoyalCustomer.Location = new System.Drawing.Point(0, 294);
+            this.btnLoyalCustomer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLoyalCustomer.Name = "btnLoyalCustomer";
             this.btnLoyalCustomer.PressedColor = System.Drawing.Color.Transparent;
-            this.btnLoyalCustomer.Size = new System.Drawing.Size(331, 60);
+            this.btnLoyalCustomer.Size = new System.Drawing.Size(247, 49);
             this.btnLoyalCustomer.TabIndex = 11;
             this.btnLoyalCustomer.Text = "Loyal";
             this.btnLoyalCustomer.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -461,10 +583,11 @@ namespace Tour
             this.btnCustomer.HoverState.ForeColor = System.Drawing.Color.Black;
             this.btnCustomer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCustomer.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnCustomer.Location = new System.Drawing.Point(0, 300);
+            this.btnCustomer.Location = new System.Drawing.Point(0, 245);
+            this.btnCustomer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.PressedColor = System.Drawing.Color.Transparent;
-            this.btnCustomer.Size = new System.Drawing.Size(331, 60);
+            this.btnCustomer.Size = new System.Drawing.Size(247, 49);
             this.btnCustomer.TabIndex = 10;
             this.btnCustomer.Text = "Customer";
             this.btnCustomer.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -487,10 +610,11 @@ namespace Tour
             this.btnGroup.HoverState.ForeColor = System.Drawing.Color.Black;
             this.btnGroup.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnGroup.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnGroup.Location = new System.Drawing.Point(0, 240);
+            this.btnGroup.Location = new System.Drawing.Point(0, 196);
+            this.btnGroup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGroup.Name = "btnGroup";
             this.btnGroup.PressedColor = System.Drawing.Color.Transparent;
-            this.btnGroup.Size = new System.Drawing.Size(331, 60);
+            this.btnGroup.Size = new System.Drawing.Size(247, 49);
             this.btnGroup.TabIndex = 9;
             this.btnGroup.Text = "Group";
             this.btnGroup.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -513,10 +637,11 @@ namespace Tour
             this.btnMission.HoverState.ForeColor = System.Drawing.Color.Black;
             this.btnMission.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnMission.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnMission.Location = new System.Drawing.Point(0, 180);
+            this.btnMission.Location = new System.Drawing.Point(0, 147);
+            this.btnMission.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMission.Name = "btnMission";
             this.btnMission.PressedColor = System.Drawing.Color.Transparent;
-            this.btnMission.Size = new System.Drawing.Size(331, 60);
+            this.btnMission.Size = new System.Drawing.Size(247, 49);
             this.btnMission.TabIndex = 8;
             this.btnMission.Text = "Mission";
             this.btnMission.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -539,10 +664,11 @@ namespace Tour
             this.btnEmployyeDatabase.HoverState.ForeColor = System.Drawing.Color.Black;
             this.btnEmployyeDatabase.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnEmployyeDatabase.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnEmployyeDatabase.Location = new System.Drawing.Point(0, 120);
+            this.btnEmployyeDatabase.Location = new System.Drawing.Point(0, 98);
+            this.btnEmployyeDatabase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEmployyeDatabase.Name = "btnEmployyeDatabase";
             this.btnEmployyeDatabase.PressedColor = System.Drawing.Color.Transparent;
-            this.btnEmployyeDatabase.Size = new System.Drawing.Size(331, 60);
+            this.btnEmployyeDatabase.Size = new System.Drawing.Size(247, 49);
             this.btnEmployyeDatabase.TabIndex = 7;
             this.btnEmployyeDatabase.Text = "Employee";
             this.btnEmployyeDatabase.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -565,10 +691,11 @@ namespace Tour
             this.btnRoute.HoverState.ForeColor = System.Drawing.Color.Black;
             this.btnRoute.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnRoute.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnRoute.Location = new System.Drawing.Point(0, 60);
+            this.btnRoute.Location = new System.Drawing.Point(0, 49);
+            this.btnRoute.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRoute.Name = "btnRoute";
             this.btnRoute.PressedColor = System.Drawing.Color.Transparent;
-            this.btnRoute.Size = new System.Drawing.Size(331, 60);
+            this.btnRoute.Size = new System.Drawing.Size(247, 49);
             this.btnRoute.TabIndex = 6;
             this.btnRoute.Text = "Ticket Management";
             this.btnRoute.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -592,9 +719,10 @@ namespace Tour
             this.btnTicket.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTicket.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnTicket.Location = new System.Drawing.Point(0, 0);
+            this.btnTicket.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTicket.Name = "btnTicket";
             this.btnTicket.PressedColor = System.Drawing.Color.Transparent;
-            this.btnTicket.Size = new System.Drawing.Size(331, 60);
+            this.btnTicket.Size = new System.Drawing.Size(247, 49);
             this.btnTicket.TabIndex = 5;
             this.btnTicket.Text = "Tour";
             this.btnTicket.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -606,9 +734,10 @@ namespace Tour
             this.guna2Panel4.BackColor = System.Drawing.Color.Linen;
             this.guna2Panel4.Controls.Add(this.btnManage);
             this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel4.Location = new System.Drawing.Point(0, 117);
+            this.guna2Panel4.Location = new System.Drawing.Point(0, 95);
+            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(331, 57);
+            this.guna2Panel4.Size = new System.Drawing.Size(247, 46);
             this.guna2Panel4.TabIndex = 17;
             // 
             // btnManage
@@ -631,10 +760,11 @@ namespace Tour
             this.btnManage.Image = global::Tour.Properties.Resources.management;
             this.btnManage.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnManage.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnManage.Location = new System.Drawing.Point(28, 6);
+            this.btnManage.Location = new System.Drawing.Point(21, 5);
+            this.btnManage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnManage.Name = "btnManage";
             this.btnManage.PressedColor = System.Drawing.Color.Transparent;
-            this.btnManage.Size = new System.Drawing.Size(276, 45);
+            this.btnManage.Size = new System.Drawing.Size(207, 37);
             this.btnManage.TabIndex = 1;
             this.btnManage.Text = "Manage";
             this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
@@ -648,9 +778,8 @@ namespace Tour
             this.panel_logo.Controls.Add(this.label1);
             this.panel_logo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_logo.Location = new System.Drawing.Point(0, 0);
-            this.panel_logo.Margin = new System.Windows.Forms.Padding(4);
             this.panel_logo.Name = "panel_logo";
-            this.panel_logo.Size = new System.Drawing.Size(331, 117);
+            this.panel_logo.Size = new System.Drawing.Size(247, 95);
             this.panel_logo.TabIndex = 17;
             // 
             // btnMinimize
@@ -667,9 +796,10 @@ namespace Tour
             this.btnMinimize.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
             this.btnMinimize.HoverState.FillColor = System.Drawing.Color.Gray;
-            this.btnMinimize.Location = new System.Drawing.Point(1014, 9);
+            this.btnMinimize.Location = new System.Drawing.Point(1073, 9);
+            this.btnMinimize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(65, 45);
+            this.btnMinimize.Size = new System.Drawing.Size(49, 37);
             this.btnMinimize.TabIndex = 8;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
@@ -680,10 +810,9 @@ namespace Tour
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.btnMinimize);
             this.panel1.Controls.Add(this.btnExit);
-            this.panel1.Location = new System.Drawing.Point(352, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(264, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1576, 117);
+            this.panel1.Size = new System.Drawing.Size(1182, 95);
             this.panel1.TabIndex = 20;
             // 
             // btnExit
@@ -699,129 +828,25 @@ namespace Tour
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.HoverState.FillColor = System.Drawing.Color.Red;
-            this.btnExit.Location = new System.Drawing.Point(1082, 9);
+            this.btnExit.Location = new System.Drawing.Point(1125, 9);
             this.btnExit.Margin = new System.Windows.Forms.Padding(0);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(65, 45);
+            this.btnExit.Size = new System.Drawing.Size(49, 37);
             this.btnExit.TabIndex = 7;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btndataCus
-            // 
-            this.btndataCus.BackColor = System.Drawing.Color.Linen;
-            this.btndataCus.BorderRadius = 10;
-            this.btndataCus.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btndataCus.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btndataCus.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
-            this.btndataCus.DisabledState.ForeColor = System.Drawing.Color.Black;
-            this.btndataCus.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btndataCus.FillColor = System.Drawing.Color.Linen;
-            this.btndataCus.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btndataCus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
-            this.btndataCus.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btndataCus.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btndataCus.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btndataCus.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btndataCus.Location = new System.Drawing.Point(0, 480);
-            this.btndataCus.Name = "btndataCus";
-            this.btndataCus.PressedColor = System.Drawing.Color.Transparent;
-            this.btndataCus.Size = new System.Drawing.Size(331, 60);
-            this.btndataCus.TabIndex = 13;
-            this.btndataCus.Text = "Ticket Database";
-            this.btndataCus.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btndataCus.TextOffset = new System.Drawing.Point(65, 0);
-            this.btndataCus.Click += new System.EventHandler(this.btndataCus_Click);
-            // 
-            // btnVehicalDatabase
-            // 
-            this.btnVehicalDatabase.BackColor = System.Drawing.Color.Linen;
-            this.btnVehicalDatabase.BorderRadius = 10;
-            this.btnVehicalDatabase.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnVehicalDatabase.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnVehicalDatabase.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
-            this.btnVehicalDatabase.DisabledState.ForeColor = System.Drawing.Color.Black;
-            this.btnVehicalDatabase.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnVehicalDatabase.FillColor = System.Drawing.Color.Linen;
-            this.btnVehicalDatabase.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVehicalDatabase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
-            this.btnVehicalDatabase.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btnVehicalDatabase.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnVehicalDatabase.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnVehicalDatabase.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnVehicalDatabase.Location = new System.Drawing.Point(0, 540);
-            this.btnVehicalDatabase.Name = "btnVehicalDatabase";
-            this.btnVehicalDatabase.PressedColor = System.Drawing.Color.Transparent;
-            this.btnVehicalDatabase.Size = new System.Drawing.Size(331, 60);
-            this.btnVehicalDatabase.TabIndex = 14;
-            this.btnVehicalDatabase.Text = "Vehical";
-            this.btnVehicalDatabase.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnVehicalDatabase.TextOffset = new System.Drawing.Point(65, 0);
-            this.btnVehicalDatabase.Click += new System.EventHandler(this.btnVehicalDatabase_Click);
-            // 
-            // btnLocationDatabase
-            // 
-            this.btnLocationDatabase.BackColor = System.Drawing.Color.Linen;
-            this.btnLocationDatabase.BorderRadius = 10;
-            this.btnLocationDatabase.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLocationDatabase.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLocationDatabase.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
-            this.btnLocationDatabase.DisabledState.ForeColor = System.Drawing.Color.Black;
-            this.btnLocationDatabase.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLocationDatabase.FillColor = System.Drawing.Color.Linen;
-            this.btnLocationDatabase.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLocationDatabase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
-            this.btnLocationDatabase.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btnLocationDatabase.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnLocationDatabase.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLocationDatabase.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnLocationDatabase.Location = new System.Drawing.Point(0, 600);
-            this.btnLocationDatabase.Name = "btnLocationDatabase";
-            this.btnLocationDatabase.PressedColor = System.Drawing.Color.Transparent;
-            this.btnLocationDatabase.Size = new System.Drawing.Size(331, 60);
-            this.btnLocationDatabase.TabIndex = 15;
-            this.btnLocationDatabase.Text = "Location";
-            this.btnLocationDatabase.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLocationDatabase.TextOffset = new System.Drawing.Point(65, 0);
-            this.btnLocationDatabase.Click += new System.EventHandler(this.btnLocationDatabase_Click);
-            // 
-            // btnHotelDatabase
-            // 
-            this.btnHotelDatabase.BackColor = System.Drawing.Color.Linen;
-            this.btnHotelDatabase.BorderRadius = 10;
-            this.btnHotelDatabase.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnHotelDatabase.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnHotelDatabase.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
-            this.btnHotelDatabase.DisabledState.ForeColor = System.Drawing.Color.Black;
-            this.btnHotelDatabase.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHotelDatabase.FillColor = System.Drawing.Color.Linen;
-            this.btnHotelDatabase.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHotelDatabase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
-            this.btnHotelDatabase.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btnHotelDatabase.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnHotelDatabase.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnHotelDatabase.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnHotelDatabase.Location = new System.Drawing.Point(0, 660);
-            this.btnHotelDatabase.Name = "btnHotelDatabase";
-            this.btnHotelDatabase.PressedColor = System.Drawing.Color.Transparent;
-            this.btnHotelDatabase.Size = new System.Drawing.Size(331, 60);
-            this.btnHotelDatabase.TabIndex = 16;
-            this.btnHotelDatabase.Text = "Hotel";
-            this.btnHotelDatabase.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnHotelDatabase.TextOffset = new System.Drawing.Point(65, 0);
-            this.btnHotelDatabase.Click += new System.EventHandler(this.btnHotelDatabase_Click);
-            // 
             // SelectForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1929, 1083);
+            this.ClientSize = new System.Drawing.Size(1447, 880);
             this.Controls.Add(this.panel_slide);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SelectForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SelectForm";
