@@ -132,11 +132,26 @@
   <metadata name="LOAI.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="data_ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="TEN.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="GIA.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="DACDIEM.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="LOAI.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnAddLocation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAARtJREFUKFONkc1OwkAUhcvCuGDhI/gWusSApqbFVMpfimj8ew/duDE+hYQi1BZR
+        vAAADrwBlbxySQAAARtJREFUKFONkc1OwkAUhcvCuGDhI/gWusSApqbFVMpfimj8ew/duDE+hYQi1BZR
         1sbEZwF0jWkraXK8d5LpUGXh4mR675xv7pmpBkBLkiTH63+00lxvX8B2TvH69k6l6rM3Y2RFcbxe0C3o
         VhM9b0gtZeb1D8AqGTZMu4VgNKZS9dMJk+nsrtPzMAhGdGqAcu0IVvME1ze3AuJJMp4A3L6Pnf1DGLYj
         zHyHxvGlgMxqi+I16E5nCvCGz9gu6CiZVeyVa8LM0AHBRYrHh9Xb5wpgRVGc/14s1ubzr81dgtjsDnxh

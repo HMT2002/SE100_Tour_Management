@@ -30,7 +30,6 @@ namespace Tour
             btnUpdate.Visible = false;
 
             txtbxRePassword.Visible = true;
-            lblRePassword.Visible = true;
 
             btnChangePassword.Visible = false;
             txtbxNewPassword.Visible = false;
@@ -48,10 +47,45 @@ namespace Tour
             btnUpdate.Visible = true;
 
             txtbxRePassword.Visible = false;
-            lblRePassword.Visible = false;
 
             btnChangePassword.Visible = true;
             txtbxNewPassword.Visible = false;
+
+            switch (this.Khachhang.PRI)
+            {
+                case "BRONZE":
+                    lblRank.Text = "BRONZE";
+                    this.BackColor = Color.FromArgb(218, 165, 32);
+
+
+                    break;
+
+                case "SILVER":
+                    lblRank.Text = "SILVER";
+                    this.BackColor = Color.Silver;
+
+
+                    break;
+
+                case "GOLD":
+
+                    lblRank.Text = "GOLD";
+                    this.BackColor = Color.Gold;
+
+                    break;
+
+                case "PLATINUM":
+                    lblRank.Text = "PLATINUM";
+                    this.BackColor = Color.FromArgb(135, 206, 250);
+
+                    break;
+
+
+                default:
+
+                    break;
+            }
+
         }
 
         public LoyalCustomer(KHACHHANG khachhang)
@@ -384,7 +418,6 @@ namespace Tour
         public void EnableChangePass()
         {
             UnnotifyAllFields();
-            lblRePassword.Visible = !lblRePassword.Visible;
             txtbxRePassword.Visible = !txtbxRePassword.Visible;
             txtbxNewPassword.Visible = !txtbxNewPassword.Visible;
             if (lblNotes.Text.CompareTo("Enter new password") != 0)
@@ -413,7 +446,6 @@ namespace Tour
 
         public void DisableChangePass()
         {
-            lblRePassword.Visible = false;
             txtbxRePassword.Visible = false;
             txtbxNewPassword.Visible =false;
         }
@@ -464,6 +496,17 @@ namespace Tour
         private void txtbxNewPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utils.Notify.UnnotificationField(sender);
+
+        }
+
+        private void tbName_TextChanged(object sender, EventArgs e)
+        {
+            Utils.Notify.UnnotificationField(sender);
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

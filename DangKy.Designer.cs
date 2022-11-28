@@ -63,6 +63,9 @@ namespace Tour
             this.lbTime = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblReciptTicketID = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel17 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbDate = new System.Windows.Forms.Label();
             this.lblReciptPrice = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblReciptEndDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -78,6 +81,7 @@ namespace Tour
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pcbxLogo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -100,10 +104,8 @@ namespace Tour
             this.label22 = new System.Windows.Forms.Label();
             this.btCreate = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.pcbxLogo = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lblReciptTicketID = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel17 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.pcbxBanner = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel1.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -117,9 +119,11 @@ namespace Tour
             this.panel23.SuspendLayout();
             this.panel3.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbxLogo)).BeginInit();
             this.panel8.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbxLogo)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbxBanner)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -570,6 +574,35 @@ namespace Tour
             this.guna2GradientPanel1.Size = new System.Drawing.Size(312, 445);
             this.guna2GradientPanel1.TabIndex = 9;
             // 
+            // guna2HtmlLabel14
+            // 
+            this.guna2HtmlLabel14.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel14.Location = new System.Drawing.Point(64, 364);
+            this.guna2HtmlLabel14.Name = "guna2HtmlLabel14";
+            this.guna2HtmlLabel14.Size = new System.Drawing.Size(199, 15);
+            this.guna2HtmlLabel14.TabIndex = 24;
+            this.guna2HtmlLabel14.Text = "############################";
+            // 
+            // lblReciptTicketID
+            // 
+            this.lblReciptTicketID.BackColor = System.Drawing.Color.Transparent;
+            this.lblReciptTicketID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReciptTicketID.Location = new System.Drawing.Point(47, 34);
+            this.lblReciptTicketID.Name = "lblReciptTicketID";
+            this.lblReciptTicketID.Size = new System.Drawing.Size(20, 18);
+            this.lblReciptTicketID.TabIndex = 23;
+            this.lblReciptTicketID.Text = "-ID";
+            // 
+            // guna2HtmlLabel17
+            // 
+            this.guna2HtmlLabel17.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel17.Location = new System.Drawing.Point(7, 34);
+            this.guna2HtmlLabel17.Name = "guna2HtmlLabel17";
+            this.guna2HtmlLabel17.Size = new System.Drawing.Size(19, 18);
+            this.guna2HtmlLabel17.TabIndex = 22;
+            this.guna2HtmlLabel17.Text = "ID: ";
+            // 
             // lbDate
             // 
             this.lbDate.BackColor = System.Drawing.Color.Transparent;
@@ -719,6 +752,17 @@ namespace Tour
             this.guna2HtmlLabel7.Size = new System.Drawing.Size(34, 18);
             this.guna2HtmlLabel7.TabIndex = 7;
             this.guna2HtmlLabel7.Text = "Tour: ";
+            // 
+            // pcbxLogo
+            // 
+            this.pcbxLogo.Image = global::Tour.Properties.Resources.UIT;
+            this.pcbxLogo.ImageRotate = 0F;
+            this.pcbxLogo.Location = new System.Drawing.Point(105, 89);
+            this.pcbxLogo.Name = "pcbxLogo";
+            this.pcbxLogo.Size = new System.Drawing.Size(98, 72);
+            this.pcbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbxLogo.TabIndex = 6;
+            this.pcbxLogo.TabStop = false;
             // 
             // guna2HtmlLabel6
             // 
@@ -955,9 +999,9 @@ namespace Tour
             // label22
             // 
             this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Font = new System.Drawing.Font("Times New Roman", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.Red;
-            this.label22.Location = new System.Drawing.Point(273, 3);
+            this.label22.Location = new System.Drawing.Point(250, 3);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(502, 75);
             this.label22.TabIndex = 9;
@@ -973,7 +1017,7 @@ namespace Tour
             this.btCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCreate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCreate.ForeColor = System.Drawing.Color.Black;
-            this.btCreate.Location = new System.Drawing.Point(720, 577);
+            this.btCreate.Location = new System.Drawing.Point(721, 604);
             this.btCreate.Margin = new System.Windows.Forms.Padding(2);
             this.btCreate.Name = "btCreate";
             this.btCreate.Size = new System.Drawing.Size(127, 25);
@@ -991,7 +1035,7 @@ namespace Tour
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.Black;
-            this.btnClear.Location = new System.Drawing.Point(853, 577);
+            this.btnClear.Location = new System.Drawing.Point(854, 604);
             this.btnClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(119, 25);
@@ -1000,45 +1044,28 @@ namespace Tour
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnGo_Click);
             // 
-            // pcbxLogo
+            // panel5
             // 
-            this.pcbxLogo.Image = global::Tour.Properties.Resources.UIT;
-            this.pcbxLogo.ImageRotate = 0F;
-            this.pcbxLogo.Location = new System.Drawing.Point(105, 89);
-            this.pcbxLogo.Name = "pcbxLogo";
-            this.pcbxLogo.Size = new System.Drawing.Size(98, 72);
-            this.pcbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcbxLogo.TabIndex = 6;
-            this.pcbxLogo.TabStop = false;
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.pcbxBanner);
+            this.panel5.ForeColor = System.Drawing.Color.Black;
+            this.panel5.Location = new System.Drawing.Point(6, 475);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(650, 127);
+            this.panel5.TabIndex = 36;
             // 
-            // lblReciptTicketID
+            // pcbxBanner
             // 
-            this.lblReciptTicketID.BackColor = System.Drawing.Color.Transparent;
-            this.lblReciptTicketID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReciptTicketID.Location = new System.Drawing.Point(47, 34);
-            this.lblReciptTicketID.Name = "lblReciptTicketID";
-            this.lblReciptTicketID.Size = new System.Drawing.Size(20, 18);
-            this.lblReciptTicketID.TabIndex = 23;
-            this.lblReciptTicketID.Text = "-ID";
-            // 
-            // guna2HtmlLabel17
-            // 
-            this.guna2HtmlLabel17.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel17.Location = new System.Drawing.Point(7, 34);
-            this.guna2HtmlLabel17.Name = "guna2HtmlLabel17";
-            this.guna2HtmlLabel17.Size = new System.Drawing.Size(19, 18);
-            this.guna2HtmlLabel17.TabIndex = 22;
-            this.guna2HtmlLabel17.Text = "ID: ";
-            // 
-            // guna2HtmlLabel14
-            // 
-            this.guna2HtmlLabel14.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel14.Location = new System.Drawing.Point(64, 364);
-            this.guna2HtmlLabel14.Name = "guna2HtmlLabel14";
-            this.guna2HtmlLabel14.Size = new System.Drawing.Size(199, 15);
-            this.guna2HtmlLabel14.TabIndex = 24;
-            this.guna2HtmlLabel14.Text = "############################";
+            this.pcbxBanner.Image = global::Tour.Properties.Resources.ic_image_empty_128;
+            this.pcbxBanner.ImageRotate = 0F;
+            this.pcbxBanner.Location = new System.Drawing.Point(3, 3);
+            this.pcbxBanner.Name = "pcbxBanner";
+            this.pcbxBanner.Size = new System.Drawing.Size(645, 128);
+            this.pcbxBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbxBanner.TabIndex = 0;
+            this.pcbxBanner.TabStop = false;
             // 
             // DangKy
             // 
@@ -1047,7 +1074,8 @@ namespace Tour
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Linen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(984, 611);
+            this.ClientSize = new System.Drawing.Size(984, 640);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.lbTime);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.btCreate);
@@ -1085,11 +1113,13 @@ namespace Tour
             this.panel3.PerformLayout();
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbxLogo)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbxLogo)).EndInit();
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pcbxBanner)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1168,5 +1198,7 @@ namespace Tour
         private Guna.UI2.WinForms.Guna2HtmlLabel lblReciptTicketID;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel17;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel14;
+        private System.Windows.Forms.Panel panel5;
+        private Guna.UI2.WinForms.Guna2PictureBox pcbxBanner;
     }
 }

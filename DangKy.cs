@@ -96,7 +96,7 @@ namespace Tour
             Notify.UnnotificationSelect(cbDes);
             Notify.UnnotificationSelect(cbGroup);
             cbGroup.DataSource = null;
-
+            pcbxBanner.Image = Properties.Resources.ic_image_empty_128;
             selected_group = null;
             selected_tour = null;
 
@@ -248,7 +248,28 @@ namespace Tour
                 lblCustomerDiscount.Text = customer_discount.ToString();
                 if (tbDiscount.Text.CompareTo(string.Empty) != 0)
                 {
-                    tbDiscount.Text = (Convert.ToInt32(tbDiscount.Text) + customer_discount).ToString();
+                    tbDiscount.Text = (Convert.ToInt64(tbDiscount.Text) + customer_discount).ToString();
+
+                    try
+                    {
+                        decimal res = 0;
+                        double discount = Convert.ToInt64(tbDiscount.Text);
+                        decimal price = Convert.ToDecimal(tbPrice.Text);
+                        res = price - (price * (decimal)(discount / 100));
+                        tbTotal.Text = res.ToString();
+                    }
+                    catch
+                    {
+
+                        tbTotal.Text = tbPrice.Text;
+                    }
+                    lblReciptPrice.Text = tbTotal.Text;
+
+
+                }
+                else
+                {
+
                 }
                 UnnotifyAllFields();
             }
@@ -294,7 +315,6 @@ namespace Tour
                 lblReciptStartDate.Text= selected_group.NGAYKHOIHANH.Value.ToString("dd/MM/yyyy");
                 lblReciptEndDate.Text= selected_group.NGAYKETTHUC.ToString();
                 lblReciptGroupName.Text = selected_group.TEN;
-
 
             }
 
@@ -453,14 +473,15 @@ namespace Tour
                 tbPrice.Text = selected_tour.GIA.ToString();
                 GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == selected_tour.ID && x.IsDeleted == false).FirstOrDefault();
                 tbDiscount.Text = (giamgia.DISCOUNT + customer_discount).ToString();
+                pcbxBanner.Image = Converter.Instance.ByteArrayToImage(giamgia.PICBI);
 
                 try
                 {
-                        decimal res = 0;
-                        double discount = Convert.ToInt64(giamgia.DISCOUNT);
-                        decimal price = Convert.ToDecimal(tbPrice.Text);
-                        res = price - (price * (decimal)(discount / 100));
-                        tbTotal.Text = res.ToString();
+                    decimal res = 0;
+                    double discount = Convert.ToInt64(giamgia.DISCOUNT)+customer_discount;
+                    decimal price = Convert.ToDecimal(tbPrice.Text);
+                    res = price - (price * (decimal)(discount / 100));
+                    tbTotal.Text = res.ToString();
                 }
                 catch
                 {
@@ -470,6 +491,8 @@ namespace Tour
                 lblReciptPrice.Text = tbTotal.Text;
                 lblReciptTourName.Text = selected_tour.TEN;
                 selected_group = null;
+
+
             }
 
         }

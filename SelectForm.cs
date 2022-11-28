@@ -248,6 +248,18 @@ namespace Tour
             h.Show();
         }
 
+        private void button12_Click(object sender, EventArgs e)
+        {
+            this.panel4.Controls.Clear();
+            changeColorButton(btnLoyalCustomer);
+            LoyalCustomer h = new LoyalCustomer() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            //panel1.Visible = false;
+            //picBackground.Visible = false;
+            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
+            this.panel4.Controls.Add(h);
+            h.Show();
+        }
+
         private void picBackground_Click(object sender, EventArgs e)
         {
 
