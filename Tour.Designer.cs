@@ -56,7 +56,6 @@
             this.btn_delete = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btn_update = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.rdNameSearch = new System.Windows.Forms.RadioButton();
             this.rdIDSearch = new System.Windows.Forms.RadioButton();
@@ -64,14 +63,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_trip)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxBanner)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgv_trip);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 399);
+            this.groupBox1.Location = new System.Drawing.Point(12, 375);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1043, 253);
             this.groupBox1.TabIndex = 4;
@@ -136,7 +134,7 @@
             // tb_search
             // 
             this.tb_search.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_search.Location = new System.Drawing.Point(526, 361);
+            this.tb_search.Location = new System.Drawing.Point(526, 327);
             this.tb_search.Name = "tb_search";
             this.tb_search.Size = new System.Drawing.Size(278, 29);
             this.tb_search.TabIndex = 19;
@@ -163,7 +161,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(16, 94);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1033, 239);
+            this.groupBox2.Size = new System.Drawing.Size(1033, 227);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tour details";
@@ -188,7 +186,7 @@
             // 
             this.pcbxBanner.Image = global::Tour.Properties.Resources.ic_image_empty_128;
             this.pcbxBanner.ImageRotate = 0F;
-            this.pcbxBanner.Location = new System.Drawing.Point(422, 142);
+            this.pcbxBanner.Location = new System.Drawing.Point(423, 123);
             this.pcbxBanner.Name = "pcbxBanner";
             this.pcbxBanner.Size = new System.Drawing.Size(365, 91);
             this.pcbxBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -347,7 +345,7 @@
             this.btn_add.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add.Image = global::Tour.Properties.Resources.addp;
             this.btn_add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_add.Location = new System.Drawing.Point(26, 355);
+            this.btn_add.Location = new System.Drawing.Point(26, 321);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(100, 38);
             this.btn_add.TabIndex = 5;
@@ -365,7 +363,7 @@
             this.btn_delete.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.Image = global::Tour.Properties.Resources.deleteicon;
             this.btn_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_delete.Location = new System.Drawing.Point(249, 355);
+            this.btn_delete.Location = new System.Drawing.Point(249, 321);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(100, 38);
             this.btn_delete.TabIndex = 6;
@@ -385,7 +383,7 @@
             this.btnExit.ForeColor = System.Drawing.Color.Red;
             this.btnExit.Image = global::Tour.Properties.Resources.exit;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(368, 355);
+            this.btnExit.Location = new System.Drawing.Point(368, 321);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(100, 38);
             this.btnExit.TabIndex = 8;
@@ -403,7 +401,7 @@
             this.btn_update.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_update.Image = global::Tour.Properties.Resources.update;
             this.btn_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_update.Location = new System.Drawing.Point(132, 355);
+            this.btn_update.Location = new System.Drawing.Point(132, 321);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(100, 38);
             this.btn_update.TabIndex = 7;
@@ -412,22 +410,12 @@
             this.btn_update.UseVisualStyleBackColor = true;
             this.btn_update.Click += new System.EventHandler(this.update_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::Tour.Properties.Resources.Tour1;
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1059, 77);
-            this.panel1.TabIndex = 47;
-            // 
             // label8
             // 
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(112, 1);
+            this.label8.Location = new System.Drawing.Point(207, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(596, 76);
             this.label8.TabIndex = 44;
@@ -439,7 +427,7 @@
             this.rdNameSearch.AutoSize = true;
             this.rdNameSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdNameSearch.ForeColor = System.Drawing.Color.Black;
-            this.rdNameSearch.Location = new System.Drawing.Point(860, 363);
+            this.rdNameSearch.Location = new System.Drawing.Point(860, 329);
             this.rdNameSearch.Margin = new System.Windows.Forms.Padding(2);
             this.rdNameSearch.Name = "rdNameSearch";
             this.rdNameSearch.Size = new System.Drawing.Size(64, 23);
@@ -454,7 +442,7 @@
             this.rdIDSearch.Checked = true;
             this.rdIDSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdIDSearch.ForeColor = System.Drawing.Color.Black;
-            this.rdIDSearch.Location = new System.Drawing.Point(809, 365);
+            this.rdIDSearch.Location = new System.Drawing.Point(809, 331);
             this.rdIDSearch.Margin = new System.Windows.Forms.Padding(2);
             this.rdIDSearch.Name = "rdIDSearch";
             this.rdIDSearch.Size = new System.Drawing.Size(43, 23);
@@ -469,12 +457,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(1059, 656);
+            this.ClientSize = new System.Drawing.Size(1059, 640);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.rdNameSearch);
             this.Controls.Add(this.rdIDSearch);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.btn_delete);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.tb_search);
             this.Controls.Add(this.groupBox2);
@@ -492,7 +480,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxBanner)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -515,7 +502,6 @@
         private System.Windows.Forms.Label lb_idtrip;
         private System.Windows.Forms.Label lb_price;
         private System.Windows.Forms.Label lb_idtour;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cb_typetour;
         private System.Windows.Forms.TextBox tb_nametour;
         private System.Windows.Forms.Button btn_newid;

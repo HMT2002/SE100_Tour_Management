@@ -392,7 +392,7 @@ namespace Tour
         {
             this.panel4.Controls.Clear();
             changeColorButton(btnLoyalCustomer);
-            LoyalCustomer h = new LoyalCustomer() { TopLevel = false, TopMost = true,FormBorderStyle = FormBorderStyle.None };
+            LoyalCustomer h = new LoyalCustomer() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
             //panel1.Visible = false;
             //picBackground.Visible = false;
             h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
