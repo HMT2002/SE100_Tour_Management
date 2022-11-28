@@ -187,55 +187,6 @@ namespace Tour
 
         }
 
-        private void btndataCus_Click(object sender, EventArgs e)
-        {
-            this.panel4.Controls.Clear();
-            changeColorButton(btndataCus);
-            CSDLPhieuDatCho h = new CSDLPhieuDatCho() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            //panel1.Visible = false;
-            //picBackground.Visible = false;
-            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
-
-            this.panel4.Controls.Add(h);
-            h.Show();
-        }
-        private void btnLocationDatabase_Click(object sender, EventArgs e)
-        {
-            this.panel4.Controls.Clear();
-            changeColorButton(btnLocationDatabase);
-            Location h = new Location() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            //panel1.Visible = false;
-            //picBackground.Visible = false;
-            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
-
-            this.panel4.Controls.Add(h);
-            h.Show();
-        }
-
-        private void btnHotelDatabase_Click(object sender, EventArgs e)
-        {
-            this.panel4.Controls.Clear();
-            changeColorButton(btnHotelDatabase);
-            Hotel h = new Hotel() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            //panel1.Visible = false;
-            //picBackground.Visible = false;
-            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
-            this.panel4.Controls.Add(h);
-            h.Show();
-        }
-
-        private void btnVehicalDatabase_Click(object sender, EventArgs e)
-        {
-            this.panel4.Controls.Clear();
-            changeColorButton(btnVehicalDatabase);
-            PhuongTien h = new PhuongTien() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            //panel1.Visible = false;
-            //picBackground.Visible = false;
-            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
-            this.panel4.Controls.Add(h);
-            h.Show();
-        }
-
         private void button11_Click(object sender, EventArgs e)
         {
             this.panel4.Controls.Clear();
@@ -440,6 +391,56 @@ namespace Tour
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btndataCus_Click(object sender, EventArgs e)
+        {
+            this.panel4.Controls.Clear();
+            //changeColorButton(btndataCus);
+            CSDLPhieuDatCho h = new CSDLPhieuDatCho() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            //panel1.Visible = false;
+            //picBackground.Visible = false;
+            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
+
+            this.panel4.Controls.Add(h);
+            h.Show();
+        }
+
+        private void btnVehicalDatabase_Click(object sender, EventArgs e)
+        {
+            this.panel4.Controls.Clear();
+            //changeColorButton(btnVehicalDatabase);
+            PhuongTien h = new PhuongTien() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            //panel1.Visible = false;
+            //picBackground.Visible = false;
+            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
+            this.panel4.Controls.Add(h);
+            h.Show();
+        }
+
+        private void btnLocationDatabase_Click(object sender, EventArgs e)
+        {
+            this.panel4.Controls.Clear();
+            //changeColorButton(btnLocationDatabase);
+            Location h = new Location() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            //panel1.Visible = false;
+            //picBackground.Visible = false;
+            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
+
+            this.panel4.Controls.Add(h);
+            h.Show();
+        }
+
+        private void btnHotelDatabase_Click(object sender, EventArgs e)
+        {
+            this.panel4.Controls.Clear();
+            //changeColorButton(btnHotelDatabase);
+            Hotel h = new Hotel() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            //panel1.Visible = false;
+            //picBackground.Visible = false;
+            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
+            this.panel4.Controls.Add(h);
+            h.Show();
         }
     }
 }
