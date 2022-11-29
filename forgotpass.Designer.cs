@@ -104,6 +104,7 @@
             this.codetxb.Size = new System.Drawing.Size(265, 36);
             this.codetxb.TabIndex = 21;
             this.codetxb.Visible = false;
+            this.codetxb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.codetxb_KeyPress);
             // 
             // emailtxb
             // 
@@ -129,6 +130,7 @@
             this.emailtxb.SelectedText = "";
             this.emailtxb.Size = new System.Drawing.Size(265, 36);
             this.emailtxb.TabIndex = 20;
+            this.emailtxb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.emailtxb_KeyPress);
             // 
             // pictureBox1
             // 
@@ -155,8 +157,8 @@
             this.verifybtn.FillColor2 = System.Drawing.Color.DeepSkyBlue;
             this.verifybtn.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
             this.verifybtn.ForeColor = System.Drawing.Color.White;
-            this.verifybtn.Location = new System.Drawing.Point(98, 274);
-            this.verifybtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.verifybtn.Location = new System.Drawing.Point(99, 274);
+            this.verifybtn.Margin = new System.Windows.Forms.Padding(2);
             this.verifybtn.Name = "verifybtn";
             this.verifybtn.Size = new System.Drawing.Size(265, 36);
             this.verifybtn.TabIndex = 23;
@@ -176,12 +178,12 @@
             this.sendbtn.FillColor2 = System.Drawing.Color.DeepSkyBlue;
             this.sendbtn.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
             this.sendbtn.ForeColor = System.Drawing.Color.White;
-            this.sendbtn.Location = new System.Drawing.Point(98, 274);
-            this.sendbtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sendbtn.Location = new System.Drawing.Point(99, 274);
+            this.sendbtn.Margin = new System.Windows.Forms.Padding(2);
             this.sendbtn.Name = "sendbtn";
             this.sendbtn.Size = new System.Drawing.Size(265, 36);
             this.sendbtn.TabIndex = 24;
-            this.sendbtn.Text = "Send";
+            this.sendbtn.Text = "Send verify code";
             this.sendbtn.Click += new System.EventHandler(this.sendbtn_Click);
             // 
             // forgotpass

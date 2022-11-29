@@ -204,20 +204,6 @@ namespace Tour
                     randomcode = Converter.Instance.RandomString2(5);
                     List<string> listto = new List<string>();
                     listto.Add(email);
-                    //MailMessage message = new MailMessage();
-                    //to = (txbGmail.Text).ToString();
-                    //from = "PTS.UIT.Group@gmail.com";
-                    //pass = "PTS@uitGroup";
-                    //messageBody = "Verification code exists for your email :" + randomcode;
-                    //message.To.Add(to);
-                    //message.From = new MailAddress(from);
-                    //message.Body = messageBody;
-                    //message.Subject = "Confirm Email Code";
-                    //SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-                    //smtp.EnableSsl = true;
-                    //smtp.Port = 587;
-                    //smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                    //smtp.Credentials = new NetworkCredential(from, pass);
                     try
                     {
                         Utils.Features.Instance.SendMail(listto, "Verify code","Verify code to register account: "+ randomcode);
@@ -301,6 +287,10 @@ namespace Tour
         {
             Utils.Notify.UnnotificationField(sender);
 
+            if (e.KeyChar == (char)Keys.Space)
+            {
+                e.Handled = true;
+            }
         }
 
         private void txbPass_KeyPress(object sender, KeyPressEventArgs e)

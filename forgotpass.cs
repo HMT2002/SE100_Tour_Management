@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
 using System.Data.SqlClient;
+using Tour.Model;
+using Tour.Utils;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Tour
 {
@@ -45,19 +48,47 @@ namespace Tour
         }
         private void sendbtn_Click(object sender, EventArgs e)
         {
-            string query = "Select * from User Where Email ='" + emailtxb.Text.Trim() + "'";
-            label2.Visible = true;
-            codetxb.Visible = true;
-            verifybtn.Visible = true;
-            sendbtn.Visible = false;
+            if (emailtxb.Text.Trim() == "")
+            {
+                Notify.NotificationField(emailtxb);
+                MessageBox.Show("Empty mail address");
+                return;
+            }
+            if (DataProvider.Ins.DB.ACCOUNTs.Where(x => x.ACC == emailtxb.Text.Trim() && x.IsDeleted == false).FirstOrDefault() != null)
+            {
+                try
+                {
+                    string email = emailtxb.Text.ToString();
+                    randomcode = Converter.Instance.RandomString2(5);
+                    List<string> listto = new List<string>();
+                    listto.Add(email);
+                    Utils.Features.Instance.SendMail(listto, "Verify code", "Verify code to change password: " + randomcode);
+
+
+                    label2.Visible = true;
+                    codetxb.Visible = true;
+                    verifybtn.Visible = true;
+                    sendbtn.Visible = false;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Please check your internet connection");
+                    return;
+                }
+
+            }
+
+            MessageBox.Show("Please check your mail box");
+
         }
 
         private void verifybtn_Click(object sender, EventArgs e)
         {
             if (randomcode == (codetxb.Text).ToString())
             {
-                to = emailtxb.Text;
-                ChangePass change = new ChangePass();
+                to = emailtxb.Text.Trim();
+                ChangePass change = new ChangePass(DataProvider.Ins.DB.ACCOUNTs.Where(x=>x.ACC==to).FirstOrDefault());
                 this.Close();
                 change.ShowDialog();
             }
@@ -95,6 +126,21 @@ namespace Tour
 
         private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void emailtxb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Notify.UnnotificationField(sender);
+            if (e.KeyChar == (char)Keys.Space)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void codetxb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Notify.UnnotificationField(sender);
 
         }
     }
