@@ -115,6 +115,9 @@ namespace Tour
                 }
             }
         }
+
+
+
         private void SelectForm_Load(object sender, EventArgs e)
         {
             if (Properties.Settings.Default.UserName != string.Empty)
@@ -135,37 +138,37 @@ namespace Tour
             //listBtn.Add(btnLoyalCustomer);
         }
         private int image =0;
-        private void loadimage()
-        {
-            if(image==5)
-            {
-                image = 0;
-            }
+        //private void loadimage()
+        //{
+        //    if(image==5)
+        //    {
+        //        image = 0;
+        //    }
             
-            switch(image)
-            {
-                case 0:
-                    picBackground.Image = Properties.Resources._0;
-                    break;
-                case 1:
-                    picBackground.Image = Properties.Resources._1;
-                    break;
-                case 2:
-                    picBackground.Image = Properties.Resources._2;
-                    break;
-                case 3:
-                    picBackground.Image = Properties.Resources._3;
-                    break;
-                case 4:
-                    picBackground.Image = Properties.Resources._4;
-                    break;
-            }
+        //    switch(image)
+        //    {
+        //        case 0:
+        //            picBackground.Image = Properties.Resources._0;
+        //            break;
+        //        case 1:
+        //            picBackground.Image = Properties.Resources._1;
+        //            break;
+        //        case 2:
+        //            picBackground.Image = Properties.Resources._2;
+        //            break;
+        //        case 3:
+        //            picBackground.Image = Properties.Resources._3;
+        //            break;
+        //        case 4:
+        //            picBackground.Image = Properties.Resources._4;
+        //            break;
+        //    }
 
-            image++;
-        }
+        //    image++;
+        //}
         private void timer1_Tick(object sender, EventArgs e)
         {
-            loadimage();
+            //loadimage();
         }
         private void exitbtn_Click(object sender, EventArgs e)
         {
@@ -199,23 +202,6 @@ namespace Tour
             h.Show();
         }
 
-        //private void button12_Click(object sender, EventArgs e)
-        //{
-        //    this.panel4.Controls.Clear();
-        //    changeColorButton(btnLoyalCustomer);
-        //    LoyalCustomer h = new LoyalCustomer() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-        //    //panel1.Visible = false;
-        //    //picBackground.Visible = false;
-        //    h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
-        //    this.panel4.Controls.Add(h);
-        //    h.Show();
-        //}
-
-        private void picBackground_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnManage_Click(object sender, EventArgs e)
         {
             showSubmenu(panelManage);
@@ -245,12 +231,27 @@ namespace Tour
             }
         }
 
+        private Form activeForm = null;
+        private void changeActiveForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.Dock = DockStyle.Fill;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            panel4.Controls.Add(childForm);
+            panel4.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             this.panel4.Controls.Clear();
             StaffProfile sp = new StaffProfile() { TopLevel = false, TopMost = true };
-            panel1.Visible = false;
-            picBackground.Visible = false;
+            //panel1.Visible = false;
+            //picBackground.Visible = false;
             sp.StartPosition = FormStartPosition.CenterParent;
 
             this.panel4.Controls.Add(sp);
@@ -287,7 +288,7 @@ namespace Tour
             //changeColorButton(btnRoute);
             DangKy dk = new DangKy() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
             //panel1.Visible = false;
-            picBackground.Visible = false;
+            //picBackground.Visible = false;
             dk.StartPosition = FormStartPosition.CenterParent;
             dk.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
 
@@ -298,14 +299,16 @@ namespace Tour
 
         private void btnEmployyeDatabase_Click(object sender, EventArgs e)
         {
-            this.panel4.Controls.Clear();
-            //changeColorButton(btnEmployyeDatabase);
-            NhanVien h = new NhanVien() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            //panel1.Visible = false;
-            //picBackground.Visible = false;
-            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
-            this.panel4.Controls.Add(h);
-            h.Show();
+            //this.panel4.Controls.Clear();
+            ////changeColorButton(btnEmployyeDatabase);
+            //NhanVien h = new NhanVien() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            ////panel1.Visible = false;
+            ////picBackground.Visible = false;
+            //h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
+            //h.StartPosition = FormStartPosition.CenterParent;
+            //this.panel4.Controls.Add(h);
+            //h.Show();
+            changeActiveForm(new NhanVien());
         }
 
         private void btnMission_Click(object sender, EventArgs e)
@@ -316,6 +319,7 @@ namespace Tour
             //panel1.Visible = false;
             //picBackground.Visible = false;
             h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
+            h.StartPosition = FormStartPosition.CenterParent;
             this.panel4.Controls.Add(h);
             h.Show();
         }
@@ -328,6 +332,7 @@ namespace Tour
             //panel1.Visible = false;
             //picBackground.Visible = false;
             h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
+            h.StartPosition = FormStartPosition.CenterParent;
             this.panel4.Controls.Add(h);
             h.Show();
         }
@@ -340,6 +345,7 @@ namespace Tour
             //panel1.Visible = false;
             //picBackground.Visible = false;
             h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
+            h.StartPosition = FormStartPosition.CenterParent;
             this.panel4.Controls.Add(h);
             h.Show();
         }
@@ -352,6 +358,7 @@ namespace Tour
             //panel1.Visible = false;
             //picBackground.Visible = false;
             h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
+            h.StartPosition = FormStartPosition.CenterParent;
             this.panel4.Controls.Add(h);
             h.Show();
         }
@@ -364,6 +371,7 @@ namespace Tour
             //panel1.Visible = false;
             //picBackground.Visible = false;
             h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
+            h.StartPosition = FormStartPosition.CenterParent;
             this.panel4.Controls.Add(h);
             h.Show();
         }
@@ -373,8 +381,8 @@ namespace Tour
             this.panel4.Controls.Clear();
             //changeColorButton(button2);
             ChangePass cp = new ChangePass() { TopLevel = false, TopMost = true };
-            panel1.Visible = false;
-            picBackground.Visible = false;
+            //panel1.Visible = false;
+            //picBackground.Visible = false;
             cp.StartPosition = FormStartPosition.CenterParent;
             this.panel4.Controls.Add(cp);
             cp.Show();
@@ -401,22 +409,25 @@ namespace Tour
             //panel1.Visible = false;
             //picBackground.Visible = false;
             h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
-
+            h.StartPosition = FormStartPosition.CenterParent;
             this.panel4.Controls.Add(h);
             h.Show();
         }
 
         private void btnVehicalDatabase_Click(object sender, EventArgs e)
         {
-            this.panel4.Controls.Clear();
-            //changeColorButton(btnVehicalDatabase);
-            PhuongTien h = new PhuongTien() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            //panel1.Visible = false;
-            //picBackground.Visible = false;
-            h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
-            this.panel4.Controls.Add(h);
-            h.Show();
+            //this.panel4.Controls.Clear();
+            ////changeColorButton(btnVehicalDatabase);
+            //PhuongTien h = new PhuongTien() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            ////panel1.Visible = false;
+            ////picBackground.Visible = false;
+            //h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
+            //h.StartPosition = FormStartPosition.CenterParent;
+            //this.panel4.Controls.Add(h);
+            //h.Show();
+            changeActiveForm(new PhuongTien());
         }
+
 
         private void btnLocationDatabase_Click(object sender, EventArgs e)
         {
@@ -426,7 +437,7 @@ namespace Tour
             //panel1.Visible = false;
             //picBackground.Visible = false;
             h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
-
+            h.StartPosition = FormStartPosition.CenterParent;
             this.panel4.Controls.Add(h);
             h.Show();
         }
@@ -439,6 +450,7 @@ namespace Tour
             //panel1.Visible = false;
             //picBackground.Visible = false;
             h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
+            h.StartPosition = FormStartPosition.CenterParent;
             this.panel4.Controls.Add(h);
             h.Show();
         }

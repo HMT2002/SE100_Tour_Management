@@ -133,7 +133,7 @@ namespace Tour
             this.btnXoa.ForeColor = System.Drawing.Color.Black;
             this.btnXoa.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnXoa.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(463, 46);
+            this.btnXoa.Location = new System.Drawing.Point(438, 46);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(350, 75);
@@ -169,7 +169,7 @@ namespace Tour
             this.btnExit.ForeColor = System.Drawing.Color.Black;
             this.btnExit.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnExit.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(463, 144);
+            this.btnExit.Location = new System.Drawing.Point(438, 144);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(350, 75);
@@ -212,7 +212,7 @@ namespace Tour
             this.guna2Panel1.Location = new System.Drawing.Point(12, 11);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(339, 766);
+            this.guna2Panel1.Size = new System.Drawing.Size(339, 871);
             this.guna2Panel1.TabIndex = 27;
             // 
             // cbbxVehical
@@ -372,10 +372,10 @@ namespace Tour
             this.guna2Panel2.Controls.Add(this.btnXoa);
             this.guna2Panel2.Controls.Add(this.btnAdd);
             this.guna2Panel2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Panel2.Location = new System.Drawing.Point(357, 512);
+            this.guna2Panel2.Location = new System.Drawing.Point(357, 617);
             this.guna2Panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(831, 265);
+            this.guna2Panel2.Size = new System.Drawing.Size(813, 265);
             this.guna2Panel2.TabIndex = 28;
             // 
             // btnPickPicture
@@ -427,14 +427,15 @@ namespace Tour
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1200, 788);
+            this.ClientSize = new System.Drawing.Size(1182, 898);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.btnPickPicture);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PhuongTien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PhuongTien";
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();

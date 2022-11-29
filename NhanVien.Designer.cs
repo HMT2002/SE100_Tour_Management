@@ -66,7 +66,7 @@ namespace Tour
             this.btnExit.BorderRadius = 5;
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.Black;
-            this.btnExit.Location = new System.Drawing.Point(1059, 729);
+            this.btnExit.Location = new System.Drawing.Point(1032, 839);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(128, 45);
@@ -81,7 +81,7 @@ namespace Tour
             this.btnThem.BorderRadius = 5;
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.Black;
-            this.btnThem.Location = new System.Drawing.Point(13, 729);
+            this.btnThem.Location = new System.Drawing.Point(14, 839);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(100, 45);
@@ -94,7 +94,7 @@ namespace Tour
             this.btnXoa.BorderRadius = 5;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.Black;
-            this.btnXoa.Location = new System.Drawing.Point(121, 729);
+            this.btnXoa.Location = new System.Drawing.Point(122, 839);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(100, 45);
@@ -107,7 +107,7 @@ namespace Tour
             this.btnUpdate.BorderRadius = 5;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.Location = new System.Drawing.Point(229, 729);
+            this.btnUpdate.Location = new System.Drawing.Point(230, 839);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(100, 45);
@@ -145,7 +145,7 @@ namespace Tour
             this.guna2ComboBox1.Location = new System.Drawing.Point(1028, 313);
             this.guna2ComboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(160, 36);
+            this.guna2ComboBox1.Size = new System.Drawing.Size(132, 36);
             this.guna2ComboBox1.StartIndex = 0;
             this.guna2ComboBox1.TabIndex = 29;
             this.guna2ComboBox1.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
@@ -166,7 +166,7 @@ namespace Tour
             this.btnPickPicture.BorderRadius = 5;
             this.btnPickPicture.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPickPicture.ForeColor = System.Drawing.Color.Black;
-            this.btnPickPicture.Location = new System.Drawing.Point(371, 239);
+            this.btnPickPicture.Location = new System.Drawing.Point(347, 239);
             this.btnPickPicture.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPickPicture.Name = "btnPickPicture";
             this.btnPickPicture.Size = new System.Drawing.Size(138, 59);
@@ -244,7 +244,7 @@ namespace Tour
             this.dgv_nhanvien.RowTemplate.DividerHeight = 10;
             this.dgv_nhanvien.RowTemplate.Height = 40;
             this.dgv_nhanvien.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgv_nhanvien.Size = new System.Drawing.Size(1171, 364);
+            this.dgv_nhanvien.Size = new System.Drawing.Size(1144, 460);
             this.dgv_nhanvien.TabIndex = 32;
             this.dgv_nhanvien.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_nhanvien.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -467,7 +467,7 @@ namespace Tour
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1200, 788);
+            this.ClientSize = new System.Drawing.Size(1182, 898);
             this.Controls.Add(this.txtbxPassword);
             this.Controls.Add(this.tb_search);
             this.Controls.Add(this.btnPickPicture);
@@ -485,9 +485,10 @@ namespace Tour
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.panel3);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "NhanVien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.Load += new System.EventHandler(this.NhanVien_Load);
             this.panel3.ResumeLayout(false);

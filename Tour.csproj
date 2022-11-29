@@ -652,6 +652,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ic_image_empty-128.png" />
+    <None Include="Resources\hard-work.png" />
+    <None Include="Resources\hard-work1.png" />
+    <None Include="Resources\istockphoto-1183622464-612x612.jpg" />
+    <None Include="Resources\management.png" />
+    <None Include="Resources\management%281%29.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\logout%281%29.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\minus.png" />
     <Content Include="Model\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -662,15 +671,6 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\hard-work.png" />
-    <None Include="Resources\hard-work1.png" />
-    <None Include="Resources\istockphoto-1183622464-612x612.jpg" />
-    <None Include="Resources\management.png" />
-    <None Include="Resources\management%281%29.png" />
-    <None Include="Resources\logout.png" />
-    <None Include="Resources\logout%281%29.png" />
-    <None Include="Resources\close.png" />
-    <None Include="Resources\minus.png" />
     <Content Include="Resources\person-working.jpg" />
     <None Include="Resources\person-working1.jpg" />
     <None Include="Resources\person-working11.jpg" />

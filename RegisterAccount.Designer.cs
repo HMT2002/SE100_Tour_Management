@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterAccount));
-            this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txbHo = new Guna.UI2.WinForms.Guna2TextBox();
             this.txbTen = new Guna.UI2.WinForms.Guna2TextBox();
@@ -53,19 +51,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(283, 286);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(24, 26);
-            this.label14.TabIndex = 72;
-            this.label14.Text = "*";
-            // 
             // label12
             // 
             this.label12.BackColor = System.Drawing.Color.Transparent;
@@ -76,19 +61,6 @@
             this.label12.Size = new System.Drawing.Size(100, 39);
             this.label12.TabIndex = 68;
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(283, 214);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(24, 26);
-            this.label9.TabIndex = 66;
-            this.label9.Text = "*";
             // 
             // label8
             // 
@@ -352,10 +324,8 @@
             // guna2Panel1
             // 
             this.guna2Panel1.Controls.Add(this.pcbxAvatar);
-            this.guna2Panel1.Controls.Add(this.label14);
             this.guna2Panel1.Controls.Add(this.label12);
             this.guna2Panel1.Controls.Add(this.btnSend);
-            this.guna2Panel1.Controls.Add(this.label9);
             this.guna2Panel1.Controls.Add(this.Cancelbtn);
             this.guna2Panel1.Controls.Add(this.txbHo);
             this.guna2Panel1.Controls.Add(this.SignUpbtn);
@@ -377,7 +347,7 @@
             this.pcbxAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pcbxAvatar.Image = global::Tour.Properties.Resources.ic_image_empty_128;
             this.pcbxAvatar.Location = new System.Drawing.Point(313, 23);
-            this.pcbxAvatar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbxAvatar.Margin = new System.Windows.Forms.Padding(4);
             this.pcbxAvatar.Name = "pcbxAvatar";
             this.pcbxAvatar.Size = new System.Drawing.Size(200, 135);
             this.pcbxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -420,12 +390,11 @@
             this.Controls.Add(this.label8);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RegisterAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterAccount";
             this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvatar)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
@@ -435,10 +404,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pcbxAvatar;
         private Guna.UI2.WinForms.Guna2TextBox txbHo;

@@ -15,6 +15,9 @@ using Tour.Utils;
 using Tour.Model;
 using Org.BouncyCastle.Utilities.Net;
 using System.Xml.Linq;
+using System.Text.RegularExpressions;
+using System.Configuration;
+
 
 namespace Tour
 {
@@ -55,6 +58,12 @@ namespace Tour
 
             }
 
+            if (!rEMail.IsMatch(txbGmail.Text))
+            {
+                Utils.Notify.NotificationField(txbGmail);
+                flag = false;
+            }
+
             if (txbHo.Text == "")
             {
                 Utils.Notify.NotificationField(txbHo);
@@ -90,7 +99,7 @@ namespace Tour
                 MessageBox.Show("Password not match!!!");
                 Utils.Notify.NotificationField(txbConfirm);
                 Utils.Notify.NotificationField(txbPass);
-
+                
                 flag = false;
 
             }
@@ -117,7 +126,7 @@ namespace Tour
                 try
                 {
 
-                    var nv = new NHANVIEN() { ID = randomcode,  TEN = txbHo.Text+" "+ txbTen.Text, SDT = txbSDT.Text, MAIL = txbGmail.Text,PICBI=img_data };
+                    var nv = new NHANVIEN() { ID = randomcode,  TEN = txbHo.Text+" "+ txbTen.Text, SDT = txbSDT.Text, MAIL = txbGmail.Text,PICBI=img_data, IDACC = randomcode, IsDeleted = false };
                     var account = new ACCOUNT() { ACC = txbGmail.Text, PASS = Converter.Instance.EncryptPassword( (txbPass.Text)), ID = randomcode,IsDeleted=false,ACCROLE="Employee" };
                     DataProvider.Ins.DB.ACCOUNTs.Add(account);
                     DataProvider.Ins.DB.NHANVIENs.Add(nv);
@@ -228,6 +237,10 @@ namespace Tour
                         MessageBox.Show(ex.Message);
                     }
 
+                }
+                else
+                {
+                    MessageBox.Show("Wrong email!");
                 }
             }
         }

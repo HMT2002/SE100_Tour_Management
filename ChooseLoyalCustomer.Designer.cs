@@ -71,11 +71,13 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(13, 13);
+            this.guna2DataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.RowHeadersVisible = false;
+            this.guna2DataGridView1.RowHeadersWidth = 51;
             this.guna2DataGridView1.RowTemplate.Height = 60;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(951, 347);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(1156, 872);
             this.guna2DataGridView1.TabIndex = 0;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -105,6 +107,7 @@
             this.data_id.DataPropertyName = "ID";
             this.data_id.FillWeight = 80F;
             this.data_id.HeaderText = "ID";
+            this.data_id.MinimumWidth = 6;
             this.data_id.Name = "data_id";
             // 
             // NAME
@@ -112,6 +115,7 @@
             this.NAME.DataPropertyName = "TENKH";
             this.NAME.FillWeight = 120F;
             this.NAME.HeaderText = "Name";
+            this.NAME.MinimumWidth = 6;
             this.NAME.Name = "NAME";
             // 
             // MAIL
@@ -119,18 +123,21 @@
             this.MAIL.DataPropertyName = "MAIL";
             this.MAIL.FillWeight = 120F;
             this.MAIL.HeaderText = "Email";
+            this.MAIL.MinimumWidth = 6;
             this.MAIL.Name = "MAIL";
             // 
             // CMND
             // 
             this.CMND.DataPropertyName = "CMND";
             this.CMND.HeaderText = "Citizen\'s ID";
+            this.CMND.MinimumWidth = 6;
             this.CMND.Name = "CMND";
             // 
             // SDT
             // 
             this.SDT.DataPropertyName = "SDT";
             this.SDT.HeaderText = "Phone";
+            this.SDT.MinimumWidth = 6;
             this.SDT.Name = "SDT";
             // 
             // PICBI
@@ -139,14 +146,16 @@
             this.PICBI.FillWeight = 130F;
             this.PICBI.HeaderText = "Picture";
             this.PICBI.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.PICBI.MinimumWidth = 6;
             this.PICBI.Name = "PICBI";
             // 
             // ChooseLoyalCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(975, 371);
+            this.ClientSize = new System.Drawing.Size(1182, 898);
             this.Controls.Add(this.guna2DataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ChooseLoyalCustomer";
             this.Text = "ChooseLoyalCustomer";
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
