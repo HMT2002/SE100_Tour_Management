@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tour.CrystalReport;
 using Tour.Model;
 using Tour.Utils;
 
@@ -19,6 +20,9 @@ namespace Tour
         System.Text.RegularExpressions.Regex rEMail = new System.Text.RegularExpressions.Regex(@"^([a-zA-Z0-9_\-])([a-zA-Z0-9_\-\.]*)@(\[((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}|((([a-zA-Z0-9\-]+)\.)+))([a-zA-Z]{2,}|(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\])$");
 
         KHACHHANG khachhang ;
+
+        public TOUR selected_tour = new TOUR();
+        public DOAN selected_group = new DOAN();
         
         public DangKy()
         {
@@ -34,6 +38,7 @@ namespace Tour
 
             showAll();
             reset();
+            Clear();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -47,28 +52,12 @@ namespace Tour
 
         private void rdIn_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdDomestic.Checked == true)
-            {
-                //tbCMND.Text = "Please Enter Identification Card Number";
-                //tbCMND.ForeColor = Color.LightGray;
-                PnFore.Visible = false;
-            }
-            else
-            {
-                PnFore.Visible = true;
-                //tbCMND.Text = "Please Enter Passport Number";
-                //tbCMND.ForeColor = Color.LightGray;
-            }
+
         }
 
         private void tbCMND_Enter(object sender, EventArgs e)
         {
-            //if (rdDomestic.Checked == true && tbCMND.Text == "Please Enter Identification Card Number")
-            //{
-            //    tbCMND.Text = "";
-            //    tbCMND.ForeColor = Color.Black;
-            //}
-            //else tbCMND.Text = ""; tbCMND.ForeColor = Color.Black;
+
         }
 
         private void tbCMND_Leave(object sender, EventArgs e)
@@ -103,27 +92,87 @@ namespace Tour
             tbTotal.Clear();
             cbDes.Text = "None";
             RdMale.Checked = true;
-            rdDomestic.Checked = true;
-            rtbreservation.Clear();
-            rtbTicket.Clear();
             tbDuration.Clear();
+            Notify.UnnotificationSelect(cbDes);
+            Notify.UnnotificationSelect(cbGroup);
+            cbGroup.DataSource = null;
+            pcbxBanner.Image = Properties.Resources.ic_image_empty_128;
+            selected_group = null;
+            selected_tour = null;
+
+            lblReciptGroupName.Text = "";
+            lblReciptPrice.Text = "";
+            lblReciptStartDate.Text = "";
+            lblReciptEndDate.Text = "";
+            lblReciptTourName.Text = "";
         }
         private void btReset_Click(object sender, EventArgs e)
         {
             reset();
         }
 
+        public void UnnotifyAllFields()
+        {
+            Notify.UnnotificationField(tbName);
+            Notify.UnnotificationField(tbAddress);
+            Notify.UnnotificationField(tbEmail);
+            Notify.UnnotificationField(tbCMND);
+            Notify.UnnotificationField(tbTelephone);
+
+        }
+
+
         public bool CheckData()
         {
-
-
-            if (tbName.Text.Trim().CompareTo(string.Empty) == 0 || tbAddress.Text.Trim().CompareTo(string.Empty) == 0 || tbCMND.Text.Trim().CompareTo(string.Empty) == 0||cbGroup.SelectedValue==null||cbDes.SelectedValue==null)
+            bool flag = true;
+            if (tbName.Text.Trim().CompareTo(string.Empty) == 0)
             {
-                MessageBox.Show("Please fill in all the information", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return false;
+                Notify.NotificationField(tbName);
+                flag = false;
             }
 
-            return true;
+            if (tbAddress.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(tbAddress);
+                flag = false;
+
+            }
+
+            if (tbTelephone.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(tbTelephone);
+                flag = false;
+            }
+
+            if (tbCMND.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(tbCMND);
+                flag = false;
+            }
+
+            if (tbEmail.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(tbEmail);
+                flag = false;
+            }
+
+
+            if (cbDes.SelectedValue == null)
+            {
+                Notify.NotificationSelect(cbDes);
+                flag = false;
+            }
+
+
+            if (cbGroup.SelectedValue == null)
+            {
+                Notify.NotificationSelect(cbGroup);
+                flag = false;
+            }
+
+
+
+            return flag;
         }
         public string SurName, address, phonenumber,typeCus, gender,CMND,TourID,tourist,typeoftour,RouteID,TenChuyen;
         public int Year, Month, Day, vYear, vMonth, vDay,price,tienhoantra,lephihoantra;
@@ -134,7 +183,6 @@ namespace Tour
         }
 
         public double customer_discount = 0;
-
         public double banner_discount = 0;
 
 
@@ -146,7 +194,11 @@ namespace Tour
                 this.Hide();
                 t.ShowDialog();
                 this.Show();
-
+                if (t.ChosedKhachHang == null)
+                {
+                    Clear();
+                    return;
+                }
                 khachhang = t.ChosedKhachHang;
 
                 lblChooseCustomer.Text = t.ChosedKhachHang.ID;
@@ -196,10 +248,49 @@ namespace Tour
                 lblCustomerDiscount.Text = customer_discount.ToString();
                 if (tbDiscount.Text.CompareTo(string.Empty) != 0)
                 {
-                    tbDiscount.Text = (Convert.ToInt32(tbDiscount.Text) + customer_discount).ToString();
-                }
+                    tbDiscount.Text = (Convert.ToInt64(tbDiscount.Text) + customer_discount).ToString();
 
+                    try
+                    {
+                        decimal res = 0;
+                        double discount = Convert.ToInt64(tbDiscount.Text);
+                        decimal price = Convert.ToDecimal(tbPrice.Text);
+                        res = price - (price * (decimal)(discount / 100));
+                        tbTotal.Text = res.ToString();
+                    }
+                    catch
+                    {
+
+                        tbTotal.Text = tbPrice.Text;
+                    }
+                    lblReciptPrice.Text = tbTotal.Text;
+
+
+                }
+                else
+                {
+
+                }
+                UnnotifyAllFields();
             }
+        }
+
+        private void tbAddress_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utils.Notify.UnnotificationField(sender);
+
+        }
+
+        private void tbName_TextChanged(object sender, EventArgs e)
+        {
+            lblReciptCustomerName.Text = tbName.Text;
+
+        }
+
+        private void tbEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utils.Notify.UnnotificationField(sender);
+
         }
 
         private void lblChooseCustomer_Click(object sender, EventArgs e)
@@ -216,88 +307,121 @@ namespace Tour
             {
                 Type t = cbGroup.SelectedItem.GetType();
 
-                object iddoan = t.GetProperty("IDDOAN").GetValue(cbGroup.SelectedItem, null);
-                object ngaykhoihanh = t.GetProperty("NGAYKHOIHANH").GetValue(cbGroup.SelectedItem, null);
-                object ngayketthuc = t.GetProperty("NGAYKETTHUC").GetValue(cbGroup.SelectedItem, null);
-                tbDate.Text= t.GetProperty("NGAYKHOIHANH").GetValue(cbGroup.SelectedItem, null).ToString();
-                tbDuration.Text = ((DateTime)ngayketthuc - (DateTime)ngaykhoihanh).TotalDays.ToString();
+                string iddoan = t.GetProperty("IDDOAN").GetValue(cbGroup.SelectedItem, null).ToString();
+                selected_group = DataProvider.Ins.DB.DOANs.Where(x => x.ID == iddoan).FirstOrDefault();
+                tbDate.Text = selected_group.NGAYKHOIHANH.Value.ToString("dd/MM/yyyy");
+                tbDuration.Text = ((DateTime)selected_group.NGAYKETTHUC - (DateTime)selected_group.NGAYKHOIHANH).TotalDays.ToString();
+
+                lblReciptStartDate.Text= selected_group.NGAYKHOIHANH.Value.ToString("dd/MM/yyyy");
+                lblReciptEndDate.Text= selected_group.NGAYKETTHUC.ToString();
+                lblReciptGroupName.Text = selected_group.TEN;
+
             }
 
         }
-
-        private void btCreate_Click(object sender, EventArgs e)
+        public void AddTicket()
         {
-
-            if (RdFmale.Checked == true)
-            {
-                gender = "Male";
-            }
-            else gender = "Female";
 
 
             if (CheckData())
             {
-                try
+                if (MessageBox.Show("Confirm create ticket? ", "Confirmation", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
                 {
-
-                    string idkhach=lblChooseCustomer.Text.Trim();
-                    string randomcode = Converter.Instance.RandomString2(5);
-
-                    if (khachhang==null)
+                    try
                     {
-                        idkhach = randomcode;
-                        khachhang = new KHACHHANG()
+                        if (RdFmale.Checked == true)
                         {
-                            ID = idkhach,
-                            TENKH = tbName.Text,
-                            CMND = tbCMND.Text,
-                            GIOITINH = gender,
-                            DIACHI = tbAddress.Text,
-                            SDT = tbTelephone.Text,
+                            gender = "Male";
+                        }
+                        else gender = "Female";
+                        string idkhach = lblChooseCustomer.Text.Trim();
+                        string randomcode = Converter.Instance.RandomString2(5);
+
+                        if (khachhang == null)
+                        {
+                            idkhach = randomcode;
+                            khachhang = new KHACHHANG()
+                            {
+                                ID = idkhach,
+                                TENKH = tbName.Text,
+                                CMND = this.tbCMND.Text,
+                                GIOITINH = gender,
+                                DIACHI = tbAddress.Text,
+                                SDT = tbTelephone.Text,
+                                IsDeleted = false,
+                            };
+                            DataProvider.Ins.DB.KHACHHANGs.Add(khachhang);
+                        }
+                        else
+                        {
+                            khachhang.SPENDING += Convert.ToDecimal(tbPrice.Text);
+                        }
+
+                        var ve = new VE()
+                        {
+                            ID = lblReciptTicketID.Text,
+                            IDKHACH = idkhach,
+                            IDDOAN = cbGroup.SelectedValue.ToString(),
+                            NGAYMUA = DateTime.Today,
+                            GIA = Convert.ToDecimal(tbPrice.Text),
                             IsDeleted = false,
                         };
-                        DataProvider.Ins.DB.KHACHHANGs.Add(khachhang);
+                        DataProvider.Ins.DB.VEs.Add(ve);
+                        DataProvider.Ins.DB.SaveChanges();
+                        temp_ticket_id = lblReciptTicketID.Text;
+                        showAll();
+                        Clear();
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        khachhang.SPENDING += Convert.ToDecimal(tbPrice.Text);
+
                     }
-
-
-                    randomcode = Converter.Instance.RandomString2(5);
-                    var ve = new VE()
-                    {
-                        ID = randomcode,
-                        IDKHACH = idkhach,
-                        IDDOAN = cbGroup.SelectedValue.ToString(),
-                        NGAYMUA = DateTime.Today,
-                        GIA = Convert.ToDecimal(tbPrice.Text),
-                        IsDeleted = false,
-                    };
-                    DataProvider.Ins.DB.VEs.Add(ve);
-                    DataProvider.Ins.DB.SaveChanges();
-                    showAll();
-                    Clear();
                 }
-                catch (Exception ex)
-                {
 
-                }
 
             }
         }
+
+        public string temp_ticket_id = "";
+        private void btCreate_Click(object sender, EventArgs e)
+        {
+            AddTicket();
+            AskForReport();
+        }
+
+        private void AskForReport()
+        {
+            if (MessageBox.Show("Do you want to print ticket?", "Print ticket", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+            {
+
+                VE ve = DataProvider.Ins.DB.VEs.Where(x => (x.ID == temp_ticket_id && x.IsDeleted == false)).SingleOrDefault();
+
+                using (fPrint f = new fPrint(ve))
+                {
+                    rptTicket crys = new rptTicket();
+                    crys.Load(@"rptTicket.rep");
+
+                    f.rptViewer.ReportSource = crys;
+                    f.rptViewer.Refresh();
+
+                    f.rptViewer.SelectionFormula = "{VE.ID} = '" + ve.ID + "' ";
+
+                    f.ShowDialog();
+                }
+            }
+
+        }
+
         private void btnGo_Click(object sender, EventArgs e)
         {
-
+            Clear();
+            showAll();
         }
 
         private void LoadCombobox(ComboBox cb)
         {
 
         }
-
-        static string sqlconnectStr = @"Data Source=.\mssqlserver01;initial catalog=QL_TOUR_DU_LICH;integrated security=True";
-        SqlConnection sqlconnect = new SqlConnection(sqlconnectStr);
 
         private void showAll()
         {
@@ -312,13 +436,12 @@ namespace Tour
                                     IDTOUR = tour.ID,
                                     GIA = tour.GIA,
                                 }
-                ).ToList();
+                ).Distinct().ToList();
 
             cbDes.ValueMember = "IDTOUR";
             cbDes.DisplayMember = "TENTOUR";//DisplayMember phải trùng trên select new
             cbDes.SelectedIndex = -1;
             reset();
-
 
         }
 
@@ -328,13 +451,14 @@ namespace Tour
 
             if (index >= 0)
             {
+                reset();
 
                 Type t = cbDes.SelectedItem.GetType();
                 string idtour = t.GetProperty("IDTOUR").GetValue(cbDes.SelectedItem, null).ToString();
-
+                selected_tour = DataProvider.Ins.DB.TOURs.Where(x => x.ID == idtour).FirstOrDefault();
                 cbGroup.DataSource = (from tour in DataProvider.Ins.DB.TOURs
                                       join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
-                                      where tour.ID == idtour && tour.IsDeleted == false && doan.IsDeleted == false
+                                      where tour.ID == selected_tour.ID && tour.IsDeleted == false && doan.IsDeleted == false
                                       select new
                                       {
                                           TENDOAN = doan.TEN,
@@ -342,28 +466,32 @@ namespace Tour
                                           NGAYKHOIHANH = doan.NGAYKHOIHANH,
                                           NGAYKETTHUC = doan.NGAYKETTHUC
                                       }
-                                            ).ToList();
+                                            ).Distinct().ToList();
                 cbGroup.ValueMember = "IDDOAN";
                 cbGroup.DisplayMember = "TENDOAN";
                 cbGroup.SelectedIndex = -1;
-                reset();
-                tbPrice.Text = cbDes.SelectedItem.GetType().GetProperty("GIA").GetValue(cbDes.SelectedItem, null).ToString();
-                GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == idtour && x.IsDeleted == false).FirstOrDefault();
+                tbPrice.Text = selected_tour.GIA.ToString();
+                GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == selected_tour.ID && x.IsDeleted == false).FirstOrDefault();
                 tbDiscount.Text = (giamgia.DISCOUNT + customer_discount).ToString();
+                pcbxBanner.Image = Converter.Instance.ByteArrayToImage(giamgia.PICBI);
 
                 try
                 {
-                        decimal res = 0;
-                        double discount = Convert.ToInt64(giamgia.DISCOUNT);
-                        decimal price = Convert.ToDecimal(tbPrice.Text);
-                        res = price - (price * (decimal)(discount / 100));
-                        tbTotal.Text = res.ToString();
+                    decimal res = 0;
+                    double discount = Convert.ToInt64(giamgia.DISCOUNT)+customer_discount;
+                    decimal price = Convert.ToDecimal(tbPrice.Text);
+                    res = price - (price * (decimal)(discount / 100));
+                    tbTotal.Text = res.ToString();
                 }
                 catch
                 {
 
                     tbTotal.Text = tbPrice.Text;
                 }
+                lblReciptPrice.Text = tbTotal.Text;
+                lblReciptTourName.Text = selected_tour.TEN;
+                selected_group = null;
+
 
             }
 
@@ -382,6 +510,12 @@ namespace Tour
             khachhang = null;
             banner_discount = 0;
             customer_discount = 0;
+            RdMale.Checked = true;
+            lblCustomerDiscount.Text = customer_discount.ToString();
+            UnnotifyAllFields();
+            lblReciptCustomerName.Text = "";
+            lblReciptTicketID.Text = Converter.Instance.RandomString2(5);
+
         }
         private void tbTelephone_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -417,17 +551,12 @@ namespace Tour
         {
 
         }
-        private void tbSurname_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsControl(e.KeyChar) || char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Space)
-            {
-                return;
-            }
-            e.Handled = true;
-        }
+
 
         private void tbCMND_KeyPress(object sender, KeyPressEventArgs e)
         {
+            Utils.Notify.UnnotificationField(sender);
+
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
                 (e.KeyChar != '.'))
             {
@@ -441,6 +570,8 @@ namespace Tour
 
         private void tbTelephone_KeyPress_1(object sender, KeyPressEventArgs e)
         {
+            Utils.Notify.UnnotificationField(sender);
+
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
                 (e.KeyChar != '.'))
             {
@@ -452,20 +583,19 @@ namespace Tour
             }
         }
 
-        private void btngotocsdl_Click(object sender, EventArgs e)
-        {
-            CSDLPhieuDatCho t = new CSDLPhieuDatCho();
-            this.Hide();
-            t.ShowDialog();
-            this.Show();
-        }
 
         private void tbName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            Utils.Notify.UnnotificationField(sender);
+
+            if (char.IsControl(e.KeyChar) || char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Space)
             {
-                e.Handled = true;
+
+                Utils.Validate.CapitaLetter(sender,e);
+
+                return;
             }
+            e.Handled = true;
         }
 
     }

@@ -12,6 +12,7 @@ using System.Security.Cryptography;
 using System.Threading;
 using Tour.Model;
 using Tour.Utils;
+using Tour.CrystalReport;
 
 namespace Tour
 {
@@ -72,12 +73,7 @@ namespace Tour
                 ACCOUNT acc = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false && x.ACCROLE == "Customer")).SingleOrDefault();
                 if (acc != null)
                 {
-                    MessageBox.Show("Login as customer!");
-<<<<<<< Updated upstream
                     KHACHHANG kh = DataProvider.Ins.DB.KHACHHANGs.Where(x => (x.IDACC == acc.ID&&x.IsDeleted==false )).SingleOrDefault();
-=======
-                    KHACHHANG kh = DataProvider.Ins.DB.KHACHHANGs.Where(x => (x.IDACC == acc.ID && x.IsDeleted == false)).SingleOrDefault();
->>>>>>> Stashed changes
                     LoyalCustomer menuF = new LoyalCustomer(kh);
                     this.Hide();
                     menuF.ShowDialog();
@@ -105,18 +101,20 @@ namespace Tour
                 }
 
 
-                if (DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false && ((x.ACCROLE == "Manager") || (x.ACCROLE == "Employee")))).SingleOrDefault() != null)
+                if (DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false &&( (x.ACCROLE == "Manager") || (x.ACCROLE == "Employee")))).SingleOrDefault() != null)
                 {
                     Properties.Settings.Default.UserName = emailtxb.Text;
                     Properties.Settings.Default.Password = passwordtxb.Text;
                     Properties.Settings.Default.CurUserId = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().ACC;
+                    Properties.Settings.Default.CurUserName = DataProvider.Ins.DB.NHANVIENs.Where(x => (x.ACCOUNT.ACC == emailtxb.Text && x.ACCOUNT.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().TEN;
 
                     Properties.Settings.Default.Save();
-                    SelectForm menuF = new SelectForm();
+                    SelectForm menuF = new SelectForm(DataProvider.Ins.DB.NHANVIENs.Where(x => x.ACCOUNT.ACC == emailtxb.Text && x.IsDeleted == false).FirstOrDefault());
                     this.Hide();
                     menuF.ShowDialog();
                     this.Show();
                 }
+
                 else
                 {
                     MessageBox.Show("Wrong email or password!!!!");
@@ -177,16 +175,26 @@ namespace Tour
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string ticket_id = txtbxSearchTicket.Text;
-            if (DataProvider.Ins.DB.VEs.Where(x => (x.ID == ticket_id && x.IsDeleted == false)).SingleOrDefault() == null)
+            string ticket_id =  txtbxSearchTicket.Text;
+            VE ve = DataProvider.Ins.DB.VEs.Where(x => (x.ID == ticket_id && x.IsDeleted == false)).SingleOrDefault();
+            if (ve == null)
             {
                 MessageBox.Show("Số vé không tồn tại!");
                 return;
             }
-            SearchTicket f = new SearchTicket(DataProvider.Ins.DB.VEs.Where(x => (x.ID == ticket_id && x.IsDeleted == false)).SingleOrDefault());
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+
+            using (fPrint f = new fPrint(ve))
+            {
+                rptTicket crys = new rptTicket();
+                crys.Load(@"rptTicket.rep");
+
+                f.rptViewer.ReportSource = crys;
+                f.rptViewer.Refresh();
+
+                f.rptViewer.SelectionFormula = "{VE.ID} = '" + ve.ID + "' ";
+
+                f.ShowDialog();
+            }
         }
 
         public void Clear()
@@ -209,6 +217,12 @@ namespace Tour
 
         private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void checkbxShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            passwordtxb.PasswordChar = checkbxShowPassword.Checked ? '\0' : '●';
 
         }
 

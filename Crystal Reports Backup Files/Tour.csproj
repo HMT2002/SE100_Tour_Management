@@ -665,21 +665,11 @@
     <None Include="Resources\hard-work.png" />
     <None Include="Resources\hard-work1.png" />
     <None Include="Resources\istockphoto-1183622464-612x612.jpg" />
-    <None Include="Resources\management.png" />
-    <None Include="Resources\management%281%29.png" />
-    <None Include="Resources\logout.png" />
-    <None Include="Resources\logout%281%29.png" />
-    <None Include="Resources\close.png" />
-    <None Include="Resources\minus.png" />
     <Content Include="Resources\person-working.jpg" />
     <None Include="Resources\person-working1.jpg" />
     <None Include="Resources\person-working11.jpg" />
     <None Include="Resources\pngtree-bright-poster-conduct-negotiations-cartoon-flat-image_1107239.jpg" />
     <None Include="Resources\user%281%29.png" />
-    <None Include="Resources\staff1.png" />
-    <None Include="Resources\staff%281%29.png" />
-    <None Include="Resources\question.png" />
-    <None Include="Resources\question%281%29.png" />
     <Content Include="tickets.ico" />
   </ItemGroup>
   <ItemGroup />

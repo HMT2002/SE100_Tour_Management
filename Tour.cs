@@ -13,6 +13,7 @@ using Tour.Model;
 using Tour.Utils;
 using System.Data.Entity.SqlServer;
 using System.Data.Entity;
+using Tour.CrystalReport;
 
 namespace Tour
 {
@@ -20,6 +21,8 @@ namespace Tour
     {
         string id;
         string randomcode;
+
+        TOUR selected_tour = new TOUR();
 
         List<DIADIEM> LocationList = new List<DIADIEM>();
 
@@ -47,7 +50,7 @@ namespace Tour
         }
         public void ShowAllChuyen()
         {
-            dgv_trip.DataSource = DataProvider.Ins.DB.TOURs.Where(t=>t.IsDeleted==false).ToList();
+            dgv_trip.DataSource = DataProvider.Ins.DB.TOURs.Where(t => t.IsDeleted == false).ToList();
 
             lstbxLocation.DataSource = LocationList;
             lstbxLocation.DisplayMember = "TEN";
@@ -55,6 +58,7 @@ namespace Tour
         }
         private void TRIPManageTour_Load(object sender, EventArgs e)
         {
+            Clear();
             ShowAllChuyen();
 
         }
@@ -64,11 +68,11 @@ namespace Tour
         public bool CheckData()
         {
 
-                this.price = tb_price.Text;
-                this.typetour = cb_typetour.Text;
-                this.nametour = tb_nametour.Text;
+            this.price = tb_price.Text;
+            this.typetour = cb_typetour.Text;
+            this.nametour = tb_nametour.Text;
 
-            if (this.price.Trim().CompareTo(string.Empty) == 0|| this.typetour.Trim().CompareTo(string.Empty) == 0 || this.nametour.Trim().CompareTo(string.Empty) == 0)
+            if (this.price.Trim().CompareTo(string.Empty) == 0 || this.typetour.Trim().CompareTo(string.Empty) == 0 || this.nametour.Trim().CompareTo(string.Empty) == 0)
             {
                 return false;
             }
@@ -88,7 +92,7 @@ namespace Tour
                     tour.TEN = tb_nametour.Text;
                     tour.LOAI = cb_typetour.Text;
                     tour.GIA = Convert.ToDecimal(tb_price.Text);
-                    tour.DACDIEM = richtbDetail.Text;
+                    tour.DACDIEM = "";
                     DataProvider.Ins.DB.SaveChanges();
                     ShowAllChuyen();
 
@@ -111,20 +115,22 @@ namespace Tour
                     throw raise;
                 }
 
-                Clear() ;
+                Clear();
             }
         }
 
         public void Clear()
         {
             cb_typetour.SelectedIndex = -1;
-            id = tb_price.Text = cb_typetour.Text = tb_nametour.Text = tb_idtrip.Text = cb_typetour.Text = richtbDetail.Text = "";
+            id = tb_price.Text = cb_typetour.Text = tb_nametour.Text = tb_idtrip.Text = cb_typetour.Text = "";
             lstbxLocation.DataSource = null;
             LocationList = new List<DIADIEM>();
 
             this.price = this.typetour = this.nametour = null;
 
             pcbxBanner.Image = Properties.Resources.ic_image_empty_128;
+
+            this.selected_tour = null;
 
         }
         private void add_Click(object sender, EventArgs e)
@@ -135,7 +141,7 @@ namespace Tour
                 try
                 {
                     randomcode = Converter.Instance.RandomString2(5);
-                    var tour = new TOUR() { ID = randomcode, GIA = Convert.ToDecimal(tb_price.Text), TEN = tb_nametour.Text, LOAI = cb_typetour.Text, DACDIEM = richtbDetail.Text, IsDeleted = false };
+                    var tour = new TOUR() { ID = randomcode, GIA = Convert.ToDecimal(tb_price.Text), TEN = tb_nametour.Text, LOAI = cb_typetour.Text, DACDIEM = "", IsDeleted = false };
                     DataProvider.Ins.DB.TOURs.Add(tour);
 
                     DataProvider.Ins.DB.SaveChanges();
@@ -203,51 +209,80 @@ namespace Tour
         public int Hour, Minute, Year, Month, Day, Tickets, Price;
         private void dgv_trip_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            Clear();
+
             int index = e.RowIndex;
 
             if (index >= 0)
             {
                 id = dgv_trip.Rows[index].Cells["data_ID"].Value.ToString();
-                tb_idtrip.Text = id;
-                tb_nametour.Text = dgv_trip.Rows[index].Cells["TEN"].Value.ToString();
-                tb_price.Text = dgv_trip.Rows[index].Cells["GIA"].Value.ToString();
-                cb_typetour.Text = dgv_trip.Rows[index].Cells["LOAI"].Value.ToString();
-                richtbDetail.Text = dgv_trip.Rows[index].Cells["DACDIEM"].Value.ToString();
 
-                LocationList = new List<DIADIEM>();
-                foreach (var item in (from dd in DataProvider.Ins.DB.DIADIEMs
-                                      join tb_belong in DataProvider.Ins.DB.tb_DIADIEM_DULICH on dd.ID equals tb_belong.IDDIADIEM
-                                      where tb_belong.IDTOUR == id && tb_belong.IsDeleted == false
-                                      select dd)
-                                     .ToList())
-                {
-                    LocationList.Add(item);
-                }
-                lstbxLocation.DataSource = LocationList;
-                lstbxLocation.DisplayMember = "TEN";
+                selected_tour = DataProvider.Ins.DB.TOURs.Where(x => x.ID == id && x.IsDeleted == false).FirstOrDefault();
 
-                if(DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == id && x.IsDeleted == false).FirstOrDefault() != null)
-                {
-                pcbxBanner.Image = Converter.Instance.ByteArrayToImage(DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == id && x.IsDeleted == false).FirstOrDefault().PICBI);
+                EnableFields();
 
-                }
+                EnableLocationsSource();
+
+                EnableBanner();
 
             }
         }
 
-        DataTable dt = new DataTable("TOUR");
+        public void EnableFields()
+        {
+            tb_idtrip.Text = selected_tour.ID;
+            tb_nametour.Text = selected_tour.TEN;
+            tb_price.Text = selected_tour.GIA.ToString();
+            cb_typetour.Text = selected_tour.LOAI;
+        }
+
+        public void EnableBanner()
+        {
+            if (DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == selected_tour.ID && x.IsDeleted == false).FirstOrDefault() == null)
+            {
+                pcbxBanner.Image = Properties.Resources.ic_image_empty_128;
+            }
+            else
+            {
+                pcbxBanner.Image = Converter.Instance.ByteArrayToImage(DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == id && x.IsDeleted == false).FirstOrDefault().PICBI);
+            }
+        }
+
+        public void EnableLocationsSource()
+        {
+            LocationList = new List<DIADIEM>();
+            var listDIADIEM = (from dd in DataProvider.Ins.DB.DIADIEMs
+                               join tb_belong in DataProvider.Ins.DB.tb_DIADIEM_DULICH on dd.ID equals tb_belong.IDDIADIEM
+                               where tb_belong.IDTOUR == selected_tour.ID && tb_belong.IsDeleted == false
+                               select dd)
+                                 .ToList();
+            foreach (var item in listDIADIEM)
+            {
+                LocationList.Add(item);
+            }
+            lstbxLocation.DataSource = LocationList;
+            lstbxLocation.DisplayMember = "TEN";
+        }
+
 
         private void btnBanner_Click(object sender, EventArgs e)
         {
-            if (id == null)
+            if (selected_tour==null)
             {
                 return;
             }
-            ManageBanner h = new ManageBanner(id);
+            ManageBanner h = new ManageBanner(selected_tour);
             Clear();
             this.Hide();
             h.ShowDialog();
             this.Show();
+        }
+
+
+        private void tb_price_TextChanged(object sender, EventArgs e)
+        {
+            var price = tb_price.Text;
+            tb_price.Text = String.Format("{ 0:0,0 vnđ}", price);
         }
 
         private void rdIDSearch_Enter(object sender, EventArgs e)
@@ -274,9 +309,9 @@ namespace Tour
                         dgv_trip.DataSource = DataProvider.Ins.DB.TOURs.Where(t => (SqlFunctions.PatIndex("%" + value + "%", t.ID) > 0) && (t.IsDeleted == false)).Select(t => t).ToList();
 
                     }
-                    else if(rdNameSearch.Checked)
+                    else if (rdNameSearch.Checked)
                     {
-                        dgv_trip.DataSource = DataProvider.Ins.DB.TOURs.Where(t =>( SqlFunctions.PatIndex("%" + value + "%", t.TEN) > 0) && (t.IsDeleted==false)).Select(t => t).ToList();
+                        dgv_trip.DataSource = DataProvider.Ins.DB.TOURs.Where(t => (SqlFunctions.PatIndex("%" + value + "%", t.TEN) > 0) && (t.IsDeleted == false)).Select(t => t).ToList();
 
                     }
                 }
@@ -290,9 +325,7 @@ namespace Tour
 
         private void backtoroutebtn_Click(object sender, EventArgs e)
         {
-            Route r = new Route();
-            this.Hide();
-            r.ShowDialog();
+
         }
 
         private void gotoregistbtn_Click(object sender, EventArgs e)

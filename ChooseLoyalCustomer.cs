@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,13 +14,13 @@ namespace Tour
 {
     public partial class ChooseLoyalCustomer : Form
     {
-        public KHACHHANG ChosedKhachHang=new KHACHHANG();
+        public KHACHHANG ChosedKhachHang = null;
 
 
         public ChooseLoyalCustomer()
         {
             InitializeComponent();
-
+            guna2DataGridView1.AutoGenerateColumns = false;
             LoadData();
         }
 
@@ -36,13 +37,31 @@ namespace Tour
 
             if (index >= 0)
             {
-                id = guna2DataGridView1.Rows[index].Cells["ID"].Value.ToString();
+                id = guna2DataGridView1.Rows[index].Cells["data_id"].Value.ToString();
 
                 ChosedKhachHang= DataProvider.Ins.DB.KHACHHANGs.Where(x => x.ID == id && x.IsDeleted == false).FirstOrDefault();
 
+                VIPCategory();
 
                 this.Close();
             }
+        }
+
+        private void VIPCategory()
+        {
+            if (ChosedKhachHang.SPENDING >= 15000000)
+            {
+                ChosedKhachHang.PRI = "SILVER";
+            }
+            if (ChosedKhachHang.SPENDING >= 30000000)
+            {
+                ChosedKhachHang.PRI = "GOLD";
+            }
+            if (ChosedKhachHang.SPENDING >= 50000000)
+            {
+                ChosedKhachHang.PRI = "PLATINUM";
+            }
+            DataProvider.Ins.DB.SaveChanges();
         }
     }
 }
