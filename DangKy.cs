@@ -246,31 +246,23 @@ namespace Tour
                 }
 
                 lblCustomerDiscount.Text = customer_discount.ToString();
-                if (tbDiscount.Text.CompareTo(string.Empty) != 0)
+                tbDiscount.Text = (banner_discount + customer_discount).ToString();
+                try
                 {
-                    tbDiscount.Text = (Convert.ToInt64(tbDiscount.Text) + customer_discount).ToString();
-
-                    try
-                    {
-                        decimal res = 0;
-                        double discount = Convert.ToInt64(tbDiscount.Text);
-                        decimal price = Convert.ToDecimal(tbPrice.Text);
-                        res = price - (price * (decimal)(discount / 100));
-                        tbTotal.Text = res.ToString();
-                    }
-                    catch
-                    {
-
-                        tbTotal.Text = tbPrice.Text;
-                    }
-                    lblReciptPrice.Text = tbTotal.Text;
-
-
+                    decimal res = 0;
+                    double discount = banner_discount + customer_discount;
+                    decimal price = Convert.ToDecimal(tbPrice.Text);
+                    res = price - (price * (decimal)(discount / 100));
+                    tbTotal.Text = res.ToString();
                 }
-                else
+                catch
                 {
 
+                    tbTotal.Text = tbPrice.Text;
                 }
+
+                lblReciptPrice.Text = tbTotal.Text;
+
                 UnnotifyAllFields();
             }
         }
@@ -472,13 +464,14 @@ namespace Tour
                 cbGroup.SelectedIndex = -1;
                 tbPrice.Text = selected_tour.GIA.ToString();
                 GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == selected_tour.ID && x.IsDeleted == false).FirstOrDefault();
-                tbDiscount.Text = (giamgia.DISCOUNT + customer_discount).ToString();
+                banner_discount = (double)giamgia.DISCOUNT;
+                tbDiscount.Text = (banner_discount + customer_discount).ToString();
                 pcbxBanner.Image = Converter.Instance.ByteArrayToImage(giamgia.PICBI);
 
                 try
                 {
                     decimal res = 0;
-                    double discount = Convert.ToInt64(giamgia.DISCOUNT)+customer_discount;
+                    double discount = banner_discount+customer_discount;
                     decimal price = Convert.ToDecimal(tbPrice.Text);
                     res = price - (price * (decimal)(discount / 100));
                     tbTotal.Text = res.ToString();
