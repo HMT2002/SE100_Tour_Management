@@ -65,9 +65,7 @@ namespace Tour
         }
         public void loginbtn_Click(object sender, EventArgs e)
         {
-
             string ensryptedpass = Converter.Instance.EncryptPassword((passwordtxb.Text));
-
             if (cbGuest.Checked)
             {
                 ACCOUNT acc = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false && x.ACCROLE == "Customer")).SingleOrDefault();
@@ -83,31 +81,30 @@ namespace Tour
                 {
                     MessageBox.Show("Wrong email or password!!!!");
                 }
-
             }
             else
             {
-                if (cbghinho.Checked == true)
-                {
-                    Properties.Settings.Default.Email = emailtxb.Text;
-                    Properties.Settings.Default.Password = passwordtxb.Text;
-                    Properties.Settings.Default.Save();
-                }
-                if (cbghinho.Checked == false)
-                {
-                    Properties.Settings.Default.Email = "";
-                    Properties.Settings.Default.Password = "";
-                    Properties.Settings.Default.Save();
-                }
-
-
                 if (DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false &&( (x.ACCROLE == "Manager") || (x.ACCROLE == "Employee")))).SingleOrDefault() != null)
                 {
-                    Properties.Settings.Default.UserName = emailtxb.Text;
-                    Properties.Settings.Default.Password = passwordtxb.Text;
-                    Properties.Settings.Default.CurUserId = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().ACC;
-                    Properties.Settings.Default.CurUserName = DataProvider.Ins.DB.NHANVIENs.Where(x => (x.ACCOUNT.ACC == emailtxb.Text && x.ACCOUNT.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().TEN;
+                    if (cbghinho.Checked == true)
+                    {
+                        Properties.Settings.Default.Email = emailtxb.Text;
+                        Properties.Settings.Default.Password = passwordtxb.Text;
+                        Properties.Settings.Default.CurUserId = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().ACC;
+                        Properties.Settings.Default.CurUserName = DataProvider.Ins.DB.NHANVIENs.Where(x => (x.ACCOUNT.ACC == emailtxb.Text && x.ACCOUNT.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().TEN;
 
+
+                        Properties.Settings.Default.Save();
+                    }
+                    if (cbghinho.Checked == false)
+                    {
+                        Properties.Settings.Default.Email = "";
+                        Properties.Settings.Default.Password = "";
+                        Properties.Settings.Default.CurUserId = "";
+                        Properties.Settings.Default.CurUserName = "";
+
+                        Properties.Settings.Default.Save();
+                    }
                     Properties.Settings.Default.Save();
                     SelectForm menuF = new SelectForm(DataProvider.Ins.DB.NHANVIENs.Where(x => x.ACCOUNT.ACC == emailtxb.Text && x.IsDeleted == false).FirstOrDefault());
                     this.Hide();

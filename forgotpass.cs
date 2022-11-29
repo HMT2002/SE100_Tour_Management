@@ -24,34 +24,22 @@ namespace Tour
         public forgotpass()
         {
             InitializeComponent();
-            emailtxb.ForeColor = Color.LightGray;
-            emailtxb.Text = "Enter Your Email";
-            this.emailtxb.Leave += new System.EventHandler(this.textBox1_Leave);
-            this.emailtxb.Enter += new System.EventHandler(this.textBox1_Enter);
-        }
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-            if (emailtxb.Text == "")
-            {
-                emailtxb.ForeColor = Color.LightGray;
-                emailtxb.Text = "Enter Your Email";
-            }
+
+
         }
 
-        private void textBox1_Enter(object sender, EventArgs e)
-        {
-            if (emailtxb.Text == "Enter Your Email")
-            {
-                emailtxb.Text = "";
-                emailtxb.ForeColor = Color.Black;
-            }
-        }
+
         private void sendbtn_Click(object sender, EventArgs e)
         {
             if (emailtxb.Text.Trim() == "")
             {
                 Notify.NotificationField(emailtxb);
                 MessageBox.Show("Empty mail address");
+                return;
+            }
+            if (!rEMail.IsMatch(emailtxb.Text))
+            {
+                MessageBox.Show("Wrong email format");
                 return;
             }
             if (DataProvider.Ins.DB.ACCOUNTs.Where(x => x.ACC == emailtxb.Text.Trim() && x.IsDeleted == false).FirstOrDefault() != null)
@@ -70,6 +58,8 @@ namespace Tour
                     verifybtn.Visible = true;
                     sendbtn.Visible = false;
 
+                    MessageBox.Show("Please check your mail box");
+
                 }
                 catch (Exception ex)
                 {
@@ -78,8 +68,12 @@ namespace Tour
                 }
 
             }
+            else
+            {
+                MessageBox.Show("Email is not registed");
 
-            MessageBox.Show("Please check your mail box");
+            }
+
 
         }
 
@@ -95,6 +89,8 @@ namespace Tour
             else
             {
                 MessageBox.Show("Wrong reset Code!!!!");
+                Notify.UnnotificationField(sender);
+
             }
         }
 

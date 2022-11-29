@@ -21,11 +21,12 @@ namespace Tour
             CustomizeDesignManager();
 
         }
-
+        NHANVIEN Nhanvien = new NHANVIEN();
         public SelectForm(NHANVIEN nhanvien)
         {
             InitializeComponent();
             CustomizeDesign();
+            Nhanvien = nhanvien;
             if (nhanvien != null)
             {
                 if (nhanvien.ACCOUNT.ACCROLE.CompareTo("Manager") == 0)
@@ -121,18 +122,7 @@ namespace Tour
             {
                 label1.Text = "WELCOME: " + Properties.Settings.Default.CurUserName;
             }
-            //listBtn.Add(btnTicket);
-            //listBtn.Add(btnRoute);
-            //listBtn.Add(btndataCus);
-            //listBtn.Add(btnLocationDatabase);
-            //listBtn.Add(btnHotelDatabase);
-            //listBtn.Add(btnVehicalDatabase);
-            //listBtn.Add(btnEmployyeDatabase);
-            //listBtn.Add(btnMission);
-            //listBtn.Add(btnGroup);
-            //listBtn.Add(btnCustomer);
-            //listBtn.Add(btnStatistics);
-            //listBtn.Add(btnLoyalCustomer);
+
         }
         private int image =0;
         private void loadimage()
@@ -190,26 +180,11 @@ namespace Tour
         private void button11_Click(object sender, EventArgs e)
         {
             this.panel4.Controls.Clear();
-            //changeColorButton(btnTicket);
             ManageBanner h = new ManageBanner() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            //panel1.Visible = false;
-            //picBackground.Visible = false;
             h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
             this.panel4.Controls.Add(h);
             h.Show();
         }
-
-        //private void button12_Click(object sender, EventArgs e)
-        //{
-        //    this.panel4.Controls.Clear();
-        //    changeColorButton(btnLoyalCustomer);
-        //    LoyalCustomer h = new LoyalCustomer() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-        //    //panel1.Visible = false;
-        //    //picBackground.Visible = false;
-        //    h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
-        //    this.panel4.Controls.Add(h);
-        //    h.Show();
-        //}
 
         private void picBackground_Click(object sender, EventArgs e)
         {
@@ -249,8 +224,6 @@ namespace Tour
         {
             this.panel4.Controls.Clear();
             StaffProfile sp = new StaffProfile() { TopLevel = false, TopMost = true };
-            panel1.Visible = false;
-            picBackground.Visible = false;
             sp.StartPosition = FormStartPosition.CenterParent;
 
             this.panel4.Controls.Add(sp);
@@ -270,7 +243,6 @@ namespace Tour
         private void btnTicket_Click(object sender, EventArgs e)
         {
             this.panel4.Controls.Clear();
-            //changeColorButton(btnTicket);
             Tour tour = new Tour() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, StartPosition = FormStartPosition.CenterParent, WindowState = FormWindowState.Maximized };
             //panel1.Visible = false;
             //picBackground.Visible = false;
@@ -284,10 +256,7 @@ namespace Tour
         private void btnRoute_Click(object sender, EventArgs e)
         {
             this.panel4.Controls.Clear();
-            //changeColorButton(btnRoute);
             DangKy dk = new DangKy() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, StartPosition = FormStartPosition.CenterParent, WindowState = FormWindowState.Maximized };
-            //panel1.Visible = false;
-            picBackground.Visible = false;
             dk.StartPosition = FormStartPosition.CenterParent;
             dk.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
 
@@ -299,10 +268,7 @@ namespace Tour
         private void btnEmployyeDatabase_Click(object sender, EventArgs e)
         {
             this.panel4.Controls.Clear();
-            //changeColorButton(btnEmployyeDatabase);
             NhanVien h = new NhanVien() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, StartPosition = FormStartPosition.CenterParent, WindowState = FormWindowState.Maximized };
-            //panel1.Visible = false;
-            //picBackground.Visible = false;
             h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
             this.panel4.Controls.Add(h);
             h.Show();
@@ -311,10 +277,7 @@ namespace Tour
         private void btnMission_Click(object sender, EventArgs e)
         {
             this.panel4.Controls.Clear();
-            //changeColorButton(btnMission);
             NhiemVuTrongDoan h = new NhiemVuTrongDoan() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, StartPosition = FormStartPosition.CenterParent, WindowState = FormWindowState.Maximized };
-            //panel1.Visible = false;
-            //picBackground.Visible = false;
             h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
             this.panel4.Controls.Add(h);
             h.Show();
@@ -323,10 +286,7 @@ namespace Tour
         private void btnGroup_Click(object sender, EventArgs e)
         {
             this.panel4.Controls.Clear();
-            //changeColorButton(btnGroup);
             DoanDuLich h = new DoanDuLich() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, StartPosition = FormStartPosition.CenterParent, WindowState = FormWindowState.Maximized };
-            //panel1.Visible = false;
-            //picBackground.Visible = false;
             h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
             this.panel4.Controls.Add(h);
             h.Show();
@@ -335,10 +295,7 @@ namespace Tour
         private void btnCustomer_Click(object sender, EventArgs e)
         {
             this.panel4.Controls.Clear();
-            //changeColorButton(btnCustomer);
             KhachHang h = new KhachHang() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, StartPosition = FormStartPosition.CenterParent, WindowState = FormWindowState.Maximized };
-            //panel1.Visible = false;
-            //picBackground.Visible = false;
             h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
             this.panel4.Controls.Add(h);
             h.Show();
@@ -347,10 +304,7 @@ namespace Tour
         private void btnLoyalCustomer_Click(object sender, EventArgs e)
         {
             this.panel4.Controls.Clear();
-            //changeColorButton(btnLoyalCustomer);
             LoyalCustomer h = new LoyalCustomer() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, StartPosition = FormStartPosition.CenterParent, WindowState = FormWindowState.Maximized };
-            //panel1.Visible = false;
-            //picBackground.Visible = false;
             h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
             this.panel4.Controls.Add(h);
             h.Show();
@@ -359,10 +313,7 @@ namespace Tour
         private void btnStatistics_Click(object sender, EventArgs e)
         {
             this.panel4.Controls.Clear();
-            //changeColorButton(btnStatistics);
             ReportChart h = new ReportChart() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, StartPosition = FormStartPosition.CenterParent, WindowState = FormWindowState.Maximized };
-            //panel1.Visible = false;
-            //picBackground.Visible = false;
             h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
             this.panel4.Controls.Add(h);
             h.Show();
@@ -371,10 +322,7 @@ namespace Tour
         private void button2_Click(object sender, EventArgs e)
         {
             this.panel4.Controls.Clear();
-            //changeColorButton(button2);
-            ChangePass cp = new ChangePass() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, StartPosition = FormStartPosition.CenterParent, WindowState = FormWindowState.Maximized };
-            panel1.Visible = false;
-            picBackground.Visible = false;
+            ChangePass cp = new ChangePass(this.Nhanvien.ACCOUNT) { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, StartPosition = FormStartPosition.CenterParent, WindowState = FormWindowState.Maximized };
             this.panel4.Controls.Add(cp);
             cp.Show();
         }
@@ -397,8 +345,6 @@ namespace Tour
             this.panel4.Controls.Clear();
             //changeColorButton(btndataCus);
             CSDLPhieuDatCho h = new CSDLPhieuDatCho() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None,StartPosition= FormStartPosition.CenterParent,WindowState=FormWindowState.Maximized };
-            //panel1.Visible = false;
-            //picBackground.Visible = false;
             h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
 
             this.panel4.Controls.Add(h);
