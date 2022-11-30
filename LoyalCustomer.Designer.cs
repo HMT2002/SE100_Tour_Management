@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tbCMND = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbTelephone = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbCMND = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.RdFmale = new System.Windows.Forms.RadioButton();
             this.RdMale = new System.Windows.Forms.RadioButton();
@@ -44,8 +44,8 @@
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnNew = new Guna.UI2.WinForms.Guna2Button();
             this.pnCRUD = new System.Windows.Forms.Panel();
-            this.pnUpdateCustomer = new Guna.UI2.WinForms.Guna2Panel();
             this.pnCreateCustomer = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnUpdateCustomer = new Guna.UI2.WinForms.Guna2Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtbxNewPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnChangePassword = new Guna.UI2.WinForms.Guna2Button();
@@ -57,8 +57,8 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvtatar)).BeginInit();
             this.pnCRUD.SuspendLayout();
-            this.pnUpdateCustomer.SuspendLayout();
             this.pnCreateCustomer.SuspendLayout();
+            this.pnUpdateCustomer.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,11 +74,33 @@
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(11, 64);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(15, 79);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(437, 335);
+            this.panel1.Size = new System.Drawing.Size(581, 547);
             this.panel1.TabIndex = 2;
+            // 
+            // tbCMND
+            // 
+            this.tbCMND.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbCMND.DefaultText = "";
+            this.tbCMND.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbCMND.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbCMND.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbCMND.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbCMND.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbCMND.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCMND.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbCMND.Location = new System.Drawing.Point(12, 333);
+            this.tbCMND.Margin = new System.Windows.Forms.Padding(5);
+            this.tbCMND.MaxLength = 13;
+            this.tbCMND.Name = "tbCMND";
+            this.tbCMND.PasswordChar = '\0';
+            this.tbCMND.PlaceholderText = "Citizen ID";
+            this.tbCMND.SelectedText = "";
+            this.tbCMND.Size = new System.Drawing.Size(533, 53);
+            this.tbCMND.TabIndex = 31;
+            this.tbCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCMND_KeyPress);
             // 
             // tbEmail
             // 
@@ -89,15 +111,15 @@
             this.tbEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbEmail.Location = new System.Drawing.Point(9, 161);
-            this.tbEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.tbEmail.Location = new System.Drawing.Point(12, 254);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(5);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.PasswordChar = '\0';
             this.tbEmail.PlaceholderText = "Email";
             this.tbEmail.SelectedText = "";
-            this.tbEmail.Size = new System.Drawing.Size(400, 43);
+            this.tbEmail.Size = new System.Drawing.Size(533, 53);
             this.tbEmail.TabIndex = 30;
             this.tbEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbEmail_KeyPress);
             // 
@@ -110,16 +132,16 @@
             this.tbTelephone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbTelephone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbTelephone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbTelephone.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbTelephone.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTelephone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbTelephone.Location = new System.Drawing.Point(9, 109);
-            this.tbTelephone.Margin = new System.Windows.Forms.Padding(4);
+            this.tbTelephone.Location = new System.Drawing.Point(12, 175);
+            this.tbTelephone.Margin = new System.Windows.Forms.Padding(5);
             this.tbTelephone.MaxLength = 13;
             this.tbTelephone.Name = "tbTelephone";
             this.tbTelephone.PasswordChar = '\0';
             this.tbTelephone.PlaceholderText = "Teleplhone";
             this.tbTelephone.SelectedText = "";
-            this.tbTelephone.Size = new System.Drawing.Size(400, 43);
+            this.tbTelephone.Size = new System.Drawing.Size(533, 53);
             this.tbTelephone.TabIndex = 30;
             this.tbTelephone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTelephone_KeyPress);
             // 
@@ -132,15 +154,15 @@
             this.tbAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbAddress.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbAddress.Location = new System.Drawing.Point(9, 56);
-            this.tbAddress.Margin = new System.Windows.Forms.Padding(6);
+            this.tbAddress.Location = new System.Drawing.Point(12, 96);
+            this.tbAddress.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.PasswordChar = '\0';
             this.tbAddress.PlaceholderText = "Address";
             this.tbAddress.SelectedText = "";
-            this.tbAddress.Size = new System.Drawing.Size(400, 43);
+            this.tbAddress.Size = new System.Drawing.Size(533, 53);
             this.tbAddress.TabIndex = 30;
             this.tbAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAddress_KeyPress);
             // 
@@ -153,40 +175,18 @@
             this.tbName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbName.Location = new System.Drawing.Point(9, 4);
-            this.tbName.Margin = new System.Windows.Forms.Padding(4);
+            this.tbName.Location = new System.Drawing.Point(12, 17);
+            this.tbName.Margin = new System.Windows.Forms.Padding(5);
             this.tbName.Name = "tbName";
             this.tbName.PasswordChar = '\0';
             this.tbName.PlaceholderText = "Name";
             this.tbName.SelectedText = "";
-            this.tbName.Size = new System.Drawing.Size(400, 43);
+            this.tbName.Size = new System.Drawing.Size(533, 53);
             this.tbName.TabIndex = 30;
             this.tbName.TextChanged += new System.EventHandler(this.tbName_TextChanged);
             this.tbName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbName_KeyPress);
-            // 
-            // tbCMND
-            // 
-            this.tbCMND.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbCMND.DefaultText = "";
-            this.tbCMND.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbCMND.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbCMND.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbCMND.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbCMND.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbCMND.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tbCMND.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbCMND.Location = new System.Drawing.Point(9, 212);
-            this.tbCMND.Margin = new System.Windows.Forms.Padding(4);
-            this.tbCMND.MaxLength = 13;
-            this.tbCMND.Name = "tbCMND";
-            this.tbCMND.PasswordChar = '\0';
-            this.tbCMND.PlaceholderText = "Citizen ID";
-            this.tbCMND.SelectedText = "";
-            this.tbCMND.Size = new System.Drawing.Size(400, 43);
-            this.tbCMND.TabIndex = 31;
-            this.tbCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCMND_KeyPress);
             // 
             // panel6
             // 
@@ -194,19 +194,20 @@
             this.panel6.Controls.Add(this.RdFmale);
             this.panel6.Controls.Add(this.RdMale);
             this.panel6.ForeColor = System.Drawing.Color.Black;
-            this.panel6.Location = new System.Drawing.Point(9, 279);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2);
+            this.panel6.Location = new System.Drawing.Point(12, 450);
+            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(400, 41);
+            this.panel6.Size = new System.Drawing.Size(532, 50);
             this.panel6.TabIndex = 19;
             // 
             // RdFmale
             // 
             this.RdFmale.AutoSize = true;
             this.RdFmale.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RdFmale.Location = new System.Drawing.Point(241, 8);
+            this.RdFmale.Location = new System.Drawing.Point(321, 10);
+            this.RdFmale.Margin = new System.Windows.Forms.Padding(4);
             this.RdFmale.Name = "RdFmale";
-            this.RdFmale.Size = new System.Drawing.Size(86, 26);
+            this.RdFmale.Size = new System.Drawing.Size(107, 33);
             this.RdFmale.TabIndex = 31;
             this.RdFmale.Text = "Female";
             this.RdFmale.UseVisualStyleBackColor = true;
@@ -216,9 +217,10 @@
             this.RdMale.AutoSize = true;
             this.RdMale.Checked = true;
             this.RdMale.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RdMale.Location = new System.Drawing.Point(67, 8);
+            this.RdMale.Location = new System.Drawing.Point(89, 10);
+            this.RdMale.Margin = new System.Windows.Forms.Padding(4);
             this.RdMale.Name = "RdMale";
-            this.RdMale.Size = new System.Drawing.Size(69, 26);
+            this.RdMale.Size = new System.Drawing.Size(84, 33);
             this.RdMale.TabIndex = 30;
             this.RdMale.TabStop = true;
             this.RdMale.Text = "Male";
@@ -229,10 +231,9 @@
             this.lblRank.AutoSize = true;
             this.lblRank.Font = new System.Drawing.Font("Times New Roman", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRank.ForeColor = System.Drawing.Color.Red;
-            this.lblRank.Location = new System.Drawing.Point(191, 19);
-            this.lblRank.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRank.Location = new System.Drawing.Point(255, 23);
             this.lblRank.Name = "lblRank";
-            this.lblRank.Size = new System.Drawing.Size(539, 43);
+            this.lblRank.Size = new System.Drawing.Size(669, 53);
             this.lblRank.TabIndex = 13;
             this.lblRank.Text = "CREATE LOYAL CUSTOMER";
             // 
@@ -243,19 +244,20 @@
             this.panel2.Controls.Add(this.pcbxAvtatar);
             this.panel2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel2.Location = new System.Drawing.Point(452, 64);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(625, 79);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(420, 263);
+            this.panel2.Size = new System.Drawing.Size(537, 379);
             this.panel2.TabIndex = 29;
             // 
             // pcbxAvtatar
             // 
             this.pcbxAvtatar.Image = global::Tour.Properties.Resources.ic_image_empty_128;
             this.pcbxAvtatar.ImageRotate = 0F;
-            this.pcbxAvtatar.Location = new System.Drawing.Point(4, 3);
+            this.pcbxAvtatar.Location = new System.Drawing.Point(20, 4);
+            this.pcbxAvtatar.Margin = new System.Windows.Forms.Padding(4);
             this.pcbxAvtatar.Name = "pcbxAvtatar";
-            this.pcbxAvtatar.Size = new System.Drawing.Size(409, 247);
+            this.pcbxAvtatar.Size = new System.Drawing.Size(530, 304);
             this.pcbxAvtatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbxAvtatar.TabIndex = 0;
             this.pcbxAvtatar.TabStop = false;
@@ -265,13 +267,14 @@
             // 
             this.btnAdd.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnAdd.BorderRadius = 5;
-            this.btnAdd.BorderThickness = 5;
+            this.btnAdd.BorderThickness = 2;
             this.btnAdd.FillColor = System.Drawing.Color.Transparent;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.Location = new System.Drawing.Point(59, 3);
+            this.btnAdd.Location = new System.Drawing.Point(16, 11);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(131, 44);
+            this.btnAdd.Size = new System.Drawing.Size(195, 54);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -281,13 +284,14 @@
             this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
             this.btnUpdate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnUpdate.BorderRadius = 5;
-            this.btnUpdate.BorderThickness = 5;
+            this.btnUpdate.BorderThickness = 2;
             this.btnUpdate.FillColor = System.Drawing.Color.Transparent;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.Location = new System.Drawing.Point(121, 4);
+            this.btnUpdate.Location = new System.Drawing.Point(161, 5);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(176, 45);
+            this.btnUpdate.Size = new System.Drawing.Size(235, 55);
             this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -296,13 +300,14 @@
             // 
             this.btnNew.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnNew.BorderRadius = 5;
-            this.btnNew.BorderThickness = 5;
+            this.btnNew.BorderThickness = 2;
             this.btnNew.FillColor = System.Drawing.Color.Transparent;
             this.btnNew.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnNew.ForeColor = System.Drawing.Color.Black;
-            this.btnNew.Location = new System.Drawing.Point(255, 3);
+            this.btnNew.Location = new System.Drawing.Point(300, 11);
+            this.btnNew.Margin = new System.Windows.Forms.Padding(4);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(145, 44);
+            this.btnNew.Size = new System.Drawing.Size(195, 54);
             this.btnNew.TabIndex = 2;
             this.btnNew.Text = "Clear";
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
@@ -311,28 +316,30 @@
             // 
             this.pnCRUD.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnCRUD.Controls.Add(this.pnCreateCustomer);
-            this.pnCRUD.Location = new System.Drawing.Point(458, 332);
+            this.pnCRUD.Location = new System.Drawing.Point(625, 464);
+            this.pnCRUD.Margin = new System.Windows.Forms.Padding(4);
             this.pnCRUD.Name = "pnCRUD";
-            this.pnCRUD.Size = new System.Drawing.Size(414, 66);
+            this.pnCRUD.Size = new System.Drawing.Size(537, 80);
             this.pnCRUD.TabIndex = 30;
+            // 
+            // pnCreateCustomer
+            // 
+            this.pnCreateCustomer.Controls.Add(this.btnAdd);
+            this.pnCreateCustomer.Controls.Add(this.btnNew);
+            this.pnCreateCustomer.Location = new System.Drawing.Point(4, 4);
+            this.pnCreateCustomer.Margin = new System.Windows.Forms.Padding(4);
+            this.pnCreateCustomer.Name = "pnCreateCustomer";
+            this.pnCreateCustomer.Size = new System.Drawing.Size(529, 69);
+            this.pnCreateCustomer.TabIndex = 0;
             // 
             // pnUpdateCustomer
             // 
             this.pnUpdateCustomer.Controls.Add(this.btnUpdate);
-            this.pnUpdateCustomer.Location = new System.Drawing.Point(0, 0);
+            this.pnUpdateCustomer.Location = new System.Drawing.Point(625, 552);
+            this.pnUpdateCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.pnUpdateCustomer.Name = "pnUpdateCustomer";
-            this.pnUpdateCustomer.Size = new System.Drawing.Size(401, 60);
+            this.pnUpdateCustomer.Size = new System.Drawing.Size(535, 74);
             this.pnUpdateCustomer.TabIndex = 5;
-            // 
-            // pnCreateCustomer
-            // 
-            this.pnCreateCustomer.Controls.Add(this.pnUpdateCustomer);
-            this.pnCreateCustomer.Controls.Add(this.btnAdd);
-            this.pnCreateCustomer.Controls.Add(this.btnNew);
-            this.pnCreateCustomer.Location = new System.Drawing.Point(4, 3);
-            this.pnCreateCustomer.Name = "pnCreateCustomer";
-            this.pnCreateCustomer.Size = new System.Drawing.Size(403, 56);
-            this.pnCreateCustomer.TabIndex = 0;
             // 
             // panel4
             // 
@@ -345,10 +352,10 @@
             this.panel4.Controls.Add(this.lblNotes);
             this.panel4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel4.Location = new System.Drawing.Point(11, 403);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Location = new System.Drawing.Point(12, 643);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(862, 187);
+            this.panel4.Size = new System.Drawing.Size(1148, 234);
             this.panel4.TabIndex = 29;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
@@ -363,13 +370,13 @@
             this.txtbxNewPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxNewPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtbxNewPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxNewPassword.Location = new System.Drawing.Point(4, 139);
-            this.txtbxNewPassword.Margin = new System.Windows.Forms.Padding(9);
+            this.txtbxNewPassword.Location = new System.Drawing.Point(5, 171);
+            this.txtbxNewPassword.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
             this.txtbxNewPassword.Name = "txtbxNewPassword";
             this.txtbxNewPassword.PasswordChar = '●';
             this.txtbxNewPassword.PlaceholderText = "New password";
             this.txtbxNewPassword.SelectedText = "";
-            this.txtbxNewPassword.Size = new System.Drawing.Size(623, 40);
+            this.txtbxNewPassword.Size = new System.Drawing.Size(831, 49);
             this.txtbxNewPassword.TabIndex = 7;
             this.txtbxNewPassword.UseSystemPasswordChar = true;
             this.txtbxNewPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxNewPassword_KeyPress);
@@ -378,13 +385,14 @@
             // 
             this.btnChangePassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnChangePassword.BorderRadius = 5;
-            this.btnChangePassword.BorderThickness = 5;
+            this.btnChangePassword.BorderThickness = 2;
             this.btnChangePassword.FillColor = System.Drawing.Color.Transparent;
             this.btnChangePassword.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnChangePassword.ForeColor = System.Drawing.Color.Black;
-            this.btnChangePassword.Location = new System.Drawing.Point(668, 4);
+            this.btnChangePassword.Location = new System.Drawing.Point(891, 134);
+            this.btnChangePassword.Margin = new System.Windows.Forms.Padding(4);
             this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(183, 70);
+            this.btnChangePassword.Size = new System.Drawing.Size(244, 86);
             this.btnChangePassword.TabIndex = 5;
             this.btnChangePassword.Text = "Change Password";
             this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
@@ -400,13 +408,13 @@
             this.txtbxRePassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxRePassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtbxRePassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxRePassword.Location = new System.Drawing.Point(4, 84);
-            this.txtbxRePassword.Margin = new System.Windows.Forms.Padding(6);
+            this.txtbxRePassword.Location = new System.Drawing.Point(5, 103);
+            this.txtbxRePassword.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.txtbxRePassword.Name = "txtbxRePassword";
             this.txtbxRePassword.PasswordChar = '●';
             this.txtbxRePassword.PlaceholderText = "Re-enter password";
             this.txtbxRePassword.SelectedText = "";
-            this.txtbxRePassword.Size = new System.Drawing.Size(623, 40);
+            this.txtbxRePassword.Size = new System.Drawing.Size(831, 49);
             this.txtbxRePassword.TabIndex = 4;
             this.txtbxRePassword.UseSystemPasswordChar = true;
             this.txtbxRePassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxRePassword_KeyPress);
@@ -422,13 +430,13 @@
             this.txtbxPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtbxPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxPassword.Location = new System.Drawing.Point(4, 34);
-            this.txtbxPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtbxPassword.Location = new System.Drawing.Point(5, 42);
+            this.txtbxPassword.Margin = new System.Windows.Forms.Padding(5);
             this.txtbxPassword.Name = "txtbxPassword";
             this.txtbxPassword.PasswordChar = '●';
             this.txtbxPassword.PlaceholderText = "Password";
             this.txtbxPassword.SelectedText = "";
-            this.txtbxPassword.Size = new System.Drawing.Size(623, 40);
+            this.txtbxPassword.Size = new System.Drawing.Size(831, 49);
             this.txtbxPassword.TabIndex = 1;
             this.txtbxPassword.UseSystemPasswordChar = true;
             this.txtbxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxPassword_KeyPress);
@@ -437,23 +445,26 @@
             // 
             this.lblNotes.BackColor = System.Drawing.Color.Transparent;
             this.lblNotes.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotes.Location = new System.Drawing.Point(668, 155);
+            this.lblNotes.Location = new System.Drawing.Point(891, 191);
+            this.lblNotes.Margin = new System.Windows.Forms.Padding(4);
             this.lblNotes.Name = "lblNotes";
-            this.lblNotes.Size = new System.Drawing.Size(183, 24);
+            this.lblNotes.Size = new System.Drawing.Size(237, 31);
             this.lblNotes.TabIndex = 0;
             this.lblNotes.Text = "__________________";
             // 
             // LoyalCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(884, 601);
+            this.ClientSize = new System.Drawing.Size(1182, 898);
+            this.Controls.Add(this.pnUpdateCustomer);
             this.Controls.Add(this.lblRank);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.pnCRUD);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoyalCustomer";
             this.Text = "LoyalCustomer";
             this.panel1.ResumeLayout(false);
@@ -462,8 +473,8 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvtatar)).EndInit();
             this.pnCRUD.ResumeLayout(false);
-            this.pnUpdateCustomer.ResumeLayout(false);
             this.pnCreateCustomer.ResumeLayout(false);
+            this.pnUpdateCustomer.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);

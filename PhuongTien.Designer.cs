@@ -61,9 +61,10 @@ namespace Tour
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(24, 259);
+            this.label5.Location = new System.Drawing.Point(32, 319);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(116, 19);
+            this.label5.Size = new System.Drawing.Size(143, 23);
             this.label5.TabIndex = 17;
             this.label5.Text = "Province/Country";
             // 
@@ -72,9 +73,10 @@ namespace Tour
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(24, 142);
+            this.label4.Location = new System.Drawing.Point(32, 175);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 19);
+            this.label4.Size = new System.Drawing.Size(45, 23);
             this.label4.TabIndex = 16;
             this.label4.Text = "Type";
             // 
@@ -83,9 +85,10 @@ namespace Tour
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 78);
+            this.label2.Location = new System.Drawing.Point(32, 96);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 19);
+            this.label2.Size = new System.Drawing.Size(122, 23);
             this.label2.TabIndex = 10;
             this.label2.Text = "Register Name";
             // 
@@ -93,9 +96,10 @@ namespace Tour
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 195);
+            this.label1.Location = new System.Drawing.Point(32, 240);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 19);
+            this.label1.Size = new System.Drawing.Size(78, 23);
             this.label1.TabIndex = 21;
             this.label1.Text = "Cost/day";
             // 
@@ -111,10 +115,10 @@ namespace Tour
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
             this.btnAdd.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnAdd.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(14, 37);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Location = new System.Drawing.Point(19, 46);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(262, 61);
+            this.btnAdd.Size = new System.Drawing.Size(350, 75);
             this.btnAdd.TabIndex = 39;
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -129,10 +133,10 @@ namespace Tour
             this.btnXoa.ForeColor = System.Drawing.Color.Black;
             this.btnXoa.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnXoa.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(347, 37);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoa.Location = new System.Drawing.Point(438, 46);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(262, 61);
+            this.btnXoa.Size = new System.Drawing.Size(350, 75);
             this.btnXoa.TabIndex = 40;
             this.btnXoa.Text = "Delete";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -147,10 +151,10 @@ namespace Tour
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
             this.btnUpdate.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnUpdate.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(14, 117);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdate.Location = new System.Drawing.Point(19, 144);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(262, 61);
+            this.btnUpdate.Size = new System.Drawing.Size(350, 75);
             this.btnUpdate.TabIndex = 41;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -165,10 +169,10 @@ namespace Tour
             this.btnExit.ForeColor = System.Drawing.Color.Black;
             this.btnExit.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnExit.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(347, 117);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Location = new System.Drawing.Point(438, 144);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(262, 61);
+            this.btnExit.Size = new System.Drawing.Size(350, 75);
             this.btnExit.TabIndex = 42;
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -179,10 +183,10 @@ namespace Tour
             this.btnClear.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.Black;
-            this.btnClear.Location = new System.Drawing.Point(166, 28);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClear.Location = new System.Drawing.Point(221, 34);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 29);
+            this.btnClear.Size = new System.Drawing.Size(100, 36);
             this.btnClear.TabIndex = 26;
             this.btnClear.Text = "New";
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -205,10 +209,10 @@ namespace Tour
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.label4);
             this.guna2Panel1.Controls.Add(this.label5);
-            this.guna2Panel1.Location = new System.Drawing.Point(9, 9);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel1.Location = new System.Drawing.Point(12, 11);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(254, 622);
+            this.guna2Panel1.Size = new System.Drawing.Size(339, 871);
             this.guna2Panel1.TabIndex = 27;
             // 
             // cbbxVehical
@@ -223,10 +227,10 @@ namespace Tour
             this.cbbxVehical.ForeColor = System.Drawing.Color.Black;
             this.cbbxVehical.FormattingEnabled = true;
             this.cbbxVehical.ItemHeight = 30;
-            this.cbbxVehical.Location = new System.Drawing.Point(20, 28);
-            this.cbbxVehical.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbxVehical.Location = new System.Drawing.Point(27, 34);
+            this.cbbxVehical.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbxVehical.Name = "cbbxVehical";
-            this.cbbxVehical.Size = new System.Drawing.Size(142, 36);
+            this.cbbxVehical.Size = new System.Drawing.Size(188, 36);
             this.cbbxVehical.TabIndex = 33;
             this.cbbxVehical.SelectedValueChanged += new System.EventHandler(this.cbbxVehical_SelectedValueChanged);
             // 
@@ -245,14 +249,14 @@ namespace Tour
             this.rchtxtbxDetail.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.rchtxtbxDetail.ForeColor = System.Drawing.Color.Black;
             this.rchtxtbxDetail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rchtxtbxDetail.Location = new System.Drawing.Point(20, 340);
-            this.rchtxtbxDetail.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.rchtxtbxDetail.Location = new System.Drawing.Point(27, 418);
+            this.rchtxtbxDetail.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.rchtxtbxDetail.Multiline = true;
             this.rchtxtbxDetail.Name = "rchtxtbxDetail";
             this.rchtxtbxDetail.PasswordChar = '\0';
             this.rchtxtbxDetail.PlaceholderText = "";
             this.rchtxtbxDetail.SelectedText = "";
-            this.rchtxtbxDetail.Size = new System.Drawing.Size(210, 166);
+            this.rchtxtbxDetail.Size = new System.Drawing.Size(280, 204);
             this.rchtxtbxDetail.TabIndex = 38;
             // 
             // cbboxProvince
@@ -269,10 +273,10 @@ namespace Tour
             this.cbboxProvince.FormattingEnabled = true;
             this.cbboxProvince.IntegralHeight = false;
             this.cbboxProvince.ItemHeight = 30;
-            this.cbboxProvince.Location = new System.Drawing.Point(20, 285);
-            this.cbboxProvince.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbboxProvince.Location = new System.Drawing.Point(27, 351);
+            this.cbboxProvince.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbboxProvince.Name = "cbboxProvince";
-            this.cbboxProvince.Size = new System.Drawing.Size(201, 36);
+            this.cbboxProvince.Size = new System.Drawing.Size(267, 36);
             this.cbboxProvince.TabIndex = 37;
             this.cbboxProvince.Enter += new System.EventHandler(this.cbboxProvince_Enter);
             // 
@@ -281,9 +285,10 @@ namespace Tour
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(24, 318);
+            this.label6.Location = new System.Drawing.Point(32, 391);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 19);
+            this.label6.Size = new System.Drawing.Size(54, 23);
             this.label6.TabIndex = 30;
             this.label6.Text = "Detail";
             // 
@@ -299,10 +304,10 @@ namespace Tour
             this.cbbxKind.ForeColor = System.Drawing.Color.Black;
             this.cbbxKind.FormattingEnabled = true;
             this.cbbxKind.ItemHeight = 30;
-            this.cbbxKind.Location = new System.Drawing.Point(20, 163);
-            this.cbbxKind.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbxKind.Location = new System.Drawing.Point(27, 201);
+            this.cbbxKind.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbxKind.Name = "cbbxKind";
-            this.cbbxKind.Size = new System.Drawing.Size(201, 36);
+            this.cbbxKind.Size = new System.Drawing.Size(267, 36);
             this.cbbxKind.TabIndex = 35;
             this.cbbxKind.Enter += new System.EventHandler(this.cbbxKind_Enter);
             // 
@@ -320,13 +325,13 @@ namespace Tour
             this.txtbxGia.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxGia.ForeColor = System.Drawing.Color.Black;
             this.txtbxGia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxGia.Location = new System.Drawing.Point(20, 219);
-            this.txtbxGia.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtbxGia.Location = new System.Drawing.Point(27, 270);
+            this.txtbxGia.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtbxGia.Name = "txtbxGia";
             this.txtbxGia.PasswordChar = '\0';
             this.txtbxGia.PlaceholderText = "Cost/day";
             this.txtbxGia.SelectedText = "";
-            this.txtbxGia.Size = new System.Drawing.Size(200, 36);
+            this.txtbxGia.Size = new System.Drawing.Size(267, 44);
             this.txtbxGia.TabIndex = 36;
             this.txtbxGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxGia_KeyPress);
             // 
@@ -345,13 +350,13 @@ namespace Tour
             this.txtbxName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxName.ForeColor = System.Drawing.Color.Black;
             this.txtbxName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxName.Location = new System.Drawing.Point(20, 102);
-            this.txtbxName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtbxName.Location = new System.Drawing.Point(27, 126);
+            this.txtbxName.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtbxName.Name = "txtbxName";
             this.txtbxName.PasswordChar = '\0';
             this.txtbxName.PlaceholderText = "Register Name";
             this.txtbxName.SelectedText = "";
-            this.txtbxName.Size = new System.Drawing.Size(200, 36);
+            this.txtbxName.Size = new System.Drawing.Size(267, 44);
             this.txtbxName.TabIndex = 34;
             this.txtbxName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxName_KeyPress);
             // 
@@ -367,10 +372,10 @@ namespace Tour
             this.guna2Panel2.Controls.Add(this.btnXoa);
             this.guna2Panel2.Controls.Add(this.btnAdd);
             this.guna2Panel2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Panel2.Location = new System.Drawing.Point(268, 416);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel2.Location = new System.Drawing.Point(357, 617);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(623, 215);
+            this.guna2Panel2.Size = new System.Drawing.Size(813, 265);
             this.guna2Panel2.TabIndex = 28;
             // 
             // btnPickPicture
@@ -383,10 +388,10 @@ namespace Tour
             this.btnPickPicture.ForeColor = System.Drawing.Color.Black;
             this.btnPickPicture.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnPickPicture.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnPickPicture.Location = new System.Drawing.Point(524, 327);
-            this.btnPickPicture.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPickPicture.Location = new System.Drawing.Point(698, 402);
+            this.btnPickPicture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPickPicture.Name = "btnPickPicture";
-            this.btnPickPicture.Size = new System.Drawing.Size(128, 42);
+            this.btnPickPicture.Size = new System.Drawing.Size(170, 52);
             this.btnPickPicture.TabIndex = 24;
             this.btnPickPicture.Text = "Add picture";
             this.btnPickPicture.Click += new System.EventHandler(this.btnPickPicture_Click);
@@ -398,39 +403,40 @@ namespace Tour
             this.guna2Panel3.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
             this.guna2Panel3.BorderThickness = 2;
             this.guna2Panel3.Controls.Add(this.pcbxVehical);
-            this.guna2Panel3.Location = new System.Drawing.Point(454, 37);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel3.Location = new System.Drawing.Point(605, 46);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(264, 286);
+            this.guna2Panel3.Size = new System.Drawing.Size(352, 352);
             this.guna2Panel3.TabIndex = 29;
             // 
             // pcbxVehical
             // 
             this.pcbxVehical.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pcbxVehical.Image = global::Tour.Properties.Resources.ic_image_empty_128;
-            this.pcbxVehical.Location = new System.Drawing.Point(20, 22);
+            this.pcbxVehical.Location = new System.Drawing.Point(27, 27);
+            this.pcbxVehical.Margin = new System.Windows.Forms.Padding(4);
             this.pcbxVehical.Name = "pcbxVehical";
-            this.pcbxVehical.Size = new System.Drawing.Size(225, 244);
+            this.pcbxVehical.Size = new System.Drawing.Size(300, 300);
             this.pcbxVehical.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbxVehical.TabIndex = 0;
             this.pcbxVehical.TabStop = false;
             // 
             // PhuongTien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(900, 640);
+            this.ClientSize = new System.Drawing.Size(1182, 898);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.btnPickPicture);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PhuongTien";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PhuongTien";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
