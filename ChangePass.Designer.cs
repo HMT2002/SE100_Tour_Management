@@ -35,11 +35,11 @@
             this.Resetbtn = new System.Windows.Forms.Button();
             this.Cancelbtn = new System.Windows.Forms.Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.confirmtxb = new Guna.UI2.WinForms.Guna2TextBox();
+            this.newpasstxb = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.newpasstxb = new Guna.UI2.WinForms.Guna2TextBox();
-            this.confirmtxb = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,7 +102,7 @@
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderColor = System.Drawing.Color.LightGray;
             this.guna2Panel1.BorderRadius = 10;
-            this.guna2Panel1.BorderThickness = 1;
+            this.guna2Panel1.BorderThickness = 2;
             this.guna2Panel1.Controls.Add(this.confirmtxb);
             this.guna2Panel1.Controls.Add(this.newpasstxb);
             this.guna2Panel1.Controls.Add(this.guna2Panel2);
@@ -117,25 +117,25 @@
             this.guna2Panel1.Size = new System.Drawing.Size(662, 467);
             this.guna2Panel1.TabIndex = 6;
             // 
-            // label3
+            // confirmtxb
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(85, 53);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(245, 38);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Change Password";
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.Gray;
-            this.guna2Panel2.BorderColor = System.Drawing.Color.Gray;
-            this.guna2Panel2.BorderThickness = 1;
-            this.guna2Panel2.Location = new System.Drawing.Point(92, 108);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(450, 1);
-            this.guna2Panel2.TabIndex = 7;
+            this.confirmtxb.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.confirmtxb.DefaultText = "";
+            this.confirmtxb.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.confirmtxb.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.confirmtxb.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.confirmtxb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.confirmtxb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.confirmtxb.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.confirmtxb.ForeColor = System.Drawing.Color.Black;
+            this.confirmtxb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.confirmtxb.Location = new System.Drawing.Point(92, 285);
+            this.confirmtxb.Name = "confirmtxb";
+            this.confirmtxb.PasswordChar = '\0';
+            this.confirmtxb.PlaceholderText = "";
+            this.confirmtxb.SelectedText = "";
+            this.confirmtxb.Size = new System.Drawing.Size(450, 36);
+            this.confirmtxb.TabIndex = 9;
             // 
             // newpasstxb
             // 
@@ -157,25 +157,25 @@
             this.newpasstxb.Size = new System.Drawing.Size(450, 36);
             this.newpasstxb.TabIndex = 8;
             // 
-            // confirmtxb
+            // guna2Panel2
             // 
-            this.confirmtxb.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.confirmtxb.DefaultText = "";
-            this.confirmtxb.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.confirmtxb.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.confirmtxb.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.confirmtxb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.confirmtxb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.confirmtxb.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.confirmtxb.ForeColor = System.Drawing.Color.Black;
-            this.confirmtxb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.confirmtxb.Location = new System.Drawing.Point(92, 285);
-            this.confirmtxb.Name = "confirmtxb";
-            this.confirmtxb.PasswordChar = '\0';
-            this.confirmtxb.PlaceholderText = "";
-            this.confirmtxb.SelectedText = "";
-            this.confirmtxb.Size = new System.Drawing.Size(450, 36);
-            this.confirmtxb.TabIndex = 9;
+            this.guna2Panel2.BackColor = System.Drawing.Color.Gray;
+            this.guna2Panel2.BorderColor = System.Drawing.Color.Gray;
+            this.guna2Panel2.BorderThickness = 1;
+            this.guna2Panel2.Location = new System.Drawing.Point(92, 108);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(450, 1);
+            this.guna2Panel2.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(85, 53);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(245, 38);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Change Password";
             // 
             // ChangePass
             // 

@@ -671,6 +671,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\16OLD-MAN1-mediumSquareAt3X-v3.jpg" />
+    <None Include="Resources\284466.jpg" />
     <Content Include="Resources\person-working.jpg" />
     <None Include="Resources\person-working1.jpg" />
     <None Include="Resources\person-working11.jpg" />

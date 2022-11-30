@@ -83,9 +83,29 @@ namespace Tour.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _16OLD_MAN1_mediumSquareAt3X_v3 {
+            get {
+                object obj = ResourceManager.GetObject("16OLD-MAN1-mediumSquareAt3X-v3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _2 {
             get {
                 object obj = ResourceManager.GetObject("2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _284466 {
+            get {
+                object obj = ResourceManager.GetObject("284466", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -754,14 +754,14 @@ namespace Tour
             this.panel_logo.Controls.Add(this.label1);
             this.panel_logo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_logo.Location = new System.Drawing.Point(0, 0);
-            this.panel_logo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_logo.Margin = new System.Windows.Forms.Padding(4);
             this.panel_logo.Name = "panel_logo";
             this.panel_logo.Size = new System.Drawing.Size(331, 117);
             this.panel_logo.TabIndex = 17;
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel4.BackColor = System.Drawing.SystemColors.Control;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(352, 0);
             this.panel4.Name = "panel4";
