@@ -29,9 +29,9 @@ namespace Tour
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CSDLPhieuDatCho));
             this.Information = new System.Windows.Forms.GroupBox();
             this.dgvTicket = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -76,6 +76,7 @@ namespace Tour
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblCustomer = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnClear = new System.Windows.Forms.Button();
+            this.cbbxSearchType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.Information.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTicket)).BeginInit();
             this.panel17.SuspendLayout();
@@ -100,27 +101,27 @@ namespace Tour
             this.Information.BackColor = System.Drawing.Color.Transparent;
             this.Information.Controls.Add(this.dgvTicket);
             this.Information.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Information.Location = new System.Drawing.Point(43, 353);
+            this.Information.Location = new System.Drawing.Point(43, 375);
             this.Information.Margin = new System.Windows.Forms.Padding(2);
             this.Information.Name = "Information";
             this.Information.Padding = new System.Windows.Forms.Padding(2);
-            this.Information.Size = new System.Drawing.Size(913, 276);
+            this.Information.Size = new System.Drawing.Size(913, 254);
             this.Information.TabIndex = 2;
             this.Information.TabStop = false;
             this.Information.Text = "Ticket";
             // 
             // dgvTicket
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvTicket.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTicket.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvTicket.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTicket.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTicket.ColumnHeadersHeight = 30;
             this.dgvTicket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvTicket.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -130,19 +131,19 @@ namespace Tour
             this.GROUPNAME,
             this.PRICE,
             this.BOOKDATE});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTicket.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTicket.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTicket.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvTicket.Location = new System.Drawing.Point(13, 23);
             this.dgvTicket.Name = "dgvTicket";
             this.dgvTicket.RowHeadersVisible = false;
-            this.dgvTicket.Size = new System.Drawing.Size(885, 244);
+            this.dgvTicket.Size = new System.Drawing.Size(885, 226);
             this.dgvTicket.TabIndex = 0;
             this.dgvTicket.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvTicket.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -249,10 +250,10 @@ namespace Tour
             // 
             // tbSearchTicket
             // 
-            this.tbSearchTicket.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSearchTicket.Font = new System.Drawing.Font("Times New Roman", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSearchTicket.Location = new System.Drawing.Point(159, 322);
             this.tbSearchTicket.Name = "tbSearchTicket";
-            this.tbSearchTicket.Size = new System.Drawing.Size(240, 26);
+            this.tbSearchTicket.Size = new System.Drawing.Size(240, 34);
             this.tbSearchTicket.TabIndex = 6;
             this.tbSearchTicket.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.tbSearchTicket.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbSearchTicket_KeyPress);
@@ -752,6 +753,29 @@ namespace Tour
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // cbbxSearchType
+            // 
+            this.cbbxSearchType.BackColor = System.Drawing.Color.Transparent;
+            this.cbbxSearchType.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
+            this.cbbxSearchType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbxSearchType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbxSearchType.FocusedColor = System.Drawing.Color.Empty;
+            this.cbbxSearchType.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbxSearchType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbxSearchType.FormattingEnabled = true;
+            this.cbbxSearchType.ItemHeight = 30;
+            this.cbbxSearchType.Items.AddRange(new object[] {
+            "Ticket ID",
+            "Customer\'s name",
+            "Tour\'s name",
+            "Group\'s name"});
+            this.cbbxSearchType.Location = new System.Drawing.Point(405, 320);
+            this.cbbxSearchType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbbxSearchType.Name = "cbbxSearchType";
+            this.cbbxSearchType.Size = new System.Drawing.Size(163, 36);
+            this.cbbxSearchType.StartIndex = 0;
+            this.cbbxSearchType.TabIndex = 30;
+            // 
             // CSDLPhieuDatCho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -759,6 +783,7 @@ namespace Tour
             this.BackColor = System.Drawing.Color.Linen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(984, 640);
+            this.Controls.Add(this.cbbxSearchType);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
@@ -843,5 +868,6 @@ namespace Tour
         private System.Windows.Forms.DataGridViewTextBoxColumn GROUPNAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn PRICE;
         private System.Windows.Forms.DataGridViewTextBoxColumn BOOKDATE;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbxSearchType;
     }
 }

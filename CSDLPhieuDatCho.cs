@@ -21,7 +21,7 @@ namespace Tour
 
         string id;
 
-        public VE selected_ve=new VE();
+        public VE selected_ve = new VE();
 
         void Clear()
         {
@@ -51,20 +51,20 @@ namespace Tour
 
         public void ShowAll()
         {
-            var ves = (from ve in DataProvider.Ins.DB.VEs 
-                         join khachhang in DataProvider.Ins.DB.KHACHHANGs on ve.IDKHACH equals khachhang.ID
-                         join doan in DataProvider.Ins.DB.DOANs on ve.IDDOAN equals doan.ID
-                         join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-                         where tour.IsDeleted == false && ve.IsDeleted == false && doan.IsDeleted == false && khachhang.IsDeleted==false
-                         select new
-                         {
-                             ID = ve.ID,
-                             TENKH=khachhang.TENKH,
-                             TOURNAME=tour.TEN,
-                             GROUPNAME=doan.TEN,
-                             GIA=ve.GIA,
-                             BOOKDATE=ve.NGAYMUA,
-        })
+            var ves = (from ve in DataProvider.Ins.DB.VEs
+                       join khachhang in DataProvider.Ins.DB.KHACHHANGs on ve.IDKHACH equals khachhang.ID
+                       join doan in DataProvider.Ins.DB.DOANs on ve.IDDOAN equals doan.ID
+                       join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
+                       where tour.IsDeleted == false && ve.IsDeleted == false && doan.IsDeleted == false && khachhang.IsDeleted == false
+                       select new
+                       {
+                           ID = ve.ID,
+                           TENKH = khachhang.TENKH,
+                           TOURNAME = tour.TEN,
+                           GROUPNAME = doan.TEN,
+                           GIA = ve.GIA,
+                           BOOKDATE = ve.NGAYMUA,
+                       })
                          .ToList();
 
             dgvTicket.DataSource = ves;
@@ -82,30 +82,97 @@ namespace Tour
             {
                 try
                 {
+                    //if (rdIDSearch.Checked)
+                    if (cbbxSearchType.SelectedItem.ToString() == "Ticket ID")
+                    {
+                        dgvTicket.DataSource = (from ve in DataProvider.Ins.DB.VEs
+                                                join khachhang in DataProvider.Ins.DB.KHACHHANGs on ve.IDKHACH equals khachhang.ID
+                                                join doan in DataProvider.Ins.DB.DOANs on ve.IDDOAN equals doan.ID
+                                                join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
+                                                where tour.IsDeleted == false
+                                                && ve.IsDeleted == false
+                                                && doan.IsDeleted == false
+                                                && khachhang.IsDeleted == false
+                                                && SqlFunctions.PatIndex("%" + value + "%", ve.ID) > 0
+                                                select new
+                                                {
+                                                    ID = ve.ID,
+                                                    TENKH = khachhang.TENKH,
+                                                    TOURNAME = tour.TEN,
+                                                    GROUPNAME = doan.TEN,
+                                                    GIA = ve.GIA,
+                                                    BOOKDATE = ve.NGAYMUA,
+                                                })
+                 .ToList();
 
-                    var ves = (from ve in DataProvider.Ins.DB.VEs
-                               join khachhang in DataProvider.Ins.DB.KHACHHANGs on ve.IDKHACH equals khachhang.ID
-                               join doan in DataProvider.Ins.DB.DOANs on ve.IDDOAN equals doan.ID
-                               join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-                               where tour.IsDeleted == false
-                               && ve.IsDeleted == false
-                               && doan.IsDeleted == false
-                               && khachhang.IsDeleted == false
-                               && SqlFunctions.PatIndex("%" + value + "%", ve.ID) > 0
-                               select new
-                               {
-                                   ID = ve.ID,
-                                   TENKH = khachhang.TENKH,
-                                   TOURNAME = tour.TEN,
-                                   GROUPNAME = doan.TEN,
-                                   GIA = ve.GIA,
-                                   BOOKDATE = ve.NGAYMUA,
-                               })
-             .ToList();
-
-                    dgvTicket.DataSource = ves;
-                    //dgvTicket.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t => SqlFunctions.PatIndex("%" + value + "%", t.ID) > 0 && t.IsDeleted == false).Join.Select(t => t).ToList();
-
+                    }
+                    //else if (rdNameSearch.Checked)
+                    else if (cbbxSearchType.SelectedItem.ToString() == "Customer's name")
+                    {
+                        dgvTicket.DataSource = (from ve in DataProvider.Ins.DB.VEs
+                                                join khachhang in DataProvider.Ins.DB.KHACHHANGs on ve.IDKHACH equals khachhang.ID
+                                                join doan in DataProvider.Ins.DB.DOANs on ve.IDDOAN equals doan.ID
+                                                join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
+                                                where tour.IsDeleted == false
+                                                && ve.IsDeleted == false
+                                                && doan.IsDeleted == false
+                                                && khachhang.IsDeleted == false
+                                                && SqlFunctions.PatIndex("%" + value + "%", khachhang.TENKH) > 0
+                                                select new
+                                                {
+                                                    ID = ve.ID,
+                                                    TENKH = khachhang.TENKH,
+                                                    TOURNAME = tour.TEN,
+                                                    GROUPNAME = doan.TEN,
+                                                    GIA = ve.GIA,
+                                                    BOOKDATE = ve.NGAYMUA,
+                                                })
+                 .ToList();
+                    }
+                    else if (cbbxSearchType.SelectedItem.ToString() == "Tour's name")
+                    {
+                        dgvTicket.DataSource = (from ve in DataProvider.Ins.DB.VEs
+                                                join khachhang in DataProvider.Ins.DB.KHACHHANGs on ve.IDKHACH equals khachhang.ID
+                                                join doan in DataProvider.Ins.DB.DOANs on ve.IDDOAN equals doan.ID
+                                                join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
+                                                where tour.IsDeleted == false
+                                                && ve.IsDeleted == false
+                                                && doan.IsDeleted == false
+                                                && khachhang.IsDeleted == false
+                                                && SqlFunctions.PatIndex("%" + value + "%", tour.TEN) > 0
+                                                select new
+                                                {
+                                                    ID = ve.ID,
+                                                    TENKH = khachhang.TENKH,
+                                                    TOURNAME = tour.TEN,
+                                                    GROUPNAME = doan.TEN,
+                                                    GIA = ve.GIA,
+                                                    BOOKDATE = ve.NGAYMUA,
+                                                })
+                 .ToList();
+                    }
+                    else if (cbbxSearchType.SelectedItem.ToString() == "Group's name")
+                    {
+                        dgvTicket.DataSource = (from ve in DataProvider.Ins.DB.VEs
+                                                join khachhang in DataProvider.Ins.DB.KHACHHANGs on ve.IDKHACH equals khachhang.ID
+                                                join doan in DataProvider.Ins.DB.DOANs on ve.IDDOAN equals doan.ID
+                                                join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
+                                                where tour.IsDeleted == false
+                                                && ve.IsDeleted == false
+                                                && doan.IsDeleted == false
+                                                && khachhang.IsDeleted == false
+                                                && SqlFunctions.PatIndex("%" + value + "%", doan.TEN) > 0
+                                                select new
+                                                {
+                                                    ID = ve.ID,
+                                                    TENKH = khachhang.TENKH,
+                                                    TOURNAME = tour.TEN,
+                                                    GROUPNAME = doan.TEN,
+                                                    GIA = ve.GIA,
+                                                    BOOKDATE = ve.NGAYMUA,
+                                                })
+                 .ToList();
+                    }
                 }
                 catch
                 {
@@ -114,6 +181,9 @@ namespace Tour
             }
             else { ShowAll(); }
         }
+
+
+
 
         private void tbphone_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -187,7 +257,7 @@ namespace Tour
             {
                 id = dgvTicket.Rows[index].Cells["data_id"].Value.ToString();
 
-                this.selected_ve = DataProvider.Ins.DB.VEs.Where(x => x.ID == id&&x.IsDeleted==false).FirstOrDefault();
+                this.selected_ve = DataProvider.Ins.DB.VEs.Where(x => x.ID == id && x.IsDeleted == false).FirstOrDefault();
 
                 lblCustomer.Text = selected_ve.KHACHHANG.ID;
                 tbName.Text = selected_ve.KHACHHANG.TENKH;
@@ -206,12 +276,12 @@ namespace Tour
 
                 tbTourName.Text = selected_ve.DOAN.TOUR.TEN;
                 tbGroupName.Text = selected_ve.DOAN.TEN;
-                tbStartDate.Text=selected_ve.DOAN.NGAYKHOIHANH.Value.ToString("dd/MM/yyyy");
+                tbStartDate.Text = selected_ve.DOAN.NGAYKHOIHANH.Value.ToString("dd/MM/yyyy");
                 tbEndDate.Text = selected_ve.DOAN.NGAYKETTHUC.Value.ToString("dd/MM/yyyy");
 
 
                 tbPrice.Text = selected_ve.GIA.ToString();
-                tbBookDate.Text=selected_ve.NGAYMUA.Value.ToString("dd/MM/yyyy");
+                tbBookDate.Text = selected_ve.NGAYMUA.Value.ToString("dd/MM/yyyy");
 
             }
         }

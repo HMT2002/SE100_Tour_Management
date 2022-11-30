@@ -448,6 +448,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChangePass.resx">
       <DependentUpon>ChangePass.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ChooseLoyalCustomer.resx">
       <DependentUpon>ChooseLoyalCustomer.cs</DependentUpon>

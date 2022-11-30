@@ -127,31 +127,31 @@ namespace Tour
         private int image =0;
         private void loadimage()
         {
-            if(image==5)
-            {
-                image = 0;
-            }
+            //if(image==5)
+            //{
+            //    image = 0;
+            //}
             
-            switch(image)
-            {
-                case 0:
-                    picBackground.Image = Properties.Resources._0;
-                    break;
-                case 1:
-                    picBackground.Image = Properties.Resources._1;
-                    break;
-                case 2:
-                    picBackground.Image = Properties.Resources._2;
-                    break;
-                case 3:
-                    picBackground.Image = Properties.Resources._3;
-                    break;
-                case 4:
-                    picBackground.Image = Properties.Resources._4;
-                    break;
-            }
+            //switch(image)
+            //{
+            //    case 0:
+            //        picBackground.Image = Properties.Resources._0;
+            //        break;
+            //    case 1:
+            //        picBackground.Image = Properties.Resources._1;
+            //        break;
+            //    case 2:
+            //        picBackground.Image = Properties.Resources._2;
+            //        break;
+            //    case 3:
+            //        picBackground.Image = Properties.Resources._3;
+            //        break;
+            //    case 4:
+            //        picBackground.Image = Properties.Resources._4;
+            //        break;
+            //}
 
-            image++;
+            //image++;
         }
         private void timer1_Tick(object sender, EventArgs e)
         {

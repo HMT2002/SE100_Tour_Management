@@ -57,9 +57,6 @@ namespace Tour
             {
                 try
                 {
-
-
-
                     //if (rdIDSearch.Checked)
                     if (cbbxSearchType.SelectedItem.ToString() == "ID")
                     {

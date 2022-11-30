@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,7 @@ namespace Tour
             btnAdd.Visible = true;
             btnNew.Visible = true;
             btnUpdate.Visible = false;
+            lblSpending.Visible = false;
 
             txtbxRePassword.Visible = true;
 
@@ -45,6 +47,7 @@ namespace Tour
             btnAdd.Visible = false;
             btnNew.Visible = false;
             btnUpdate.Visible = true;
+            lblSpending.Visible = true;
 
             txtbxRePassword.Visible = false;
 
@@ -71,20 +74,18 @@ namespace Tour
 
                     lblRank.Text = "GOLD";
                     this.BackColor = Color.Gold;
-
                     break;
 
                 case "PLATINUM":
                     lblRank.Text = "PLATINUM";
                     this.BackColor = Color.FromArgb(135, 206, 250);
-
                     break;
-
-
                 default:
 
                     break;
             }
+
+            lblSpending.Text = Converter.Instance.CurrencyDisplay((decimal)this.Khachhang.SPENDING);
 
         }
 
