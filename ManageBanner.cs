@@ -286,7 +286,7 @@ namespace Tour
                 }
 
                 string randomecode = Converter.Instance.RandomString2(5);
-                GIAMGIA giamgia = new GIAMGIA() { ID = randomecode, IDTOUR = Tour.ID, DISCOUNT = Convert.ToInt32(txtbxDiscount.Text), PICBI = img_data, NGAYBATDAU = datepckBegin.Value.Date, NGAYKETTHUC = datepckEnd.Value.Date, IsDeleted = false };
+                GIAMGIA giamgia = new GIAMGIA() { ID = randomecode, IDTOUR = Tour.ID, DISCOUNT = Convert.ToInt32(txtbxDiscount.Text), PICBI =Converter.Instance.ImageToByte(pcbxBanner.Image), NGAYBATDAU = datepckBegin.Value.Date, NGAYKETTHUC = datepckEnd.Value.Date, IsDeleted = false };
                 DataProvider.Ins.DB.GIAMGIAs.Add(giamgia);
                 DataProvider.Ins.DB.SaveChanges();
                 MessageBox.Show("Add banner succeed");

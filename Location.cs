@@ -97,7 +97,7 @@ namespace Tour
         }
         public void showAll()
         {
-            cbbxLocation.DataSource = DataProvider.Ins.DB.DIADIEMs.Select(t =>t).Where(t=>t.IsDeleted==false).ToList();
+            cbbxLocation.DataSource = DataProvider.Ins.DB.DIADIEMs.Where(t=>t.IsDeleted==false).ToList();
             cbbxLocation.DisplayMember = "TEN";
         }
 
@@ -124,7 +124,7 @@ namespace Tour
 
         private void Clear()
         {
-            txtbxId.Text = "";
+            txtbxId.Text = Converter.Instance.RandomString2(5);
             txtbxName.Text = "";
             rchtxtbxDetail.Text = "";
 
@@ -147,7 +147,7 @@ namespace Tour
                         DataProvider.Ins.DB.SaveChanges();
                     }
 
-                    var location = new DIADIEM() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), CHITIET = rchtxtbxDetail.Text, PICBI = img_data, IsDeleted = false, GIA = Convert.ToDecimal(txtbxGia.Text) };
+                    var location = new DIADIEM() { ID = txtbxId.Text, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), CHITIET = rchtxtbxDetail.Text, PICBI =Converter.Instance.ImageToByte(pcbxLocation.Image), IsDeleted = false, GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text) };
 
                     DataProvider.Ins.DB.DIADIEMs.Add(location);
                     DataProvider.Ins.DB.SaveChanges();
@@ -222,8 +222,8 @@ namespace Tour
                     diadiem.TEN = txtbxName.Text;
                     diadiem.IDTINH = cbboxProvince.SelectedIndex.ToString();
                     diadiem.CHITIET = rchtxtbxDetail.Text;
-                    diadiem.PICBI = img_data;
-                    diadiem.GIA= Convert.ToDecimal(txtbxGia.Text);
+                    diadiem.PICBI =Converter.Instance.ImageToByte(pcbxLocation.Image);
+                    diadiem.GIA= Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
                     Clear();
@@ -252,7 +252,7 @@ namespace Tour
                 cbboxProvince.Text = DataProvider.Ins.DB.TINHs.Where(x => x.ID == temp.IDTINH).FirstOrDefault().TEN;
                 img_data = temp.PICBI;
                 rchtxtbxDetail.Text = temp.CHITIET;
-                txtbxGia.Text = temp.GIA.ToString();
+                txtbxGia.Text = Converter.Instance.CurrencyDisplay((decimal)temp.GIA);
 
             }
         }
@@ -274,6 +274,21 @@ namespace Tour
 
         private void pcbxLocation_Click(object sender, EventArgs e)
         {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Chon anh(*.jpg; *.png; *.gif) | *.jpg; *.png; *.gif";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                Image image = Image.FromFile(dialog.FileName);
+                img = image;
+                img_data = Converter.Instance.ImageToByte(image);
+                pcbxLocation.Image = image;
+
+            }
+        }
+
+        private void btnClear_Click_1(object sender, EventArgs e)
+        {
+            Clear();
 
         }
     }

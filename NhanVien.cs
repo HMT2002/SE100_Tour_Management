@@ -64,7 +64,7 @@ namespace Tour
             dgv_nhanvien.DataSource = (from nv in DataProvider.Ins.DB.NHANVIENs
                                        join tb_phutrach in DataProvider.Ins.DB.tb_PHUTRACH on nv.ID equals tb_phutrach.IDNHANVIEN
                                        join doan in DataProvider.Ins.DB.DOANs on tb_phutrach.IDDOAN equals doan.ID
-                                       where nv.IsDeleted == false && doan.IsDeleted == false && tb_phutrach.IsDeleted == false
+                                       where nv.IsDeleted == false && doan.IsDeleted == false
 
                                        group nv by new { nv.ID, nv.TEN, nv.SDT, nv.MAIL, nv.isAvailable, nv.PICBI, nv.SLDI } into g
                                        select new
@@ -86,6 +86,7 @@ namespace Tour
         private void Clear()
         {
             txtbxName.Text = txtbxSDT.Text = txtbxMail.Text =txtbxID.Text= "";
+            txtbxPassword.Text = "";
             img_data = null;
             pcbxAvatar.Image = Properties.Resources.ic_image_empty_128;
             cbbxRole.SelectedIndex = 1;
@@ -152,7 +153,7 @@ namespace Tour
                                                    join doan in DataProvider.Ins.DB.DOANs on tb_phutrach.IDDOAN equals doan.ID
                                                    where nv.IsDeleted == false
                                                    && doan.IsDeleted == false
-                                                   && tb_phutrach.IsDeleted == false
+                                                   && doan.NGAYKETTHUC >= DateTime.Today
                                                    && SqlFunctions.PatIndex("%" + value + "%", nv.ID) > 0
                                                    group nv by new { nv.ID, nv.TEN, nv.SDT, nv.MAIL, nv.isAvailable, nv.PICBI, nv.SLDI } into g
 
@@ -178,7 +179,7 @@ namespace Tour
                                                    join doan in DataProvider.Ins.DB.DOANs on tb_phutrach.IDDOAN equals doan.ID
                                                    where nv.IsDeleted == false
                                                    && doan.IsDeleted == false
-                                                   && tb_phutrach.IsDeleted == false
+                                                   &&doan.NGAYKETTHUC>=DateTime.Today
                                                    && SqlFunctions.PatIndex("%" + value + "%", nv.TEN) > 0
                                                    group nv by new { nv.ID, nv.TEN, nv.SDT, nv.MAIL, nv.isAvailable, nv.PICBI, nv.SLDI } into g
 
