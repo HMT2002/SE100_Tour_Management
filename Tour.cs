@@ -438,7 +438,7 @@ namespace Tour
 
         private void btnAddLocation_Click(object sender, EventArgs e)
         {
-            if (id == null)
+            if (this.selected_tour == null)
             {
                 return;
             }

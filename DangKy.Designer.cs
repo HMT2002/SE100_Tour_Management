@@ -997,17 +997,17 @@ namespace Tour
             this.panel5.Location = new System.Drawing.Point(321, 503);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(350, 204);
+            this.panel5.Size = new System.Drawing.Size(344, 204);
             this.panel5.TabIndex = 36;
             // 
             // pcbxBanner
             // 
-            this.pcbxBanner.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pcbxBanner.BackColor = System.Drawing.Color.Transparent;
             this.pcbxBanner.Image = global::Tour.Properties.Resources.ic_image_empty_128;
             this.pcbxBanner.ImageRotate = 0F;
-            this.pcbxBanner.Location = new System.Drawing.Point(0, 0);
+            this.pcbxBanner.Location = new System.Drawing.Point(10, 4);
             this.pcbxBanner.Name = "pcbxBanner";
-            this.pcbxBanner.Size = new System.Drawing.Size(346, 200);
+            this.pcbxBanner.Size = new System.Drawing.Size(319, 191);
             this.pcbxBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbxBanner.TabIndex = 0;
             this.pcbxBanner.TabStop = false;
