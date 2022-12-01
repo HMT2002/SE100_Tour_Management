@@ -254,6 +254,12 @@
     <Compile Include="fPrint.Designer.cs">
       <DependentUpon>fPrint.cs</DependentUpon>
     </Compile>
+    <Compile Include="Guild.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guild.Designer.cs">
+      <DependentUpon>Guild.cs</DependentUpon>
+    </Compile>
     <Compile Include="Hotel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -457,6 +463,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChangePass.resx">
       <DependentUpon>ChangePass.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ChooseLoyalCustomer.resx">
       <DependentUpon>ChooseLoyalCustomer.cs</DependentUpon>
@@ -491,6 +498,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fPrint.resx">
       <DependentUpon>fPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guild.resx">
+      <DependentUpon>Guild.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Hotel.resx">
       <DependentUpon>Hotel.cs</DependentUpon>
