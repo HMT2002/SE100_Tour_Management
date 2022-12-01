@@ -1,0 +1,535 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QL_TOUR_DU_LICHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ACCOUNT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="ACC" Type="nvarchar" MaxLength="50" />
+    <Property Name="PASS" Type="nvarchar(max)" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="ACCROLE" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="CHIPHI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="PHIAN" Type="money" />
+    <Property Name="PHICHOI" Type="money" />
+    <Property Name="PHIKHAC" Type="money" />
+    <Property Name="TONG" Type="money" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="DIADIEM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="TEN" Type="nvarchar" MaxLength="40" />
+    <Property Name="IDTINH" Type="char" MaxLength="7" />
+    <Property Name="CHITIET" Type="nvarchar" MaxLength="500" />
+    <Property Name="PICBI" Type="varbinary(max)" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="GIA" Type="money" />
+  </EntityType>
+  <EntityType Name="DOAN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="TEN" Type="nvarchar" MaxLength="40" />
+    <Property Name="NGAYKHOIHANH" Type="smalldatetime" />
+    <Property Name="NGAYKETTHUC" Type="smalldatetime" />
+    <Property Name="CHITIETCHUONGTRINH" Type="nvarchar" MaxLength="500" />
+    <Property Name="IDCHIPHI" Type="char" MaxLength="7" />
+    <Property Name="IDTOUR" Type="char" MaxLength="7" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="GIAMGIA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="DISCOUNT" Type="int" />
+    <Property Name="PICBI" Type="varbinary(max)" />
+    <Property Name="IDTOUR" Type="char" MaxLength="7" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="NGAYBATDAU" Type="smalldatetime" />
+    <Property Name="NGAYKETTHUC" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="TENKH" Type="nvarchar" MaxLength="30" />
+    <Property Name="CMND" Type="nvarchar" MaxLength="13" />
+    <Property Name="DIACHI" Type="nvarchar" MaxLength="50" />
+    <Property Name="GIOITINH" Type="nvarchar" MaxLength="15" />
+    <Property Name="SDT" Type="nvarchar" MaxLength="15" />
+    <Property Name="PICBI" Type="varbinary(max)" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsVIP" Type="bit" />
+    <Property Name="SPENDING" Type="money" />
+    <Property Name="PRI" Type="nvarchar" MaxLength="40" />
+    <Property Name="MAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="IDACC" Type="char" MaxLength="7" />
+  </EntityType>
+  <EntityType Name="KHACHSAN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="DIACHI" Type="nvarchar" MaxLength="50" />
+    <Property Name="SDT" Type="nvarchar" MaxLength="15" />
+    <Property Name="PICBI" Type="varbinary(max)" />
+    <Property Name="CHITIET" Type="nvarchar" MaxLength="500" />
+    <Property Name="GIA" Type="money" />
+    <Property Name="IDTINH" Type="char" MaxLength="7" />
+    <Property Name="TEN" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="NHANVIEN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="MAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="SDT" Type="nvarchar" MaxLength="20" />
+    <Property Name="PICBI" Type="varbinary(max)" />
+    <Property Name="TEN" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="isAvailable" Type="bit" />
+    <Property Name="SLDI" Type="int" />
+    <Property Name="IDACC" Type="char" MaxLength="7" />
+  </EntityType>
+  <EntityType Name="PHUONGTIEN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="TEN" Type="nvarchar" MaxLength="30" />
+    <Property Name="PICBI" Type="varbinary(max)" />
+    <Property Name="LOAI" Type="nvarchar" MaxLength="30" />
+    <Property Name="IDTINH" Type="char" MaxLength="7" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="GIA" Type="money" />
+  </EntityType>
+  <EntityType Name="tb_DIADIEM_DULICH">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="IDTOUR" Type="char" MaxLength="7" />
+    <Property Name="IDDIADIEM" Type="char" MaxLength="7" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="tb_KHACHSAN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="IDDOAN" Type="char" MaxLength="7" />
+    <Property Name="IDKHACHSAN" Type="char" MaxLength="7" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="tb_NHIEMVU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="IDDOAN" Type="char" MaxLength="7" />
+    <Property Name="IDNHANVIEN" Type="char" MaxLength="7" />
+    <Property Name="NHIEMVU" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="tb_PHUONGTIEN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="IDDOAN" Type="char" MaxLength="7" />
+    <Property Name="IDPHUONGTIEN" Type="char" MaxLength="7" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="tb_PHUTRACH">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="IDDOAN" Type="char" MaxLength="7" />
+    <Property Name="IDNHANVIEN" Type="char" MaxLength="7" />
+    <Property Name="PHUTRACH" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="TINH">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="TEN" Type="nvarchar" MaxLength="30" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="TOUR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="TEN" Type="nvarchar" MaxLength="30" />
+    <Property Name="DACDIEM" Type="nvarchar" MaxLength="50" />
+    <Property Name="LOAI" Type="nvarchar" MaxLength="30" />
+    <Property Name="GIA" Type="money" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="VE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="NGAYMUA" Type="smalldatetime" />
+    <Property Name="GIA" Type="money" />
+    <Property Name="IDKHACH" Type="char" MaxLength="7" />
+    <Property Name="IDDOAN" Type="char" MaxLength="7" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <Association Name="LK_CHIPHI_DOAN">
+    <End Role="CHIPHI" Type="Self.CHIPHI" Multiplicity="0..1" />
+    <End Role="DOAN" Type="Self.DOAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CHIPHI">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DOAN">
+        <PropertyRef Name="IDCHIPHI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LK_DIADIEM_DULICH">
+    <End Role="DIADIEM" Type="Self.DIADIEM" Multiplicity="0..1" />
+    <End Role="tb_DIADIEM_DULICH" Type="Self.tb_DIADIEM_DULICH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DIADIEM">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tb_DIADIEM_DULICH">
+        <PropertyRef Name="IDDIADIEM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LK_DOAN_KHACHSAN">
+    <End Role="DOAN" Type="Self.DOAN" Multiplicity="0..1" />
+    <End Role="tb_KHACHSAN" Type="Self.tb_KHACHSAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOAN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tb_KHACHSAN">
+        <PropertyRef Name="IDDOAN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LK_DOAN_NHIEMVU">
+    <End Role="DOAN" Type="Self.DOAN" Multiplicity="0..1" />
+    <End Role="tb_NHIEMVU" Type="Self.tb_NHIEMVU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOAN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tb_NHIEMVU">
+        <PropertyRef Name="IDDOAN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LK_DOAN_PHUONGTIEN">
+    <End Role="DOAN" Type="Self.DOAN" Multiplicity="0..1" />
+    <End Role="tb_PHUONGTIEN" Type="Self.tb_PHUONGTIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOAN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tb_PHUONGTIEN">
+        <PropertyRef Name="IDDOAN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LK_DOAN_PHUTRACH">
+    <End Role="DOAN" Type="Self.DOAN" Multiplicity="0..1" />
+    <End Role="tb_PHUTRACH" Type="Self.tb_PHUTRACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOAN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tb_PHUTRACH">
+        <PropertyRef Name="IDDOAN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LK_KHACHSAN_KHACHSAN">
+    <End Role="KHACHSAN" Type="Self.KHACHSAN" Multiplicity="0..1" />
+    <End Role="tb_KHACHSAN" Type="Self.tb_KHACHSAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHSAN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tb_KHACHSAN">
+        <PropertyRef Name="IDKHACHSAN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LK_KHACHSAN_TINH">
+    <End Role="TINH" Type="Self.TINH" Multiplicity="0..1" />
+    <End Role="KHACHSAN" Type="Self.KHACHSAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TINH">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KHACHSAN">
+        <PropertyRef Name="IDTINH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LK_MAIL_ACCOUNT">
+    <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="0..1" />
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACCOUNT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KHACHHANG">
+        <PropertyRef Name="IDACC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LK_MAIL_ACCOUNT_NV">
+    <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="0..1" />
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACCOUNT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="NHANVIEN">
+        <PropertyRef Name="IDACC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LK_NHANVIEN_NHIEMVU">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+    <End Role="tb_NHIEMVU" Type="Self.tb_NHIEMVU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tb_NHIEMVU">
+        <PropertyRef Name="IDNHANVIEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LK_NHANVIEN_PHUTRACH">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+    <End Role="tb_PHUTRACH" Type="Self.tb_PHUTRACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tb_PHUTRACH">
+        <PropertyRef Name="IDNHANVIEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LK_PHUONGTIEN_PHUONGTIEN">
+    <End Role="PHUONGTIEN" Type="Self.PHUONGTIEN" Multiplicity="0..1" />
+    <End Role="tb_PHUONGTIEN" Type="Self.tb_PHUONGTIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHUONGTIEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tb_PHUONGTIEN">
+        <PropertyRef Name="IDPHUONGTIEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LK_PHUONGTIEN_TINH">
+    <End Role="TINH" Type="Self.TINH" Multiplicity="0..1" />
+    <End Role="PHUONGTIEN" Type="Self.PHUONGTIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TINH">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PHUONGTIEN">
+        <PropertyRef Name="IDTINH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LK_TINH">
+    <End Role="TINH" Type="Self.TINH" Multiplicity="0..1" />
+    <End Role="DIADIEM" Type="Self.DIADIEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TINH">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DIADIEM">
+        <PropertyRef Name="IDTINH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LK_TOUR_DOAN">
+    <End Role="TOUR" Type="Self.TOUR" Multiplicity="0..1" />
+    <End Role="DOAN" Type="Self.DOAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TOUR">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DOAN">
+        <PropertyRef Name="IDTOUR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LK_TOUR_DULICH">
+    <End Role="TOUR" Type="Self.TOUR" Multiplicity="0..1" />
+    <End Role="tb_DIADIEM_DULICH" Type="Self.tb_DIADIEM_DULICH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TOUR">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tb_DIADIEM_DULICH">
+        <PropertyRef Name="IDTOUR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LK_TOUR_GIAMGIA">
+    <End Role="TOUR" Type="Self.TOUR" Multiplicity="0..1" />
+    <End Role="GIAMGIA" Type="Self.GIAMGIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TOUR">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GIAMGIA">
+        <PropertyRef Name="IDTOUR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LK_VE_DOAN">
+    <End Role="DOAN" Type="Self.DOAN" Multiplicity="0..1" />
+    <End Role="VE" Type="Self.VE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOAN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VE">
+        <PropertyRef Name="IDDOAN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LK_VE_KHACH">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+    <End Role="VE" Type="Self.VE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VE">
+        <PropertyRef Name="IDKHACH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QL_TOUR_DU_LICHModelStoreContainer">
+    <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CHIPHI" EntityType="Self.CHIPHI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DIADIEM" EntityType="Self.DIADIEM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DOAN" EntityType="Self.DOAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GIAMGIA" EntityType="Self.GIAMGIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHACHSAN" EntityType="Self.KHACHSAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PHUONGTIEN" EntityType="Self.PHUONGTIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_DIADIEM_DULICH" EntityType="Self.tb_DIADIEM_DULICH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_KHACHSAN" EntityType="Self.tb_KHACHSAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_NHIEMVU" EntityType="Self.tb_NHIEMVU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_PHUONGTIEN" EntityType="Self.tb_PHUONGTIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_PHUTRACH" EntityType="Self.tb_PHUTRACH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TINH" EntityType="Self.TINH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TOUR" EntityType="Self.TOUR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VE" EntityType="Self.VE" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="LK_CHIPHI_DOAN" Association="Self.LK_CHIPHI_DOAN">
+      <End Role="CHIPHI" EntitySet="CHIPHI" />
+      <End Role="DOAN" EntitySet="DOAN" />
+    </AssociationSet>
+    <AssociationSet Name="LK_DIADIEM_DULICH" Association="Self.LK_DIADIEM_DULICH">
+      <End Role="DIADIEM" EntitySet="DIADIEM" />
+      <End Role="tb_DIADIEM_DULICH" EntitySet="tb_DIADIEM_DULICH" />
+    </AssociationSet>
+    <AssociationSet Name="LK_DOAN_KHACHSAN" Association="Self.LK_DOAN_KHACHSAN">
+      <End Role="DOAN" EntitySet="DOAN" />
+      <End Role="tb_KHACHSAN" EntitySet="tb_KHACHSAN" />
+    </AssociationSet>
+    <AssociationSet Name="LK_DOAN_NHIEMVU" Association="Self.LK_DOAN_NHIEMVU">
+      <End Role="DOAN" EntitySet="DOAN" />
+      <End Role="tb_NHIEMVU" EntitySet="tb_NHIEMVU" />
+    </AssociationSet>
+    <AssociationSet Name="LK_DOAN_PHUONGTIEN" Association="Self.LK_DOAN_PHUONGTIEN">
+      <End Role="DOAN" EntitySet="DOAN" />
+      <End Role="tb_PHUONGTIEN" EntitySet="tb_PHUONGTIEN" />
+    </AssociationSet>
+    <AssociationSet Name="LK_DOAN_PHUTRACH" Association="Self.LK_DOAN_PHUTRACH">
+      <End Role="DOAN" EntitySet="DOAN" />
+      <End Role="tb_PHUTRACH" EntitySet="tb_PHUTRACH" />
+    </AssociationSet>
+    <AssociationSet Name="LK_KHACHSAN_KHACHSAN" Association="Self.LK_KHACHSAN_KHACHSAN">
+      <End Role="KHACHSAN" EntitySet="KHACHSAN" />
+      <End Role="tb_KHACHSAN" EntitySet="tb_KHACHSAN" />
+    </AssociationSet>
+    <AssociationSet Name="LK_KHACHSAN_TINH" Association="Self.LK_KHACHSAN_TINH">
+      <End Role="TINH" EntitySet="TINH" />
+      <End Role="KHACHSAN" EntitySet="KHACHSAN" />
+    </AssociationSet>
+    <AssociationSet Name="LK_MAIL_ACCOUNT" Association="Self.LK_MAIL_ACCOUNT">
+      <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+    </AssociationSet>
+    <AssociationSet Name="LK_MAIL_ACCOUNT_NV" Association="Self.LK_MAIL_ACCOUNT_NV">
+      <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+      <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+    </AssociationSet>
+    <AssociationSet Name="LK_NHANVIEN_NHIEMVU" Association="Self.LK_NHANVIEN_NHIEMVU">
+      <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+      <End Role="tb_NHIEMVU" EntitySet="tb_NHIEMVU" />
+    </AssociationSet>
+    <AssociationSet Name="LK_NHANVIEN_PHUTRACH" Association="Self.LK_NHANVIEN_PHUTRACH">
+      <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+      <End Role="tb_PHUTRACH" EntitySet="tb_PHUTRACH" />
+    </AssociationSet>
+    <AssociationSet Name="LK_PHUONGTIEN_PHUONGTIEN" Association="Self.LK_PHUONGTIEN_PHUONGTIEN">
+      <End Role="PHUONGTIEN" EntitySet="PHUONGTIEN" />
+      <End Role="tb_PHUONGTIEN" EntitySet="tb_PHUONGTIEN" />
+    </AssociationSet>
+    <AssociationSet Name="LK_PHUONGTIEN_TINH" Association="Self.LK_PHUONGTIEN_TINH">
+      <End Role="TINH" EntitySet="TINH" />
+      <End Role="PHUONGTIEN" EntitySet="PHUONGTIEN" />
+    </AssociationSet>
+    <AssociationSet Name="LK_TINH" Association="Self.LK_TINH">
+      <End Role="TINH" EntitySet="TINH" />
+      <End Role="DIADIEM" EntitySet="DIADIEM" />
+    </AssociationSet>
+    <AssociationSet Name="LK_TOUR_DOAN" Association="Self.LK_TOUR_DOAN">
+      <End Role="TOUR" EntitySet="TOUR" />
+      <End Role="DOAN" EntitySet="DOAN" />
+    </AssociationSet>
+    <AssociationSet Name="LK_TOUR_DULICH" Association="Self.LK_TOUR_DULICH">
+      <End Role="TOUR" EntitySet="TOUR" />
+      <End Role="tb_DIADIEM_DULICH" EntitySet="tb_DIADIEM_DULICH" />
+    </AssociationSet>
+    <AssociationSet Name="LK_TOUR_GIAMGIA" Association="Self.LK_TOUR_GIAMGIA">
+      <End Role="TOUR" EntitySet="TOUR" />
+      <End Role="GIAMGIA" EntitySet="GIAMGIA" />
+    </AssociationSet>
+    <AssociationSet Name="LK_VE_DOAN" Association="Self.LK_VE_DOAN">
+      <End Role="DOAN" EntitySet="DOAN" />
+      <End Role="VE" EntitySet="VE" />
+    </AssociationSet>
+    <AssociationSet Name="LK_VE_KHACH" Association="Self.LK_VE_KHACH">
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+      <End Role="VE" EntitySet="VE" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
