@@ -48,17 +48,37 @@ namespace Tour
 
         private void showAll()
         {
-            dgv_nhanvien.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t=>t.IsDeleted==false).Select(t => new
-            {
-                t.ID,
-                t.TEN,
-                t.SDT,
-                t.MAIL,
-                t.isAvailable,
-                t.PICBI,
-                t.SLDI,
-            }
-    ).ToList();
+    //        dgv_nhanvien.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t=>t.IsDeleted==false).Select(t => new
+    //        {
+    //            t.ID,
+    //            t.TEN,
+    //            t.SDT,
+    //            t.MAIL,
+    //            t.isAvailable,
+    //            t.PICBI,
+    //            t.SLDI,
+    //        }
+    //).ToList();
+
+
+            dgv_nhanvien.DataSource = (from nv in DataProvider.Ins.DB.NHANVIENs
+                                       join tb_phutrach in DataProvider.Ins.DB.tb_PHUTRACH on nv.ID equals tb_phutrach.IDNHANVIEN
+                                       join doan in DataProvider.Ins.DB.DOANs on tb_phutrach.IDDOAN equals doan.ID
+                                       where nv.IsDeleted == false && doan.IsDeleted == false && tb_phutrach.IsDeleted == false
+
+                                       group nv by new { nv.ID, nv.TEN, nv.SDT, nv.MAIL, nv.isAvailable, nv.PICBI, nv.SLDI } into g
+                                       select new
+                                       {
+                                           ID = g.Key.ID,
+                                           TEN = g.Key.TEN,
+                                           SDT = g.Key.SDT,
+                                           MAIL = g.Key.MAIL,
+                                           isAvailable = g.Key.isAvailable,
+                                           PICBI = g.Key.PICBI,
+                                           SLDI = g.Count(),
+                                       }
+
+                                     ).ToList();
 
 
         }
@@ -126,14 +146,53 @@ namespace Tour
                     //if (rdIDSearch.Checked)
                     if (searchID == true)
                     {
-                        dgv_nhanvien.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t => SqlFunctions.PatIndex("%" + value + "%", t.ID) > 0 && t.IsDeleted == false).Select(t => t).ToList();
+                        dgv_nhanvien.DataSource = (from nv in DataProvider.Ins.DB.NHANVIENs
+                                                   join tb_phutrach in DataProvider.Ins.DB.tb_PHUTRACH on nv.ID equals tb_phutrach.IDNHANVIEN
+                                                   join doan in DataProvider.Ins.DB.DOANs on tb_phutrach.IDDOAN equals doan.ID
+                                                   where nv.IsDeleted == false
+                                                   && doan.IsDeleted == false
+                                                   && tb_phutrach.IsDeleted == false
+                                                   && SqlFunctions.PatIndex("%" + value + "%", nv.ID) > 0
+                                                   group nv by new { nv.ID, nv.TEN, nv.SDT, nv.MAIL, nv.isAvailable, nv.PICBI, nv.SLDI } into g
+
+                                                   select new
+                                                   {
+                                                       ID = g.Key.ID,
+                                                       TEN = g.Key.TEN,
+                                                       SDT = g.Key.SDT,
+                                                       MAIL = g.Key.MAIL,
+                                                       isAvailable = g.Key.isAvailable,
+                                                       PICBI = g.Key.PICBI,
+                                                       SLDI = g.Count(),
+                                                   }
+
+                                     ).ToList();
 
                     }
                     //else if (rdNameSearch.Checked)
                     else if (searchID == false)
                     {
-                        dgv_nhanvien.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t => SqlFunctions.PatIndex("%" + value + "%", t.TEN) > 0 && t.IsDeleted == false).Select(t => t).ToList();
+                        dgv_nhanvien.DataSource = (from nv in DataProvider.Ins.DB.NHANVIENs
+                                                   join tb_phutrach in DataProvider.Ins.DB.tb_PHUTRACH on nv.ID equals tb_phutrach.IDNHANVIEN
+                                                   join doan in DataProvider.Ins.DB.DOANs on tb_phutrach.IDDOAN equals doan.ID
+                                                   where nv.IsDeleted == false
+                                                   && doan.IsDeleted == false
+                                                   && tb_phutrach.IsDeleted == false
+                                                   && SqlFunctions.PatIndex("%" + value + "%", nv.TEN) > 0
+                                                   group nv by new { nv.ID, nv.TEN, nv.SDT, nv.MAIL, nv.isAvailable, nv.PICBI, nv.SLDI } into g
 
+                                                   select new
+                                                   {
+                                                       ID = g.Key.ID,
+                                                       TEN = g.Key.TEN,
+                                                       SDT = g.Key.SDT,
+                                                       MAIL = g.Key.MAIL,
+                                                       isAvailable = g.Key.isAvailable,
+                                                       PICBI = g.Key.PICBI,
+                                                       SLDI = g.Count(),
+                                                   }
+
+                                     ).ToList();
                     }
                 }
                 catch
@@ -374,7 +433,7 @@ namespace Tour
                             DataProvider.Ins.DB.tb_PHUTRACH.Add(nvu);
                             seleted_nhanvien_phutrach = nvu.NHANVIEN.TEN;
                             temp_nv.isAvailable = false;
-                            DataProvider.Ins.DB.SaveChanges();
+                            //DataProvider.Ins.DB.SaveChanges();
                             this.Close();
                             break;
                         case DialogResult.Cancel:

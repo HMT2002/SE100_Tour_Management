@@ -33,6 +33,33 @@ namespace Tour
             InitializeComponent();
             textBox1.Text = doanID;
 
+
+            LoadData();
+
+        }
+
+        private void LoadData()
+        {
+            var tb_phutrach=DataProvider.Ins.DB.tb_PHUTRACH.Where(x=>x.IDDOAN==doanID).ToList();
+            foreach(var tb in tb_phutrach)
+            {
+                if (tb.PHUTRACH == "Tour Guide")
+                {
+                    txtTourGuide.Text = tb.NHANVIEN.TEN;
+                }
+                if (tb.PHUTRACH == "Driver")
+                {
+                    txtDriver.Text = tb.NHANVIEN.TEN;
+                }
+                if (tb.PHUTRACH == "Translator")
+                {
+                    txtTranslator.Text = tb.NHANVIEN.TEN;
+                }
+                if (tb.PHUTRACH == "Waitor")
+                {
+                    txtWaitor.Text = tb.NHANVIEN.TEN;
+                }
+            }
         }
 
         public NhiemVuTrongDoan(string doanID, string driver, string tour_guide, string waiter, string translator)
@@ -181,6 +208,8 @@ namespace Tour
                 case DialogResult.Cancel:
                     break;
                 case DialogResult.OK:
+                    DataProvider.Ins.DB.SaveChanges();
+
                     this.Close();
                     break;
                 default: break;
@@ -205,15 +234,9 @@ namespace Tour
 
         private void bttExit_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("You have to save your assignment. Do you really want to exit?", "Warning", MessageBoxButtons.YesNo);
-            if (result == DialogResult.OK)
-            {
-                this.Close();
-            }
-            else
-            {
 
-            }
+                this.Close();
+
         }
     }
 }

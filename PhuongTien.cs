@@ -251,7 +251,7 @@ namespace Tour
                     phuongtien.IDTINH = cbboxProvince.SelectedIndex.ToString();
                     phuongtien.LOAI = cbbxKind.Text;
                     phuongtien.PICBI = img_data;
-                    phuongtien.GIA = Convert.ToDecimal(txtbxGia.Text);
+                    phuongtien.GIA = Converter.Instance.CurrencyStringToDecimal(txtbxGia.Text);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
                     Clear();
@@ -340,7 +340,7 @@ namespace Tour
                 cbbxKind.Text = temp.LOAI;
                 cbboxProvince.Text = DataProvider.Ins.DB.TINHs.Where(x => x.ID == temp.IDTINH).FirstOrDefault().TEN;
                 img_data = temp.PICBI;
-                txtbxGia.Text = temp.GIA.ToString();
+                txtbxGia.Text =Converter.Instance.CurrencyDisplay((decimal) temp.GIA);
             }
         }
 
