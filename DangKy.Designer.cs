@@ -141,7 +141,7 @@ namespace Tour
             this.panel1.Location = new System.Drawing.Point(6, 102);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(305, 747);
+            this.panel1.Size = new System.Drawing.Size(305, 681);
             this.panel1.TabIndex = 1;
             // 
             // guna2HtmlLabel1
@@ -390,10 +390,10 @@ namespace Tour
             this.panel4.Controls.Add(this.label20);
             this.panel4.Controls.Add(this.label18);
             this.panel4.Controls.Add(this.label17);
-            this.panel4.Location = new System.Drawing.Point(315, 427);
+            this.panel4.Location = new System.Drawing.Point(317, 341);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(348, 215);
+            this.panel4.Size = new System.Drawing.Size(348, 148);
             this.panel4.TabIndex = 4;
             // 
             // panel25
@@ -537,7 +537,7 @@ namespace Tour
             this.panel3.Location = new System.Drawing.Point(669, 102);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(509, 747);
+            this.panel3.Size = new System.Drawing.Size(509, 658);
             this.panel3.TabIndex = 9;
             // 
             // guna2GradientPanel1
@@ -570,14 +570,14 @@ namespace Tour
             this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel2);
             this.guna2GradientPanel1.Location = new System.Drawing.Point(5, 32);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(497, 708);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(497, 616);
             this.guna2GradientPanel1.TabIndex = 9;
             // 
             // guna2HtmlLabel14
             // 
             this.guna2HtmlLabel14.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel14.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel14.Location = new System.Drawing.Point(96, 637);
+            this.guna2HtmlLabel14.Location = new System.Drawing.Point(69, 540);
             this.guna2HtmlLabel14.Name = "guna2HtmlLabel14";
             this.guna2HtmlLabel14.Size = new System.Drawing.Size(367, 31);
             this.guna2HtmlLabel14.TabIndex = 24;
@@ -618,7 +618,7 @@ namespace Tour
             // 
             this.lblReciptPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblReciptPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReciptPrice.Location = new System.Drawing.Point(255, 577);
+            this.lblReciptPrice.Location = new System.Drawing.Point(228, 480);
             this.lblReciptPrice.Name = "lblReciptPrice";
             this.lblReciptPrice.Size = new System.Drawing.Size(98, 40);
             this.lblReciptPrice.TabIndex = 21;
@@ -627,50 +627,50 @@ namespace Tour
             // lblReciptEndDate
             // 
             this.lblReciptEndDate.BackColor = System.Drawing.Color.Transparent;
-            this.lblReciptEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReciptEndDate.Location = new System.Drawing.Point(65, 487);
+            this.lblReciptEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReciptEndDate.Location = new System.Drawing.Point(60, 413);
             this.lblReciptEndDate.Name = "lblReciptEndDate";
-            this.lblReciptEndDate.Size = new System.Drawing.Size(70, 33);
+            this.lblReciptEndDate.Size = new System.Drawing.Size(51, 27);
             this.lblReciptEndDate.TabIndex = 20;
             this.lblReciptEndDate.Text = "-Date";
             // 
             // lblReciptStartDate
             // 
             this.lblReciptStartDate.BackColor = System.Drawing.Color.Transparent;
-            this.lblReciptStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReciptStartDate.Location = new System.Drawing.Point(96, 448);
+            this.lblReciptStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReciptStartDate.Location = new System.Drawing.Point(91, 374);
             this.lblReciptStartDate.Name = "lblReciptStartDate";
-            this.lblReciptStartDate.Size = new System.Drawing.Size(70, 33);
+            this.lblReciptStartDate.Size = new System.Drawing.Size(51, 27);
             this.lblReciptStartDate.TabIndex = 19;
             this.lblReciptStartDate.Text = "-Date";
             // 
             // lblReciptCustomerName
             // 
             this.lblReciptCustomerName.BackColor = System.Drawing.Color.Transparent;
-            this.lblReciptCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReciptCustomerName.Location = new System.Drawing.Point(151, 406);
+            this.lblReciptCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReciptCustomerName.Location = new System.Drawing.Point(146, 332);
             this.lblReciptCustomerName.Name = "lblReciptCustomerName";
-            this.lblReciptCustomerName.Size = new System.Drawing.Size(84, 33);
+            this.lblReciptCustomerName.Size = new System.Drawing.Size(62, 27);
             this.lblReciptCustomerName.TabIndex = 18;
             this.lblReciptCustomerName.Text = "-Name";
             // 
             // lblReciptGroupName
             // 
             this.lblReciptGroupName.BackColor = System.Drawing.Color.Transparent;
-            this.lblReciptGroupName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReciptGroupName.Location = new System.Drawing.Point(108, 359);
+            this.lblReciptGroupName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReciptGroupName.Location = new System.Drawing.Point(103, 285);
             this.lblReciptGroupName.Name = "lblReciptGroupName";
-            this.lblReciptGroupName.Size = new System.Drawing.Size(84, 33);
+            this.lblReciptGroupName.Size = new System.Drawing.Size(62, 27);
             this.lblReciptGroupName.TabIndex = 17;
             this.lblReciptGroupName.Text = "-Name";
             // 
             // lblReciptTourName
             // 
             this.lblReciptTourName.BackColor = System.Drawing.Color.Transparent;
-            this.lblReciptTourName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReciptTourName.Location = new System.Drawing.Point(92, 320);
+            this.lblReciptTourName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReciptTourName.Location = new System.Drawing.Point(87, 246);
             this.lblReciptTourName.Name = "lblReciptTourName";
-            this.lblReciptTourName.Size = new System.Drawing.Size(84, 33);
+            this.lblReciptTourName.Size = new System.Drawing.Size(62, 27);
             this.lblReciptTourName.TabIndex = 16;
             this.lblReciptTourName.Text = "-Name";
             // 
@@ -678,7 +678,7 @@ namespace Tour
             // 
             this.guna2HtmlLabel15.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel15.Location = new System.Drawing.Point(186, 674);
+            this.guna2HtmlLabel15.Location = new System.Drawing.Point(159, 577);
             this.guna2HtmlLabel15.Name = "guna2HtmlLabel15";
             this.guna2HtmlLabel15.Size = new System.Drawing.Size(143, 31);
             this.guna2HtmlLabel15.TabIndex = 15;
@@ -689,7 +689,7 @@ namespace Tour
             // 
             this.guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel13.Location = new System.Drawing.Point(143, 577);
+            this.guna2HtmlLabel13.Location = new System.Drawing.Point(116, 480);
             this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
             this.guna2HtmlLabel13.Size = new System.Drawing.Size(87, 40);
             this.guna2HtmlLabel13.TabIndex = 13;
@@ -699,7 +699,7 @@ namespace Tour
             // 
             this.guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel12.Location = new System.Drawing.Point(96, 540);
+            this.guna2HtmlLabel12.Location = new System.Drawing.Point(69, 443);
             this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
             this.guna2HtmlLabel12.Size = new System.Drawing.Size(367, 31);
             this.guna2HtmlLabel12.TabIndex = 12;
@@ -708,50 +708,50 @@ namespace Tour
             // guna2HtmlLabel11
             // 
             this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel11.Location = new System.Drawing.Point(16, 484);
+            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel11.Location = new System.Drawing.Point(11, 410);
             this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
-            this.guna2HtmlLabel11.Size = new System.Drawing.Size(43, 33);
+            this.guna2HtmlLabel11.Size = new System.Drawing.Size(33, 27);
             this.guna2HtmlLabel11.TabIndex = 11;
             this.guna2HtmlLabel11.Text = "To: ";
             // 
             // guna2HtmlLabel10
             // 
             this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel10.Location = new System.Drawing.Point(16, 445);
+            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel10.Location = new System.Drawing.Point(11, 371);
             this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
-            this.guna2HtmlLabel10.Size = new System.Drawing.Size(74, 33);
+            this.guna2HtmlLabel10.Size = new System.Drawing.Size(54, 27);
             this.guna2HtmlLabel10.TabIndex = 10;
             this.guna2HtmlLabel10.Text = "From: ";
             // 
             // guna2HtmlLabel9
             // 
             this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel9.Location = new System.Drawing.Point(16, 406);
+            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(11, 332);
             this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            this.guna2HtmlLabel9.Size = new System.Drawing.Size(129, 33);
+            this.guna2HtmlLabel9.Size = new System.Drawing.Size(94, 27);
             this.guna2HtmlLabel9.TabIndex = 9;
             this.guna2HtmlLabel9.Text = "Customer: ";
             // 
             // guna2HtmlLabel8
             // 
             this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel8.Location = new System.Drawing.Point(16, 359);
+            this.guna2HtmlLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(11, 285);
             this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
-            this.guna2HtmlLabel8.Size = new System.Drawing.Size(86, 33);
+            this.guna2HtmlLabel8.Size = new System.Drawing.Size(63, 27);
             this.guna2HtmlLabel8.TabIndex = 8;
             this.guna2HtmlLabel8.Text = "Group: ";
             // 
             // guna2HtmlLabel7
             // 
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(13, 320);
+            this.guna2HtmlLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(8, 246);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            this.guna2HtmlLabel7.Size = new System.Drawing.Size(67, 33);
+            this.guna2HtmlLabel7.Size = new System.Drawing.Size(50, 27);
             this.guna2HtmlLabel7.TabIndex = 7;
             this.guna2HtmlLabel7.Text = "Tour: ";
             // 
@@ -759,9 +759,9 @@ namespace Tour
             // 
             this.pcbxLogo.Image = global::Tour.Properties.Resources.UIT;
             this.pcbxLogo.ImageRotate = 0F;
-            this.pcbxLogo.Location = new System.Drawing.Point(147, 86);
+            this.pcbxLogo.Location = new System.Drawing.Point(201, 86);
             this.pcbxLogo.Name = "pcbxLogo";
-            this.pcbxLogo.Size = new System.Drawing.Size(250, 174);
+            this.pcbxLogo.Size = new System.Drawing.Size(128, 112);
             this.pcbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbxLogo.TabIndex = 6;
             this.pcbxLogo.TabStop = false;
@@ -800,7 +800,7 @@ namespace Tour
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(201, 271);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(186, 209);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(107, 33);
             this.guna2HtmlLabel3.TabIndex = 1;
@@ -846,7 +846,7 @@ namespace Tour
             this.panel8.Location = new System.Drawing.Point(315, 102);
             this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(348, 318);
+            this.panel8.Size = new System.Drawing.Size(348, 219);
             this.panel8.TabIndex = 6;
             // 
             // cbGroup
@@ -994,7 +994,7 @@ namespace Tour
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel5.Controls.Add(this.pcbxBanner);
             this.panel5.ForeColor = System.Drawing.Color.Black;
-            this.panel5.Location = new System.Drawing.Point(315, 645);
+            this.panel5.Location = new System.Drawing.Point(321, 503);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(350, 204);
@@ -1028,7 +1028,7 @@ namespace Tour
             this.btnXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnXoa.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnXoa.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(931, 849);
+            this.btnXoa.Location = new System.Drawing.Point(937, 764);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(241, 46);
@@ -1051,7 +1051,7 @@ namespace Tour
             this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnAdd.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnAdd.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(684, 849);
+            this.btnAdd.Location = new System.Drawing.Point(690, 764);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(241, 46);

@@ -55,7 +55,6 @@ namespace Tour
             this.btnLoyalCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.btnCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.btnGroup = new Guna.UI2.WinForms.Guna2Button();
-            this.btnMission = new Guna.UI2.WinForms.Guna2Button();
             this.btnEmployyeDatabase = new Guna.UI2.WinForms.Guna2Button();
             this.btnRoute = new Guna.UI2.WinForms.Guna2Button();
             this.btnTicket = new Guna.UI2.WinForms.Guna2Button();
@@ -117,7 +116,7 @@ namespace Tour
             // 
             this.guna2Panel2.Controls.Add(this.button7);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 1017);
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 968);
             this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(247, 46);
@@ -158,7 +157,7 @@ namespace Tour
             this.panel_Help.Controls.Add(this.button1);
             this.panel_Help.Controls.Add(this.button5);
             this.panel_Help.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_Help.Location = new System.Drawing.Point(0, 919);
+            this.panel_Help.Location = new System.Drawing.Point(0, 870);
             this.panel_Help.Margin = new System.Windows.Forms.Padding(2);
             this.panel_Help.Name = "panel_Help";
             this.panel_Help.Size = new System.Drawing.Size(247, 98);
@@ -223,7 +222,7 @@ namespace Tour
             // 
             this.guna2Panel9.Controls.Add(this.button6);
             this.guna2Panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel9.Location = new System.Drawing.Point(0, 873);
+            this.guna2Panel9.Location = new System.Drawing.Point(0, 824);
             this.guna2Panel9.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel9.Name = "guna2Panel9";
             this.guna2Panel9.Size = new System.Drawing.Size(247, 46);
@@ -264,7 +263,7 @@ namespace Tour
             this.panel_staff.Controls.Add(this.button2);
             this.panel_staff.Controls.Add(this.button3);
             this.panel_staff.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_staff.Location = new System.Drawing.Point(0, 775);
+            this.panel_staff.Location = new System.Drawing.Point(0, 726);
             this.panel_staff.Margin = new System.Windows.Forms.Padding(2);
             this.panel_staff.Name = "panel_staff";
             this.panel_staff.Size = new System.Drawing.Size(247, 98);
@@ -328,7 +327,7 @@ namespace Tour
             // 
             this.guna2Panel8.Controls.Add(this.button4);
             this.guna2Panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel8.Location = new System.Drawing.Point(0, 729);
+            this.guna2Panel8.Location = new System.Drawing.Point(0, 680);
             this.guna2Panel8.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel8.Name = "guna2Panel8";
             this.guna2Panel8.Size = new System.Drawing.Size(247, 46);
@@ -374,7 +373,6 @@ namespace Tour
             this.panelManage.Controls.Add(this.btnLoyalCustomer);
             this.panelManage.Controls.Add(this.btnCustomer);
             this.panelManage.Controls.Add(this.btnGroup);
-            this.panelManage.Controls.Add(this.btnMission);
             this.panelManage.Controls.Add(this.btnEmployyeDatabase);
             this.panelManage.Controls.Add(this.btnRoute);
             this.panelManage.Controls.Add(this.btnTicket);
@@ -382,7 +380,7 @@ namespace Tour
             this.panelManage.Location = new System.Drawing.Point(0, 141);
             this.panelManage.Margin = new System.Windows.Forms.Padding(2);
             this.panelManage.Name = "panelManage";
-            this.panelManage.Size = new System.Drawing.Size(247, 588);
+            this.panelManage.Size = new System.Drawing.Size(247, 539);
             this.panelManage.TabIndex = 19;
             // 
             // btnHotelDatabase
@@ -401,7 +399,7 @@ namespace Tour
             this.btnHotelDatabase.HoverState.ForeColor = System.Drawing.Color.Black;
             this.btnHotelDatabase.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHotelDatabase.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnHotelDatabase.Location = new System.Drawing.Point(0, 539);
+            this.btnHotelDatabase.Location = new System.Drawing.Point(0, 490);
             this.btnHotelDatabase.Margin = new System.Windows.Forms.Padding(2);
             this.btnHotelDatabase.Name = "btnHotelDatabase";
             this.btnHotelDatabase.PressedColor = System.Drawing.Color.Transparent;
@@ -428,7 +426,7 @@ namespace Tour
             this.btnLocationDatabase.HoverState.ForeColor = System.Drawing.Color.Black;
             this.btnLocationDatabase.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLocationDatabase.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnLocationDatabase.Location = new System.Drawing.Point(0, 490);
+            this.btnLocationDatabase.Location = new System.Drawing.Point(0, 441);
             this.btnLocationDatabase.Margin = new System.Windows.Forms.Padding(2);
             this.btnLocationDatabase.Name = "btnLocationDatabase";
             this.btnLocationDatabase.PressedColor = System.Drawing.Color.Transparent;
@@ -455,7 +453,7 @@ namespace Tour
             this.btnVehicalDatabase.HoverState.ForeColor = System.Drawing.Color.Black;
             this.btnVehicalDatabase.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnVehicalDatabase.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnVehicalDatabase.Location = new System.Drawing.Point(0, 441);
+            this.btnVehicalDatabase.Location = new System.Drawing.Point(0, 392);
             this.btnVehicalDatabase.Margin = new System.Windows.Forms.Padding(2);
             this.btnVehicalDatabase.Name = "btnVehicalDatabase";
             this.btnVehicalDatabase.PressedColor = System.Drawing.Color.Transparent;
@@ -482,7 +480,7 @@ namespace Tour
             this.btndataCus.HoverState.ForeColor = System.Drawing.Color.Black;
             this.btndataCus.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btndataCus.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btndataCus.Location = new System.Drawing.Point(0, 392);
+            this.btndataCus.Location = new System.Drawing.Point(0, 343);
             this.btndataCus.Margin = new System.Windows.Forms.Padding(2);
             this.btndataCus.Name = "btndataCus";
             this.btndataCus.PressedColor = System.Drawing.Color.Transparent;
@@ -509,7 +507,7 @@ namespace Tour
             this.btnStatistics.HoverState.ForeColor = System.Drawing.Color.Black;
             this.btnStatistics.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnStatistics.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnStatistics.Location = new System.Drawing.Point(0, 343);
+            this.btnStatistics.Location = new System.Drawing.Point(0, 294);
             this.btnStatistics.Margin = new System.Windows.Forms.Padding(2);
             this.btnStatistics.Name = "btnStatistics";
             this.btnStatistics.PressedColor = System.Drawing.Color.Transparent;
@@ -536,7 +534,7 @@ namespace Tour
             this.btnLoyalCustomer.HoverState.ForeColor = System.Drawing.Color.Black;
             this.btnLoyalCustomer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLoyalCustomer.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnLoyalCustomer.Location = new System.Drawing.Point(0, 294);
+            this.btnLoyalCustomer.Location = new System.Drawing.Point(0, 245);
             this.btnLoyalCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoyalCustomer.Name = "btnLoyalCustomer";
             this.btnLoyalCustomer.PressedColor = System.Drawing.Color.Transparent;
@@ -563,7 +561,7 @@ namespace Tour
             this.btnCustomer.HoverState.ForeColor = System.Drawing.Color.Black;
             this.btnCustomer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCustomer.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnCustomer.Location = new System.Drawing.Point(0, 245);
+            this.btnCustomer.Location = new System.Drawing.Point(0, 196);
             this.btnCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.PressedColor = System.Drawing.Color.Transparent;
@@ -590,7 +588,7 @@ namespace Tour
             this.btnGroup.HoverState.ForeColor = System.Drawing.Color.Black;
             this.btnGroup.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnGroup.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnGroup.Location = new System.Drawing.Point(0, 196);
+            this.btnGroup.Location = new System.Drawing.Point(0, 147);
             this.btnGroup.Margin = new System.Windows.Forms.Padding(2);
             this.btnGroup.Name = "btnGroup";
             this.btnGroup.PressedColor = System.Drawing.Color.Transparent;
@@ -600,33 +598,6 @@ namespace Tour
             this.btnGroup.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnGroup.TextOffset = new System.Drawing.Point(65, 0);
             this.btnGroup.Click += new System.EventHandler(this.btnGroup_Click);
-            // 
-            // btnMission
-            // 
-            this.btnMission.BackColor = System.Drawing.Color.Linen;
-            this.btnMission.BorderRadius = 10;
-            this.btnMission.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnMission.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnMission.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(175)))));
-            this.btnMission.DisabledState.ForeColor = System.Drawing.Color.Black;
-            this.btnMission.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMission.FillColor = System.Drawing.Color.Linen;
-            this.btnMission.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
-            this.btnMission.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btnMission.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnMission.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMission.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnMission.Location = new System.Drawing.Point(0, 147);
-            this.btnMission.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMission.Name = "btnMission";
-            this.btnMission.PressedColor = System.Drawing.Color.Transparent;
-            this.btnMission.Size = new System.Drawing.Size(247, 49);
-            this.btnMission.TabIndex = 8;
-            this.btnMission.Text = "Mission";
-            this.btnMission.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMission.TextOffset = new System.Drawing.Point(65, 0);
-            this.btnMission.Click += new System.EventHandler(this.btnMission_Click);
             // 
             // btnEmployyeDatabase
             // 
@@ -872,7 +843,6 @@ namespace Tour
         private Guna.UI2.WinForms.Guna2Button btnLoyalCustomer;
         private Guna.UI2.WinForms.Guna2Button btnCustomer;
         private Guna.UI2.WinForms.Guna2Button btnGroup;
-        private Guna.UI2.WinForms.Guna2Button btnMission;
         private Guna.UI2.WinForms.Guna2Button btnEmployyeDatabase;
         private Guna.UI2.WinForms.Guna2Button btnRoute;
         private Guna.UI2.WinForms.Guna2Button btnTicket;

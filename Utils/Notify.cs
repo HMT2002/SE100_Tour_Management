@@ -82,5 +82,35 @@ namespace Tour.Utils
 
             }
         }
+
+        public static void NotificationSelectDateTime(object sender)
+        {
+            try
+            {
+                Guna.UI2.WinForms.Guna2DateTimePicker picker = (Guna.UI2.WinForms.Guna2DateTimePicker)sender;
+
+                picker.FillColor = Color.RosyBrown;
+
+            }
+            catch
+            {
+
+            }
+        }
+
+        public static void UnnotificationSelectDateTime(object sender)
+        {
+            try
+            {
+                Guna.UI2.WinForms.Guna2DateTimePicker picker = (Guna.UI2.WinForms.Guna2DateTimePicker)sender;
+
+                picker.FillColor = Color.White;
+
+            }
+            catch
+            {
+
+            }
+        }
     }
 }

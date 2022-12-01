@@ -73,8 +73,7 @@ namespace Tour
             btndataCus.Dispose();
             panelManage.Controls.Remove(btnEmployyeDatabase);
             btnEmployyeDatabase.Dispose();
-            panelManage.Controls.Remove(btnMission);
-            btnMission.Dispose();
+
             panelManage.Controls.Remove(btnStatistics);
             btnStatistics.Dispose();
 

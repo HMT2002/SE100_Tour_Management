@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using Tour.Model;
 using Tour.Utils;
 
@@ -178,17 +179,40 @@ namespace Tour
         }
         public bool CheckData()
         {
+
+            bool flag = true;
+
+
             if (DateTime.Compare(datetimeNgayKhoiHanh.Value,datetimeNgayKetThuc.Value)>0)
             {
-                return false;
-            }
+                Notify.NotificationSelectDateTime(datetimeNgayKhoiHanh);
+                Notify.NotificationSelectDateTime(datetimeNgayKetThuc);
 
-            if (txtbxTenDoan.Text.Trim().CompareTo(string.Empty) == 0 || cbbxTour.Text.Trim().CompareTo(string.Empty) == 0)
+                flag = false;
+            }
+            if (DateTime.Compare( DateTime.Now.Date,datetimeNgayKhoiHanh.Value) > 0)
             {
-                return false;
+                Notify.NotificationSelectDateTime(datetimeNgayKhoiHanh);
+
+                flag = false;
             }
 
-            return true;
+
+            if (cbbxTour.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationSelect(cbbxTour);
+                flag = false;
+            }
+
+            if (txtbxTenDoan.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(txtbxTenDoan);
+                flag = false;
+            }
+
+
+
+            return flag;
         }
 
 
@@ -199,8 +223,8 @@ namespace Tour
             {
                 try
                 {
-                    randomcode = Converter.Instance.RandomString2(5);
-                    var doan = new DOAN() { ID = randomcode, TEN = txtbxTenDoan.Text, NGAYKHOIHANH = datetimeNgayKhoiHanh.Value, NGAYKETTHUC = datetimeNgayKetThuc.Value,IDTOUR= ((TOUR)(cbbxTour.SelectedItem)).ID,IDCHIPHI="0" ,IsDeleted=false};
+                    //randomcode = Converter.Instance.RandomString2(5);
+                    var doan = new DOAN() { ID = txtbxIDDoan.Text.Trim(), TEN = txtbxTenDoan.Text, NGAYKHOIHANH = datetimeNgayKhoiHanh.Value, NGAYKETTHUC = datetimeNgayKetThuc.Value,IDTOUR= ((TOUR)(cbbxTour.SelectedItem)).ID,IDCHIPHI="0" ,IsDeleted=false};
                     DataProvider.Ins.DB.DOANs.Add(doan);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
@@ -300,16 +324,32 @@ namespace Tour
 
         private void Clear()
         {
-            txtbxIDDoan.Text = txtbxTenDoan.Text = txtbxChiPhi.Text = cbbxTour.Text="";
             cbbxTour.SelectedIndex = -1;
+            cbbxTour.SelectedItem = null;
+            txtbxTenDoan.Text = "";
+            txtbxChiPhi.Text = "";
+            cbbxTour.SelectedText="";
+            cbbxTour.Text = "";
+
             datetimeNgayKhoiHanh.Value = datetimeNgayKetThuc.Value = DateTime.Now;
-            id = "";
+            id = Converter.Instance.RandomString2(5);
+            txtbxIDDoan.Text = id;
             dgvKhachHang.DataSource = null;
             dgvKhachSan.DataSource = null;
             dgvPhuongTien.DataSource = null;
+            UnnotifyAllFields();
 
         }
+        public void UnnotifyAllFields()
+        {
+            Notify.UnnotificationField(txtbxTenDoan);
+            Notify.UnnotificationSelect(cbbxTour);
+            Notify.UnnotificationSelectDateTime(datetimeNgayKhoiHanh);
+            Notify.UnnotificationSelectDateTime(datetimeNgayKetThuc);
 
+
+
+        }
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -389,8 +429,26 @@ namespace Tour
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void txtbxTenDoan_KeyPress(object sender, KeyPressEventArgs e)
         {
+            Notify.UnnotificationField(sender);
+        }
+
+        private void cbbxTour_Enter(object sender, EventArgs e)
+        {
+            Notify.UnnotificationSelect(sender);
+
+        }
+
+        private void datetimeNgayKhoiHanh_Enter(object sender, EventArgs e)
+        {
+            Notify.UnnotificationSelectDateTime(sender);
+
+        }
+
+        private void datetimeNgayKetThuc_Enter(object sender, EventArgs e)
+        {
+            Notify.UnnotificationSelectDateTime(sender);
 
         }
     }

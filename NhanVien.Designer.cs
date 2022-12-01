@@ -63,7 +63,7 @@ namespace Tour
             this.btnThem.BorderRadius = 5;
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.Black;
-            this.btnThem.Location = new System.Drawing.Point(22, 847);
+            this.btnThem.Location = new System.Drawing.Point(22, 781);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(100, 45);
@@ -76,7 +76,7 @@ namespace Tour
             this.btnXoa.BorderRadius = 5;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.Black;
-            this.btnXoa.Location = new System.Drawing.Point(238, 847);
+            this.btnXoa.Location = new System.Drawing.Point(238, 781);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(100, 45);
@@ -89,7 +89,7 @@ namespace Tour
             this.btnUpdate.BorderRadius = 5;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.Location = new System.Drawing.Point(130, 847);
+            this.btnUpdate.Location = new System.Drawing.Point(130, 781);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(100, 45);
@@ -102,7 +102,7 @@ namespace Tour
             this.btnClear.BorderRadius = 5;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.Black;
-            this.btnClear.Location = new System.Drawing.Point(1071, 847);
+            this.btnClear.Location = new System.Drawing.Point(1071, 781);
             this.btnClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(100, 45);
@@ -188,7 +188,7 @@ namespace Tour
             this.dgv_nhanvien.RowTemplate.DividerHeight = 10;
             this.dgv_nhanvien.RowTemplate.Height = 40;
             this.dgv_nhanvien.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgv_nhanvien.Size = new System.Drawing.Size(1160, 421);
+            this.dgv_nhanvien.Size = new System.Drawing.Size(1160, 388);
             this.dgv_nhanvien.TabIndex = 32;
             this.dgv_nhanvien.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_nhanvien.ThemeStyle.AlternatingRowsStyle.Font = null;

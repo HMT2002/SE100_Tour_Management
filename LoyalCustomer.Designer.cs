@@ -44,7 +44,6 @@
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnNew = new Guna.UI2.WinForms.Guna2Button();
-            this.pnCRUD = new System.Windows.Forms.Panel();
             this.pnCreateCustomer = new Guna.UI2.WinForms.Guna2Panel();
             this.pnUpdateCustomer = new Guna.UI2.WinForms.Guna2Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -57,7 +56,6 @@
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvtatar)).BeginInit();
-            this.pnCRUD.SuspendLayout();
             this.pnCreateCustomer.SuspendLayout();
             this.pnUpdateCustomer.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -79,7 +77,7 @@
             this.panel1.Location = new System.Drawing.Point(11, 64);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(437, 445);
+            this.panel1.Size = new System.Drawing.Size(607, 631);
             this.panel1.TabIndex = 2;
             // 
             // lblSpending
@@ -256,19 +254,19 @@
             this.panel2.Controls.Add(this.pcbxAvtatar);
             this.panel2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel2.Location = new System.Drawing.Point(469, 64);
+            this.panel2.Location = new System.Drawing.Point(625, 64);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(404, 309);
+            this.panel2.Size = new System.Drawing.Size(546, 419);
             this.panel2.TabIndex = 29;
             // 
             // pcbxAvtatar
             // 
             this.pcbxAvtatar.Image = global::Tour.Properties.Resources.ic_image_empty_128;
             this.pcbxAvtatar.ImageRotate = 0F;
-            this.pcbxAvtatar.Location = new System.Drawing.Point(15, 3);
+            this.pcbxAvtatar.Location = new System.Drawing.Point(1, -2);
             this.pcbxAvtatar.Name = "pcbxAvtatar";
-            this.pcbxAvtatar.Size = new System.Drawing.Size(398, 247);
+            this.pcbxAvtatar.Size = new System.Drawing.Size(540, 410);
             this.pcbxAvtatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbxAvtatar.TabIndex = 0;
             this.pcbxAvtatar.TabStop = false;
@@ -282,7 +280,7 @@
             this.btnAdd.FillColor = System.Drawing.Color.Transparent;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.Location = new System.Drawing.Point(12, 9);
+            this.btnAdd.Location = new System.Drawing.Point(66, 9);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(146, 44);
             this.btnAdd.TabIndex = 0;
@@ -298,7 +296,7 @@
             this.btnUpdate.FillColor = System.Drawing.Color.Transparent;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.Location = new System.Drawing.Point(121, 4);
+            this.btnUpdate.Location = new System.Drawing.Point(192, 12);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(176, 45);
             this.btnUpdate.TabIndex = 1;
@@ -313,37 +311,28 @@
             this.btnNew.FillColor = System.Drawing.Color.Transparent;
             this.btnNew.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnNew.ForeColor = System.Drawing.Color.Black;
-            this.btnNew.Location = new System.Drawing.Point(225, 9);
+            this.btnNew.Location = new System.Drawing.Point(367, 9);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(146, 44);
             this.btnNew.TabIndex = 2;
             this.btnNew.Text = "Clear";
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
-            // pnCRUD
-            // 
-            this.pnCRUD.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnCRUD.Controls.Add(this.pnCreateCustomer);
-            this.pnCRUD.Location = new System.Drawing.Point(469, 377);
-            this.pnCRUD.Name = "pnCRUD";
-            this.pnCRUD.Size = new System.Drawing.Size(404, 66);
-            this.pnCRUD.TabIndex = 30;
-            // 
             // pnCreateCustomer
             // 
             this.pnCreateCustomer.Controls.Add(this.btnAdd);
             this.pnCreateCustomer.Controls.Add(this.btnNew);
-            this.pnCreateCustomer.Location = new System.Drawing.Point(3, 3);
+            this.pnCreateCustomer.Location = new System.Drawing.Point(622, 576);
             this.pnCreateCustomer.Name = "pnCreateCustomer";
-            this.pnCreateCustomer.Size = new System.Drawing.Size(397, 56);
+            this.pnCreateCustomer.Size = new System.Drawing.Size(546, 56);
             this.pnCreateCustomer.TabIndex = 0;
             // 
             // pnUpdateCustomer
             // 
             this.pnUpdateCustomer.Controls.Add(this.btnUpdate);
-            this.pnUpdateCustomer.Location = new System.Drawing.Point(469, 448);
+            this.pnUpdateCustomer.Location = new System.Drawing.Point(625, 638);
             this.pnUpdateCustomer.Name = "pnUpdateCustomer";
-            this.pnUpdateCustomer.Size = new System.Drawing.Size(401, 60);
+            this.pnUpdateCustomer.Size = new System.Drawing.Size(543, 60);
             this.pnUpdateCustomer.TabIndex = 5;
             // 
             // panel4
@@ -357,10 +346,10 @@
             this.panel4.Controls.Add(this.lblNotes);
             this.panel4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel4.Location = new System.Drawing.Point(9, 522);
+            this.panel4.Location = new System.Drawing.Point(11, 702);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(862, 191);
+            this.panel4.Size = new System.Drawing.Size(1162, 193);
             this.panel4.TabIndex = 29;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
@@ -375,7 +364,7 @@
             this.txtbxNewPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxNewPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtbxNewPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxNewPassword.Location = new System.Drawing.Point(4, 139);
+            this.txtbxNewPassword.Location = new System.Drawing.Point(4, 109);
             this.txtbxNewPassword.Margin = new System.Windows.Forms.Padding(9);
             this.txtbxNewPassword.Name = "txtbxNewPassword";
             this.txtbxNewPassword.PasswordChar = '●';
@@ -394,7 +383,7 @@
             this.btnChangePassword.FillColor = System.Drawing.Color.Transparent;
             this.btnChangePassword.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnChangePassword.ForeColor = System.Drawing.Color.Black;
-            this.btnChangePassword.Location = new System.Drawing.Point(668, 109);
+            this.btnChangePassword.Location = new System.Drawing.Point(972, 4);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(183, 70);
             this.btnChangePassword.TabIndex = 5;
@@ -412,7 +401,7 @@
             this.txtbxRePassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxRePassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtbxRePassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxRePassword.Location = new System.Drawing.Point(4, 84);
+            this.txtbxRePassword.Location = new System.Drawing.Point(4, 54);
             this.txtbxRePassword.Margin = new System.Windows.Forms.Padding(6);
             this.txtbxRePassword.Name = "txtbxRePassword";
             this.txtbxRePassword.PasswordChar = '●';
@@ -434,7 +423,7 @@
             this.txtbxPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtbxPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxPassword.Location = new System.Drawing.Point(4, 34);
+            this.txtbxPassword.Location = new System.Drawing.Point(4, 4);
             this.txtbxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtbxPassword.Name = "txtbxPassword";
             this.txtbxPassword.PasswordChar = '●';
@@ -449,7 +438,7 @@
             // 
             this.lblNotes.BackColor = System.Drawing.Color.Transparent;
             this.lblNotes.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotes.Location = new System.Drawing.Point(668, 155);
+            this.lblNotes.Location = new System.Drawing.Point(972, 155);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(183, 24);
             this.lblNotes.TabIndex = 0;
@@ -461,10 +450,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(1184, 906);
+            this.Controls.Add(this.pnCreateCustomer);
             this.Controls.Add(this.pnUpdateCustomer);
             this.Controls.Add(this.lblRank);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.pnCRUD);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "LoyalCustomer";
@@ -475,7 +464,6 @@
             this.panel6.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvtatar)).EndInit();
-            this.pnCRUD.ResumeLayout(false);
             this.pnCreateCustomer.ResumeLayout(false);
             this.pnUpdateCustomer.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -501,7 +489,6 @@
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2Button btnUpdate;
         private Guna.UI2.WinForms.Guna2Button btnNew;
-        private System.Windows.Forms.Panel pnCRUD;
         private System.Windows.Forms.Panel panel4;
         private Guna.UI2.WinForms.Guna2TextBox txtbxRePassword;
         private Guna.UI2.WinForms.Guna2TextBox txtbxPassword;

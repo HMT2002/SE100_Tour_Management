@@ -142,11 +142,13 @@ namespace Tour
 
         public void Clear()
         {
+            cb_typetour.SelectedIndex = -1;
 
             cb_typetour.Text = "";
+            cb_typetour.SelectedText = "";
+
             tb_nametour.Text = "";
             tb_price.Text = "";
-            cb_typetour.SelectedIndex = -1;
 
             id = Converter.Instance.RandomString2(5);
             tb_idtrip.Text = id;
