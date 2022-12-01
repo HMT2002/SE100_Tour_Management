@@ -260,7 +260,13 @@ namespace Tour
 
         private void button5_Click(object sender, EventArgs e)
         {
+            this.panel4.Controls.Clear();
+            AboutUs tour = new AboutUs() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            tour.StartPosition = FormStartPosition.CenterParent;
+            tour.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
 
+            this.panel4.Controls.Add(tour);
+            tour.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)

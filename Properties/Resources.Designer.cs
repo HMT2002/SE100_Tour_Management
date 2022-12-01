@@ -283,6 +283,16 @@ namespace Tour.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap email_1_ {
+            get {
+                object obj = ResourceManager.GetObject("email(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap exit {
             get {
                 object obj = ResourceManager.GetObject("exit", resourceCulture);
@@ -316,6 +326,26 @@ namespace Tour.Properties {
         internal static System.Drawing.Bitmap felix_rostig_UmV2wr_Vbq8_unsplash {
             get {
                 object obj = ResourceManager.GetObject("felix-rostig-UmV2wr-Vbq8-unsplash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap group {
+            get {
+                object obj = ResourceManager.GetObject("group", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap group_1_ {
+            get {
+                object obj = ResourceManager.GetObject("group(1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -493,6 +523,16 @@ namespace Tour.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap placeholder {
+            get {
+                object obj = ResourceManager.GetObject("placeholder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngtree_bright_poster_conduct_negotiations_cartoon_flat_image_1107239 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-bright-poster-conduct-negotiations-cartoon-flat-image_1107239", resourceCulture);
@@ -516,6 +556,16 @@ namespace Tour.Properties {
         internal static System.Drawing.Bitmap question_1_ {
             get {
                 object obj = ResourceManager.GetObject("question(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rating {
+            get {
+                object obj = ResourceManager.GetObject("rating", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -716,6 +766,16 @@ namespace Tour.Properties {
         internal static System.Drawing.Bitmap Verwhite {
             get {
                 object obj = ResourceManager.GetObject("Verwhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wallpapersden_com_mix_colour_background_1920x1080 {
+            get {
+                object obj = ResourceManager.GetObject("wallpapersden.com_mix-colour-background_1920x1080", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
