@@ -63,17 +63,17 @@
             // 
             // cartesianchartYearly
             // 
-            this.cartesianchartYearly.Location = new System.Drawing.Point(6, 358);
+            this.cartesianchartYearly.Location = new System.Drawing.Point(12, 377);
             this.cartesianchartYearly.Name = "cartesianchartYearly";
-            this.cartesianchartYearly.Size = new System.Drawing.Size(860, 282);
+            this.cartesianchartYearly.Size = new System.Drawing.Size(1168, 295);
             this.cartesianchartYearly.TabIndex = 0;
             this.cartesianchartYearly.Text = "cartesianChart1";
             // 
             // piechartTour
             // 
-            this.piechartTour.Location = new System.Drawing.Point(572, 29);
+            this.piechartTour.Location = new System.Drawing.Point(712, 6);
             this.piechartTour.Name = "piechartTour";
-            this.piechartTour.Size = new System.Drawing.Size(294, 295);
+            this.piechartTour.Size = new System.Drawing.Size(462, 365);
             this.piechartTour.TabIndex = 1;
             this.piechartTour.Text = "pieChart1";
             // 
@@ -81,7 +81,7 @@
             // 
             this.btnViewYearlyReport.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnViewYearlyReport.ForeColor = System.Drawing.Color.White;
-            this.btnViewYearlyReport.Location = new System.Drawing.Point(550, 6);
+            this.btnViewYearlyReport.Location = new System.Drawing.Point(916, 6);
             this.btnViewYearlyReport.Name = "btnViewYearlyReport";
             this.btnViewYearlyReport.Size = new System.Drawing.Size(135, 45);
             this.btnViewYearlyReport.TabIndex = 1;
@@ -92,7 +92,7 @@
             // 
             this.btnMonthlyReport.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnMonthlyReport.ForeColor = System.Drawing.Color.White;
-            this.btnMonthlyReport.Location = new System.Drawing.Point(691, 6);
+            this.btnMonthlyReport.Location = new System.Drawing.Point(1057, 6);
             this.btnMonthlyReport.Name = "btnMonthlyReport";
             this.btnMonthlyReport.Size = new System.Drawing.Size(135, 45);
             this.btnMonthlyReport.TabIndex = 0;
@@ -111,7 +111,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Revenue";
             this.columnchartYearly.Series.Add(series1);
-            this.columnchartYearly.Size = new System.Drawing.Size(560, 334);
+            this.columnchartYearly.Size = new System.Drawing.Size(700, 364);
             this.columnchartYearly.TabIndex = 3;
             this.columnchartYearly.Text = "chart1";
             // 
@@ -123,7 +123,7 @@
             this.guna2TabControl1.Location = new System.Drawing.Point(0, 0);
             this.guna2TabControl1.Name = "guna2TabControl1";
             this.guna2TabControl1.SelectedIndex = 0;
-            this.guna2TabControl1.Size = new System.Drawing.Size(900, 768);
+            this.guna2TabControl1.Size = new System.Drawing.Size(1188, 933);
             this.guna2TabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.guna2TabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
             this.guna2TabControl1.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -151,8 +151,8 @@
             this.tabPage1.Controls.Add(this.piechartTour);
             this.tabPage1.Location = new System.Drawing.Point(4, 44);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage1.Size = new System.Drawing.Size(892, 720);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1180, 885);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Statistic";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -169,8 +169,8 @@
             this.tabPage2.Controls.Add(this.cbbxMonth);
             this.tabPage2.Location = new System.Drawing.Point(4, 44);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage2.Size = new System.Drawing.Size(892, 720);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1192, 897);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Report";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -207,7 +207,7 @@
             this.dgv_report.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_report.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.dgv_report.Location = new System.Drawing.Point(5, 85);
-            this.dgv_report.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_report.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_report.Name = "dgv_report";
             this.dgv_report.RowHeadersVisible = false;
             this.dgv_report.RowHeadersWidth = 51;
@@ -217,7 +217,7 @@
             this.dgv_report.RowTemplate.DividerHeight = 5;
             this.dgv_report.RowTemplate.Height = 40;
             this.dgv_report.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgv_report.Size = new System.Drawing.Size(886, 556);
+            this.dgv_report.Size = new System.Drawing.Size(1180, 715);
             this.dgv_report.TabIndex = 59;
             this.dgv_report.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_report.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -303,7 +303,7 @@
             // 
             this.btnViewTourReport.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnViewTourReport.ForeColor = System.Drawing.Color.White;
-            this.btnViewTourReport.Location = new System.Drawing.Point(409, 6);
+            this.btnViewTourReport.Location = new System.Drawing.Point(775, 6);
             this.btnViewTourReport.Name = "btnViewTourReport";
             this.btnViewTourReport.Size = new System.Drawing.Size(135, 45);
             this.btnViewTourReport.TabIndex = 54;
@@ -314,7 +314,7 @@
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(200, 15);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(299, 15);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(69, 27);
             this.guna2HtmlLabel2.TabIndex = 57;
@@ -346,7 +346,7 @@
             this.cbbxMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbxMonth.FormattingEnabled = true;
             this.cbbxMonth.ItemHeight = 30;
-            this.cbbxMonth.Location = new System.Drawing.Point(275, 15);
+            this.cbbxMonth.Location = new System.Drawing.Point(374, 15);
             this.cbbxMonth.Name = "cbbxMonth";
             this.cbbxMonth.Size = new System.Drawing.Size(121, 36);
             this.cbbxMonth.TabIndex = 55;
@@ -356,7 +356,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 768);
+            this.BackColor = System.Drawing.Color.Linen;
+            this.ClientSize = new System.Drawing.Size(1200, 945);
             this.Controls.Add(this.guna2TabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(900, 768);

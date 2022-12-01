@@ -128,7 +128,7 @@ namespace Tour
             {
                 try
                 {
-                    if (rdIDSearch.Checked)
+                    if (cbbxSearchType.SelectedItem.ToString() == "ID")
                     {
                         dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
                                                     join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
@@ -149,7 +149,7 @@ namespace Tour
 
 
                     }
-                    else if (rdNameSearch.Checked)
+                    else if (cbbxSearchType.SelectedItem.ToString() == "NAME")
                     {
                         dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
                                                     join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
@@ -190,6 +190,8 @@ namespace Tour
 
             return true;
         }
+
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {

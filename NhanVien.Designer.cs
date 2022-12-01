@@ -63,7 +63,7 @@ namespace Tour
             this.btnThem.BorderRadius = 5;
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.Black;
-            this.btnThem.Location = new System.Drawing.Point(776, 155);
+            this.btnThem.Location = new System.Drawing.Point(22, 847);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(100, 45);
@@ -76,7 +76,7 @@ namespace Tour
             this.btnXoa.BorderRadius = 5;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.Black;
-            this.btnXoa.Location = new System.Drawing.Point(776, 265);
+            this.btnXoa.Location = new System.Drawing.Point(238, 847);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(100, 45);
@@ -89,7 +89,7 @@ namespace Tour
             this.btnUpdate.BorderRadius = 5;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.Location = new System.Drawing.Point(776, 210);
+            this.btnUpdate.Location = new System.Drawing.Point(130, 847);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(100, 45);
@@ -102,7 +102,7 @@ namespace Tour
             this.btnClear.BorderRadius = 5;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.Black;
-            this.btnClear.Location = new System.Drawing.Point(776, 45);
+            this.btnClear.Location = new System.Drawing.Point(1071, 847);
             this.btnClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(100, 45);
@@ -124,7 +124,7 @@ namespace Tour
             this.cbbxSearchType.Items.AddRange(new object[] {
             "ID",
             "NAME"});
-            this.cbbxSearchType.Location = new System.Drawing.Point(743, 341);
+            this.cbbxSearchType.Location = new System.Drawing.Point(1039, 341);
             this.cbbxSearchType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbxSearchType.Name = "cbbxSearchType";
             this.cbbxSearchType.Size = new System.Drawing.Size(132, 36);
@@ -137,7 +137,7 @@ namespace Tour
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(641, 345);
+            this.label5.Location = new System.Drawing.Point(937, 345);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 21);
             this.label5.TabIndex = 30;
@@ -175,7 +175,7 @@ namespace Tour
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_nhanvien.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_nhanvien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
-            this.dgv_nhanvien.Location = new System.Drawing.Point(39, 386);
+            this.dgv_nhanvien.Location = new System.Drawing.Point(12, 386);
             this.dgv_nhanvien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_nhanvien.Name = "dgv_nhanvien";
             this.dgv_nhanvien.RowHeadersVisible = false;
@@ -188,7 +188,7 @@ namespace Tour
             this.dgv_nhanvien.RowTemplate.DividerHeight = 10;
             this.dgv_nhanvien.RowTemplate.Height = 40;
             this.dgv_nhanvien.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgv_nhanvien.Size = new System.Drawing.Size(836, 316);
+            this.dgv_nhanvien.Size = new System.Drawing.Size(1160, 421);
             this.dgv_nhanvien.TabIndex = 32;
             this.dgv_nhanvien.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_nhanvien.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -291,7 +291,7 @@ namespace Tour
             this.txtbxID.PlaceholderText = "ID";
             this.txtbxID.ReadOnly = true;
             this.txtbxID.SelectedText = "";
-            this.txtbxID.Size = new System.Drawing.Size(392, 45);
+            this.txtbxID.Size = new System.Drawing.Size(795, 45);
             this.txtbxID.TabIndex = 33;
             // 
             // txtbxMail
@@ -312,7 +312,7 @@ namespace Tour
             this.txtbxMail.PasswordChar = '\0';
             this.txtbxMail.PlaceholderText = "Mail";
             this.txtbxMail.SelectedText = "";
-            this.txtbxMail.Size = new System.Drawing.Size(392, 45);
+            this.txtbxMail.Size = new System.Drawing.Size(795, 45);
             this.txtbxMail.TabIndex = 36;
             this.txtbxMail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxMail_KeyPress);
             // 
@@ -335,7 +335,7 @@ namespace Tour
             this.txtbxSDT.PasswordChar = '\0';
             this.txtbxSDT.PlaceholderText = "Phone";
             this.txtbxSDT.SelectedText = "";
-            this.txtbxSDT.Size = new System.Drawing.Size(392, 45);
+            this.txtbxSDT.Size = new System.Drawing.Size(795, 45);
             this.txtbxSDT.TabIndex = 35;
             this.txtbxSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxSDT_KeyPress);
             // 
@@ -357,7 +357,7 @@ namespace Tour
             this.txtbxName.PasswordChar = '\0';
             this.txtbxName.PlaceholderText = "Name";
             this.txtbxName.SelectedText = "";
-            this.txtbxName.Size = new System.Drawing.Size(392, 45);
+            this.txtbxName.Size = new System.Drawing.Size(795, 45);
             this.txtbxName.TabIndex = 34;
             this.txtbxName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxName_KeyPress);
             // 
@@ -373,13 +373,13 @@ namespace Tour
             this.tb_search.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_search.ForeColor = System.Drawing.Color.Black;
             this.tb_search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb_search.Location = new System.Drawing.Point(376, 334);
+            this.tb_search.Location = new System.Drawing.Point(530, 334);
             this.tb_search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_search.Name = "tb_search";
             this.tb_search.PasswordChar = '\0';
             this.tb_search.PlaceholderText = "Search";
             this.tb_search.SelectedText = "";
-            this.tb_search.Size = new System.Drawing.Size(258, 45);
+            this.tb_search.Size = new System.Drawing.Size(400, 45);
             this.tb_search.TabIndex = 38;
             this.tb_search.TextChanged += new System.EventHandler(this.tb_search_TextChanged_1);
             // 
@@ -401,7 +401,7 @@ namespace Tour
             this.txtbxPassword.PasswordChar = '\0';
             this.txtbxPassword.PlaceholderText = "Password";
             this.txtbxPassword.SelectedText = "";
-            this.txtbxPassword.Size = new System.Drawing.Size(392, 45);
+            this.txtbxPassword.Size = new System.Drawing.Size(795, 45);
             this.txtbxPassword.TabIndex = 37;
             this.txtbxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxPassword_KeyPress);
             // 
@@ -448,7 +448,7 @@ namespace Tour
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(904, 771);
+            this.ClientSize = new System.Drawing.Size(1184, 906);
             this.Controls.Add(this.cbbxRole);
             this.Controls.Add(this.pcbxAvatar);
             this.Controls.Add(this.txtbxPassword);

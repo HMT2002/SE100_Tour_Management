@@ -782,7 +782,7 @@ namespace Tour
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(984, 640);
+            this.ClientSize = new System.Drawing.Size(1200, 945);
             this.Controls.Add(this.cbbxSearchType);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.groupBox1);

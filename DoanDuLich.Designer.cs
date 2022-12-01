@@ -49,8 +49,6 @@ namespace Tour
             this.CHIPHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENTOUR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idtour = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rdNameSearch = new System.Windows.Forms.RadioButton();
-            this.rdIDSearch = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -84,6 +82,7 @@ namespace Tour
             this.dgvPhuongTien = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
+            this.cbbxSearchType = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoan)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -129,8 +128,7 @@ namespace Tour
             this.TENTOUR,
             this.idtour});
             this.dgvDoan.EnableHeadersVisualStyles = false;
-            this.dgvDoan.Location = new System.Drawing.Point(10, 60);
-            this.dgvDoan.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvDoan.Location = new System.Drawing.Point(8, 49);
             this.dgvDoan.Name = "dgvDoan";
             this.dgvDoan.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -143,7 +141,7 @@ namespace Tour
             this.dgvDoan.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDoan.RowHeadersWidth = 51;
             this.dgvDoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDoan.Size = new System.Drawing.Size(1059, 342);
+            this.dgvDoan.Size = new System.Drawing.Size(1137, 463);
             this.dgvDoan.TabIndex = 8;
             this.dgvDoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dgvDoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDoan_CellContentClick);
@@ -212,44 +210,13 @@ namespace Tour
             this.idtour.Visible = false;
             this.idtour.Width = 125;
             // 
-            // rdNameSearch
-            // 
-            this.rdNameSearch.AutoSize = true;
-            this.rdNameSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdNameSearch.ForeColor = System.Drawing.Color.Black;
-            this.rdNameSearch.Location = new System.Drawing.Point(332, 18);
-            this.rdNameSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rdNameSearch.Name = "rdNameSearch";
-            this.rdNameSearch.Size = new System.Drawing.Size(77, 26);
-            this.rdNameSearch.TabIndex = 20;
-            this.rdNameSearch.Text = "Name";
-            this.rdNameSearch.UseVisualStyleBackColor = true;
-            this.rdNameSearch.Enter += new System.EventHandler(this.rdNameSearch_Enter);
-            // 
-            // rdIDSearch
-            // 
-            this.rdIDSearch.AutoSize = true;
-            this.rdIDSearch.Checked = true;
-            this.rdIDSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdIDSearch.ForeColor = System.Drawing.Color.Black;
-            this.rdIDSearch.Location = new System.Drawing.Point(263, 17);
-            this.rdIDSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rdIDSearch.Name = "rdIDSearch";
-            this.rdIDSearch.Size = new System.Drawing.Size(51, 26);
-            this.rdIDSearch.TabIndex = 19;
-            this.rdIDSearch.TabStop = true;
-            this.rdIDSearch.Text = "ID";
-            this.rdIDSearch.UseVisualStyleBackColor = true;
-            this.rdIDSearch.Enter += new System.EventHandler(this.rdIDSearch_Enter);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(335, 28);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(417, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 22);
+            this.label1.Size = new System.Drawing.Size(104, 19);
             this.label1.TabIndex = 26;
             this.label1.Text = "Ngày khởi hành";
             // 
@@ -257,10 +224,9 @@ namespace Tour
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(335, 83);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(417, 69);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 22);
+            this.label2.Size = new System.Drawing.Size(81, 19);
             this.label2.TabIndex = 27;
             this.label2.Text = "Ngày trở về";
             // 
@@ -268,10 +234,9 @@ namespace Tour
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(16, 83);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(12, 67);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 22);
+            this.label3.Size = new System.Drawing.Size(37, 19);
             this.label3.TabIndex = 28;
             this.label3.Text = "Tour";
             // 
@@ -279,10 +244,9 @@ namespace Tour
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(16, 28);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(12, 23);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 22);
+            this.label4.Size = new System.Drawing.Size(59, 19);
             this.label4.TabIndex = 29;
             this.label4.Text = "ID đoàn";
             // 
@@ -290,10 +254,9 @@ namespace Tour
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(752, 28);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(809, 23);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 22);
+            this.label5.Size = new System.Drawing.Size(66, 19);
             this.label5.TabIndex = 30;
             this.label5.Text = "Tên đoàn";
             // 
@@ -301,24 +264,21 @@ namespace Tour
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(756, 83);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(812, 67);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 22);
+            this.label6.Size = new System.Drawing.Size(52, 19);
             this.label6.TabIndex = 31;
             this.label6.Text = "Chi phí";
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cbbxSearchType);
             this.panel1.Controls.Add(this.btnNhiemVu);
             this.panel1.Controls.Add(this.tb_search);
             this.panel1.Controls.Add(this.dgvDoan);
-            this.panel1.Controls.Add(this.rdIDSearch);
-            this.panel1.Controls.Add(this.rdNameSearch);
-            this.panel1.Location = new System.Drawing.Point(54, 514);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(40, 418);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1084, 406);
+            this.panel1.Size = new System.Drawing.Size(1148, 515);
             this.panel1.TabIndex = 33;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -332,9 +292,10 @@ namespace Tour
             this.btnNhiemVu.FillColor = System.Drawing.Color.DarkViolet;
             this.btnNhiemVu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.btnNhiemVu.ForeColor = System.Drawing.Color.White;
-            this.btnNhiemVu.Location = new System.Drawing.Point(900, 8);
+            this.btnNhiemVu.Location = new System.Drawing.Point(1018, 6);
+            this.btnNhiemVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNhiemVu.Name = "btnNhiemVu";
-            this.btnNhiemVu.Size = new System.Drawing.Size(169, 45);
+            this.btnNhiemVu.Size = new System.Drawing.Size(127, 37);
             this.btnNhiemVu.TabIndex = 42;
             this.btnNhiemVu.Text = "Giao nhiệm vụ";
             // 
@@ -349,12 +310,13 @@ namespace Tour
             this.tb_search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_search.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tb_search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb_search.Location = new System.Drawing.Point(10, 8);
+            this.tb_search.Location = new System.Drawing.Point(8, 6);
+            this.tb_search.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tb_search.Name = "tb_search";
             this.tb_search.PasswordChar = '\0';
             this.tb_search.PlaceholderText = "";
             this.tb_search.SelectedText = "";
-            this.tb_search.Size = new System.Drawing.Size(225, 36);
+            this.tb_search.Size = new System.Drawing.Size(875, 36);
             this.tb_search.TabIndex = 41;
             // 
             // panel2
@@ -375,10 +337,9 @@ namespace Tour
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(48, 295);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(36, 240);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1090, 177);
+            this.panel2.Size = new System.Drawing.Size(1149, 172);
             this.panel2.TabIndex = 34;
             // 
             // btnClear
@@ -391,9 +352,10 @@ namespace Tour
             this.btnClear.FillColor = System.Drawing.Color.DeepSkyBlue;
             this.btnClear.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(790, 122);
+            this.btnClear.Location = new System.Drawing.Point(795, 133);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(138, 45);
+            this.btnClear.Size = new System.Drawing.Size(104, 37);
             this.btnClear.TabIndex = 41;
             this.btnClear.Text = "Mới";
             // 
@@ -410,13 +372,14 @@ namespace Tour
             this.txtbxChiPhi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxChiPhi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtbxChiPhi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxChiPhi.Location = new System.Drawing.Point(845, 69);
+            this.txtbxChiPhi.Location = new System.Drawing.Point(879, 56);
+            this.txtbxChiPhi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtbxChiPhi.Name = "txtbxChiPhi";
             this.txtbxChiPhi.PasswordChar = '\0';
             this.txtbxChiPhi.PlaceholderText = "";
             this.txtbxChiPhi.ReadOnly = true;
             this.txtbxChiPhi.SelectedText = "";
-            this.txtbxChiPhi.Size = new System.Drawing.Size(225, 36);
+            this.txtbxChiPhi.Size = new System.Drawing.Size(233, 29);
             this.txtbxChiPhi.TabIndex = 40;
             // 
             // txtbxTenDoan
@@ -430,12 +393,13 @@ namespace Tour
             this.txtbxTenDoan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxTenDoan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtbxTenDoan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxTenDoan.Location = new System.Drawing.Point(845, 14);
+            this.txtbxTenDoan.Location = new System.Drawing.Point(879, 11);
+            this.txtbxTenDoan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtbxTenDoan.Name = "txtbxTenDoan";
             this.txtbxTenDoan.PasswordChar = '\0';
             this.txtbxTenDoan.PlaceholderText = "";
             this.txtbxTenDoan.SelectedText = "";
-            this.txtbxTenDoan.Size = new System.Drawing.Size(225, 36);
+            this.txtbxTenDoan.Size = new System.Drawing.Size(233, 29);
             this.txtbxTenDoan.TabIndex = 39;
             // 
             // datetimeNgayKetThuc
@@ -444,11 +408,12 @@ namespace Tour
             this.datetimeNgayKetThuc.FillColor = System.Drawing.Color.White;
             this.datetimeNgayKetThuc.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.datetimeNgayKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.datetimeNgayKetThuc.Location = new System.Drawing.Point(475, 69);
+            this.datetimeNgayKetThuc.Location = new System.Drawing.Point(522, 58);
+            this.datetimeNgayKetThuc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.datetimeNgayKetThuc.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.datetimeNgayKetThuc.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.datetimeNgayKetThuc.Name = "datetimeNgayKetThuc";
-            this.datetimeNgayKetThuc.Size = new System.Drawing.Size(270, 36);
+            this.datetimeNgayKetThuc.Size = new System.Drawing.Size(267, 29);
             this.datetimeNgayKetThuc.TabIndex = 38;
             this.datetimeNgayKetThuc.Value = new System.DateTime(2022, 11, 20, 21, 8, 38, 956);
             // 
@@ -459,11 +424,12 @@ namespace Tour
             this.datetimeNgayKhoiHanh.FocusedColor = System.Drawing.Color.White;
             this.datetimeNgayKhoiHanh.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.datetimeNgayKhoiHanh.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.datetimeNgayKhoiHanh.Location = new System.Drawing.Point(475, 14);
+            this.datetimeNgayKhoiHanh.Location = new System.Drawing.Point(526, 13);
+            this.datetimeNgayKhoiHanh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.datetimeNgayKhoiHanh.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.datetimeNgayKhoiHanh.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.datetimeNgayKhoiHanh.Name = "datetimeNgayKhoiHanh";
-            this.datetimeNgayKhoiHanh.Size = new System.Drawing.Size(270, 36);
+            this.datetimeNgayKhoiHanh.Size = new System.Drawing.Size(263, 29);
             this.datetimeNgayKhoiHanh.TabIndex = 37;
             this.datetimeNgayKhoiHanh.Value = new System.DateTime(2022, 11, 20, 21, 8, 38, 956);
             // 
@@ -477,9 +443,10 @@ namespace Tour
             this.btnUpdate.FillColor = System.Drawing.Color.Gold;
             this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnUpdate.Location = new System.Drawing.Point(589, 122);
+            this.btnUpdate.Location = new System.Drawing.Point(645, 133);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(138, 45);
+            this.btnUpdate.Size = new System.Drawing.Size(104, 37);
             this.btnUpdate.TabIndex = 36;
             this.btnUpdate.Text = "Sửa";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -494,9 +461,10 @@ namespace Tour
             this.btnXoa.FillColor = System.Drawing.Color.OrangeRed;
             this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(392, 122);
+            this.btnXoa.Location = new System.Drawing.Point(497, 133);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(138, 45);
+            this.btnXoa.Size = new System.Drawing.Size(104, 37);
             this.btnXoa.TabIndex = 35;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -511,9 +479,10 @@ namespace Tour
             this.btnAdd.FillColor = System.Drawing.Color.LimeGreen;
             this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(188, 122);
+            this.btnAdd.Location = new System.Drawing.Point(344, 133);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(138, 45);
+            this.btnAdd.Size = new System.Drawing.Size(104, 37);
             this.btnAdd.TabIndex = 34;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -528,9 +497,10 @@ namespace Tour
             this.cbbxTour.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbxTour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbxTour.ItemHeight = 30;
-            this.cbbxTour.Location = new System.Drawing.Point(96, 69);
+            this.cbbxTour.Location = new System.Drawing.Point(72, 56);
+            this.cbbxTour.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbbxTour.Name = "cbbxTour";
-            this.cbbxTour.Size = new System.Drawing.Size(225, 36);
+            this.cbbxTour.Size = new System.Drawing.Size(284, 36);
             this.cbbxTour.TabIndex = 33;
             // 
             // txtbxIDDoan
@@ -546,22 +516,22 @@ namespace Tour
             this.txtbxIDDoan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxIDDoan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtbxIDDoan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxIDDoan.Location = new System.Drawing.Point(96, 14);
+            this.txtbxIDDoan.Location = new System.Drawing.Point(72, 11);
+            this.txtbxIDDoan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtbxIDDoan.Name = "txtbxIDDoan";
             this.txtbxIDDoan.PasswordChar = '\0';
             this.txtbxIDDoan.PlaceholderText = "";
             this.txtbxIDDoan.ReadOnly = true;
             this.txtbxIDDoan.SelectedText = "";
-            this.txtbxIDDoan.Size = new System.Drawing.Size(225, 36);
+            this.txtbxIDDoan.Size = new System.Drawing.Size(284, 29);
             this.txtbxIDDoan.TabIndex = 32;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.dgvKhachHang);
-            this.panel3.Location = new System.Drawing.Point(48, 67);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Location = new System.Drawing.Point(36, 54);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(374, 201);
+            this.panel3.Size = new System.Drawing.Size(432, 163);
             this.panel3.TabIndex = 35;
             // 
             // dgvKhachHang
@@ -594,7 +564,6 @@ namespace Tour
             this.TENKHACHHANG});
             this.dgvKhachHang.EnableHeadersVisualStyles = false;
             this.dgvKhachHang.Location = new System.Drawing.Point(0, 0);
-            this.dgvKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -607,7 +576,7 @@ namespace Tour
             this.dgvKhachHang.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvKhachHang.RowHeadersWidth = 51;
             this.dgvKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvKhachHang.Size = new System.Drawing.Size(364, 193);
+            this.dgvKhachHang.Size = new System.Drawing.Size(429, 157);
             this.dgvKhachHang.TabIndex = 32;
             // 
             // IDKHACHHANG
@@ -629,18 +598,16 @@ namespace Tour
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Controls.Add(this.btnAddHotelForGroup);
             this.panel4.Controls.Add(this.dgvKhachSan);
-            this.panel4.Location = new System.Drawing.Point(432, 66);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Location = new System.Drawing.Point(478, 54);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(349, 201);
+            this.panel4.Size = new System.Drawing.Size(347, 163);
             this.panel4.TabIndex = 36;
             // 
             // btnAddHotelForGroup
             // 
-            this.btnAddHotelForGroup.Location = new System.Drawing.Point(303, 0);
-            this.btnAddHotelForGroup.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddHotelForGroup.Location = new System.Drawing.Point(313, 0);
             this.btnAddHotelForGroup.Name = "btnAddHotelForGroup";
-            this.btnAddHotelForGroup.Size = new System.Drawing.Size(37, 28);
+            this.btnAddHotelForGroup.Size = new System.Drawing.Size(28, 23);
             this.btnAddHotelForGroup.TabIndex = 26;
             this.btnAddHotelForGroup.Text = "+";
             this.btnAddHotelForGroup.UseVisualStyleBackColor = true;
@@ -675,7 +642,6 @@ namespace Tour
             this.dataGridViewTextBoxColumn2});
             this.dgvKhachSan.EnableHeadersVisualStyles = false;
             this.dgvKhachSan.Location = new System.Drawing.Point(0, 1);
-            this.dgvKhachSan.Margin = new System.Windows.Forms.Padding(4);
             this.dgvKhachSan.Name = "dgvKhachSan";
             this.dgvKhachSan.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -688,7 +654,7 @@ namespace Tour
             this.dgvKhachSan.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvKhachSan.RowHeadersWidth = 51;
             this.dgvKhachSan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvKhachSan.Size = new System.Drawing.Size(291, 193);
+            this.dgvKhachSan.Size = new System.Drawing.Size(307, 157);
             this.dgvKhachSan.TabIndex = 32;
             // 
             // dataGridViewTextBoxColumn2
@@ -703,18 +669,16 @@ namespace Tour
             this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.Controls.Add(this.btnAddVehicalForGroup);
             this.panel5.Controls.Add(this.dgvPhuongTien);
-            this.panel5.Location = new System.Drawing.Point(795, 67);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.panel5.Location = new System.Drawing.Point(831, 55);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(343, 201);
+            this.panel5.Size = new System.Drawing.Size(354, 163);
             this.panel5.TabIndex = 37;
             // 
             // btnAddVehicalForGroup
             // 
-            this.btnAddVehicalForGroup.Location = new System.Drawing.Point(297, 0);
-            this.btnAddVehicalForGroup.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddVehicalForGroup.Location = new System.Drawing.Point(323, 0);
             this.btnAddVehicalForGroup.Name = "btnAddVehicalForGroup";
-            this.btnAddVehicalForGroup.Size = new System.Drawing.Size(37, 28);
+            this.btnAddVehicalForGroup.Size = new System.Drawing.Size(28, 23);
             this.btnAddVehicalForGroup.TabIndex = 26;
             this.btnAddVehicalForGroup.Text = "+";
             this.btnAddVehicalForGroup.UseVisualStyleBackColor = true;
@@ -748,8 +712,7 @@ namespace Tour
             this.dgvPhuongTien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4});
             this.dgvPhuongTien.EnableHeadersVisualStyles = false;
-            this.dgvPhuongTien.Location = new System.Drawing.Point(4, 0);
-            this.dgvPhuongTien.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvPhuongTien.Location = new System.Drawing.Point(3, 0);
             this.dgvPhuongTien.Name = "dgvPhuongTien";
             this.dgvPhuongTien.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -762,7 +725,7 @@ namespace Tour
             this.dgvPhuongTien.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvPhuongTien.RowHeadersWidth = 51;
             this.dgvPhuongTien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPhuongTien.Size = new System.Drawing.Size(285, 193);
+            this.dgvPhuongTien.Size = new System.Drawing.Size(314, 157);
             this.dgvPhuongTien.TabIndex = 32;
             // 
             // dataGridViewTextBoxColumn4
@@ -778,15 +741,37 @@ namespace Tour
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label7.ForeColor = System.Drawing.Color.BlueViolet;
-            this.label7.Location = new System.Drawing.Point(335, 1);
+            this.label7.Location = new System.Drawing.Point(359, 8);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(446, 53);
+            this.label7.Size = new System.Drawing.Size(450, 43);
             this.label7.TabIndex = 38;
-            this.label7.Text = "Quản lý đoàn du lịch";
+            this.label7.Text = "GROUP MANAGEMENT";
+            // 
+            // cbbxSearchType
+            // 
+            this.cbbxSearchType.BackColor = System.Drawing.Color.Transparent;
+            this.cbbxSearchType.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
+            this.cbbxSearchType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbxSearchType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbxSearchType.FocusedColor = System.Drawing.Color.Empty;
+            this.cbbxSearchType.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbxSearchType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbxSearchType.FormattingEnabled = true;
+            this.cbbxSearchType.ItemHeight = 30;
+            this.cbbxSearchType.Items.AddRange(new object[] {
+            "ID",
+            "NAME"});
+            this.cbbxSearchType.Location = new System.Drawing.Point(888, 6);
+            this.cbbxSearchType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbbxSearchType.Name = "cbbxSearchType";
+            this.cbbxSearchType.Size = new System.Drawing.Size(125, 36);
+            this.cbbxSearchType.StartIndex = 0;
+            this.cbbxSearchType.TabIndex = 43;
             // 
             // DoanDuLich
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -798,13 +783,11 @@ namespace Tour
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DoanDuLich";
             this.Text = "DoanDuLich";
             this.Load += new System.EventHandler(this.DoanDuLich_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoan)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -820,8 +803,6 @@ namespace Tour
 
         #endregion
         private System.Windows.Forms.DataGridView dgvDoan;
-        private System.Windows.Forms.RadioButton rdNameSearch;
-        private System.Windows.Forms.RadioButton rdIDSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -862,5 +843,6 @@ namespace Tour
         private System.Windows.Forms.DataGridViewTextBoxColumn CHIPHI;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENTOUR;
         private System.Windows.Forms.DataGridViewTextBoxColumn idtour;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbxSearchType;
     }
 }

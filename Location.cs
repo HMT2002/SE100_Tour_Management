@@ -271,5 +271,10 @@ namespace Tour
             Utils.Validate.EnterCurrencyVnd(sender);
 
         }
+
+        private void pcbxLocation_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

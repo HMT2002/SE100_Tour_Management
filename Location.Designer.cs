@@ -34,7 +34,6 @@ namespace Tour
             this.rchtxtbxDetail = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnPickPicture = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.cbbxLocation = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,12 +59,13 @@ namespace Tour
             // 
             this.pcbxLocation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pcbxLocation.Image = global::Tour.Properties.Resources.ic_image_empty_128;
-            this.pcbxLocation.Location = new System.Drawing.Point(6, 3);
+            this.pcbxLocation.Location = new System.Drawing.Point(3, 3);
             this.pcbxLocation.Name = "pcbxLocation";
-            this.pcbxLocation.Size = new System.Drawing.Size(518, 426);
+            this.pcbxLocation.Size = new System.Drawing.Size(553, 488);
             this.pcbxLocation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbxLocation.TabIndex = 0;
             this.pcbxLocation.TabStop = false;
+            this.pcbxLocation.Click += new System.EventHandler(this.pcbxLocation_Click);
             // 
             // rchtxtbxDetail
             // 
@@ -86,7 +86,7 @@ namespace Tour
             this.label1.Location = new System.Drawing.Point(131, 282);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 28);
+            this.label1.Size = new System.Drawing.Size(26, 21);
             this.label1.TabIndex = 2;
             this.label1.Text = "ID";
             // 
@@ -94,36 +94,12 @@ namespace Tour
             // 
             this.panel3.AutoSize = true;
             this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Controls.Add(this.btnPickPicture);
             this.panel3.Controls.Add(this.pcbxLocation);
-            this.panel3.Location = new System.Drawing.Point(632, 218);
+            this.panel3.Location = new System.Drawing.Point(628, 297);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(531, 602);
+            this.panel3.Size = new System.Drawing.Size(559, 495);
             this.panel3.TabIndex = 3;
-            // 
-            // btnPickPicture
-            // 
-            this.btnPickPicture.BackColor = System.Drawing.Color.Transparent;
-            this.btnPickPicture.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
-            this.btnPickPicture.BorderRadius = 5;
-            this.btnPickPicture.BorderThickness = 1;
-            this.btnPickPicture.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnPickPicture.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnPickPicture.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnPickPicture.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPickPicture.FillColor = System.Drawing.Color.Linen;
-            this.btnPickPicture.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPickPicture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
-            this.btnPickPicture.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
-            this.btnPickPicture.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnPickPicture.Location = new System.Drawing.Point(170, 486);
-            this.btnPickPicture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnPickPicture.Name = "btnPickPicture";
-            this.btnPickPicture.Size = new System.Drawing.Size(205, 63);
-            this.btnPickPicture.TabIndex = 22;
-            this.btnPickPicture.Text = "Choose image";
-            this.btnPickPicture.Click += new System.EventHandler(this.btnPickPicture_Click);
             // 
             // guna2ShadowForm1
             // 
@@ -161,7 +137,7 @@ namespace Tour
             this.label2.Location = new System.Drawing.Point(71, 402);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 28);
+            this.label2.Size = new System.Drawing.Size(76, 21);
             this.label2.TabIndex = 4;
             this.label2.Text = "Cost/day";
             // 
@@ -173,7 +149,7 @@ namespace Tour
             this.label3.Location = new System.Drawing.Point(97, 342);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 28);
+            this.label3.Size = new System.Drawing.Size(53, 21);
             this.label3.TabIndex = 3;
             this.label3.Text = "Name";
             // 
@@ -185,7 +161,7 @@ namespace Tour
             this.label5.Location = new System.Drawing.Point(31, 462);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(132, 28);
+            this.label5.Size = new System.Drawing.Size(108, 21);
             this.label5.TabIndex = 5;
             this.label5.Text = "Province/City";
             // 
@@ -198,7 +174,7 @@ namespace Tour
             this.label4.Location = new System.Drawing.Point(74, 222);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 28);
+            this.label4.Size = new System.Drawing.Size(73, 21);
             this.label4.TabIndex = 1;
             this.label4.Text = "Location";
             // 
@@ -290,7 +266,7 @@ namespace Tour
             this.label7.Location = new System.Drawing.Point(36, 517);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 28);
+            this.label7.Size = new System.Drawing.Size(52, 21);
             this.label7.TabIndex = 42;
             this.label7.Text = "Detail";
             // 
@@ -341,7 +317,6 @@ namespace Tour
             this.txtbxGia.FillColor = System.Drawing.Color.Bisque;
             this.txtbxGia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxGia.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.txtbxGia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.txtbxGia.Location = new System.Drawing.Point(208, 394);
             this.txtbxGia.Margin = new System.Windows.Forms.Padding(5);
@@ -403,7 +378,7 @@ namespace Tour
             this.cbboxProvince.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbboxProvince.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbboxProvince.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbboxProvince.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.cbboxProvince.ForeColor = System.Drawing.Color.Black;
             this.cbboxProvince.IntegralHeight = false;
             this.cbboxProvince.ItemHeight = 30;
             this.cbboxProvince.Location = new System.Drawing.Point(208, 458);
@@ -471,7 +446,6 @@ namespace Tour
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2Button btnPickPicture;
         private Guna.UI2.WinForms.Guna2Button btnXoa;
         private Guna.UI2.WinForms.Guna2Button btnUpdate;
         private Guna.UI2.WinForms.Guna2Button btnAdd;

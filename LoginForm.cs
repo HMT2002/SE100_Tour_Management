@@ -56,11 +56,20 @@ namespace Tour
         }
         private void exitbtn_Click(object sender, EventArgs e)
         {
-            //if (MessageBox.Show("Do you want to exit the program?", "Nofitication", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
-            //{
-            //    Application.Exit();
-            //}
-            Application.Exit();
+            if (MessageBox.Show("Do you want to exit the program?", "Nofitication", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
+            {
+                return;
+            }
+            if (System.Windows.Forms.Application.MessageLoop)
+            {
+                // WinForms app
+                System.Windows.Forms.Application.Exit();
+            }
+            else
+            {
+                // Console app
+                System.Environment.Exit(1);
+            }
 
         }
         public void loginbtn_Click(object sender, EventArgs e)

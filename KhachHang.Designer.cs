@@ -36,10 +36,6 @@ namespace Tour
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tb_search = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cbbxSearchType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ten_khach_hang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,8 +43,11 @@ namespace Tour
             this.CMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GIOITINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DOAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tb_search = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbbxSearchType = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2ShadowForm1
@@ -93,7 +92,7 @@ namespace Tour
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.guna2DataGridView1.GridColor = System.Drawing.Color.Silver;
+            this.guna2DataGridView1.GridColor = System.Drawing.Color.Gainsboro;
             this.guna2DataGridView1.Location = new System.Drawing.Point(40, 150);
             this.guna2DataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
@@ -108,7 +107,7 @@ namespace Tour
             this.guna2DataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowHeadersWidth = 51;
-            this.guna2DataGridView1.RowTemplate.Height = 24;
+            this.guna2DataGridView1.RowTemplate.Height = 35;
             this.guna2DataGridView1.Size = new System.Drawing.Size(806, 544);
             this.guna2DataGridView1.TabIndex = 6;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -132,6 +131,62 @@ namespace Tour
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 35;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.Width = 50;
+            // 
+            // ten_khach_hang
+            // 
+            this.ten_khach_hang.DataPropertyName = "TENKH";
+            this.ten_khach_hang.HeaderText = "Customer\'s name";
+            this.ten_khach_hang.MinimumWidth = 6;
+            this.ten_khach_hang.Name = "ten_khach_hang";
+            this.ten_khach_hang.Width = 200;
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "Phone";
+            this.SDT.MinimumWidth = 6;
+            this.SDT.Name = "SDT";
+            this.SDT.Width = 160;
+            // 
+            // DIACHI
+            // 
+            this.DIACHI.DataPropertyName = "DIACHI";
+            this.DIACHI.HeaderText = "Address";
+            this.DIACHI.MinimumWidth = 6;
+            this.DIACHI.Name = "DIACHI";
+            this.DIACHI.Width = 235;
+            // 
+            // CMND
+            // 
+            this.CMND.DataPropertyName = "CMND";
+            this.CMND.HeaderText = "Citizen ID";
+            this.CMND.MinimumWidth = 6;
+            this.CMND.Name = "CMND";
+            this.CMND.Width = 149;
+            // 
+            // GIOITINH
+            // 
+            this.GIOITINH.DataPropertyName = "GIOITINH";
+            this.GIOITINH.HeaderText = "Gender";
+            this.GIOITINH.MinimumWidth = 6;
+            this.GIOITINH.Name = "GIOITINH";
+            this.GIOITINH.Width = 125;
+            // 
+            // DOAN
+            // 
+            this.DOAN.DataPropertyName = "DOANDULICH";
+            this.DOAN.HeaderText = "Group\'s name";
+            this.DOAN.MinimumWidth = 6;
+            this.DOAN.Name = "DOAN";
+            this.DOAN.Width = 149;
             // 
             // label2
             // 
@@ -200,68 +255,12 @@ namespace Tour
             this.cbbxSearchType.StartIndex = 0;
             this.cbbxSearchType.TabIndex = 38;
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.Width = 50;
-            // 
-            // ten_khach_hang
-            // 
-            this.ten_khach_hang.DataPropertyName = "TENKH";
-            this.ten_khach_hang.HeaderText = "Customer\'s name";
-            this.ten_khach_hang.MinimumWidth = 6;
-            this.ten_khach_hang.Name = "ten_khach_hang";
-            this.ten_khach_hang.Width = 200;
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "Phone";
-            this.SDT.MinimumWidth = 6;
-            this.SDT.Name = "SDT";
-            this.SDT.Width = 160;
-            // 
-            // DIACHI
-            // 
-            this.DIACHI.DataPropertyName = "DIACHI";
-            this.DIACHI.HeaderText = "Address";
-            this.DIACHI.MinimumWidth = 6;
-            this.DIACHI.Name = "DIACHI";
-            this.DIACHI.Width = 235;
-            // 
-            // CMND
-            // 
-            this.CMND.DataPropertyName = "CMND";
-            this.CMND.HeaderText = "Citizen ID";
-            this.CMND.MinimumWidth = 6;
-            this.CMND.Name = "CMND";
-            this.CMND.Width = 149;
-            // 
-            // GIOITINH
-            // 
-            this.GIOITINH.DataPropertyName = "GIOITINH";
-            this.GIOITINH.HeaderText = "Gender";
-            this.GIOITINH.MinimumWidth = 6;
-            this.GIOITINH.Name = "GIOITINH";
-            this.GIOITINH.Width = 125;
-            // 
-            // DOAN
-            // 
-            this.DOAN.DataPropertyName = "DOANDULICH";
-            this.DOAN.HeaderText = "Group\'s name";
-            this.DOAN.MinimumWidth = 6;
-            this.DOAN.Name = "DOAN";
-            this.DOAN.Width = 149;
-            // 
             // KhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(900, 768);
+            this.ClientSize = new System.Drawing.Size(1200, 945);
             this.Controls.Add(this.tb_search);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbbxSearchType);
@@ -272,7 +271,6 @@ namespace Tour
             this.Text = "KhachHang";
             this.Load += new System.EventHandler(this.KhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

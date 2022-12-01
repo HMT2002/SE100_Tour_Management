@@ -214,10 +214,9 @@ namespace Tour
         private void button7_Click(object sender, EventArgs e)
         {
             hideSubmenu();
-            if (MessageBox.Show("Are you sure to log out your account?", "Nofitication", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
-            {
-                this.Close();
-            }
+
+            this.Close();
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -244,9 +243,6 @@ namespace Tour
         {
             this.panel4.Controls.Clear();
             Tour tour = new Tour() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, StartPosition = FormStartPosition.CenterParent, WindowState = FormWindowState.Maximized };
-            //panel1.Visible = false;
-            //picBackground.Visible = false;
-            tour.StartPosition = FormStartPosition.CenterParent;
             tour.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
 
             this.panel4.Controls.Add(tour);
@@ -258,7 +254,6 @@ namespace Tour
             this.panel4.Controls.Clear();
             DangKy dk = new DangKy() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, StartPosition = FormStartPosition.CenterParent, WindowState = FormWindowState.Maximized };
             dk.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
-
             this.panel4.Controls.Add(dk);
             dk.Show();
 
@@ -386,6 +381,18 @@ namespace Tour
             h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
             this.panel4.Controls.Add(h);
             h.Show();
+        }
+
+        private void SelectForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Do you want to Log out the account?", "Nofitication", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                
+            }
         }
     }
 }

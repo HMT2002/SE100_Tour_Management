@@ -576,11 +576,10 @@ namespace Tour
                 {
                     MessageBox.Show("Invalidate Email", "Error");
                     tbEmail.SelectAll();
-                    btCreate.Enabled = false;
                 }
                 else
                 {
-                    btCreate.Enabled = true;
+
                 }
             }
         }

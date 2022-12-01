@@ -41,6 +41,7 @@
             this.BANNER = new System.Windows.Forms.DataGridViewImageColumn();
             this.tb_search = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cb_typetour = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.btnAddLocation = new Guna.UI2.WinForms.Guna2Button();
             this.tb_nametour = new Guna.UI2.WinForms.Guna2TextBox();
@@ -57,19 +58,20 @@
             this.btn_delete = new Guna.UI2.WinForms.Guna2Button();
             this.btn_update = new Guna.UI2.WinForms.Guna2Button();
             this.btn_add = new Guna.UI2.WinForms.Guna2Button();
-            this.cb_typetour = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_trip)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgv_trip);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 375);
+            this.groupBox1.Location = new System.Drawing.Point(12, 387);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(878, 382);
+            this.groupBox1.Size = new System.Drawing.Size(1176, 546);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tour list";
@@ -108,7 +110,7 @@
             this.dgv_trip.RowHeadersVisible = false;
             this.dgv_trip.RowHeadersWidth = 50;
             this.dgv_trip.RowTemplate.Height = 100;
-            this.dgv_trip.Size = new System.Drawing.Size(863, 351);
+            this.dgv_trip.Size = new System.Drawing.Size(1164, 515);
             this.dgv_trip.TabIndex = 2;
             this.dgv_trip.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_trip.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -170,9 +172,9 @@
             // tb_search
             // 
             this.tb_search.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_search.Location = new System.Drawing.Point(476, 327);
+            this.tb_search.Location = new System.Drawing.Point(642, 11);
             this.tb_search.Name = "tb_search";
-            this.tb_search.Size = new System.Drawing.Size(278, 35);
+            this.tb_search.Size = new System.Drawing.Size(357, 35);
             this.tb_search.TabIndex = 19;
             this.tb_search.TextChanged += new System.EventHandler(this.tb_search_TextChanged_1);
             this.tb_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_search_KeyPress);
@@ -194,14 +196,30 @@
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(16, 94);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(874, 227);
+            this.groupBox2.Size = new System.Drawing.Size(1172, 227);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tour details";
             // 
+            // cb_typetour
+            // 
+            this.cb_typetour.BackColor = System.Drawing.Color.Transparent;
+            this.cb_typetour.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_typetour.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_typetour.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_typetour.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_typetour.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cb_typetour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cb_typetour.ItemHeight = 30;
+            this.cb_typetour.Location = new System.Drawing.Point(139, 116);
+            this.cb_typetour.Name = "cb_typetour";
+            this.cb_typetour.Size = new System.Drawing.Size(354, 36);
+            this.cb_typetour.TabIndex = 3;
+            this.cb_typetour.Enter += new System.EventHandler(this.cb_typetour_Enter);
+            // 
             // guna2VSeparator1
             // 
-            this.guna2VSeparator1.Location = new System.Drawing.Point(422, 17);
+            this.guna2VSeparator1.Location = new System.Drawing.Point(535, 17);
             this.guna2VSeparator1.Name = "guna2VSeparator1";
             this.guna2VSeparator1.Size = new System.Drawing.Size(10, 204);
             this.guna2VSeparator1.TabIndex = 56;
@@ -218,7 +236,7 @@
             this.btnAddLocation.ForeColor = System.Drawing.Color.Black;
             this.btnAddLocation.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnAddLocation.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnAddLocation.Location = new System.Drawing.Point(817, 24);
+            this.btnAddLocation.Location = new System.Drawing.Point(1117, 24);
             this.btnAddLocation.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddLocation.Name = "btnAddLocation";
             this.btnAddLocation.Size = new System.Drawing.Size(50, 41);
@@ -242,7 +260,7 @@
             this.tb_nametour.PasswordChar = '\0';
             this.tb_nametour.PlaceholderText = "";
             this.tb_nametour.SelectedText = "";
-            this.tb_nametour.Size = new System.Drawing.Size(249, 36);
+            this.tb_nametour.Size = new System.Drawing.Size(354, 36);
             this.tb_nametour.TabIndex = 45;
             this.tb_nametour.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_nametour_KeyPress);
             // 
@@ -262,7 +280,7 @@
             this.tb_price.PasswordChar = '\0';
             this.tb_price.PlaceholderText = "";
             this.tb_price.SelectedText = "";
-            this.tb_price.Size = new System.Drawing.Size(249, 32);
+            this.tb_price.Size = new System.Drawing.Size(354, 32);
             this.tb_price.TabIndex = 2;
             this.tb_price.TextChanged += new System.EventHandler(this.tb_price_TextChanged);
             this.tb_price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_price_KeyPress);
@@ -271,9 +289,9 @@
             // 
             this.lstbxLocation.FormattingEnabled = true;
             this.lstbxLocation.ItemHeight = 19;
-            this.lstbxLocation.Location = new System.Drawing.Point(460, 24);
+            this.lstbxLocation.Location = new System.Drawing.Point(592, 24);
             this.lstbxLocation.Name = "lstbxLocation";
-            this.lstbxLocation.Size = new System.Drawing.Size(352, 175);
+            this.lstbxLocation.Size = new System.Drawing.Size(520, 175);
             this.lstbxLocation.TabIndex = 52;
             // 
             // tb_idtrip
@@ -284,7 +302,7 @@
             this.tb_idtrip.MaxLength = 15;
             this.tb_idtrip.Name = "tb_idtrip";
             this.tb_idtrip.ReadOnly = true;
-            this.tb_idtrip.Size = new System.Drawing.Size(249, 26);
+            this.tb_idtrip.Size = new System.Drawing.Size(354, 26);
             this.tb_idtrip.TabIndex = 1;
             this.tb_idtrip.Enter += new System.EventHandler(this.tb_idtrip_Enter);
             // 
@@ -333,7 +351,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(156, 7);
+            this.label8.Location = new System.Drawing.Point(318, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(596, 76);
             this.label8.TabIndex = 44;
@@ -354,7 +372,7 @@
             this.cbbxSearchType.Items.AddRange(new object[] {
             "ID",
             "NAME"});
-            this.cbbxSearchType.Location = new System.Drawing.Point(760, 327);
+            this.cbbxSearchType.Location = new System.Drawing.Point(1005, 10);
             this.cbbxSearchType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbxSearchType.Name = "cbbxSearchType";
             this.cbbxSearchType.Size = new System.Drawing.Size(132, 36);
@@ -373,7 +391,7 @@
             this.btn_newid.ForeColor = System.Drawing.Color.Black;
             this.btn_newid.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btn_newid.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btn_newid.Location = new System.Drawing.Point(782, 48);
+            this.btn_newid.Location = new System.Drawing.Point(418, 10);
             this.btn_newid.Margin = new System.Windows.Forms.Padding(2);
             this.btn_newid.Name = "btn_newid";
             this.btn_newid.Size = new System.Drawing.Size(99, 41);
@@ -394,7 +412,7 @@
             this.btn_delete.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btn_delete.HoverState.ForeColor = System.Drawing.Color.White;
             this.btn_delete.Image = global::Tour.Properties.Resources.deleteicon;
-            this.btn_delete.Location = new System.Drawing.Point(272, 329);
+            this.btn_delete.Location = new System.Drawing.Point(267, 10);
             this.btn_delete.Margin = new System.Windows.Forms.Padding(2);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(123, 41);
@@ -415,7 +433,7 @@
             this.btn_update.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btn_update.HoverState.ForeColor = System.Drawing.Color.White;
             this.btn_update.Image = global::Tour.Properties.Resources.update;
-            this.btn_update.Location = new System.Drawing.Point(145, 329);
+            this.btn_update.Location = new System.Drawing.Point(140, 10);
             this.btn_update.Margin = new System.Windows.Forms.Padding(2);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(123, 41);
@@ -436,7 +454,7 @@
             this.btn_add.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btn_add.HoverState.ForeColor = System.Drawing.Color.White;
             this.btn_add.Image = global::Tour.Properties.Resources.addp;
-            this.btn_add.Location = new System.Drawing.Point(18, 329);
+            this.btn_add.Location = new System.Drawing.Point(13, 10);
             this.btn_add.Margin = new System.Windows.Forms.Padding(2);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(123, 41);
@@ -444,35 +462,27 @@
             this.btn_add.Text = "ADD";
             this.btn_add.Click += new System.EventHandler(this.add_Click);
             // 
-            // cb_typetour
+            // guna2Panel1
             // 
-            this.cb_typetour.BackColor = System.Drawing.Color.Transparent;
-            this.cb_typetour.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cb_typetour.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_typetour.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cb_typetour.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cb_typetour.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cb_typetour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cb_typetour.ItemHeight = 30;
-            this.cb_typetour.Location = new System.Drawing.Point(139, 116);
-            this.cb_typetour.Name = "cb_typetour";
-            this.cb_typetour.Size = new System.Drawing.Size(249, 36);
-            this.cb_typetour.TabIndex = 3;
-            this.cb_typetour.Enter += new System.EventHandler(this.cb_typetour_Enter);
+            this.guna2Panel1.Controls.Add(this.btn_delete);
+            this.guna2Panel1.Controls.Add(this.cbbxSearchType);
+            this.guna2Panel1.Controls.Add(this.btn_newid);
+            this.guna2Panel1.Controls.Add(this.tb_search);
+            this.guna2Panel1.Controls.Add(this.btn_update);
+            this.guna2Panel1.Controls.Add(this.btn_add);
+            this.guna2Panel1.Location = new System.Drawing.Point(16, 321);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(1172, 60);
+            this.guna2Panel1.TabIndex = 60;
             // 
             // Tour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(900, 768);
-            this.Controls.Add(this.btn_delete);
-            this.Controls.Add(this.btn_newid);
-            this.Controls.Add(this.btn_update);
-            this.Controls.Add(this.cbbxSearchType);
-            this.Controls.Add(this.btn_add);
+            this.ClientSize = new System.Drawing.Size(1200, 945);
+            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.tb_search);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -486,8 +496,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_trip)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -524,5 +535,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TOURTYPE;
         private System.Windows.Forms.DataGridViewImageColumn BANNER;
         private Guna.UI2.WinForms.Guna2ComboBox cb_typetour;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
     }
 }

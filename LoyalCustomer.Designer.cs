@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblSpending = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tbCMND = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbTelephone = new Guna.UI2.WinForms.Guna2TextBox();
@@ -52,7 +53,6 @@
             this.txtbxRePassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtbxPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblNotes = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblSpending = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -77,10 +77,20 @@
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(11, 64);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(437, 445);
             this.panel1.TabIndex = 2;
+            // 
+            // lblSpending
+            // 
+            this.lblSpending.BackColor = System.Drawing.Color.Transparent;
+            this.lblSpending.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpending.Location = new System.Drawing.Point(9, 398);
+            this.lblSpending.Name = "lblSpending";
+            this.lblSpending.Size = new System.Drawing.Size(186, 33);
+            this.lblSpending.TabIndex = 32;
+            this.lblSpending.Text = "Total spending:";
             // 
             // tbCMND
             // 
@@ -159,7 +169,7 @@
             this.tbAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbAddress.Location = new System.Drawing.Point(9, 78);
-            this.tbAddress.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tbAddress.Margin = new System.Windows.Forms.Padding(6);
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.PasswordChar = '\0';
             this.tbAddress.PlaceholderText = "Address";
@@ -197,7 +207,7 @@
             this.panel6.Controls.Add(this.RdMale);
             this.panel6.ForeColor = System.Drawing.Color.Black;
             this.panel6.Location = new System.Drawing.Point(9, 331);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(400, 41);
             this.panel6.TabIndex = 19;
@@ -247,7 +257,7 @@
             this.panel2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel2.Location = new System.Drawing.Point(469, 64);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(404, 309);
             this.panel2.TabIndex = 29;
@@ -348,7 +358,7 @@
             this.panel4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel4.Location = new System.Drawing.Point(9, 522);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(862, 191);
             this.panel4.TabIndex = 29;
@@ -366,7 +376,7 @@
             this.txtbxNewPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtbxNewPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxNewPassword.Location = new System.Drawing.Point(4, 139);
-            this.txtbxNewPassword.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
+            this.txtbxNewPassword.Margin = new System.Windows.Forms.Padding(9);
             this.txtbxNewPassword.Name = "txtbxNewPassword";
             this.txtbxNewPassword.PasswordChar = '●';
             this.txtbxNewPassword.PlaceholderText = "New password";
@@ -403,7 +413,7 @@
             this.txtbxRePassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtbxRePassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxRePassword.Location = new System.Drawing.Point(4, 84);
-            this.txtbxRePassword.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtbxRePassword.Margin = new System.Windows.Forms.Padding(6);
             this.txtbxRePassword.Name = "txtbxRePassword";
             this.txtbxRePassword.PasswordChar = '●';
             this.txtbxRePassword.PlaceholderText = "Re-enter password";
@@ -425,7 +435,7 @@
             this.txtbxPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtbxPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxPassword.Location = new System.Drawing.Point(4, 34);
-            this.txtbxPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtbxPassword.Name = "txtbxPassword";
             this.txtbxPassword.PasswordChar = '●';
             this.txtbxPassword.PlaceholderText = "Password";
@@ -445,22 +455,12 @@
             this.lblNotes.TabIndex = 0;
             this.lblNotes.Text = "__________________";
             // 
-            // lblSpending
-            // 
-            this.lblSpending.BackColor = System.Drawing.Color.Transparent;
-            this.lblSpending.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpending.Location = new System.Drawing.Point(9, 398);
-            this.lblSpending.Name = "lblSpending";
-            this.lblSpending.Size = new System.Drawing.Size(186, 33);
-            this.lblSpending.TabIndex = 32;
-            this.lblSpending.Text = "Total spending:";
-            // 
             // LoyalCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(886, 730);
+            this.ClientSize = new System.Drawing.Size(1184, 906);
             this.Controls.Add(this.pnUpdateCustomer);
             this.Controls.Add(this.lblRank);
             this.Controls.Add(this.panel4);

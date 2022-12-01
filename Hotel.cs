@@ -279,7 +279,16 @@ namespace Tour
 
         private void pcbxLocation_Click(object sender, EventArgs e)
         {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Chon anh(*.jpg; *.png; *.gif) | *.jpg; *.png; *.gif";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                Image image = Image.FromFile(dialog.FileName);
+                img = image;
+                img_data = Converter.Instance.ImageToByte(image);
+                pcbxLocation.Image = image;
 
+            }
         }
 
         private void cbboxProvince_SelectedIndexChanged(object sender, EventArgs e)
