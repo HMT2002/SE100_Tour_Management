@@ -63,6 +63,10 @@ namespace Tour
             this.btnManage = new Guna.UI2.WinForms.Guna2Button();
             this.panel_logo = new Guna.UI2.WinForms.Guna2Panel();
             this.panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel_slide.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.panel_Help.SuspendLayout();
@@ -72,6 +76,7 @@ namespace Tour
             this.panelManage.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.panel_logo.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -92,7 +97,7 @@ namespace Tour
             // panel_slide
             // 
             this.panel_slide.AutoScroll = true;
-            this.panel_slide.BackColor = System.Drawing.Color.Linen;
+            this.panel_slide.BackColor = System.Drawing.Color.Bisque;
             this.panel_slide.Controls.Add(this.guna2Panel2);
             this.panel_slide.Controls.Add(this.panel_Help);
             this.panel_slide.Controls.Add(this.guna2Panel9);
@@ -690,7 +695,6 @@ namespace Tour
             this.btnTicket.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTicket.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnTicket.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btnTicket.HoverState.ForeColor = System.Drawing.Color.Black;
             this.btnTicket.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTicket.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnTicket.Location = new System.Drawing.Point(0, 0);
@@ -706,7 +710,7 @@ namespace Tour
             // 
             // guna2Panel4
             // 
-            this.guna2Panel4.BackColor = System.Drawing.Color.Linen;
+            this.guna2Panel4.BackColor = System.Drawing.Color.Bisque;
             this.guna2Panel4.Controls.Add(this.btnManage);
             this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel4.Location = new System.Drawing.Point(0, 95);
@@ -753,19 +757,63 @@ namespace Tour
             this.panel_logo.Controls.Add(this.label1);
             this.panel_logo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_logo.Location = new System.Drawing.Point(0, 0);
+            this.panel_logo.Margin = new System.Windows.Forms.Padding(4);
             this.panel_logo.Name = "panel_logo";
             this.panel_logo.Size = new System.Drawing.Size(247, 95);
             this.panel_logo.TabIndex = 17;
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel4.BackColor = System.Drawing.SystemColors.Control;
+            this.panel4.Controls.Add(this.guna2HtmlLabel2);
+            this.panel4.Controls.Add(this.guna2HtmlLabel1);
+            this.panel4.Controls.Add(this.guna2Panel1);
+            this.panel4.Controls.Add(this.guna2Panel3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(264, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(900, 768);
             this.panel4.TabIndex = 25;
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("MV Boli", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(555, 774);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(521, 54);
+            this.guna2HtmlLabel2.TabIndex = 3;
+            this.guna2HtmlLabel2.Text = "Tour Management System";
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("MV Boli", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(6, 65);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(542, 54);
+            this.guna2HtmlLabel1.TabIndex = 2;
+            this.guna2HtmlLabel1.Text = "Discover the world with us";
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackgroundImage = global::Tour.Properties.Resources.ryan_XGKaRnWjv1c_unsplash;
+            this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2Panel1.Location = new System.Drawing.Point(697, 65);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(433, 582);
+            this.guna2Panel1.TabIndex = 0;
+            // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.BackgroundImage = global::Tour.Properties.Resources.redd_f_rjfOdiB7k_E_unsplash;
+            this.guna2Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2Panel3.Location = new System.Drawing.Point(49, 222);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(422, 581);
+            this.guna2Panel3.TabIndex = 1;
             // 
             // SelectForm
             // 
@@ -793,6 +841,8 @@ namespace Tour
             this.panelManage.ResumeLayout(false);
             this.guna2Panel4.ResumeLayout(false);
             this.panel_logo.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -830,5 +880,9 @@ namespace Tour
         private Guna.UI2.WinForms.Guna2Button btnVehicalDatabase;
         private Guna.UI2.WinForms.Guna2Button btndataCus;
         private Guna.UI2.WinForms.Guna2Panel panel4;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     }
 }

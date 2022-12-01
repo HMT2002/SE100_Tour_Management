@@ -83,9 +83,29 @@ namespace Tour.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _16OLD_MAN1_mediumSquareAt3X_v3 {
+            get {
+                object obj = ResourceManager.GetObject("16OLD-MAN1-mediumSquareAt3X-v3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _2 {
             get {
                 object obj = ResourceManager.GetObject("2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _284466 {
+            get {
+                object obj = ResourceManager.GetObject("284466", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +146,26 @@ namespace Tour.Properties {
         internal static System.Drawing.Bitmap back {
             get {
                 object obj = ResourceManager.GetObject("back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BeFunky_sample {
+            get {
+                object obj = ResourceManager.GetObject("BeFunky-sample", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BeFunky_sample1 {
+            get {
+                object obj = ResourceManager.GetObject("BeFunky-sample1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -266,6 +306,16 @@ namespace Tour.Properties {
         internal static System.Drawing.Bitmap ez1 {
             get {
                 object obj = ResourceManager.GetObject("ez1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap felix_rostig_UmV2wr_Vbq8_unsplash {
+            get {
+                object obj = ResourceManager.GetObject("felix-rostig-UmV2wr-Vbq8-unsplash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -433,6 +483,16 @@ namespace Tour.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap philipp_kammerer_6Mxb_mZ_Q8E_unsplash {
+            get {
+                object obj = ResourceManager.GetObject("philipp-kammerer-6Mxb_mZ_Q8E-unsplash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngtree_bright_poster_conduct_negotiations_cartoon_flat_image_1107239 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-bright-poster-conduct-negotiations-cartoon-flat-image_1107239", resourceCulture);
@@ -456,6 +516,26 @@ namespace Tour.Properties {
         internal static System.Drawing.Bitmap question_1_ {
             get {
                 object obj = ResourceManager.GetObject("question(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap redd_f_rjfOdiB7k_E_unsplash {
+            get {
+                object obj = ResourceManager.GetObject("redd-f-rjfOdiB7k-E-unsplash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ryan_XGKaRnWjv1c_unsplash {
+            get {
+                object obj = ResourceManager.GetObject("ryan-XGKaRnWjv1c-unsplash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

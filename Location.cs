@@ -100,19 +100,6 @@ namespace Tour
             cbbxLocation.DataSource = DataProvider.Ins.DB.DIADIEMs.Select(t =>t).Where(t=>t.IsDeleted==false).ToList();
             cbbxLocation.DisplayMember = "TEN";
         }
-        private void btnPickPicture_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Chon anh(*.jpg; *.png; *.gif) | *.jpg; *.png; *.gif";
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                Image image = Image.FromFile(dialog.FileName);
-                img = image;
-                img_data = Converter.Instance.ImageToByte(image);
-                pcbxLocation.Image = image;
-
-            }
-        }
 
         public bool CheckData()
         {
@@ -155,12 +142,12 @@ namespace Tour
                     randomcode = Converter.Instance.RandomString(5);
                     if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
                     {
-                        var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text,IsDeleted=false };
+                        var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text, IsDeleted = false };
                         DataProvider.Ins.DB.TINHs.Add(tinh);
                         DataProvider.Ins.DB.SaveChanges();
                     }
 
-                    var location = new DIADIEM() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), CHITIET = rchtxtbxDetail.Text, PICBI = img_data,IsDeleted=false,GIA=Convert.ToDecimal(txtbxGia.Text) };
+                    var location = new DIADIEM() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), CHITIET = rchtxtbxDetail.Text, PICBI = img_data, IsDeleted = false, GIA = Convert.ToDecimal(txtbxGia.Text) };
 
                     DataProvider.Ins.DB.DIADIEMs.Add(location);
                     DataProvider.Ins.DB.SaveChanges();
@@ -276,14 +263,6 @@ namespace Tour
             {
                 e.Handled = true;
             }
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void txtbxId_TextChanged(object sender, EventArgs e)
-        {
 
         }
 

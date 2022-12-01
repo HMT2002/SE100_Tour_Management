@@ -65,5 +65,23 @@ namespace Tour
                 DataProvider.Ins.DB.SaveChanges();
             }
         }
+
+        private void pcbxAvatar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Chon anh(*.jpg; *.png; *.gif) | *.jpg; *.png; *.gif";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                Image image = Image.FromFile(dialog.FileName);
+                Image img = image;
+                byte[] img_data = Converter.Instance.ImageToByte(image);
+                pcbxAvatar.Image = image;
+
+
+                var nhanvien = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == Properties.Settings.Default.CurUserId).FirstOrDefault();
+                nhanvien.PICBI = img_data;
+                DataProvider.Ins.DB.SaveChanges();
+            }
+        }
     }
 }
