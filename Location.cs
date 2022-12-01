@@ -100,19 +100,6 @@ namespace Tour
             cbbxLocation.DataSource = DataProvider.Ins.DB.DIADIEMs.Select(t =>t).Where(t=>t.IsDeleted==false).ToList();
             cbbxLocation.DisplayMember = "TEN";
         }
-        private void btnPickPicture_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Chon anh(*.jpg; *.png; *.gif) | *.jpg; *.png; *.gif";
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                Image image = Image.FromFile(dialog.FileName);
-                img = image;
-                img_data = Converter.Instance.ImageToByte(image);
-                pcbxLocation.Image = image;
-
-            }
-        }
 
         public bool CheckData()
         {
@@ -146,6 +133,56 @@ namespace Tour
             pcbxLocation.Image = Properties.Resources.ic_image_empty_128;
         }
 
+        private void cbbxLocation_SelectedValueChanged(object sender, EventArgs e)
+        {
+            int index = cbbxLocation.SelectedIndex;
+            if (index >= 0)
+            {
+                DIADIEM selected_item = (DIADIEM)cbbxLocation.SelectedItem;
+                DIADIEM temp = DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == selected_item.ID).FirstOrDefault();
+                pcbxLocation.Image = Converter.Instance.ByteArrayToImage(temp.PICBI);
+                id = temp.ID;
+                txtbxId.Text = id;
+                txtbxName.Text = temp.TEN;
+                cbboxProvince.Text = DataProvider.Ins.DB.TINHs.Where(x => x.ID == temp.IDTINH).FirstOrDefault().TEN;
+                img_data = temp.PICBI;
+                rchtxtbxDetail.Text = temp.CHITIET;
+                txtbxGia.Text = temp.GIA.ToString();
+
+            }
+        }
+
+        private void txtbxGia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtbxId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPickPicture_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Chon anh(*.jpg; *.png; *.gif) | *.jpg; *.png; *.gif";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                Image image = Image.FromFile(dialog.FileName);
+                img = image;
+                img_data = Converter.Instance.ImageToByte(image);
+                pcbxLocation.Image = image;
+
+            }
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (CheckData() == true)
@@ -155,12 +192,12 @@ namespace Tour
                     randomcode = Converter.Instance.RandomString(5);
                     if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
                     {
-                        var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text,IsDeleted=false };
+                        var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text, IsDeleted = false };
                         DataProvider.Ins.DB.TINHs.Add(tinh);
                         DataProvider.Ins.DB.SaveChanges();
                     }
 
-                    var location = new DIADIEM() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), CHITIET = rchtxtbxDetail.Text, PICBI = img_data,IsDeleted=false,GIA=Convert.ToDecimal(txtbxGia.Text) };
+                    var location = new DIADIEM() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), CHITIET = rchtxtbxDetail.Text, PICBI = img_data, IsDeleted = false, GIA = Convert.ToDecimal(txtbxGia.Text) };
 
                     DataProvider.Ins.DB.DIADIEMs.Add(location);
                     DataProvider.Ins.DB.SaveChanges();
@@ -236,7 +273,7 @@ namespace Tour
                     diadiem.IDTINH = cbboxProvince.SelectedIndex.ToString();
                     diadiem.CHITIET = rchtxtbxDetail.Text;
                     diadiem.PICBI = img_data;
-                    diadiem.GIA= Convert.ToDecimal(txtbxGia.Text);
+                    diadiem.GIA = Convert.ToDecimal(txtbxGia.Text);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
                     Clear();
@@ -249,41 +286,6 @@ namespace Tour
                 Clear();
 
             }
-
-        }
-        private void cbbxLocation_SelectedValueChanged(object sender, EventArgs e)
-        {
-            int index = cbbxLocation.SelectedIndex;
-            if (index >= 0)
-            {
-                DIADIEM selected_item = (DIADIEM)cbbxLocation.SelectedItem;
-                DIADIEM temp = DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == selected_item.ID).FirstOrDefault();
-                pcbxLocation.Image = Converter.Instance.ByteArrayToImage(temp.PICBI);
-                id = temp.ID;
-                txtbxId.Text = id;
-                txtbxName.Text = temp.TEN;
-                cbboxProvince.Text = DataProvider.Ins.DB.TINHs.Where(x => x.ID == temp.IDTINH).FirstOrDefault().TEN;
-                img_data = temp.PICBI;
-                rchtxtbxDetail.Text = temp.CHITIET;
-                txtbxGia.Text = temp.GIA.ToString();
-
-            }
-        }
-
-        private void txtbxGia_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void txtbxId_TextChanged(object sender, EventArgs e)
-        {
 
         }
     }

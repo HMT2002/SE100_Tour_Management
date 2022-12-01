@@ -673,6 +673,9 @@
     </Content>
     <None Include="Resources\16OLD-MAN1-mediumSquareAt3X-v3.jpg" />
     <None Include="Resources\284466.jpg" />
+    <None Include="Resources\BeFunky-sample.jpg" />
+    <None Include="Resources\BeFunky-sample1.jpg" />
+    <None Include="Resources\felix-rostig-UmV2wr-Vbq8-unsplash.jpg" />
     <Content Include="Resources\person-working.jpg" />
     <None Include="Resources\person-working1.jpg" />
     <None Include="Resources\person-working11.jpg" />
@@ -682,6 +685,9 @@
     <None Include="Resources\staff%281%29.png" />
     <None Include="Resources\question.png" />
     <None Include="Resources\question%281%29.png" />
+    <None Include="Resources\ryan-XGKaRnWjv1c-unsplash.jpg" />
+    <None Include="Resources\redd-f-rjfOdiB7k-E-unsplash.jpg" />
+    <None Include="Resources\philipp-kammerer-6Mxb_mZ_Q8E-unsplash.jpg" />
     <Content Include="tickets.ico" />
   </ItemGroup>
   <ItemGroup />
