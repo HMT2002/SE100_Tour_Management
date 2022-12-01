@@ -88,6 +88,7 @@ namespace Tour
             txtbxName.Text = txtbxSDT.Text = txtbxMail.Text =txtbxID.Text= "";
             img_data = null;
             pcbxAvatar.Image = Properties.Resources.ic_image_empty_128;
+            cbbxRole.SelectedIndex = 1;
             UnnotifyAllFields();
         }
 
@@ -324,6 +325,7 @@ namespace Tour
                 nhanvien.MAIL = txtbxMail.Text;
                 nhanvien.SDT = txtbxSDT.Text;
                 nhanvien.PICBI = img_data;
+                nhanvien.ACCOUNT.ACCROLE = cbbxRole.SelectedItem.ToString();
                 DataProvider.Ins.DB.SaveChanges();
                 showAll();
                 Clear();
@@ -402,6 +404,8 @@ namespace Tour
             //dgv_nhanvien.Rows[2].Cells[3].Value = "20521419@gm.uit.edu.vn";
             //dgv_nhanvien.Rows[2].Cells[4].Value = 0;
             //dgv_nhanvien.Rows[2].Cells[5].Value = false;
+
+            Clear();
         }
 
         private void dgv_nhanvien_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -417,6 +421,7 @@ namespace Tour
                 txtbxName.Text = temp.TEN;
                 txtbxMail.Text = temp.MAIL;
                 txtbxSDT.Text = temp.SDT;
+                cbbxRole.Text = temp.ACCOUNT.ACCROLE;
             }
             else
             {// nhấn vào isAvailable
