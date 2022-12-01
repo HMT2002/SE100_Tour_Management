@@ -258,6 +258,8 @@ namespace Tour
                 lblCustomerDiscount.Text = customer_discount.ToString();
                 tbDiscount.Text = (banner_discount + customer_discount).ToString();
 
+
+
                 try
                 {
                     decimal res = 0;
@@ -504,14 +506,21 @@ namespace Tour
                         double discount = banner_discount + customer_discount;
                         decimal price = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tbPrice.Text);
                         res = price - (price * (decimal)(discount / 100));
-                        tbTotal.Text = res.ToString();
+                        tbTotal.Text = Converter.Instance.CurrencyDisplay( res);
                     }
                     catch
                     {
+                        tbTotal.Text = tbPrice.Text;
 
-                        tbTotal.Text =tbPrice.Text;
                     }
 
+
+                }
+                else
+                {
+                    tbDiscount.Text = (banner_discount + customer_discount).ToString();
+
+                    tbTotal.Text = tbPrice.Text;
 
                 }
 
