@@ -42,10 +42,18 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win64_x64\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win64_x64\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win64_x64\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win64_x64\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -449,6 +457,9 @@
     <Compile Include="Utils\Features.cs" />
     <Compile Include="Utils\Notify.cs" />
     <Compile Include="Utils\Validate.cs" />
+    <EmbeddedResource Include="AboutUs.resx">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddHotelForGroup.resx">
       <DependentUpon>AddHotelForGroup.cs</DependentUpon>
     </EmbeddedResource>
@@ -692,6 +703,9 @@
     <None Include="Resources\BeFunky-sample.jpg" />
     <None Include="Resources\BeFunky-sample1.jpg" />
     <None Include="Resources\felix-rostig-UmV2wr-Vbq8-unsplash.jpg" />
+    <None Include="Resources\group%281%29.png" />
+    <None Include="Resources\group.png" />
+    <None Include="Resources\email%281%29.png" />
     <Content Include="Resources\person-working.jpg" />
     <None Include="Resources\person-working1.jpg" />
     <None Include="Resources\person-working11.jpg" />
@@ -704,6 +718,9 @@
     <None Include="Resources\ryan-XGKaRnWjv1c-unsplash.jpg" />
     <None Include="Resources\redd-f-rjfOdiB7k-E-unsplash.jpg" />
     <None Include="Resources\philipp-kammerer-6Mxb_mZ_Q8E-unsplash.jpg" />
+    <None Include="Resources\wallpapersden.com_mix-colour-background_1920x1080.jpg" />
+    <None Include="Resources\placeholder.png" />
+    <None Include="Resources\rating.png" />
     <Content Include="tickets.ico" />
   </ItemGroup>
   <ItemGroup />
