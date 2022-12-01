@@ -449,6 +449,9 @@
     <Compile Include="Utils\Features.cs" />
     <Compile Include="Utils\Notify.cs" />
     <Compile Include="Utils\Validate.cs" />
+    <EmbeddedResource Include="AboutUs.resx">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddHotelForGroup.resx">
       <DependentUpon>AddHotelForGroup.cs</DependentUpon>
     </EmbeddedResource>
@@ -692,6 +695,9 @@
     <None Include="Resources\BeFunky-sample.jpg" />
     <None Include="Resources\BeFunky-sample1.jpg" />
     <None Include="Resources\felix-rostig-UmV2wr-Vbq8-unsplash.jpg" />
+    <None Include="Resources\group%281%29.png" />
+    <None Include="Resources\group.png" />
+    <None Include="Resources\email%281%29.png" />
     <Content Include="Resources\person-working.jpg" />
     <None Include="Resources\person-working1.jpg" />
     <None Include="Resources\person-working11.jpg" />
@@ -704,6 +710,9 @@
     <None Include="Resources\ryan-XGKaRnWjv1c-unsplash.jpg" />
     <None Include="Resources\redd-f-rjfOdiB7k-E-unsplash.jpg" />
     <None Include="Resources\philipp-kammerer-6Mxb_mZ_Q8E-unsplash.jpg" />
+    <None Include="Resources\wallpapersden.com_mix-colour-background_1920x1080.jpg" />
+    <None Include="Resources\placeholder.png" />
+    <None Include="Resources\rating.png" />
     <Content Include="tickets.ico" />
   </ItemGroup>
   <ItemGroup />
