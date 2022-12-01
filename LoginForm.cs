@@ -56,18 +56,25 @@ namespace Tour
         }
         private void exitbtn_Click(object sender, EventArgs e)
         {
-            //if (MessageBox.Show("Do you want to exit the program?", "Nofitication", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
-            //{
-            //    Application.Exit();
-            //}
-            Application.Exit();
+            if (MessageBox.Show("Do you want to exit the program?", "Nofitication", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
+            {
+                return;
+            }
+            if (System.Windows.Forms.Application.MessageLoop)
+            {
+                // WinForms app
+                System.Windows.Forms.Application.Exit();
+            }
+            else
+            {
+                // Console app
+                System.Environment.Exit(1);
+            }
 
         }
         public void loginbtn_Click(object sender, EventArgs e)
         {
-
             string ensryptedpass = Converter.Instance.EncryptPassword((passwordtxb.Text));
-
             if (cbGuest.Checked)
             {
                 ACCOUNT acc = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false && x.ACCROLE == "Customer")).SingleOrDefault();
@@ -83,31 +90,30 @@ namespace Tour
                 {
                     MessageBox.Show("Wrong email or password!!!!");
                 }
-
             }
             else
             {
-                if (cbghinho.Checked == true)
-                {
-                    Properties.Settings.Default.Email = emailtxb.Text;
-                    Properties.Settings.Default.Password = passwordtxb.Text;
-                    Properties.Settings.Default.Save();
-                }
-                if (cbghinho.Checked == false)
-                {
-                    Properties.Settings.Default.Email = "";
-                    Properties.Settings.Default.Password = "";
-                    Properties.Settings.Default.Save();
-                }
-
-
                 if (DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false &&( (x.ACCROLE == "Manager") || (x.ACCROLE == "Employee")))).SingleOrDefault() != null)
                 {
-                    Properties.Settings.Default.UserName = emailtxb.Text;
-                    Properties.Settings.Default.Password = passwordtxb.Text;
-                    Properties.Settings.Default.CurUserId = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().ACC;
-                    Properties.Settings.Default.CurUserName = DataProvider.Ins.DB.NHANVIENs.Where(x => (x.ACCOUNT.ACC == emailtxb.Text && x.ACCOUNT.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().TEN;
+                    if (cbghinho.Checked == true)
+                    {
+                        Properties.Settings.Default.Email = emailtxb.Text;
+                        Properties.Settings.Default.Password = passwordtxb.Text;
+                        Properties.Settings.Default.CurUserId = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().ACC;
+                        Properties.Settings.Default.CurUserName = DataProvider.Ins.DB.NHANVIENs.Where(x => (x.ACCOUNT.ACC == emailtxb.Text && x.ACCOUNT.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().TEN;
 
+
+                        Properties.Settings.Default.Save();
+                    }
+                    if (cbghinho.Checked == false)
+                    {
+                        Properties.Settings.Default.Email = "";
+                        Properties.Settings.Default.Password = "";
+                        Properties.Settings.Default.CurUserId = "";
+                        Properties.Settings.Default.CurUserName = "";
+
+                        Properties.Settings.Default.Save();
+                    }
                     Properties.Settings.Default.Save();
                     SelectForm menuF = new SelectForm(DataProvider.Ins.DB.NHANVIENs.Where(x => x.ACCOUNT.ACC == emailtxb.Text && x.IsDeleted == false).FirstOrDefault());
                     this.Hide();
@@ -173,15 +179,11 @@ namespace Tour
         }
         public string password, email;
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        public void OpenTicketReport()
         {
-            string ticket_id =  txtbxSearchTicket.Text;
+            string ticket_id = txtbxSearchTicket.Text;
+
             VE ve = DataProvider.Ins.DB.VEs.Where(x => (x.ID == ticket_id && x.IsDeleted == false)).SingleOrDefault();
-            if (ve == null)
-            {
-                MessageBox.Show("Số vé không tồn tại!");
-                return;
-            }
 
             using (fPrint f = new fPrint(ve))
             {
@@ -195,6 +197,11 @@ namespace Tour
 
                 f.ShowDialog();
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            OpenTicketReport();
         }
 
         public void Clear()

@@ -174,6 +174,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutUs.Designer.cs">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddHotelForGroup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,6 +253,12 @@
     </Compile>
     <Compile Include="fPrint.Designer.cs">
       <DependentUpon>fPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guild.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guild.Designer.cs">
+      <DependentUpon>Guild.cs</DependentUpon>
     </Compile>
     <Compile Include="Hotel.cs">
       <SubType>Form</SubType>
@@ -448,6 +460,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChangePass.resx">
       <DependentUpon>ChangePass.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ChooseLoyalCustomer.resx">
       <DependentUpon>ChooseLoyalCustomer.cs</DependentUpon>
@@ -482,6 +495,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fPrint.resx">
       <DependentUpon>fPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guild.resx">
+      <DependentUpon>Guild.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Hotel.resx">
       <DependentUpon>Hotel.cs</DependentUpon>
@@ -652,6 +668,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ic_image_empty-128.png" />
+    <None Include="Resources\hard-work.png" />
+    <None Include="Resources\hard-work1.png" />
+    <None Include="Resources\istockphoto-1183622464-612x612.jpg" />
+    <None Include="Resources\management.png" />
+    <None Include="Resources\management%281%29.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\logout%281%29.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\minus.png" />
     <Content Include="Model\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -662,14 +687,23 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\hard-work.png" />
-    <None Include="Resources\hard-work1.png" />
-    <None Include="Resources\istockphoto-1183622464-612x612.jpg" />
+    <None Include="Resources\16OLD-MAN1-mediumSquareAt3X-v3.jpg" />
+    <None Include="Resources\284466.jpg" />
+    <None Include="Resources\BeFunky-sample.jpg" />
+    <None Include="Resources\BeFunky-sample1.jpg" />
+    <None Include="Resources\felix-rostig-UmV2wr-Vbq8-unsplash.jpg" />
     <Content Include="Resources\person-working.jpg" />
     <None Include="Resources\person-working1.jpg" />
     <None Include="Resources\person-working11.jpg" />
     <None Include="Resources\pngtree-bright-poster-conduct-negotiations-cartoon-flat-image_1107239.jpg" />
     <None Include="Resources\user%281%29.png" />
+    <None Include="Resources\staff1.png" />
+    <None Include="Resources\staff%281%29.png" />
+    <None Include="Resources\question.png" />
+    <None Include="Resources\question%281%29.png" />
+    <None Include="Resources\ryan-XGKaRnWjv1c-unsplash.jpg" />
+    <None Include="Resources\redd-f-rjfOdiB7k-E-unsplash.jpg" />
+    <None Include="Resources\philipp-kammerer-6Mxb_mZ_Q8E-unsplash.jpg" />
     <Content Include="tickets.ico" />
   </ItemGroup>
   <ItemGroup />

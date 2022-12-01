@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -297,11 +298,11 @@ namespace Tour
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             tb_search.Text = "";
-            if (guna2ComboBox1.SelectedIndex != -1)
+            if (cbbxSearchType.SelectedIndex != -1)
             {
                 try
                 {
-                    if (guna2ComboBox1.SelectedIndex == 0)
+                    if (cbbxSearchType.SelectedIndex == 0)
                     {
                         searchID = true;
                     }
@@ -398,13 +399,14 @@ namespace Tour
                 try
                 {
                     //if (rdIDSearch.Checked)
-                    if (searchID == true)
+                    if (cbbxSearchType.SelectedItem.ToString() == "ID")
                     {
                         dgv_nhanvien.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t => SqlFunctions.PatIndex("%" + value + "%", t.ID) > 0 && t.IsDeleted == false).Select(t => t).ToList();
 
+
                     }
                     //else if (rdNameSearch.Checked)
-                    else if (searchID == false)
+                    else if (cbbxSearchType.SelectedItem.ToString() == "NAME")
                     {
                         dgv_nhanvien.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t => SqlFunctions.PatIndex("%" + value + "%", t.TEN) > 0 && t.IsDeleted == false).Select(t => t).ToList();
 
@@ -416,6 +418,7 @@ namespace Tour
                 }
             }
             else { showAll(); }
+
         }
 
 
@@ -458,6 +461,20 @@ namespace Tour
         {
             Utils.Notify.UnnotificationField(sender);
 
+        }
+
+        private void pcbxAvatar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Chon anh(*.jpg; *.png; *.gif) | *.jpg; *.png; *.gif";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                Image image = Image.FromFile(dialog.FileName);
+                img = image;
+                img_data = Converter.Instance.ImageToByte(image);
+                pcbxAvatar.Image = image;
+
+            }
         }
     }
 

@@ -15,9 +15,6 @@ using Tour.Utils;
 using Tour.Model;
 using Org.BouncyCastle.Utilities.Net;
 using System.Xml.Linq;
-using System.Text.RegularExpressions;
-using System.Configuration;
-
 
 namespace Tour
 {
@@ -58,12 +55,6 @@ namespace Tour
 
             }
 
-            if (!rEMail.IsMatch(txbGmail.Text))
-            {
-                Utils.Notify.NotificationField(txbGmail);
-                flag = false;
-            }
-
             if (txbHo.Text == "")
             {
                 Utils.Notify.NotificationField(txbHo);
@@ -99,7 +90,7 @@ namespace Tour
                 MessageBox.Show("Password not match!!!");
                 Utils.Notify.NotificationField(txbConfirm);
                 Utils.Notify.NotificationField(txbPass);
-                
+
                 flag = false;
 
             }
@@ -126,7 +117,7 @@ namespace Tour
                 try
                 {
 
-                    var nv = new NHANVIEN() { ID = randomcode,  TEN = txbHo.Text+" "+ txbTen.Text, SDT = txbSDT.Text, MAIL = txbGmail.Text,PICBI=img_data, IDACC = randomcode, IsDeleted = false };
+                    var nv = new NHANVIEN() { ID = randomcode,  TEN = txbHo.Text+" "+ txbTen.Text, SDT = txbSDT.Text, MAIL = txbGmail.Text,PICBI=img_data,IsDeleted=false,isAvailable=true,IDACC= randomcode };
                     var account = new ACCOUNT() { ACC = txbGmail.Text, PASS = Converter.Instance.EncryptPassword( (txbPass.Text)), ID = randomcode,IsDeleted=false,ACCROLE="Employee" };
                     DataProvider.Ins.DB.ACCOUNTs.Add(account);
                     DataProvider.Ins.DB.NHANVIENs.Add(nv);
@@ -213,20 +204,6 @@ namespace Tour
                     randomcode = Converter.Instance.RandomString2(5);
                     List<string> listto = new List<string>();
                     listto.Add(email);
-                    //MailMessage message = new MailMessage();
-                    //to = (txbGmail.Text).ToString();
-                    //from = "PTS.UIT.Group@gmail.com";
-                    //pass = "PTS@uitGroup";
-                    //messageBody = "Verification code exists for your email :" + randomcode;
-                    //message.To.Add(to);
-                    //message.From = new MailAddress(from);
-                    //message.Body = messageBody;
-                    //message.Subject = "Confirm Email Code";
-                    //SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-                    //smtp.EnableSsl = true;
-                    //smtp.Port = 587;
-                    //smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                    //smtp.Credentials = new NetworkCredential(from, pass);
                     try
                     {
                         Utils.Features.Instance.SendMail(listto, "Verify code","Verify code to register account: "+ randomcode);
@@ -237,10 +214,6 @@ namespace Tour
                         MessageBox.Show(ex.Message);
                     }
 
-                }
-                else
-                {
-                    MessageBox.Show("Wrong email!");
                 }
             }
         }
@@ -314,6 +287,10 @@ namespace Tour
         {
             Utils.Notify.UnnotificationField(sender);
 
+            if (e.KeyChar == (char)Keys.Space)
+            {
+                e.Handled = true;
+            }
         }
 
         private void txbPass_KeyPress(object sender, KeyPressEventArgs e)

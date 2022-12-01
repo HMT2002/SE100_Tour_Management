@@ -16,7 +16,7 @@ namespace Tour
     {
         string ID_tour = "HKOIJ";
 
-        TOUR Tour = new TOUR();
+        public TOUR Tour = new TOUR();
 
         public ManageBanner()
         {
@@ -36,9 +36,9 @@ namespace Tour
         public ManageBanner(TOUR tour)
         {
             InitializeComponent();
-            Tour = tour;
-            datepckBegin.Value=DateTime.Now;
-            datepckEnd.Value=DateTime.Now;
+            this.Tour = tour;
+            datepckBegin.Value = DateTime.Now;
+            datepckEnd.Value = DateTime.Now;
             LoadDataTour();
         }
 
@@ -109,12 +109,12 @@ namespace Tour
             lblTour.Text = ID_tour;
             cbDes.Visible = false;
 
+            GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == ID_tour && x.IsDeleted == false && x.NGAYBATDAU >= DateTime.Today).FirstOrDefault();
 
-            if(DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == ID_tour && x.IsDeleted == false).FirstOrDefault() == null)
+            if (giamgia == null)
             {
                 return;
             }
-            GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == ID_tour && x.IsDeleted == false).FirstOrDefault();
 
             txtbxDiscount.Text = giamgia.DISCOUNT.ToString();
             tbPrice.Text = giamgia.TOUR.GIA.ToString();
@@ -215,7 +215,7 @@ namespace Tour
 
         public bool CheckData()
         {
-            if (Convert.ToInt64(txtbxDiscount.Text)==0)
+            if (Convert.ToInt64(txtbxDiscount.Text) == 0)
             {
                 return false;
             }
@@ -243,19 +243,44 @@ namespace Tour
             }
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            Clear();
-        }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        public void RemoveCurrentBanner()
         {
-            if (CheckData())
+            try
+            {
+                GIAMGIA temp = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == this.Tour.ID && x.IsDeleted == false && x.NGAYBATDAU >= DateTime.Today).FirstOrDefault();
+                temp.NGAYBATDAU = DateTime.Now;
+                temp.NGAYKETTHUC = DateTime.Now;
+                temp.PICBI = Converter.Instance.ImageToByte(Properties.Resources.ic_image_empty_128);
+                temp.DISCOUNT = 0;
+                DataProvider.Ins.DB.SaveChanges();
+
+                Clear();
+                this.Close();
+            }
+            catch
             {
 
-                if (DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == Tour.ID && x.IsDeleted == false).FirstOrDefault() != null)
+            }
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Confirm create banner? ", "Confirmation", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+            {
+                RemoveCurrentBanner();
+
+            }
+        }
+
+        private void CreateBanner()
+        {
+            try
+            {
+                GIAMGIA temp = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == this.Tour.ID && x.IsDeleted == false && x.NGAYBATDAU >= DateTime.Today).FirstOrDefault();
+                if (temp != null)
                 {
-                    GIAMGIA temp = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == Tour.ID && x.IsDeleted == false).FirstOrDefault();
                     temp.IsDeleted = true;
                     DataProvider.Ins.DB.SaveChanges();
                 }
@@ -265,8 +290,28 @@ namespace Tour
                 DataProvider.Ins.DB.GIAMGIAs.Add(giamgia);
                 DataProvider.Ins.DB.SaveChanges();
                 MessageBox.Show("Add banner succeed");
+
                 Clear();
                 this.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (CheckData())
+            {
+                if (MessageBox.Show("Confirm create banner? ", "Confirmation", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+                {
+                    CreateBanner();
+
+
+                }
+
             }
         }
 
@@ -286,11 +331,11 @@ namespace Tour
         {
             try
             {
-                if(Convert.ToInt32(txtbxDiscount.Text) != 0 || Convert.ToDecimal(tbPrice) != 0)
+                if (Convert.ToInt32(txtbxDiscount.Text) != 0 || Convert.ToDecimal(tbPrice) != 0)
                 {
                     decimal res = 0;
                     double discount = Convert.ToInt64(txtbxDiscount.Text);
-                    decimal price=Convert.ToDecimal(tbPrice.Text);
+                    decimal price = Convert.ToDecimal(tbPrice.Text);
                     res = price - (price * (decimal)(discount / 100));
 
                     tbTotal.Text = res.ToString();

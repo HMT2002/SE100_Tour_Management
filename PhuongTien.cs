@@ -86,12 +86,13 @@ namespace Tour
         string randomcode;
         string id;
 
+        List<string> ListTypePhuongTien = new List<string> { "Train", "Motorcycle", "Car", "Bus", "Plan", "Ship" };
 
 
-        public PhuongTien()
+    public PhuongTien()
         {
             InitializeComponent();
-            cbbxKind.DataSource = new List<string> { "Train", "Motorcycle", "Car", "Bus", "Plan", "Ship" };
+            cbbxKind.DataSource = ListTypePhuongTien;
             cbboxProvince.DataSource = ListProvince;
             showAll();
             Clear();
@@ -110,9 +111,11 @@ namespace Tour
             cbbxVehical.Text = "";
             cbbxKind.Text = "";
             txtbxGia.Text = "";
-            cbbxKind.SelectedIndex = -1;
             cbbxVehical.SelectedIndex = -1;
             cbboxProvince.SelectedIndex = -1;
+
+            cbbxKind.SelectedIndex = -1;
+
             pcbxVehical.Image = Properties.Resources.ic_image_empty_128;
             UnnotifyAllFields();
         }
@@ -156,10 +159,8 @@ namespace Tour
             return flag;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        public void AddVehical()
         {
-            if (CheckData() == true)
-            {
                 try
                 {
                     randomcode = Converter.Instance.RandomString2(5);
@@ -170,7 +171,7 @@ namespace Tour
                         DataProvider.Ins.DB.SaveChanges();
                     }
 
-                    var vehical = new PHUONGTIEN() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), PICBI = img_data, LOAI = cbbxKind.Text, IsDeleted = false, GIA = Convert.ToDecimal(txtbxGia.Text) };
+                    var vehical = new PHUONGTIEN() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), PICBI = img_data, LOAI = cbbxKind.Text, IsDeleted = false, GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text) };
 
                     DataProvider.Ins.DB.PHUONGTIENs.Add(vehical);
                     DataProvider.Ins.DB.SaveChanges();
@@ -196,13 +197,19 @@ namespace Tour
                     }
                     throw raise;
                 }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (CheckData() == true)
+            {
+                AddVehical();
             }
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
+
+        public void DeleteVehical()
         {
-            if (MessageBox.Show("Are you sure to delete this?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
                 if (id == null || id.CompareTo(string.Empty) == 0)
                 {
                     return;
@@ -218,19 +225,19 @@ namespace Tour
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                 }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure to delete this?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                DeleteVehical();
             }
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        public void UpdateVehical()
         {
-            if (CheckData() == true)
-            {
-                if (id == null || id.CompareTo(string.Empty) == 0)
-                {
-                    return;
-                }
                 try
                 {
                     if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
@@ -267,6 +274,17 @@ namespace Tour
                     }
                     throw raise;
                 }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (CheckData() == true)
+            {
+                if (id == null || id.CompareTo(string.Empty) == 0)
+                {
+                    return;
+                }
+                UpdateVehical();
             }
         }
 
@@ -341,6 +359,12 @@ namespace Tour
         private void txtbxName_KeyPress(object sender, KeyPressEventArgs e)
         {
             Notify.UnnotificationField(sender);
+
+        }
+
+        private void txtbxGia_TextChanged(object sender, EventArgs e)
+        {
+            Utils.Validate.EnterCurrencyVnd(sender);
 
         }
     }

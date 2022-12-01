@@ -133,56 +133,6 @@ namespace Tour
             pcbxLocation.Image = Properties.Resources.ic_image_empty_128;
         }
 
-        private void cbbxLocation_SelectedValueChanged(object sender, EventArgs e)
-        {
-            int index = cbbxLocation.SelectedIndex;
-            if (index >= 0)
-            {
-                DIADIEM selected_item = (DIADIEM)cbbxLocation.SelectedItem;
-                DIADIEM temp = DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == selected_item.ID).FirstOrDefault();
-                pcbxLocation.Image = Converter.Instance.ByteArrayToImage(temp.PICBI);
-                id = temp.ID;
-                txtbxId.Text = id;
-                txtbxName.Text = temp.TEN;
-                cbboxProvince.Text = DataProvider.Ins.DB.TINHs.Where(x => x.ID == temp.IDTINH).FirstOrDefault().TEN;
-                img_data = temp.PICBI;
-                rchtxtbxDetail.Text = temp.CHITIET;
-                txtbxGia.Text = temp.GIA.ToString();
-
-            }
-        }
-
-        private void txtbxGia_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void txtbxId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnPickPicture_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Chon anh(*.jpg; *.png; *.gif) | *.jpg; *.png; *.gif";
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                Image image = Image.FromFile(dialog.FileName);
-                img = image;
-                img_data = Converter.Instance.ImageToByte(image);
-                pcbxLocation.Image = image;
-
-            }
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (CheckData() == true)
@@ -273,7 +223,7 @@ namespace Tour
                     diadiem.IDTINH = cbboxProvince.SelectedIndex.ToString();
                     diadiem.CHITIET = rchtxtbxDetail.Text;
                     diadiem.PICBI = img_data;
-                    diadiem.GIA = Convert.ToDecimal(txtbxGia.Text);
+                    diadiem.GIA= Convert.ToDecimal(txtbxGia.Text);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
                     Clear();
@@ -286,6 +236,44 @@ namespace Tour
                 Clear();
 
             }
+
+        }
+        private void cbbxLocation_SelectedValueChanged(object sender, EventArgs e)
+        {
+            int index = cbbxLocation.SelectedIndex;
+            if (index >= 0)
+            {
+                DIADIEM selected_item = (DIADIEM)cbbxLocation.SelectedItem;
+                DIADIEM temp = DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == selected_item.ID).FirstOrDefault();
+                pcbxLocation.Image = Converter.Instance.ByteArrayToImage(temp.PICBI);
+                id = temp.ID;
+                txtbxId.Text = id;
+                txtbxName.Text = temp.TEN;
+                cbboxProvince.Text = DataProvider.Ins.DB.TINHs.Where(x => x.ID == temp.IDTINH).FirstOrDefault().TEN;
+                img_data = temp.PICBI;
+                rchtxtbxDetail.Text = temp.CHITIET;
+                txtbxGia.Text = temp.GIA.ToString();
+
+            }
+        }
+
+        private void txtbxGia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void txtbxGia_TextChanged(object sender, EventArgs e)
+        {
+            Utils.Validate.EnterCurrencyVnd(sender);
+
+        }
+
+        private void pcbxLocation_Click(object sender, EventArgs e)
+        {
 
         }
     }
