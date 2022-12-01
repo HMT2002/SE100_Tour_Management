@@ -142,7 +142,7 @@ namespace Tour
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(6, 102);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(240, 517);
             this.panel1.TabIndex = 1;
@@ -170,10 +170,11 @@ namespace Tour
             // lblChooseCustomer
             // 
             this.lblChooseCustomer.BackColor = System.Drawing.Color.Transparent;
-            this.lblChooseCustomer.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChooseCustomer.Location = new System.Drawing.Point(4, 3);
+            this.lblChooseCustomer.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChooseCustomer.ForeColor = System.Drawing.Color.Red;
+            this.lblChooseCustomer.Location = new System.Drawing.Point(23, 24);
             this.lblChooseCustomer.Name = "lblChooseCustomer";
-            this.lblChooseCustomer.Size = new System.Drawing.Size(238, 21);
+            this.lblChooseCustomer.Size = new System.Drawing.Size(189, 17);
             this.lblChooseCustomer.TabIndex = 31;
             this.lblChooseCustomer.Text = "Click to choose registed customer";
             this.lblChooseCustomer.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -184,7 +185,7 @@ namespace Tour
             this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel17.Controls.Add(this.tbEmail);
             this.panel17.Location = new System.Drawing.Point(8, 209);
-            this.panel17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel17.Margin = new System.Windows.Forms.Padding(2);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(215, 28);
             this.panel17.TabIndex = 28;
@@ -202,7 +203,7 @@ namespace Tour
             this.tbEmail.ForeColor = System.Drawing.Color.Black;
             this.tbEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbEmail.Location = new System.Drawing.Point(-2, -1);
-            this.tbEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(4);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.PasswordChar = '\0';
             this.tbEmail.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -217,7 +218,7 @@ namespace Tour
             this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel16.Controls.Add(this.tbTelephone);
             this.panel16.Location = new System.Drawing.Point(8, 162);
-            this.panel16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel16.Margin = new System.Windows.Forms.Padding(2);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(216, 28);
             this.panel16.TabIndex = 27;
@@ -235,7 +236,7 @@ namespace Tour
             this.tbTelephone.ForeColor = System.Drawing.Color.Black;
             this.tbTelephone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbTelephone.Location = new System.Drawing.Point(-2, -2);
-            this.tbTelephone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbTelephone.Margin = new System.Windows.Forms.Padding(4);
             this.tbTelephone.MaxLength = 13;
             this.tbTelephone.Name = "tbTelephone";
             this.tbTelephone.PasswordChar = '\0';
@@ -251,7 +252,7 @@ namespace Tour
             this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel15.Controls.Add(this.tbAddress);
             this.panel15.Location = new System.Drawing.Point(8, 115);
-            this.panel15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel15.Margin = new System.Windows.Forms.Padding(2);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(215, 28);
             this.panel15.TabIndex = 26;
@@ -269,7 +270,7 @@ namespace Tour
             this.tbAddress.ForeColor = System.Drawing.Color.Black;
             this.tbAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbAddress.Location = new System.Drawing.Point(1, -1);
-            this.tbAddress.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tbAddress.Margin = new System.Windows.Forms.Padding(6);
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.PasswordChar = '\0';
             this.tbAddress.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -284,7 +285,7 @@ namespace Tour
             this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel14.Controls.Add(this.tbName);
             this.panel14.Location = new System.Drawing.Point(8, 68);
-            this.panel14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel14.Margin = new System.Windows.Forms.Padding(2);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(215, 28);
             this.panel14.TabIndex = 24;
@@ -302,7 +303,7 @@ namespace Tour
             this.tbName.ForeColor = System.Drawing.Color.Black;
             this.tbName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbName.Location = new System.Drawing.Point(-2, -1);
-            this.tbName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbName.Margin = new System.Windows.Forms.Padding(4);
             this.tbName.Name = "tbName";
             this.tbName.PasswordChar = '\0';
             this.tbName.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -318,7 +319,7 @@ namespace Tour
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel10.Controls.Add(this.tbCMND);
             this.panel10.Location = new System.Drawing.Point(6, 309);
-            this.panel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel10.Margin = new System.Windows.Forms.Padding(2);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(217, 27);
             this.panel10.TabIndex = 22;
@@ -336,7 +337,7 @@ namespace Tour
             this.tbCMND.ForeColor = System.Drawing.Color.Black;
             this.tbCMND.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbCMND.Location = new System.Drawing.Point(0, -2);
-            this.tbCMND.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tbCMND.Margin = new System.Windows.Forms.Padding(6);
             this.tbCMND.MaxLength = 13;
             this.tbCMND.Name = "tbCMND";
             this.tbCMND.PasswordChar = '\0';
@@ -353,10 +354,10 @@ namespace Tour
             this.panel6.Controls.Add(this.RdFmale);
             this.panel6.Controls.Add(this.RdMale);
             this.panel6.ForeColor = System.Drawing.Color.Black;
-            this.panel6.Location = new System.Drawing.Point(23, 261);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Location = new System.Drawing.Point(7, 261);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(178, 36);
+            this.panel6.Size = new System.Drawing.Size(215, 36);
             this.panel6.TabIndex = 19;
             // 
             // RdFmale
@@ -393,7 +394,7 @@ namespace Tour
             this.panel4.Controls.Add(this.label18);
             this.panel4.Controls.Add(this.label17);
             this.panel4.Location = new System.Drawing.Point(250, 310);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(297, 179);
             this.panel4.TabIndex = 4;
@@ -403,7 +404,7 @@ namespace Tour
             this.panel25.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel25.Controls.Add(this.tbTotal);
             this.panel25.Location = new System.Drawing.Point(108, 107);
-            this.panel25.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel25.Margin = new System.Windows.Forms.Padding(2);
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(180, 28);
             this.panel25.TabIndex = 34;
@@ -424,7 +425,7 @@ namespace Tour
             this.panel24.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel24.Controls.Add(this.tbDiscount);
             this.panel24.Location = new System.Drawing.Point(108, 63);
-            this.panel24.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel24.Margin = new System.Windows.Forms.Padding(2);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(180, 28);
             this.panel24.TabIndex = 33;
@@ -445,7 +446,7 @@ namespace Tour
             this.panel23.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel23.Controls.Add(this.tbPrice);
             this.panel23.Location = new System.Drawing.Point(108, 14);
-            this.panel23.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel23.Margin = new System.Windows.Forms.Padding(2);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(180, 28);
             this.panel23.TabIndex = 32;
@@ -469,7 +470,7 @@ namespace Tour
             this.btReset.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btReset.ForeColor = System.Drawing.Color.White;
             this.btReset.Location = new System.Drawing.Point(233, 223);
-            this.btReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btReset.Margin = new System.Windows.Forms.Padding(2);
             this.btReset.Name = "btReset";
             this.btReset.Size = new System.Drawing.Size(84, 33);
             this.btReset.TabIndex = 21;
@@ -537,7 +538,7 @@ namespace Tour
             this.panel3.Controls.Add(this.guna2GradientPanel1);
             this.panel3.Controls.Add(this.label21);
             this.panel3.Location = new System.Drawing.Point(550, 102);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(345, 515);
             this.panel3.TabIndex = 9;
@@ -855,7 +856,7 @@ namespace Tour
             this.panel8.Controls.Add(this.label13);
             this.panel8.ForeColor = System.Drawing.Color.Black;
             this.panel8.Location = new System.Drawing.Point(-2, -2);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(298, 206);
             this.panel8.TabIndex = 6;
@@ -994,7 +995,7 @@ namespace Tour
             this.panel2.Controls.Add(this.panel8);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(250, 102);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(297, 206);
             this.panel2.TabIndex = 2;
@@ -1021,7 +1022,7 @@ namespace Tour
             this.btCreate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCreate.ForeColor = System.Drawing.Color.Black;
             this.btCreate.Location = new System.Drawing.Point(635, 643);
-            this.btCreate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btCreate.Margin = new System.Windows.Forms.Padding(2);
             this.btCreate.Name = "btCreate";
             this.btCreate.Size = new System.Drawing.Size(127, 25);
             this.btCreate.TabIndex = 13;
@@ -1039,7 +1040,7 @@ namespace Tour
             this.btnClear.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.Black;
             this.btnClear.Location = new System.Drawing.Point(772, 643);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(119, 25);
             this.btnClear.TabIndex = 13;
@@ -1054,7 +1055,7 @@ namespace Tour
             this.panel5.Controls.Add(this.pcbxBanner);
             this.panel5.ForeColor = System.Drawing.Color.Black;
             this.panel5.Location = new System.Drawing.Point(250, 490);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(297, 127);
             this.panel5.TabIndex = 36;
@@ -1078,7 +1079,7 @@ namespace Tour
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(900, 768);
+            this.ClientSize = new System.Drawing.Size(904, 771);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.lbTime);
             this.Controls.Add(this.label22);
@@ -1091,7 +1092,7 @@ namespace Tour
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DangKy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DangKy";

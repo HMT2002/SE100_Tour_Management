@@ -257,7 +257,6 @@ namespace Tour
         {
             this.panel4.Controls.Clear();
             DangKy dk = new DangKy() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, StartPosition = FormStartPosition.CenterParent, WindowState = FormWindowState.Maximized };
-            dk.StartPosition = FormStartPosition.CenterParent;
             dk.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
 
             this.panel4.Controls.Add(dk);
@@ -270,6 +269,7 @@ namespace Tour
             this.panel4.Controls.Clear();
             NhanVien h = new NhanVien() { TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, StartPosition = FormStartPosition.CenterParent, WindowState = FormWindowState.Maximized };
             h.Size = new System.Drawing.Size(panel4.Width, panel4.Height);
+
             this.panel4.Controls.Add(h);
             h.Show();
         }

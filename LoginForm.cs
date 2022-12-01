@@ -170,15 +170,11 @@ namespace Tour
         }
         public string password, email;
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        public void OpenTicketReport()
         {
-            string ticket_id =  txtbxSearchTicket.Text;
+            string ticket_id = txtbxSearchTicket.Text;
+
             VE ve = DataProvider.Ins.DB.VEs.Where(x => (x.ID == ticket_id && x.IsDeleted == false)).SingleOrDefault();
-            if (ve == null)
-            {
-                MessageBox.Show("Số vé không tồn tại!");
-                return;
-            }
 
             using (fPrint f = new fPrint(ve))
             {
@@ -192,6 +188,11 @@ namespace Tour
 
                 f.ShowDialog();
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            OpenTicketReport();
         }
 
         public void Clear()

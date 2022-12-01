@@ -286,5 +286,11 @@ namespace Tour
         {
 
         }
+
+        private void txtbxGia_TextChanged(object sender, EventArgs e)
+        {
+            Utils.Validate.EnterCurrencyVnd(sender);
+
+        }
     }
 }

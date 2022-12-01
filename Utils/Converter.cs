@@ -203,7 +203,7 @@ namespace Tour.Utils
         public decimal CurrencyStringToDecimalByReplaceCharacter(string CurrencyStr)
         {
             decimal res = 0;
-            string temp=CurrencyStr.Trim().Replace(".",string.Empty).Replace(",",".").Replace("₫", string.Empty);
+            string temp=CurrencyStr.Trim().Replace(".",string.Empty).Replace(",", string.Empty).Replace("000 ₫", string.Empty);
             res = decimal.Parse(temp);
 
             return res;
@@ -212,7 +212,7 @@ namespace Tour.Utils
 
         public string CurrencyDisplay(decimal dec)
         {
-            return (dec).ToString("C0", CultureInfo.CreateSpecificCulture("vi"));
+            return (dec).ToString("C3", CultureInfo.CreateSpecificCulture("vi"));
         }
     }
 

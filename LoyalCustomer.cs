@@ -85,7 +85,7 @@ namespace Tour
                     break;
             }
 
-            lblSpending.Text = Converter.Instance.CurrencyDisplay((decimal)this.Khachhang.SPENDING);
+            lblSpending.Text ="Spending: "+ Converter.Instance.CurrencyDisplay((decimal)this.Khachhang.SPENDING);
 
         }
 

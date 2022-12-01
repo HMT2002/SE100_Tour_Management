@@ -285,15 +285,10 @@ namespace Tour
 
             }
         }
-        private void AskForReport()
-        {
-            if (this.selected_ve == null)
-            {
-                return;
-            }
-            if (MessageBox.Show("Do you want to ticket?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
 
+
+        public void OpenTicketReport()
+        {
                 VE ve = DataProvider.Ins.DB.VEs.Where(x => (x.ID == this.selected_ve.ID && x.IsDeleted == false)).SingleOrDefault();
 
                 using (fPrint f = new fPrint(ve))
@@ -308,6 +303,18 @@ namespace Tour
 
                     f.ShowDialog();
                 }
+        }
+
+        private void AskForReport()
+        {
+            if (this.selected_ve == null)
+            {
+                return;
+            }
+            if (MessageBox.Show("Do you want to ticket?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                OpenTicketReport();
+
             }
 
         }

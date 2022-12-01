@@ -17,6 +17,7 @@ using Tour.CrystalReport;
 using System.Globalization;
 using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 
 namespace Tour
 {
@@ -26,6 +27,7 @@ namespace Tour
         string randomcode;
 
         TOUR selected_tour = new TOUR();
+        List<string> ListTypeTour = new List<string> { "Bussiness", "Vacation", "Cuisine", "Culture" };
 
         List<DIADIEM> LocationList = new List<DIADIEM>();
 
@@ -33,6 +35,7 @@ namespace Tour
         {
             InitializeComponent();
             dgv_trip.AutoGenerateColumns = false;
+            cb_typetour.DataSource = ListTypeTour;
         }
 
         public void ShowAllChuyen()
@@ -49,7 +52,7 @@ namespace Tour
                                        TOURTYPE = tour.LOAI,
 
 
-                                   }).ToList();
+                                   }).Distinct().ToList();
 
             //lstbxLocation.DataSource = LocationList;
             //lstbxLocation.DisplayMember = "TEN";
@@ -57,8 +60,9 @@ namespace Tour
         }
         private void TRIPManageTour_Load(object sender, EventArgs e)
         {
-            Clear();
+
             ShowAllChuyen();
+            Clear();
 
         }
 
@@ -66,16 +70,25 @@ namespace Tour
 
         public bool CheckData()
         {
+            bool flag = true;
 
-            this.price = tb_price.Text;
-            this.typetour = cb_typetour.Text;
-            this.nametour = tb_nametour.Text;
-
-            if (this.price.Trim().CompareTo(string.Empty) == 0 || this.typetour.Trim().CompareTo(string.Empty) == 0 || this.nametour.Trim().CompareTo(string.Empty) == 0)
+            if (tb_nametour.Text.Trim().CompareTo(string.Empty) == 0)
             {
-                return false;
+                Notify.NotificationField(tb_nametour);
+                flag = false;
             }
-            return true;
+            if (tb_price.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(tb_price);
+                flag = false;
+            }
+            if (cb_typetour.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationSelect(cb_typetour);
+                flag = false;
+            }
+
+            return flag;
         }
         private void update_Click(object sender, EventArgs e)
         {
@@ -95,6 +108,9 @@ namespace Tour
         {
             try
             {
+                //MessageBox.Show(Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tb_price.Text).ToString());
+                //return;
+
                 var tour = DataProvider.Ins.DB.TOURs.Where(x => x.ID == id).FirstOrDefault();
                 tour.TEN = tb_nametour.Text;
                 tour.LOAI = cb_typetour.Text;
@@ -126,29 +142,42 @@ namespace Tour
 
         public void Clear()
         {
+
+            cb_typetour.Text = "";
+            tb_nametour.Text = "";
+            tb_price.Text = "";
             cb_typetour.SelectedIndex = -1;
-            id = cb_typetour.Text = tb_nametour.Text = cb_typetour.Text = "";
 
             id = Converter.Instance.RandomString2(5);
             tb_idtrip.Text = id;
-            tb_price.Text = "";
             lstbxLocation.DataSource = null;
             LocationList = new List<DIADIEM>();
-            this.price = this.typetour = this.nametour = null;
-            pcbxBanner.Image = Properties.Resources.ic_image_empty_128;
+
+
+            //this.price = this.typetour = this.nametour = null;
 
             this.selected_tour = null;
 
+
+            UnnotifyAllFields();
+
         }
 
+        public void UnnotifyAllFields()
+        {
+            Notify.UnnotificationField(tb_price);
+            Notify.UnnotificationSelect(tb_nametour);
+            Notify.UnnotificationSelect(cb_typetour);
 
+
+
+        }
 
         public void AddNewTour()
         {
             try
             {
                 //randomcode = Converter.Instance.RandomString2(5);
-
 
                 var tour = new TOUR() { ID = tb_idtrip.Text, GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tb_price.Text), TEN = tb_nametour.Text, LOAI = cb_typetour.Text, DACDIEM = "", IsDeleted = false };
                 DataProvider.Ins.DB.TOURs.Add(tour);
@@ -233,7 +262,6 @@ namespace Tour
         public int Hour, Minute, Year, Month, Day, Tickets, Price;
         private void dgv_trip_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            Clear();
 
             int index = e.RowIndex;
 
@@ -249,6 +277,11 @@ namespace Tour
 
                 EnableBanner();
 
+                if (dgv_trip.Columns[e.ColumnIndex] is DataGridViewImageColumn)
+                {
+                    OpenBannerForm();
+                }
+
             }
         }
 
@@ -257,20 +290,13 @@ namespace Tour
             tb_idtrip.Text = selected_tour.ID;
             tb_nametour.Text = selected_tour.TEN;
             tb_price.Text = selected_tour.GIA.ToString();
-            cb_typetour.SelectedText = selected_tour.LOAI;
+            cb_typetour.Text = selected_tour.LOAI;
 
         }
 
         public void EnableBanner()
         {
-            if (DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == selected_tour.ID && x.IsDeleted == false).FirstOrDefault() == null)
-            {
-                pcbxBanner.Image = Properties.Resources.ic_image_empty_128;
-            }
-            else
-            {
-                pcbxBanner.Image = Converter.Instance.ByteArrayToImage(DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == id && x.IsDeleted == false).FirstOrDefault().PICBI);
-            }
+
         }
 
         public void EnableLocationsSource()
@@ -290,17 +316,28 @@ namespace Tour
         }
 
 
+        public void OpenBannerForm()
+        {
+            using (ManageBanner h = new ManageBanner(selected_tour))
+            {
+                Clear();
+                this.Hide();
+                h.ShowDialog();
+                this.Show();
+
+            }
+            ShowAllChuyen();
+
+        }
+
         private void btnBanner_Click(object sender, EventArgs e)
         {
             if (selected_tour==null)
             {
                 return;
             }
-            ManageBanner h = new ManageBanner(selected_tour);
-            Clear();
-            this.Hide();
-            h.ShowDialog();
-            this.Show();
+            OpenBannerForm();
+
         }
 
 
@@ -308,6 +345,18 @@ namespace Tour
         {
 
             Utils.Validate.EnterCurrencyVnd(sender);
+        }
+
+        private void tb_nametour_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Notify.UnnotificationField(sender);
+
+        }
+
+        private void cb_typetour_Enter(object sender, EventArgs e)
+        {
+            Notify.UnnotificationSelect(sender);
+
         }
 
         private void rdIDSearch_Enter(object sender, EventArgs e)
@@ -368,11 +417,13 @@ namespace Tour
 
         private void tb_price_KeyPress(object sender, KeyPressEventArgs e)
         {
+            Notify.UnnotificationField(sender);
+
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            if ((e.KeyChar == '.') && ((sender as Guna.UI2.WinForms.Guna2TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
             }

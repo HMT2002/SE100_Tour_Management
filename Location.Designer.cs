@@ -57,20 +57,18 @@ namespace Tour
             // 
             this.pcbxLocation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pcbxLocation.Image = global::Tour.Properties.Resources.ic_image_empty_128;
-            this.pcbxLocation.Location = new System.Drawing.Point(8, 4);
-            this.pcbxLocation.Margin = new System.Windows.Forms.Padding(4);
+            this.pcbxLocation.Location = new System.Drawing.Point(6, 3);
             this.pcbxLocation.Name = "pcbxLocation";
-            this.pcbxLocation.Size = new System.Drawing.Size(513, 426);
+            this.pcbxLocation.Size = new System.Drawing.Size(385, 346);
             this.pcbxLocation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbxLocation.TabIndex = 0;
             this.pcbxLocation.TabStop = false;
             // 
             // rchtxtbxDetail
             // 
-            this.rchtxtbxDetail.Location = new System.Drawing.Point(31, 407);
-            this.rchtxtbxDetail.Margin = new System.Windows.Forms.Padding(4);
+            this.rchtxtbxDetail.Location = new System.Drawing.Point(23, 331);
             this.rchtxtbxDetail.Name = "rchtxtbxDetail";
-            this.rchtxtbxDetail.Size = new System.Drawing.Size(491, 241);
+            this.rchtxtbxDetail.Size = new System.Drawing.Size(369, 197);
             this.rchtxtbxDetail.TabIndex = 8;
             this.rchtxtbxDetail.Text = "";
             // 
@@ -78,10 +76,9 @@ namespace Tour
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(27, 213);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(20, 173);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 22);
+            this.label1.Size = new System.Drawing.Size(25, 19);
             this.label1.TabIndex = 9;
             this.label1.Text = "ID";
             // 
@@ -90,10 +87,9 @@ namespace Tour
             this.panel3.AutoSize = true;
             this.panel3.Controls.Add(this.btnPickPicture);
             this.panel3.Controls.Add(this.pcbxLocation);
-            this.panel3.Location = new System.Drawing.Point(547, 147);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Location = new System.Drawing.Point(410, 119);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(525, 501);
+            this.panel3.Size = new System.Drawing.Size(394, 407);
             this.panel3.TabIndex = 3;
             // 
             // btnPickPicture
@@ -106,9 +102,10 @@ namespace Tour
             this.btnPickPicture.FillColor = System.Drawing.Color.DodgerBlue;
             this.btnPickPicture.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnPickPicture.ForeColor = System.Drawing.Color.White;
-            this.btnPickPicture.Location = new System.Drawing.Point(185, 437);
+            this.btnPickPicture.Location = new System.Drawing.Point(139, 355);
+            this.btnPickPicture.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPickPicture.Name = "btnPickPicture";
-            this.btnPickPicture.Size = new System.Drawing.Size(180, 45);
+            this.btnPickPicture.Size = new System.Drawing.Size(135, 37);
             this.btnPickPicture.TabIndex = 6;
             this.btnPickPicture.Text = "Chọn ảnh";
             this.btnPickPicture.Click += new System.EventHandler(this.btnPickPicture_Click);
@@ -124,9 +121,10 @@ namespace Tour
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.ForeColor = System.Drawing.Color.BlueViolet;
-            this.label6.Location = new System.Drawing.Point(345, 39);
+            this.label6.Location = new System.Drawing.Point(259, 32);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(377, 55);
+            this.label6.Size = new System.Drawing.Size(301, 43);
             this.label6.TabIndex = 25;
             this.label6.Text = "Quản lý địa điểm";
             // 
@@ -140,9 +138,10 @@ namespace Tour
             this.cbbxLocation.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbxLocation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbxLocation.ItemHeight = 30;
-            this.cbbxLocation.Location = new System.Drawing.Point(168, 147);
+            this.cbbxLocation.Location = new System.Drawing.Point(126, 119);
+            this.cbbxLocation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbbxLocation.Name = "cbbxLocation";
-            this.cbbxLocation.Size = new System.Drawing.Size(354, 36);
+            this.cbbxLocation.Size = new System.Drawing.Size(266, 36);
             this.cbbxLocation.TabIndex = 29;
             this.cbbxLocation.SelectedValueChanged += new System.EventHandler(this.cbbxLocation_SelectedValueChanged);
             // 
@@ -156,9 +155,10 @@ namespace Tour
             this.btnUpdate.FillColor = System.Drawing.Color.Gold;
             this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnUpdate.Location = new System.Drawing.Point(644, 690);
+            this.btnUpdate.Location = new System.Drawing.Point(483, 561);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(138, 45);
+            this.btnUpdate.Size = new System.Drawing.Size(104, 37);
             this.btnUpdate.TabIndex = 32;
             this.btnUpdate.Text = "Sửa";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -173,9 +173,10 @@ namespace Tour
             this.btnXoa.FillColor = System.Drawing.Color.OrangeRed;
             this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(447, 690);
+            this.btnXoa.Location = new System.Drawing.Point(335, 561);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(138, 45);
+            this.btnXoa.Size = new System.Drawing.Size(104, 37);
             this.btnXoa.TabIndex = 31;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -190,9 +191,10 @@ namespace Tour
             this.btnAdd.FillColor = System.Drawing.Color.LimeGreen;
             this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(243, 690);
+            this.btnAdd.Location = new System.Drawing.Point(182, 561);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(138, 45);
+            this.btnAdd.Size = new System.Drawing.Size(104, 37);
             this.btnAdd.TabIndex = 30;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -207,19 +209,19 @@ namespace Tour
             this.cbboxProvince.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbboxProvince.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbboxProvince.ItemHeight = 30;
-            this.cbboxProvince.Location = new System.Drawing.Point(168, 355);
+            this.cbboxProvince.Location = new System.Drawing.Point(126, 288);
+            this.cbboxProvince.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbboxProvince.Name = "cbboxProvince";
-            this.cbboxProvince.Size = new System.Drawing.Size(354, 36);
+            this.cbboxProvince.Size = new System.Drawing.Size(266, 36);
             this.cbboxProvince.TabIndex = 33;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(27, 317);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(20, 258);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 22);
+            this.label2.Size = new System.Drawing.Size(67, 19);
             this.label2.TabIndex = 36;
             this.label2.Text = "Giá/Ngày";
             // 
@@ -227,10 +229,9 @@ namespace Tour
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(27, 265);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(20, 215);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 22);
+            this.label3.Size = new System.Drawing.Size(32, 19);
             this.label3.TabIndex = 35;
             this.label3.Text = "Tên";
             // 
@@ -238,10 +239,9 @@ namespace Tour
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(27, 369);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(20, 300);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(134, 22);
+            this.label5.Size = new System.Drawing.Size(103, 19);
             this.label5.TabIndex = 34;
             this.label5.Text = "Tỉnh/Thành phố";
             // 
@@ -256,12 +256,13 @@ namespace Tour
             this.txtbxName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtbxName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxName.Location = new System.Drawing.Point(168, 251);
+            this.txtbxName.Location = new System.Drawing.Point(126, 204);
+            this.txtbxName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtbxName.Name = "txtbxName";
             this.txtbxName.PasswordChar = '\0';
             this.txtbxName.PlaceholderText = "";
             this.txtbxName.SelectedText = "";
-            this.txtbxName.Size = new System.Drawing.Size(354, 36);
+            this.txtbxName.Size = new System.Drawing.Size(266, 29);
             this.txtbxName.TabIndex = 37;
             // 
             // txtbxGia
@@ -275,13 +276,15 @@ namespace Tour
             this.txtbxGia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxGia.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtbxGia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxGia.Location = new System.Drawing.Point(168, 303);
+            this.txtbxGia.Location = new System.Drawing.Point(126, 246);
+            this.txtbxGia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtbxGia.Name = "txtbxGia";
             this.txtbxGia.PasswordChar = '\0';
             this.txtbxGia.PlaceholderText = "";
             this.txtbxGia.SelectedText = "";
-            this.txtbxGia.Size = new System.Drawing.Size(354, 36);
+            this.txtbxGia.Size = new System.Drawing.Size(266, 29);
             this.txtbxGia.TabIndex = 38;
+            this.txtbxGia.TextChanged += new System.EventHandler(this.txtbxGia_TextChanged);
             // 
             // txtbxId
             // 
@@ -294,13 +297,14 @@ namespace Tour
             this.txtbxId.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxId.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtbxId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxId.Location = new System.Drawing.Point(168, 199);
+            this.txtbxId.Location = new System.Drawing.Point(126, 162);
+            this.txtbxId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtbxId.Name = "txtbxId";
             this.txtbxId.PasswordChar = '\0';
             this.txtbxId.PlaceholderText = "";
             this.txtbxId.ReadOnly = true;
             this.txtbxId.SelectedText = "";
-            this.txtbxId.Size = new System.Drawing.Size(354, 36);
+            this.txtbxId.Size = new System.Drawing.Size(266, 29);
             this.txtbxId.TabIndex = 39;
             this.txtbxId.TextChanged += new System.EventHandler(this.txtbxId_TextChanged);
             // 
@@ -308,20 +312,19 @@ namespace Tour
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(27, 161);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(20, 131);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 22);
+            this.label4.Size = new System.Drawing.Size(63, 19);
             this.label4.TabIndex = 40;
             this.label4.Text = "Địa điểm";
             // 
             // Location
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1100, 784);
+            this.ClientSize = new System.Drawing.Size(825, 637);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtbxId);
             this.Controls.Add(this.txtbxName);
@@ -339,7 +342,6 @@ namespace Tour
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rchtxtbxDetail);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Location";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Location";

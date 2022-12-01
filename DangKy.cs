@@ -96,6 +96,8 @@ namespace Tour
             Notify.UnnotificationSelect(cbDes);
             Notify.UnnotificationSelect(cbGroup);
             cbGroup.DataSource = null;
+
+            pcbxBanner.Visible = false;
             pcbxBanner.Image = Properties.Resources.ic_image_empty_128;
             selected_group = null;
             selected_tour = null;
@@ -204,14 +206,18 @@ namespace Tour
                 lblChooseCustomer.Text = t.ChosedKhachHang.ID;
 
                 tbName.Text = t.ChosedKhachHang.TENKH;
-
+                tbName.Enabled = false;
                 tbAddress.Text = t.ChosedKhachHang.DIACHI;
+                tbAddress.Enabled = false;
 
                 tbCMND.Text = t.ChosedKhachHang.CMND;
+                tbCMND.Enabled = false;
 
                 tbTelephone.Text = t.ChosedKhachHang.SDT;
+                tbTelephone.Enabled = false;
 
                 tbEmail.Text = t.ChosedKhachHang.MAIL;
+                tbEmail.Enabled = false;
 
                 if (t.ChosedKhachHang.GIOITINH == "Male")
                 {
@@ -221,6 +227,10 @@ namespace Tour
                 {
                     RdFmale.Checked = true;
                 }
+
+                RdMale.Enabled = false;
+                RdFmale.Enabled = false;
+
 
                 switch (t.ChosedKhachHang.PRI)
                 {
@@ -247,11 +257,12 @@ namespace Tour
 
                 lblCustomerDiscount.Text = customer_discount.ToString();
                 tbDiscount.Text = (banner_discount + customer_discount).ToString();
+
                 try
                 {
                     decimal res = 0;
                     double discount = banner_discount + customer_discount;
-                    decimal price = Convert.ToDecimal(tbPrice.Text);
+                    decimal price = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tbPrice.Text);
                     res = price - (price * (decimal)(discount / 100));
                     tbTotal.Text = res.ToString();
                 }
@@ -260,6 +271,7 @@ namespace Tour
 
                     tbTotal.Text = tbPrice.Text;
                 }
+
 
                 lblReciptPrice.Text = tbTotal.Text;
 
@@ -317,10 +329,13 @@ namespace Tour
 
             if (CheckData())
             {
-                if (MessageBox.Show("Confirm create ticket? ", "Confirmation", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+                if (MessageBox.Show("Confirm create ticket? ", "Confirmation", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     try
                     {
+                        //MessageBox.Show(Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tbPrice.Text).ToString());
+                        //return;
+
                         if (RdFmale.Checked == true)
                         {
                             gender = "Male";
@@ -346,7 +361,7 @@ namespace Tour
                         }
                         else
                         {
-                            khachhang.SPENDING += Convert.ToDecimal(tbPrice.Text);
+                            khachhang.SPENDING += Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tbPrice.Text);
                         }
 
                         var ve = new VE()
@@ -355,7 +370,7 @@ namespace Tour
                             IDKHACH = idkhach,
                             IDDOAN = cbGroup.SelectedValue.ToString(),
                             NGAYMUA = DateTime.Today,
-                            GIA = Convert.ToDecimal(tbPrice.Text),
+                            GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tbPrice.Text),
                             IsDeleted = false,
                         };
                         DataProvider.Ins.DB.VEs.Add(ve);
@@ -363,10 +378,11 @@ namespace Tour
                         temp_ticket_id = lblReciptTicketID.Text;
                         showAll();
                         Clear();
+                        MessageBox.Show("Ticket Booked!");
                     }
                     catch (Exception ex)
                     {
-
+                        MessageBox.Show(ex.Message);
                     }
                 }
 
@@ -377,13 +393,17 @@ namespace Tour
         public string temp_ticket_id = "";
         private void btCreate_Click(object sender, EventArgs e)
         {
-            AddTicket();
-            AskForReport();
+            if (CheckData())
+            {
+                AddTicket();
+                AskForReport();
+            }
+
         }
 
         private void AskForReport()
         {
-            if (MessageBox.Show("Do you want to print ticket?", "Print ticket", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+            if (MessageBox.Show("Do you want to print ticket?", "Print ticket", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
 
                 VE ve = DataProvider.Ins.DB.VEs.Where(x => (x.ID == temp_ticket_id && x.IsDeleted == false)).SingleOrDefault();
@@ -420,8 +440,7 @@ namespace Tour
             cbDes.Refresh();
             cbDes.DataSource = (from tour in DataProvider.Ins.DB.TOURs
                                 join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
-                                where tour.IsDeleted == false && doan.IsDeleted == false
-
+                                where tour.IsDeleted == false && doan.IsDeleted == false&& doan.NGAYKHOIHANH >= DateTime.Today
                                 select new
                                 {
                                     TENTOUR = tour.TEN,
@@ -462,25 +481,42 @@ namespace Tour
                 cbGroup.ValueMember = "IDDOAN";
                 cbGroup.DisplayMember = "TENDOAN";
                 cbGroup.SelectedIndex = -1;
-                tbPrice.Text = selected_tour.GIA.ToString();
-                GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == selected_tour.ID && x.IsDeleted == false).FirstOrDefault();
-                banner_discount = (double)giamgia.DISCOUNT;
-                tbDiscount.Text = (banner_discount + customer_discount).ToString();
-                pcbxBanner.Image = Converter.Instance.ByteArrayToImage(giamgia.PICBI);
+                tbPrice.Text = Converter.Instance.CurrencyDisplay((decimal)selected_tour.GIA);
 
-                try
+                GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == selected_tour.ID && x.IsDeleted == false && x.NGAYBATDAU >= DateTime.Today).FirstOrDefault();
+                if (giamgia != null)
                 {
-                    decimal res = 0;
-                    double discount = banner_discount+customer_discount;
-                    decimal price = Convert.ToDecimal(tbPrice.Text);
-                    res = price - (price * (decimal)(discount / 100));
-                    tbTotal.Text = res.ToString();
-                }
-                catch
-                {
+                    banner_discount = (double)giamgia.DISCOUNT;
+                    tbDiscount.Text = (banner_discount + customer_discount).ToString();
 
-                    tbTotal.Text = tbPrice.Text;
+                    if (giamgia.DISCOUNT != 0)
+                    {
+                        pcbxBanner.Image = Converter.Instance.ByteArrayToImage(giamgia.PICBI);
+                        pcbxBanner.Visible = true;
+                    }
+
+
+
+
+                    try
+                    {
+                        decimal res = 0;
+                        double discount = banner_discount + customer_discount;
+                        decimal price = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tbPrice.Text);
+                        res = price - (price * (decimal)(discount / 100));
+                        tbTotal.Text = res.ToString();
+                    }
+                    catch
+                    {
+
+                        tbTotal.Text =tbPrice.Text;
+                    }
+
+
                 }
+
+
+
                 lblReciptPrice.Text = tbTotal.Text;
                 lblReciptTourName.Text = selected_tour.TEN;
                 selected_group = null;
@@ -506,8 +542,17 @@ namespace Tour
             RdMale.Checked = true;
             lblCustomerDiscount.Text = customer_discount.ToString();
             UnnotifyAllFields();
+
             lblReciptCustomerName.Text = "";
             lblReciptTicketID.Text = Converter.Instance.RandomString2(5);
+
+            tbName.Enabled = true;
+            tbAddress.Enabled = true;
+            tbTelephone.Enabled = true;
+            tbEmail.Enabled = true;
+            tbCMND.Enabled = true;
+            RdMale.Enabled = true;
+            RdFmale.Enabled = true;
 
         }
         private void tbTelephone_KeyPress(object sender, KeyPressEventArgs e)
