@@ -53,8 +53,11 @@ namespace Tour
             {
                 return;
             }
-            GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == Tour.ID && x.IsDeleted == false).FirstOrDefault();
-
+            GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == Tour.ID && x.IsDeleted == false && x.NGAYBATDAU >= DateTime.Today).FirstOrDefault();
+            if(giamgia == null)
+            {
+                return;
+            }
             txtbxDiscount.Text = giamgia.DISCOUNT.ToString();
 
             if (giamgia.PICBI != null)
@@ -109,7 +112,7 @@ namespace Tour
             lblTour.Text = ID_tour;
             cbDes.Visible = false;
 
-            GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == ID_tour && x.IsDeleted == false && x.NGAYBATDAU >= DateTime.Today).FirstOrDefault();
+            GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == this.ID_tour && x.IsDeleted == false && x.NGAYBATDAU >= DateTime.Today).FirstOrDefault();
 
             if (giamgia == null)
             {
@@ -215,6 +218,11 @@ namespace Tour
 
         public bool CheckData()
         {
+            if (txtbxDiscount.Text.Trim() == "")
+            {
+                return false;
+
+            }
             if (Convert.ToInt64(txtbxDiscount.Text) == 0)
             {
                 return false;
@@ -248,7 +256,11 @@ namespace Tour
         {
             try
             {
-                GIAMGIA temp = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == this.Tour.ID && x.IsDeleted == false && x.NGAYBATDAU >= DateTime.Today).FirstOrDefault();
+                GIAMGIA temp = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == this.Tour.ID && x.IsDeleted == false).FirstOrDefault();
+                if(temp == null)
+                {
+                    return;
+                }
                 temp.NGAYBATDAU = DateTime.Now;
                 temp.NGAYKETTHUC = DateTime.Now;
                 temp.PICBI = Converter.Instance.ImageToByte(Properties.Resources.ic_image_empty_128);
@@ -267,7 +279,7 @@ namespace Tour
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Confirm create banner? ", "Confirmation", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+            if (MessageBox.Show("Confirm clear current banner? ", "Confirmation", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
             {
                 RemoveCurrentBanner();
 
@@ -278,18 +290,19 @@ namespace Tour
         {
             try
             {
-                GIAMGIA temp = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == this.Tour.ID && x.IsDeleted == false && x.NGAYBATDAU >= DateTime.Today).FirstOrDefault();
-                if (temp != null)
+                GIAMGIA temp = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == this.Tour.ID && x.IsDeleted == false).FirstOrDefault();
+                if (temp == null)
                 {
-                    temp.IsDeleted = true;
-                    DataProvider.Ins.DB.SaveChanges();
+                    return;
                 }
+                temp.DISCOUNT = Convert.ToInt32(txtbxDiscount.Text);
+                temp.PICBI = Converter.Instance.ImageToByte(pcbxBanner.Image);
+                temp.NGAYBATDAU = datepckBegin.Value.Date;
+                temp.NGAYKETTHUC = datepckEnd.Value.Date;
 
-                string randomecode = Converter.Instance.RandomString2(5);
-                GIAMGIA giamgia = new GIAMGIA() { ID = randomecode, IDTOUR = Tour.ID, DISCOUNT = Convert.ToInt32(txtbxDiscount.Text), PICBI =Converter.Instance.ImageToByte(pcbxBanner.Image), NGAYBATDAU = datepckBegin.Value.Date, NGAYKETTHUC = datepckEnd.Value.Date, IsDeleted = false };
-                DataProvider.Ins.DB.GIAMGIAs.Add(giamgia);
+
                 DataProvider.Ins.DB.SaveChanges();
-                MessageBox.Show("Add banner succeed");
+                //MessageBox.Show("Add banner succeed");
 
                 Clear();
                 this.Close();

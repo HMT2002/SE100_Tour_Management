@@ -214,10 +214,15 @@ namespace Tour
                 var khachsan = DataProvider.Ins.DB.KHACHSANs.Where(x => x.ID == id).FirstOrDefault();
                 khachsan.TEN = txtbxName.Text;
                 khachsan.DIACHI = txtbxDiaChi.Text;
-
+                if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
+                {
+                    var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text, IsDeleted = false };
+                    DataProvider.Ins.DB.TINHs.Add(tinh);
+                    DataProvider.Ins.DB.SaveChanges();
+                }
                 khachsan.IDTINH = cbboxProvince.SelectedIndex.ToString();
                 khachsan.CHITIET = rchtxtbxDetail.Text;
-                khachsan.PICBI =Converter.Instance.ImageToByte(pcbxLocation.Image);
+                khachsan.PICBI =img_data;
                 khachsan.GIA= Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text);
                 DataProvider.Ins.DB.SaveChanges();
                 showAll();

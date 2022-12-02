@@ -48,45 +48,48 @@ namespace Tour
 
         private void showAll()
         {
-    //        dgv_nhanvien.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t=>t.IsDeleted==false).Select(t => new
-    //        {
-    //            t.ID,
-    //            t.TEN,
-    //            t.SDT,
-    //            t.MAIL,
-    //            t.isAvailable,
-    //            t.PICBI,
-    //            t.SLDI,
-    //        }
-    //).ToList();
+            dgv_nhanvien.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t => t.IsDeleted == false).Select(t => new
+            {
+                t.ID,
+                t.TEN,
+                t.SDT,
+                t.MAIL,
+                t.isAvailable,
+                t.PICBI,
+                t.SLDI,
+            }
+    ).ToList();
 
 
-            dgv_nhanvien.DataSource = (from nv in DataProvider.Ins.DB.NHANVIENs
-                                       join tb_phutrach in DataProvider.Ins.DB.tb_PHUTRACH on nv.ID equals tb_phutrach.IDNHANVIEN
-                                       join doan in DataProvider.Ins.DB.DOANs on tb_phutrach.IDDOAN equals doan.ID
-                                       where nv.IsDeleted == false && doan.IsDeleted == false
+            //dgv_nhanvien.DataSource = (from nv in DataProvider.Ins.DB.NHANVIENs
+            //                           join tb_phutrach in DataProvider.Ins.DB.tb_PHUTRACH on nv.ID equals tb_phutrach.IDNHANVIEN
+            //                           join doan in DataProvider.Ins.DB.DOANs on tb_phutrach.IDDOAN equals doan.ID
+            //                           where nv.IsDeleted == false && doan.IsDeleted == false
 
-                                       group nv by new { nv.ID, nv.TEN, nv.SDT, nv.MAIL, nv.isAvailable, nv.PICBI, nv.SLDI } into g
-                                       select new
-                                       {
-                                           ID = g.Key.ID,
-                                           TEN = g.Key.TEN,
-                                           SDT = g.Key.SDT,
-                                           MAIL = g.Key.MAIL,
-                                           isAvailable = g.Key.isAvailable,
-                                           PICBI = g.Key.PICBI,
-                                           SLDI = g.Count(),
-                                       }
+            //                           group nv by new { nv.ID, nv.TEN, nv.SDT, nv.MAIL, nv.isAvailable, nv.PICBI, nv.SLDI } into g
+            //                           select new
+            //                           {
+            //                               ID = g.Key.ID,
+            //                               TEN = g.Key.TEN,
+            //                               SDT = g.Key.SDT,
+            //                               MAIL = g.Key.MAIL,
+            //                               isAvailable = g.Key.isAvailable,
+            //                               PICBI = g.Key.PICBI,
+            //                               SLDI = g.Count(),
+            //                           }
 
-                                     ).ToList();
+            //                         ).ToList();
 
 
         }
 
         private void Clear()
         {
+
             txtbxName.Text = txtbxSDT.Text = txtbxMail.Text =txtbxID.Text= "";
+
             txtbxPassword.Text = "";
+            checkbxShowPassword.Checked = false;
             img_data = null;
             pcbxAvatar.Image = Properties.Resources.ic_image_empty_128;
             cbbxRole.SelectedIndex = 1;
@@ -254,7 +257,7 @@ namespace Tour
                 {
                     string randomcode = Converter.Instance.RandomString2(5);
 
-                    var nv = new NHANVIEN() { ID = randomcode, TEN = txtbxName.Text, MAIL = txtbxMail.Text, SDT = txtbxSDT.Text, IsDeleted = false, isAvailable = true,PICBI=img_data,IDACC=randomcode };
+                    var nv = new NHANVIEN() { ID = randomcode, TEN = txtbxName.Text, MAIL = txtbxMail.Text, SDT = txtbxSDT.Text, IsDeleted = false, isAvailable = true,PICBI=Converter.Instance.ImageToByte(pcbxAvatar.Image),IDACC=randomcode };
                     var account = new ACCOUNT() { ACC = txtbxMail.Text, PASS = Converter.Instance.EncryptPassword((txtbxPassword.Text.Trim())), ID = randomcode, IsDeleted = false, ACCROLE = "Employee" };
                     DataProvider.Ins.DB.ACCOUNTs.Add(account);
                     DataProvider.Ins.DB.NHANVIENs.Add(nv);
@@ -327,6 +330,7 @@ namespace Tour
                 nhanvien.SDT = txtbxSDT.Text;
                 nhanvien.PICBI = img_data;
                 nhanvien.ACCOUNT.ACCROLE = cbbxRole.SelectedItem.ToString();
+                nhanvien.ACCOUNT.PASS = Converter.Instance.EncryptPassword(txtbxPassword.Text);
                 DataProvider.Ins.DB.SaveChanges();
                 showAll();
                 Clear();
@@ -408,7 +412,7 @@ namespace Tour
 
             Clear();
         }
-
+        NHANVIEN selected_nhanvien = new NHANVIEN();
         private void dgv_nhanvien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
@@ -416,6 +420,7 @@ namespace Tour
             {
                 id = dgv_nhanvien.Rows[index].Cells["data_employeeid"].Value.ToString();
                 NHANVIEN temp = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault();
+                selected_nhanvien = temp;
                 pcbxAvatar.Image = Converter.Instance.ByteArrayToImage(temp.PICBI);
 
                 txtbxID.Text = temp.ID;
@@ -423,6 +428,7 @@ namespace Tour
                 txtbxMail.Text = temp.MAIL;
                 txtbxSDT.Text = temp.SDT;
                 cbbxRole.Text = temp.ACCOUNT.ACCROLE;
+                txtbxPassword.Text = Converter.Instance.DecryptEncrypt(selected_nhanvien.ACCOUNT.PASS);
             }
             else
             {// nhấn vào isAvailable
@@ -540,6 +546,12 @@ namespace Tour
                 pcbxAvatar.Image = image;
 
             }
+        }
+
+        private void checkbxShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            txtbxPassword.PasswordChar = checkbxShowPassword.Checked ? '\0' : '●';
+
         }
     }
 

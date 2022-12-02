@@ -294,7 +294,7 @@ namespace Tour
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage2.Size = new System.Drawing.Size(357, 380);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Guest";
+            this.tabPage2.Text = "Search ticket";
             // 
             // btnSearchTicket
             // 

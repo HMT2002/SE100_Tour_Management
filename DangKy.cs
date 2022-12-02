@@ -364,7 +364,7 @@ namespace Tour
                         }
                         else
                         {
-                            khachhang.SPENDING += Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tbPrice.Text);
+                            khachhang.SPENDING += Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tbTotal.Text);
                         }
 
                         var ve = new VE()
@@ -373,8 +373,8 @@ namespace Tour
                             IDKHACH = idkhach,
                             IDDOAN = cbGroup.SelectedValue.ToString(),
                             NGAYMUA = DateTime.Today,
-                            GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tbPrice.Text),
-                            IsDeleted = false,
+                            GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tbTotal.Text),
+                        IsDeleted = false,
                         };
                         DataProvider.Ins.DB.VEs.Add(ve);
                         DataProvider.Ins.DB.SaveChanges();
@@ -487,40 +487,29 @@ namespace Tour
                 tbPrice.Text = Converter.Instance.CurrencyDisplay((decimal)selected_tour.GIA);
 
                 GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == selected_tour.ID && x.IsDeleted == false && x.NGAYBATDAU >= DateTime.Today).FirstOrDefault();
+                
                 if (giamgia != null)
                 {
-                    banner_discount = (double)giamgia.DISCOUNT;
-                    tbDiscount.Text = (banner_discount + customer_discount).ToString();
-
+                banner_discount = (double)giamgia.DISCOUNT;
                     if (giamgia.DISCOUNT != 0)
                     {
                         pcbxBanner.Image = Converter.Instance.ByteArrayToImage(giamgia.PICBI);
                         pcbxBanner.Visible = true;
                     }
-
-
-
-
-                    try
-                    {
-                        decimal res = 0;
-                        double discount = banner_discount + customer_discount;
-                        decimal price = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tbPrice.Text);
-                        res = price - (price * (decimal)(discount / 100));
-                        tbTotal.Text = Converter.Instance.CurrencyDisplay( res);
-                    }
-                    catch
-                    {
-                        tbTotal.Text = tbPrice.Text;
-
-                    }
-
-
                 }
-                else
-                {
-                    tbDiscount.Text = (banner_discount + customer_discount).ToString();
+                tbDiscount.Text = (banner_discount + customer_discount).ToString();
 
+
+                try
+                {
+                    decimal res = 0;
+                    double discount = banner_discount + customer_discount;
+                    decimal price = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tbPrice.Text);
+                    res = price - (price * (decimal)(discount / 100));
+                    tbTotal.Text = Converter.Instance.CurrencyDisplay(res);
+                }
+                catch
+                {
                     tbTotal.Text = tbPrice.Text;
 
                 }

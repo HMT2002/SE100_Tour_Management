@@ -29,9 +29,9 @@ namespace Tour
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
@@ -39,13 +39,6 @@ namespace Tour
             this.cbbxSearchType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dgv_nhanvien = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.data_employeeid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SLDi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtbxID = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtbxMail = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtbxSDT = new Guna.UI2.WinForms.Guna2TextBox();
@@ -54,6 +47,13 @@ namespace Tour
             this.txtbxPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.pcbxAvatar = new Guna.UI2.WinForms.Guna2PictureBox();
             this.cbbxRole = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data_employeeid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkbxShowPassword = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_nhanvien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvatar)).BeginInit();
             this.SuspendLayout();
@@ -146,16 +146,16 @@ namespace Tour
             // dgv_nhanvien
             // 
             this.dgv_nhanvien.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgv_nhanvien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_nhanvien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dgv_nhanvien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_nhanvien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgv_nhanvien.ColumnHeadersHeight = 35;
             this.dgv_nhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgv_nhanvien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -164,16 +164,15 @@ namespace Tour
             this.TEN,
             this.SDT,
             this.MAIL,
-            this.SLDi,
             this.isAvailable});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_nhanvien.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_nhanvien.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgv_nhanvien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.dgv_nhanvien.Location = new System.Drawing.Point(12, 386);
             this.dgv_nhanvien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -212,64 +211,6 @@ namespace Tour
             this.dgv_nhanvien.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_nhanvien.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgv_nhanvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_nhanvien_CellClick);
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column1.HeaderText = "";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 50;
-            // 
-            // data_employeeid
-            // 
-            this.data_employeeid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.data_employeeid.DataPropertyName = "ID";
-            this.data_employeeid.FillWeight = 288.7687F;
-            this.data_employeeid.HeaderText = "ID";
-            this.data_employeeid.MinimumWidth = 6;
-            this.data_employeeid.Name = "data_employeeid";
-            this.data_employeeid.Width = 150;
-            // 
-            // TEN
-            // 
-            this.TEN.DataPropertyName = "TEN";
-            this.TEN.FillWeight = 16.19263F;
-            this.TEN.HeaderText = "Name";
-            this.TEN.MinimumWidth = 6;
-            this.TEN.Name = "TEN";
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.FillWeight = 16.19263F;
-            this.SDT.HeaderText = "Phone";
-            this.SDT.MinimumWidth = 6;
-            this.SDT.Name = "SDT";
-            // 
-            // MAIL
-            // 
-            this.MAIL.DataPropertyName = "MAIL";
-            this.MAIL.FillWeight = 16.19263F;
-            this.MAIL.HeaderText = "Mail";
-            this.MAIL.MinimumWidth = 6;
-            this.MAIL.Name = "MAIL";
-            // 
-            // SLDi
-            // 
-            this.SLDi.DataPropertyName = "SLDi";
-            this.SLDi.FillWeight = 16.19263F;
-            this.SLDi.HeaderText = "SLDi";
-            this.SLDi.MinimumWidth = 6;
-            this.SLDi.Name = "SLDi";
-            // 
-            // isAvailable
-            // 
-            this.isAvailable.DataPropertyName = "isAvailable";
-            this.isAvailable.FillWeight = 16.19263F;
-            this.isAvailable.HeaderText = "isAvailable";
-            this.isAvailable.MinimumWidth = 6;
-            this.isAvailable.Name = "isAvailable";
             // 
             // txtbxID
             // 
@@ -398,10 +339,10 @@ namespace Tour
             this.txtbxPassword.Location = new System.Drawing.Point(376, 265);
             this.txtbxPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbxPassword.Name = "txtbxPassword";
-            this.txtbxPassword.PasswordChar = '\0';
+            this.txtbxPassword.PasswordChar = '●';
             this.txtbxPassword.PlaceholderText = "Password";
             this.txtbxPassword.SelectedText = "";
-            this.txtbxPassword.Size = new System.Drawing.Size(795, 45);
+            this.txtbxPassword.Size = new System.Drawing.Size(633, 45);
             this.txtbxPassword.TabIndex = 37;
             this.txtbxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxPassword_KeyPress);
             // 
@@ -441,6 +382,71 @@ namespace Tour
             this.cbbxRole.StartIndex = 0;
             this.cbbxRole.TabIndex = 39;
             // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column1.HeaderText = "";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 50;
+            // 
+            // data_employeeid
+            // 
+            this.data_employeeid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.data_employeeid.DataPropertyName = "ID";
+            this.data_employeeid.FillWeight = 288.7687F;
+            this.data_employeeid.HeaderText = "ID";
+            this.data_employeeid.MinimumWidth = 6;
+            this.data_employeeid.Name = "data_employeeid";
+            this.data_employeeid.Width = 150;
+            // 
+            // TEN
+            // 
+            this.TEN.DataPropertyName = "TEN";
+            this.TEN.FillWeight = 16.19263F;
+            this.TEN.HeaderText = "Name";
+            this.TEN.MinimumWidth = 6;
+            this.TEN.Name = "TEN";
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.FillWeight = 16.19263F;
+            this.SDT.HeaderText = "Phone";
+            this.SDT.MinimumWidth = 6;
+            this.SDT.Name = "SDT";
+            // 
+            // MAIL
+            // 
+            this.MAIL.DataPropertyName = "MAIL";
+            this.MAIL.FillWeight = 16.19263F;
+            this.MAIL.HeaderText = "Mail";
+            this.MAIL.MinimumWidth = 6;
+            this.MAIL.Name = "MAIL";
+            // 
+            // isAvailable
+            // 
+            this.isAvailable.DataPropertyName = "isAvailable";
+            this.isAvailable.FillWeight = 16.19263F;
+            this.isAvailable.HeaderText = "isAvailable";
+            this.isAvailable.MinimumWidth = 6;
+            this.isAvailable.Name = "isAvailable";
+            // 
+            // checkbxShowPassword
+            // 
+            this.checkbxShowPassword.AutoSize = true;
+            this.checkbxShowPassword.BackColor = System.Drawing.Color.Transparent;
+            this.checkbxShowPassword.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkbxShowPassword.ForeColor = System.Drawing.Color.Black;
+            this.checkbxShowPassword.Location = new System.Drawing.Point(1015, 284);
+            this.checkbxShowPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.checkbxShowPassword.Name = "checkbxShowPassword";
+            this.checkbxShowPassword.Size = new System.Drawing.Size(156, 26);
+            this.checkbxShowPassword.TabIndex = 40;
+            this.checkbxShowPassword.Text = "Show password";
+            this.checkbxShowPassword.UseVisualStyleBackColor = false;
+            this.checkbxShowPassword.CheckedChanged += new System.EventHandler(this.checkbxShowPassword_CheckedChanged);
+            // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -449,6 +455,7 @@ namespace Tour
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 906);
+            this.Controls.Add(this.checkbxShowPassword);
             this.Controls.Add(this.cbbxRole);
             this.Controls.Add(this.pcbxAvatar);
             this.Controls.Add(this.txtbxPassword);
@@ -486,13 +493,6 @@ namespace Tour
         private Guna.UI2.WinForms.Guna2ComboBox cbbxSearchType;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2DataGridView dgv_nhanvien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn data_employeeid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MAIL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SLDi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn isAvailable;
         private Guna.UI2.WinForms.Guna2TextBox txtbxID;
         private Guna.UI2.WinForms.Guna2TextBox txtbxMail;
         private Guna.UI2.WinForms.Guna2TextBox txtbxSDT;
@@ -501,5 +501,12 @@ namespace Tour
         private Guna.UI2.WinForms.Guna2TextBox txtbxPassword;
         private Guna.UI2.WinForms.Guna2PictureBox pcbxAvatar;
         private Guna.UI2.WinForms.Guna2ComboBox cbbxRole;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data_employeeid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MAIL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn isAvailable;
+        private System.Windows.Forms.CheckBox checkbxShowPassword;
     }
 }

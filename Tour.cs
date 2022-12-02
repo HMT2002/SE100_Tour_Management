@@ -43,13 +43,14 @@ namespace Tour
             dgv_trip.DataSource = (from tour in DataProvider.Ins.DB.TOURs
                                    join giamgia in DataProvider.Ins.DB.GIAMGIAs on tour.ID equals giamgia.IDTOUR
                                    where tour.IsDeleted == false && giamgia.IsDeleted == false
+                                   group tour by new {tour,giamgia } into g
                                    select new
                                    {
-                                       ID = tour.ID,
-                                       TENTOUR = tour.TEN,
-                                       GIA=tour.GIA,
-                                       BANNER=giamgia.PICBI,
-                                       TOURTYPE = tour.LOAI,
+                                       ID = g.Key.tour.ID,
+                                       TENTOUR = g.Key.tour.TEN,
+                                       GIA= g.Key.tour.GIA,
+                                       BANNER= g.Key.giamgia.PICBI,
+                                       TOURTYPE = g.Key.tour.LOAI,
 
 
                                    }).Distinct().ToList();

@@ -34,11 +34,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tour));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv_trip = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.data_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENTOUR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TOURTYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BANNER = new System.Windows.Forms.DataGridViewImageColumn();
             this.tb_search = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cb_typetour = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -59,6 +54,11 @@
             this.btn_update = new Guna.UI2.WinForms.Guna2Button();
             this.btn_add = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.data_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENTOUR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TOURTYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BANNER = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_trip)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -134,40 +134,6 @@
             this.dgv_trip.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_trip.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgv_trip.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_trip_CellClick_1);
-            // 
-            // data_id
-            // 
-            this.data_id.DataPropertyName = "ID";
-            this.data_id.FillWeight = 50F;
-            this.data_id.HeaderText = "ID";
-            this.data_id.Name = "data_id";
-            // 
-            // TENTOUR
-            // 
-            this.TENTOUR.DataPropertyName = "TENTOUR";
-            this.TENTOUR.HeaderText = "Tour\'s name";
-            this.TENTOUR.Name = "TENTOUR";
-            // 
-            // GIA
-            // 
-            this.GIA.DataPropertyName = "GIA";
-            this.GIA.HeaderText = "Price";
-            this.GIA.Name = "GIA";
-            // 
-            // TOURTYPE
-            // 
-            this.TOURTYPE.DataPropertyName = "TOURTYPE";
-            this.TOURTYPE.FillWeight = 75F;
-            this.TOURTYPE.HeaderText = "Type";
-            this.TOURTYPE.Name = "TOURTYPE";
-            // 
-            // BANNER
-            // 
-            this.BANNER.DataPropertyName = "BANNER";
-            this.BANNER.FillWeight = 150F;
-            this.BANNER.HeaderText = "Discount banner";
-            this.BANNER.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.BANNER.Name = "BANNER";
             // 
             // tb_search
             // 
@@ -475,6 +441,41 @@
             this.guna2Panel1.Size = new System.Drawing.Size(1172, 60);
             this.guna2Panel1.TabIndex = 60;
             // 
+            // data_id
+            // 
+            this.data_id.DataPropertyName = "ID";
+            this.data_id.FillWeight = 50F;
+            this.data_id.HeaderText = "ID";
+            this.data_id.Name = "data_id";
+            // 
+            // TENTOUR
+            // 
+            this.TENTOUR.DataPropertyName = "TENTOUR";
+            this.TENTOUR.HeaderText = "Tour\'s name";
+            this.TENTOUR.Name = "TENTOUR";
+            // 
+            // GIA
+            // 
+            this.GIA.DataPropertyName = "GIA";
+            this.GIA.HeaderText = "Price";
+            this.GIA.Name = "GIA";
+            // 
+            // TOURTYPE
+            // 
+            this.TOURTYPE.DataPropertyName = "TOURTYPE";
+            this.TOURTYPE.FillWeight = 75F;
+            this.TOURTYPE.HeaderText = "Type";
+            this.TOURTYPE.Name = "TOURTYPE";
+            // 
+            // BANNER
+            // 
+            this.BANNER.DataPropertyName = "BANNER";
+            this.BANNER.FillWeight = 150F;
+            this.BANNER.HeaderText = "Discount banner";
+            this.BANNER.Image = global::Tour.Properties.Resources.ic_image_empty_128;
+            this.BANNER.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.BANNER.Name = "BANNER";
+            // 
             // Tour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -529,12 +530,12 @@
         private Guna.UI2.WinForms.Guna2Button btn_add;
         private Guna.UI2.WinForms.Guna2Button btn_update;
         private Guna.UI2.WinForms.Guna2Button btn_delete;
+        private Guna.UI2.WinForms.Guna2ComboBox cb_typetour;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn data_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENTOUR;
         private System.Windows.Forms.DataGridViewTextBoxColumn GIA;
         private System.Windows.Forms.DataGridViewTextBoxColumn TOURTYPE;
         private System.Windows.Forms.DataGridViewImageColumn BANNER;
-        private Guna.UI2.WinForms.Guna2ComboBox cb_typetour;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
     }
 }

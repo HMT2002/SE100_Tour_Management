@@ -642,7 +642,7 @@ namespace Tour
             this.btnRoute.DisabledState.ForeColor = System.Drawing.Color.Black;
             this.btnRoute.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRoute.FillColor = System.Drawing.Color.Linen;
-            this.btnRoute.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoute.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
             this.btnRoute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnRoute.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.btnRoute.HoverState.ForeColor = System.Drawing.Color.Black;
@@ -840,7 +840,6 @@ namespace Tour
             this.Name = "SelectForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SelectForm";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SelectForm_FormClosing);
             this.Load += new System.EventHandler(this.SelectForm_Load);
             this.panel_slide.ResumeLayout(false);
