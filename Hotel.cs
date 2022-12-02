@@ -134,12 +134,13 @@ namespace Tour
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+
+            if (CheckData() == true)
+            {
             if (id != null || id.CompareTo(string.Empty) != 0)
             {
                 return;
             }
-            if (CheckData() == true)
-            {
                 try
                 {
                     if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
@@ -181,6 +182,8 @@ namespace Tour
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            if (CheckData())
+            {
             if (MessageBox.Show("Are you sure to delete this?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 if (id == null || id.CompareTo(string.Empty) == 0)
@@ -189,6 +192,7 @@ namespace Tour
                 }
                 try
                 {
+
                     foreach(var tb_ks in DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.IDKHACHSAN == id))
                     {
                         tb_ks.IsDeleted = true;
@@ -205,39 +209,45 @@ namespace Tour
 
                 }
             }
+
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (id == null || id.CompareTo(string.Empty) == 0||cbboxProvince.Text.Trim().CompareTo(string.Empty) == 0)
+            if (CheckData())
             {
-                return;
-            }
-            try
-            {
-                var khachsan = DataProvider.Ins.DB.KHACHSANs.Where(x => x.ID == id).FirstOrDefault();
-                khachsan.TEN = txtbxName.Text;
-                khachsan.DIACHI = txtbxDiaChi.Text;
-                if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
+                if (id == null || id.CompareTo(string.Empty) == 0 || cbboxProvince.Text.Trim().CompareTo(string.Empty) == 0)
                 {
-                    var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text, IsDeleted = false };
-                    DataProvider.Ins.DB.TINHs.Add(tinh);
-                    DataProvider.Ins.DB.SaveChanges();
+                    return;
                 }
-                khachsan.IDTINH = cbboxProvince.SelectedIndex.ToString();
-                khachsan.CHITIET = rchtxtbxDetail.Text;
-                khachsan.PICBI =img_data;
-                khachsan.GIA= Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text);
-                DataProvider.Ins.DB.SaveChanges();
-                showAll();
-                Clear();
+                try
+                {
+                    var khachsan = DataProvider.Ins.DB.KHACHSANs.Where(x => x.ID == id).FirstOrDefault();
+                    khachsan.TEN = txtbxName.Text;
+                    khachsan.DIACHI = txtbxDiaChi.Text;
+                    if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
+                    {
+                        var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text, IsDeleted = false };
+                        DataProvider.Ins.DB.TINHs.Add(tinh);
+                        DataProvider.Ins.DB.SaveChanges();
+                    }
+                    khachsan.IDTINH = cbboxProvince.SelectedIndex.ToString();
+                    khachsan.CHITIET = rchtxtbxDetail.Text;
+                    khachsan.PICBI = img_data;
+                    khachsan.GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text);
+                    DataProvider.Ins.DB.SaveChanges();
+                    showAll();
+                    Clear();
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                }
             }
+
         }
 
         private void btnClear_Click(object sender, EventArgs e)

@@ -201,10 +201,7 @@ namespace Tour
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (id != null || id.CompareTo(string.Empty) != 0)
-            {
-                return;
-            }
+
             if (CheckData() == true)
             {
                 AddVehical();
@@ -214,10 +211,6 @@ namespace Tour
 
         public void DeleteVehical()
         {
-                if (id == null || id.CompareTo(string.Empty) == 0)
-                {
-                    return;
-                }
                 try
                 {
                     var phuongtien = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault();
@@ -234,15 +227,22 @@ namespace Tour
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure to delete this?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (CheckData() == true)
             {
-                DeleteVehical();
+                if (id == null || id.CompareTo(string.Empty) == 0)
+                {
+                    return;
+                }
+                if (MessageBox.Show("Are you sure to delete this?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    DeleteVehical();
+                }
             }
         }
 
         public void UpdateVehical()
         {
-                try
+            try
                 {
                     if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
                     {

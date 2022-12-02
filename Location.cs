@@ -135,12 +135,13 @@ namespace Tour
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+
+            if (CheckData() == true)
+            {
             if (id != null || id.CompareTo(string.Empty) != 0)
             {
                 return;
             }
-            if (CheckData() == true)
-            {
                 try
                 {
                     randomcode = Converter.Instance.RandomString(5);
@@ -182,28 +183,33 @@ namespace Tour
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure to delete this?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (CheckData())
             {
                 if (id == null || id.CompareTo(string.Empty) == 0)
                 {
                     return;
                 }
-                try
+                if (MessageBox.Show("Are you sure to delete this?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    DIADIEM diadiem = DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == id).FirstOrDefault();
-                    diadiem.IsDeleted = true;
-                    DataProvider.Ins.DB.SaveChanges();
-                    showAll();
-                    Clear();
+
+                    try
+                    {
+                        DIADIEM diadiem = DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == id).FirstOrDefault();
+                        diadiem.IsDeleted = true;
+                        DataProvider.Ins.DB.SaveChanges();
+                        showAll();
+                        Clear();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
 
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                }
-
             }
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
