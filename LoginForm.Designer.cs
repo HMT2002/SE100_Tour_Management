@@ -382,11 +382,11 @@ namespace Tour
             this.exitbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.exitbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.exitbtn.FillColor = System.Drawing.Color.Red;
-            this.exitbtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.exitbtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.exitbtn.ForeColor = System.Drawing.Color.White;
-            this.exitbtn.Location = new System.Drawing.Point(418, 3);
+            this.exitbtn.Location = new System.Drawing.Point(418, 0);
             this.exitbtn.Name = "exitbtn";
-            this.exitbtn.Size = new System.Drawing.Size(30, 26);
+            this.exitbtn.Size = new System.Drawing.Size(33, 29);
             this.exitbtn.TabIndex = 22;
             this.exitbtn.Text = "X";
             this.exitbtn.Click += new System.EventHandler(this.exitbtn_Click);
@@ -406,7 +406,7 @@ namespace Tour
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
+            this.Text = "p";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.guna2TabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

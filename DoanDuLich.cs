@@ -219,6 +219,10 @@ namespace Tour
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (id != null || id.CompareTo(string.Empty) != 0)
+            {
+                return;
+            }
             if (CheckData())
             {
                 try

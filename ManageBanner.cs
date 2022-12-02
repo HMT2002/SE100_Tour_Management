@@ -46,7 +46,7 @@ namespace Tour
         {
             lblTour.Text = this.Tour.ID;
             cbDes.Visible = false;
-            tbPrice.Text = Tour.GIA.ToString();
+            tbPrice.Text =Converter.Instance.CurrencyDisplay((decimal) Tour.GIA);
 
 
             if (DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == Tour.ID && x.IsDeleted == false).FirstOrDefault() == null)
@@ -89,14 +89,14 @@ namespace Tour
 
             try
             {
-                if (Convert.ToInt32(txtbxDiscount.Text) != 0 || Convert.ToDecimal(tbPrice) != 0)
+                if (Convert.ToInt32(txtbxDiscount.Text) != 0 || Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tbPrice.Text) != 0)
                 {
                     decimal res = 0;
                     double discount = Convert.ToInt64(txtbxDiscount.Text);
-                    decimal price = Convert.ToDecimal(tbPrice.Text);
+                    decimal price = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tbPrice.Text);
                     res = price - (price * (decimal)(discount / 100));
 
-                    tbTotal.Text = res.ToString();
+                    tbTotal.Text = Converter.Instance.CurrencyDisplay(res);
 
                 }
             }
@@ -344,14 +344,14 @@ namespace Tour
         {
             try
             {
-                if (Convert.ToInt32(txtbxDiscount.Text) != 0 || Convert.ToDecimal(tbPrice) != 0)
+                if (Convert.ToInt32(txtbxDiscount.Text) != 0 || Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tbPrice.Text) != 0)
                 {
                     decimal res = 0;
                     double discount = Convert.ToInt64(txtbxDiscount.Text);
-                    decimal price = Convert.ToDecimal(tbPrice.Text);
+                    decimal price = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tbPrice.Text);
                     res = price - (price * (decimal)(discount / 100));
 
-                    tbTotal.Text = res.ToString();
+                    tbTotal.Text = Converter.Instance.CurrencyDisplay(res);
 
                 }
             }

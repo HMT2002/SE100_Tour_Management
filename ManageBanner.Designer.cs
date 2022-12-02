@@ -43,6 +43,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -53,7 +54,6 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnClear = new Guna.UI2.WinForms.Guna2Button();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel8.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel25.SuspendLayout();
@@ -74,7 +74,7 @@
             this.panel8.Controls.Add(this.label13);
             this.panel8.ForeColor = System.Drawing.Color.Black;
             this.panel8.Location = new System.Drawing.Point(56, 36);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(426, 137);
             this.panel8.TabIndex = 7;
@@ -84,7 +84,7 @@
             this.lblTour.BackColor = System.Drawing.Color.Transparent;
             this.lblTour.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTour.Location = new System.Drawing.Point(77, 44);
-            this.lblTour.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblTour.Margin = new System.Windows.Forms.Padding(2);
             this.lblTour.Name = "lblTour";
             this.lblTour.Size = new System.Drawing.Size(39, 22);
             this.lblTour.TabIndex = 13;
@@ -101,7 +101,7 @@
             this.cbDes.FormattingEnabled = true;
             this.cbDes.ItemHeight = 20;
             this.cbDes.Location = new System.Drawing.Point(112, 86);
-            this.cbDes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbDes.Margin = new System.Windows.Forms.Padding(2);
             this.cbDes.Name = "cbDes";
             this.cbDes.Size = new System.Drawing.Size(207, 26);
             this.cbDes.TabIndex = 34;
@@ -152,7 +152,7 @@
             this.panel4.Controls.Add(this.label20);
             this.panel4.Controls.Add(this.label17);
             this.panel4.Location = new System.Drawing.Point(486, 36);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(337, 137);
             this.panel4.TabIndex = 8;
@@ -162,7 +162,7 @@
             this.panel25.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel25.Controls.Add(this.tbTotal);
             this.panel25.Location = new System.Drawing.Point(146, 84);
-            this.panel25.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel25.Margin = new System.Windows.Forms.Padding(2);
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(180, 28);
             this.panel25.TabIndex = 34;
@@ -183,7 +183,7 @@
             this.panel23.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel23.Controls.Add(this.tbPrice);
             this.panel23.Location = new System.Drawing.Point(146, 23);
-            this.panel23.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel23.Margin = new System.Windows.Forms.Padding(2);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(180, 28);
             this.panel23.TabIndex = 32;
@@ -206,7 +206,7 @@
             this.btReset.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btReset.ForeColor = System.Drawing.Color.White;
             this.btReset.Location = new System.Drawing.Point(233, 223);
-            this.btReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btReset.Margin = new System.Windows.Forms.Padding(2);
             this.btReset.Name = "btReset";
             this.btReset.Size = new System.Drawing.Size(84, 33);
             this.btReset.TabIndex = 21;
@@ -252,6 +252,16 @@
             this.guna2Panel1.Size = new System.Drawing.Size(426, 243);
             this.guna2Panel1.TabIndex = 9;
             // 
+            // guna2HtmlLabel4
+            // 
+            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(3, 200);
+            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(28, 22);
+            this.guna2HtmlLabel4.TabIndex = 13;
+            this.guna2HtmlLabel4.Text = "To:";
+            // 
             // guna2HtmlLabel3
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
@@ -290,7 +300,7 @@
             this.datepckEnd.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.datepckEnd.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.datepckEnd.Location = new System.Drawing.Point(274, 193);
-            this.datepckEnd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.datepckEnd.Margin = new System.Windows.Forms.Padding(2);
             this.datepckEnd.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.datepckEnd.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.datepckEnd.Name = "datepckEnd";
@@ -306,7 +316,7 @@
             this.datepckBegin.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.datepckBegin.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.datepckBegin.Location = new System.Drawing.Point(274, 158);
-            this.datepckBegin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.datepckBegin.Margin = new System.Windows.Forms.Padding(2);
             this.datepckBegin.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.datepckBegin.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.datepckBegin.Name = "datepckBegin";
@@ -324,7 +334,7 @@
             this.txtbxDiscount.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtbxDiscount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxDiscount.Location = new System.Drawing.Point(274, 133);
-            this.txtbxDiscount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxDiscount.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxDiscount.Name = "txtbxDiscount";
             this.txtbxDiscount.PasswordChar = '\0';
             this.txtbxDiscount.PlaceholderText = "";
@@ -338,7 +348,7 @@
             this.pcbxBanner.Image = global::Tour.Properties.Resources.ic_image_empty_128;
             this.pcbxBanner.ImageRotate = 0F;
             this.pcbxBanner.Location = new System.Drawing.Point(3, 2);
-            this.pcbxBanner.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pcbxBanner.Margin = new System.Windows.Forms.Padding(2);
             this.pcbxBanner.Name = "pcbxBanner";
             this.pcbxBanner.Size = new System.Drawing.Size(421, 126);
             this.pcbxBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -364,7 +374,7 @@
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnClear.ForeColor = System.Drawing.Color.Black;
             this.btnClear.Location = new System.Drawing.Point(96, 32);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(155, 62);
             this.btnClear.TabIndex = 0;
@@ -380,22 +390,12 @@
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
             this.btnAdd.Location = new System.Drawing.Point(96, 98);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(155, 60);
             this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Add new banner";
+            this.btnAdd.Text = "Update banner";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // guna2HtmlLabel4
-            // 
-            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(3, 200);
-            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(28, 22);
-            this.guna2HtmlLabel4.TabIndex = 13;
-            this.guna2HtmlLabel4.Text = "To:";
             // 
             // ManageBanner
             // 

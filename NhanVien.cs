@@ -22,7 +22,7 @@ namespace Tour
         Image img;
         Byte[] img_data;
         string randomcode;
-        string id;
+        string id="";
         string phutrach;
         string doanid;
         bool searchID;
@@ -35,6 +35,7 @@ namespace Tour
             dgv_nhanvien.AutoGenerateColumns = false;
             searchID = true;
             showAll();
+            Clear();
         }
 
         public NhanVien(string phutrach, string doanid)
@@ -86,8 +87,9 @@ namespace Tour
         private void Clear()
         {
 
-            txtbxName.Text = txtbxSDT.Text = txtbxMail.Text =txtbxID.Text= "";
-
+            txtbxName.Text = txtbxSDT.Text = txtbxMail.Text = "";
+            id = Converter.Instance.RandomString2(5);
+            txtbxID.Text = id;
             txtbxPassword.Text = "";
             checkbxShowPassword.Checked = false;
             img_data = null;
@@ -136,11 +138,6 @@ namespace Tour
             return flag;
         }
 
-        public string getID(string ID)
-        {
-            return ID;
-        }
-
         private void tb_search_TextChanged(object sender, EventArgs e)
         {
             string value = tb_search.Text;
@@ -152,11 +149,7 @@ namespace Tour
                     if (searchID == true)
                     {
                         dgv_nhanvien.DataSource = (from nv in DataProvider.Ins.DB.NHANVIENs
-                                                   join tb_phutrach in DataProvider.Ins.DB.tb_PHUTRACH on nv.ID equals tb_phutrach.IDNHANVIEN
-                                                   join doan in DataProvider.Ins.DB.DOANs on tb_phutrach.IDDOAN equals doan.ID
                                                    where nv.IsDeleted == false
-                                                   && doan.IsDeleted == false
-                                                   && doan.NGAYKETTHUC >= DateTime.Today
                                                    && SqlFunctions.PatIndex("%" + value + "%", nv.ID) > 0
                                                    group nv by new { nv.ID, nv.TEN, nv.SDT, nv.MAIL, nv.isAvailable, nv.PICBI, nv.SLDI } into g
 
@@ -178,11 +171,7 @@ namespace Tour
                     else if (searchID == false)
                     {
                         dgv_nhanvien.DataSource = (from nv in DataProvider.Ins.DB.NHANVIENs
-                                                   join tb_phutrach in DataProvider.Ins.DB.tb_PHUTRACH on nv.ID equals tb_phutrach.IDNHANVIEN
-                                                   join doan in DataProvider.Ins.DB.DOANs on tb_phutrach.IDDOAN equals doan.ID
                                                    where nv.IsDeleted == false
-                                                   && doan.IsDeleted == false
-                                                   &&doan.NGAYKETTHUC>=DateTime.Today
                                                    && SqlFunctions.PatIndex("%" + value + "%", nv.TEN) > 0
                                                    group nv by new { nv.ID, nv.TEN, nv.SDT, nv.MAIL, nv.isAvailable, nv.PICBI, nv.SLDI } into g
 
@@ -251,8 +240,13 @@ namespace Tour
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            if (id != null || id.CompareTo(string.Empty) != 0)
+            {
+                return;
+            }
             if (CheckData())
             {
+
                 try
                 {
                     string randomcode = Converter.Instance.RandomString2(5);

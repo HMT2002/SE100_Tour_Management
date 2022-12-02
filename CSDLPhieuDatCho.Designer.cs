@@ -41,8 +41,6 @@ namespace Tour
             this.GROUPNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BOOKDATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnTraVe = new System.Windows.Forms.Button();
-            this.btnPrint = new System.Windows.Forms.Button();
             this.tbSearchTicket = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -75,8 +73,10 @@ namespace Tour
             this.tbPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblCustomer = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btnClear = new System.Windows.Forms.Button();
             this.cbbxSearchType = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.Information.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTicket)).BeginInit();
             this.panel17.SuspendLayout();
@@ -105,7 +105,7 @@ namespace Tour
             this.Information.Margin = new System.Windows.Forms.Padding(2);
             this.Information.Name = "Information";
             this.Information.Padding = new System.Windows.Forms.Padding(2);
-            this.Information.Size = new System.Drawing.Size(913, 254);
+            this.Information.Size = new System.Drawing.Size(961, 254);
             this.Information.TabIndex = 2;
             this.Information.TabStop = false;
             this.Information.Text = "Ticket";
@@ -143,7 +143,7 @@ namespace Tour
             this.dgvTicket.Location = new System.Drawing.Point(13, 23);
             this.dgvTicket.Name = "dgvTicket";
             this.dgvTicket.RowHeadersVisible = false;
-            this.dgvTicket.Size = new System.Drawing.Size(885, 226);
+            this.dgvTicket.Size = new System.Drawing.Size(948, 226);
             this.dgvTicket.TabIndex = 0;
             this.dgvTicket.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvTicket.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -216,42 +216,10 @@ namespace Tour
             this.BOOKDATE.Name = "BOOKDATE";
             this.BOOKDATE.ReadOnly = true;
             // 
-            // btnTraVe
-            // 
-            this.btnTraVe.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTraVe.BackgroundImage")));
-            this.btnTraVe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnTraVe.FlatAppearance.BorderSize = 0;
-            this.btnTraVe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTraVe.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTraVe.Location = new System.Drawing.Point(839, 323);
-            this.btnTraVe.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTraVe.Name = "btnTraVe";
-            this.btnTraVe.Size = new System.Drawing.Size(117, 26);
-            this.btnTraVe.TabIndex = 20;
-            this.btnTraVe.Text = "Return Ticket";
-            this.btnTraVe.UseVisualStyleBackColor = true;
-            this.btnTraVe.Click += new System.EventHandler(this.btnTraVe_Click);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrint.BackgroundImage")));
-            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPrint.FlatAppearance.BorderSize = 0;
-            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.Location = new System.Drawing.Point(752, 323);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(72, 26);
-            this.btnPrint.TabIndex = 18;
-            this.btnPrint.Text = "Print";
-            this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnDel_Click);
-            // 
             // tbSearchTicket
             // 
             this.tbSearchTicket.Font = new System.Drawing.Font("Times New Roman", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSearchTicket.Location = new System.Drawing.Point(159, 322);
+            this.tbSearchTicket.Location = new System.Drawing.Point(159, 332);
             this.tbSearchTicket.Name = "tbSearchTicket";
             this.tbSearchTicket.Size = new System.Drawing.Size(240, 34);
             this.tbSearchTicket.TabIndex = 6;
@@ -263,7 +231,7 @@ namespace Tour
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(53, 329);
+            this.label9.Location = new System.Drawing.Point(53, 339);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(89, 19);
             this.label9.TabIndex = 13;
@@ -637,7 +605,7 @@ namespace Tour
             this.groupBox3.Controls.Add(this.panel7);
             this.groupBox3.Location = new System.Drawing.Point(672, 70);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(284, 250);
+            this.groupBox3.Size = new System.Drawing.Size(332, 250);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Price";
@@ -649,7 +617,7 @@ namespace Tour
             this.panel5.Location = new System.Drawing.Point(6, 71);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(264, 28);
+            this.panel5.Size = new System.Drawing.Size(319, 34);
             this.panel5.TabIndex = 44;
             // 
             // tbBookDate
@@ -664,7 +632,7 @@ namespace Tour
             this.tbBookDate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbBookDate.ForeColor = System.Drawing.Color.Black;
             this.tbBookDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbBookDate.Location = new System.Drawing.Point(0, -1);
+            this.tbBookDate.Location = new System.Drawing.Point(-1, -2);
             this.tbBookDate.Margin = new System.Windows.Forms.Padding(4);
             this.tbBookDate.Name = "tbBookDate";
             this.tbBookDate.PasswordChar = '\0';
@@ -672,7 +640,7 @@ namespace Tour
             this.tbBookDate.PlaceholderText = "Book date";
             this.tbBookDate.ReadOnly = true;
             this.tbBookDate.SelectedText = "";
-            this.tbBookDate.Size = new System.Drawing.Size(282, 26);
+            this.tbBookDate.Size = new System.Drawing.Size(318, 34);
             this.tbBookDate.TabIndex = 30;
             // 
             // panel7
@@ -682,7 +650,7 @@ namespace Tour
             this.panel7.Location = new System.Drawing.Point(5, 33);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(265, 28);
+            this.panel7.Size = new System.Drawing.Size(322, 28);
             this.panel7.TabIndex = 43;
             // 
             // tbPrice
@@ -706,7 +674,7 @@ namespace Tour
             this.tbPrice.PlaceholderText = "Price";
             this.tbPrice.ReadOnly = true;
             this.tbPrice.SelectedText = "";
-            this.tbPrice.Size = new System.Drawing.Size(284, 28);
+            this.tbPrice.Size = new System.Drawing.Size(320, 28);
             this.tbPrice.TabIndex = 30;
             // 
             // groupBox1
@@ -737,22 +705,6 @@ namespace Tour
             this.lblCustomer.Text = "ID";
             this.lblCustomer.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnClear
-            // 
-            this.btnClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClear.BackgroundImage")));
-            this.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnClear.FlatAppearance.BorderSize = 0;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(672, 323);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(2);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(72, 26);
-            this.btnClear.TabIndex = 24;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
             // cbbxSearchType
             // 
             this.cbbxSearchType.BackColor = System.Drawing.Color.Transparent;
@@ -769,12 +721,69 @@ namespace Tour
             "Customer\'s name",
             "Tour\'s name",
             "Group\'s name"});
-            this.cbbxSearchType.Location = new System.Drawing.Point(405, 320);
+            this.cbbxSearchType.Location = new System.Drawing.Point(405, 330);
             this.cbbxSearchType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbxSearchType.Name = "cbbxSearchType";
             this.cbbxSearchType.Size = new System.Drawing.Size(163, 36);
             this.cbbxSearchType.StartIndex = 0;
             this.cbbxSearchType.TabIndex = 30;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.guna2Button1.BorderRadius = 10;
+            this.guna2Button1.BorderThickness = 2;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.Linen;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button1.Location = new System.Drawing.Point(611, 326);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(127, 45);
+            this.guna2Button1.TabIndex = 31;
+            this.guna2Button1.Text = "CLEAR";
+            this.guna2Button1.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.guna2Button2.BorderRadius = 10;
+            this.guna2Button2.BorderThickness = 2;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.Linen;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.guna2Button2.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button2.Location = new System.Drawing.Point(744, 326);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(127, 45);
+            this.guna2Button2.TabIndex = 32;
+            this.guna2Button2.Text = "PRINT";
+            this.guna2Button2.Click += new System.EventHandler(this.btnDel_Click);
+            // 
+            // guna2Button3
+            // 
+            this.guna2Button3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.guna2Button3.BorderRadius = 10;
+            this.guna2Button3.BorderThickness = 2;
+            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button3.FillColor = System.Drawing.Color.Linen;
+            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.guna2Button3.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button3.Location = new System.Drawing.Point(877, 326);
+            this.guna2Button3.Name = "guna2Button3";
+            this.guna2Button3.Size = new System.Drawing.Size(127, 45);
+            this.guna2Button3.TabIndex = 33;
+            this.guna2Button3.Text = "RETURN TICKET";
+            this.guna2Button3.Click += new System.EventHandler(this.btnTraVe_Click);
             // 
             // CSDLPhieuDatCho
             // 
@@ -783,13 +792,13 @@ namespace Tour
             this.BackColor = System.Drawing.Color.Linen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1200, 945);
+            this.Controls.Add(this.guna2Button3);
+            this.Controls.Add(this.guna2Button2);
+            this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.cbbxSearchType);
-            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.btnTraVe);
-            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.tbSearchTicket);
@@ -826,9 +835,7 @@ namespace Tour
 
         #endregion
         private System.Windows.Forms.GroupBox Information;
-        private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.TextBox tbSearchTicket;
-        private System.Windows.Forms.Button btnTraVe;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel17;
@@ -861,7 +868,6 @@ namespace Tour
         private System.Windows.Forms.Panel panel7;
         private Guna.UI2.WinForms.Guna2TextBox tbPrice;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblCustomer;
-        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.DataGridViewTextBoxColumn data_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn TOURNAME;
@@ -869,5 +875,8 @@ namespace Tour
         private System.Windows.Forms.DataGridViewTextBoxColumn PRICE;
         private System.Windows.Forms.DataGridViewTextBoxColumn BOOKDATE;
         private Guna.UI2.WinForms.Guna2ComboBox cbbxSearchType;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button3;
     }
 }
