@@ -416,7 +416,7 @@ namespace Tour
                 NHANVIEN temp = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault();
                 selected_nhanvien = temp;
                 pcbxAvatar.Image = Converter.Instance.ByteArrayToImage(temp.PICBI);
-
+                img_data = temp.PICBI;
                 txtbxID.Text = temp.ID;
                 txtbxName.Text = temp.TEN;
                 txtbxMail.Text = temp.MAIL;

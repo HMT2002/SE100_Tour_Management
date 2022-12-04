@@ -59,9 +59,26 @@ namespace Tour
             //lstbxLocation.DisplayMember = "TEN";
 
         }
+
+        private void CheckBannerAndRemove()
+        {
+            var banners = (from banner in DataProvider.Ins.DB.GIAMGIAs select banner).ToList();
+            foreach (var banner in banners)
+            {
+                if (banner.NGAYKETTHUC.Value < DateTime.Today)
+                {
+                    banner.NGAYBATDAU = DateTime.Today;
+                    banner.NGAYKETTHUC = DateTime.Today;
+                    banner.DISCOUNT = 0;
+                    banner.PICBI = Utils.Converter.Instance.ImageToByte(Properties.Resources.ic_image_empty_128);
+                    DataProvider.Ins.DB.SaveChanges();
+                }
+            }
+        }
+
         private void TRIPManageTour_Load(object sender, EventArgs e)
         {
-
+            CheckBannerAndRemove();
             ShowAllChuyen();
             Clear();
 
@@ -185,7 +202,7 @@ namespace Tour
                 var tour = new TOUR() { ID = tb_idtrip.Text, GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tb_price.Text), TEN = tb_nametour.Text, LOAI = cb_typetour.Text, DACDIEM = "", IsDeleted = false };
                 DataProvider.Ins.DB.TOURs.Add(tour);
                 string randomecode = Converter.Instance.RandomString2(5);
-                GIAMGIA giamgia = new GIAMGIA() { ID = randomecode, IDTOUR = tb_idtrip.Text, DISCOUNT = 0, PICBI =Converter.Instance.ImageToByte(Properties.Resources.ic_image_empty_128), NGAYBATDAU =DateTime.Today, NGAYKETTHUC = DateTime.Today.AddDays(1), IsDeleted = false };
+                GIAMGIA giamgia = new GIAMGIA() { ID = randomecode, IDTOUR = tb_idtrip.Text, DISCOUNT = 0, PICBI =Converter.Instance.ImageToByte(Properties.Resources.ic_image_empty_128), NGAYBATDAU =DateTime.Today, NGAYKETTHUC = DateTime.Today, IsDeleted = false };
                 DataProvider.Ins.DB.GIAMGIAs.Add(giamgia);
                 DataProvider.Ins.DB.SaveChanges();
                 ShowAllChuyen();

@@ -14,7 +14,6 @@ namespace Tour
 {
     public partial class ManageBanner : Form
     {
-        string ID_tour = "HKOIJ";
 
         public TOUR Tour = new TOUR();
 
@@ -23,14 +22,6 @@ namespace Tour
             InitializeComponent();
             ShowAll();
             Clear();
-        }
-
-
-        public ManageBanner(string id_tour)
-        {
-            InitializeComponent();
-            ID_tour = id_tour;
-            LoadData();
         }
 
         public ManageBanner(TOUR tour)
@@ -47,13 +38,11 @@ namespace Tour
             lblTour.Text = this.Tour.ID;
             cbDes.Visible = false;
             tbPrice.Text =Converter.Instance.CurrencyDisplay((decimal) Tour.GIA);
-
-
             if (DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == Tour.ID && x.IsDeleted == false).FirstOrDefault() == null)
             {
                 return;
             }
-            GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == Tour.ID && x.IsDeleted == false && x.NGAYBATDAU >= DateTime.Today).FirstOrDefault();
+            GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == Tour.ID && x.IsDeleted == false ).FirstOrDefault();
             if(giamgia == null)
             {
                 return;
@@ -97,68 +86,6 @@ namespace Tour
                     res = price - (price * (decimal)(discount / 100));
 
                     tbTotal.Text = Converter.Instance.CurrencyDisplay(res);
-
-                }
-            }
-            catch
-            {
-
-                tbTotal.Text = tbPrice.Text;
-            }
-        }
-
-        private void LoadData()
-        {
-            lblTour.Text = ID_tour;
-            cbDes.Visible = false;
-
-            GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == this.ID_tour && x.IsDeleted == false && x.NGAYBATDAU >= DateTime.Today).FirstOrDefault();
-
-            if (giamgia == null)
-            {
-                return;
-            }
-
-            txtbxDiscount.Text = giamgia.DISCOUNT.ToString();
-            tbPrice.Text = giamgia.TOUR.GIA.ToString();
-
-            if (giamgia.PICBI != null)
-            {
-                pcbxBanner.Image = Converter.Instance.ByteArrayToImage(giamgia.PICBI);
-                img_data = giamgia.PICBI;
-            }
-
-            if (giamgia.NGAYBATDAU == null)
-            {
-                datepckBegin.Value = DateTime.Now;
-            }
-            else
-            {
-                datepckBegin.Value = (DateTime)giamgia.NGAYBATDAU;
-
-            }
-
-            if (giamgia.NGAYKETTHUC == null)
-            {
-                datepckEnd.Value = DateTime.Now;
-            }
-            else
-            {
-                datepckEnd.Value = (DateTime)giamgia.NGAYKETTHUC;
-
-            }
-
-
-            try
-            {
-                if (Convert.ToInt32(txtbxDiscount.Text) != 0 || Convert.ToDecimal(tbPrice) != 0)
-                {
-                    decimal res = 0;
-                    double discount = Convert.ToInt64(txtbxDiscount.Text);
-                    decimal price = Convert.ToDecimal(tbPrice.Text);
-                    res = price - (price * (decimal)(discount / 100));
-
-                    tbTotal.Text = res.ToString();
 
                 }
             }
