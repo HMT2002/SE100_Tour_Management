@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageBanner));
             this.panel8 = new System.Windows.Forms.Panel();
             this.lblTour = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.cbDes = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -407,6 +408,7 @@
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel8);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManageBanner";
             this.Text = "ManageBanner";
             this.Load += new System.EventHandler(this.ManageBanner_Load);

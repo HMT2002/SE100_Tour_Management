@@ -24,7 +24,6 @@ namespace Tour
         public SearchTicket()
         {
             InitializeComponent();
-            showAll();
 
         }
 
@@ -46,39 +45,19 @@ namespace Tour
 
         private void LoadData()
         {
-            txtbxTenKhachHang.Text = this.Ve.KHACHHANG.TENKH;
-            txtbxTenTour.Text = this.Ve.DOAN.TOUR.TEN;
-            txtbxTenDoan.Text = this.Ve.DOAN.TEN;
-
-            lblDay.Text = this.Ve.DOAN.NGAYKHOIHANH.Value.Day.ToString();
-            lblMonth.Text = this.Ve.DOAN.NGAYKHOIHANH.Value.Month.ToString();
-            lblTime.Text = this.Ve.DOAN.NGAYKHOIHANH.Value.TimeOfDay.ToString();
-
-
+            lblReciptCustomerName.Text = this.Ve.KHACHHANG.TENKH;
+            lblReciptPrice.Text =Utils.Converter.Instance.CurrencyDisplay((decimal) this.Ve.GIA);
+            lblReciptTourName.Text = this.Ve.DOAN.TOUR.TEN;
+            lblReciptGroupName.Text = this.Ve.DOAN.TEN;
+            lblReciptStartDate.Text=this.Ve.DOAN.NGAYKHOIHANH.Value.ToString("dd/MM/yyyy");
+            lblReciptEndDate.Text = this.Ve.DOAN.NGAYKETTHUC.Value.ToString("dd/MM/yyyy");
+            lblReciptTicketID.Text = this.Ve.ID;
+            lbDate.Text=this.Ve.NGAYMUA.Value.ToString("dd/MM/yyyy");
         }
 
         private void SearchTicket_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void showAll()
-        {
-            var l = (from doan in DataProvider.Ins.DB.DOANs
-                                    join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-                                    join ve in DataProvider.Ins.DB.VEs on doan.ID equals ve.IDDOAN
-                                    join khachhang in DataProvider.Ins.DB.KHACHHANGs on ve.IDKHACH equals khachhang.ID
-                                    where ve.ID==this.Ticket_id && doan.IsDeleted == false && tour.IsDeleted == false && ve.IsDeleted == false && khachhang.IsDeleted == false
-                                    select new
-                                    {
-                                        ID = ve.ID,
-                                        TEN_KH = khachhang.TENKH,
-                                        TEN_DOAN = doan.TEN,
-                                        NGAYKHOIHANH = doan.NGAYKHOIHANH,
-                                        NGAYTROVE = doan.NGAYKETTHUC,
-                                        GIA_TOUR = tour.GIA,
-                                        TEN_TOUR = tour.TEN,
-                                    }).ToList();
         }
 
         private void btnPrintTicket_Click(object sender, EventArgs e)
@@ -100,6 +79,15 @@ namespace Tour
 
                 f.ShowDialog();
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime itime = DateTime.Now;
+            lbTime.Text = itime.ToLongTimeString();
+
+            DateTime idate = DateTime.Now;
+            lbDate.Text = idate.ToLongDateString();
         }
     }
 }

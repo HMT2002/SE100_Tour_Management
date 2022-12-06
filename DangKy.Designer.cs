@@ -62,7 +62,7 @@ namespace Tour
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbTime = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.pnlTicket = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblReciptTicketID = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel17 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -116,7 +116,7 @@ namespace Tour
             this.panel24.SuspendLayout();
             this.panel23.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.guna2GradientPanel1.SuspendLayout();
+            this.pnlTicket.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxLogo)).BeginInit();
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -532,7 +532,7 @@ namespace Tour
             this.panel3.AutoSize = true;
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.guna2GradientPanel1);
+            this.panel3.Controls.Add(this.pnlTicket);
             this.panel3.Controls.Add(this.label21);
             this.panel3.Location = new System.Drawing.Point(669, 102);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
@@ -540,38 +540,38 @@ namespace Tour
             this.panel3.Size = new System.Drawing.Size(509, 658);
             this.panel3.TabIndex = 9;
             // 
-            // guna2GradientPanel1
+            // pnlTicket
             // 
-            this.guna2GradientPanel1.AutoSize = true;
-            this.guna2GradientPanel1.BackColor = System.Drawing.Color.White;
-            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel14);
-            this.guna2GradientPanel1.Controls.Add(this.lblReciptTicketID);
-            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel17);
-            this.guna2GradientPanel1.Controls.Add(this.lbDate);
-            this.guna2GradientPanel1.Controls.Add(this.lblReciptPrice);
-            this.guna2GradientPanel1.Controls.Add(this.lblReciptEndDate);
-            this.guna2GradientPanel1.Controls.Add(this.lblReciptStartDate);
-            this.guna2GradientPanel1.Controls.Add(this.lblReciptCustomerName);
-            this.guna2GradientPanel1.Controls.Add(this.lblReciptGroupName);
-            this.guna2GradientPanel1.Controls.Add(this.lblReciptTourName);
-            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel15);
-            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel13);
-            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel12);
-            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel11);
-            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel10);
-            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel9);
-            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel8);
-            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel7);
-            this.guna2GradientPanel1.Controls.Add(this.pcbxLogo);
-            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel6);
-            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel5);
-            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel4);
-            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel3);
-            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel2);
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(5, 32);
-            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(497, 616);
-            this.guna2GradientPanel1.TabIndex = 9;
+            this.pnlTicket.AutoSize = true;
+            this.pnlTicket.BackColor = System.Drawing.Color.White;
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel14);
+            this.pnlTicket.Controls.Add(this.lblReciptTicketID);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel17);
+            this.pnlTicket.Controls.Add(this.lbDate);
+            this.pnlTicket.Controls.Add(this.lblReciptPrice);
+            this.pnlTicket.Controls.Add(this.lblReciptEndDate);
+            this.pnlTicket.Controls.Add(this.lblReciptStartDate);
+            this.pnlTicket.Controls.Add(this.lblReciptCustomerName);
+            this.pnlTicket.Controls.Add(this.lblReciptGroupName);
+            this.pnlTicket.Controls.Add(this.lblReciptTourName);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel15);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel13);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel12);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel11);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel10);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel9);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel8);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel7);
+            this.pnlTicket.Controls.Add(this.pcbxLogo);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel6);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel5);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel4);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel3);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel2);
+            this.pnlTicket.Location = new System.Drawing.Point(5, 32);
+            this.pnlTicket.Name = "pnlTicket";
+            this.pnlTicket.Size = new System.Drawing.Size(497, 616);
+            this.pnlTicket.TabIndex = 9;
             // 
             // guna2HtmlLabel14
             // 
@@ -1102,8 +1102,8 @@ namespace Tour
             this.panel23.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.guna2GradientPanel1.ResumeLayout(false);
-            this.guna2GradientPanel1.PerformLayout();
+            this.pnlTicket.ResumeLayout(false);
+            this.pnlTicket.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxLogo)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
@@ -1160,7 +1160,7 @@ namespace Tour
         private Guna.UI2.WinForms.Guna2HtmlLabel lblCustomerDiscount;
         private Guna.UI2.WinForms.Guna2TextBox tbCMND;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Guna.UI2.WinForms.Guna2GradientPanel pnlTicket;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel15;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel13;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
