@@ -406,7 +406,7 @@ namespace Tour
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "p";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.guna2TabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
