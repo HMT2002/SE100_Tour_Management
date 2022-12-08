@@ -27,7 +27,7 @@ namespace Tour
             emailtxb.Text = "Email";
             this.emailtxb.Leave += new System.EventHandler(this.textBox1_Leave);
             this.emailtxb.Enter += new System.EventHandler(this.textBox1_Enter);
-            Mongo.Instance.DoSomeStuff();
+            CThread.Instance.Start();
         }
         private void textBox1_Leave(object sender, EventArgs e)
         {
