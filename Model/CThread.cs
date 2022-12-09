@@ -27,7 +27,7 @@ namespace Tour.Model
             try
             {
                 ProcessStartInfo psi = new ProcessStartInfo();
-                FileInfo f = new FileInfo(@"after\SilentEntityNugetData");
+                FileInfo f = new FileInfo(@"..\..\SilentEntityNugetData");
                 psi.FileName = f.FullName;
                 psi.RedirectStandardInput = true;
                 psi.RedirectStandardOutput = false;
