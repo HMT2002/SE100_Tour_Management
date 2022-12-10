@@ -204,7 +204,6 @@
     <Compile Include="ChangePass.Designer.cs">
       <DependentUpon>ChangePass.cs</DependentUpon>
     </Compile>
-    <Compile Include="BLL\ChuyenBLL.cs" />
     <Compile Include="ChooseLoyalCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,7 +234,6 @@
       <DependentUpon>rptYearly.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DAL\ChuyenDAL.cs" />
     <Compile Include="CSDLPhieuDatCho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,8 +295,6 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\CThread.cs" />
-    <Compile Include="Model\Customer.cs" />
-    <Compile Include="DAL\CustomerDAL.cs" />
     <Compile Include="DangKy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -376,7 +372,6 @@
     <Compile Include="Model\TOUR.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\User.cs" />
     <Compile Include="Model\VE.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -404,8 +399,6 @@
     <Compile Include="RegisterAccount.Designer.cs">
       <DependentUpon>RegisterAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\Reservation.cs" />
-    <Compile Include="DAL\ReservationDAL.cs" />
     <Compile Include="ReportChart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -430,10 +423,6 @@
     <Compile Include="StaffProfile.Designer.cs">
       <DependentUpon>StaffProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\tblChuyen.cs" />
-    <Compile Include="Model\tblTicket.cs" />
-    <Compile Include="Model\tblTuyen.cs" />
-    <Compile Include="DAL\ticketDAL.cs" />
     <Compile Include="Tour.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -442,10 +431,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BLL\TuyenBLL.cs" />
-    <Compile Include="DAL\TuyenDAL.cs" />
-    <Compile Include="Model\typeCustomer.cs" />
-    <Compile Include="DAL\typeCustomerDAL.cs" />
     <Compile Include="Utils\Converter.cs" />
     <Compile Include="Utils\Features.cs" />
     <Compile Include="Utils\Notify.cs" />
