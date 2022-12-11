@@ -67,6 +67,7 @@ namespace Tour
                 return;
             }
 
+
             using(fPrint f=new fPrint(this.Ve))
             {
                 rptTicket crys = new rptTicket();
