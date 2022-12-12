@@ -1,4 +1,5 @@
-﻿using Org.BouncyCastle.Math.Field;
+﻿using Guna.UI2.WinForms;
+using Org.BouncyCastle.Math.Field;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,11 +17,11 @@ namespace Tour
     {
         private string doanID;
         //test
-        private string driver;
+        private string driver = "";
         //
-        private string tour_guide;
-        private string waiter;
-        private string translator;
+        private string tour_guide = "";
+        private string waiter = "";
+        private string translator = "";
 
         public NhiemVuTrongDoan()
         {
@@ -40,26 +41,32 @@ namespace Tour
 
         private void LoadData()
         {
-            var tb_phutrach=DataProvider.Ins.DB.tb_PHUTRACH.Where(x=>x.IDDOAN==doanID).ToList();
-            foreach(var tb in tb_phutrach)
+            var tb_phutrach = DataProvider.Ins.DB.tb_PHUTRACH.Where(x => x.IDDOAN == doanID && x.IsDeleted == false).ToList();
+            foreach (var tb in tb_phutrach)
             {
                 if (tb.PHUTRACH == "Tour Guide")
                 {
+                    tour_guide = tb.NHANVIEN.TEN;
                     txtTourGuide.Text = tb.NHANVIEN.TEN;
                 }
                 if (tb.PHUTRACH == "Driver")
                 {
+                    driver = tb.NHANVIEN.TEN;
                     txtDriver.Text = tb.NHANVIEN.TEN;
                 }
                 if (tb.PHUTRACH == "Translator")
                 {
+                    translator = tb.NHANVIEN.TEN;
                     txtTranslator.Text = tb.NHANVIEN.TEN;
                 }
                 if (tb.PHUTRACH == "Waitor")
                 {
+                    waiter = tb.NHANVIEN.TEN;
                     txtWaitor.Text = tb.NHANVIEN.TEN;
                 }
             }
+
+
         }
 
         public NhiemVuTrongDoan(string doanID, string driver, string tour_guide, string waiter, string translator)
@@ -74,7 +81,7 @@ namespace Tour
 
         public void showAll()
         {
-            NhiemVuTrongDoan nv= new NhiemVuTrongDoan();
+            NhiemVuTrongDoan nv = new NhiemVuTrongDoan();
 
         }
         public void setTextBox(string s, bool flag)
@@ -113,18 +120,22 @@ namespace Tour
 
         private void txtDriver_Click(object sender, EventArgs e)
         {
-            using (NhanVien nv = new NhanVien("Driver", doanID))
+            using (ListNhanVienAvailable nv = new ListNhanVienAvailable("Driver", doanID))
             {
                 this.Hide();
                 nv.ShowDialog();
-                txtDriver.Text = nv.seleted_nhanvien_phutrach;
+                if (nv.seleted_nhanvien_phutrach.CompareTo(string.Empty) != 0)
+                {
+                    txtDriver.Text = nv.seleted_nhanvien_phutrach;
+
+                }
                 this.Show();
             }
         }
 
         private void txtTourGuide_Click(object sender, EventArgs e)
         {
-            using (NhanVien nv = new NhanVien("Tour Guide", doanID))
+            using (ListNhanVienAvailable nv = new ListNhanVienAvailable("Tour Guide", doanID))
             {
                 this.Hide();
                 nv.ShowDialog();
@@ -135,7 +146,7 @@ namespace Tour
 
         private void txtTranslator_Click(object sender, EventArgs e)
         {
-            using (NhanVien nv = new NhanVien("Translator", doanID))
+            using (ListNhanVienAvailable nv = new ListNhanVienAvailable("Translator", doanID))
             {
                 this.Hide();
                 nv.ShowDialog();
@@ -188,7 +199,7 @@ namespace Tour
 
         private void txtTranslator_MouseHover(object sender, EventArgs e)
         {
-            txtTranslator.ShadowDecoration.Depth =35;
+            txtTranslator.ShadowDecoration.Depth = 35;
             txtTranslator.ShadowDecoration.Shadow.Horizontal.Equals(8);
             txtTranslator.ShadowDecoration.Shadow.Vertical.Equals(8);
         }
@@ -222,7 +233,7 @@ namespace Tour
 
         private void txtWaitor_Click(object sender, EventArgs e)
         {
-            using (NhanVien nv = new NhanVien("Waitor", doanID))
+            using (ListNhanVienAvailable nv = new ListNhanVienAvailable("Waitor", doanID))
             {
                 this.Hide();
                 nv.ShowDialog();
@@ -235,8 +246,66 @@ namespace Tour
         private void bttExit_Click(object sender, EventArgs e)
         {
 
-                this.Close();
+            this.Close();
 
+        }
+
+        private void btnClearDriver_Click(object sender, EventArgs e)
+        {
+            ClearRole(txtDriver, "Driver");
+
+        }
+
+        public void ClearRole(object sender, string role = "")
+        {
+            if (role.CompareTo(string.Empty) == 0)
+            {
+                return;
+            }
+            Guna2TextBox txtbx=(Guna2TextBox)sender;
+            if (txtbx == null)
+            {
+                MessageBox.Show("null textbox");
+
+                return;
+            }
+            if (txtbx.Text.CompareTo(string.Empty) == 0)
+            {
+                return;
+            }
+            if (MessageBox.Show("You sure want to clear " + role + "? ", "Confirmation", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                try
+                {
+                    var phutrach = DataProvider.Ins.DB.tb_PHUTRACH.Where(x => x.IDDOAN == doanID && x.PHUTRACH == role).FirstOrDefault();
+                    phutrach.NHANVIEN.isAvailable = true;
+                    DataProvider.Ins.DB.SaveChanges();
+
+                    DataProvider.Ins.DB.tb_PHUTRACH.Remove(phutrach);
+
+                    DataProvider.Ins.DB.SaveChanges();
+                    txtbx.Text = "";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void btnClearTourGuide_Click(object sender, EventArgs e)
+        {
+            ClearRole(txtTourGuide, "Tour Guide");
+        }
+
+        private void btnClearWaitor_Click(object sender, EventArgs e)
+        {
+            ClearRole(txtWaitor,"Waitor");
+        }
+
+        private void btnClearTranslator_Click(object sender, EventArgs e)
+        {
+            ClearRole(txtTranslator, "Translator");
         }
     }
 }

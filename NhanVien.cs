@@ -151,17 +151,24 @@ namespace Tour
                         dgv_nhanvien.DataSource = (from nv in DataProvider.Ins.DB.NHANVIENs
                                                    where nv.IsDeleted == false
                                                    && SqlFunctions.PatIndex("%" + value + "%", nv.ID) > 0
-                                                   group nv by new { nv.ID, nv.TEN, nv.SDT, nv.MAIL, nv.isAvailable, nv.PICBI, nv.SLDI } into g
+                                                   //group nv by new { nv.ID, nv.TEN, nv.SDT, nv.MAIL, nv.isAvailable, nv.PICBI, nv.SLDI } into g
 
                                                    select new
                                                    {
-                                                       ID = g.Key.ID,
-                                                       TEN = g.Key.TEN,
-                                                       SDT = g.Key.SDT,
-                                                       MAIL = g.Key.MAIL,
-                                                       isAvailable = g.Key.isAvailable,
-                                                       PICBI = g.Key.PICBI,
-                                                       SLDI = g.Count(),
+                                                       //ID = g.Key.ID,
+                                                       //TEN = g.Key.TEN,
+                                                       //SDT = g.Key.SDT,
+                                                       //MAIL = g.Key.MAIL,
+                                                       //isAvailable = g.Key.isAvailable,
+                                                       //PICBI = g.Key.PICBI,
+                                                       //SLDI = g.Count(),
+                                                       nv.ID,
+                                                       nv.TEN,
+                                                       nv.SDT,
+                                                       nv.MAIL,
+                                                       nv.isAvailable,
+                                                       nv.PICBI,
+                                                       nv.SLDI,
                                                    }
 
                                      ).ToList();
@@ -173,17 +180,27 @@ namespace Tour
                         dgv_nhanvien.DataSource = (from nv in DataProvider.Ins.DB.NHANVIENs
                                                    where nv.IsDeleted == false
                                                    && SqlFunctions.PatIndex("%" + value + "%", nv.TEN) > 0
-                                                   group nv by new { nv.ID, nv.TEN, nv.SDT, nv.MAIL, nv.isAvailable, nv.PICBI, nv.SLDI } into g
+                                                   //group nv by new { nv.ID, nv.TEN, nv.SDT, nv.MAIL, nv.isAvailable, nv.PICBI, nv.SLDI } into g
 
                                                    select new
                                                    {
-                                                       ID = g.Key.ID,
-                                                       TEN = g.Key.TEN,
-                                                       SDT = g.Key.SDT,
-                                                       MAIL = g.Key.MAIL,
-                                                       isAvailable = g.Key.isAvailable,
-                                                       PICBI = g.Key.PICBI,
-                                                       SLDI = g.Count(),
+                                                       //ID = g.Key.ID,
+                                                       //TEN = g.Key.TEN,
+                                                       //SDT = g.Key.SDT,
+                                                       //MAIL = g.Key.MAIL,
+                                                       //isAvailable = g.Key.isAvailable,
+                                                       //PICBI = g.Key.PICBI,
+                                                       //SLDI = g.Count(),
+
+
+                                                       nv.ID,
+                                                       nv.TEN,
+                                                       nv.SDT,
+                                                       nv.MAIL,
+                                                       nv.isAvailable,
+                                                       nv.PICBI,
+                                                       nv.SLDI,
+
                                                    }
 
                                      ).ToList();
@@ -410,7 +427,7 @@ namespace Tour
         private void dgv_nhanvien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
-            if (index >= 0 && e.ColumnIndex.ToString() != "6")
+            if (index >= 0 && e.ColumnIndex!= 5)
             {
                 id = dgv_nhanvien.Rows[index].Cells["data_employeeid"].Value.ToString();
                 NHANVIEN temp = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault();
@@ -426,7 +443,7 @@ namespace Tour
             }
             else
             {// nhấn vào isAvailable
-                if (e.ColumnIndex.ToString() == "6" && dgv_nhanvien.Rows[index].Cells["isAvailable"].Value.ToString() == "True")
+                if (e.ColumnIndex==5 && dgv_nhanvien.Rows[index].Cells["isAvailable"].Value.ToString() == "True")
                 {
                     id = dgv_nhanvien.Rows[index].Cells["data_employeeid"].Value.ToString();
                     NHANVIEN temp_nv = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault();

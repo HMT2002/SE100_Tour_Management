@@ -41,6 +41,10 @@
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.bttAssign = new Guna.UI2.WinForms.Guna2Button();
             this.bttExit = new Guna.UI2.WinForms.Guna2Button();
+            this.btnClearDriver = new Guna.UI2.WinForms.Guna2Button();
+            this.btnClearTourGuide = new Guna.UI2.WinForms.Guna2Button();
+            this.btnClearWaitor = new Guna.UI2.WinForms.Guna2Button();
+            this.btnClearTranslator = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -51,9 +55,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
-            this.label1.Location = new System.Drawing.Point(518, 367);
+            this.label1.Location = new System.Drawing.Point(388, 298);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(189, 28);
+            this.label1.Size = new System.Drawing.Size(151, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "DETAILED MISSON";
             // 
@@ -62,9 +67,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
-            this.label2.Location = new System.Drawing.Point(273, 459);
+            this.label2.Location = new System.Drawing.Point(205, 373);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 25);
+            this.label2.Size = new System.Drawing.Size(78, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "GroupID";
             // 
@@ -73,9 +79,9 @@
             this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1200, 287);
+            this.guna2Panel1.Size = new System.Drawing.Size(900, 233);
             this.guna2Panel1.TabIndex = 13;
             // 
             // guna2PictureBox1
@@ -85,9 +91,9 @@
             this.guna2PictureBox1.Image = global::Tour.Properties.Resources.istockphoto_1183622464_612x612;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(1200, 287);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(900, 233);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
@@ -110,8 +116,8 @@
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.textBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
-            this.textBox1.Location = new System.Drawing.Point(383, 439);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox1.Location = new System.Drawing.Point(287, 357);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
             this.textBox1.PasswordChar = '\0';
             this.textBox1.PlaceholderText = "";
@@ -121,7 +127,7 @@
             this.textBox1.ShadowDecoration.Depth = 15;
             this.textBox1.ShadowDecoration.Enabled = true;
             this.textBox1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
-            this.textBox1.Size = new System.Drawing.Size(431, 63);
+            this.textBox1.Size = new System.Drawing.Size(323, 51);
             this.textBox1.TabIndex = 15;
             this.textBox1.MouseLeave += new System.EventHandler(this.textBox1_MouseLeave);
             this.textBox1.MouseHover += new System.EventHandler(this.textBox1_MouseHover);
@@ -145,8 +151,8 @@
             this.txtTourGuide.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.txtTourGuide.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtTourGuide.IconLeft")));
             this.txtTourGuide.IconLeftOffset = new System.Drawing.Point(15, 0);
-            this.txtTourGuide.Location = new System.Drawing.Point(383, 581);
-            this.txtTourGuide.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtTourGuide.Location = new System.Drawing.Point(287, 472);
+            this.txtTourGuide.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTourGuide.Name = "txtTourGuide";
             this.txtTourGuide.PasswordChar = '\0';
             this.txtTourGuide.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
@@ -156,7 +162,7 @@
             this.txtTourGuide.ShadowDecoration.Depth = 15;
             this.txtTourGuide.ShadowDecoration.Enabled = true;
             this.txtTourGuide.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
-            this.txtTourGuide.Size = new System.Drawing.Size(431, 63);
+            this.txtTourGuide.Size = new System.Drawing.Size(323, 51);
             this.txtTourGuide.TabIndex = 17;
             this.txtTourGuide.Click += new System.EventHandler(this.txtTourGuide_Click);
             this.txtTourGuide.MouseLeave += new System.EventHandler(this.txtTourGuide_MouseLeave);
@@ -181,8 +187,8 @@
             this.txtWaitor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.txtWaitor.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtWaitor.IconLeft")));
             this.txtWaitor.IconLeftOffset = new System.Drawing.Point(15, 0);
-            this.txtWaitor.Location = new System.Drawing.Point(383, 652);
-            this.txtWaitor.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtWaitor.Location = new System.Drawing.Point(287, 530);
+            this.txtWaitor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtWaitor.Name = "txtWaitor";
             this.txtWaitor.PasswordChar = '\0';
             this.txtWaitor.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
@@ -192,7 +198,7 @@
             this.txtWaitor.ShadowDecoration.Depth = 15;
             this.txtWaitor.ShadowDecoration.Enabled = true;
             this.txtWaitor.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
-            this.txtWaitor.Size = new System.Drawing.Size(431, 63);
+            this.txtWaitor.Size = new System.Drawing.Size(323, 51);
             this.txtWaitor.TabIndex = 18;
             this.txtWaitor.Click += new System.EventHandler(this.txtWaitor_Click);
             this.txtWaitor.MouseLeave += new System.EventHandler(this.txtWaitor_MouseLeave);
@@ -217,8 +223,8 @@
             this.txtTranslator.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.txtTranslator.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtTranslator.IconLeft")));
             this.txtTranslator.IconLeftOffset = new System.Drawing.Point(15, 0);
-            this.txtTranslator.Location = new System.Drawing.Point(383, 723);
-            this.txtTranslator.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtTranslator.Location = new System.Drawing.Point(287, 587);
+            this.txtTranslator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTranslator.Name = "txtTranslator";
             this.txtTranslator.PasswordChar = '\0';
             this.txtTranslator.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
@@ -228,7 +234,7 @@
             this.txtTranslator.ShadowDecoration.Depth = 15;
             this.txtTranslator.ShadowDecoration.Enabled = true;
             this.txtTranslator.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
-            this.txtTranslator.Size = new System.Drawing.Size(431, 63);
+            this.txtTranslator.Size = new System.Drawing.Size(323, 51);
             this.txtTranslator.TabIndex = 19;
             this.txtTranslator.Click += new System.EventHandler(this.txtTranslator_Click);
             this.txtTranslator.MouseLeave += new System.EventHandler(this.txtTranslator_MouseLeave);
@@ -253,8 +259,8 @@
             this.txtDriver.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.txtDriver.IconLeft = global::Tour.Properties.Resources.user_1_;
             this.txtDriver.IconLeftOffset = new System.Drawing.Point(15, 0);
-            this.txtDriver.Location = new System.Drawing.Point(383, 510);
-            this.txtDriver.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtDriver.Location = new System.Drawing.Point(287, 414);
+            this.txtDriver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDriver.Name = "txtDriver";
             this.txtDriver.PasswordChar = '\0';
             this.txtDriver.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
@@ -265,7 +271,7 @@
             this.txtDriver.ShadowDecoration.Depth = 15;
             this.txtDriver.ShadowDecoration.Enabled = true;
             this.txtDriver.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
-            this.txtDriver.Size = new System.Drawing.Size(431, 63);
+            this.txtDriver.Size = new System.Drawing.Size(323, 51);
             this.txtDriver.TabIndex = 16;
             this.txtDriver.Click += new System.EventHandler(this.txtDriver_Click);
             this.txtDriver.MouseLeave += new System.EventHandler(this.txtDriver_MouseLeave);
@@ -277,11 +283,11 @@
             this.guna2CirclePictureBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2CirclePictureBox1.Image = global::Tour.Properties.Resources.hard_work;
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(555, 235);
-            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(416, 191);
+            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(75, 81);
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2CirclePictureBox1.TabIndex = 1;
             this.guna2CirclePictureBox1.TabStop = false;
@@ -302,10 +308,10 @@
             this.bttAssign.ForeColor = System.Drawing.Color.White;
             this.bttAssign.HoverState.FillColor = System.Drawing.Color.White;
             this.bttAssign.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
-            this.bttAssign.Location = new System.Drawing.Point(1008, 827);
-            this.bttAssign.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bttAssign.Location = new System.Drawing.Point(756, 672);
+            this.bttAssign.Margin = new System.Windows.Forms.Padding(2);
             this.bttAssign.Name = "bttAssign";
-            this.bttAssign.Size = new System.Drawing.Size(180, 46);
+            this.bttAssign.Size = new System.Drawing.Size(135, 37);
             this.bttAssign.TabIndex = 20;
             this.bttAssign.Text = "Assign";
             this.bttAssign.Click += new System.EventHandler(this.bttAssign_Click);
@@ -325,20 +331,116 @@
             this.bttExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.bttExit.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.bttExit.HoverState.ForeColor = System.Drawing.Color.White;
-            this.bttExit.Location = new System.Drawing.Point(1008, 888);
-            this.bttExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bttExit.Location = new System.Drawing.Point(756, 722);
+            this.bttExit.Margin = new System.Windows.Forms.Padding(2);
             this.bttExit.Name = "bttExit";
-            this.bttExit.Size = new System.Drawing.Size(180, 46);
+            this.bttExit.Size = new System.Drawing.Size(135, 37);
             this.bttExit.TabIndex = 21;
             this.bttExit.Text = "Exit";
             this.bttExit.Click += new System.EventHandler(this.bttExit_Click);
             // 
+            // btnClearDriver
+            // 
+            this.btnClearDriver.BackColor = System.Drawing.Color.White;
+            this.btnClearDriver.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnClearDriver.BorderRadius = 5;
+            this.btnClearDriver.BorderThickness = 1;
+            this.btnClearDriver.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClearDriver.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClearDriver.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClearDriver.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClearDriver.FillColor = System.Drawing.Color.Linen;
+            this.btnClearDriver.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearDriver.ForeColor = System.Drawing.Color.Red;
+            this.btnClearDriver.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnClearDriver.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnClearDriver.Location = new System.Drawing.Point(621, 419);
+            this.btnClearDriver.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClearDriver.Name = "btnClearDriver";
+            this.btnClearDriver.Size = new System.Drawing.Size(39, 40);
+            this.btnClearDriver.TabIndex = 22;
+            this.btnClearDriver.Text = "X";
+            this.btnClearDriver.Click += new System.EventHandler(this.btnClearDriver_Click);
+            // 
+            // btnClearTourGuide
+            // 
+            this.btnClearTourGuide.BackColor = System.Drawing.Color.White;
+            this.btnClearTourGuide.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnClearTourGuide.BorderRadius = 5;
+            this.btnClearTourGuide.BorderThickness = 1;
+            this.btnClearTourGuide.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClearTourGuide.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClearTourGuide.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClearTourGuide.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClearTourGuide.FillColor = System.Drawing.Color.Linen;
+            this.btnClearTourGuide.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearTourGuide.ForeColor = System.Drawing.Color.Red;
+            this.btnClearTourGuide.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnClearTourGuide.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnClearTourGuide.Location = new System.Drawing.Point(621, 477);
+            this.btnClearTourGuide.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClearTourGuide.Name = "btnClearTourGuide";
+            this.btnClearTourGuide.Size = new System.Drawing.Size(39, 40);
+            this.btnClearTourGuide.TabIndex = 23;
+            this.btnClearTourGuide.Text = "X";
+            this.btnClearTourGuide.Click += new System.EventHandler(this.btnClearTourGuide_Click);
+            // 
+            // btnClearWaitor
+            // 
+            this.btnClearWaitor.BackColor = System.Drawing.Color.White;
+            this.btnClearWaitor.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnClearWaitor.BorderRadius = 5;
+            this.btnClearWaitor.BorderThickness = 1;
+            this.btnClearWaitor.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClearWaitor.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClearWaitor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClearWaitor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClearWaitor.FillColor = System.Drawing.Color.Linen;
+            this.btnClearWaitor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearWaitor.ForeColor = System.Drawing.Color.Red;
+            this.btnClearWaitor.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnClearWaitor.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnClearWaitor.Location = new System.Drawing.Point(621, 535);
+            this.btnClearWaitor.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClearWaitor.Name = "btnClearWaitor";
+            this.btnClearWaitor.Size = new System.Drawing.Size(39, 40);
+            this.btnClearWaitor.TabIndex = 24;
+            this.btnClearWaitor.Text = "X";
+            this.btnClearWaitor.Click += new System.EventHandler(this.btnClearWaitor_Click);
+            // 
+            // btnClearTranslator
+            // 
+            this.btnClearTranslator.BackColor = System.Drawing.Color.White;
+            this.btnClearTranslator.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnClearTranslator.BorderRadius = 5;
+            this.btnClearTranslator.BorderThickness = 1;
+            this.btnClearTranslator.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClearTranslator.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClearTranslator.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClearTranslator.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClearTranslator.FillColor = System.Drawing.Color.Linen;
+            this.btnClearTranslator.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearTranslator.ForeColor = System.Drawing.Color.Red;
+            this.btnClearTranslator.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnClearTranslator.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnClearTranslator.Location = new System.Drawing.Point(621, 592);
+            this.btnClearTranslator.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClearTranslator.Name = "btnClearTranslator";
+            this.btnClearTranslator.Size = new System.Drawing.Size(39, 40);
+            this.btnClearTranslator.TabIndex = 25;
+            this.btnClearTranslator.Text = "X";
+            this.btnClearTranslator.Click += new System.EventHandler(this.btnClearTranslator_Click);
+            // 
             // NhiemVuTrongDoan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(1200, 945);
+            this.ClientSize = new System.Drawing.Size(900, 768);
+            this.Controls.Add(this.btnClearTranslator);
+            this.Controls.Add(this.btnClearWaitor);
+            this.Controls.Add(this.btnClearTourGuide);
+            this.Controls.Add(this.btnClearDriver);
             this.Controls.Add(this.bttExit);
             this.Controls.Add(this.bttAssign);
             this.Controls.Add(this.txtTranslator);
@@ -351,7 +453,7 @@
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NhiemVuTrongDoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NhiemVuTrongDoan";
@@ -377,5 +479,9 @@
         private Guna.UI2.WinForms.Guna2TextBox txtTranslator;
         private Guna.UI2.WinForms.Guna2Button bttAssign;
         private Guna.UI2.WinForms.Guna2Button bttExit;
+        private Guna.UI2.WinForms.Guna2Button btnClearDriver;
+        private Guna.UI2.WinForms.Guna2Button btnClearTourGuide;
+        private Guna.UI2.WinForms.Guna2Button btnClearWaitor;
+        private Guna.UI2.WinForms.Guna2Button btnClearTranslator;
     }
 }

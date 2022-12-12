@@ -270,6 +270,12 @@
     <Compile Include="KhachHang.Designer.cs">
       <DependentUpon>KhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListNhanVienAvailable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListNhanVienAvailable.Designer.cs">
+      <DependentUpon>ListNhanVienAvailable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Location.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -493,6 +499,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhachHang.resx">
       <DependentUpon>KhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListNhanVienAvailable.resx">
+      <DependentUpon>ListNhanVienAvailable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Location.resx">
       <DependentUpon>Location.cs</DependentUpon>
