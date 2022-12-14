@@ -201,7 +201,27 @@ namespace Tour
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            OpenTicketReport();
+            //OpenTicketReport();
+            VE ve = DataProvider.Ins.DB.VEs.Where(x => x.ID == txtbxSearchTicket.Text&&x.IsDeleted==false).FirstOrDefault();
+            if (ve == null)
+            {
+                MessageBox.Show("Ticket ID doesn't existed");
+                return;
+            }
+            else
+            {
+                OpenSearchTicketForm(ve);
+            }
+        }
+
+        public void OpenSearchTicketForm(VE ve)
+        {
+            using (SearchTicket f = new SearchTicket(ve))
+            {
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }
         }
 
         public void Clear()

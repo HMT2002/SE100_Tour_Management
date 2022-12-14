@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -118,7 +119,7 @@ namespace Tour
         }
         public bool CheckData()
         {
-            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null||txtbxDiaChi.Text.Trim().CompareTo(string.Empty) == 0|| Convert.ToDecimal(txtbxGia.Text) == 0 || cbboxProvince.SelectedIndex == -1)
+            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null||txtbxDiaChi.Text.Trim().CompareTo(string.Empty) == 0|| Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text) == 0 || cbboxProvince.SelectedIndex == -1)
             {
                 return false;
             }
@@ -127,14 +128,19 @@ namespace Tour
 
         public void showAll()
         {
-            cbbxHotel.DataSource = DataProvider.Ins.DB.KHACHSANs.Select(t => t).Where(t=>t.IsDeleted==false).ToList();
+            cbbxHotel.DataSource = DataProvider.Ins.DB.KHACHSANs.Where(t=>t.IsDeleted==false).ToList();
             cbbxHotel.DisplayMember = "TEN";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+
             if (CheckData() == true)
             {
+            if (id != null || id.CompareTo(string.Empty) != 0)
+            {
+                return;
+            }
                 try
                 {
                     if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
@@ -144,7 +150,7 @@ namespace Tour
                         DataProvider.Ins.DB.SaveChanges();
                     }
                     randomcode = Converter.Instance.RandomString(5);
-                    var location = new KHACHSAN() { ID = randomcode, DIACHI = txtbxName.Text, PICBI = img_data,CHITIET=rchtxtbxDetail.Text,GIA=Convert.ToDecimal( txtbxGia.Text ),IDTINH=cbboxProvince.SelectedIndex.ToString(),SDT=txtbxSDT.Text,TEN=txtbxName.Text,IsDeleted=false};
+                    var location = new KHACHSAN() { ID = randomcode, DIACHI = txtbxDiaChi.Text, PICBI =Converter.Instance.ImageToByte(pcbxLocation.Image),CHITIET=rchtxtbxDetail.Text,GIA= Converter.Instance.CurrencyStringToDecimalByReplaceCharacter( txtbxGia.Text ),IDTINH=cbboxProvince.SelectedIndex.ToString(),SDT=txtbxSDT.Text,TEN=txtbxName.Text,IsDeleted=false};
                     DataProvider.Ins.DB.KHACHSANs.Add(location);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
@@ -176,6 +182,8 @@ namespace Tour
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            if (CheckData())
+            {
             if (MessageBox.Show("Are you sure to delete this?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 if (id == null || id.CompareTo(string.Empty) == 0)
@@ -184,6 +192,7 @@ namespace Tour
                 }
                 try
                 {
+
                     foreach(var tb_ks in DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.IDKHACHSAN == id))
                     {
                         tb_ks.IsDeleted = true;
@@ -200,32 +209,45 @@ namespace Tour
 
                 }
             }
+
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (id == null || id.CompareTo(string.Empty) == 0||cbboxProvince.Text.Trim().CompareTo(string.Empty) == 0)
+            if (CheckData())
             {
-                return;
-            }
-            try
-            {
-                var khachsan = DataProvider.Ins.DB.KHACHSANs.Where(x => x.ID == id).FirstOrDefault();
-                khachsan.TEN = txtbxName.Text;
-                khachsan.IDTINH = cbboxProvince.SelectedIndex.ToString();
-                khachsan.CHITIET = rchtxtbxDetail.Text;
-                khachsan.PICBI = img_data;
-                khachsan.GIA= Convert.ToDecimal(txtbxGia.Text);
-                DataProvider.Ins.DB.SaveChanges();
-                showAll();
-                Clear();
+                if (id == null || id.CompareTo(string.Empty) == 0 || cbboxProvince.Text.Trim().CompareTo(string.Empty) == 0)
+                {
+                    return;
+                }
+                try
+                {
+                    var khachsan = DataProvider.Ins.DB.KHACHSANs.Where(x => x.ID == id).FirstOrDefault();
+                    khachsan.TEN = txtbxName.Text;
+                    khachsan.DIACHI = txtbxDiaChi.Text;
+                    if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
+                    {
+                        var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text, IsDeleted = false };
+                        DataProvider.Ins.DB.TINHs.Add(tinh);
+                        DataProvider.Ins.DB.SaveChanges();
+                    }
+                    khachsan.IDTINH = cbboxProvince.SelectedIndex.ToString();
+                    khachsan.CHITIET = rchtxtbxDetail.Text;
+                    khachsan.PICBI = img_data;
+                    khachsan.GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text);
+                    DataProvider.Ins.DB.SaveChanges();
+                    showAll();
+                    Clear();
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                }
             }
+
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -238,6 +260,7 @@ namespace Tour
             txtbxName.Text = rchtxtbxDetail.Text = txtbxDiaChi.Text = txtbxGia.Text =txtbxName.Text=txtbxSDT.Text= "";
             cbboxProvince.SelectedIndex= cbbxHotel.SelectedIndex = -1;
             pcbxLocation.Image = Properties.Resources.ic_image_empty_128;
+            
         }
 
         private void cbbxHotel_SelectedValueChanged(object sender, EventArgs e)
@@ -254,7 +277,7 @@ namespace Tour
                 cbboxProvince.Text = DataProvider.Ins.DB.TINHs.Where(x => x.ID == temp.IDTINH).FirstOrDefault().TEN;
                 img_data = temp.PICBI;
                 rchtxtbxDetail.Text = temp.CHITIET;
-                txtbxGia.Text = temp.GIA.ToString();
+                txtbxGia.Text = Converter.Instance.CurrencyDisplay((decimal) temp.GIA);
                 txtbxDiaChi.Text = temp.DIACHI;
                 txtbxSDT.Text = temp.SDT;
             }
@@ -291,15 +314,24 @@ namespace Tour
             }
         }
 
-        private void cbboxProvince_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void txtbxGia_TextChanged(object sender, EventArgs e)
         {
             Utils.Validate.EnterCurrencyVnd(sender);
 
+        }
+
+        private void txtbxSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+    (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as Guna2TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

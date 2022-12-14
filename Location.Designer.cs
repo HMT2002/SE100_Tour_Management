@@ -41,6 +41,7 @@ namespace Tour
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnClear = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
@@ -180,6 +181,7 @@ namespace Tour
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Controls.Add(this.btnClear);
             this.guna2Panel1.Controls.Add(this.btnUpdate);
             this.guna2Panel1.Controls.Add(this.btnXoa);
             this.guna2Panel1.Controls.Add(this.btnAdd);
@@ -188,6 +190,29 @@ namespace Tour
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1200, 100);
             this.guna2Panel1.TabIndex = 41;
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.Transparent;
+            this.btnClear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnClear.BorderRadius = 5;
+            this.btnClear.BorderThickness = 2;
+            this.btnClear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClear.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClear.FillColor = System.Drawing.Color.Linen;
+            this.btnClear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnClear.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnClear.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(887, 22);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(241, 46);
+            this.btnClear.TabIndex = 45;
+            this.btnClear.Text = "Clear";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click_1);
             // 
             // btnUpdate
             // 
@@ -204,7 +229,7 @@ namespace Tour
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnUpdate.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnUpdate.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(802, 22);
+            this.btnUpdate.Location = new System.Drawing.Point(640, 22);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(241, 46);
@@ -227,7 +252,7 @@ namespace Tour
             this.btnXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnXoa.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnXoa.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(473, 22);
+            this.btnXoa.Location = new System.Drawing.Point(393, 22);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(241, 46);
@@ -293,7 +318,6 @@ namespace Tour
             this.txtbxName.PasswordChar = '\0';
             this.txtbxName.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.txtbxName.PlaceholderText = "";
-            this.txtbxName.ReadOnly = true;
             this.txtbxName.SelectedText = "";
             this.txtbxName.ShadowDecoration.BorderRadius = 10;
             this.txtbxName.ShadowDecoration.Depth = 15;
@@ -324,7 +348,6 @@ namespace Tour
             this.txtbxGia.PasswordChar = '\0';
             this.txtbxGia.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.txtbxGia.PlaceholderText = "";
-            this.txtbxGia.ReadOnly = true;
             this.txtbxGia.SelectedText = "";
             this.txtbxGia.ShadowDecoration.BorderRadius = 10;
             this.txtbxGia.ShadowDecoration.Depth = 15;
@@ -332,6 +355,8 @@ namespace Tour
             this.txtbxGia.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
             this.txtbxGia.Size = new System.Drawing.Size(354, 36);
             this.txtbxGia.TabIndex = 32;
+            this.txtbxGia.TextChanged += new System.EventHandler(this.txtbxGia_TextChanged);
+            this.txtbxGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxGia_KeyPress);
             // 
             // txtbxId
             // 
@@ -356,7 +381,6 @@ namespace Tour
             this.txtbxId.PasswordChar = '\0';
             this.txtbxId.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.txtbxId.PlaceholderText = "";
-            this.txtbxId.ReadOnly = true;
             this.txtbxId.SelectedText = "";
             this.txtbxId.ShadowDecoration.BorderRadius = 10;
             this.txtbxId.ShadowDecoration.Depth = 15;
@@ -456,5 +480,6 @@ namespace Tour
         private Guna.UI2.WinForms.Guna2TextBox txtbxId;
         private Guna.UI2.WinForms.Guna2ComboBox cbboxProvince;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Button btnClear;
     }
 }

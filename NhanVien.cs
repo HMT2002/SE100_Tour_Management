@@ -22,7 +22,7 @@ namespace Tour
         Image img;
         Byte[] img_data;
         string randomcode;
-        string id;
+        string id="";
         string phutrach;
         string doanid;
         bool searchID;
@@ -35,6 +35,7 @@ namespace Tour
             dgv_nhanvien.AutoGenerateColumns = false;
             searchID = true;
             showAll();
+            Clear();
         }
 
         public NhanVien(string phutrach, string doanid)
@@ -48,7 +49,7 @@ namespace Tour
 
         private void showAll()
         {
-            dgv_nhanvien.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t=>t.IsDeleted==false).Select(t => new
+            dgv_nhanvien.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t => t.IsDeleted == false).Select(t => new
             {
                 t.ID,
                 t.TEN,
@@ -61,13 +62,39 @@ namespace Tour
     ).ToList();
 
 
+            //dgv_nhanvien.DataSource = (from nv in DataProvider.Ins.DB.NHANVIENs
+            //                           join tb_phutrach in DataProvider.Ins.DB.tb_PHUTRACH on nv.ID equals tb_phutrach.IDNHANVIEN
+            //                           join doan in DataProvider.Ins.DB.DOANs on tb_phutrach.IDDOAN equals doan.ID
+            //                           where nv.IsDeleted == false && doan.IsDeleted == false
+
+            //                           group nv by new { nv.ID, nv.TEN, nv.SDT, nv.MAIL, nv.isAvailable, nv.PICBI, nv.SLDI } into g
+            //                           select new
+            //                           {
+            //                               ID = g.Key.ID,
+            //                               TEN = g.Key.TEN,
+            //                               SDT = g.Key.SDT,
+            //                               MAIL = g.Key.MAIL,
+            //                               isAvailable = g.Key.isAvailable,
+            //                               PICBI = g.Key.PICBI,
+            //                               SLDI = g.Count(),
+            //                           }
+
+            //                         ).ToList();
+
+
         }
 
         private void Clear()
         {
-            txtbxName.Text = txtbxSDT.Text = txtbxMail.Text =txtbxID.Text= "";
+
+            txtbxName.Text = txtbxSDT.Text = txtbxMail.Text = "";
+            id = Converter.Instance.RandomString2(5);
+            txtbxID.Text = id;
+            txtbxPassword.Text = "";
+            checkbxShowPassword.Checked = false;
             img_data = null;
             pcbxAvatar.Image = Properties.Resources.ic_image_empty_128;
+            cbbxRole.SelectedIndex = 1;
             UnnotifyAllFields();
         }
 
@@ -111,11 +138,6 @@ namespace Tour
             return flag;
         }
 
-        public string getID(string ID)
-        {
-            return ID;
-        }
-
         private void tb_search_TextChanged(object sender, EventArgs e)
         {
             string value = tb_search.Text;
@@ -126,14 +148,62 @@ namespace Tour
                     //if (rdIDSearch.Checked)
                     if (searchID == true)
                     {
-                        dgv_nhanvien.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t => SqlFunctions.PatIndex("%" + value + "%", t.ID) > 0 && t.IsDeleted == false).Select(t => t).ToList();
+                        dgv_nhanvien.DataSource = (from nv in DataProvider.Ins.DB.NHANVIENs
+                                                   where nv.IsDeleted == false
+                                                   && SqlFunctions.PatIndex("%" + value + "%", nv.ID) > 0
+                                                   //group nv by new { nv.ID, nv.TEN, nv.SDT, nv.MAIL, nv.isAvailable, nv.PICBI, nv.SLDI } into g
+
+                                                   select new
+                                                   {
+                                                       //ID = g.Key.ID,
+                                                       //TEN = g.Key.TEN,
+                                                       //SDT = g.Key.SDT,
+                                                       //MAIL = g.Key.MAIL,
+                                                       //isAvailable = g.Key.isAvailable,
+                                                       //PICBI = g.Key.PICBI,
+                                                       //SLDI = g.Count(),
+                                                       nv.ID,
+                                                       nv.TEN,
+                                                       nv.SDT,
+                                                       nv.MAIL,
+                                                       nv.isAvailable,
+                                                       nv.PICBI,
+                                                       nv.SLDI,
+                                                   }
+
+                                     ).ToList();
 
                     }
                     //else if (rdNameSearch.Checked)
                     else if (searchID == false)
                     {
-                        dgv_nhanvien.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t => SqlFunctions.PatIndex("%" + value + "%", t.TEN) > 0 && t.IsDeleted == false).Select(t => t).ToList();
+                        dgv_nhanvien.DataSource = (from nv in DataProvider.Ins.DB.NHANVIENs
+                                                   where nv.IsDeleted == false
+                                                   && SqlFunctions.PatIndex("%" + value + "%", nv.TEN) > 0
+                                                   //group nv by new { nv.ID, nv.TEN, nv.SDT, nv.MAIL, nv.isAvailable, nv.PICBI, nv.SLDI } into g
 
+                                                   select new
+                                                   {
+                                                       //ID = g.Key.ID,
+                                                       //TEN = g.Key.TEN,
+                                                       //SDT = g.Key.SDT,
+                                                       //MAIL = g.Key.MAIL,
+                                                       //isAvailable = g.Key.isAvailable,
+                                                       //PICBI = g.Key.PICBI,
+                                                       //SLDI = g.Count(),
+
+
+                                                       nv.ID,
+                                                       nv.TEN,
+                                                       nv.SDT,
+                                                       nv.MAIL,
+                                                       nv.isAvailable,
+                                                       nv.PICBI,
+                                                       nv.SLDI,
+
+                                                   }
+
+                                     ).ToList();
                     }
                 }
                 catch
@@ -187,13 +257,18 @@ namespace Tour
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            if (id != null || id.CompareTo(string.Empty) != 0)
+            {
+                return;
+            }
             if (CheckData())
             {
+
                 try
                 {
                     string randomcode = Converter.Instance.RandomString2(5);
 
-                    var nv = new NHANVIEN() { ID = randomcode, TEN = txtbxName.Text, MAIL = txtbxMail.Text, SDT = txtbxSDT.Text, IsDeleted = false, isAvailable = true,PICBI=img_data,IDACC=randomcode };
+                    var nv = new NHANVIEN() { ID = randomcode, TEN = txtbxName.Text, MAIL = txtbxMail.Text, SDT = txtbxSDT.Text, IsDeleted = false, isAvailable = true,PICBI=Converter.Instance.ImageToByte(pcbxAvatar.Image),IDACC=randomcode };
                     var account = new ACCOUNT() { ACC = txtbxMail.Text, PASS = Converter.Instance.EncryptPassword((txtbxPassword.Text.Trim())), ID = randomcode, IsDeleted = false, ACCROLE = "Employee" };
                     DataProvider.Ins.DB.ACCOUNTs.Add(account);
                     DataProvider.Ins.DB.NHANVIENs.Add(nv);
@@ -265,6 +340,8 @@ namespace Tour
                 nhanvien.MAIL = txtbxMail.Text;
                 nhanvien.SDT = txtbxSDT.Text;
                 nhanvien.PICBI = img_data;
+                nhanvien.ACCOUNT.ACCROLE = cbbxRole.SelectedItem.ToString();
+                nhanvien.ACCOUNT.PASS = Converter.Instance.EncryptPassword(txtbxPassword.Text);
                 DataProvider.Ins.DB.SaveChanges();
                 showAll();
                 Clear();
@@ -343,25 +420,30 @@ namespace Tour
             //dgv_nhanvien.Rows[2].Cells[3].Value = "20521419@gm.uit.edu.vn";
             //dgv_nhanvien.Rows[2].Cells[4].Value = 0;
             //dgv_nhanvien.Rows[2].Cells[5].Value = false;
-        }
 
+            Clear();
+        }
+        NHANVIEN selected_nhanvien = new NHANVIEN();
         private void dgv_nhanvien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
-            if (index >= 0 && e.ColumnIndex.ToString() != "6")
+            if (index >= 0 && e.ColumnIndex!= 5)
             {
                 id = dgv_nhanvien.Rows[index].Cells["data_employeeid"].Value.ToString();
                 NHANVIEN temp = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault();
+                selected_nhanvien = temp;
                 pcbxAvatar.Image = Converter.Instance.ByteArrayToImage(temp.PICBI);
-
+                img_data = temp.PICBI;
                 txtbxID.Text = temp.ID;
                 txtbxName.Text = temp.TEN;
                 txtbxMail.Text = temp.MAIL;
                 txtbxSDT.Text = temp.SDT;
+                cbbxRole.Text = temp.ACCOUNT.ACCROLE;
+                txtbxPassword.Text = Converter.Instance.DecryptEncrypt(selected_nhanvien.ACCOUNT.PASS);
             }
             else
             {// nhấn vào isAvailable
-                if (e.ColumnIndex.ToString() == "6" && dgv_nhanvien.Rows[index].Cells["isAvailable"].Value.ToString() == "True")
+                if (e.ColumnIndex==5 && dgv_nhanvien.Rows[index].Cells["isAvailable"].Value.ToString() == "True")
                 {
                     id = dgv_nhanvien.Rows[index].Cells["data_employeeid"].Value.ToString();
                     NHANVIEN temp_nv = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault();
@@ -374,7 +456,7 @@ namespace Tour
                             DataProvider.Ins.DB.tb_PHUTRACH.Add(nvu);
                             seleted_nhanvien_phutrach = nvu.NHANVIEN.TEN;
                             temp_nv.isAvailable = false;
-                            DataProvider.Ins.DB.SaveChanges();
+                            //DataProvider.Ins.DB.SaveChanges();
                             this.Close();
                             break;
                         case DialogResult.Cancel:
@@ -475,6 +557,12 @@ namespace Tour
                 pcbxAvatar.Image = image;
 
             }
+        }
+
+        private void checkbxShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            txtbxPassword.PasswordChar = checkbxShowPassword.Checked ? '\0' : '●';
+
         }
     }
 

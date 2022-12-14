@@ -24,6 +24,7 @@ namespace Tour
         NHANVIEN Nhanvien = new NHANVIEN();
         public SelectForm(NHANVIEN nhanvien)
         {
+
             InitializeComponent();
             CustomizeDesign();
             Nhanvien = nhanvien;

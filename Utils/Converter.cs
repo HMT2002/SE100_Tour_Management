@@ -54,7 +54,7 @@ namespace Tour.Utils
         {
             if (bytesArr == null)
             {
-                return null;
+                return Properties.Resources.ic_image_empty_128;
             }
             using (MemoryStream memstr = new MemoryStream(bytesArr))
             {

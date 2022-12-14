@@ -171,7 +171,7 @@ namespace Tour
                         DataProvider.Ins.DB.SaveChanges();
                     }
 
-                    var vehical = new PHUONGTIEN() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), PICBI = img_data, LOAI = cbbxKind.Text, IsDeleted = false, GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text) };
+                    var vehical = new PHUONGTIEN() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), PICBI =Converter.Instance.ImageToByte( pcbxVehical.Image), LOAI = cbbxKind.Text, IsDeleted = false, GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text) };
 
                     DataProvider.Ins.DB.PHUONGTIENs.Add(vehical);
                     DataProvider.Ins.DB.SaveChanges();
@@ -201,6 +201,7 @@ namespace Tour
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+
             if (CheckData() == true)
             {
                 AddVehical();
@@ -210,10 +211,6 @@ namespace Tour
 
         public void DeleteVehical()
         {
-                if (id == null || id.CompareTo(string.Empty) == 0)
-                {
-                    return;
-                }
                 try
                 {
                     var phuongtien = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault();
@@ -230,15 +227,22 @@ namespace Tour
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure to delete this?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (CheckData() == true)
             {
-                DeleteVehical();
+                if (id == null || id.CompareTo(string.Empty) == 0)
+                {
+                    return;
+                }
+                if (MessageBox.Show("Are you sure to delete this?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    DeleteVehical();
+                }
             }
         }
 
         public void UpdateVehical()
         {
-                try
+            try
                 {
                     if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
                     {
@@ -250,8 +254,8 @@ namespace Tour
                     phuongtien.TEN = txtbxName.Text;
                     phuongtien.IDTINH = cbboxProvince.SelectedIndex.ToString();
                     phuongtien.LOAI = cbbxKind.Text;
-                    phuongtien.PICBI = img_data;
-                    phuongtien.GIA = Convert.ToDecimal(txtbxGia.Text);
+                    phuongtien.PICBI =Converter.Instance.ImageToByte(pcbxVehical.Image);
+                    phuongtien.GIA = Converter.Instance.CurrencyStringToDecimal(txtbxGia.Text);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
                     Clear();
@@ -340,7 +344,7 @@ namespace Tour
                 cbbxKind.Text = temp.LOAI;
                 cbboxProvince.Text = DataProvider.Ins.DB.TINHs.Where(x => x.ID == temp.IDTINH).FirstOrDefault().TEN;
                 img_data = temp.PICBI;
-                txtbxGia.Text = temp.GIA.ToString();
+                txtbxGia.Text =Converter.Instance.CurrencyDisplay((decimal) temp.GIA);
             }
         }
 

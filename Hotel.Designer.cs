@@ -52,6 +52,7 @@ namespace Tour
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnClear = new Guna.UI2.WinForms.Guna2Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxLocation)).BeginInit();
             this.panel1.SuspendLayout();
@@ -141,9 +142,9 @@ namespace Tour
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(8, 139);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 19);
+            this.label1.Size = new System.Drawing.Size(64, 19);
             this.label1.TabIndex = 32;
-            this.label1.Text = "Price Per Day";
+            this.label1.Text = "Cost/day";
             // 
             // label3
             // 
@@ -271,6 +272,7 @@ namespace Tour
             this.txtbxGia.Size = new System.Drawing.Size(423, 29);
             this.txtbxGia.TabIndex = 30;
             this.txtbxGia.TextChanged += new System.EventHandler(this.txtbxGia_TextChanged);
+            this.txtbxGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxGia_KeyPress);
             // 
             // txtbxSDT
             // 
@@ -291,12 +293,14 @@ namespace Tour
             this.txtbxSDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxSDT.Location = new System.Drawing.Point(117, 169);
             this.txtbxSDT.Margin = new System.Windows.Forms.Padding(2);
+            this.txtbxSDT.MaxLength = 13;
             this.txtbxSDT.Name = "txtbxSDT";
             this.txtbxSDT.PasswordChar = '\0';
             this.txtbxSDT.PlaceholderText = "";
             this.txtbxSDT.SelectedText = "";
             this.txtbxSDT.Size = new System.Drawing.Size(423, 29);
             this.txtbxSDT.TabIndex = 28;
+            this.txtbxSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxSDT_KeyPress);
             // 
             // label5
             // 
@@ -344,7 +348,7 @@ namespace Tour
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnUpdate.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnUpdate.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(807, 17);
+            this.btnUpdate.Location = new System.Drawing.Point(645, 17);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(241, 46);
@@ -367,13 +371,13 @@ namespace Tour
             this.btnXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnXoa.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnXoa.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(478, 17);
+            this.btnXoa.Location = new System.Drawing.Point(398, 17);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(241, 46);
             this.btnXoa.TabIndex = 47;
             this.btnXoa.Text = "Delete";
-            this.btnXoa.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnAdd
             // 
@@ -400,6 +404,7 @@ namespace Tour
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Controls.Add(this.btnClear);
             this.guna2Panel1.Controls.Add(this.btnUpdate);
             this.guna2Panel1.Controls.Add(this.btnAdd);
             this.guna2Panel1.Controls.Add(this.btnXoa);
@@ -408,6 +413,29 @@ namespace Tour
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1200, 94);
             this.guna2Panel1.TabIndex = 48;
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.Transparent;
+            this.btnClear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnClear.BorderRadius = 5;
+            this.btnClear.BorderThickness = 2;
+            this.btnClear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClear.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClear.FillColor = System.Drawing.Color.Linen;
+            this.btnClear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnClear.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnClear.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(892, 17);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(241, 46);
+            this.btnClear.TabIndex = 48;
+            this.btnClear.Text = "Clear";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // Hotel
             // 
@@ -457,5 +485,6 @@ namespace Tour
         private Guna.UI2.WinForms.Guna2ComboBox cbboxProvince;
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Button btnClear;
     }
 }

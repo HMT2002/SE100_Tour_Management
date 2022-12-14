@@ -276,7 +276,7 @@ namespace Tour
                 string randomcode = Converter.Instance.RandomString2(5);
                 var account = new ACCOUNT() { ACC = tbEmail.Text, PASS = Converter.Instance.EncryptPassword((txtbxPassword.Text)), ID = randomcode, IsDeleted = false,ACCROLE="Customer" };
                 DataProvider.Ins.DB.ACCOUNTs.Add(account);
-                var kh = new KHACHHANG() { ID = randomcode, TENKH = tbName.Text, SDT = tbTelephone.Text, CMND = tbCMND.Text, DIACHI = tbAddress.Text, PICBI = img_data, GIOITINH = gender,IDACC=randomcode,MAIL=tbEmail.Text, IsDeleted = false, IsVIP = true, SPENDING = 0, PRI = "BRONZE" };
+                var kh = new KHACHHANG() { ID = randomcode, TENKH = tbName.Text, SDT = tbTelephone.Text, CMND = tbCMND.Text, DIACHI = tbAddress.Text, PICBI =Converter.Instance.ImageToByte(pcbxAvtatar.Image), GIOITINH = gender,IDACC=randomcode,MAIL=tbEmail.Text, IsDeleted = false, IsVIP = true, SPENDING = 0, PRI = "BRONZE" };
                 DataProvider.Ins.DB.KHACHHANGs.Add(kh);
                 DataProvider.Ins.DB.SaveChanges();
                 MessageBox.Show("SignUp success!!!");
@@ -328,7 +328,7 @@ namespace Tour
             Khachhang.CMND = tbCMND.Text;
             Khachhang.DIACHI = tbAddress.Text;
             Khachhang.MAIL = tbEmail.Text;
-            Khachhang.PICBI = img_data;
+            Khachhang.PICBI =Converter.Instance.ImageToByte(pcbxAvtatar.Image);
             if (RdMale.Checked == true)
             {
                 Khachhang.GIOITINH = "Male";
