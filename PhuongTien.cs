@@ -171,7 +171,7 @@ namespace Tour
                         DataProvider.Ins.DB.SaveChanges();
                     }
 
-                    var vehical = new PHUONGTIEN() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), PICBI =Converter.Instance.ImageToByte( pcbxVehical.Image), LOAI = cbbxKind.Text, IsDeleted = false, GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text) };
+                    var vehical = new PHUONGTIEN() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), PICBI =img_data, LOAI = cbbxKind.Text, IsDeleted = false, GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text) };
 
                     DataProvider.Ins.DB.PHUONGTIENs.Add(vehical);
                     DataProvider.Ins.DB.SaveChanges();
@@ -254,7 +254,7 @@ namespace Tour
                     phuongtien.TEN = txtbxName.Text;
                     phuongtien.IDTINH = cbboxProvince.SelectedIndex.ToString();
                     phuongtien.LOAI = cbbxKind.Text;
-                    phuongtien.PICBI =Converter.Instance.ImageToByte(pcbxVehical.Image);
+                    phuongtien.PICBI =img_data;
                     phuongtien.GIA = Converter.Instance.CurrencyStringToDecimal(txtbxGia.Text);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();

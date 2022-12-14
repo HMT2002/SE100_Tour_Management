@@ -203,7 +203,7 @@ namespace Tour.Utils
         public decimal CurrencyStringToDecimalByReplaceCharacter(string CurrencyStr)
         {
             decimal res = 0;
-            string temp=CurrencyStr.Trim().Replace(".",string.Empty).Replace(",", string.Empty).Replace("000 ₫", string.Empty);
+            string temp=CurrencyStr.Replace(".",string.Empty).Replace(",", string.Empty).Replace("000 ₫", string.Empty);
             res = decimal.Parse(temp);
 
             return res;

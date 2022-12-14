@@ -232,7 +232,8 @@ namespace Tour
                     diadiem.TEN = txtbxName.Text;
                     diadiem.IDTINH = cbboxProvince.SelectedIndex.ToString();
                     diadiem.CHITIET = rchtxtbxDetail.Text;
-                    diadiem.PICBI =Converter.Instance.ImageToByte(pcbxLocation.Image);
+
+                    diadiem.PICBI =img_data;
                     diadiem.GIA= Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();

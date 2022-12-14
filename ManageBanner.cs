@@ -190,7 +190,8 @@ namespace Tour
                 }
                 temp.NGAYBATDAU = DateTime.Now;
                 temp.NGAYKETTHUC = DateTime.Now;
-                temp.PICBI = Converter.Instance.ImageToByte(Properties.Resources.ic_image_empty_128);
+                img_data=Converter.Instance.ImageToByte(Properties.Resources.ic_image_empty_128);
+                temp.PICBI = img_data;
                 temp.DISCOUNT = 0;
                 DataProvider.Ins.DB.SaveChanges();
 
@@ -223,13 +224,13 @@ namespace Tour
                     return;
                 }
                 temp.DISCOUNT = Convert.ToInt32(txtbxDiscount.Text);
-                temp.PICBI = Converter.Instance.ImageToByte(pcbxBanner.Image);
+                temp.PICBI = img_data;
                 temp.NGAYBATDAU = datepckBegin.Value.Date;
                 temp.NGAYKETTHUC = datepckEnd.Value.Date;
 
 
                 DataProvider.Ins.DB.SaveChanges();
-                //MessageBox.Show("Add banner succeed");
+                MessageBox.Show("Add banner succeed");
 
                 Clear();
                 this.Close();

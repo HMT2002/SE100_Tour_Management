@@ -311,7 +311,7 @@ namespace Tour
             {
                 return;
             }
-            if (MessageBox.Show("Do you want to ticket?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Do you want to print ticket?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 OpenTicketReport();
 

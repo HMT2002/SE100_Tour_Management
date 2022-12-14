@@ -150,7 +150,7 @@ namespace Tour
                         DataProvider.Ins.DB.SaveChanges();
                     }
                     randomcode = Converter.Instance.RandomString(5);
-                    var location = new KHACHSAN() { ID = randomcode, DIACHI = txtbxDiaChi.Text, PICBI =Converter.Instance.ImageToByte(pcbxLocation.Image),CHITIET=rchtxtbxDetail.Text,GIA= Converter.Instance.CurrencyStringToDecimalByReplaceCharacter( txtbxGia.Text ),IDTINH=cbboxProvince.SelectedIndex.ToString(),SDT=txtbxSDT.Text,TEN=txtbxName.Text,IsDeleted=false};
+                    var location = new KHACHSAN() { ID = randomcode, DIACHI = txtbxDiaChi.Text, PICBI =img_data,CHITIET=rchtxtbxDetail.Text,GIA= Converter.Instance.CurrencyStringToDecimalByReplaceCharacter( txtbxGia.Text ),IDTINH=cbboxProvince.SelectedIndex.ToString(),SDT=txtbxSDT.Text,TEN=txtbxName.Text,IsDeleted=false};
                     DataProvider.Ins.DB.KHACHSANs.Add(location);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
