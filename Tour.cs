@@ -282,7 +282,7 @@ namespace Tour
         public int Hour, Minute, Year, Month, Day, Tickets, Price;
         private void dgv_trip_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-
+            Clear();
             int index = e.RowIndex;
 
             if (index >= 0)

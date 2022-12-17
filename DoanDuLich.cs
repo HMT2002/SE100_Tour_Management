@@ -41,13 +41,14 @@ namespace Tour
                                   join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
                                   where doan.IsDeleted == false && tour.IsDeleted == false
 
-                                  select new {
+                                  select new
+                                  {
                                       ID = doan.ID,
                                       TEN = doan.TEN,
                                       NGAYKHOIHANH = doan.NGAYKHOIHANH,
                                       NGAYKETTHUC = doan.NGAYKETTHUC,
                                       CHITIETCHUONGTRINH = doan.CHITIETCHUONGTRINH,
-                                      GIA_TOUR =tour.GIA,
+                                      GIA_TOUR = tour.GIA,
                                       TEN_TOUR = tour.TEN,
                                       ID_TOUR = tour.ID,
                                   }).ToList();
@@ -58,6 +59,7 @@ namespace Tour
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            Clear();
             int index = e.RowIndex;
 
             if (index >= 0)
@@ -69,20 +71,20 @@ namespace Tour
 
                 datetimeNgayKhoiHanh.Value = (DateTime)dgvDoan.Rows[index].Cells["NGAYKHOIHANH"].Value;
                 datetimeNgayKetThuc.Value = (DateTime)dgvDoan.Rows[index].Cells["NGAYKETTHUC"].Value;
-                int thoi_han =Convert.ToInt32(( datetimeNgayKetThuc.Value - datetimeNgayKhoiHanh.Value).TotalDays)+1;
+                int thoi_han = Convert.ToInt32((datetimeNgayKetThuc.Value - datetimeNgayKhoiHanh.Value).TotalDays) + 1;
 
-                txtbxTenDoan.Text= dgvDoan.Rows[index].Cells["TEN"].Value.ToString();
+                txtbxTenDoan.Text = dgvDoan.Rows[index].Cells["TEN"].Value.ToString();
 
 
 
                 decimal tong_gia_tour = Convert.ToDecimal(DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.IDTOUR == id_tour && x.IsDeleted == false).Select(x => x.DIADIEM.GIA).Sum());
-                decimal tong_gia_khach_san= Convert.ToDecimal(DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.IDDOAN == id && x.IsDeleted == false).Select(x => x.KHACHSAN.GIA).Sum() * thoi_han);
-                decimal tong_gia_phuong_tien = Convert.ToDecimal(DataProvider.Ins.DB.tb_PHUONGTIEN.Where(x => x.IDDOAN == id && x.IsDeleted == false).Select(x => x.PHUONGTIEN.GIA).Sum()*thoi_han);
-                txtbxChiPhi.Text =(tong_gia_khach_san + tong_gia_phuong_tien + tong_gia_tour).ToString();
+                decimal tong_gia_khach_san = Convert.ToDecimal(DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.IDDOAN == id && x.IsDeleted == false).Select(x => x.KHACHSAN.GIA).Sum() * thoi_han);
+                decimal tong_gia_phuong_tien = Convert.ToDecimal(DataProvider.Ins.DB.tb_PHUONGTIEN.Where(x => x.IDDOAN == id && x.IsDeleted == false).Select(x => x.PHUONGTIEN.GIA).Sum() * thoi_han);
+                txtbxChiPhi.Text = (tong_gia_khach_san + tong_gia_phuong_tien + tong_gia_tour).ToString();
 
                 cbbxTour.Text = dgvDoan.Rows[index].Cells["TENTOUR"].Value.ToString();
-                dgvKhachHang.DataSource= (from ve in DataProvider.Ins.DB.VEs
-                                           where ve.IDDOAN == id && ve.IsDeleted==false
+                dgvKhachHang.DataSource = (from ve in DataProvider.Ins.DB.VEs
+                                           where ve.IDDOAN == id && ve.IsDeleted == false
                                            select new
                                            {
                                                ID = ve.KHACHHANG.ID,
@@ -90,17 +92,17 @@ namespace Tour
                                            }).ToList();
 
                 dgvKhachSan.DataSource = (from ks in DataProvider.Ins.DB.KHACHSANs
-                                            join tb_belong in DataProvider.Ins.DB.tb_KHACHSAN on ks.ID equals tb_belong.IDKHACHSAN
-                                            where tb_belong.IDDOAN == id && tb_belong.IsDeleted==false
-                                            select new
-                                            {
-                                                ID = ks.ID,
-                                                TEN = ks.TEN,
-                                            }).ToList();
+                                          join tb_belong in DataProvider.Ins.DB.tb_KHACHSAN on ks.ID equals tb_belong.IDKHACHSAN
+                                          where tb_belong.IDDOAN == id && tb_belong.IsDeleted == false
+                                          select new
+                                          {
+                                              ID = ks.ID,
+                                              TEN = ks.TEN,
+                                          }).ToList();
 
                 dgvPhuongTien.DataSource = (from pt in DataProvider.Ins.DB.PHUONGTIENs
                                             join tb_belong in DataProvider.Ins.DB.tb_PHUONGTIEN on pt.ID equals tb_belong.IDPHUONGTIEN
-                                            where tb_belong.IDDOAN == id && tb_belong.IsDeleted==false
+                                            where tb_belong.IDDOAN == id && tb_belong.IsDeleted == false
                                             select new
                                             {
                                                 ID = pt.ID,
@@ -132,42 +134,42 @@ namespace Tour
                     if (cbbxSearchType.SelectedItem.ToString() == "ID")
                     {
                         dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
-                                                    join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
+                                              join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
                                               join tb_diadiem in DataProvider.Ins.DB.tb_DIADIEM_DULICH on tour.ID equals tb_diadiem.IDTOUR
                                               join tb_phuongtien in DataProvider.Ins.DB.tb_PHUONGTIEN on doan.ID equals tb_phuongtien.IDDOAN
                                               join tb_khachsan in DataProvider.Ins.DB.tb_KHACHSAN on doan.ID equals tb_khachsan.IDDOAN
-                                              where doan.ID.Contains(value) && doan.IsDeleted==false
-                                                    select new
-                                                    {
-                                                        ID = doan.ID,
-                                                        TEN = doan.TEN,
-                                                        NGAYKHOIHANH = doan.NGAYKHOIHANH,
-                                                        NGAYKETTHUC = doan.NGAYKETTHUC,
-                                                        CHITIETCHUONGTRINH = tour.DACDIEM,
-                                                        GIA_TOUR = tour.GIA,
-                                                        TEN_TOUR = tour.TEN
-                                                    }).ToList();
+                                              where doan.ID.Contains(value) && doan.IsDeleted == false
+                                              select new
+                                              {
+                                                  ID = doan.ID,
+                                                  TEN = doan.TEN,
+                                                  NGAYKHOIHANH = doan.NGAYKHOIHANH,
+                                                  NGAYKETTHUC = doan.NGAYKETTHUC,
+                                                  CHITIETCHUONGTRINH = tour.DACDIEM,
+                                                  GIA_TOUR = tour.GIA,
+                                                  TEN_TOUR = tour.TEN
+                                              }).ToList();
 
 
                     }
                     else if (cbbxSearchType.SelectedItem.ToString() == "NAME")
                     {
                         dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
-                                                    join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
+                                              join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
                                               join tb_diadiem in DataProvider.Ins.DB.tb_DIADIEM_DULICH on tour.ID equals tb_diadiem.IDTOUR
                                               join tb_phuongtien in DataProvider.Ins.DB.tb_PHUONGTIEN on doan.ID equals tb_phuongtien.IDDOAN
                                               join tb_khachsan in DataProvider.Ins.DB.tb_KHACHSAN on doan.ID equals tb_khachsan.IDDOAN
-                                              where doan.TEN.Contains(value) &&doan.IsDeleted==false
-                                                    select new
-                                                    {
-                                                        ID = doan.ID,
-                                                        TEN = doan.TEN,
-                                                        NGAYKHOIHANH = doan.NGAYKHOIHANH,
-                                                        NGAYKETTHUC = doan.NGAYKETTHUC,
-                                                        CHITIETCHUONGTRINH = tour.DACDIEM,
-                                                        GIA_TOUR = tour.GIA,
-                                                        TEN_TOUR = tour.TEN
-                                                    }).ToList();
+                                              where doan.TEN.Contains(value) && doan.IsDeleted == false
+                                              select new
+                                              {
+                                                  ID = doan.ID,
+                                                  TEN = doan.TEN,
+                                                  NGAYKHOIHANH = doan.NGAYKHOIHANH,
+                                                  NGAYKETTHUC = doan.NGAYKETTHUC,
+                                                  CHITIETCHUONGTRINH = tour.DACDIEM,
+                                                  GIA_TOUR = tour.GIA,
+                                                  TEN_TOUR = tour.TEN
+                                              }).ToList();
                     }
                 }
                 catch
@@ -183,14 +185,14 @@ namespace Tour
             bool flag = true;
 
 
-            if (DateTime.Compare(datetimeNgayKhoiHanh.Value,datetimeNgayKetThuc.Value)>0)
+            if (DateTime.Compare(datetimeNgayKhoiHanh.Value, datetimeNgayKetThuc.Value) > 0)
             {
                 Notify.NotificationSelectDateTime(datetimeNgayKhoiHanh);
                 Notify.NotificationSelectDateTime(datetimeNgayKetThuc);
 
                 flag = false;
             }
-            if (DateTime.Compare( DateTime.Now.Date,datetimeNgayKhoiHanh.Value) > 0)
+            if (DateTime.Compare(DateTime.Now.Date, datetimeNgayKhoiHanh.Value) > 0)
             {
                 Notify.NotificationSelectDateTime(datetimeNgayKhoiHanh);
 
@@ -219,16 +221,17 @@ namespace Tour
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (id != null || id.CompareTo(string.Empty) != 0)
+            if (DataProvider.Ins.DB.DOANs.Where(x => x.ID == txtbxIDDoan.Text).FirstOrDefault() != null)
             {
                 return;
             }
             if (CheckData())
             {
+
                 try
                 {
                     //randomcode = Converter.Instance.RandomString2(5);
-                    var doan = new DOAN() { ID = txtbxIDDoan.Text.Trim(), TEN = txtbxTenDoan.Text, NGAYKHOIHANH = datetimeNgayKhoiHanh.Value, NGAYKETTHUC = datetimeNgayKetThuc.Value,IDTOUR= ((TOUR)(cbbxTour.SelectedItem)).ID,IDCHIPHI="0" ,IsDeleted=false};
+                    var doan = new DOAN() { ID = txtbxIDDoan.Text.Trim(), TEN = txtbxTenDoan.Text, NGAYKHOIHANH = datetimeNgayKhoiHanh.Value, NGAYKETTHUC = datetimeNgayKetThuc.Value, IDTOUR = ((TOUR)(cbbxTour.SelectedItem)).ID, IDCHIPHI = "0", IsDeleted = false };
                     DataProvider.Ins.DB.DOANs.Add(doan);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
@@ -257,13 +260,13 @@ namespace Tour
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (id==null||id.CompareTo(string.Empty) == 0)
+            if (DataProvider.Ins.DB.DOANs.Where(x => x.ID == txtbxIDDoan.Text).FirstOrDefault() == null)
             {
                 return;
             }
             try
             {
-                foreach(var ve in DataProvider.Ins.DB.VEs.Where(x => x.IDDOAN == id))
+                foreach (var ve in DataProvider.Ins.DB.VEs.Where(x => x.IDDOAN == id))
                 {
                     ve.IsDeleted = true;
                 }
@@ -295,15 +298,16 @@ namespace Tour
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (DataProvider.Ins.DB.DOANs.Where(x => x.ID == txtbxIDDoan.Text).FirstOrDefault() == null)
+            {
+                return;
+            }
             if (CheckData() == true)
             {
-                if (id == null || id.CompareTo(string.Empty) == 0)
-                {
-                    return;
-                }
+
                 try
                 {
-                    var doan = DataProvider.Ins.DB.DOANs.Where(x => x.ID == id&&x.IsDeleted==false).FirstOrDefault();
+                    var doan = DataProvider.Ins.DB.DOANs.Where(x => x.ID == id && x.IsDeleted == false).FirstOrDefault();
                     doan.TEN = txtbxTenDoan.Text;
                     doan.NGAYKHOIHANH = datetimeNgayKhoiHanh.Value;
                     doan.NGAYKETTHUC = datetimeNgayKetThuc.Value;
@@ -332,7 +336,7 @@ namespace Tour
             cbbxTour.SelectedItem = null;
             txtbxTenDoan.Text = "";
             txtbxChiPhi.Text = "";
-            cbbxTour.SelectedText="";
+            cbbxTour.SelectedText = "";
             cbbxTour.Text = "";
 
             datetimeNgayKhoiHanh.Value = datetimeNgayKetThuc.Value = DateTime.Now;
@@ -373,7 +377,7 @@ namespace Tour
 
         private void btnAddHotelForGroup_Click(object sender, EventArgs e)
         {
-            if (id == null || id.CompareTo(string.Empty) == 0)
+            if (DataProvider.Ins.DB.DOANs.Where(x => x.ID == txtbxIDDoan.Text).FirstOrDefault() == null)
             {
                 return;
             }
@@ -389,7 +393,7 @@ namespace Tour
 
         private void btnAddVehicalForGroup_Click(object sender, EventArgs e)
         {
-            if (id == null || id.CompareTo(string.Empty) == 0)
+            if (DataProvider.Ins.DB.DOANs.Where(x => x.ID == txtbxIDDoan.Text).FirstOrDefault() == null)
             {
                 return;
             }
@@ -416,7 +420,7 @@ namespace Tour
             ////ngưng thực hiện lệnh bên dưới cho tới khi form đóng lại
             ////Show() tiếp tục thực hiện các lệnh bên dưới
             //this.Show();
-            
+
         }
 
         private void btnNhiemVu_Click(object sender, EventArgs e)
