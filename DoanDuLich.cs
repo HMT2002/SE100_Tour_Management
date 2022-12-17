@@ -231,7 +231,12 @@ namespace Tour
                 try
                 {
                     //randomcode = Converter.Instance.RandomString2(5);
-                    var doan = new DOAN() { ID = txtbxIDDoan.Text.Trim(), TEN = txtbxTenDoan.Text, NGAYKHOIHANH = datetimeNgayKhoiHanh.Value, NGAYKETTHUC = datetimeNgayKetThuc.Value, IDTOUR = ((TOUR)(cbbxTour.SelectedItem)).ID, IDCHIPHI = "0", IsDeleted = false };
+                    if (DataProvider.Ins.DB.CHIPHIs.Where(x => x.ID == "0").FirstOrDefault() == null)
+                    {
+                        DataProvider.Ins.DB.CHIPHIs.Add(new CHIPHI() { ID = "0", PHICHOI = 0, PHIKHAC = 0, PHIAN = 0, TONG = 0, IsDeleted = false });
+                        DataProvider.Ins.DB.SaveChanges();
+                    }
+                    var doan = new DOAN() { ID = txtbxIDDoan.Text.Trim(), TEN = txtbxTenDoan.Text, NGAYKHOIHANH = datetimeNgayKhoiHanh.Value, NGAYKETTHUC = datetimeNgayKetThuc.Value, IDTOUR = ((TOUR)(cbbxTour.SelectedItem)).ID, IsDeleted = false };
                     DataProvider.Ins.DB.DOANs.Add(doan);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
