@@ -137,10 +137,6 @@ namespace Tour
 
             if (CheckData() == true)
             {
-            if (id != null || id.CompareTo(string.Empty) != 0)
-            {
-                return;
-            }
                 try
                 {
                     if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
@@ -260,7 +256,8 @@ namespace Tour
             txtbxName.Text = rchtxtbxDetail.Text = txtbxDiaChi.Text = txtbxGia.Text =txtbxName.Text=txtbxSDT.Text= "";
             cbboxProvince.SelectedIndex= cbbxHotel.SelectedIndex = -1;
             pcbxLocation.Image = Properties.Resources.ic_image_empty_128;
-            
+            img_data = Converter.Instance.ImageToByte(Properties.Resources.ic_image_empty_128);
+
         }
 
         private void cbbxHotel_SelectedValueChanged(object sender, EventArgs e)

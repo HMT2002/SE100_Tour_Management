@@ -117,6 +117,8 @@ namespace Tour
             cbbxKind.SelectedIndex = -1;
 
             pcbxVehical.Image = Properties.Resources.ic_image_empty_128;
+            img_data = Converter.Instance.ImageToByte(Properties.Resources.ic_image_empty_128);
+
             UnnotifyAllFields();
         }
 

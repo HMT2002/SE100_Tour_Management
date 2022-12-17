@@ -131,6 +131,7 @@ namespace Tour
             cbboxProvince.SelectedIndex = cbbxLocation.SelectedIndex = -1;
             txtbxGia.Text = "";
             pcbxLocation.Image = Properties.Resources.ic_image_empty_128;
+            img_data = Converter.Instance.ImageToByte(Properties.Resources.ic_image_empty_128);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -138,10 +139,6 @@ namespace Tour
 
             if (CheckData() == true)
             {
-            if (id != null || id.CompareTo(string.Empty) != 0)
-            {
-                return;
-            }
                 try
                 {
                     randomcode = Converter.Instance.RandomString(5);
@@ -152,7 +149,7 @@ namespace Tour
                         DataProvider.Ins.DB.SaveChanges();
                     }
 
-                    var location = new DIADIEM() { ID = txtbxId.Text, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), CHITIET = rchtxtbxDetail.Text, PICBI =Converter.Instance.ImageToByte(pcbxLocation.Image), IsDeleted = false, GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text) };
+                    var location = new DIADIEM() { ID = txtbxId.Text, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), CHITIET = rchtxtbxDetail.Text, PICBI =img_data, IsDeleted = false, GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text) };
 
                     DataProvider.Ins.DB.DIADIEMs.Add(location);
                     DataProvider.Ins.DB.SaveChanges();
