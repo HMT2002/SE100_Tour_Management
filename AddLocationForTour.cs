@@ -128,8 +128,10 @@ namespace Tour
         {
             foreach (var tb_diadiem in DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.IDTOUR == ID && x.IsDeleted == false))
             {
-                tb_diadiem.IsDeleted = true;
+                DataProvider.Ins.DB.tb_DIADIEM_DULICH.Remove(tb_diadiem);
             }
+            DataProvider.Ins.DB.SaveChanges();
+
             foreach (DIADIEM diadiem in ListDiaDiem)
             {
                 string random1 = Converter.Instance.RandomString2(5);
