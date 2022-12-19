@@ -76,9 +76,12 @@ namespace Tour
         {
             foreach(var tb_pt in DataProvider.Ins.DB.tb_PHUONGTIEN.Where(x => x.IDDOAN == ID))
             {
-                tb_pt.IsDeleted = true;
+                DataProvider.Ins.DB.tb_PHUONGTIEN.Remove(tb_pt);
+
             }
-            string random1;
+            DataProvider.Ins.DB.SaveChanges();
+
+            string random1 = Converter.Instance.RandomString2(5);
             foreach (PHUONGTIEN phuongtien in ListPhuongTien)
             {
                 random1 = Converter.Instance.RandomString2(5);

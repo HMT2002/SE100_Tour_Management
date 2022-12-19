@@ -47,7 +47,6 @@
           <Property Name="NGAYKHOIHANH" Type="smalldatetime" />
           <Property Name="NGAYKETTHUC" Type="smalldatetime" />
           <Property Name="CHITIETCHUONGTRINH" Type="nvarchar" MaxLength="500" />
-          <Property Name="IDCHIPHI" Type="char" MaxLength="7" />
           <Property Name="IDTOUR" Type="char" MaxLength="7" />
           <Property Name="IsDeleted" Type="bit" />
         </EntityType>
@@ -120,6 +119,16 @@
           <Property Name="IDTINH" Type="char" MaxLength="7" />
           <Property Name="IsDeleted" Type="bit" />
           <Property Name="GIA" Type="money" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="tb_DIADIEM_DULICH">
           <Key>
@@ -198,18 +207,6 @@
           <Property Name="IDDOAN" Type="char" MaxLength="7" />
           <Property Name="IsDeleted" Type="bit" />
         </EntityType>
-        <Association Name="LK_CHIPHI_DOAN">
-          <End Role="CHIPHI" Type="Self.CHIPHI" Multiplicity="0..1" />
-          <End Role="DOAN" Type="Self.DOAN" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CHIPHI">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="DOAN">
-              <PropertyRef Name="IDCHIPHI" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="LK_DIADIEM_DULICH">
           <End Role="DIADIEM" Type="Self.DIADIEM" Multiplicity="0..1" />
           <End Role="tb_DIADIEM_DULICH" Type="Self.tb_DIADIEM_DULICH" Multiplicity="*" />
@@ -448,6 +445,7 @@
           <EntitySet Name="KHACHSAN" EntityType="Self.KHACHSAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PHUONGTIEN" EntityType="Self.PHUONGTIEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_DIADIEM_DULICH" EntityType="Self.tb_DIADIEM_DULICH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_KHACHSAN" EntityType="Self.tb_KHACHSAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_NHIEMVU" EntityType="Self.tb_NHIEMVU" Schema="dbo" store:Type="Tables" />
@@ -456,10 +454,6 @@
           <EntitySet Name="TINH" EntityType="Self.TINH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TOUR" EntityType="Self.TOUR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VE" EntityType="Self.VE" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="LK_CHIPHI_DOAN" Association="Self.LK_CHIPHI_DOAN">
-            <End Role="CHIPHI" EntitySet="CHIPHI" />
-            <End Role="DOAN" EntitySet="DOAN" />
-          </AssociationSet>
           <AssociationSet Name="LK_DIADIEM_DULICH" Association="Self.LK_DIADIEM_DULICH">
             <End Role="DIADIEM" EntitySet="DIADIEM" />
             <End Role="tb_DIADIEM_DULICH" EntitySet="tb_DIADIEM_DULICH" />
@@ -564,7 +558,6 @@
           <Property Name="PHIKHAC" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="TONG" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="IsDeleted" Type="Boolean" />
-          <NavigationProperty Name="DOANs" Relationship="Self.LK_CHIPHI_DOAN" FromRole="CHIPHI" ToRole="DOAN" />
         </EntityType>
         <EntityType Name="DIADIEM">
           <Key>
@@ -589,10 +582,8 @@
           <Property Name="NGAYKHOIHANH" Type="DateTime" Precision="0" />
           <Property Name="NGAYKETTHUC" Type="DateTime" Precision="0" />
           <Property Name="CHITIETCHUONGTRINH" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="IDCHIPHI" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
           <Property Name="IDTOUR" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
           <Property Name="IsDeleted" Type="Boolean" />
-          <NavigationProperty Name="CHIPHI" Relationship="Self.LK_CHIPHI_DOAN" FromRole="DOAN" ToRole="CHIPHI" />
           <NavigationProperty Name="tb_KHACHSAN" Relationship="Self.LK_DOAN_KHACHSAN" FromRole="DOAN" ToRole="tb_KHACHSAN" />
           <NavigationProperty Name="tb_NHIEMVU" Relationship="Self.LK_DOAN_NHIEMVU" FromRole="DOAN" ToRole="tb_NHIEMVU" />
           <NavigationProperty Name="tb_PHUONGTIEN" Relationship="Self.LK_DOAN_PHUONGTIEN" FromRole="DOAN" ToRole="tb_PHUONGTIEN" />
@@ -679,6 +670,16 @@
           <Property Name="GIA" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="tb_PHUONGTIEN" Relationship="Self.LK_PHUONGTIEN_PHUONGTIEN" FromRole="PHUONGTIEN" ToRole="tb_PHUONGTIEN" />
           <NavigationProperty Name="TINH" Relationship="Self.LK_PHUONGTIEN_TINH" FromRole="PHUONGTIEN" ToRole="TINH" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="tb_DIADIEM_DULICH">
           <Key>
@@ -796,18 +797,6 @@
             </Principal>
             <Dependent Role="NHANVIEN">
               <PropertyRef Name="IDACC" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="LK_CHIPHI_DOAN">
-          <End Role="CHIPHI" Type="Self.CHIPHI" Multiplicity="0..1" />
-          <End Role="DOAN" Type="Self.DOAN" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CHIPHI">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="DOAN">
-              <PropertyRef Name="IDCHIPHI" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1025,6 +1014,7 @@
           <EntitySet Name="KHACHSANs" EntityType="Self.KHACHSAN" />
           <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
           <EntitySet Name="PHUONGTIENs" EntityType="Self.PHUONGTIEN" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="tb_DIADIEM_DULICH" EntityType="Self.tb_DIADIEM_DULICH" />
           <EntitySet Name="tb_KHACHSAN" EntityType="Self.tb_KHACHSAN" />
           <EntitySet Name="tb_NHIEMVU" EntityType="Self.tb_NHIEMVU" />
@@ -1040,10 +1030,6 @@
           <AssociationSet Name="LK_MAIL_ACCOUNT_NV" Association="Self.LK_MAIL_ACCOUNT_NV">
             <End Role="ACCOUNT" EntitySet="ACCOUNTs" />
             <End Role="NHANVIEN" EntitySet="NHANVIENs" />
-          </AssociationSet>
-          <AssociationSet Name="LK_CHIPHI_DOAN" Association="Self.LK_CHIPHI_DOAN">
-            <End Role="CHIPHI" EntitySet="CHIPHIs" />
-            <End Role="DOAN" EntitySet="DOANs" />
           </AssociationSet>
           <AssociationSet Name="LK_DIADIEM_DULICH" Association="Self.LK_DIADIEM_DULICH">
             <End Role="DIADIEM" EntitySet="DIADIEMs" />
@@ -1164,7 +1150,6 @@
                 <ScalarProperty Name="NGAYKHOIHANH" ColumnName="NGAYKHOIHANH" />
                 <ScalarProperty Name="NGAYKETTHUC" ColumnName="NGAYKETTHUC" />
                 <ScalarProperty Name="CHITIETCHUONGTRINH" ColumnName="CHITIETCHUONGTRINH" />
-                <ScalarProperty Name="IDCHIPHI" ColumnName="IDCHIPHI" />
                 <ScalarProperty Name="IDTOUR" ColumnName="IDTOUR" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
               </MappingFragment>
@@ -1242,6 +1227,17 @@
                 <ScalarProperty Name="IDTINH" ColumnName="IDTINH" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
                 <ScalarProperty Name="GIA" ColumnName="GIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -137,10 +137,6 @@ namespace Tour
 
             if (CheckData() == true)
             {
-            if (id != null || id.CompareTo(string.Empty) != 0)
-            {
-                return;
-            }
                 try
                 {
                     if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
@@ -150,7 +146,7 @@ namespace Tour
                         DataProvider.Ins.DB.SaveChanges();
                     }
                     randomcode = Converter.Instance.RandomString(5);
-                    var location = new KHACHSAN() { ID = randomcode, DIACHI = txtbxDiaChi.Text, PICBI =Converter.Instance.ImageToByte(pcbxLocation.Image),CHITIET=rchtxtbxDetail.Text,GIA= Converter.Instance.CurrencyStringToDecimalByReplaceCharacter( txtbxGia.Text ),IDTINH=cbboxProvince.SelectedIndex.ToString(),SDT=txtbxSDT.Text,TEN=txtbxName.Text,IsDeleted=false};
+                    var location = new KHACHSAN() { ID = randomcode, DIACHI = txtbxDiaChi.Text, PICBI =img_data,CHITIET=rchtxtbxDetail.Text,GIA= Converter.Instance.CurrencyStringToDecimalByReplaceCharacter( txtbxGia.Text ),IDTINH=cbboxProvince.SelectedIndex.ToString(),SDT=txtbxSDT.Text,TEN=txtbxName.Text,IsDeleted=false};
                     DataProvider.Ins.DB.KHACHSANs.Add(location);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
@@ -260,7 +256,8 @@ namespace Tour
             txtbxName.Text = rchtxtbxDetail.Text = txtbxDiaChi.Text = txtbxGia.Text =txtbxName.Text=txtbxSDT.Text= "";
             cbboxProvince.SelectedIndex= cbbxHotel.SelectedIndex = -1;
             pcbxLocation.Image = Properties.Resources.ic_image_empty_128;
-            
+            img_data = Converter.Instance.ImageToByte(Properties.Resources.ic_image_empty_128);
+
         }
 
         private void cbbxHotel_SelectedValueChanged(object sender, EventArgs e)

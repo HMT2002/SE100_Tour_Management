@@ -17,9 +17,10 @@ namespace Tour
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            CThread.Instance.Start();
 
             Application.Run(new LoginForm());
+            CThread.Instance.Start();
+
             //Application.Run(new SLDiTour());
         }
     }

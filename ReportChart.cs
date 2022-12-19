@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -132,7 +133,7 @@ namespace Tour
             cartesianchartYearly.AxisY.Add(new LiveCharts.Wpf.Axis
             {
                 Title = "Revenue",
-                LabelFormatter = value => value.ToString("C"),
+                LabelFormatter = value => value.ToString("C3", CultureInfo.CreateSpecificCulture("vi")),
 
             });
 
@@ -175,7 +176,27 @@ namespace Tour
                     decimal tong_ve = 0;
                     foreach (var ve in ves)
                     {
-                        tong_ve += (decimal)ve.GIA;
+                        decimal tong_tienkhachsan = 0;
+                        decimal tong_tienxe = 0;
+                        decimal tong_tiendulich = 0;
+
+                        foreach (var ks in ve.DOAN.tb_KHACHSAN)
+                        {
+                            tong_tienkhachsan += (decimal)ks.KHACHSAN.GIA;
+                        }
+                        tong_tienkhachsan *= (decimal) ((DateTime)ve.DOAN.NGAYKETTHUC - (DateTime)ve.DOAN.NGAYKHOIHANH).TotalDays;
+                        foreach (var xe in ve.DOAN.tb_PHUONGTIEN)
+                        {
+                            tong_tienxe += (decimal)xe.PHUONGTIEN.GIA;
+                        }
+                        tong_tienxe *= (decimal)((DateTime)ve.DOAN.NGAYKETTHUC - (DateTime)ve.DOAN.NGAYKHOIHANH).TotalDays;
+                        foreach (var dulich in ve.DOAN.TOUR.tb_DIADIEM_DULICH)
+                        {
+                            //MessageBox.Show(dulich.ID + " : " + dulich.TOUR.TEN + " : " + dulich.DIADIEM.TEN + " : " + dulich.IsDeleted);
+                            tong_tiendulich += (decimal)dulich.DIADIEM.GIA;
+                        }
+                        tong_tiendulich *= (decimal)((DateTime)ve.DOAN.NGAYKETTHUC - (DateTime)ve.DOAN.NGAYKHOIHANH).TotalDays;
+                        tong_ve += (decimal)ve.GIA - tong_tienkhachsan - tong_tienxe - tong_tiendulich;
                     }
                     value.Add((decimal)tong_ve);
 
@@ -195,8 +216,7 @@ namespace Tour
         }
 
 
-        Func<ChartPoint, string> labelPoint = chartpoint => string.Format("{0} ({1:})", chartpoint.Y, chartpoint.Participation);
-
+        Func<ChartPoint, string> labelPoint = chartpoint => string.Format("{0}.000 ₫", chartpoint.Y, chartpoint.Participation);
 
         public void SetUpPieChartTour()
         {
@@ -242,7 +262,6 @@ namespace Tour
                            join ve in DataProvider.Ins.DB.VEs on doan.ID equals ve.IDDOAN
                            where ve.IsDeleted == false
                            && ve.DOAN.TOUR.ID == tour.ID
-                           && ve.DOAN.TOUR.ID == tour.ID
                            && ve.NGAYMUA.Value.Year == this.selected_year
                            && doan.IsDeleted == false
                            select ve)
@@ -250,16 +269,37 @@ namespace Tour
                 decimal tong_ve = 0;
                 foreach (var ve in ves)
                 {
-                    tong_ve += (decimal)ve.GIA;
-                }
-                value.Add((decimal)tong_ve);
+                    decimal tong_tienkhachsan = 0;
+                    decimal tong_tienxe = 0;
+                    decimal tong_tiendulich = 0;
 
+                    foreach (var ks in ve.DOAN.tb_KHACHSAN)
+                    {
+                        tong_tienkhachsan += (decimal)ks.KHACHSAN.GIA;
+                    }
+                    tong_tienkhachsan *= (decimal)((DateTime)ve.DOAN.NGAYKETTHUC - (DateTime)ve.DOAN.NGAYKHOIHANH).TotalDays;
+                    foreach (var xe in ve.DOAN.tb_PHUONGTIEN)
+                    {
+                        tong_tienxe += (decimal)xe.PHUONGTIEN.GIA;
+                    }
+                    tong_tienxe *= (decimal)((DateTime)ve.DOAN.NGAYKETTHUC - (DateTime)ve.DOAN.NGAYKHOIHANH).TotalDays;
+                    foreach (var dulich in ve.DOAN.TOUR.tb_DIADIEM_DULICH)
+                    {
+                        //MessageBox.Show(dulich.ID + " : " + dulich.TOUR.TEN + " : " + dulich.DIADIEM.TEN + " : " + dulich.IsDeleted);
+                        tong_tiendulich += (decimal)dulich.DIADIEM.GIA;
+                    }
+                    tong_tiendulich *= (decimal)((DateTime)ve.DOAN.NGAYKETTHUC - (DateTime)ve.DOAN.NGAYKHOIHANH).TotalDays;
+                    tong_ve += (decimal)ve.GIA - tong_tienkhachsan - tong_tienxe - tong_tiendulich;
+                }
+
+                value.Add((decimal)tong_ve);
                 series.Add(new PieSeries()
                 {
                     Title = tour.TEN,
                     Values = new ChartValues<decimal>(value),
                     DataLabels = true,
-                    LabelPoint = labelPoint
+                    LabelPoint = labelPoint,
+                    
                 });
             }
             piechartTour.Series = series;
@@ -291,11 +331,30 @@ namespace Tour
                            select ve)
                             .Distinct().ToList();
                 decimal tong_ve = 0;
-                foreach (var ve in ves)
-                {
+                    foreach (var ve in ves)
+                    {
+                        decimal tong_tienkhachsan = 0;
+                        decimal tong_tienxe = 0;
+                        decimal tong_tiendulich = 0;
 
-                    tong_ve += (decimal)ve.GIA;
-                }
+                        foreach (var ks in ve.DOAN.tb_KHACHSAN)
+                        {
+                            tong_tienkhachsan += (decimal)ks.KHACHSAN.GIA;
+                        }
+                        tong_tienkhachsan *= (decimal) ((DateTime)ve.DOAN.NGAYKETTHUC - (DateTime)ve.DOAN.NGAYKHOIHANH).TotalDays;
+                        foreach (var xe in ve.DOAN.tb_PHUONGTIEN)
+                        {
+                            tong_tienxe += (decimal)xe.PHUONGTIEN.GIA;
+                        }
+                        tong_tienxe *= (decimal)((DateTime)ve.DOAN.NGAYKETTHUC - (DateTime)ve.DOAN.NGAYKHOIHANH).TotalDays;
+                        foreach (var dulich in ve.DOAN.TOUR.tb_DIADIEM_DULICH)
+                        {
+                            //MessageBox.Show(dulich.ID + " : " + dulich.TOUR.TEN + " : " + dulich.DIADIEM.TEN + " : " + dulich.IsDeleted);
+                            tong_tiendulich += (decimal)dulich.DIADIEM.GIA;
+                        }
+                        tong_tiendulich *= (decimal)((DateTime)ve.DOAN.NGAYKETTHUC - (DateTime)ve.DOAN.NGAYKHOIHANH).TotalDays;
+                        tong_ve += (decimal)ve.GIA - tong_tienkhachsan - tong_tienxe - tong_tiendulich;
+                    }
 
                 columnchartYearly.Series["Revenue"].Points.AddXY(month.ToString(), tong_ve);
 

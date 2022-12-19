@@ -357,6 +357,9 @@
     <Compile Include="Model\PHUONGTIEN.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\tb_DIADIEM_DULICH.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -675,6 +678,14 @@
     <None Include="Resources\logout%281%29.png" />
     <None Include="Resources\close.png" />
     <None Include="Resources\minus.png" />
+    <None Include="Resources\16OLD-MAN1-mediumSquareAt3X-v3.jpg" />
+    <None Include="Resources\284466.jpg" />
+    <None Include="Resources\BeFunky-sample.jpg" />
+    <None Include="Resources\BeFunky-sample1.jpg" />
+    <None Include="Resources\felix-rostig-UmV2wr-Vbq8-unsplash.jpg" />
+    <None Include="Resources\group%281%29.png" />
+    <None Include="Resources\group.png" />
+    <None Include="Resources\email%281%29.png" />
     <Content Include="Model\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -685,14 +696,6 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\16OLD-MAN1-mediumSquareAt3X-v3.jpg" />
-    <None Include="Resources\284466.jpg" />
-    <None Include="Resources\BeFunky-sample.jpg" />
-    <None Include="Resources\BeFunky-sample1.jpg" />
-    <None Include="Resources\felix-rostig-UmV2wr-Vbq8-unsplash.jpg" />
-    <None Include="Resources\group%281%29.png" />
-    <None Include="Resources\group.png" />
-    <None Include="Resources\email%281%29.png" />
     <Content Include="Resources\person-working.jpg" />
     <None Include="Resources\person-working1.jpg" />
     <None Include="Resources\person-working11.jpg" />
