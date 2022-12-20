@@ -38,7 +38,7 @@ namespace Tour
                 this.Account.PASS = Converter.Instance.EncryptPassword(confirmtxb.Text);
                 DataProvider.Ins.DB.SaveChanges();
                 MessageBox.Show("Reset password success!!!");
-                this.Close();
+                Clear();
             }
             else
             {
@@ -46,10 +46,16 @@ namespace Tour
             }
         }
 
+        private void Clear()
+        {
+            confirmtxb.Text = "";
+            newpasstxb.Text = "";
+        }
+
         private void Cancelbtn_Click(object sender, EventArgs e)
         {
 
-            this.Close();
+            Clear();
         }
     }
 }
