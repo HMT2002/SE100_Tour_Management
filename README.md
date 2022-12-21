@@ -7,7 +7,7 @@
 <!-- ![](images\wp9152753-space-city-wallpapers.jpg) -->
 
   <h3>
-  Group 7: Huỳnh Trung Hiếu - 20521318, Nguyễn Tấn Huệ - 20521359, Hồ Minh Tuệ - 20520850
+  Group 9: Huỳnh Trung Hiếu - 20521318, Nguyễn Tấn Huệ - 20521359, Hồ Minh Tuệ - 20520850
   </h3>
   <h2>Requirement: Visual studio, Microsoft SQL Server Management Studio</h2>
   <div>In order to use the project, you need to create database and change the connection to the database and debug the first time first.
@@ -17,7 +17,7 @@
   Step 1: Create database
   <br>
   Open SQL -> script.sql file. Execute the whole file.
-  <br>s
+  <br>
   -----------------------------------------------------------------------------------------------------------------
   <br>
   Step 2: Change connection to database
