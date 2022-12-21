@@ -35,7 +35,7 @@ namespace Tour
 
         private void LoadDataTour()
         {
-            lblTour.Text = this.Tour.ID;
+            lblTour.Text = this.Tour.TEN;
             cbDes.Visible = false;
             tbPrice.Text =Converter.Instance.CurrencyDisplay((decimal) Tour.GIA);
             if (DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == Tour.ID && x.IsDeleted == false).FirstOrDefault() == null)

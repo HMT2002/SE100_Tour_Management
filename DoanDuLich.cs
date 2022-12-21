@@ -212,7 +212,11 @@ namespace Tour
                 flag = false;
             }
 
-
+            if (DataProvider.Ins.DB.DOANs.Where(x => x.ID == txtbxIDDoan.Text).FirstOrDefault() != null)
+            {
+                Notify.NotificationField(txtbxIDDoan);
+                flag = false;
+            }
 
             return flag;
         }
@@ -345,7 +349,17 @@ namespace Tour
             cbbxTour.Text = "";
 
             datetimeNgayKhoiHanh.Value = datetimeNgayKetThuc.Value = DateTime.Now;
-            id = Converter.Instance.RandomString2(5);
+
+            int id_num = 1;
+            id = "GR" + id_num;
+
+            while (DataProvider.Ins.DB.DOANs.Where(x => x.ID == id).FirstOrDefault() != null)
+            {
+                id_num++;
+                id = "GR" + id_num.ToString();
+            }
+
+
             txtbxIDDoan.Text = id;
             dgvKhachHang.DataSource = null;
             dgvKhachSan.DataSource = null;

@@ -106,6 +106,15 @@ namespace Tour
         }
         private void Clear()
         {
+            int id_num = 1;
+            id = "VE" + id_num;
+
+            while (DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault() != null)
+            {
+                id_num++;
+                id = "VE" + id_num.ToString();
+            }
+
             txtbxName.Text = "";
             rchtxtbxDetail.Text = "";
             cbbxVehical.Text = "";
@@ -158,6 +167,11 @@ namespace Tour
                 flag = false;
             }
 
+            if (DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault() != null)
+            {
+                flag = false;
+            }
+
             return flag;
         }
 
@@ -165,7 +179,6 @@ namespace Tour
         {
                 try
                 {
-                    randomcode = Converter.Instance.RandomString2(5);
                     if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
                     {
                         var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text, IsDeleted = false };
@@ -173,7 +186,7 @@ namespace Tour
                         DataProvider.Ins.DB.SaveChanges();
                     }
 
-                    var vehical = new PHUONGTIEN() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), PICBI =img_data, LOAI = cbbxKind.Text, IsDeleted = false, GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text) };
+                    var vehical = new PHUONGTIEN() { ID = id, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), PICBI =img_data, LOAI = cbbxKind.Text, IsDeleted = false, GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text) };
 
                     DataProvider.Ins.DB.PHUONGTIENs.Add(vehical);
                     DataProvider.Ins.DB.SaveChanges();

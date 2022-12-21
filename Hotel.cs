@@ -1,4 +1,5 @@
-﻿using Guna.UI2.WinForms;
+﻿using Guna.UI2.AnimatorNS;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -119,11 +120,19 @@ namespace Tour
         }
         public bool CheckData()
         {
+            bool flag = true;
+
             if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null||txtbxDiaChi.Text.Trim().CompareTo(string.Empty) == 0|| Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text) == 0 || cbboxProvince.SelectedIndex == -1)
             {
-                return false;
+                flag= false;
             }
-            return true;
+
+            if (DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault() != null)
+            {
+                flag = false;
+            }
+
+            return flag;
         }
 
         public void showAll()
@@ -146,7 +155,7 @@ namespace Tour
                         DataProvider.Ins.DB.SaveChanges();
                     }
                     randomcode = Converter.Instance.RandomString(5);
-                    var location = new KHACHSAN() { ID = randomcode, DIACHI = txtbxDiaChi.Text, PICBI =img_data,CHITIET=rchtxtbxDetail.Text,GIA= Converter.Instance.CurrencyStringToDecimalByReplaceCharacter( txtbxGia.Text ),IDTINH=cbboxProvince.SelectedIndex.ToString(),SDT=txtbxSDT.Text,TEN=txtbxName.Text,IsDeleted=false};
+                    var location = new KHACHSAN() { ID = id, DIACHI = txtbxDiaChi.Text, PICBI =img_data,CHITIET=rchtxtbxDetail.Text,GIA= Converter.Instance.CurrencyStringToDecimalByReplaceCharacter( txtbxGia.Text ),IDTINH=cbboxProvince.SelectedIndex.ToString(),SDT=txtbxSDT.Text,TEN=txtbxName.Text,IsDeleted=false};
                     DataProvider.Ins.DB.KHACHSANs.Add(location);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
@@ -253,6 +262,16 @@ namespace Tour
 
         private void Clear()
         {
+            int id_num = 1;
+            id = "HO" + id_num;
+
+            while (DataProvider.Ins.DB.KHACHSANs.Where(x => x.ID == id).FirstOrDefault() != null)
+            {
+                id_num++;
+                id = "HO" + id_num.ToString();
+            }
+
+
             txtbxName.Text = rchtxtbxDetail.Text = txtbxDiaChi.Text = txtbxGia.Text =txtbxName.Text=txtbxSDT.Text= "";
             cbboxProvince.SelectedIndex= cbbxHotel.SelectedIndex = -1;
             pcbxLocation.Image = Properties.Resources.ic_image_empty_128;

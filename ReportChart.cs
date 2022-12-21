@@ -49,7 +49,7 @@ namespace Tour
                         where tour.IsDeleted == false && ve.IsDeleted == false
                         orderby ve.NGAYMUA.Value.Year descending
                         select ve.NGAYMUA.Value.Year.ToString()
-                        
+
                         )
                          .Distinct().ToList();
 
@@ -184,7 +184,7 @@ namespace Tour
                         {
                             tong_tienkhachsan += (decimal)ks.KHACHSAN.GIA;
                         }
-                        tong_tienkhachsan *= (decimal) ((DateTime)ve.DOAN.NGAYKETTHUC - (DateTime)ve.DOAN.NGAYKHOIHANH).TotalDays;
+                        tong_tienkhachsan *= (decimal)((DateTime)ve.DOAN.NGAYKETTHUC - (DateTime)ve.DOAN.NGAYKHOIHANH).TotalDays;
                         foreach (var xe in ve.DOAN.tb_PHUONGTIEN)
                         {
                             tong_tienxe += (decimal)xe.PHUONGTIEN.GIA;
@@ -196,7 +196,9 @@ namespace Tour
                             tong_tiendulich += (decimal)dulich.DIADIEM.GIA;
                         }
                         tong_tiendulich *= (decimal)((DateTime)ve.DOAN.NGAYKETTHUC - (DateTime)ve.DOAN.NGAYKHOIHANH).TotalDays;
-                        tong_ve += (decimal)ve.GIA - tong_tienkhachsan - tong_tienxe - tong_tiendulich;
+                        //tong_ve += (decimal)ve.GIA - tong_tienkhachsan - tong_tienxe - tong_tiendulich;
+                        tong_ve += (decimal)ve.GIA;
+
                     }
                     value.Add((decimal)tong_ve);
 
@@ -289,7 +291,9 @@ namespace Tour
                         tong_tiendulich += (decimal)dulich.DIADIEM.GIA;
                     }
                     tong_tiendulich *= (decimal)((DateTime)ve.DOAN.NGAYKETTHUC - (DateTime)ve.DOAN.NGAYKHOIHANH).TotalDays;
-                    tong_ve += (decimal)ve.GIA - tong_tienkhachsan - tong_tienxe - tong_tiendulich;
+                    //tong_ve += (decimal)ve.GIA - tong_tienkhachsan - tong_tienxe - tong_tiendulich;
+                    tong_ve += (decimal)ve.GIA;
+
                 }
 
                 value.Add((decimal)tong_ve);
@@ -299,7 +303,7 @@ namespace Tour
                     Values = new ChartValues<decimal>(value),
                     DataLabels = true,
                     LabelPoint = labelPoint,
-                    
+
                 });
             }
             piechartTour.Series = series;
@@ -331,30 +335,32 @@ namespace Tour
                            select ve)
                             .Distinct().ToList();
                 decimal tong_ve = 0;
-                    foreach (var ve in ves)
-                    {
-                        decimal tong_tienkhachsan = 0;
-                        decimal tong_tienxe = 0;
-                        decimal tong_tiendulich = 0;
+                foreach (var ve in ves)
+                {
+                    decimal tong_tienkhachsan = 0;
+                    decimal tong_tienxe = 0;
+                    decimal tong_tiendulich = 0;
 
-                        foreach (var ks in ve.DOAN.tb_KHACHSAN)
-                        {
-                            tong_tienkhachsan += (decimal)ks.KHACHSAN.GIA;
-                        }
-                        tong_tienkhachsan *= (decimal) ((DateTime)ve.DOAN.NGAYKETTHUC - (DateTime)ve.DOAN.NGAYKHOIHANH).TotalDays;
-                        foreach (var xe in ve.DOAN.tb_PHUONGTIEN)
-                        {
-                            tong_tienxe += (decimal)xe.PHUONGTIEN.GIA;
-                        }
-                        tong_tienxe *= (decimal)((DateTime)ve.DOAN.NGAYKETTHUC - (DateTime)ve.DOAN.NGAYKHOIHANH).TotalDays;
-                        foreach (var dulich in ve.DOAN.TOUR.tb_DIADIEM_DULICH)
-                        {
-                            //MessageBox.Show(dulich.ID + " : " + dulich.TOUR.TEN + " : " + dulich.DIADIEM.TEN + " : " + dulich.IsDeleted);
-                            tong_tiendulich += (decimal)dulich.DIADIEM.GIA;
-                        }
-                        tong_tiendulich *= (decimal)((DateTime)ve.DOAN.NGAYKETTHUC - (DateTime)ve.DOAN.NGAYKHOIHANH).TotalDays;
-                        tong_ve += (decimal)ve.GIA - tong_tienkhachsan - tong_tienxe - tong_tiendulich;
+                    foreach (var ks in ve.DOAN.tb_KHACHSAN)
+                    {
+                        tong_tienkhachsan += (decimal)ks.KHACHSAN.GIA;
                     }
+                    tong_tienkhachsan *= (decimal)((DateTime)ve.DOAN.NGAYKETTHUC - (DateTime)ve.DOAN.NGAYKHOIHANH).TotalDays;
+                    foreach (var xe in ve.DOAN.tb_PHUONGTIEN)
+                    {
+                        tong_tienxe += (decimal)xe.PHUONGTIEN.GIA;
+                    }
+                    tong_tienxe *= (decimal)((DateTime)ve.DOAN.NGAYKETTHUC - (DateTime)ve.DOAN.NGAYKHOIHANH).TotalDays;
+                    foreach (var dulich in ve.DOAN.TOUR.tb_DIADIEM_DULICH)
+                    {
+                        //MessageBox.Show(dulich.ID + " : " + dulich.TOUR.TEN + " : " + dulich.DIADIEM.TEN + " : " + dulich.IsDeleted);
+                        tong_tiendulich += (decimal)dulich.DIADIEM.GIA;
+                    }
+                    tong_tiendulich *= (decimal)((DateTime)ve.DOAN.NGAYKETTHUC - (DateTime)ve.DOAN.NGAYKHOIHANH).TotalDays;
+                    //tong_ve += (decimal)ve.GIA - tong_tienkhachsan - tong_tienxe - tong_tiendulich;
+                    tong_ve += (decimal)ve.GIA;
+
+                }
 
                 columnchartYearly.Series["Revenue"].Points.AddXY(month.ToString(), tong_ve);
 
@@ -422,15 +428,15 @@ namespace Tour
             dgv_report.DataSource = (from tour in DataProvider.Ins.DB.TOURs
                                      join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
                                      join ve in DataProvider.Ins.DB.VEs on doan.ID equals ve.IDDOAN
-                                     where tour.IsDeleted == false && ve.IsDeleted == false && ve.NGAYMUA.Value.Year== this.selected_year&& ve.NGAYMUA.Value.Month==this.selected_month
-                                     group tour by new { tour.ID, tour.TEN,ve.GIA,ve.NGAYMUA.Value.Month,ve.NGAYMUA.Value.Year } into g
+                                     where tour.IsDeleted == false && ve.IsDeleted == false && ve.NGAYMUA.Value.Year == this.selected_year && ve.NGAYMUA.Value.Month == this.selected_month
+                                     group tour by new { tour.ID, tour.TEN, ve.GIA, ve.NGAYMUA.Value.Month, ve.NGAYMUA.Value.Year } into g
                                      select new
                                      {
-                                         ID= g.Key.ID,
-                                         TOURNAME=g.Key.TEN,
-                                         INCOME=g.Sum(c=>c.GIA),
-                                         MONTH=g.Key.Month,
-                                         YEAR=g.Key.Year,
+                                         ID = g.Key.ID,
+                                         TOURNAME = g.Key.TEN,
+                                         INCOME = g.Sum(c => c.GIA),
+                                         MONTH = g.Key.Month,
+                                         YEAR = g.Key.Year,
 
                                      }
 

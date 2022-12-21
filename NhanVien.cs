@@ -88,7 +88,15 @@ namespace Tour
         {
 
             txtbxName.Text = txtbxSDT.Text = txtbxMail.Text = "";
-            id = Converter.Instance.RandomString2(5);
+            int id_num = 1;
+            id = "NV" + id_num;
+
+            while (DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault() != null)
+            {
+                id_num++;
+                id = "NV" + id_num.ToString();
+            }
+
             txtbxID.Text = id;
             txtbxPassword.Text = "";
             checkbxShowPassword.Checked = false;
@@ -132,6 +140,12 @@ namespace Tour
             if (txtbxPassword.Text.Trim().CompareTo(string.Empty) == 0)
             {
                 Notify.NotificationField(txtbxPassword);
+                flag = false;
+            }
+
+            if (DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == txtbxID.Text).FirstOrDefault() != null)
+            {
+                Notify.NotificationField(txtbxID);
                 flag = false;
             }
 
@@ -268,8 +282,8 @@ namespace Tour
                 {
                     string randomcode = Converter.Instance.RandomString2(5);
 
-                    var nv = new NHANVIEN() { ID = randomcode, TEN = txtbxName.Text, MAIL = txtbxMail.Text, SDT = txtbxSDT.Text, IsDeleted = false, isAvailable = true,PICBI=img_data,IDACC=randomcode };
-                    var account = new ACCOUNT() { ACC = txtbxMail.Text, PASS = Converter.Instance.EncryptPassword((txtbxPassword.Text.Trim())), ID = randomcode, IsDeleted = false, ACCROLE = "Employee" };
+                    var nv = new NHANVIEN() { ID = txtbxID.Text, TEN = txtbxName.Text, MAIL = txtbxMail.Text, SDT = txtbxSDT.Text, IsDeleted = false, isAvailable = true,PICBI=img_data,IDACC=id };
+                    var account = new ACCOUNT() { ACC = txtbxMail.Text, PASS = Converter.Instance.EncryptPassword((txtbxPassword.Text.Trim())), ID = id, IsDeleted = false, ACCROLE = "Employee" };
                     DataProvider.Ins.DB.ACCOUNTs.Add(account);
                     DataProvider.Ins.DB.NHANVIENs.Add(nv);
 
@@ -551,10 +565,17 @@ namespace Tour
             dialog.Filter = "Chon anh(*.jpg; *.png; *.gif) | *.jpg; *.png; *.gif";
             if (dialog.ShowDialog() == DialogResult.OK)
             {
+                try
+                {
                 Image image = Image.FromFile(dialog.FileName);
                 img = image;
                 img_data = Converter.Instance.ImageToByte(image);
                 pcbxAvatar.Image = image;
+                }
+                catch(Exception ex)
+                {
+
+                }
 
             }
         }

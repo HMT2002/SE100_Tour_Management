@@ -167,8 +167,15 @@ namespace Tour
 
             tb_nametour.Text = "";
             tb_price.Text = "";
+            int id_num = 1;
+            id = "TR" + id_num;
 
-            id = Converter.Instance.RandomString2(5);
+            while (DataProvider.Ins.DB.TOURs.Where(x => x.ID == id).FirstOrDefault() != null)
+            {
+                id_num++;
+                id = "TR" + id_num.ToString();
+            }
+
             tb_idtrip.Text = id;
             lstbxLocation.DataSource = null;
             LocationList = new List<DIADIEM>();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.AnimatorNS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -103,12 +104,18 @@ namespace Tour
 
         public bool CheckData()
         {
-
+            bool flag = true;
             if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null||cbboxProvince.SelectedIndex==-1)
             {
-                return false;
+                flag= false;
             }
-            return true;
+
+            if (DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == id).FirstOrDefault() != null)
+            {
+                Notify.NotificationField(txtbxId);
+                flag = false;
+            }
+            return flag;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -124,7 +131,17 @@ namespace Tour
 
         private void Clear()
         {
-            txtbxId.Text = Converter.Instance.RandomString2(5);
+            int id_num = 1;
+            id = "LO" + id_num;
+
+            while (DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == id).FirstOrDefault() != null)
+            {
+                id_num++;
+                id = "LO" + id_num.ToString();
+            }
+
+
+            txtbxId.Text = id;
             txtbxName.Text = "";
             rchtxtbxDetail.Text = "";
 
