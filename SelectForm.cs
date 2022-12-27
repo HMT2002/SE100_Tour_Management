@@ -42,6 +42,7 @@ namespace Tour
                 }
 
             }
+            label1.Text = nhanvien.TEN;
 
         }
 
