@@ -34,7 +34,6 @@ namespace Tour.Model
         public virtual DbSet<KHACHSAN> KHACHSANs { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
         public virtual DbSet<PHUONGTIEN> PHUONGTIENs { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<tb_DIADIEM_DULICH> tb_DIADIEM_DULICH { get; set; }
         public virtual DbSet<tb_KHACHSAN> tb_KHACHSAN { get; set; }
         public virtual DbSet<tb_NHIEMVU> tb_NHIEMVU { get; set; }

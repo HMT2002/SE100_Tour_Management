@@ -30,30 +30,149 @@ namespace Tour
 
         private void DoanDuLich_Load(object sender, EventArgs e)
         {
+            RdbtnAll.Checked = true;
             showAll();
             Clear();
         }
 
+        public class GroupDisplayType 
+        {
+            public string ID { get; set; }
+            public string TEN { get; set; }
+
+            public Nullable<System.DateTime> NGAYKHOIHANH { get; set; }
+            public Nullable<System.DateTime> NGAYKETTHUC { get; set; }
+
+            public string CHITIETCHUONGTRINH { get; set; }
+
+            public Nullable<decimal> GIA_TOUR { get; set; }
+
+            public string TEN_TOUR { get; set; }
+
+            public string ID_TOUR { get; set; }
+
+            public string STATUS { get; set; }
+
+        }
+
         private void showAll()
         {
+            if (RdbtnAll.Checked)
+            {
+                dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
+                                      join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
+                                      where doan.IsDeleted == false && tour.IsDeleted == false
 
-            dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
-                                  join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-                                  where doan.IsDeleted == false && tour.IsDeleted == false
+                                      select new GroupDisplayType
+                                      {
+                                          ID = doan.ID,
+                                          TEN = doan.TEN,
+                                          NGAYKHOIHANH = doan.NGAYKHOIHANH,
+                                          NGAYKETTHUC = doan.NGAYKETTHUC,
+                                          CHITIETCHUONGTRINH = doan.CHITIETCHUONGTRINH,
+                                          GIA_TOUR = tour.GIA,
+                                          TEN_TOUR = tour.TEN,
+                                          ID_TOUR = tour.ID,
+                                          STATUS = "",
 
-                                  select new
-                                  {
-                                      ID = doan.ID,
-                                      TEN = doan.TEN,
-                                      NGAYKHOIHANH = doan.NGAYKHOIHANH,
-                                      NGAYKETTHUC = doan.NGAYKETTHUC,
-                                      CHITIETCHUONGTRINH = doan.CHITIETCHUONGTRINH,
-                                      GIA_TOUR = tour.GIA,
-                                      TEN_TOUR = tour.TEN,
-                                      ID_TOUR = tour.ID,
-                                  }).ToList();
+                                      }).ToList();
+                foreach (DataGridViewRow row in dgvDoan.Rows)
+                {
+
+                    var parsedStartDate = DateTime.Parse(row.Cells["NGAYKHOIHANH"].Value.ToString());
+                    var parsedEndedDate = DateTime.Parse(row.Cells["NGAYKETTHUC"].Value.ToString());
+
+
+                    if (parsedStartDate > DateTime.Today)
+                    {
+                        row.Cells["STATUS"].Value = "Planning";
+
+                    }
+                    else if (parsedStartDate <= DateTime.Today && parsedEndedDate >= DateTime.Today)
+                    {
+                        row.Cells["STATUS"].Value = "Ongoing";
+
+                    }
+
+                    else if (parsedEndedDate < DateTime.Today)
+                    {
+                        row.Cells["STATUS"].Value = "Ended";
+
+                    }
+                }
+
+            }
+            else if (RdbtnPlanning.Checked)
+            {
+                dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
+                                      join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
+                                      where doan.IsDeleted == false && tour.IsDeleted == false && doan.NGAYKHOIHANH > DateTime.Today
+
+                                      select new GroupDisplayType
+                                      {
+                                          ID = doan.ID,
+                                          TEN = doan.TEN,
+                                          NGAYKHOIHANH = doan.NGAYKHOIHANH,
+                                          NGAYKETTHUC = doan.NGAYKETTHUC,
+                                          CHITIETCHUONGTRINH = doan.CHITIETCHUONGTRINH,
+                                          GIA_TOUR = tour.GIA,
+                                          TEN_TOUR = tour.TEN,
+                                          ID_TOUR = tour.ID,
+                                          STATUS = "Planning",
+
+                                      }).ToList();
+
+            }
+            else if (RdbtnOngoing.Checked)
+            {
+                dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
+                                      join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
+                                      where doan.IsDeleted == false && tour.IsDeleted == false && doan.NGAYKHOIHANH <= DateTime.Today && doan.NGAYKETTHUC >= DateTime.Today
+
+
+                                      select new GroupDisplayType
+                                      {
+                                          ID = doan.ID,
+                                          TEN = doan.TEN,
+                                          NGAYKHOIHANH = doan.NGAYKHOIHANH,
+                                          NGAYKETTHUC = doan.NGAYKETTHUC,
+                                          CHITIETCHUONGTRINH = doan.CHITIETCHUONGTRINH,
+                                          GIA_TOUR = tour.GIA,
+                                          TEN_TOUR = tour.TEN,
+                                          ID_TOUR = tour.ID,
+                                          STATUS = "Ongoing",
+
+                                      }).ToList();
+
+            }
+            else if (RdbtnEnded.Checked)
+            {
+                dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
+                                      join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
+                                      where doan.IsDeleted == false && tour.IsDeleted == false && doan.NGAYKETTHUC < DateTime.Today
+
+                                      select new GroupDisplayType
+                                      {
+                                          ID = doan.ID,
+                                          TEN = doan.TEN,
+                                          NGAYKHOIHANH = doan.NGAYKHOIHANH,
+                                          NGAYKETTHUC = doan.NGAYKETTHUC,
+                                          CHITIETCHUONGTRINH = doan.CHITIETCHUONGTRINH,
+                                          GIA_TOUR = tour.GIA,
+                                          TEN_TOUR = tour.TEN,
+                                          ID_TOUR = tour.ID,
+                                          STATUS = "Ended",
+
+                                      }).ToList();
+
+            }
+
+
+
             cbbxTour.DataSource = DataProvider.Ins.DB.TOURs.Where(t => t.IsDeleted == false).Select(t => t).ToList();
             cbbxTour.DisplayMember = "TEN";
+
+
 
         }
 
@@ -212,11 +331,47 @@ namespace Tour
                 flag = false;
             }
 
-            if (DataProvider.Ins.DB.DOANs.Where(x => x.ID == txtbxIDDoan.Text).FirstOrDefault() != null)
+            //if (DataProvider.Ins.DB.DOANs.Where(x => x.ID == txtbxIDDoan.Text).FirstOrDefault() != null)
+            //{
+            //    Notify.NotificationField(txtbxIDDoan);
+            //    flag = false;
+            //}
+
+            return flag;
+        }
+
+        public bool CheckUpdateData()
+        {
+
+            bool flag = true;
+
+
+            if (DateTime.Compare(datetimeNgayKhoiHanh.Value, datetimeNgayKetThuc.Value) > 0)
             {
-                Notify.NotificationField(txtbxIDDoan);
+                Notify.NotificationSelectDateTime(datetimeNgayKhoiHanh);
+                Notify.NotificationSelectDateTime(datetimeNgayKetThuc);
+
                 flag = false;
             }
+
+
+            if (cbbxTour.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationSelect(cbbxTour);
+                flag = false;
+            }
+
+            if (txtbxTenDoan.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(txtbxTenDoan);
+                flag = false;
+            }
+
+            //if (DataProvider.Ins.DB.DOANs.Where(x => x.ID == txtbxIDDoan.Text).FirstOrDefault() != null)
+            //{
+            //    Notify.NotificationField(txtbxIDDoan);
+            //    flag = false;
+            //}
 
             return flag;
         }
@@ -307,11 +462,11 @@ namespace Tour
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (DataProvider.Ins.DB.DOANs.Where(x => x.ID == txtbxIDDoan.Text).FirstOrDefault() == null)
+            if (DataProvider.Ins.DB.DOANs.Where(x => x.ID == txtbxIDDoan.Text.Trim()).FirstOrDefault() == null)
             {
                 return;
             }
-            if (CheckData() == true)
+            if (CheckUpdateData() == true)
             {
 
                 try
@@ -476,6 +631,29 @@ namespace Tour
         private void datetimeNgayKetThuc_Enter(object sender, EventArgs e)
         {
             Notify.UnnotificationSelectDateTime(sender);
+
+        }
+
+        private void RdbtnAll_CheckedChanged(object sender, EventArgs e)
+        {
+            showAll();
+        }
+
+        private void RdbtnPlanning_CheckedChanged(object sender, EventArgs e)
+        {
+            showAll();
+
+        }
+
+        private void RdbtnOngoing_CheckedChanged(object sender, EventArgs e)
+        {
+            showAll();
+
+        }
+
+        private void RdbtnEnded_CheckedChanged(object sender, EventArgs e)
+        {
+            showAll();
 
         }
     }
