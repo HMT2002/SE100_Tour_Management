@@ -19,7 +19,7 @@ namespace Tour
             Application.SetCompatibleTextRenderingDefault(false);
 
             Application.Run(new LoginForm());
-            CThread.Instance.Start();
+            //CThread.Instance.Start();
 
             //Application.Run(new SLDiTour());
         }

@@ -147,17 +147,8 @@ namespace Tour
 
             SeriesCollection series = new SeriesCollection();
 
-            var tours = (from tour in DataProvider.Ins.DB.TOURs
-                         join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
-                         join ve in DataProvider.Ins.DB.VEs on doan.ID equals ve.IDDOAN
-                         where tour.IsDeleted == false && ve.IsDeleted == false && doan.IsDeleted == false && ve.NGAYMUA.Value.Year == this.selected_year
-                         group tour by new { tour.ID, tour.TEN } into g
-                         select new
-                         {
-                             ID = g.Key.ID,
-                             TEN = g.Key.TEN,
-                         })
-                         .Distinct().ToList();
+            var tours = IDAndNameTypeList.Instance.ListTourStatistic(this.selected_year);
+
 
             foreach (var tour in tours)
             {
@@ -236,7 +227,7 @@ namespace Tour
                          join ve in DataProvider.Ins.DB.VEs on doan.ID equals ve.IDDOAN
                          where tour.IsDeleted == false && ve.IsDeleted == false && doan.IsDeleted == false && ve.NGAYMUA.Value.Year == this.selected_year
                          group tour by new { tour.ID, tour.TEN, ve.NGAYMUA.Value.Year } into g
-                         select new
+                         select new IDAndNameType
                          {
                              ID = g.Key.ID,
                              TEN = g.Key.TEN,
@@ -412,19 +403,6 @@ namespace Tour
 
         public void showAll()
         {
-            var tours = (from tour in DataProvider.Ins.DB.TOURs
-                         join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
-                         join ve in DataProvider.Ins.DB.VEs on doan.ID equals ve.IDDOAN
-                         where tour.IsDeleted == false && ve.IsDeleted == false && doan.IsDeleted == false && ve.NGAYMUA.Value.Year == this.selected_year
-
-                         group tour by new { tour.ID, tour.TEN, ve.NGAYMUA.Value.Year } into g
-
-                         select new
-                         {
-                             ID = g.Key.ID,
-                             TEN = g.Key.TEN,
-                         }).Distinct().ToList();
-
             dgv_report.DataSource = (from tour in DataProvider.Ins.DB.TOURs
                                      join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
                                      join ve in DataProvider.Ins.DB.VEs on doan.ID equals ve.IDDOAN

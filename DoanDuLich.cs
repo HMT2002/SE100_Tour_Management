@@ -35,135 +35,27 @@ namespace Tour
             Clear();
         }
 
-        public class GroupDisplayType 
-        {
-            public string ID { get; set; }
-            public string TEN { get; set; }
-
-            public Nullable<System.DateTime> NGAYKHOIHANH { get; set; }
-            public Nullable<System.DateTime> NGAYKETTHUC { get; set; }
-
-            public string CHITIETCHUONGTRINH { get; set; }
-
-            public Nullable<decimal> GIA_TOUR { get; set; }
-
-            public string TEN_TOUR { get; set; }
-
-            public string ID_TOUR { get; set; }
-
-            public string STATUS { get; set; }
-
-        }
-
         private void showAll()
         {
             if (RdbtnAll.Checked)
             {
-                dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
-                                      join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-                                      where doan.IsDeleted == false && tour.IsDeleted == false
-
-                                      select new GroupDisplayType
-                                      {
-                                          ID = doan.ID,
-                                          TEN = doan.TEN,
-                                          NGAYKHOIHANH = doan.NGAYKHOIHANH,
-                                          NGAYKETTHUC = doan.NGAYKETTHUC,
-                                          CHITIETCHUONGTRINH = doan.CHITIETCHUONGTRINH,
-                                          GIA_TOUR = tour.GIA,
-                                          TEN_TOUR = tour.TEN,
-                                          ID_TOUR = tour.ID,
-                                          STATUS = "",
-
-                                      }).ToList();
-                foreach (DataGridViewRow row in dgvDoan.Rows)
-                {
-
-                    var parsedStartDate = DateTime.Parse(row.Cells["NGAYKHOIHANH"].Value.ToString());
-                    var parsedEndedDate = DateTime.Parse(row.Cells["NGAYKETTHUC"].Value.ToString());
-
-
-                    if (parsedStartDate > DateTime.Today)
-                    {
-                        row.Cells["STATUS"].Value = "Planning";
-
-                    }
-                    else if (parsedStartDate <= DateTime.Today && parsedEndedDate >= DateTime.Today)
-                    {
-                        row.Cells["STATUS"].Value = "Ongoing";
-
-                    }
-
-                    else if (parsedEndedDate < DateTime.Today)
-                    {
-                        row.Cells["STATUS"].Value = "Ended";
-
-                    }
-                }
+                dgvDoan.DataSource = GroupDisplayTypeList.Instance.AllType();
 
             }
             else if (RdbtnPlanning.Checked)
             {
-                dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
-                                      join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-                                      where doan.IsDeleted == false && tour.IsDeleted == false && doan.NGAYKHOIHANH > DateTime.Today
-
-                                      select new GroupDisplayType
-                                      {
-                                          ID = doan.ID,
-                                          TEN = doan.TEN,
-                                          NGAYKHOIHANH = doan.NGAYKHOIHANH,
-                                          NGAYKETTHUC = doan.NGAYKETTHUC,
-                                          CHITIETCHUONGTRINH = doan.CHITIETCHUONGTRINH,
-                                          GIA_TOUR = tour.GIA,
-                                          TEN_TOUR = tour.TEN,
-                                          ID_TOUR = tour.ID,
-                                          STATUS = "Planning",
-
-                                      }).ToList();
+                dgvDoan.DataSource = GroupDisplayTypeList.Instance.PlanningType();
 
             }
             else if (RdbtnOngoing.Checked)
             {
-                dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
-                                      join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-                                      where doan.IsDeleted == false && tour.IsDeleted == false && doan.NGAYKHOIHANH <= DateTime.Today && doan.NGAYKETTHUC >= DateTime.Today
+                dgvDoan.DataSource = GroupDisplayTypeList.Instance.OngoingType();
 
-
-                                      select new GroupDisplayType
-                                      {
-                                          ID = doan.ID,
-                                          TEN = doan.TEN,
-                                          NGAYKHOIHANH = doan.NGAYKHOIHANH,
-                                          NGAYKETTHUC = doan.NGAYKETTHUC,
-                                          CHITIETCHUONGTRINH = doan.CHITIETCHUONGTRINH,
-                                          GIA_TOUR = tour.GIA,
-                                          TEN_TOUR = tour.TEN,
-                                          ID_TOUR = tour.ID,
-                                          STATUS = "Ongoing",
-
-                                      }).ToList();
 
             }
             else if (RdbtnEnded.Checked)
             {
-                dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
-                                      join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-                                      where doan.IsDeleted == false && tour.IsDeleted == false && doan.NGAYKETTHUC < DateTime.Today
-
-                                      select new GroupDisplayType
-                                      {
-                                          ID = doan.ID,
-                                          TEN = doan.TEN,
-                                          NGAYKHOIHANH = doan.NGAYKHOIHANH,
-                                          NGAYKETTHUC = doan.NGAYKETTHUC,
-                                          CHITIETCHUONGTRINH = doan.CHITIETCHUONGTRINH,
-                                          GIA_TOUR = tour.GIA,
-                                          TEN_TOUR = tour.TEN,
-                                          ID_TOUR = tour.ID,
-                                          STATUS = "Ended",
-
-                                      }).ToList();
+                dgvDoan.DataSource = GroupDisplayTypeList.Instance.EndedType();
 
             }
 
@@ -194,39 +86,17 @@ namespace Tour
 
                 txtbxTenDoan.Text = dgvDoan.Rows[index].Cells["TEN"].Value.ToString();
 
-
-
                 decimal tong_gia_tour = Convert.ToDecimal(DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.IDTOUR == id_tour && x.IsDeleted == false).Select(x => x.DIADIEM.GIA).Sum());
                 decimal tong_gia_khach_san = Convert.ToDecimal(DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.IDDOAN == id && x.IsDeleted == false).Select(x => x.KHACHSAN.GIA).Sum() * thoi_han);
                 decimal tong_gia_phuong_tien = Convert.ToDecimal(DataProvider.Ins.DB.tb_PHUONGTIEN.Where(x => x.IDDOAN == id && x.IsDeleted == false).Select(x => x.PHUONGTIEN.GIA).Sum() * thoi_han);
                 txtbxChiPhi.Text = (tong_gia_khach_san + tong_gia_phuong_tien + tong_gia_tour).ToString();
 
                 cbbxTour.Text = dgvDoan.Rows[index].Cells["TENTOUR"].Value.ToString();
-                dgvKhachHang.DataSource = (from ve in DataProvider.Ins.DB.VEs
-                                           where ve.IDDOAN == id && ve.IsDeleted == false
-                                           select new
-                                           {
-                                               ID = ve.KHACHHANG.ID,
-                                               TEN = ve.KHACHHANG.TENKH,
-                                           }).ToList();
+                dgvKhachHang.DataSource =IDAndNameTypeList.Instance.ListKhachHang(id);
 
-                dgvKhachSan.DataSource = (from ks in DataProvider.Ins.DB.KHACHSANs
-                                          join tb_belong in DataProvider.Ins.DB.tb_KHACHSAN on ks.ID equals tb_belong.IDKHACHSAN
-                                          where tb_belong.IDDOAN == id && tb_belong.IsDeleted == false
-                                          select new
-                                          {
-                                              ID = ks.ID,
-                                              TEN = ks.TEN,
-                                          }).ToList();
+                dgvKhachSan.DataSource = IDAndNameTypeList.Instance.ListKhachSan(id);
 
-                dgvPhuongTien.DataSource = (from pt in DataProvider.Ins.DB.PHUONGTIENs
-                                            join tb_belong in DataProvider.Ins.DB.tb_PHUONGTIEN on pt.ID equals tb_belong.IDPHUONGTIEN
-                                            where tb_belong.IDDOAN == id && tb_belong.IsDeleted == false
-                                            select new
-                                            {
-                                                ID = pt.ID,
-                                                TEN = pt.TEN,
-                                            }).ToList();
+                dgvPhuongTien.DataSource = IDAndNameTypeList.Instance.ListPhuongTien(id);
             }
 
         }
@@ -250,45 +120,56 @@ namespace Tour
             {
                 try
                 {
+
+
+
                     if (cbbxSearchType.SelectedItem.ToString() == "ID")
                     {
-                        dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
-                                              join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-                                              join tb_diadiem in DataProvider.Ins.DB.tb_DIADIEM_DULICH on tour.ID equals tb_diadiem.IDTOUR
-                                              join tb_phuongtien in DataProvider.Ins.DB.tb_PHUONGTIEN on doan.ID equals tb_phuongtien.IDDOAN
-                                              join tb_khachsan in DataProvider.Ins.DB.tb_KHACHSAN on doan.ID equals tb_khachsan.IDDOAN
-                                              where doan.ID.Contains(value) && doan.IsDeleted == false
-                                              select new
-                                              {
-                                                  ID = doan.ID,
-                                                  TEN = doan.TEN,
-                                                  NGAYKHOIHANH = doan.NGAYKHOIHANH,
-                                                  NGAYKETTHUC = doan.NGAYKETTHUC,
-                                                  CHITIETCHUONGTRINH = tour.DACDIEM,
-                                                  GIA_TOUR = tour.GIA,
-                                                  TEN_TOUR = tour.TEN
-                                              }).ToList();
+                        if (RdbtnAll.Checked)
+                        {
+                            dgvDoan.DataSource = GroupDisplayTypeList.Instance.AllType(value, "");
 
+                        }
+                        else if (RdbtnPlanning.Checked)
+                        {
+                            dgvDoan.DataSource = GroupDisplayTypeList.Instance.PlanningType(value, "");
+
+                        }
+                        else if (RdbtnOngoing.Checked)
+                        {
+                            dgvDoan.DataSource = GroupDisplayTypeList.Instance.OngoingType(value, "");
+
+
+                        }
+                        else if (RdbtnEnded.Checked)
+                        {
+                            dgvDoan.DataSource = GroupDisplayTypeList.Instance.EndedType(value, "");
+                        }
 
                     }
                     else if (cbbxSearchType.SelectedItem.ToString() == "NAME")
                     {
-                        dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
-                                              join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-                                              join tb_diadiem in DataProvider.Ins.DB.tb_DIADIEM_DULICH on tour.ID equals tb_diadiem.IDTOUR
-                                              join tb_phuongtien in DataProvider.Ins.DB.tb_PHUONGTIEN on doan.ID equals tb_phuongtien.IDDOAN
-                                              join tb_khachsan in DataProvider.Ins.DB.tb_KHACHSAN on doan.ID equals tb_khachsan.IDDOAN
-                                              where doan.TEN.Contains(value) && doan.IsDeleted == false
-                                              select new
-                                              {
-                                                  ID = doan.ID,
-                                                  TEN = doan.TEN,
-                                                  NGAYKHOIHANH = doan.NGAYKHOIHANH,
-                                                  NGAYKETTHUC = doan.NGAYKETTHUC,
-                                                  CHITIETCHUONGTRINH = tour.DACDIEM,
-                                                  GIA_TOUR = tour.GIA,
-                                                  TEN_TOUR = tour.TEN
-                                              }).ToList();
+                        if (RdbtnAll.Checked)
+                        {
+                            dgvDoan.DataSource = GroupDisplayTypeList.Instance.AllType("", value);
+
+                        }
+                        else if (RdbtnPlanning.Checked)
+                        {
+                            dgvDoan.DataSource = GroupDisplayTypeList.Instance.PlanningType("", value);
+
+                        }
+                        else if (RdbtnOngoing.Checked)
+                        {
+                            dgvDoan.DataSource = GroupDisplayTypeList.Instance.OngoingType("", value);
+
+
+                        }
+                        else if (RdbtnEnded.Checked)
+                        {
+                            dgvDoan.DataSource = GroupDisplayTypeList.Instance.EndedType("", value);
+                        }
+
                     }
                 }
                 catch
@@ -302,8 +183,6 @@ namespace Tour
         {
 
             bool flag = true;
-
-
             if (DateTime.Compare(datetimeNgayKhoiHanh.Value, datetimeNgayKetThuc.Value) > 0)
             {
                 Notify.NotificationSelectDateTime(datetimeNgayKhoiHanh);
