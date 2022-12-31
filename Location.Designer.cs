@@ -51,6 +51,10 @@ namespace Tour
             this.txtbxId = new Guna.UI2.WinForms.Guna2TextBox();
             this.cbboxProvince = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtbxMeal = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtbxOthers = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtbxPlay = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxLocation)).BeginInit();
             this.panel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -60,9 +64,10 @@ namespace Tour
             // 
             this.pcbxLocation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pcbxLocation.Image = global::Tour.Properties.Resources.ic_image_empty_128;
-            this.pcbxLocation.Location = new System.Drawing.Point(3, 3);
+            this.pcbxLocation.Location = new System.Drawing.Point(4, 4);
+            this.pcbxLocation.Margin = new System.Windows.Forms.Padding(4);
             this.pcbxLocation.Name = "pcbxLocation";
-            this.pcbxLocation.Size = new System.Drawing.Size(553, 488);
+            this.pcbxLocation.Size = new System.Drawing.Size(737, 601);
             this.pcbxLocation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbxLocation.TabIndex = 0;
             this.pcbxLocation.TabStop = false;
@@ -72,10 +77,10 @@ namespace Tour
             // 
             this.rchtxtbxDetail.BackColor = System.Drawing.Color.Bisque;
             this.rchtxtbxDetail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
-            this.rchtxtbxDetail.Location = new System.Drawing.Point(41, 559);
-            this.rchtxtbxDetail.Margin = new System.Windows.Forms.Padding(4);
+            this.rchtxtbxDetail.Location = new System.Drawing.Point(55, 688);
+            this.rchtxtbxDetail.Margin = new System.Windows.Forms.Padding(5);
             this.rchtxtbxDetail.Name = "rchtxtbxDetail";
-            this.rchtxtbxDetail.Size = new System.Drawing.Size(521, 261);
+            this.rchtxtbxDetail.Size = new System.Drawing.Size(693, 297);
             this.rchtxtbxDetail.TabIndex = 34;
             this.rchtxtbxDetail.Text = "";
             // 
@@ -83,11 +88,11 @@ namespace Tour
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(131, 282);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(175, 344);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 21);
+            this.label1.Size = new System.Drawing.Size(38, 32);
             this.label1.TabIndex = 2;
             this.label1.Text = "ID";
             // 
@@ -96,10 +101,10 @@ namespace Tour
             this.panel3.AutoSize = true;
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.pcbxLocation);
-            this.panel3.Location = new System.Drawing.Point(628, 297);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Location = new System.Drawing.Point(837, 366);
+            this.panel3.Margin = new System.Windows.Forms.Padding(5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(559, 495);
+            this.panel3.Size = new System.Drawing.Size(745, 609);
             this.panel3.TabIndex = 3;
             // 
             // guna2ShadowForm1
@@ -121,12 +126,13 @@ namespace Tour
             this.cbbxLocation.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbxLocation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.cbbxLocation.ItemHeight = 30;
-            this.cbbxLocation.Location = new System.Drawing.Point(208, 218);
+            this.cbbxLocation.Location = new System.Drawing.Point(277, 268);
+            this.cbbxLocation.Margin = new System.Windows.Forms.Padding(4);
             this.cbbxLocation.Name = "cbbxLocation";
             this.cbbxLocation.ShadowDecoration.BorderRadius = 10;
             this.cbbxLocation.ShadowDecoration.Depth = 15;
             this.cbbxLocation.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
-            this.cbbxLocation.Size = new System.Drawing.Size(354, 36);
+            this.cbbxLocation.Size = new System.Drawing.Size(471, 36);
             this.cbbxLocation.TabIndex = 29;
             this.cbbxLocation.SelectedValueChanged += new System.EventHandler(this.cbbxLocation_SelectedValueChanged);
             // 
@@ -134,23 +140,23 @@ namespace Tour
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(71, 402);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(150, 490);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 21);
+            this.label2.Size = new System.Drawing.Size(62, 32);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Cost/day";
+            this.label2.Text = "Fees";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(97, 342);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(134, 416);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 21);
+            this.label3.Size = new System.Drawing.Size(79, 32);
             this.label3.TabIndex = 3;
             this.label3.Text = "Name";
             // 
@@ -158,11 +164,11 @@ namespace Tour
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(31, 462);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Location = new System.Drawing.Point(54, 568);
+            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 21);
+            this.label5.Size = new System.Drawing.Size(159, 32);
             this.label5.TabIndex = 5;
             this.label5.Text = "Province/City";
             // 
@@ -170,12 +176,12 @@ namespace Tour
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(74, 222);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(106, 272);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 21);
+            this.label4.Size = new System.Drawing.Size(107, 32);
             this.label4.TabIndex = 1;
             this.label4.Text = "Location";
             // 
@@ -186,9 +192,10 @@ namespace Tour
             this.guna2Panel1.Controls.Add(this.btnXoa);
             this.guna2Panel1.Controls.Add(this.btnAdd);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 845);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 994);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1200, 100);
+            this.guna2Panel1.Size = new System.Drawing.Size(1600, 108);
             this.guna2Panel1.TabIndex = 41;
             // 
             // btnClear
@@ -206,10 +213,10 @@ namespace Tour
             this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnClear.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnClear.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(887, 22);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClear.Location = new System.Drawing.Point(1183, 27);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(241, 46);
+            this.btnClear.Size = new System.Drawing.Size(321, 57);
             this.btnClear.TabIndex = 45;
             this.btnClear.Text = "Clear";
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click_1);
@@ -229,10 +236,10 @@ namespace Tour
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnUpdate.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnUpdate.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(640, 22);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpdate.Location = new System.Drawing.Point(853, 27);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(241, 46);
+            this.btnUpdate.Size = new System.Drawing.Size(321, 57);
             this.btnUpdate.TabIndex = 43;
             this.btnUpdate.Text = "Modify";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -252,10 +259,10 @@ namespace Tour
             this.btnXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnXoa.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnXoa.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(393, 22);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXoa.Location = new System.Drawing.Point(524, 27);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(241, 46);
+            this.btnXoa.Size = new System.Drawing.Size(321, 57);
             this.btnXoa.TabIndex = 44;
             this.btnXoa.Text = "Delete";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -275,10 +282,10 @@ namespace Tour
             this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnAdd.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnAdd.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(146, 22);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdd.Location = new System.Drawing.Point(195, 27);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(241, 46);
+            this.btnAdd.Size = new System.Drawing.Size(321, 57);
             this.btnAdd.TabIndex = 42;
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -287,12 +294,12 @@ namespace Tour
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.Location = new System.Drawing.Point(36, 517);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label7.Location = new System.Drawing.Point(54, 651);
+            this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 21);
-            this.label7.TabIndex = 42;
+            this.label7.Size = new System.Drawing.Size(78, 32);
+            this.label7.TabIndex = 6;
             this.label7.Text = "Detail";
             // 
             // txtbxName
@@ -312,8 +319,8 @@ namespace Tour
             this.txtbxName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.txtbxName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
-            this.txtbxName.Location = new System.Drawing.Point(208, 334);
-            this.txtbxName.Margin = new System.Windows.Forms.Padding(5);
+            this.txtbxName.Location = new System.Drawing.Point(277, 411);
+            this.txtbxName.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbxName.Name = "txtbxName";
             this.txtbxName.PasswordChar = '\0';
             this.txtbxName.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
@@ -323,8 +330,8 @@ namespace Tour
             this.txtbxName.ShadowDecoration.Depth = 15;
             this.txtbxName.ShadowDecoration.Enabled = true;
             this.txtbxName.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
-            this.txtbxName.Size = new System.Drawing.Size(354, 36);
-            this.txtbxName.TabIndex = 31;
+            this.txtbxName.Size = new System.Drawing.Size(472, 44);
+            this.txtbxName.TabIndex = 9;
             // 
             // txtbxGia
             // 
@@ -342,18 +349,19 @@ namespace Tour
             this.txtbxGia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxGia.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxGia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
-            this.txtbxGia.Location = new System.Drawing.Point(208, 394);
-            this.txtbxGia.Margin = new System.Windows.Forms.Padding(5);
+            this.txtbxGia.Location = new System.Drawing.Point(509, 633);
+            this.txtbxGia.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbxGia.Name = "txtbxGia";
             this.txtbxGia.PasswordChar = '\0';
             this.txtbxGia.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.txtbxGia.PlaceholderText = "";
+            this.txtbxGia.ReadOnly = true;
             this.txtbxGia.SelectedText = "";
             this.txtbxGia.ShadowDecoration.BorderRadius = 10;
             this.txtbxGia.ShadowDecoration.Depth = 15;
             this.txtbxGia.ShadowDecoration.Enabled = true;
             this.txtbxGia.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
-            this.txtbxGia.Size = new System.Drawing.Size(354, 36);
+            this.txtbxGia.Size = new System.Drawing.Size(239, 44);
             this.txtbxGia.TabIndex = 32;
             this.txtbxGia.TextChanged += new System.EventHandler(this.txtbxGia_TextChanged);
             this.txtbxGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxGia_KeyPress);
@@ -375,8 +383,8 @@ namespace Tour
             this.txtbxId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.txtbxId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
-            this.txtbxId.Location = new System.Drawing.Point(208, 274);
-            this.txtbxId.Margin = new System.Windows.Forms.Padding(5);
+            this.txtbxId.Location = new System.Drawing.Point(277, 337);
+            this.txtbxId.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbxId.Name = "txtbxId";
             this.txtbxId.PasswordChar = '\0';
             this.txtbxId.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
@@ -386,8 +394,8 @@ namespace Tour
             this.txtbxId.ShadowDecoration.Depth = 15;
             this.txtbxId.ShadowDecoration.Enabled = true;
             this.txtbxId.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
-            this.txtbxId.Size = new System.Drawing.Size(354, 36);
-            this.txtbxId.TabIndex = 30;
+            this.txtbxId.Size = new System.Drawing.Size(472, 44);
+            this.txtbxId.TabIndex = 8;
             // 
             // cbboxProvince
             // 
@@ -405,14 +413,15 @@ namespace Tour
             this.cbboxProvince.ForeColor = System.Drawing.Color.Black;
             this.cbboxProvince.IntegralHeight = false;
             this.cbboxProvince.ItemHeight = 30;
-            this.cbboxProvince.Location = new System.Drawing.Point(208, 458);
+            this.cbboxProvince.Location = new System.Drawing.Point(277, 564);
+            this.cbboxProvince.Margin = new System.Windows.Forms.Padding(4);
             this.cbboxProvince.MaxDropDownItems = 5;
             this.cbboxProvince.Name = "cbboxProvince";
             this.cbboxProvince.ShadowDecoration.BorderRadius = 10;
             this.cbboxProvince.ShadowDecoration.Depth = 15;
             this.cbboxProvince.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
-            this.cbboxProvince.Size = new System.Drawing.Size(354, 36);
-            this.cbboxProvince.TabIndex = 33;
+            this.cbboxProvince.Size = new System.Drawing.Size(471, 36);
+            this.cbboxProvince.TabIndex = 13;
             // 
             // guna2Panel2
             // 
@@ -420,17 +429,130 @@ namespace Tour
             this.guna2Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1200, 195);
+            this.guna2Panel2.Size = new System.Drawing.Size(1600, 240);
             this.guna2Panel2.TabIndex = 43;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.Location = new System.Drawing.Point(433, 645);
+            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 32);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Total";
+            // 
+            // txtbxMeal
+            // 
+            this.txtbxMeal.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.txtbxMeal.BackColor = System.Drawing.Color.Transparent;
+            this.txtbxMeal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.txtbxMeal.BorderRadius = 10;
+            this.txtbxMeal.BorderThickness = 2;
+            this.txtbxMeal.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbxMeal.DefaultText = "";
+            this.txtbxMeal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbxMeal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbxMeal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxMeal.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxMeal.FillColor = System.Drawing.Color.Bisque;
+            this.txtbxMeal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxMeal.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtbxMeal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxMeal.Location = new System.Drawing.Point(277, 485);
+            this.txtbxMeal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxMeal.Name = "txtbxMeal";
+            this.txtbxMeal.PasswordChar = '\0';
+            this.txtbxMeal.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.txtbxMeal.PlaceholderText = "Meal";
+            this.txtbxMeal.SelectedText = "";
+            this.txtbxMeal.Size = new System.Drawing.Size(148, 44);
+            this.txtbxMeal.TabIndex = 10;
+            this.txtbxMeal.TextChanged += new System.EventHandler(this.txtbxMeal_TextChanged);
+            this.txtbxMeal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxMeal_KeyPress);
+            this.txtbxMeal.Leave += new System.EventHandler(this.txtbxMeal_Leave);
+            // 
+            // txtbxOthers
+            // 
+            this.txtbxOthers.BackColor = System.Drawing.Color.Transparent;
+            this.txtbxOthers.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.txtbxOthers.BorderRadius = 10;
+            this.txtbxOthers.BorderThickness = 2;
+            this.txtbxOthers.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbxOthers.DefaultText = "";
+            this.txtbxOthers.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbxOthers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbxOthers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxOthers.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxOthers.FillColor = System.Drawing.Color.Bisque;
+            this.txtbxOthers.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxOthers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxOthers.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxOthers.Location = new System.Drawing.Point(601, 485);
+            this.txtbxOthers.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.txtbxOthers.Name = "txtbxOthers";
+            this.txtbxOthers.PasswordChar = '\0';
+            this.txtbxOthers.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.txtbxOthers.PlaceholderText = "Others";
+            this.txtbxOthers.SelectedText = "";
+            this.txtbxOthers.ShadowDecoration.BorderRadius = 10;
+            this.txtbxOthers.ShadowDecoration.Depth = 15;
+            this.txtbxOthers.ShadowDecoration.Enabled = true;
+            this.txtbxOthers.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
+            this.txtbxOthers.Size = new System.Drawing.Size(148, 44);
+            this.txtbxOthers.TabIndex = 12;
+            this.txtbxOthers.TextChanged += new System.EventHandler(this.txtbxOthers_TextChanged);
+            this.txtbxOthers.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxOthers_KeyPress);
+            this.txtbxOthers.Leave += new System.EventHandler(this.txtbxOthers_Leave);
+            // 
+            // txtbxPlay
+            // 
+            this.txtbxPlay.BackColor = System.Drawing.Color.Transparent;
+            this.txtbxPlay.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.txtbxPlay.BorderRadius = 10;
+            this.txtbxPlay.BorderThickness = 2;
+            this.txtbxPlay.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbxPlay.DefaultText = "";
+            this.txtbxPlay.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbxPlay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbxPlay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxPlay.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxPlay.FillColor = System.Drawing.Color.Bisque;
+            this.txtbxPlay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxPlay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxPlay.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxPlay.Location = new System.Drawing.Point(439, 485);
+            this.txtbxPlay.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.txtbxPlay.Name = "txtbxPlay";
+            this.txtbxPlay.PasswordChar = '\0';
+            this.txtbxPlay.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.txtbxPlay.PlaceholderText = "Play";
+            this.txtbxPlay.SelectedText = "";
+            this.txtbxPlay.ShadowDecoration.BorderRadius = 10;
+            this.txtbxPlay.ShadowDecoration.Depth = 15;
+            this.txtbxPlay.ShadowDecoration.Enabled = true;
+            this.txtbxPlay.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
+            this.txtbxPlay.Size = new System.Drawing.Size(148, 44);
+            this.txtbxPlay.TabIndex = 11;
+            this.txtbxPlay.TextChanged += new System.EventHandler(this.txtbxPlay_TextChanged);
+            this.txtbxPlay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxPlay_KeyPress);
+            this.txtbxPlay.Leave += new System.EventHandler(this.txtbxPlay_Leave);
             // 
             // Location
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1200, 945);
+            this.ClientSize = new System.Drawing.Size(1600, 1102);
+            this.Controls.Add(this.txtbxMeal);
+            this.Controls.Add(this.txtbxOthers);
+            this.Controls.Add(this.txtbxPlay);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.cbboxProvince);
             this.Controls.Add(this.txtbxId);
@@ -447,6 +569,7 @@ namespace Tour
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rchtxtbxDetail);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Location";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Location";
@@ -481,5 +604,9 @@ namespace Tour
         private Guna.UI2.WinForms.Guna2ComboBox cbboxProvince;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Button btnClear;
+        private System.Windows.Forms.Label label6;
+        private Guna.UI2.WinForms.Guna2TextBox txtbxMeal;
+        private Guna.UI2.WinForms.Guna2TextBox txtbxOthers;
+        private Guna.UI2.WinForms.Guna2TextBox txtbxPlay;
     }
 }
