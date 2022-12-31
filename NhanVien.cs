@@ -49,6 +49,12 @@ namespace Tour
 
         private void showAll()
         {
+            foreach (var pt in DataProvider.Ins.DB.tb_PHUTRACH.Where(x => x.DOAN.NGAYKETTHUC < DateTime.Today && x.IsDeleted == false))
+            {
+                pt.NHANVIEN.isAvailable = true;
+            }
+            DataProvider.Ins.DB.SaveChanges();
+
             dgv_nhanvien.DataSource = DataProvider.Ins.DB.NHANVIENs.Where(t => t.IsDeleted == false).Select(t => new
             {
                 t.ID,
