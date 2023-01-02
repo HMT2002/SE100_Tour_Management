@@ -40,6 +40,8 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.pcbxAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtKPI = new System.Windows.Forms.TextBox();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -156,6 +158,8 @@
             this.guna2Panel1.BorderColor = System.Drawing.Color.LightGray;
             this.guna2Panel1.BorderRadius = 10;
             this.guna2Panel1.BorderThickness = 2;
+            this.guna2Panel1.Controls.Add(this.txtKPI);
+            this.guna2Panel1.Controls.Add(this.label5);
             this.guna2Panel1.Controls.Add(this.pcbxAvatar);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.label4);
@@ -167,7 +171,7 @@
             this.guna2Panel1.Controls.Add(this.txbGmail);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
-            this.guna2Panel1.Location = new System.Drawing.Point(156, 128);
+            this.guna2Panel1.Location = new System.Drawing.Point(225, 104);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(720, 644);
             this.guna2Panel1.TabIndex = 78;
@@ -205,10 +209,38 @@
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(98, 579);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 31);
+            this.label5.TabIndex = 81;
+            this.label5.Text = "KPI";
+            // 
+            // txtKPI
+            // 
+            this.txtKPI.BackColor = System.Drawing.Color.White;
+            this.txtKPI.Enabled = false;
+            this.txtKPI.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKPI.ForeColor = System.Drawing.Color.Black;
+            this.txtKPI.Location = new System.Drawing.Point(198, 576);
+            this.txtKPI.Margin = new System.Windows.Forms.Padding(4);
+            this.txtKPI.MaxLength = 20;
+            this.txtKPI.Name = "txtKPI";
+            this.txtKPI.ReadOnly = true;
+            this.txtKPI.Size = new System.Drawing.Size(444, 38);
+            this.txtKPI.TabIndex = 82;
+            // 
             // StaffProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1200, 945);
             this.Controls.Add(this.guna2Panel1);
@@ -216,7 +248,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "StaffProfile";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "StaffProfile";
             this.Load += new System.EventHandler(this.StaffProfile_Load);
             this.guna2Panel1.ResumeLayout(false);
@@ -239,5 +271,7 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pcbxAvatar;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private System.Windows.Forms.TextBox txtKPI;
+        private System.Windows.Forms.Label label5;
     }
 }
