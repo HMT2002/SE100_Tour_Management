@@ -127,7 +127,7 @@ namespace Tour
                 if (nv.seleted_nhanvien_phutrach.CompareTo(string.Empty) != 0)
                 {
                     txtDriver.Text = nv.seleted_nhanvien_phutrach;
-
+                    
                 }
                 this.Show();
             }
@@ -225,10 +225,6 @@ namespace Tour
                     break;
                 default: break;
             }
-
-
-
-
         }
 
         private void txtWaitor_Click(object sender, EventArgs e)
@@ -278,7 +274,11 @@ namespace Tour
                 try
                 {
                     var phutrach = DataProvider.Ins.DB.tb_PHUTRACH.Where(x => x.IDDOAN == doanID && x.PHUTRACH == role).FirstOrDefault();
+
                     phutrach.NHANVIEN.isAvailable = true;
+
+                    phutrach.NHANVIEN.SLDI--;
+
                     DataProvider.Ins.DB.SaveChanges();
 
                     DataProvider.Ins.DB.tb_PHUTRACH.Remove(phutrach);

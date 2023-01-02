@@ -36,6 +36,7 @@ namespace Tour
                 txbTen.Text = nv.TEN;
                 txbSDT.Text = nv.SDT;
                 txtbxID.Text=nv.ID;
+                txtKPI.Text = nv.SLDI.ToString();
                 pcbxAvatar.Image = Converter.Instance.ByteArrayToImage(nv.PICBI);
             }
 

@@ -527,7 +527,7 @@ namespace Tour
         private void RdbtnOngoing_CheckedChanged(object sender, EventArgs e)
         {
             showAll();
-
+            
         }
 
         private void RdbtnEnded_CheckedChanged(object sender, EventArgs e)

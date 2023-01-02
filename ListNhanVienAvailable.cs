@@ -74,6 +74,8 @@ namespace Tour
                 {
                     case DialogResult.OK:
                         var nvu = new tb_PHUTRACH() { ID = Converter.Instance.RandomString2(5), IDDOAN = doanid, IDNHANVIEN = temp_nv.ID, PHUTRACH = phutrach, IsDeleted = false };
+                        temp_nv.SLDI++;
+                        DataProvider.Ins.DB.SaveChanges();
                         DataProvider.Ins.DB.tb_PHUTRACH.Add(nvu);
                         seleted_nhanvien_phutrach = nvu.NHANVIEN.TEN;
                         temp_nv.isAvailable = false;
