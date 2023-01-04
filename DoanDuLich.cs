@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.Entity.SqlServer;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -463,6 +464,7 @@ namespace Tour
 
         private void dgvDoan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
             //int index;
             //index = e.RowIndex;
             //string doanid = dgvDoan.Rows[index].Cells[0].Value.ToString().Trim();
@@ -478,7 +480,7 @@ namespace Tour
 
         private void btnNhiemVu_Click(object sender, EventArgs e)
         {
-            if (id.Trim().CompareTo(string.Empty) != 0)
+            if (DataProvider.Ins.DB.DOANs.Where(x=>x.ID==id).FirstOrDefault()!=null)
             {
                 using (NhiemVuTrongDoan nv = new NhiemVuTrongDoan(id))
                 {
@@ -486,6 +488,10 @@ namespace Tour
                     nv.ShowDialog();
                     this.Show();
                 }
+            }
+            else
+            {
+                MessageBox.Show("Please choose a group to giving tasks");
             }
 
         }
