@@ -19,6 +19,7 @@ namespace Tour
         string id;
         string id_tour;
         string randomcode;
+        int thoi_han;
         NhiemVuTrongDoan nhiemVu;
 
         public DoanDuLich()
@@ -58,14 +59,8 @@ namespace Tour
                 dgvDoan.DataSource = GroupDisplayTypeList.Instance.EndedType();
 
             }
-
-
-
             cbbxTour.DataSource = DataProvider.Ins.DB.TOURs.Where(t => t.IsDeleted == false).Select(t => t).ToList();
             cbbxTour.DisplayMember = "TEN";
-
-
-
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -82,7 +77,7 @@ namespace Tour
 
                 datetimeNgayKhoiHanh.Value = (DateTime)dgvDoan.Rows[index].Cells["NGAYKHOIHANH"].Value;
                 datetimeNgayKetThuc.Value = (DateTime)dgvDoan.Rows[index].Cells["NGAYKETTHUC"].Value;
-                int thoi_han = Convert.ToInt32((datetimeNgayKetThuc.Value - datetimeNgayKhoiHanh.Value).TotalDays) + 1;
+                thoi_han = Convert.ToInt32((datetimeNgayKetThuc.Value - datetimeNgayKhoiHanh.Value).TotalDays) + 1;
 
                 txtbxTenDoan.Text = dgvDoan.Rows[index].Cells["TEN"].Value.ToString();
 
@@ -120,9 +115,6 @@ namespace Tour
             {
                 try
                 {
-
-
-
                     if (cbbxSearchType.SelectedItem.ToString() == "ID")
                     {
                         if (RdbtnAll.Checked)
