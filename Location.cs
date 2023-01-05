@@ -121,6 +121,22 @@ namespace Tour
             return flag;
         }
 
+        public bool CheckData2()
+        {
+            bool flag = true;
+            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null || cbboxProvince.SelectedIndex == -1)
+            {
+                flag = false;
+            }
+
+            if (DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == id).FirstOrDefault() == null)
+            {
+                Notify.NotificationField(txtbxId);
+                flag = false;
+            }
+            return flag;
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -203,7 +219,7 @@ namespace Tour
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (CheckData())
+            if (CheckData2())
             {
                 if (MessageBox.Show("Are you sure to delete this?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
@@ -235,7 +251,7 @@ namespace Tour
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (CheckData() == true)
+            if (CheckData2() == true)
             {
                 if (id == null || id.CompareTo(string.Empty) == 0)
                 {
