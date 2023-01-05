@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tour.CrystalReport;
 using Tour.Model;
 
 namespace Tour
@@ -19,187 +20,170 @@ namespace Tour
     {
 
         string id;
+
+        public VE selected_ve = new VE();
+
         void Clear()
         {
-            tbName.Text=tbAddress.Text = tbID.Text = tbICN.Text = tbphone.Text = tbAddress.Text = "";
-            rdbDomestic.Checked = rdbFemale.Checked = rdbMale.Checked = rdbForeign.Checked = false;
+            this.selected_ve = null;
+            lblCustomer.Text = "ID";
+            tbName.Text = "";
+            tbAddress.Text = "";
+            tbCMND.Text = "";
+            tbTelephone.Text = "";
+            tbEmail.Text = "";
+            RdMale.Checked = true;
+            tbTourName.Text = "";
+            tbGroupName.Text = "";
+            tbStartDate.Text = "";
+            tbEndDate.Text = "";
+            tbPrice.Text = "";
+            tbBookDate.Text = "";
         }
         public CSDLPhieuDatCho()
         {
 
             InitializeComponent();
-
+            dgvTicket.AutoGenerateColumns = false;
         }
-        private void textBox1_Leave(object sender, EventArgs e)
+
+
+
+        public void ShowAll()
         {
-            if (tbSearchTicket.Text == "")
-            {
-                tbSearchTicket.ForeColor = Color.LightGray;
-                tbSearchTicket.Text = "Enter Tour ID to search";
-                ShowTicket();
-            }
+            var ves = (from ve in DataProvider.Ins.DB.VEs
+                       join khachhang in DataProvider.Ins.DB.KHACHHANGs on ve.IDKHACH equals khachhang.ID
+                       join doan in DataProvider.Ins.DB.DOANs on ve.IDDOAN equals doan.ID
+                       join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
+                       where tour.IsDeleted == false && ve.IsDeleted == false && doan.IsDeleted == false && khachhang.IsDeleted == false
+                       select new
+                       {
+                           ID = ve.ID,
+                           TENKH = khachhang.TENKH,
+                           TOURNAME = tour.TEN,
+                           GROUPNAME = doan.TEN,
+                           GIA = ve.GIA,
+                           BOOKDATE = ve.NGAYMUA,
+                       })
+                         .ToList();
+
+            dgvTicket.DataSource = ves;
         }
 
-        private void textBox1_Enter(object sender, EventArgs e)
-        {
-            if (tbSearchTicket.Text == "Enter Tour ID to search")
-            {
-                tbSearchTicket.Text = "";
-                tbSearchTicket.ForeColor = Color.Black;
-                ShowTicket();
-            }
-        }
-        private void textBox2_Leave(object sender, EventArgs e)
-        {
-            if (tbSearchResID.Text == "")
-            {
-                tbSearchResID.ForeColor = Color.LightGray;
-                tbSearchResID.Text = "Enter Tour ID to search";
-            }
-        }
-
-        private void textBox2_Enter(object sender, EventArgs e)
-        {
-            if (tbSearchResID.Text == "Enter Tour ID to search")
-            {
-                tbSearchResID.Text = "";
-                tbSearchResID.ForeColor = Color.Black;
-            }
-        }
-        public void ShowTicket()
-        {
-
-            dgvDatCho.DataSource = (from ve in DataProvider.Ins.DB.VEs
-                                    join doan in DataProvider.Ins.DB.DOANs on ve.IDDOAN equals doan.ID
-                                    join khachhang in DataProvider.Ins.DB.KHACHHANGs on ve.IDKHACH equals khachhang.ID
-                                    join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-                                    where doan.ID==id
-                                    select new
-                                    {
-                                        IDVE = ve.ID,
-                                        TENKHACHHANG = khachhang.TENKH,
-                                        TENTOUR=tour.TEN,
-
-                                    }).ToList();
-
-        }
-
-        public void ShowTicketv2()
-        {
-
-
-        }
-
-
-        decimal CostTicket;
-        string NameOfRouteType, NameOfTourType;
-
-        private void dgvQuanLy_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int index = e.RowIndex;
-            String gender, tourist;
-            if (index >= 0)
-            {
-                id= dgvQuanLy.Rows[index].Cells["IDTOUR"].Value.ToString();
-
-
-                NameOfTourType = dgvQuanLy.Rows[index].Cells["TenLoaiChuyen"].Value.ToString();
-                NameOfRouteType = dgvQuanLy.Rows[index].Cells["TenloaiTuyen"].Value.ToString();
-                CostTicket = decimal.Parse(dgvQuanLy.Rows[index].Cells["GiaVe"].Value.ToString());
-
-                tbID.Text = dgvQuanLy.Rows[index].Cells["MaChuyen"].Value.ToString();
-                tbName.Text = dgvQuanLy.Rows[index].Cells["HoTen"].Value.ToString();
-                tbAddress.Text = dgvQuanLy.Rows[index].Cells["DiaChi"].Value.ToString();
-                tbphone.Text = dgvQuanLy.Rows[index].Cells["SDT"].Value.ToString();
-                tbICN.Text = dgvQuanLy.Rows[index].Cells["CMND_Passport"].Value.ToString();
-
-                dtpVisa.Value = DateTime.Parse(dgvQuanLy.Rows[index].Cells["HanVisa"].Value.ToString());
-                dtpPassport.Value = DateTime.Parse(dgvQuanLy.Rows[index].Cells["HanPassport"].Value.ToString());
-
-                gender = dgvQuanLy.Rows[index].Cells["GioiTinh"].Value.ToString();
-                if (gender == "Male")
-                {
-                    rdbMale.Checked = true;
-                }
-                else if (gender == "Female")
-                {
-                    rdbFemale.Checked = true;
-                }
-                tourist = dgvQuanLy.Rows[index].Cells["TenLoaiKhach"].Value.ToString();
-                if (tourist == "Foreign")
-                {
-                    rdbForeign.Checked = true;
-                }
-                else if (tourist == "Domestic")
-                {
-                    rdbDomestic.Checked = true;
-                }
-            }
-        }
         private void CSDLPhieuDatCho_Load(object sender, EventArgs e)
         {
-            ShowTicket();
-            tientong();
-        }
-        void tientong()
-        {
-            int sum = 0;
-            for (int i = 0; i < dgvQuanLy.Rows.Count; ++i)
-            {
-                sum += Convert.ToInt32(dgvQuanLy.Rows[i].Cells["GiaVe"].Value);
-            }
-        }
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            if (CheckData())
-            {
-
-                Clear();
-            }
+            ShowAll();
+            Clear();
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            string value = tbSearchResID.Text.Trim();
+            string value = tbSearchTicket.Text;
             if (!string.IsNullOrEmpty(value))
             {
                 try
                 {
-                        dgvDatCho.DataSource = (from ve in DataProvider.Ins.DB.VEs
-                                                join doan in DataProvider.Ins.DB.DOANs on ve.IDDOAN equals doan.ID
+                    //if (rdIDSearch.Checked)
+                    if (cbbxSearchType.SelectedItem.ToString() == "Ticket ID")
+                    {
+                        dgvTicket.DataSource = (from ve in DataProvider.Ins.DB.VEs
                                                 join khachhang in DataProvider.Ins.DB.KHACHHANGs on ve.IDKHACH equals khachhang.ID
+                                                join doan in DataProvider.Ins.DB.DOANs on ve.IDDOAN equals doan.ID
                                                 join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-                                                where SqlMethods.Like(ve.ID, "%" + value + "%")
+                                                where tour.IsDeleted == false
+                                                && ve.IsDeleted == false
+                                                && doan.IsDeleted == false
+                                                && khachhang.IsDeleted == false
+                                                && SqlFunctions.PatIndex("%" + value + "%", ve.ID) > 0
                                                 select new
                                                 {
-                                                    IDVE = ve.ID,
-                                                    TENKHACHHANG = khachhang.TENKH,
-                                                    TENTOUR = tour.TEN,
+                                                    ID = ve.ID,
+                                                    TENKH = khachhang.TENKH,
+                                                    TOURNAME = tour.TEN,
+                                                    GROUPNAME = doan.TEN,
+                                                    GIA = ve.GIA,
+                                                    BOOKDATE = ve.NGAYMUA,
+                                                })
+                 .ToList();
 
-                                                }).ToList();
+                    }
+                    //else if (rdNameSearch.Checked)
+                    else if (cbbxSearchType.SelectedItem.ToString() == "Customer's name")
+                    {
+                        dgvTicket.DataSource = (from ve in DataProvider.Ins.DB.VEs
+                                                join khachhang in DataProvider.Ins.DB.KHACHHANGs on ve.IDKHACH equals khachhang.ID
+                                                join doan in DataProvider.Ins.DB.DOANs on ve.IDDOAN equals doan.ID
+                                                join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
+                                                where tour.IsDeleted == false
+                                                && ve.IsDeleted == false
+                                                && doan.IsDeleted == false
+                                                && khachhang.IsDeleted == false
+                                                && SqlFunctions.PatIndex("%" + value + "%", khachhang.TENKH) > 0
+                                                select new
+                                                {
+                                                    ID = ve.ID,
+                                                    TENKH = khachhang.TENKH,
+                                                    TOURNAME = tour.TEN,
+                                                    GROUPNAME = doan.TEN,
+                                                    GIA = ve.GIA,
+                                                    BOOKDATE = ve.NGAYMUA,
+                                                })
+                 .ToList();
+                    }
+                    else if (cbbxSearchType.SelectedItem.ToString() == "Tour's name")
+                    {
+                        dgvTicket.DataSource = (from ve in DataProvider.Ins.DB.VEs
+                                                join khachhang in DataProvider.Ins.DB.KHACHHANGs on ve.IDKHACH equals khachhang.ID
+                                                join doan in DataProvider.Ins.DB.DOANs on ve.IDDOAN equals doan.ID
+                                                join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
+                                                where tour.IsDeleted == false
+                                                && ve.IsDeleted == false
+                                                && doan.IsDeleted == false
+                                                && khachhang.IsDeleted == false
+                                                && SqlFunctions.PatIndex("%" + value + "%", tour.TEN) > 0
+                                                select new
+                                                {
+                                                    ID = ve.ID,
+                                                    TENKH = khachhang.TENKH,
+                                                    TOURNAME = tour.TEN,
+                                                    GROUPNAME = doan.TEN,
+                                                    GIA = ve.GIA,
+                                                    BOOKDATE = ve.NGAYMUA,
+                                                })
+                 .ToList();
+                    }
+                    else if (cbbxSearchType.SelectedItem.ToString() == "Group's name")
+                    {
+                        dgvTicket.DataSource = (from ve in DataProvider.Ins.DB.VEs
+                                                join khachhang in DataProvider.Ins.DB.KHACHHANGs on ve.IDKHACH equals khachhang.ID
+                                                join doan in DataProvider.Ins.DB.DOANs on ve.IDDOAN equals doan.ID
+                                                join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
+                                                where tour.IsDeleted == false
+                                                && ve.IsDeleted == false
+                                                && doan.IsDeleted == false
+                                                && khachhang.IsDeleted == false
+                                                && SqlFunctions.PatIndex("%" + value + "%", doan.TEN) > 0
+                                                select new
+                                                {
+                                                    ID = ve.ID,
+                                                    TENKH = khachhang.TENKH,
+                                                    TOURNAME = tour.TEN,
+                                                    GROUPNAME = doan.TEN,
+                                                    GIA = ve.GIA,
+                                                    BOOKDATE = ve.NGAYMUA,
+                                                })
+                 .ToList();
+                    }
                 }
                 catch
                 {
 
                 }
             }
-            else { ShowTicket(); }
+            else { ShowAll(); }
         }
 
-        public bool CheckData()
-        {
 
-            if (String.IsNullOrEmpty(tbName.Text) || String.IsNullOrEmpty(tbphone.Text) || String.IsNullOrEmpty(tbAddress.Text))
-            {
-                MessageBox.Show("Please fill in all the information", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return false;
-            }
 
-            return true;
-        }
 
         private void tbphone_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -216,18 +200,6 @@ namespace Tour
         private void backbtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-        }
-
-        private void rdbForeign_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rdbDomestic.Checked)
-            {
-                panelTime.Visible = false;
-            }
-            else
-            {
-                panelTime.Visible = true;
-            }
         }
 
         private void tbName_KeyPress(object sender, KeyPressEventArgs e)
@@ -254,128 +226,109 @@ namespace Tour
             }
         }
 
-        private void tbName_Enter(object sender, EventArgs e)
-        {
-            ShowTicket();
-        }
-
-        private void tbAddress_Enter(object sender, EventArgs e)
-        {
-            ShowTicket();
-        }
-
-        private void tbphone_Enter(object sender, EventArgs e)
-        {
-            ShowTicket();
-        }
-
         private void btnTraVe_Click(object sender, EventArgs e)
         {
-
-            Customer cus = new Customer();
-
-
-
-            decimal result;
-            decimal costA = 1;
-            int costB = 0;
-
-
-
-            result = (CostTicket * costA) - costB;
-            if (result > 0)
+            if (this.selected_ve == null)
             {
-                MessageBox.Show("You get paid " + result + " for ticket refund ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
-            else if (result < 0)
+            if (MessageBox.Show("Are you sure want to return ticket?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                MessageBox.Show("You have to pay extra " + result * (-1) + " for ticket refund ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                try
+                {
+                    this.selected_ve.IsDeleted = true;
+                    DataProvider.Ins.DB.SaveChanges();
+                    ShowAll();
+                    Clear();
+                }
+                catch
+                {
+
+                }
             }
 
-            else
-            {
-                MessageBox.Show("Error", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            Clear();
 
         }
-        public string mave,maphieu,madukhach,tourID;
-        public bool XoaKhach()
+        private void dgvTicket_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            tblTicket tk = new tblTicket();
-            tk.MaVe = Guid.Parse(mave);
-            tk.MaPhieu =Guid.Parse(maphieu);
-            tk.MaDuKhach = Guid.Parse(madukhach);
-            Customer cus = new Customer();
-            cus.MaDuKhach= Guid.Parse(madukhach);
-            Reservation res = new Reservation();
-            res.MaPhieu = Guid.Parse(maphieu);
-            res.MaChuyen = Guid.Parse(tourID);
+            int index = e.RowIndex;
+            string gender, tourist;
+            if (index >= 0)
+            {
+                id = dgvTicket.Rows[index].Cells["data_id"].Value.ToString();
+
+                this.selected_ve = DataProvider.Ins.DB.VEs.Where(x => x.ID == id && x.IsDeleted == false).FirstOrDefault();
+
+                lblCustomer.Text = selected_ve.KHACHHANG.ID;
+                tbName.Text = selected_ve.KHACHHANG.TENKH;
+                tbAddress.Text = selected_ve.KHACHHANG.DIACHI;
+                tbCMND.Text = selected_ve.KHACHHANG.CMND;
+                tbTelephone.Text = selected_ve.KHACHHANG.MAIL;
+                tbEmail.Text = selected_ve.KHACHHANG.MAIL;
+                if (selected_ve.KHACHHANG.GIOITINH == "Male")
+                {
+                    RdMale.Checked = true;
+                }
+                else
+                {
+                    RdFmale.Checked = true;
+                }
+
+                tbTourName.Text = selected_ve.DOAN.TOUR.TEN;
+                tbGroupName.Text = selected_ve.DOAN.TEN;
+                tbStartDate.Text = selected_ve.DOAN.NGAYKHOIHANH.Value.ToString("dd/MM/yyyy");
+                tbEndDate.Text = selected_ve.DOAN.NGAYKETTHUC.Value.ToString("dd/MM/yyyy");
 
 
-            tientong();
-            return false;
+                tbPrice.Text = selected_ve.GIA.ToString();
+                tbBookDate.Text = selected_ve.NGAYMUA.Value.ToString("dd/MM/yyyy");
+
+            }
+        }
+
+
+        public void OpenTicketReport()
+        {
+                VE ve = DataProvider.Ins.DB.VEs.Where(x => (x.ID == this.selected_ve.ID && x.IsDeleted == false)).SingleOrDefault();
+
+                using (fPrint f = new fPrint(ve))
+                {
+                    rptTicket crys = new rptTicket();
+                    crys.Load(@"rptTicket.rep");
+
+                    f.rptViewer.ReportSource = crys;
+                    f.rptViewer.Refresh();
+
+                    f.rptViewer.SelectionFormula = "{VE.ID} = '" + ve.ID + "' ";
+
+                    f.ShowDialog();
+                }
+        }
+
+        private void AskForReport()
+        {
+            if (this.selected_ve == null)
+            {
+                return;
+            }
+            if (MessageBox.Show("Do you want to print ticket?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                OpenTicketReport();
+
+            }
+
         }
         private void btnDel_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("are you sure ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-
-            }
-            else { 
-                MessageBox.Show("Error", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); 
-
-            }
-
-                tientong();
-                Clear();
-
+            AskForReport();
         }
-        public float getTienHoantra(string TenLoaiChuyen)
+
+        private void btnClear_Click(object sender, EventArgs e)
         {
-            float cost = 0;
-            string sql = "SELECT TienHoanTra FROM LoaiChuyen WHERE TenLoaiChuyen = @TenLoaiChuyen";
-            SqlConnection con = null; // dc.getConnect();
-            SqlCommand cmd = new SqlCommand(sql, con);
-            con.Open();
-            cmd.Parameters.AddWithValue("@TenLoaiChuyen", TenLoaiChuyen);
-            SqlDataReader da = cmd.ExecuteReader();
-            while (da.Read())
-            {
-                cost = float.Parse(da.GetValue(0).ToString());
-            }
-            return cost;
+            ShowAll();
+            Clear();
         }
 
-        public int getLePhiHoanTra(string TenLoaiTuyen)
-        {
-            int cost = 0;
-            string sql = "SELECT LePhiHoanTra FROM LoaiTuyen WHERE TenLoaiTuyen = @TenLoaiTuyen";
-            SqlConnection con = null; // dc.getConnect();
-            SqlCommand cmd = new SqlCommand(sql, con);
-            con.Open();
-            cmd.Parameters.AddWithValue("@TenLoaiTuyen", TenLoaiTuyen);
-            SqlDataReader da = cmd.ExecuteReader();
-            while (da.Read())
-            {
-                cost = Int32.Parse( da.GetValue(0).ToString());             
-            }
-            return cost;
-        }
 
-        public DateTime GetTime(Guid MaChuyen)
-        {
-            DateTime date = new DateTime();
-            
-            try
-            {
-
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error, Please try again later", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return date;
-        }
     }
 }

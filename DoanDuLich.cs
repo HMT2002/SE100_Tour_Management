@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using Tour.Model;
 using Tour.Utils;
 
@@ -18,6 +19,7 @@ namespace Tour
         string id;
         string id_tour;
         string randomcode;
+        int thoi_han;
         NhiemVuTrongDoan nhiemVu;
 
         public DoanDuLich()
@@ -29,34 +31,47 @@ namespace Tour
 
         private void DoanDuLich_Load(object sender, EventArgs e)
         {
+            RdbtnAll.Checked = true;
             showAll();
             Clear();
         }
 
         private void showAll()
         {
+            if (RdbtnAll.Checked)
+            {
+                dgvDoan.DataSource = GroupDisplayTypeList.Instance.AllType();
 
-            dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
-                                  join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-                                  where doan.IsDeleted == false && tour.IsDeleted == false &&doan.NGAYKETTHUC>=DateTime.Now
+            }
+            else if (RdbtnPlanning.Checked)
+            {
+                dgvDoan.DataSource = GroupDisplayTypeList.Instance.PlanningType();
 
-                                  select new {
-                                      ID = doan.ID,
-                                      TEN = doan.TEN,
-                                      NGAYKHOIHANH = doan.NGAYKHOIHANH,
-                                      NGAYKETTHUC = doan.NGAYKETTHUC,
-                                      CHITIETCHUONGTRINH = doan.CHITIETCHUONGTRINH,
-                                      GIA_TOUR =tour.GIA,
-                                      TEN_TOUR = tour.TEN,
-                                      ID_TOUR = tour.ID,
-                                  }).ToList();
+            }
+            else if (RdbtnOngoing.Checked)
+            {
+                dgvDoan.DataSource = GroupDisplayTypeList.Instance.OngoingType();
+
+
+            }
+            else if (RdbtnEnded.Checked)
+            {
+                dgvDoan.DataSource = GroupDisplayTypeList.Instance.EndedType();
+
+            }
+
+
+
             cbbxTour.DataSource = DataProvider.Ins.DB.TOURs.Where(t => t.IsDeleted == false).Select(t => t).ToList();
             cbbxTour.DisplayMember = "TEN";
+
+
 
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            Clear();
             int index = e.RowIndex;
 
             if (index >= 0)
@@ -68,43 +83,21 @@ namespace Tour
 
                 datetimeNgayKhoiHanh.Value = (DateTime)dgvDoan.Rows[index].Cells["NGAYKHOIHANH"].Value;
                 datetimeNgayKetThuc.Value = (DateTime)dgvDoan.Rows[index].Cells["NGAYKETTHUC"].Value;
-                int thoi_han =Convert.ToInt32(( datetimeNgayKetThuc.Value - datetimeNgayKhoiHanh.Value).TotalDays)+1;
+                thoi_han = Convert.ToInt32((datetimeNgayKetThuc.Value - datetimeNgayKhoiHanh.Value).TotalDays) + 1;
 
-                txtbxTenDoan.Text= dgvDoan.Rows[index].Cells["TEN"].Value.ToString();
-
-
+                txtbxTenDoan.Text = dgvDoan.Rows[index].Cells["TEN"].Value.ToString();
 
                 decimal tong_gia_tour = Convert.ToDecimal(DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.IDTOUR == id_tour && x.IsDeleted == false).Select(x => x.DIADIEM.GIA).Sum());
-                decimal tong_gia_khach_san= Convert.ToDecimal(DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.IDDOAN == id && x.IsDeleted == false).Select(x => x.KHACHSAN.GIA).Sum() * thoi_han);
-                decimal tong_gia_phuong_tien = Convert.ToDecimal(DataProvider.Ins.DB.tb_PHUONGTIEN.Where(x => x.IDDOAN == id && x.IsDeleted == false).Select(x => x.PHUONGTIEN.GIA).Sum()*thoi_han);
-                txtbxChiPhi.Text =(tong_gia_khach_san + tong_gia_phuong_tien + tong_gia_tour).ToString();
+                decimal tong_gia_khach_san = Convert.ToDecimal(DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.IDDOAN == id && x.IsDeleted == false).Select(x => x.KHACHSAN.GIA).Sum() * thoi_han);
+                decimal tong_gia_phuong_tien = Convert.ToDecimal(DataProvider.Ins.DB.tb_PHUONGTIEN.Where(x => x.IDDOAN == id && x.IsDeleted == false).Select(x => x.PHUONGTIEN.GIA).Sum() * thoi_han);
+                txtbxChiPhi.Text = (tong_gia_khach_san + tong_gia_phuong_tien + tong_gia_tour).ToString();
 
                 cbbxTour.Text = dgvDoan.Rows[index].Cells["TENTOUR"].Value.ToString();
-                dgvKhachHang.DataSource= (from ve in DataProvider.Ins.DB.VEs
-                                           where ve.IDDOAN == id && ve.IsDeleted==false
-                                           select new
-                                           {
-                                               ID = ve.KHACHHANG.ID,
-                                               TEN = ve.KHACHHANG.TENKH,
-                                           }).ToList();
+                dgvKhachHang.DataSource =IDAndNameTypeList.Instance.ListKhachHang(id);
 
-                dgvKhachSan.DataSource = (from ks in DataProvider.Ins.DB.KHACHSANs
-                                            join tb_belong in DataProvider.Ins.DB.tb_KHACHSAN on ks.ID equals tb_belong.IDKHACHSAN
-                                            where tb_belong.IDDOAN == id && tb_belong.IsDeleted==false
-                                            select new
-                                            {
-                                                ID = ks.ID,
-                                                TEN = ks.TEN,
-                                            }).ToList();
+                dgvKhachSan.DataSource = IDAndNameTypeList.Instance.ListKhachSan(id);
 
-                dgvPhuongTien.DataSource = (from pt in DataProvider.Ins.DB.PHUONGTIENs
-                                            join tb_belong in DataProvider.Ins.DB.tb_PHUONGTIEN on pt.ID equals tb_belong.IDPHUONGTIEN
-                                            where tb_belong.IDDOAN == id && tb_belong.IsDeleted==false
-                                            select new
-                                            {
-                                                ID = pt.ID,
-                                                TEN = pt.TEN,
-                                            }).ToList();
+                dgvPhuongTien.DataSource = IDAndNameTypeList.Instance.ListPhuongTien(id);
             }
 
         }
@@ -128,45 +121,56 @@ namespace Tour
             {
                 try
                 {
-                    if (rdIDSearch.Checked)
-                    {
-                        dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
-                                                    join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-                                              join tb_diadiem in DataProvider.Ins.DB.tb_DIADIEM_DULICH on tour.ID equals tb_diadiem.IDTOUR
-                                              join tb_phuongtien in DataProvider.Ins.DB.tb_PHUONGTIEN on doan.ID equals tb_phuongtien.IDDOAN
-                                              join tb_khachsan in DataProvider.Ins.DB.tb_KHACHSAN on doan.ID equals tb_khachsan.IDDOAN
-                                              where doan.ID.Contains(value) && doan.IsDeleted==false
-                                                    select new
-                                                    {
-                                                        ID = doan.ID,
-                                                        TEN = doan.TEN,
-                                                        NGAYKHOIHANH = doan.NGAYKHOIHANH,
-                                                        NGAYKETTHUC = doan.NGAYKETTHUC,
-                                                        CHITIETCHUONGTRINH = tour.DACDIEM,
-                                                        GIA_TOUR = tour.GIA,
-                                                        TEN_TOUR = tour.TEN
-                                                    }).ToList();
 
+
+
+                    if (cbbxSearchType.SelectedItem.ToString() == "ID")
+                    {
+                        if (RdbtnAll.Checked)
+                        {
+                            dgvDoan.DataSource = GroupDisplayTypeList.Instance.AllType(value, "");
+
+                        }
+                        else if (RdbtnPlanning.Checked)
+                        {
+                            dgvDoan.DataSource = GroupDisplayTypeList.Instance.PlanningType(value, "");
+
+                        }
+                        else if (RdbtnOngoing.Checked)
+                        {
+                            dgvDoan.DataSource = GroupDisplayTypeList.Instance.OngoingType(value, "");
+
+
+                        }
+                        else if (RdbtnEnded.Checked)
+                        {
+                            dgvDoan.DataSource = GroupDisplayTypeList.Instance.EndedType(value, "");
+                        }
 
                     }
-                    else if (rdNameSearch.Checked)
+                    else if (cbbxSearchType.SelectedItem.ToString() == "NAME")
                     {
-                        dgvDoan.DataSource = (from doan in DataProvider.Ins.DB.DOANs
-                                                    join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-                                              join tb_diadiem in DataProvider.Ins.DB.tb_DIADIEM_DULICH on tour.ID equals tb_diadiem.IDTOUR
-                                              join tb_phuongtien in DataProvider.Ins.DB.tb_PHUONGTIEN on doan.ID equals tb_phuongtien.IDDOAN
-                                              join tb_khachsan in DataProvider.Ins.DB.tb_KHACHSAN on doan.ID equals tb_khachsan.IDDOAN
-                                              where doan.TEN.Contains(value) &&doan.IsDeleted==false
-                                                    select new
-                                                    {
-                                                        ID = doan.ID,
-                                                        TEN = doan.TEN,
-                                                        NGAYKHOIHANH = doan.NGAYKHOIHANH,
-                                                        NGAYKETTHUC = doan.NGAYKETTHUC,
-                                                        CHITIETCHUONGTRINH = tour.DACDIEM,
-                                                        GIA_TOUR = tour.GIA,
-                                                        TEN_TOUR = tour.TEN
-                                                    }).ToList();
+                        if (RdbtnAll.Checked)
+                        {
+                            dgvDoan.DataSource = GroupDisplayTypeList.Instance.AllType("", value);
+
+                        }
+                        else if (RdbtnPlanning.Checked)
+                        {
+                            dgvDoan.DataSource = GroupDisplayTypeList.Instance.PlanningType("", value);
+
+                        }
+                        else if (RdbtnOngoing.Checked)
+                        {
+                            dgvDoan.DataSource = GroupDisplayTypeList.Instance.OngoingType("", value);
+
+
+                        }
+                        else if (RdbtnEnded.Checked)
+                        {
+                            dgvDoan.DataSource = GroupDisplayTypeList.Instance.EndedType("", value);
+                        }
+
                     }
                 }
                 catch
@@ -178,27 +182,100 @@ namespace Tour
         }
         public bool CheckData()
         {
-            if (DateTime.Compare(datetimeNgayKhoiHanh.Value,datetimeNgayKetThuc.Value)>0)
+
+            bool flag = true;
+            if (DateTime.Compare(datetimeNgayKhoiHanh.Value, datetimeNgayKetThuc.Value) > 0)
             {
-                return false;
+                Notify.NotificationSelectDateTime(datetimeNgayKhoiHanh);
+                Notify.NotificationSelectDateTime(datetimeNgayKetThuc);
+
+                flag = false;
+            }
+            if (DateTime.Compare(DateTime.Now.Date, datetimeNgayKhoiHanh.Value) > 0)
+            {
+                Notify.NotificationSelectDateTime(datetimeNgayKhoiHanh);
+
+                flag = false;
             }
 
-            if (txtbxTenDoan.Text.Trim().CompareTo(string.Empty) == 0 || cbbxTour.Text.Trim().CompareTo(string.Empty) == 0)
+
+            if (cbbxTour.Text.Trim().CompareTo(string.Empty) == 0)
             {
-                return false;
+                Notify.NotificationSelect(cbbxTour);
+                flag = false;
             }
 
-            return true;
+            if (txtbxTenDoan.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(txtbxTenDoan);
+                flag = false;
+            }
+
+            //if (DataProvider.Ins.DB.DOANs.Where(x => x.ID == txtbxIDDoan.Text).FirstOrDefault() != null)
+            //{
+            //    Notify.NotificationField(txtbxIDDoan);
+            //    flag = false;
+            //}
+
+            return flag;
         }
+
+        public bool CheckUpdateData()
+        {
+
+            bool flag = true;
+
+
+            if (DateTime.Compare(datetimeNgayKhoiHanh.Value, datetimeNgayKetThuc.Value) > 0)
+            {
+                Notify.NotificationSelectDateTime(datetimeNgayKhoiHanh);
+                Notify.NotificationSelectDateTime(datetimeNgayKetThuc);
+
+                flag = false;
+            }
+
+
+            if (cbbxTour.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationSelect(cbbxTour);
+                flag = false;
+            }
+
+            if (txtbxTenDoan.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(txtbxTenDoan);
+                flag = false;
+            }
+
+            //if (DataProvider.Ins.DB.DOANs.Where(x => x.ID == txtbxIDDoan.Text).FirstOrDefault() != null)
+            //{
+            //    Notify.NotificationField(txtbxIDDoan);
+            //    flag = false;
+            //}
+
+            return flag;
+        }
+
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (DataProvider.Ins.DB.DOANs.Where(x => x.ID == txtbxIDDoan.Text).FirstOrDefault() != null)
+            {
+                return;
+            }
             if (CheckData())
             {
+
                 try
                 {
-                    randomcode = Converter.Instance.RandomString2(5);
-                    var doan = new DOAN() { ID = randomcode, TEN = txtbxTenDoan.Text, NGAYKHOIHANH = datetimeNgayKhoiHanh.Value, NGAYKETTHUC = datetimeNgayKetThuc.Value,IDTOUR= ((TOUR)(cbbxTour.SelectedItem)).ID,IDCHIPHI="0" ,IsDeleted=false};
+                    //randomcode = Converter.Instance.RandomString2(5);
+                    if (DataProvider.Ins.DB.CHIPHIs.Where(x => x.ID == "0").FirstOrDefault() == null)
+                    {
+                        DataProvider.Ins.DB.CHIPHIs.Add(new CHIPHI() { ID = "0", PHICHOI = 0, PHIKHAC = 0, PHIAN = 0, TONG = 0, IsDeleted = false });
+                        DataProvider.Ins.DB.SaveChanges();
+                    }
+                    var doan = new DOAN() { ID = txtbxIDDoan.Text.Trim(), TEN = txtbxTenDoan.Text, NGAYKHOIHANH = datetimeNgayKhoiHanh.Value, NGAYKETTHUC = datetimeNgayKetThuc.Value, IDTOUR = ((TOUR)(cbbxTour.SelectedItem)).ID, IsDeleted = false };
                     DataProvider.Ins.DB.DOANs.Add(doan);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
@@ -227,13 +304,13 @@ namespace Tour
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (id==null||id.CompareTo(string.Empty) == 0)
+            if (DataProvider.Ins.DB.DOANs.Where(x => x.ID == txtbxIDDoan.Text).FirstOrDefault() == null)
             {
                 return;
             }
             try
             {
-                foreach(var ve in DataProvider.Ins.DB.VEs.Where(x => x.IDDOAN == id))
+                foreach (var ve in DataProvider.Ins.DB.VEs.Where(x => x.IDDOAN == id))
                 {
                     ve.IsDeleted = true;
                 }
@@ -265,15 +342,16 @@ namespace Tour
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (CheckData() == true)
+            if (DataProvider.Ins.DB.DOANs.Where(x => x.ID == txtbxIDDoan.Text.Trim()).FirstOrDefault() == null)
             {
-                if (id == null || id.CompareTo(string.Empty) == 0)
-                {
-                    return;
-                }
+                return;
+            }
+            if (CheckUpdateData() == true)
+            {
+
                 try
                 {
-                    var doan = DataProvider.Ins.DB.DOANs.Where(x => x.ID == id&&x.IsDeleted==false).FirstOrDefault();
+                    var doan = DataProvider.Ins.DB.DOANs.Where(x => x.ID == id && x.IsDeleted == false).FirstOrDefault();
                     doan.TEN = txtbxTenDoan.Text;
                     doan.NGAYKHOIHANH = datetimeNgayKhoiHanh.Value;
                     doan.NGAYKETTHUC = datetimeNgayKetThuc.Value;
@@ -298,16 +376,42 @@ namespace Tour
 
         private void Clear()
         {
-            txtbxIDDoan.Text = txtbxTenDoan.Text = txtbxChiPhi.Text = cbbxTour.Text="";
             cbbxTour.SelectedIndex = -1;
+            cbbxTour.SelectedItem = null;
+            txtbxTenDoan.Text = "";
+            txtbxChiPhi.Text = "";
+            cbbxTour.SelectedText = "";
+            cbbxTour.Text = "";
+
             datetimeNgayKhoiHanh.Value = datetimeNgayKetThuc.Value = DateTime.Now;
-            id = "";
+
+            int id_num = 1;
+            id = "GR" + id_num;
+
+            while (DataProvider.Ins.DB.DOANs.Where(x => x.ID == id).FirstOrDefault() != null)
+            {
+                id_num++;
+                id = "GR" + id_num.ToString();
+            }
+
+
+            txtbxIDDoan.Text = id;
             dgvKhachHang.DataSource = null;
             dgvKhachSan.DataSource = null;
             dgvPhuongTien.DataSource = null;
+            UnnotifyAllFields();
 
         }
+        public void UnnotifyAllFields()
+        {
+            Notify.UnnotificationField(txtbxTenDoan);
+            Notify.UnnotificationSelect(cbbxTour);
+            Notify.UnnotificationSelectDateTime(datetimeNgayKhoiHanh);
+            Notify.UnnotificationSelectDateTime(datetimeNgayKetThuc);
 
+
+
+        }
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -327,7 +431,7 @@ namespace Tour
 
         private void btnAddHotelForGroup_Click(object sender, EventArgs e)
         {
-            if (id == null || id.CompareTo(string.Empty) == 0)
+            if (DataProvider.Ins.DB.DOANs.Where(x => x.ID == txtbxIDDoan.Text).FirstOrDefault() == null)
             {
                 return;
             }
@@ -343,7 +447,7 @@ namespace Tour
 
         private void btnAddVehicalForGroup_Click(object sender, EventArgs e)
         {
-            if (id == null || id.CompareTo(string.Empty) == 0)
+            if (DataProvider.Ins.DB.DOANs.Where(x => x.ID == txtbxIDDoan.Text).FirstOrDefault() == null)
             {
                 return;
             }
@@ -370,7 +474,7 @@ namespace Tour
             ////ngưng thực hiện lệnh bên dưới cho tới khi form đóng lại
             ////Show() tiếp tục thực hiện các lệnh bên dưới
             //this.Show();
-            
+
         }
 
         private void btnNhiemVu_Click(object sender, EventArgs e)
@@ -384,6 +488,52 @@ namespace Tour
                     this.Show();
                 }
             }
+
+        }
+
+        private void txtbxTenDoan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Notify.UnnotificationField(sender);
+        }
+
+        private void cbbxTour_Enter(object sender, EventArgs e)
+        {
+            Notify.UnnotificationSelect(sender);
+
+        }
+
+        private void datetimeNgayKhoiHanh_Enter(object sender, EventArgs e)
+        {
+            Notify.UnnotificationSelectDateTime(sender);
+
+        }
+
+        private void datetimeNgayKetThuc_Enter(object sender, EventArgs e)
+        {
+            Notify.UnnotificationSelectDateTime(sender);
+
+        }
+
+        private void RdbtnAll_CheckedChanged(object sender, EventArgs e)
+        {
+            showAll();
+        }
+
+        private void RdbtnPlanning_CheckedChanged(object sender, EventArgs e)
+        {
+            showAll();
+
+        }
+
+        private void RdbtnOngoing_CheckedChanged(object sender, EventArgs e)
+        {
+            showAll();
+
+        }
+
+        private void RdbtnEnded_CheckedChanged(object sender, EventArgs e)
+        {
+            showAll();
 
         }
     }

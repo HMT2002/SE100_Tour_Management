@@ -14,6 +14,10 @@ using Tour.Utils;
 using System.Data.Entity.SqlServer;
 using System.Data.Entity;
 using Tour.CrystalReport;
+using System.Globalization;
+using Newtonsoft.Json.Linq;
+using System.Text.RegularExpressions;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 
 namespace Tour
 {
@@ -23,43 +27,60 @@ namespace Tour
         string randomcode;
 
         TOUR selected_tour = new TOUR();
+        List<string> ListTypeTour = new List<string> { "Bussiness", "Vacation", "Cuisine", "Culture" };
 
         List<DIADIEM> LocationList = new List<DIADIEM>();
 
         public Tour()
         {
             InitializeComponent();
-            this.tb_search.Leave += new System.EventHandler(this.textBox1_Leave);
-            this.tb_search.Enter += new System.EventHandler(this.textBox1_Enter);
             dgv_trip.AutoGenerateColumns = false;
+            cb_typetour.DataSource = ListTypeTour;
         }
 
-        private void AddDataBinding()
-        {
-
-        }
-
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
         public void ShowAllChuyen()
         {
-            dgv_trip.DataSource = DataProvider.Ins.DB.TOURs.Where(t => t.IsDeleted == false).ToList();
+            dgv_trip.DataSource = (from tour in DataProvider.Ins.DB.TOURs
+                                   join giamgia in DataProvider.Ins.DB.GIAMGIAs on tour.ID equals giamgia.IDTOUR
+                                   where tour.IsDeleted == false && giamgia.IsDeleted == false
+                                   group tour by new { tour, giamgia } into g
+                                   select new
+                                   {
+                                       ID = g.Key.tour.ID,
+                                       TENTOUR = g.Key.tour.TEN,
+                                       GIA = g.Key.tour.GIA,
+                                       BANNER = g.Key.giamgia.PICBI,
+                                       TOURTYPE = g.Key.tour.LOAI,
 
-            lstbxLocation.DataSource = LocationList;
-            lstbxLocation.DisplayMember = "TEN";
+
+                                   }).Distinct().ToList(); 
+
+            //lstbxLocation.DataSource = LocationList;
+            //lstbxLocation.DisplayMember = "TEN";
 
         }
+
+        private void CheckBannerAndRemove()
+        {
+            var banners = (from banner in DataProvider.Ins.DB.GIAMGIAs select banner).ToList();
+            foreach (var banner in banners)
+            {
+                if (banner.NGAYKETTHUC.Value < DateTime.Today)
+                {
+                    banner.NGAYBATDAU = DateTime.Today;
+                    banner.NGAYKETTHUC = DateTime.Today;
+                    banner.DISCOUNT = 0;
+                    banner.PICBI = Utils.Converter.Instance.ImageToByte(Properties.Resources.ic_image_empty_128);
+                    DataProvider.Ins.DB.SaveChanges();
+                }
+            }
+        }
+
         private void TRIPManageTour_Load(object sender, EventArgs e)
         {
-            Clear();
+            CheckBannerAndRemove();
             ShowAllChuyen();
+            Clear();
 
         }
 
@@ -67,105 +88,189 @@ namespace Tour
 
         public bool CheckData()
         {
+            bool flag = true;
 
-            this.price = tb_price.Text;
-            this.typetour = cb_typetour.Text;
-            this.nametour = tb_nametour.Text;
-
-            if (this.price.Trim().CompareTo(string.Empty) == 0 || this.typetour.Trim().CompareTo(string.Empty) == 0 || this.nametour.Trim().CompareTo(string.Empty) == 0)
+            if (tb_nametour.Text.Trim().CompareTo(string.Empty) == 0)
             {
-                return false;
+                Notify.NotificationField(tb_nametour);
+                flag = false;
             }
-            return true;
+            if (tb_price.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(tb_price);
+                flag = false;
+            }
+            if (cb_typetour.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationSelect(cb_typetour);
+                flag = false;
+            }
+
+            return flag;
         }
         private void update_Click(object sender, EventArgs e)
         {
             if (CheckData() == true)
             {
-                if (id == null || id.CompareTo(string.Empty) == 0)
+                if (selected_tour == null || id.CompareTo(string.Empty) == 0)
                 {
                     return;
                 }
-                try
-                {
-                    var tour = DataProvider.Ins.DB.TOURs.Where(x => x.ID == id).FirstOrDefault();
-                    tour.TEN = tb_nametour.Text;
-                    tour.LOAI = cb_typetour.Text;
-                    tour.GIA = Convert.ToDecimal(tb_price.Text);
-                    tour.DACDIEM = richtbDetail.Text;
-                    DataProvider.Ins.DB.SaveChanges();
-                    ShowAllChuyen();
+                UpdateTour();
 
-                }
-                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
-                {
-                    Exception raise = dbEx;
-                    foreach (var validationErrors in dbEx.EntityValidationErrors)
-                    {
-                        foreach (var validationError in validationErrors.ValidationErrors)
-                        {
-                            string message = string.Format("{0}:{1}",
-                                validationErrors.Entry.Entity.ToString(),
-                                validationError.ErrorMessage);
-                            // raise a new exception nesting
-                            // the current instance as InnerException
-                            raise = new InvalidOperationException(message, raise);
-                        }
-                    }
-                    throw raise;
-                }
+            }
+        }
 
+
+        public void UpdateTour()
+        {
+            try
+            {
+                //MessageBox.Show(Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tb_price.Text).ToString());
+                //return;
+
+                var tour = DataProvider.Ins.DB.TOURs.Where(x => x.ID == id).FirstOrDefault();
+                tour.TEN = tb_nametour.Text;
+                tour.LOAI = cb_typetour.Text;
+                tour.GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tb_price.Text);
+                tour.DACDIEM = "";
+                DataProvider.Ins.DB.SaveChanges();
+                ShowAllChuyen();
                 Clear();
+
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            {
+                Exception raise = dbEx;
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        string message = string.Format("{0}:{1}",
+                            validationErrors.Entry.Entity.ToString(),
+                            validationError.ErrorMessage);
+                        // raise a new exception nesting
+                        // the current instance as InnerException
+                        raise = new InvalidOperationException(message, raise);
+                    }
+                }
+                throw raise;
             }
         }
 
         public void Clear()
         {
             cb_typetour.SelectedIndex = -1;
-            id = tb_price.Text = cb_typetour.Text = tb_nametour.Text = tb_idtrip.Text = cb_typetour.Text = richtbDetail.Text = "";
+
+            cb_typetour.Text = "";
+            cb_typetour.SelectedText = "";
+
+            tb_nametour.Text = "";
+            tb_price.Text = "";
+            int id_num = 1;
+            id = "TR" + id_num;
+
+            while (DataProvider.Ins.DB.TOURs.Where(x => x.ID == id).FirstOrDefault() != null)
+            {
+                id_num++;
+                id = "TR" + id_num.ToString();
+            }
+
+            tb_idtrip.Text = id;
             lstbxLocation.DataSource = null;
             LocationList = new List<DIADIEM>();
 
-            this.price = this.typetour = this.nametour = null;
 
-            pcbxBanner.Image = Properties.Resources.ic_image_empty_128;
+            //this.price = this.typetour = this.nametour = null;
 
             this.selected_tour = null;
 
+
+            UnnotifyAllFields();
+
         }
+
+        public void UnnotifyAllFields()
+        {
+            Notify.UnnotificationField(tb_price);
+            Notify.UnnotificationSelect(tb_nametour);
+            Notify.UnnotificationSelect(cb_typetour);
+
+
+
+        }
+
+        public void AddNewTour()
+        {
+            try
+            {
+                //randomcode = Converter.Instance.RandomString2(5);
+
+                var tour = new TOUR() { ID = tb_idtrip.Text, GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tb_price.Text), TEN = tb_nametour.Text, LOAI = cb_typetour.Text, DACDIEM = "", IsDeleted = false };
+                DataProvider.Ins.DB.TOURs.Add(tour);
+                string randomecode = Converter.Instance.RandomString2(5);
+                GIAMGIA giamgia = new GIAMGIA() { ID = randomecode, IDTOUR = tb_idtrip.Text, DISCOUNT = 0, PICBI =Converter.Instance.ImageToByte(Properties.Resources.ic_image_empty_128), NGAYBATDAU =DateTime.Today, NGAYKETTHUC = DateTime.Today, IsDeleted = false };
+                DataProvider.Ins.DB.GIAMGIAs.Add(giamgia);
+                DataProvider.Ins.DB.SaveChanges();
+                ShowAllChuyen();
+                Clear();
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            {
+                Exception raise = dbEx;
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        string message = string.Format("{0}:{1}",
+                            validationErrors.Entry.Entity.ToString(),
+                            validationError.ErrorMessage);
+                        // raise a new exception nesting
+                        // the current instance as InnerException
+                        raise = new InvalidOperationException(message, raise);
+                    }
+                }
+                throw raise;
+            }
+        }
+
         private void add_Click(object sender, EventArgs e)
         {
 
             if (CheckData() == true)
             {
-                try
-                {
-                    randomcode = Converter.Instance.RandomString2(5);
-                    var tour = new TOUR() { ID = randomcode, GIA = Convert.ToDecimal(tb_price.Text), TEN = tb_nametour.Text, LOAI = cb_typetour.Text, DACDIEM = richtbDetail.Text, IsDeleted = false };
-                    DataProvider.Ins.DB.TOURs.Add(tour);
+                AddNewTour();
 
-                    DataProvider.Ins.DB.SaveChanges();
-                    ShowAllChuyen();
-                    Clear();
-                }
-                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            }
+        }
+
+        public void DeleteTour()
+        {
+            try
+            {
+                TOUR tour = DataProvider.Ins.DB.TOURs.Where(x => x.ID == id&&x.IsDeleted==false).FirstOrDefault();
+                tour.IsDeleted = true;
+                DataProvider.Ins.DB.SaveChanges();
+                ShowAllChuyen();
+                Clear();
+
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            {
+                Exception raise = dbEx;
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
                 {
-                    Exception raise = dbEx;
-                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    foreach (var validationError in validationErrors.ValidationErrors)
                     {
-                        foreach (var validationError in validationErrors.ValidationErrors)
-                        {
-                            string message = string.Format("{0}:{1}",
-                                validationErrors.Entry.Entity.ToString(),
-                                validationError.ErrorMessage);
-                            // raise a new exception nesting
-                            // the current instance as InnerException
-                            raise = new InvalidOperationException(message, raise);
-                        }
+                        string message = string.Format("{0}:{1}",
+                            validationErrors.Entry.Entity.ToString(),
+                            validationError.ErrorMessage);
+                        // raise a new exception nesting
+                        // the current instance as InnerException
+                        raise = new InvalidOperationException(message, raise);
                     }
-                    throw raise;
                 }
-
+                throw raise;
             }
         }
 
@@ -177,32 +282,7 @@ namespace Tour
                 {
                     return;
                 }
-                try
-                {
-                    TOUR tour = DataProvider.Ins.DB.TOURs.Where(x => x.ID == id).FirstOrDefault();
-                    tour.IsDeleted = true;
-                    DataProvider.Ins.DB.SaveChanges();
-                    ShowAllChuyen();
-
-                }
-                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
-                {
-                    Exception raise = dbEx;
-                    foreach (var validationErrors in dbEx.EntityValidationErrors)
-                    {
-                        foreach (var validationError in validationErrors.ValidationErrors)
-                        {
-                            string message = string.Format("{0}:{1}",
-                                validationErrors.Entry.Entity.ToString(),
-                                validationError.ErrorMessage);
-                            // raise a new exception nesting
-                            // the current instance as InnerException
-                            raise = new InvalidOperationException(message, raise);
-                        }
-                    }
-                    throw raise;
-                }
-                Clear();
+                DeleteTour();
             }
         }
         public string TourID, TourName, TourCode, TypeofTour, Transport, RouteID;
@@ -210,7 +290,6 @@ namespace Tour
         private void dgv_trip_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             Clear();
-
             int index = e.RowIndex;
 
             if (index >= 0)
@@ -225,7 +304,11 @@ namespace Tour
 
                 EnableBanner();
 
-                EnableCalendarSource();
+                if (dgv_trip.Columns[e.ColumnIndex] is DataGridViewImageColumn)
+                {
+                    OpenBannerForm();
+                }
+
             }
         }
 
@@ -235,19 +318,12 @@ namespace Tour
             tb_nametour.Text = selected_tour.TEN;
             tb_price.Text = selected_tour.GIA.ToString();
             cb_typetour.Text = selected_tour.LOAI;
-            richtbDetail.Text = selected_tour.DACDIEM;
+
         }
 
         public void EnableBanner()
         {
-            if (DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == selected_tour.ID && x.IsDeleted == false).FirstOrDefault() == null)
-            {
-                pcbxBanner.Image = Properties.Resources.ic_image_empty_128;
-            }
-            else
-            {
-                pcbxBanner.Image = Converter.Instance.ByteArrayToImage(DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == id && x.IsDeleted == false).FirstOrDefault().PICBI);
-            }
+
         }
 
         public void EnableLocationsSource()
@@ -267,60 +343,46 @@ namespace Tour
         }
 
 
-        public void EnableCalendarSource()
+        public void OpenBannerForm()
         {
+            using (ManageBanner h = new ManageBanner(selected_tour))
+            {
+                Clear();
+                this.Hide();
+                h.ShowDialog();
+                this.Show();
 
-            var listMonth = (from tour in DataProvider.Ins.DB.TOURs
-                             join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
-                             join ve in DataProvider.Ins.DB.VEs on doan.ID equals ve.IDDOAN
-                             where tour.ID == selected_tour.ID && tour.IsDeleted == false
-                             select ve.NGAYMUA.Value.Month)
-                     .Distinct().ToList();
-            var listYear = (from tour in DataProvider.Ins.DB.TOURs
-                            join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
-                            join ve in DataProvider.Ins.DB.VEs on doan.ID equals ve.IDDOAN
-                            where tour.ID == selected_tour.ID && tour.IsDeleted == false
-                            select ve.NGAYMUA.Value.Year)
-                         .Distinct().ToList();
+            }
+            ShowAllChuyen();
 
-            cbbxMonth.DataSource = listMonth;
-            cbbxYear.DataSource = listYear;
         }
 
         private void btnBanner_Click(object sender, EventArgs e)
         {
-            if (id == null)
+            if (selected_tour==null)
             {
                 return;
             }
-            ManageBanner h = new ManageBanner(DataProvider.Ins.DB.TOURs.Where(x => x.ID == id && x.IsDeleted == false).FirstOrDefault());
-            Clear();
-            this.Hide();
-            h.ShowDialog();
-            this.Show();
+            OpenBannerForm();
+
         }
 
-        public void OpenReport()
-        {
-            using (fPrint f = new fPrint(this.selected_tour))
-            {
-                rptTourIncome crys = new rptTourIncome();
-                crys.Load(@"rptTourIncome.rep");
 
-                f.rptViewer.ReportSource = crys;
-                f.rptViewer.Refresh();
-                f.rptViewer.SelectionFormula = "{Command.TourID}='" + this.selected_tour.ID + "' and {Command.NAM}=" + cbbxYear.SelectedValue.ToString() + " and {Command.THANG}=" + cbbxMonth.SelectedValue.ToString();
-                f.ShowDialog();
-            }
+        private void tb_price_TextChanged(object sender, EventArgs e)
+        {
+
+            Utils.Validate.EnterCurrencyVnd(sender);
         }
 
-        private void btnViewTourReport_Click(object sender, EventArgs e)
+        private void tb_nametour_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (this.selected_tour == null)
-            {
-                return;
-            }
-            OpenReport();
+            Notify.UnnotificationField(sender);
+
+        }
+
+        private void cb_typetour_Enter(object sender, EventArgs e)
+        {
+            Notify.UnnotificationSelect(sender);
 
         }
 
@@ -343,12 +405,13 @@ namespace Tour
             {
                 try
                 {
-                    if (rdIDSearch.Checked)
+
+                    if (cbbxSearchType.SelectedItem.ToString() == "ID")
                     {
                         dgv_trip.DataSource = DataProvider.Ins.DB.TOURs.Where(t => (SqlFunctions.PatIndex("%" + value + "%", t.ID) > 0) && (t.IsDeleted == false)).Select(t => t).ToList();
 
                     }
-                    else if (rdNameSearch.Checked)
+                    else if (cbbxSearchType.SelectedItem.ToString() == "NAME")
                     {
                         dgv_trip.DataSource = DataProvider.Ins.DB.TOURs.Where(t => (SqlFunctions.PatIndex("%" + value + "%", t.TEN) > 0) && (t.IsDeleted == false)).Select(t => t).ToList();
 
@@ -381,11 +444,13 @@ namespace Tour
 
         private void tb_price_KeyPress(object sender, KeyPressEventArgs e)
         {
+            Notify.UnnotificationField(sender);
+
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            if ((e.KeyChar == '.') && ((sender as Guna.UI2.WinForms.Guna2TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
             }
@@ -398,7 +463,7 @@ namespace Tour
 
         private void btnAddLocation_Click(object sender, EventArgs e)
         {
-            if (id == null)
+            if (this.selected_tour == null)
             {
                 return;
             }

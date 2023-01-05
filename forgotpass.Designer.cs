@@ -46,12 +46,12 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(39, 173);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(29, 141);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 28);
+            this.label1.Size = new System.Drawing.Size(61, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Email";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -59,10 +59,9 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(39, 252);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(29, 205);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 28);
+            this.label2.Size = new System.Drawing.Size(50, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "Code";
             this.label2.Visible = false;
@@ -73,9 +72,10 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.ForeColor = System.Drawing.Color.BlueViolet;
-            this.label3.Location = new System.Drawing.Point(121, 36);
+            this.label3.Location = new System.Drawing.Point(91, 29);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(371, 55);
+            this.label3.Size = new System.Drawing.Size(294, 43);
             this.label3.TabIndex = 7;
             this.label3.Text = "Forgot Password";
             // 
@@ -93,16 +93,18 @@
             this.codetxb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.codetxb.Font = new System.Drawing.Font("Times New Roman", 13.8F);
             this.codetxb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.codetxb.IconLeft = ((System.Drawing.Image)(resources.GetObject("codetxb.IconLeft")));
             this.codetxb.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.codetxb.Location = new System.Drawing.Point(131, 236);
-            this.codetxb.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.codetxb.Location = new System.Drawing.Point(98, 192);
+            this.codetxb.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.codetxb.Name = "codetxb";
             this.codetxb.PasswordChar = '\0';
             this.codetxb.PlaceholderText = "Code";
             this.codetxb.SelectedText = "";
-            this.codetxb.Size = new System.Drawing.Size(353, 44);
+            this.codetxb.Size = new System.Drawing.Size(265, 36);
             this.codetxb.TabIndex = 21;
             this.codetxb.Visible = false;
+            this.codetxb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.codetxb_KeyPress);
             // 
             // emailtxb
             // 
@@ -118,25 +120,26 @@
             this.emailtxb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.emailtxb.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.emailtxb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.emailtxb.IconLeft = ((System.Drawing.Image)(resources.GetObject("emailtxb.IconLeft")));
             this.emailtxb.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.emailtxb.Location = new System.Drawing.Point(131, 157);
-            this.emailtxb.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.emailtxb.Location = new System.Drawing.Point(98, 128);
+            this.emailtxb.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.emailtxb.Name = "emailtxb";
             this.emailtxb.PasswordChar = '\0';
             this.emailtxb.PlaceholderText = "Email";
             this.emailtxb.SelectedText = "";
-            this.emailtxb.Size = new System.Drawing.Size(353, 44);
+            this.emailtxb.Size = new System.Drawing.Size(265, 36);
             this.emailtxb.TabIndex = 20;
+            this.emailtxb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.emailtxb_KeyPress);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::Tour.Properties.Resources.cancel1;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(589, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(442, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 28);
+            this.pictureBox1.Size = new System.Drawing.Size(24, 23);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -154,9 +157,10 @@
             this.verifybtn.FillColor2 = System.Drawing.Color.DeepSkyBlue;
             this.verifybtn.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
             this.verifybtn.ForeColor = System.Drawing.Color.White;
-            this.verifybtn.Location = new System.Drawing.Point(131, 337);
+            this.verifybtn.Location = new System.Drawing.Point(99, 274);
+            this.verifybtn.Margin = new System.Windows.Forms.Padding(2);
             this.verifybtn.Name = "verifybtn";
-            this.verifybtn.Size = new System.Drawing.Size(353, 44);
+            this.verifybtn.Size = new System.Drawing.Size(265, 36);
             this.verifybtn.TabIndex = 23;
             this.verifybtn.Text = "Verify";
             this.verifybtn.Visible = false;
@@ -174,20 +178,21 @@
             this.sendbtn.FillColor2 = System.Drawing.Color.DeepSkyBlue;
             this.sendbtn.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
             this.sendbtn.ForeColor = System.Drawing.Color.White;
-            this.sendbtn.Location = new System.Drawing.Point(131, 337);
+            this.sendbtn.Location = new System.Drawing.Point(99, 274);
+            this.sendbtn.Margin = new System.Windows.Forms.Padding(2);
             this.sendbtn.Name = "sendbtn";
-            this.sendbtn.Size = new System.Drawing.Size(353, 44);
+            this.sendbtn.Size = new System.Drawing.Size(265, 36);
             this.sendbtn.TabIndex = 24;
-            this.sendbtn.Text = "Send";
+            this.sendbtn.Text = "Send verify code";
             this.sendbtn.Click += new System.EventHandler(this.sendbtn_Click);
             // 
             // forgotpass
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(621, 479);
+            this.ClientSize = new System.Drawing.Size(466, 389);
             this.Controls.Add(this.sendbtn);
             this.Controls.Add(this.verifybtn);
             this.Controls.Add(this.codetxb);
@@ -198,7 +203,6 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "forgotpass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "forgotpass";

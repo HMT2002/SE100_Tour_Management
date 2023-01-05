@@ -12,6 +12,7 @@ using System.Security.Cryptography;
 using System.Threading;
 using Tour.Model;
 using Tour.Utils;
+using Tour.CrystalReport;
 
 namespace Tour
 {
@@ -55,18 +56,25 @@ namespace Tour
         }
         private void exitbtn_Click(object sender, EventArgs e)
         {
-            //if (MessageBox.Show("Do you want to exit the program?", "Nofitication", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
-            //{
-            //    Application.Exit();
-            //}
-            Application.Exit();
+            if (MessageBox.Show("Do you want to exit the program?", "Nofitication", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
+            {
+                return;
+            }
+            if (System.Windows.Forms.Application.MessageLoop)
+            {
+                // WinForms app
+                System.Windows.Forms.Application.Exit();
+            }
+            else
+            {
+                // Console app
+                System.Environment.Exit(1);
+            }
 
         }
         public void loginbtn_Click(object sender, EventArgs e)
         {
-
             string ensryptedpass = Converter.Instance.EncryptPassword((passwordtxb.Text));
-
             if (cbGuest.Checked)
             {
                 ACCOUNT acc = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false && x.ACCROLE == "Customer")).SingleOrDefault();
@@ -82,32 +90,32 @@ namespace Tour
                 {
                     MessageBox.Show("Wrong email or password!!!!");
                 }
-
             }
             else
             {
-                if (cbghinho.Checked == true)
-                {
-                    Properties.Settings.Default.Email = emailtxb.Text;
-                    Properties.Settings.Default.Password = passwordtxb.Text;
-                    Properties.Settings.Default.Save();
-                }
-                if (cbghinho.Checked == false)
-                {
-                    Properties.Settings.Default.Email = "";
-                    Properties.Settings.Default.Password = "";
-                    Properties.Settings.Default.Save();
-                }
-
-
                 if (DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false &&( (x.ACCROLE == "Manager") || (x.ACCROLE == "Employee")))).SingleOrDefault() != null)
                 {
-                    Properties.Settings.Default.UserName = emailtxb.Text;
-                    Properties.Settings.Default.Password = passwordtxb.Text;
-                    Properties.Settings.Default.CurUserId = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().ACC;
+                    if (cbghinho.Checked == true)
+                    {
+                        Properties.Settings.Default.Email = emailtxb.Text;
+                        Properties.Settings.Default.Password = passwordtxb.Text;
+                        Properties.Settings.Default.CurUserId = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().ACC;
+                        Properties.Settings.Default.CurUserName = DataProvider.Ins.DB.NHANVIENs.Where(x => (x.ACCOUNT.ACC == emailtxb.Text && x.ACCOUNT.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().TEN;
 
+
+                        Properties.Settings.Default.Save();
+                    }
+                    if (cbghinho.Checked == false)
+                    {
+                        Properties.Settings.Default.Email = "";
+                        Properties.Settings.Default.Password = "";
+                        Properties.Settings.Default.CurUserId = "";
+                        Properties.Settings.Default.CurUserName = "";
+
+                        Properties.Settings.Default.Save();
+                    }
                     Properties.Settings.Default.Save();
-                    SelectForm menuF = new SelectForm(DataProvider.Ins.DB.NHANVIENs.Where(x => x.ACCOUNT.ACC == emailtxb.Text).FirstOrDefault());
+                    SelectForm menuF = new SelectForm(DataProvider.Ins.DB.NHANVIENs.Where(x => x.ACCOUNT.ACC == emailtxb.Text && x.IsDeleted == false).FirstOrDefault());
                     this.Hide();
                     menuF.ShowDialog();
                     this.Show();
@@ -171,18 +179,49 @@ namespace Tour
         }
         public string password, email;
 
+        public void OpenTicketReport()
+        {
+            string ticket_id = txtbxSearchTicket.Text;
+
+            VE ve = DataProvider.Ins.DB.VEs.Where(x => (x.ID == ticket_id && x.IsDeleted == false)).SingleOrDefault();
+
+            using (fPrint f = new fPrint(ve))
+            {
+                rptTicket crys = new rptTicket();
+                crys.Load(@"rptTicket.rep");
+
+                f.rptViewer.ReportSource = crys;
+                f.rptViewer.Refresh();
+
+                f.rptViewer.SelectionFormula = "{VE.ID} = '" + ve.ID + "' ";
+
+                f.ShowDialog();
+            }
+        }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string ticket_id =  txtbxSearchTicket.Text;
-            if (DataProvider.Ins.DB.VEs.Where(x => (x.ID == ticket_id && x.IsDeleted == false)).SingleOrDefault() == null)
+            //OpenTicketReport();
+            VE ve = DataProvider.Ins.DB.VEs.Where(x => x.ID == txtbxSearchTicket.Text&&x.IsDeleted==false).FirstOrDefault();
+            if (ve == null)
             {
-                MessageBox.Show("Số vé không tồn tại!");
+                MessageBox.Show("Ticket ID doesn't existed");
                 return;
             }
-            SearchTicket f = new SearchTicket(DataProvider.Ins.DB.VEs.Where(x => (x.ID == ticket_id && x.IsDeleted == false)).SingleOrDefault());
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+            else
+            {
+                OpenSearchTicketForm(ve);
+            }
+        }
+
+        public void OpenSearchTicketForm(VE ve)
+        {
+            using (SearchTicket f = new SearchTicket(ve))
+            {
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }
         }
 
         public void Clear()
@@ -193,19 +232,40 @@ namespace Tour
 
         }
 
+        private void passwordtxb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkbxShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            passwordtxb.PasswordChar = checkbxShowPassword.Checked ? '\0' : '●';
+
+        }
+
         private void cbGuest_CheckedChanged(object sender, EventArgs e)
         {
             if (cbGuest.Checked == true)
             {
                 Clear();
-                label3.Visible = true;
+                label3.Visible = false;
                 registaccountlb.Visible = false;
             }
             else
             {
                 LoginForm_Load(sender, e);
 
-                label3.Visible = false;
+                label3.Visible = true;
                 registaccountlb.Visible = true;
 
             }

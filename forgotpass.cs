@@ -11,8 +11,8 @@ using System.Net;
 using System.Net.Mail;
 using System.Data.SqlClient;
 using Tour.Model;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using Tour.Utils;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Tour
 {
@@ -24,59 +24,56 @@ namespace Tour
         public forgotpass()
         {
             InitializeComponent();
-            emailtxb.ForeColor = Color.LightGray;
-            emailtxb.Text = "Enter Your Email";
-            this.emailtxb.Leave += new System.EventHandler(this.textBox1_Leave);
-            this.emailtxb.Enter += new System.EventHandler(this.textBox1_Enter);
-        }
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-            if (emailtxb.Text == "")
-            {
-                emailtxb.ForeColor = Color.LightGray;
-                emailtxb.Text = "Enter Your Email";
-            }
+
+
         }
 
-        private void textBox1_Enter(object sender, EventArgs e)
-        {
-            if (emailtxb.Text == "Enter Your Email")
-            {
-                emailtxb.Text = "";
-                emailtxb.ForeColor = Color.Black;
-            }
-        }
+
         private void sendbtn_Click(object sender, EventArgs e)
         {
-            //string query = "Select * from User Where Email ='" + emailtxb.Text.Trim() + "'";
-
-            if (emailtxb.Text.Length > 0)
+            if (emailtxb.Text.Trim() == "")
             {
-                if (DataProvider.Ins.DB.ACCOUNTs.Where(x => x.ACC == emailtxb.Text.Trim()).FirstOrDefault() != null)
+                Notify.NotificationField(emailtxb);
+                MessageBox.Show("Empty mail address");
+                return;
+            }
+            if (!rEMail.IsMatch(emailtxb.Text))
+            {
+                MessageBox.Show("Wrong email format");
+                return;
+            }
+            if (DataProvider.Ins.DB.ACCOUNTs.Where(x => x.ACC == emailtxb.Text.Trim() && x.IsDeleted == false).FirstOrDefault() != null)
+            {
+                try
                 {
-                    string email = emailtxb.Text.Trim().ToString();
-                    string from, pass, messageBody;
-                    Random random = new Random();
+                    string email = emailtxb.Text.ToString();
                     randomcode = Converter.Instance.RandomString2(5);
                     List<string> listto = new List<string>();
                     listto.Add(email);
+                    Utils.Features.Instance.SendMail(listto, "Verify code", "Verify code to change password: " + randomcode);
 
-                    try
-                    {
-                        Utils.Features.Instance.SendMail(listto, "Re-activate code","Re-activate code is: "+ randomcode);
-                        MessageBox.Show("Code sent!");
-                        label2.Visible = true;
-                        codetxb.Visible = true;
-                        verifybtn.Visible = true;
-                        sendbtn.Visible = false;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Please check your internet connection. Error: " + ex.Message);
-                    }
+
+                    label2.Visible = true;
+                    codetxb.Visible = true;
+                    verifybtn.Visible = true;
+                    sendbtn.Visible = false;
+
+                    MessageBox.Show("Please check your mail box");
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Please check your internet connection");
+                    return;
                 }
 
             }
+            else
+            {
+                MessageBox.Show("Email is not registed");
+
+            }
+
 
         }
 
@@ -84,14 +81,16 @@ namespace Tour
         {
             if (randomcode == (codetxb.Text).ToString())
             {
-                to = emailtxb.Text;
-                ChangePass change = new ChangePass(DataProvider.Ins.DB.ACCOUNTs.Where(x => x.ACC == emailtxb.Text.Trim()).FirstOrDefault());
+                to = emailtxb.Text.Trim();
+                ChangePass change = new ChangePass(DataProvider.Ins.DB.ACCOUNTs.Where(x=>x.ACC==to).FirstOrDefault());
                 this.Close();
                 change.ShowDialog();
             }
             else
             {
                 MessageBox.Show("Wrong reset Code!!!!");
+                Notify.UnnotificationField(sender);
+
             }
         }
 
@@ -119,6 +118,26 @@ namespace Tour
                     sendbtn.Enabled = true;
                 }
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void emailtxb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Notify.UnnotificationField(sender);
+            if (e.KeyChar == (char)Keys.Space)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void codetxb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Notify.UnnotificationField(sender);
+
         }
     }
 }

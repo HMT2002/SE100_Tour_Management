@@ -29,11 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterAccount));
-            this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnPickPicture = new System.Windows.Forms.Button();
             this.txbHo = new Guna.UI2.WinForms.Guna2TextBox();
             this.txbTen = new Guna.UI2.WinForms.Guna2TextBox();
             this.txbSDT = new Guna.UI2.WinForms.Guna2TextBox();
@@ -54,42 +51,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(283, 286);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(24, 27);
-            this.label14.TabIndex = 72;
-            this.label14.Text = "*";
-            // 
             // label12
             // 
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(428, 214);
+            this.label12.Location = new System.Drawing.Point(347, 256);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(100, 39);
             this.label12.TabIndex = 68;
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(283, 214);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(24, 27);
-            this.label9.TabIndex = 66;
-            this.label9.Text = "*";
             // 
             // label8
             // 
@@ -102,17 +73,6 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(0, 17);
             this.label8.TabIndex = 64;
-            // 
-            // btnPickPicture
-            // 
-            this.btnPickPicture.Location = new System.Drawing.Point(373, 167);
-            this.btnPickPicture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnPickPicture.Name = "btnPickPicture";
-            this.btnPickPicture.Size = new System.Drawing.Size(100, 28);
-            this.btnPickPicture.TabIndex = 4;
-            this.btnPickPicture.Text = "Chọn ảnh";
-            this.btnPickPicture.UseVisualStyleBackColor = true;
-            this.btnPickPicture.Click += new System.EventHandler(this.btnPickPicture_Click);
             // 
             // txbHo
             // 
@@ -127,19 +87,20 @@
             this.txbHo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbHo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbHo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbHo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txbHo.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbHo.ForeColor = System.Drawing.Color.Black;
             this.txbHo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbHo.Location = new System.Drawing.Point(17, 23);
-            this.txbHo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txbHo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbHo.Name = "txbHo";
             this.txbHo.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbHo.PasswordChar = '\0';
-            this.txbHo.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txbHo.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txbHo.PlaceholderText = "First Name";
             this.txbHo.SelectedText = "";
             this.txbHo.Size = new System.Drawing.Size(272, 46);
             this.txbHo.TabIndex = 73;
+            this.txbHo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbHo_KeyPress);
             // 
             // txbTen
             // 
@@ -154,19 +115,20 @@
             this.txbTen.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbTen.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbTen.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbTen.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txbTen.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTen.ForeColor = System.Drawing.Color.Black;
             this.txbTen.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbTen.Location = new System.Drawing.Point(17, 84);
-            this.txbTen.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txbTen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbTen.Name = "txbTen";
             this.txbTen.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbTen.PasswordChar = '\0';
-            this.txbTen.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txbTen.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txbTen.PlaceholderText = "Last Name";
             this.txbTen.SelectedText = "";
             this.txbTen.Size = new System.Drawing.Size(272, 46);
             this.txbTen.TabIndex = 74;
+            this.txbTen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbTen_KeyPress);
             // 
             // txbSDT
             // 
@@ -181,16 +143,16 @@
             this.txbSDT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbSDT.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbSDT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbSDT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txbSDT.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbSDT.ForeColor = System.Drawing.Color.Black;
             this.txbSDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbSDT.Location = new System.Drawing.Point(17, 150);
-            this.txbSDT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txbSDT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbSDT.MaxLength = 13;
             this.txbSDT.Name = "txbSDT";
             this.txbSDT.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbSDT.PasswordChar = '\0';
-            this.txbSDT.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txbSDT.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txbSDT.PlaceholderText = "Phone";
             this.txbSDT.SelectedText = "";
             this.txbSDT.Size = new System.Drawing.Size(272, 46);
@@ -210,19 +172,20 @@
             this.txbPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbPass.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txbPass.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbPass.ForeColor = System.Drawing.Color.Black;
             this.txbPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbPass.Location = new System.Drawing.Point(17, 281);
-            this.txbPass.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txbPass.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbPass.Name = "txbPass";
             this.txbPass.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbPass.PasswordChar = '\0';
-            this.txbPass.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txbPass.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txbPass.PlaceholderText = "Password";
             this.txbPass.SelectedText = "";
             this.txbPass.Size = new System.Drawing.Size(272, 46);
-            this.txbPass.TabIndex = 76;
+            this.txbPass.TabIndex = 78;
+            this.txbPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPass_KeyPress);
             // 
             // txbConfirm
             // 
@@ -237,19 +200,20 @@
             this.txbConfirm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbConfirm.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbConfirm.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbConfirm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txbConfirm.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbConfirm.ForeColor = System.Drawing.Color.Black;
             this.txbConfirm.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbConfirm.Location = new System.Drawing.Point(17, 345);
-            this.txbConfirm.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txbConfirm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbConfirm.Name = "txbConfirm";
             this.txbConfirm.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbConfirm.PasswordChar = '\0';
-            this.txbConfirm.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txbConfirm.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txbConfirm.PlaceholderText = "Confirm Password";
             this.txbConfirm.SelectedText = "";
             this.txbConfirm.Size = new System.Drawing.Size(272, 46);
-            this.txbConfirm.TabIndex = 77;
+            this.txbConfirm.TabIndex = 79;
+            this.txbConfirm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbConfirm_KeyPress);
             // 
             // txbCode
             // 
@@ -264,19 +228,20 @@
             this.txbCode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbCode.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbCode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbCode.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txbCode.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCode.ForeColor = System.Drawing.Color.Black;
             this.txbCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbCode.Location = new System.Drawing.Point(17, 405);
-            this.txbCode.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txbCode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbCode.Name = "txbCode";
             this.txbCode.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbCode.PasswordChar = '\0';
-            this.txbCode.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txbCode.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txbCode.PlaceholderText = "Verify Code";
             this.txbCode.SelectedText = "";
             this.txbCode.Size = new System.Drawing.Size(272, 46);
-            this.txbCode.TabIndex = 78;
+            this.txbCode.TabIndex = 80;
+            this.txbCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbCode_KeyPress);
             // 
             // txbGmail
             // 
@@ -291,27 +256,28 @@
             this.txbGmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbGmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbGmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbGmail.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txbGmail.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbGmail.ForeColor = System.Drawing.Color.Black;
             this.txbGmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbGmail.Location = new System.Drawing.Point(17, 214);
-            this.txbGmail.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txbGmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbGmail.Name = "txbGmail";
             this.txbGmail.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbGmail.PasswordChar = '\0';
-            this.txbGmail.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txbGmail.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txbGmail.PlaceholderText = "Email";
             this.txbGmail.SelectedText = "";
             this.txbGmail.Size = new System.Drawing.Size(272, 46);
-            this.txbGmail.TabIndex = 79;
+            this.txbGmail.TabIndex = 76;
             this.txbGmail.TextChanged += new System.EventHandler(this.txbGmail_TextChanged);
+            this.txbGmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbGmail_KeyPress);
             this.txbGmail.Validating += new System.ComponentModel.CancelEventHandler(this.txbGmail_Validating);
             // 
             // SignUpbtn
             // 
             this.SignUpbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.SignUpbtn.FillColor = System.Drawing.Color.Transparent;
-            this.SignUpbtn.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.SignUpbtn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUpbtn.ForeColor = System.Drawing.Color.White;
             this.SignUpbtn.Location = new System.Drawing.Point(29, 476);
             this.SignUpbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -320,8 +286,8 @@
             this.SignUpbtn.ShadowDecoration.Color = System.Drawing.Color.Gray;
             this.SignUpbtn.ShadowDecoration.Depth = 50;
             this.SignUpbtn.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 6, 6);
-            this.SignUpbtn.Size = new System.Drawing.Size(137, 39);
-            this.SignUpbtn.TabIndex = 82;
+            this.SignUpbtn.Size = new System.Drawing.Size(145, 39);
+            this.SignUpbtn.TabIndex = 81;
             this.SignUpbtn.Text = "Sign Up";
             this.SignUpbtn.Click += new System.EventHandler(this.SignUpbtn_Click);
             this.SignUpbtn.MouseLeave += new System.EventHandler(this.SignUpbtn_MouseLeave);
@@ -332,12 +298,12 @@
             this.Cancelbtn.BackColor = System.Drawing.Color.Transparent;
             this.Cancelbtn.FillColor = System.Drawing.Color.Transparent;
             this.Cancelbtn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancelbtn.ForeColor = System.Drawing.Color.Red;
-            this.Cancelbtn.Location = new System.Drawing.Point(172, 476);
+            this.Cancelbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Cancelbtn.Location = new System.Drawing.Point(180, 476);
             this.Cancelbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Cancelbtn.Name = "Cancelbtn";
             this.Cancelbtn.Size = new System.Drawing.Size(109, 39);
-            this.Cancelbtn.TabIndex = 81;
+            this.Cancelbtn.TabIndex = 82;
             this.Cancelbtn.Text = "Cancel";
             this.Cancelbtn.Click += new System.EventHandler(this.Cancelbtn_Click);
             this.Cancelbtn.MouseLeave += new System.EventHandler(this.Cancelbtn_MouseLeave);
@@ -345,25 +311,21 @@
             // 
             // btnSend
             // 
-            this.btnSend.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSend.ForeColor = System.Drawing.Color.White;
-            this.btnSend.Location = new System.Drawing.Point(313, 214);
-            this.btnSend.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSend.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSend.ForeColor = System.Drawing.Color.Black;
+            this.btnSend.Location = new System.Drawing.Point(315, 214);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(111, 39);
-            this.btnSend.TabIndex = 82;
+            this.btnSend.Size = new System.Drawing.Size(197, 39);
+            this.btnSend.TabIndex = 77;
             this.btnSend.Text = "Send code";
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.Linen;
             this.guna2Panel1.Controls.Add(this.pcbxAvatar);
-            this.guna2Panel1.Controls.Add(this.label14);
             this.guna2Panel1.Controls.Add(this.label12);
             this.guna2Panel1.Controls.Add(this.btnSend);
-            this.guna2Panel1.Controls.Add(this.btnPickPicture);
-            this.guna2Panel1.Controls.Add(this.label9);
             this.guna2Panel1.Controls.Add(this.Cancelbtn);
             this.guna2Panel1.Controls.Add(this.txbHo);
             this.guna2Panel1.Controls.Add(this.SignUpbtn);
@@ -385,12 +347,13 @@
             this.pcbxAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pcbxAvatar.Image = global::Tour.Properties.Resources.ic_image_empty_128;
             this.pcbxAvatar.Location = new System.Drawing.Point(313, 23);
-            this.pcbxAvatar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbxAvatar.Margin = new System.Windows.Forms.Padding(4);
             this.pcbxAvatar.Name = "pcbxAvatar";
             this.pcbxAvatar.Size = new System.Drawing.Size(200, 135);
             this.pcbxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbxAvatar.TabIndex = 0;
             this.pcbxAvatar.TabStop = false;
+            this.pcbxAvatar.Click += new System.EventHandler(this.pcbxAvatar_Click);
             // 
             // guna2Panel2
             // 
@@ -427,12 +390,11 @@
             this.Controls.Add(this.label8);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RegisterAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterAccount";
             this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvatar)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
@@ -442,12 +404,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnPickPicture;
         private System.Windows.Forms.PictureBox pcbxAvatar;
         private Guna.UI2.WinForms.Guna2TextBox txbHo;
         private Guna.UI2.WinForms.Guna2TextBox txbTen;

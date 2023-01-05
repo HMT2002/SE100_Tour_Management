@@ -122,8 +122,11 @@ namespace Tour
         {
             foreach(var tb_ks in DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.IDDOAN == ID))
             {
-                tb_ks.IsDeleted = true;
+
+                DataProvider.Ins.DB.tb_KHACHSAN.Remove(tb_ks);
             }
+            DataProvider.Ins.DB.SaveChanges();
+
 
             foreach (KHACHSAN khachsan in ListKhachSan)
             {

@@ -29,152 +29,367 @@ namespace Tour
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtbxTenKhachHang = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtbxTenTour = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtbxTenDoan = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblDay = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblMonth = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblYear = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblTime = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchTicket));
+            this.pnlTicket = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblReciptTicketID = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel17 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lbDate = new System.Windows.Forms.Label();
+            this.lblReciptPrice = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblReciptEndDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblReciptStartDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblReciptCustomerName = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblReciptGroupName = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblReciptTourName = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel15 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pcbxLogo = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lbTime = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnPrintTicket = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlTicket.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbxLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtbxTenKhachHang
+            // pnlTicket
             // 
-            this.txtbxTenKhachHang.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbxTenKhachHang.DefaultText = "";
-            this.txtbxTenKhachHang.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtbxTenKhachHang.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtbxTenKhachHang.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxTenKhachHang.DisabledState.Parent = this.txtbxTenKhachHang;
-            this.txtbxTenKhachHang.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxTenKhachHang.Enabled = false;
-            this.txtbxTenKhachHang.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxTenKhachHang.FocusedState.Parent = this.txtbxTenKhachHang;
-            this.txtbxTenKhachHang.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxTenKhachHang.HoverState.Parent = this.txtbxTenKhachHang;
-            this.txtbxTenKhachHang.Location = new System.Drawing.Point(12, 12);
-            this.txtbxTenKhachHang.Name = "txtbxTenKhachHang";
-            this.txtbxTenKhachHang.PasswordChar = '\0';
-            this.txtbxTenKhachHang.PlaceholderText = "";
-            this.txtbxTenKhachHang.SelectedText = "";
-            this.txtbxTenKhachHang.ShadowDecoration.Parent = this.txtbxTenKhachHang;
-            this.txtbxTenKhachHang.Size = new System.Drawing.Size(200, 36);
-            this.txtbxTenKhachHang.TabIndex = 0;
+            this.pnlTicket.AutoSize = true;
+            this.pnlTicket.BackColor = System.Drawing.Color.White;
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel14);
+            this.pnlTicket.Controls.Add(this.lblReciptTicketID);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel17);
+            this.pnlTicket.Controls.Add(this.lbDate);
+            this.pnlTicket.Controls.Add(this.lblReciptPrice);
+            this.pnlTicket.Controls.Add(this.lblReciptEndDate);
+            this.pnlTicket.Controls.Add(this.lblReciptStartDate);
+            this.pnlTicket.Controls.Add(this.lblReciptCustomerName);
+            this.pnlTicket.Controls.Add(this.lblReciptGroupName);
+            this.pnlTicket.Controls.Add(this.lblReciptTourName);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel15);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel13);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel12);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel11);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel10);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel9);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel8);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel7);
+            this.pnlTicket.Controls.Add(this.pcbxLogo);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel6);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel5);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel4);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel3);
+            this.pnlTicket.Controls.Add(this.guna2HtmlLabel2);
+            this.pnlTicket.Location = new System.Drawing.Point(14, 54);
+            this.pnlTicket.Name = "pnlTicket";
+            this.pnlTicket.Size = new System.Drawing.Size(503, 616);
+            this.pnlTicket.TabIndex = 10;
             // 
-            // txtbxTenTour
+            // guna2HtmlLabel14
             // 
-            this.txtbxTenTour.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbxTenTour.DefaultText = "";
-            this.txtbxTenTour.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtbxTenTour.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtbxTenTour.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxTenTour.DisabledState.Parent = this.txtbxTenTour;
-            this.txtbxTenTour.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxTenTour.Enabled = false;
-            this.txtbxTenTour.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxTenTour.FocusedState.Parent = this.txtbxTenTour;
-            this.txtbxTenTour.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxTenTour.HoverState.Parent = this.txtbxTenTour;
-            this.txtbxTenTour.Location = new System.Drawing.Point(12, 54);
-            this.txtbxTenTour.Name = "txtbxTenTour";
-            this.txtbxTenTour.PasswordChar = '\0';
-            this.txtbxTenTour.PlaceholderText = "";
-            this.txtbxTenTour.SelectedText = "";
-            this.txtbxTenTour.ShadowDecoration.Parent = this.txtbxTenTour;
-            this.txtbxTenTour.Size = new System.Drawing.Size(200, 36);
-            this.txtbxTenTour.TabIndex = 1;
+            this.guna2HtmlLabel14.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel14.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel14.Location = new System.Drawing.Point(69, 540);
+            this.guna2HtmlLabel14.Name = "guna2HtmlLabel14";
+            this.guna2HtmlLabel14.Size = new System.Drawing.Size(367, 31);
+            this.guna2HtmlLabel14.TabIndex = 24;
+            this.guna2HtmlLabel14.Text = "############################";
             // 
-            // txtbxTenDoan
+            // lblReciptTicketID
             // 
-            this.txtbxTenDoan.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbxTenDoan.DefaultText = "";
-            this.txtbxTenDoan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtbxTenDoan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtbxTenDoan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxTenDoan.DisabledState.Parent = this.txtbxTenDoan;
-            this.txtbxTenDoan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxTenDoan.Enabled = false;
-            this.txtbxTenDoan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxTenDoan.FocusedState.Parent = this.txtbxTenDoan;
-            this.txtbxTenDoan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxTenDoan.HoverState.Parent = this.txtbxTenDoan;
-            this.txtbxTenDoan.Location = new System.Drawing.Point(12, 96);
-            this.txtbxTenDoan.Name = "txtbxTenDoan";
-            this.txtbxTenDoan.PasswordChar = '\0';
-            this.txtbxTenDoan.PlaceholderText = "";
-            this.txtbxTenDoan.SelectedText = "";
-            this.txtbxTenDoan.ShadowDecoration.Parent = this.txtbxTenDoan;
-            this.txtbxTenDoan.Size = new System.Drawing.Size(200, 36);
-            this.txtbxTenDoan.TabIndex = 2;
+            this.lblReciptTicketID.BackColor = System.Drawing.Color.Transparent;
+            this.lblReciptTicketID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReciptTicketID.Location = new System.Drawing.Point(47, 34);
+            this.lblReciptTicketID.Name = "lblReciptTicketID";
+            this.lblReciptTicketID.Size = new System.Drawing.Size(20, 18);
+            this.lblReciptTicketID.TabIndex = 23;
+            this.lblReciptTicketID.Text = "-ID";
             // 
-            // lblDay
+            // guna2HtmlLabel17
             // 
-            this.lblDay.BackColor = System.Drawing.Color.Transparent;
-            this.lblDay.Location = new System.Drawing.Point(308, 12);
-            this.lblDay.Name = "lblDay";
-            this.lblDay.Size = new System.Drawing.Size(9, 15);
-            this.lblDay.TabIndex = 3;
-            this.lblDay.Text = "1";
+            this.guna2HtmlLabel17.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel17.Location = new System.Drawing.Point(7, 34);
+            this.guna2HtmlLabel17.Name = "guna2HtmlLabel17";
+            this.guna2HtmlLabel17.Size = new System.Drawing.Size(19, 18);
+            this.guna2HtmlLabel17.TabIndex = 22;
+            this.guna2HtmlLabel17.Text = "ID: ";
             // 
-            // lblMonth
+            // lbDate
             // 
-            this.lblMonth.BackColor = System.Drawing.Color.Transparent;
-            this.lblMonth.Location = new System.Drawing.Point(356, 12);
-            this.lblMonth.Name = "lblMonth";
-            this.lblMonth.Size = new System.Drawing.Size(9, 15);
-            this.lblMonth.TabIndex = 4;
-            this.lblMonth.Text = "1";
+            this.lbDate.BackColor = System.Drawing.Color.Transparent;
+            this.lbDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.ForeColor = System.Drawing.Color.Black;
+            this.lbDate.Location = new System.Drawing.Point(43, 4);
+            this.lbDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbDate.Name = "lbDate";
+            this.lbDate.Size = new System.Drawing.Size(100, 20);
+            this.lbDate.TabIndex = 7;
             // 
-            // lblYear
+            // lblReciptPrice
             // 
-            this.lblYear.BackColor = System.Drawing.Color.Transparent;
-            this.lblYear.Location = new System.Drawing.Point(426, 12);
-            this.lblYear.Name = "lblYear";
-            this.lblYear.Size = new System.Drawing.Size(27, 15);
-            this.lblYear.TabIndex = 5;
-            this.lblYear.Text = "2022";
+            this.lblReciptPrice.BackColor = System.Drawing.Color.Transparent;
+            this.lblReciptPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReciptPrice.Location = new System.Drawing.Point(228, 480);
+            this.lblReciptPrice.Name = "lblReciptPrice";
+            this.lblReciptPrice.Size = new System.Drawing.Size(98, 40);
+            this.lblReciptPrice.TabIndex = 21;
+            this.lblReciptPrice.Text = "-Price: ";
             // 
-            // lblTime
+            // lblReciptEndDate
             // 
-            this.lblTime.BackColor = System.Drawing.Color.Transparent;
-            this.lblTime.Location = new System.Drawing.Point(308, 57);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(39, 15);
-            this.lblTime.TabIndex = 6;
-            this.lblTime.Text = "9:00:00";
+            this.lblReciptEndDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblReciptEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReciptEndDate.Location = new System.Drawing.Point(60, 413);
+            this.lblReciptEndDate.Name = "lblReciptEndDate";
+            this.lblReciptEndDate.Size = new System.Drawing.Size(51, 27);
+            this.lblReciptEndDate.TabIndex = 20;
+            this.lblReciptEndDate.Text = "-Date";
+            // 
+            // lblReciptStartDate
+            // 
+            this.lblReciptStartDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblReciptStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReciptStartDate.Location = new System.Drawing.Point(91, 374);
+            this.lblReciptStartDate.Name = "lblReciptStartDate";
+            this.lblReciptStartDate.Size = new System.Drawing.Size(51, 27);
+            this.lblReciptStartDate.TabIndex = 19;
+            this.lblReciptStartDate.Text = "-Date";
+            // 
+            // lblReciptCustomerName
+            // 
+            this.lblReciptCustomerName.BackColor = System.Drawing.Color.Transparent;
+            this.lblReciptCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReciptCustomerName.Location = new System.Drawing.Point(146, 332);
+            this.lblReciptCustomerName.Name = "lblReciptCustomerName";
+            this.lblReciptCustomerName.Size = new System.Drawing.Size(62, 27);
+            this.lblReciptCustomerName.TabIndex = 18;
+            this.lblReciptCustomerName.Text = "-Name";
+            // 
+            // lblReciptGroupName
+            // 
+            this.lblReciptGroupName.BackColor = System.Drawing.Color.Transparent;
+            this.lblReciptGroupName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReciptGroupName.Location = new System.Drawing.Point(103, 285);
+            this.lblReciptGroupName.Name = "lblReciptGroupName";
+            this.lblReciptGroupName.Size = new System.Drawing.Size(62, 27);
+            this.lblReciptGroupName.TabIndex = 17;
+            this.lblReciptGroupName.Text = "-Name";
+            // 
+            // lblReciptTourName
+            // 
+            this.lblReciptTourName.BackColor = System.Drawing.Color.Transparent;
+            this.lblReciptTourName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReciptTourName.Location = new System.Drawing.Point(87, 246);
+            this.lblReciptTourName.Name = "lblReciptTourName";
+            this.lblReciptTourName.Size = new System.Drawing.Size(62, 27);
+            this.lblReciptTourName.TabIndex = 16;
+            this.lblReciptTourName.Text = "-Name";
+            // 
+            // guna2HtmlLabel15
+            // 
+            this.guna2HtmlLabel15.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel15.Location = new System.Drawing.Point(159, 577);
+            this.guna2HtmlLabel15.Name = "guna2HtmlLabel15";
+            this.guna2HtmlLabel15.Size = new System.Drawing.Size(143, 31);
+            this.guna2HtmlLabel15.TabIndex = 15;
+            this.guna2HtmlLabel15.Text = "THANK YOU";
+            this.guna2HtmlLabel15.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // guna2HtmlLabel13
+            // 
+            this.guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel13.Location = new System.Drawing.Point(116, 480);
+            this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
+            this.guna2HtmlLabel13.Size = new System.Drawing.Size(87, 40);
+            this.guna2HtmlLabel13.TabIndex = 13;
+            this.guna2HtmlLabel13.Text = "Price: ";
+            // 
+            // guna2HtmlLabel12
+            // 
+            this.guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel12.Location = new System.Drawing.Point(69, 443);
+            this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
+            this.guna2HtmlLabel12.Size = new System.Drawing.Size(367, 31);
+            this.guna2HtmlLabel12.TabIndex = 12;
+            this.guna2HtmlLabel12.Text = "############################";
+            // 
+            // guna2HtmlLabel11
+            // 
+            this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel11.Location = new System.Drawing.Point(11, 410);
+            this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
+            this.guna2HtmlLabel11.Size = new System.Drawing.Size(33, 27);
+            this.guna2HtmlLabel11.TabIndex = 11;
+            this.guna2HtmlLabel11.Text = "To: ";
+            // 
+            // guna2HtmlLabel10
+            // 
+            this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel10.Location = new System.Drawing.Point(11, 371);
+            this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
+            this.guna2HtmlLabel10.Size = new System.Drawing.Size(54, 27);
+            this.guna2HtmlLabel10.TabIndex = 10;
+            this.guna2HtmlLabel10.Text = "From: ";
+            // 
+            // guna2HtmlLabel9
+            // 
+            this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(11, 332);
+            this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
+            this.guna2HtmlLabel9.Size = new System.Drawing.Size(94, 27);
+            this.guna2HtmlLabel9.TabIndex = 9;
+            this.guna2HtmlLabel9.Text = "Customer: ";
+            // 
+            // guna2HtmlLabel8
+            // 
+            this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(11, 285);
+            this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
+            this.guna2HtmlLabel8.Size = new System.Drawing.Size(63, 27);
+            this.guna2HtmlLabel8.TabIndex = 8;
+            this.guna2HtmlLabel8.Text = "Group: ";
+            // 
+            // guna2HtmlLabel7
+            // 
+            this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(8, 246);
+            this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
+            this.guna2HtmlLabel7.Size = new System.Drawing.Size(50, 27);
+            this.guna2HtmlLabel7.TabIndex = 7;
+            this.guna2HtmlLabel7.Text = "Tour: ";
+            // 
+            // pcbxLogo
+            // 
+            this.pcbxLogo.Image = global::Tour.Properties.Resources.UIT;
+            this.pcbxLogo.ImageRotate = 0F;
+            this.pcbxLogo.Location = new System.Drawing.Point(201, 86);
+            this.pcbxLogo.Name = "pcbxLogo";
+            this.pcbxLogo.Size = new System.Drawing.Size(128, 112);
+            this.pcbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbxLogo.TabIndex = 6;
+            this.pcbxLogo.TabStop = false;
+            // 
+            // guna2HtmlLabel6
+            // 
+            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(312, 55);
+            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(182, 18);
+            this.guna2HtmlLabel6.TabIndex = 4;
+            this.guna2HtmlLabel6.Text = "Mail: 20520850@gm.uit.edu.vn";
+            // 
+            // guna2HtmlLabel5
+            // 
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(374, 31);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(120, 18);
+            this.guna2HtmlLabel5.TabIndex = 3;
+            this.guna2HtmlLabel5.Text = "Tel: + 84-774623854";
+            // 
+            // guna2HtmlLabel4
+            // 
+            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(355, 7);
+            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(138, 18);
+            this.guna2HtmlLabel4.TabIndex = 2;
+            this.guna2HtmlLabel4.Text = "Thủ Đức City, Việt Nam";
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(186, 209);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(107, 33);
+            this.guna2HtmlLabel3.TabIndex = 1;
+            this.guna2HtmlLabel3.Text = "TICKET";
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(7, 4);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(35, 18);
+            this.guna2HtmlLabel2.TabIndex = 0;
+            this.guna2HtmlLabel2.Text = "Date: ";
+            // 
+            // lbTime
+            // 
+            this.lbTime.BackColor = System.Drawing.Color.Transparent;
+            this.lbTime.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.ForeColor = System.Drawing.Color.Black;
+            this.lbTime.Location = new System.Drawing.Point(351, 9);
+            this.lbTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(166, 37);
+            this.lbTime.TabIndex = 11;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // btnPrintTicket
             // 
-            this.btnPrintTicket.CheckedState.Parent = this.btnPrintTicket;
-            this.btnPrintTicket.CustomImages.Parent = this.btnPrintTicket;
-            this.btnPrintTicket.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnPrintTicket.ForeColor = System.Drawing.Color.White;
-            this.btnPrintTicket.HoverState.Parent = this.btnPrintTicket;
-            this.btnPrintTicket.Location = new System.Drawing.Point(608, 12);
+            this.btnPrintTicket.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
+            this.btnPrintTicket.BorderRadius = 10;
+            this.btnPrintTicket.BorderThickness = 2;
+            this.btnPrintTicket.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrintTicket.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrintTicket.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPrintTicket.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPrintTicket.FillColor = System.Drawing.Color.Linen;
+            this.btnPrintTicket.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnPrintTicket.ForeColor = System.Drawing.Color.Black;
+            this.btnPrintTicket.Location = new System.Drawing.Point(200, 686);
             this.btnPrintTicket.Name = "btnPrintTicket";
-            this.btnPrintTicket.ShadowDecoration.Parent = this.btnPrintTicket;
-            this.btnPrintTicket.Size = new System.Drawing.Size(180, 45);
-            this.btnPrintTicket.TabIndex = 7;
-            this.btnPrintTicket.Text = "Print ticket";
+            this.btnPrintTicket.Size = new System.Drawing.Size(127, 45);
+            this.btnPrintTicket.TabIndex = 33;
+            this.btnPrintTicket.Text = "PRINT";
             this.btnPrintTicket.Click += new System.EventHandler(this.btnPrintTicket_Click);
             // 
             // SearchTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.Linen;
+            this.ClientSize = new System.Drawing.Size(529, 743);
             this.Controls.Add(this.btnPrintTicket);
-            this.Controls.Add(this.lblTime);
-            this.Controls.Add(this.lblYear);
-            this.Controls.Add(this.lblMonth);
-            this.Controls.Add(this.lblDay);
-            this.Controls.Add(this.txtbxTenDoan);
-            this.Controls.Add(this.txtbxTenTour);
-            this.Controls.Add(this.txtbxTenKhachHang);
+            this.Controls.Add(this.lbTime);
+            this.Controls.Add(this.pnlTicket);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SearchTicket";
             this.Text = "SearchTicket";
             this.Load += new System.EventHandler(this.SearchTicket_Load);
+            this.pnlTicket.ResumeLayout(false);
+            this.pnlTicket.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,13 +397,33 @@ namespace Tour
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2TextBox txtbxTenKhachHang;
-        private Guna.UI2.WinForms.Guna2TextBox txtbxTenTour;
-        private Guna.UI2.WinForms.Guna2TextBox txtbxTenDoan;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblDay;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblMonth;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblYear;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblTime;
+        private Guna.UI2.WinForms.Guna2GradientPanel pnlTicket;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel14;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblReciptTicketID;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel17;
+        private System.Windows.Forms.Label lbDate;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblReciptPrice;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblReciptEndDate;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblReciptStartDate;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblReciptCustomerName;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblReciptGroupName;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblReciptTourName;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel15;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel13;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
+        private Guna.UI2.WinForms.Guna2PictureBox pcbxLogo;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private System.Windows.Forms.Label lbTime;
+        private System.Windows.Forms.Timer timer1;
         private Guna.UI2.WinForms.Guna2Button btnPrintTicket;
     }
 }

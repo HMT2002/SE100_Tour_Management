@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using Tour.Model;
 using Tour.Utils;
 
@@ -15,7 +16,6 @@ namespace Tour
     public partial class PhuongTien : Form
     {
         List<string> ListProvince = new List<string>() {
-            "",
 "An Giang",
 "Bà rịa – Vũng tàu",
 "Bắc Giang",
@@ -86,12 +86,13 @@ namespace Tour
         string randomcode;
         string id;
 
+        List<string> ListTypePhuongTien = new List<string> { "Train", "Motorcycle", "Car", "Bus", "Plan", "Ship" };
 
 
-        public PhuongTien()
+    public PhuongTien()
         {
             InitializeComponent();
-            cbbxKind.DataSource = new List<string> { "Tàu", "Xe hai bánh", "Xe bốn bánh", "Xe buýt", "Máy bay" };
+            cbbxKind.DataSource = ListTypePhuongTien;
             cbboxProvince.DataSource = ListProvince;
             showAll();
             Clear();
@@ -105,35 +106,79 @@ namespace Tour
         }
         private void Clear()
         {
+            int id_num = 1;
+            id = "VE" + id_num;
+
+            while (DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault() != null)
+            {
+                id_num++;
+                id = "VE" + id_num.ToString();
+            }
+
             txtbxName.Text = "";
             rchtxtbxDetail.Text = "";
             cbbxVehical.Text = "";
             cbbxKind.Text = "";
             txtbxGia.Text = "";
-            cbbxKind.SelectedIndex = -1;
             cbbxVehical.SelectedIndex = -1;
             cbboxProvince.SelectedIndex = -1;
+
+            cbbxKind.SelectedIndex = -1;
+
             pcbxVehical.Image = Properties.Resources.ic_image_empty_128;
+            img_data = Converter.Instance.ImageToByte(Properties.Resources.ic_image_empty_128);
+
+            UnnotifyAllFields();
         }
 
+        public void UnnotifyAllFields()
+        {
+            Notify.UnnotificationField(txtbxName);
+            Notify.UnnotificationSelect(cbboxProvince);
+            Notify.UnnotificationSelect(cbbxKind);
+            Notify.UnnotificationField(txtbxGia);
 
+
+
+        }
 
         private bool CheckData()
         {
-            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null||cbboxProvince.Text.Trim().CompareTo(string.Empty) == 0||cbbxKind.Text.Trim().CompareTo(string.Empty) == 0)
+            bool flag = true;
+
+            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0)
             {
-                return false;
+                Notify.NotificationField(txtbxName);
+                flag = false;
             }
-            return true;
+            if (txtbxGia.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationField(txtbxGia);
+                flag = false;
+            }
+            if (cbboxProvince.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationSelect(cbboxProvince);
+                flag = false;
+            }
+            if (cbbxKind.Text.Trim().CompareTo(string.Empty) == 0)
+            {
+                Notify.NotificationSelect(cbbxKind);
+                flag = false;
+            }
+
+            if (DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault() != null)
+            {
+                flag = false;
+            }
+
+            return flag;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        public void AddVehical()
         {
-            if (CheckData() == true)
-            {
                 try
                 {
-                    randomcode = Converter.Instance.RandomString2(5);
                     if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
                     {
                         var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text, IsDeleted = false };
@@ -141,7 +186,7 @@ namespace Tour
                         DataProvider.Ins.DB.SaveChanges();
                     }
 
-                    var vehical = new PHUONGTIEN() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), PICBI = img_data, LOAI = cbbxKind.Text, IsDeleted = false, GIA = Convert.ToDecimal(txtbxGia.Text) };
+                    var vehical = new PHUONGTIEN() { ID = id, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), PICBI =img_data, LOAI = cbbxKind.Text, IsDeleted = false, GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text) };
 
                     DataProvider.Ins.DB.PHUONGTIENs.Add(vehical);
                     DataProvider.Ins.DB.SaveChanges();
@@ -167,17 +212,20 @@ namespace Tour
                     }
                     throw raise;
                 }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+            if (CheckData() == true)
+            {
+                AddVehical();
             }
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
+
+        public void DeleteVehical()
         {
-            if (MessageBox.Show("Are you sure to delete this?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                if (id == null || id.CompareTo(string.Empty) == 0)
-                {
-                    return;
-                }
                 try
                 {
                     var phuongtien = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault();
@@ -189,12 +237,10 @@ namespace Tour
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                 }
-            }
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnXoa_Click(object sender, EventArgs e)
         {
             if (CheckData() == true)
             {
@@ -202,7 +248,16 @@ namespace Tour
                 {
                     return;
                 }
-                try
+                if (MessageBox.Show("Are you sure to delete this?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    DeleteVehical();
+                }
+            }
+        }
+
+        public void UpdateVehical()
+        {
+            try
                 {
                     if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
                     {
@@ -214,8 +269,8 @@ namespace Tour
                     phuongtien.TEN = txtbxName.Text;
                     phuongtien.IDTINH = cbboxProvince.SelectedIndex.ToString();
                     phuongtien.LOAI = cbbxKind.Text;
-                    phuongtien.PICBI = img_data;
-                    phuongtien.GIA = Convert.ToDecimal(txtbxGia.Text);
+                    phuongtien.PICBI =img_data;
+                    phuongtien.GIA = Converter.Instance.CurrencyStringToDecimal(txtbxGia.Text);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
                     Clear();
@@ -238,6 +293,17 @@ namespace Tour
                     }
                     throw raise;
                 }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (CheckData() == true)
+            {
+                if (id == null || id.CompareTo(string.Empty) == 0)
+                {
+                    return;
+                }
+                UpdateVehical();
             }
         }
 
@@ -253,6 +319,8 @@ namespace Tour
 
         private void txtbxGia_KeyPress(object sender, KeyPressEventArgs e)
         {
+            Notify.UnnotificationField(sender);
+
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
@@ -291,8 +359,32 @@ namespace Tour
                 cbbxKind.Text = temp.LOAI;
                 cbboxProvince.Text = DataProvider.Ins.DB.TINHs.Where(x => x.ID == temp.IDTINH).FirstOrDefault().TEN;
                 img_data = temp.PICBI;
-                txtbxGia.Text = temp.GIA.ToString();
+                txtbxGia.Text =Converter.Instance.CurrencyDisplay((decimal) temp.GIA);
             }
+        }
+
+        private void cbbxKind_Enter(object sender, EventArgs e)
+        {
+            Notify.UnnotificationSelect(sender);
+
+        }
+
+        private void cbboxProvince_Enter(object sender, EventArgs e)
+        {
+            Notify.UnnotificationSelect(sender);
+
+        }
+
+        private void txtbxName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Notify.UnnotificationField(sender);
+
+        }
+
+        private void txtbxGia_TextChanged(object sender, EventArgs e)
+        {
+            Utils.Validate.EnterCurrencyVnd(sender);
+
         }
     }
 }

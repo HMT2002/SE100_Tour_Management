@@ -33,13 +33,12 @@ namespace Tour
 
         private void Resetbtn_Click(object sender, EventArgs e)
         {
-            if (newpasstxb.Text == confirmtxb.Text && newpasstxb.Text != "")
+            if (newpasstxb.Text.Trim() == confirmtxb.Text.Trim() && newpasstxb.Text.Trim() != "")
             {
-                Account.PASS = Converter.Instance.EncryptPassword(confirmtxb.Text);
+                this.Account.PASS = Converter.Instance.EncryptPassword(confirmtxb.Text);
                 DataProvider.Ins.DB.SaveChanges();
-
                 MessageBox.Show("Reset password success!!!");
-                this.Close();
+                Clear();
             }
             else
             {
@@ -47,10 +46,16 @@ namespace Tour
             }
         }
 
+        private void Clear()
+        {
+            confirmtxb.Text = "";
+            newpasstxb.Text = "";
+        }
+
         private void Cancelbtn_Click(object sender, EventArgs e)
         {
 
-            this.Close();
+            Clear();
         }
     }
 }

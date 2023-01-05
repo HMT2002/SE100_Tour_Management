@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,7 @@ namespace Tour
         public ChooseLoyalCustomer()
         {
             InitializeComponent();
-
+            guna2DataGridView1.AutoGenerateColumns = false;
             LoadData();
         }
 
@@ -36,7 +37,7 @@ namespace Tour
 
             if (index >= 0)
             {
-                id = guna2DataGridView1.Rows[index].Cells["ID"].Value.ToString();
+                id = guna2DataGridView1.Rows[index].Cells["data_id"].Value.ToString();
 
                 ChosedKhachHang= DataProvider.Ins.DB.KHACHHANGs.Where(x => x.ID == id && x.IsDeleted == false).FirstOrDefault();
 

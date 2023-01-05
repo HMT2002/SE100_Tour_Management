@@ -14,9 +14,8 @@ namespace Tour
 {
     public partial class ManageBanner : Form
     {
-        string ID_tour = "HKOIJ";
 
-        TOUR Tour = new TOUR();
+        public TOUR Tour = new TOUR();
 
         public ManageBanner()
         {
@@ -25,99 +24,30 @@ namespace Tour
             Clear();
         }
 
-
-        public ManageBanner(string id_tour)
-        {
-            InitializeComponent();
-            ID_tour = id_tour;
-            LoadData();
-        }
-
         public ManageBanner(TOUR tour)
         {
             InitializeComponent();
-            Tour = tour;
-            datepckBegin.Value=DateTime.Now;
-            datepckEnd.Value=DateTime.Now;
+            this.Tour = tour;
+            datepckBegin.Value = DateTime.Now;
+            datepckEnd.Value = DateTime.Now;
             LoadDataTour();
         }
 
         private void LoadDataTour()
         {
-            lblTour.Text = Tour.ID;
+            lblTour.Text = this.Tour.TEN;
             cbDes.Visible = false;
-            tbPrice.Text = Tour.GIA.ToString();
-
-
+            tbPrice.Text =Converter.Instance.CurrencyDisplay((decimal) Tour.GIA);
             if (DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == Tour.ID && x.IsDeleted == false).FirstOrDefault() == null)
             {
                 return;
             }
-            GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == Tour.ID && x.IsDeleted == false).FirstOrDefault();
-
-            txtbxDiscount.Text = giamgia.DISCOUNT.ToString();
-
-            if (giamgia.PICBI != null)
-            {
-                pcbxBanner.Image = Converter.Instance.ByteArrayToImage(giamgia.PICBI);
-                img_data = giamgia.PICBI;
-            }
-
-            if (giamgia.NGAYBATDAU == null)
-            {
-                datepckBegin.Value = DateTime.Now;
-            }
-            else
-            {
-                datepckBegin.Value = (DateTime)giamgia.NGAYBATDAU;
-
-            }
-
-            if (giamgia.NGAYKETTHUC == null)
-            {
-                datepckEnd.Value = DateTime.Now;
-            }
-            else
-            {
-                datepckEnd.Value = (DateTime)giamgia.NGAYKETTHUC;
-
-            }
-
-
-            try
-            {
-                if (Convert.ToInt32(txtbxDiscount.Text) != 0 || Convert.ToDecimal(tbPrice) != 0)
-                {
-                    decimal res = 0;
-                    double discount = Convert.ToInt64(txtbxDiscount.Text);
-                    decimal price = Convert.ToDecimal(tbPrice.Text);
-                    res = price - (price * (decimal)(discount / 100));
-
-                    tbTotal.Text = res.ToString();
-
-                }
-            }
-            catch
-            {
-
-                tbTotal.Text = tbPrice.Text;
-            }
-        }
-
-        private void LoadData()
-        {
-            lblTour.Text = ID_tour;
-            cbDes.Visible = false;
-
-
-            if(DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == ID_tour && x.IsDeleted == false).FirstOrDefault() == null)
+            GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == Tour.ID && x.IsDeleted == false ).FirstOrDefault();
+            if(giamgia == null)
             {
                 return;
             }
-            GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == ID_tour && x.IsDeleted == false).FirstOrDefault();
-
             txtbxDiscount.Text = giamgia.DISCOUNT.ToString();
-            tbPrice.Text = giamgia.TOUR.GIA.ToString();
 
             if (giamgia.PICBI != null)
             {
@@ -148,14 +78,14 @@ namespace Tour
 
             try
             {
-                if (Convert.ToInt32(txtbxDiscount.Text) != 0 || Convert.ToDecimal(tbPrice) != 0)
+                if (Convert.ToInt32(txtbxDiscount.Text) != 0 || Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tbPrice.Text) != 0)
                 {
                     decimal res = 0;
                     double discount = Convert.ToInt64(txtbxDiscount.Text);
-                    decimal price = Convert.ToDecimal(tbPrice.Text);
+                    decimal price = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tbPrice.Text);
                     res = price - (price * (decimal)(discount / 100));
 
-                    tbTotal.Text = res.ToString();
+                    tbTotal.Text = Converter.Instance.CurrencyDisplay(res);
 
                 }
             }
@@ -215,7 +145,12 @@ namespace Tour
 
         public bool CheckData()
         {
-            if (Convert.ToInt64(txtbxDiscount.Text)==0)
+            if (txtbxDiscount.Text.Trim() == "")
+            {
+                return false;
+
+            }
+            if (Convert.ToInt64(txtbxDiscount.Text) == 0)
             {
                 return false;
             }
@@ -243,30 +178,81 @@ namespace Tour
             }
         }
 
+
+        public void RemoveCurrentBanner()
+        {
+            try
+            {
+                GIAMGIA temp = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == this.Tour.ID && x.IsDeleted == false).FirstOrDefault();
+                if(temp == null)
+                {
+                    return;
+                }
+                temp.NGAYBATDAU = DateTime.Now;
+                temp.NGAYKETTHUC = DateTime.Now;
+                img_data=Converter.Instance.ImageToByte(Properties.Resources.ic_image_empty_128);
+                temp.PICBI = img_data;
+                temp.DISCOUNT = 0;
+                DataProvider.Ins.DB.SaveChanges();
+
+                Clear();
+                this.Close();
+            }
+            catch
+            {
+
+            }
+
+        }
+
         private void btnClear_Click(object sender, EventArgs e)
         {
-            Clear();
+            if (MessageBox.Show("Confirm clear current banner? ", "Confirmation", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+            {
+                RemoveCurrentBanner();
+
+            }
+        }
+
+        private void CreateBanner()
+        {
+            try
+            {
+                GIAMGIA temp = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == this.Tour.ID && x.IsDeleted == false).FirstOrDefault();
+                if (temp == null)
+                {
+                    return;
+                }
+                temp.DISCOUNT = Convert.ToInt32(txtbxDiscount.Text);
+                temp.PICBI = img_data;
+                temp.NGAYBATDAU = datepckBegin.Value.Date;
+                temp.NGAYKETTHUC = datepckEnd.Value.Date;
+
+
+                DataProvider.Ins.DB.SaveChanges();
+                MessageBox.Show("Add banner succeed");
+
+                Clear();
+                this.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (CheckData())
             {
-
-                if (DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == Tour.ID && x.IsDeleted == false).FirstOrDefault() != null)
+                if (MessageBox.Show("Confirm create banner? ", "Confirmation", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
                 {
-                    GIAMGIA temp = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == Tour.ID && x.IsDeleted == false).FirstOrDefault();
-                    temp.IsDeleted = true;
-                    DataProvider.Ins.DB.SaveChanges();
+                    CreateBanner();
+
+
                 }
 
-                string randomecode = Converter.Instance.RandomString2(5);
-                GIAMGIA giamgia = new GIAMGIA() { ID = randomecode, IDTOUR = Tour.ID, DISCOUNT = Convert.ToInt32(txtbxDiscount.Text), PICBI = img_data, NGAYBATDAU = datepckBegin.Value.Date, NGAYKETTHUC = datepckEnd.Value.Date, IsDeleted = false };
-                DataProvider.Ins.DB.GIAMGIAs.Add(giamgia);
-                DataProvider.Ins.DB.SaveChanges();
-                MessageBox.Show("Add banner succeed");
-                Clear();
-                this.Close();
             }
         }
 
@@ -286,14 +272,14 @@ namespace Tour
         {
             try
             {
-                if(Convert.ToInt32(txtbxDiscount.Text) != 0 || Convert.ToDecimal(tbPrice) != 0)
+                if (Convert.ToInt32(txtbxDiscount.Text) != 0 || Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tbPrice.Text) != 0)
                 {
                     decimal res = 0;
                     double discount = Convert.ToInt64(txtbxDiscount.Text);
-                    decimal price=Convert.ToDecimal(tbPrice.Text);
+                    decimal price = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tbPrice.Text);
                     res = price - (price * (decimal)(discount / 100));
 
-                    tbTotal.Text = res.ToString();
+                    tbTotal.Text = Converter.Instance.CurrencyDisplay(res);
 
                 }
             }

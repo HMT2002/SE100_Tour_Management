@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Tour.Utils
@@ -52,7 +54,7 @@ namespace Tour.Utils
         {
             if (bytesArr == null)
             {
-                return null;
+                return Properties.Resources.ic_image_empty_128;
             }
             using (MemoryStream memstr = new MemoryStream(bytesArr))
             {
@@ -156,6 +158,62 @@ namespace Tour.Utils
             }
         }
 
+        public decimal CurrencyStringToDecimal(string CurrencyStr)
+        {
+            decimal res = 0;
+
+
+            // Regex to extract the number part from the string (supports thousands and decimal separators)
+            // Simple replace of all non numeric and non ',' '.' characters with nothing might suffice as well
+            // Depends on the input you receive
+            var regex = new Regex("^[^\\d-]*(-?(?:\\d|(?<=\\d)\\.(?=\\d{3}))+(?:,\\d+)?|-?(?:\\d|(?<=\\d),(?=\\d{0}))+(?:\\.\\d+)?)[^\\d]*$");
+
+            char decimalChar;
+            char thousandsChar;
+
+            // Get the numeric part from the string
+            var numberPart = regex.Match(CurrencyStr).Groups[1].Value;
+
+            // Try to guess which character is used for decimals and which is used for thousands
+            if (numberPart.LastIndexOf(',') > numberPart.LastIndexOf('.'))
+            {
+                decimalChar = ',';
+                thousandsChar = '.';
+            }
+            else
+            {
+                decimalChar = '.';
+                thousandsChar = ',';
+            }
+
+            // Remove thousands separators as they are not needed for parsing
+            numberPart = numberPart.Replace(thousandsChar.ToString(), string.Empty);
+
+            // Replace decimal separator with the one from InvariantCulture
+            // This makes sure the decimal parses successfully using InvariantCulture
+            numberPart = numberPart.Replace(decimalChar.ToString(),
+                CultureInfo.InvariantCulture.NumberFormat.CurrencyDecimalSeparator);
+
+            // Voilá
+            res = decimal.Parse(numberPart, NumberStyles.AllowDecimalPoint | NumberStyles.Number, CultureInfo.InvariantCulture);
+
+            return res;
+        }
+
+        public decimal CurrencyStringToDecimalByReplaceCharacter(string CurrencyStr)
+        {
+            decimal res = 0;
+            string temp=CurrencyStr.Replace(".",string.Empty).Replace(",", string.Empty).Replace("000 ₫", string.Empty);
+            res = decimal.Parse(temp);
+
+            return res;
+        }
+
+
+        public string CurrencyDisplay(decimal dec)
+        {
+            return (dec).ToString("C3", CultureInfo.CreateSpecificCulture("vi"));
+        }
     }
 
 }

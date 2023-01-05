@@ -27,6 +27,9 @@ namespace Tour.Model
         public byte[] PICBI { get; set; }
         public Nullable<bool> IsDeleted { get; set; }
         public Nullable<decimal> GIA { get; set; }
+        public Nullable<decimal> PHIAN { get; set; }
+        public Nullable<decimal> PHICHOI { get; set; }
+        public Nullable<decimal> PHIKHAC { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_DIADIEM_DULICH> tb_DIADIEM_DULICH { get; set; }
