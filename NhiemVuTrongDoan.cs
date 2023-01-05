@@ -23,6 +23,8 @@ namespace Tour
         private string waiter = "";
         private string translator = "";
 
+        DOAN temp_doan = new DOAN();
+
         public NhiemVuTrongDoan()
         {
             InitializeComponent();
@@ -33,7 +35,7 @@ namespace Tour
             doanID = ID_doan;
             InitializeComponent();
             textBox1.Text = doanID;
-
+            temp_doan=DataProvider.Ins.DB.DOANs.Where(X=>X.ID==doanID).FirstOrDefault();
 
             LoadData();
 
@@ -41,7 +43,7 @@ namespace Tour
 
         private void LoadData()
         {
-            var tb_phutrach = DataProvider.Ins.DB.tb_PHUTRACH.Where(x => x.IDDOAN == doanID && x.IsDeleted == false).ToList();
+            var tb_phutrach = DataProvider.Ins.DB.tb_PHUTRACH.Where(x => x.IDDOAN == doanID && x.IsDeleted == false&&x.DOAN.NGAYKETTHUC<DateTime.Today).ToList();
             foreach (var tb in tb_phutrach)
             {
                 if (tb.PHUTRACH == "Tour Guide")
