@@ -18,7 +18,7 @@ namespace Tour
 
         ImageList listView_ImageList1 = new ImageList();
         ImageList listView_ImageList2 = new ImageList();
-
+        TOUR tour = new TOUR();
         List<DIADIEM> ListDiaDiem = new List<DIADIEM>();
         List<DIADIEM> ListTatCaDiaDiem = new List<DIADIEM>();
 
@@ -128,6 +128,9 @@ namespace Tour
         {
             foreach (var tb_diadiem in DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.IDTOUR == ID && x.IsDeleted == false))
             {
+                tour = DataProvider.Ins.DB.TOURs.Where(x => x.ID == ID && x.IsDeleted == false).FirstOrDefault();
+                tour.GIA = tour.GIA - DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == tb_diadiem.IDDIADIEM).FirstOrDefault().GIA;
+
                 DataProvider.Ins.DB.tb_DIADIEM_DULICH.Remove(tb_diadiem);
             }
             DataProvider.Ins.DB.SaveChanges();
@@ -141,6 +144,8 @@ namespace Tour
                 }
 
                 DataProvider.Ins.DB.tb_DIADIEM_DULICH.Add(new tb_DIADIEM_DULICH() { ID = random1, IDDIADIEM = diadiem.ID, IDTOUR = ID,IsDeleted=false });
+                tour = DataProvider.Ins.DB.TOURs.Where(x => x.ID == ID && x.IsDeleted == false).FirstOrDefault();
+                tour.GIA = tour.GIA + DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == diadiem.ID).FirstOrDefault().GIA;
                 DataProvider.Ins.DB.SaveChanges();
 
             }

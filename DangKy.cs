@@ -35,7 +35,7 @@ namespace Tour
 
         private void DangKy_Load(object sender, EventArgs e)
         {
-            //LoadCombobox(cbDes);
+            LoadCombobox(cbDes);
 
             showAll();
             reset();
@@ -443,7 +443,7 @@ namespace Tour
             cbDes.Refresh();
             cbDes.DataSource = (from tour in DataProvider.Ins.DB.TOURs
                                 join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
-                                where tour.IsDeleted == false && doan.IsDeleted == false&& doan.NGAYKHOIHANH >= DateTime.Today
+                                where tour.IsDeleted == false && doan.IsDeleted == false
                                 select new
                                 {
                                     TENTOUR = tour.TEN,
@@ -487,10 +487,10 @@ namespace Tour
                 tbPrice.Text = Converter.Instance.CurrencyDisplay((decimal)selected_tour.GIA);
 
                 GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == selected_tour.ID && x.IsDeleted == false && x.NGAYBATDAU >= DateTime.Today).FirstOrDefault();
-                
+
                 if (giamgia != null)
                 {
-                banner_discount = (double)giamgia.DISCOUNT;
+                    banner_discount = (double)giamgia.DISCOUNT;
                     if (giamgia.DISCOUNT != 0)
                     {
                         pcbxBanner.Image = Converter.Instance.ByteArrayToImage(giamgia.PICBI);
@@ -498,8 +498,6 @@ namespace Tour
                     }
                 }
                 tbDiscount.Text = (banner_discount + customer_discount).ToString();
-
-
                 try
                 {
                     decimal res = 0;
@@ -513,14 +511,9 @@ namespace Tour
                     tbTotal.Text = tbPrice.Text;
 
                 }
-
-
-
                 lblReciptPrice.Text = tbTotal.Text;
                 lblReciptTourName.Text = selected_tour.TEN;
                 selected_group = null;
-
-
             }
 
         }
@@ -552,7 +545,6 @@ namespace Tour
             tbCMND.Enabled = true;
             RdMale.Enabled = true;
             RdFmale.Enabled = true;
-
         }
         private void tbTelephone_KeyPress(object sender, KeyPressEventArgs e)
         {
