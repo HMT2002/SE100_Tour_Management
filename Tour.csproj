@@ -706,6 +706,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-medal-60.png" />
+    <None Include="Resources\gold100.png" />
+    <None Include="Resources\bronze100.png" />
     <Content Include="Resources\person-working.jpg" />
     <None Include="Resources\person-working1.jpg" />
     <None Include="Resources\person-working11.jpg" />
@@ -721,6 +724,8 @@
     <None Include="Resources\wallpapersden.com_mix-colour-background_1920x1080.jpg" />
     <None Include="Resources\placeholder.png" />
     <None Include="Resources\rating.png" />
+    <None Include="Resources\platinum100.png" />
+    <None Include="Resources\silver100.png" />
     <Content Include="tickets.ico" />
   </ItemGroup>
   <ItemGroup />

@@ -58,27 +58,28 @@ namespace Tour
             {
                 case "BRONZE":
                     lblRank.Text = "BRONZE";
-                    this.BackColor = Color.FromArgb(218, 165, 32);
-
+                    //this.BackColor = Color.FromArgb(218, 165, 32);
+                    pbMember.Image = Properties.Resources.bronze100;
 
                     break;
 
                 case "SILVER":
                     lblRank.Text = "SILVER";
-                    this.BackColor = Color.Silver;
-
+                    //this.BackColor = Color.Silver;
+                    pbMember.Image = Properties.Resources.silver100;
 
                     break;
 
                 case "GOLD":
 
                     lblRank.Text = "GOLD";
-                    this.BackColor = Color.Gold;
+                    pbMember.Image = Properties.Resources.gold100;
                     break;
 
                 case "PLATINUM":
                     lblRank.Text = "PLATINUM";
-                    this.BackColor = Color.FromArgb(135, 206, 250);
+                    //this.BackColor = Color.FromArgb(135, 206, 250);
+                    pbMember.Image = Properties.Resources.platinum100;
                     break;
                 default:
 
