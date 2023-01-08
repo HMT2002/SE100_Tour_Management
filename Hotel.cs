@@ -122,9 +122,9 @@ namespace Tour
         {
             bool flag = true;
 
-            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null||txtbxDiaChi.Text.Trim().CompareTo(string.Empty) == 0|| Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text) == 0 || cbboxProvince.SelectedIndex == -1)
+            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null || txtbxDiaChi.Text.Trim().CompareTo(string.Empty) == 0 || Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text) == 0 || cbboxProvince.SelectedIndex == -1)
             {
-                flag= false;
+                flag = false;
             }
 
             if (DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault() != null)
@@ -137,7 +137,7 @@ namespace Tour
 
         public void showAll()
         {
-            cbbxHotel.DataSource = DataProvider.Ins.DB.KHACHSANs.Where(t=>t.IsDeleted==false).ToList();
+            cbbxHotel.DataSource = DataProvider.Ins.DB.KHACHSANs.Where(t => t.IsDeleted == false).ToList();
             cbbxHotel.DisplayMember = "TEN";
         }
 
@@ -150,12 +150,12 @@ namespace Tour
                 {
                     if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
                     {
-                        var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text,IsDeleted=false };
+                        var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text, IsDeleted = false };
                         DataProvider.Ins.DB.TINHs.Add(tinh);
                         DataProvider.Ins.DB.SaveChanges();
                     }
                     randomcode = Converter.Instance.RandomString(5);
-                    var location = new KHACHSAN() { ID = id, DIACHI = txtbxDiaChi.Text, PICBI =img_data,CHITIET=rchtxtbxDetail.Text,GIA= Converter.Instance.CurrencyStringToDecimalByReplaceCharacter( txtbxGia.Text ),IDTINH=cbboxProvince.SelectedIndex.ToString(),SDT=txtbxSDT.Text,TEN=txtbxName.Text,IsDeleted=false};
+                    var location = new KHACHSAN() { ID = id, DIACHI = txtbxDiaChi.Text, PICBI = img_data, CHITIET = rchtxtbxDetail.Text, GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text), IDTINH = cbboxProvince.SelectedIndex.ToString(), SDT = txtbxSDT.Text, TEN = txtbxName.Text, IsDeleted = false };
                     DataProvider.Ins.DB.KHACHSANs.Add(location);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
@@ -189,31 +189,32 @@ namespace Tour
         {
             if (CheckData())
             {
-            if (MessageBox.Show("Are you sure to delete this?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                if (id == null || id.CompareTo(string.Empty) == 0)
+                if (MessageBox.Show("Are you sure to delete this?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    return;
-                }
-                try
-                {
-
-                    foreach(var tb_ks in DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.IDKHACHSAN == id))
+                    if (id == null || id.CompareTo(string.Empty) == 0)
                     {
-                        tb_ks.IsDeleted = true;
+                        return;
                     }
-                    KHACHSAN khachsan = DataProvider.Ins.DB.KHACHSANs.Where(x => x.ID == id).FirstOrDefault();
-                    khachsan.IsDeleted = true;
-                    DataProvider.Ins.DB.SaveChanges();
-                    showAll();
-                    Clear();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    try
+                    {
 
+                        foreach (var tb_ks in DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.IDKHACHSAN == id))
+                        {
+                            tb_ks.IsDeleted = true;
+                        }
+                        KHACHSAN khachsan = DataProvider.Ins.DB.KHACHSANs.Where(x => x.ID == id).FirstOrDefault();
+                        DataProvider.Ins.DB.tb_KHACHSAN.RemoveRange(DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.IDKHACHSAN == khachsan.ID));
+                        DataProvider.Ins.DB.KHACHSANs.Remove(khachsan);
+                        DataProvider.Ins.DB.SaveChanges();
+                        showAll();
+                        Clear();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
                 }
-            }
 
             }
         }
@@ -272,8 +273,8 @@ namespace Tour
             }
 
 
-            txtbxName.Text = rchtxtbxDetail.Text = txtbxDiaChi.Text = txtbxGia.Text =txtbxName.Text=txtbxSDT.Text= "";
-            cbboxProvince.SelectedIndex= cbbxHotel.SelectedIndex = -1;
+            txtbxName.Text = rchtxtbxDetail.Text = txtbxDiaChi.Text = txtbxGia.Text = txtbxName.Text = txtbxSDT.Text = "";
+            cbboxProvince.SelectedIndex = cbbxHotel.SelectedIndex = -1;
             pcbxLocation.Image = Properties.Resources.ic_image_empty_128;
             img_data = Converter.Instance.ImageToByte(Properties.Resources.ic_image_empty_128);
 
@@ -293,7 +294,7 @@ namespace Tour
                 cbboxProvince.Text = DataProvider.Ins.DB.TINHs.Where(x => x.ID == temp.IDTINH).FirstOrDefault().TEN;
                 img_data = temp.PICBI;
                 rchtxtbxDetail.Text = temp.CHITIET;
-                txtbxGia.Text = Converter.Instance.CurrencyDisplay((decimal) temp.GIA);
+                txtbxGia.Text = Converter.Instance.CurrencyDisplay((decimal)temp.GIA);
                 txtbxDiaChi.Text = temp.DIACHI;
                 txtbxSDT.Text = temp.SDT;
             }

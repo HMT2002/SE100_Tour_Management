@@ -1,6 +1,6 @@
 ﻿namespace Tour
 {
-    partial class AddVehicalForGroup
+    partial class AddVehicleForGroup
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddVehicalForGroup));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddVehicleForGroup));
             this.listView2 = new System.Windows.Forms.ListView();
             this.listView1 = new System.Windows.Forms.ListView();
             this.btngunaExit = new Guna.UI2.WinForms.Guna2Button();

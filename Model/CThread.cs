@@ -25,7 +25,7 @@ namespace Tour.Model
         }
         public void Start()
         {
-            foreach(var pt in DataProvider.Ins.DB.tb_PHUTRACH.Where(x => x.DOAN.NGAYKETTHUC < DateTime.Today && x.IsDeleted == false))
+            foreach(var pt in DataProvider.Ins.DB.tb_PHUTRACH.Where(x => x.DOAN.NGAYKETTHUC <= DateTime.Today && x.IsDeleted == false))
             {
                 pt.NHANVIEN.isAvailable= true;
                 pt.IsDeleted= true;

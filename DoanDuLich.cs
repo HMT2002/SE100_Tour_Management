@@ -307,7 +307,13 @@ namespace Tour
                     ve.IsDeleted = true;
                 }
                 DOAN doan = DataProvider.Ins.DB.DOANs.Where(x => x.ID == id).FirstOrDefault();
-                doan.IsDeleted = true;
+                DataProvider.Ins.DB.tb_KHACHSAN.RemoveRange(DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.IDDOAN == doan.ID));
+                DataProvider.Ins.DB.tb_NHIEMVU.RemoveRange(DataProvider.Ins.DB.tb_NHIEMVU.Where(x => x.IDDOAN == doan.ID));
+                DataProvider.Ins.DB.tb_PHUTRACH.RemoveRange(DataProvider.Ins.DB.tb_PHUTRACH.Where(x => x.IDDOAN == doan.ID));
+                DataProvider.Ins.DB.tb_PHUONGTIEN.RemoveRange(DataProvider.Ins.DB.tb_PHUONGTIEN.Where(x => x.IDDOAN == doan.ID));
+                DataProvider.Ins.DB.VEs.RemoveRange(DataProvider.Ins.DB.VEs.Where(x => x.IDDOAN == doan.ID));
+
+                DataProvider.Ins.DB.DOANs.Remove(doan);
                 DataProvider.Ins.DB.SaveChanges();
                 showAll();
 
@@ -444,7 +450,7 @@ namespace Tour
                 return;
             }
 
-            AddVehicalForGroup h = new AddVehicalForGroup(id);
+            AddVehicleForGroup h = new AddVehicleForGroup(id);
             this.Hide();
             h.ShowDialog();
             Clear();

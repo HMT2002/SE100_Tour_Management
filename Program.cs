@@ -17,7 +17,7 @@ namespace Tour
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            CThread.Instance.Start();
+            //CThread.Instance.Start();
 
             Application.Run(new LoginForm());
 

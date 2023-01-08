@@ -465,7 +465,7 @@ namespace Tour
             this.btnVehicalDatabase.PressedColor = System.Drawing.Color.Transparent;
             this.btnVehicalDatabase.Size = new System.Drawing.Size(247, 49);
             this.btnVehicalDatabase.TabIndex = 14;
-            this.btnVehicalDatabase.Text = "Vehical";
+            this.btnVehicalDatabase.Text = "Vehicle";
             this.btnVehicalDatabase.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnVehicalDatabase.TextOffset = new System.Drawing.Point(65, 0);
             this.btnVehicalDatabase.Click += new System.EventHandler(this.btnVehicalDatabase_Click);

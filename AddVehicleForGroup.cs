@@ -13,7 +13,7 @@ using Tour.Utils;
 
 namespace Tour
 {
-    public partial class AddVehicalForGroup : Form
+    public partial class AddVehicleForGroup : Form
     {
 
         string ID;
@@ -25,7 +25,7 @@ namespace Tour
         List<PHUONGTIEN> ListTatCaPhuongTien = new List<PHUONGTIEN>();
 
 
-        public AddVehicalForGroup(string id)
+        public AddVehicleForGroup(string id)
         {
             InitializeComponent();
 

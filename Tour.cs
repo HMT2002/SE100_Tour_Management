@@ -35,7 +35,7 @@ namespace Tour
         {
             InitializeComponent();
             dgv_trip.AutoGenerateColumns = false;
-            cb_typetour.DataSource = ListTypeTour;
+            //cb_typetour.DataSource = ListTypeTour;
         }
 
         public void ShowAllChuyen()
@@ -249,7 +249,10 @@ namespace Tour
             try
             {
                 TOUR tour = DataProvider.Ins.DB.TOURs.Where(x => x.ID == id&&x.IsDeleted==false).FirstOrDefault();
-                tour.IsDeleted = true;
+                DataProvider.Ins.DB.GIAMGIAs.Remove(DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == tour.ID).FirstOrDefault());
+                DataProvider.Ins.DB.tb_DIADIEM_DULICH.RemoveRange(DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x=>x.IDTOUR==tour.ID));
+                DataProvider.Ins.DB.TOURs.Remove(tour);
+
                 DataProvider.Ins.DB.SaveChanges();
                 ShowAllChuyen();
                 Clear();
@@ -467,11 +470,21 @@ namespace Tour
             {
                 return;
             }
-            AddLocationForTour h = new AddLocationForTour(id);
-            Clear();
-            this.Hide();
-            h.ShowDialog();
-            this.Show();
+            using (AddLocationForTour h = new AddLocationForTour(id))
+            {
+                Clear();
+                this.Hide();
+                h.ShowDialog();
+                this.Show();
+
+            }
+            ShowAllChuyen();
+            //AddLocationForTour h = new AddLocationForTour(id);
+            //Clear();
+            //this.Hide();
+            //h.ShowDialog();
+            //this.Show();
+
         }
 
         private void tb_idtrip_Enter(object sender, EventArgs e)

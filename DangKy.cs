@@ -443,7 +443,7 @@ namespace Tour
             cbDes.Refresh();
             cbDes.DataSource = (from tour in DataProvider.Ins.DB.TOURs
                                 join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
-                                where tour.IsDeleted == false && doan.IsDeleted == false
+                                where tour.IsDeleted == false && doan.IsDeleted == false && doan.NGAYKHOIHANH >= DateTime.Today
                                 select new
                                 {
                                     TENTOUR = tour.TEN,

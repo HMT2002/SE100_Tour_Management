@@ -89,7 +89,7 @@ namespace Tour
         List<string> ListTypePhuongTien = new List<string> { "Train", "Motorcycle", "Car", "Bus", "Plan", "Ship" };
 
 
-    public PhuongTien()
+        public PhuongTien()
         {
             InitializeComponent();
             cbbxKind.DataSource = ListTypePhuongTien;
@@ -101,7 +101,7 @@ namespace Tour
 
         public void showAll()
         {
-            cbbxVehical.DataSource = DataProvider.Ins.DB.PHUONGTIENs.Where(t=>t.IsDeleted==false).Select(t => t).ToList();
+            cbbxVehical.DataSource = DataProvider.Ins.DB.PHUONGTIENs.Where(t => t.IsDeleted == false).Select(t => t).ToList();
             cbbxVehical.DisplayMember = "TEN";
         }
         private void Clear()
@@ -177,41 +177,41 @@ namespace Tour
 
         public void AddVehical()
         {
-                try
+            try
+            {
+                if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
                 {
-                    if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
-                    {
-                        var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text, IsDeleted = false };
-                        DataProvider.Ins.DB.TINHs.Add(tinh);
-                        DataProvider.Ins.DB.SaveChanges();
-                    }
-
-                    var vehical = new PHUONGTIEN() { ID = id, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), PICBI =img_data, LOAI = cbbxKind.Text, IsDeleted = false, GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text) };
-
-                    DataProvider.Ins.DB.PHUONGTIENs.Add(vehical);
+                    var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text, IsDeleted = false };
+                    DataProvider.Ins.DB.TINHs.Add(tinh);
                     DataProvider.Ins.DB.SaveChanges();
-                    showAll();
-                    Clear();
-
-
                 }
-                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+
+                var vehical = new PHUONGTIEN() { ID = id, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), PICBI = img_data, LOAI = cbbxKind.Text, IsDeleted = false, GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text) };
+
+                DataProvider.Ins.DB.PHUONGTIENs.Add(vehical);
+                DataProvider.Ins.DB.SaveChanges();
+                showAll();
+                Clear();
+
+
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            {
+                Exception raise = dbEx;
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
                 {
-                    Exception raise = dbEx;
-                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    foreach (var validationError in validationErrors.ValidationErrors)
                     {
-                        foreach (var validationError in validationErrors.ValidationErrors)
-                        {
-                            string message = string.Format("{0}:{1}",
-                                validationErrors.Entry.Entity.ToString(),
-                                validationError.ErrorMessage);
-                            // raise a new exception nesting
-                            // the current instance as InnerException
-                            raise = new InvalidOperationException(message, raise);
-                        }
+                        string message = string.Format("{0}:{1}",
+                            validationErrors.Entry.Entity.ToString(),
+                            validationError.ErrorMessage);
+                        // raise a new exception nesting
+                        // the current instance as InnerException
+                        raise = new InvalidOperationException(message, raise);
                     }
-                    throw raise;
                 }
+                throw raise;
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -226,18 +226,19 @@ namespace Tour
 
         public void DeleteVehical()
         {
-                try
-                {
-                    var phuongtien = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault();
-                    phuongtien.IsDeleted = true;
-                    DataProvider.Ins.DB.SaveChanges();
-                    showAll();
-                    Clear();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            try
+            {
+                var phuongtien = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault();
+                DataProvider.Ins.DB.tb_PHUONGTIEN.RemoveRange(DataProvider.Ins.DB.tb_PHUONGTIEN.Where(x=>x.IDPHUONGTIEN==phuongtien.ID));
+                DataProvider.Ins.DB.PHUONGTIENs.Remove(phuongtien);
+                DataProvider.Ins.DB.SaveChanges();
+                showAll();
+                Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -258,41 +259,41 @@ namespace Tour
         public void UpdateVehical()
         {
             try
+            {
+                if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
                 {
-                    if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
-                    {
-                        var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text };
-                        DataProvider.Ins.DB.TINHs.Add(tinh);
-                        DataProvider.Ins.DB.SaveChanges();
-                    }
-                    var phuongtien = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault();
-                    phuongtien.TEN = txtbxName.Text;
-                    phuongtien.IDTINH = cbboxProvince.SelectedIndex.ToString();
-                    phuongtien.LOAI = cbbxKind.Text;
-                    phuongtien.PICBI =img_data;
-                    phuongtien.GIA = Converter.Instance.CurrencyStringToDecimal(txtbxGia.Text);
+                    var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text };
+                    DataProvider.Ins.DB.TINHs.Add(tinh);
                     DataProvider.Ins.DB.SaveChanges();
-                    showAll();
-                    Clear();
+                }
+                var phuongtien = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault();
+                phuongtien.TEN = txtbxName.Text;
+                phuongtien.IDTINH = cbboxProvince.SelectedIndex.ToString();
+                phuongtien.LOAI = cbbxKind.Text;
+                phuongtien.PICBI = img_data;
+                phuongtien.GIA = Converter.Instance.CurrencyStringToDecimal(txtbxGia.Text);
+                DataProvider.Ins.DB.SaveChanges();
+                showAll();
+                Clear();
 
-                }
-                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            {
+                Exception raise = dbEx;
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
                 {
-                    Exception raise = dbEx;
-                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    foreach (var validationError in validationErrors.ValidationErrors)
                     {
-                        foreach (var validationError in validationErrors.ValidationErrors)
-                        {
-                            string message = string.Format("{0}:{1}",
-                                validationErrors.Entry.Entity.ToString(),
-                                validationError.ErrorMessage);
-                            // raise a new exception nesting
-                            // the current instance as InnerException
-                            raise = new InvalidOperationException(message, raise);
-                        }
+                        string message = string.Format("{0}:{1}",
+                            validationErrors.Entry.Entity.ToString(),
+                            validationError.ErrorMessage);
+                        // raise a new exception nesting
+                        // the current instance as InnerException
+                        raise = new InvalidOperationException(message, raise);
                     }
-                    throw raise;
                 }
+                throw raise;
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -359,7 +360,7 @@ namespace Tour
                 cbbxKind.Text = temp.LOAI;
                 cbboxProvince.Text = DataProvider.Ins.DB.TINHs.Where(x => x.ID == temp.IDTINH).FirstOrDefault().TEN;
                 img_data = temp.PICBI;
-                txtbxGia.Text =Converter.Instance.CurrencyDisplay((decimal) temp.GIA);
+                txtbxGia.Text = Converter.Instance.CurrencyDisplay((decimal)temp.GIA);
             }
         }
 

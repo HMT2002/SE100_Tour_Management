@@ -234,7 +234,8 @@ namespace Tour
                             tb_dd.IsDeleted = true;
                         }
                         DIADIEM diadiem = DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == id).FirstOrDefault();
-                        diadiem.IsDeleted = true;
+                        DataProvider.Ins.DB.tb_DIADIEM_DULICH.RemoveRange(DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x=>x.IDDIADIEM==diadiem.ID));
+                        DataProvider.Ins.DB.DIADIEMs.Remove(diadiem);
                         DataProvider.Ins.DB.SaveChanges();
                         showAll();
                         Clear();
