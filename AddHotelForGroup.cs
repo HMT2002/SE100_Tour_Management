@@ -18,7 +18,7 @@ namespace Tour
 
         ImageList listView_ImageList1 = new ImageList();
         ImageList listView_ImageList2 = new ImageList();
-
+        DOAN group = new DOAN();
         List<KHACHSAN> ListKhachSan = new List<KHACHSAN>();
         List<KHACHSAN> ListTatCaKhachSan = new List<KHACHSAN>();
 
@@ -122,6 +122,9 @@ namespace Tour
         {
             foreach(var tb_ks in DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.IDDOAN == ID))
             {
+                group = DataProvider.Ins.DB.DOANs.Where(x => x.ID == ID).FirstOrDefault();
+                group.GIA = group.GIA - DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.ID == tb_ks.ID).FirstOrDefault().KHACHSAN.GIA;
+
                 DataProvider.Ins.DB.tb_KHACHSAN.Remove(tb_ks);
             }
             DataProvider.Ins.DB.SaveChanges();
@@ -138,7 +141,8 @@ namespace Tour
 
                 DataProvider.Ins.DB.tb_KHACHSAN.Add(new tb_KHACHSAN() { ID = random1, IDKHACHSAN = khachsan.ID, IDDOAN = ID,IsDeleted=false });
 
-
+                group = DataProvider.Ins.DB.DOANs.Where(x => x.ID == ID).FirstOrDefault();
+                group.GIA = group.GIA + khachsan.GIA;
             }
 
             DataProvider.Ins.DB.SaveChanges();

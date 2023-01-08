@@ -82,10 +82,10 @@ namespace Tour
 
                 txtbxTenDoan.Text = dgvDoan.Rows[index].Cells["TEN"].Value.ToString();
 
-                decimal tong_gia_tour = Convert.ToDecimal(DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.IDTOUR == id_tour && x.IsDeleted == false).Select(x => x.DIADIEM.GIA).Sum());
-                decimal tong_gia_khach_san = Convert.ToDecimal(DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.IDDOAN == id && x.IsDeleted == false).Select(x => x.KHACHSAN.GIA).Sum() * thoi_han);
-                decimal tong_gia_phuong_tien = Convert.ToDecimal(DataProvider.Ins.DB.tb_PHUONGTIEN.Where(x => x.IDDOAN == id && x.IsDeleted == false).Select(x => x.PHUONGTIEN.GIA).Sum() * thoi_han);
-                txtbxChiPhi.Text = (tong_gia_khach_san + tong_gia_phuong_tien + tong_gia_tour).ToString();
+                decimal tong_gia_tour = Convert.ToDecimal(DataProvider.Ins.DB.TOURs.Where(x => x.ID == id_tour).FirstOrDefault().GIA);
+                //decimal tong_gia_khach_san = Convert.ToDecimal(DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.IDDOAN == id && x.IsDeleted == false).Select(x => x.KHACHSAN.GIA).Sum() * thoi_han);
+                //decimal tong_gia_phuong_tien = Convert.ToDecimal(DataProvider.Ins.DB.tb_PHUONGTIEN.Where(x => x.IDDOAN == id && x.IsDeleted == false).Select(x => x.PHUONGTIEN.GIA).Sum() * thoi_han);
+                txtbxChiPhi.Text = DataProvider.Ins.DB.DOANs.Where(x => x.ID == id).FirstOrDefault().GIA.ToString();
 
                 cbbxTour.Text = dgvDoan.Rows[index].Cells["TENTOUR"].Value.ToString();
                 dgvKhachHang.DataSource =IDAndNameTypeList.Instance.ListKhachHang(id);
@@ -267,7 +267,17 @@ namespace Tour
                         DataProvider.Ins.DB.CHIPHIs.Add(new CHIPHI() { ID = "0", PHICHOI = 0, PHIKHAC = 0, PHIAN = 0, TONG = 0, IsDeleted = false });
                         DataProvider.Ins.DB.SaveChanges();
                     }
-                    var doan = new DOAN() { ID = txtbxIDDoan.Text.Trim(), TEN = txtbxTenDoan.Text, NGAYKHOIHANH = datetimeNgayKhoiHanh.Value, NGAYKETTHUC = datetimeNgayKetThuc.Value, IDTOUR = ((TOUR)(cbbxTour.SelectedItem)).ID, IsDeleted = false };
+                    var doan = new DOAN()
+                    {
+                        ID = txtbxIDDoan.Text.Trim(),
+                        TEN = txtbxTenDoan.Text,
+                        NGAYKHOIHANH = datetimeNgayKhoiHanh.Value,
+                        NGAYKETTHUC = datetimeNgayKetThuc.Value,
+                        IDTOUR = ((TOUR)(cbbxTour.SelectedItem)).ID,
+                        IsDeleted = false,
+                        GIA = DataProvider.Ins.DB.TOURs.Where(x => x.ID == ((TOUR)(cbbxTour.SelectedItem)).ID).FirstOrDefault().GIA
+                    };
+                    //doan.GIA = DataProvider.Ins.DB.TOURs.Where(x => x.ID == ((TOUR)(cbbxTour.SelectedItem)).ID).FirstOrDefault().GIA;
                     DataProvider.Ins.DB.DOANs.Add(doan);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
