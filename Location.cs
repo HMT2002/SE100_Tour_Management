@@ -272,9 +272,9 @@ namespace Tour
 
                     diadiem.PICBI =img_data;
                     
-                    //diadiem.PHIAN = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxMeal.Text);
-                    //diadiem.PHICHOI = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxPlay.Text);
-                    //diadiem.PHIKHAC = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxOthers.Text);
+                    diadiem.PHIAN = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxMeal.Text);
+                    diadiem.PHICHOI = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxPlay.Text);
+                    diadiem.PHIKHAC = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxOthers.Text);
                     diadiem.GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text);
 
                     diadiem.CHITIET = rchtxtbxDetail.Text;
