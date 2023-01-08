@@ -389,6 +389,7 @@ namespace Tour
             this.txtbxId.PasswordChar = '\0';
             this.txtbxId.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.txtbxId.PlaceholderText = "";
+            this.txtbxId.ReadOnly = true;
             this.txtbxId.SelectedText = "";
             this.txtbxId.ShadowDecoration.BorderRadius = 10;
             this.txtbxId.ShadowDecoration.Depth = 15;

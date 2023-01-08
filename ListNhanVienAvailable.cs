@@ -64,7 +64,7 @@ namespace Tour
         {
             int index = e.RowIndex;
 
-            if (e.ColumnIndex == 5 && dgv_nhanvien.Rows[index].Cells["isAvailable"].Value.ToString() == "True")
+            try
             {
                 id = dgv_nhanvien.Rows[index].Cells["data_employeeid"].Value.ToString();
                 NHANVIEN temp_nv = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == id).FirstOrDefault();
@@ -74,6 +74,8 @@ namespace Tour
                 {
                     case DialogResult.OK:
                         var nvu = new tb_PHUTRACH() { ID = Converter.Instance.RandomString2(5), IDDOAN = doanid, IDNHANVIEN = temp_nv.ID, PHUTRACH = phutrach, IsDeleted = false };
+                        temp_nv.SLDI++;
+                        DataProvider.Ins.DB.SaveChanges();
                         DataProvider.Ins.DB.tb_PHUTRACH.Add(nvu);
                         seleted_nhanvien_phutrach = nvu.NHANVIEN.TEN;
                         temp_nv.isAvailable = false;
@@ -87,10 +89,19 @@ namespace Tour
 
                 }
             }
-            else
+            catch
             {
-                MessageBox.Show("IsNotAvailable");
+
             }
+
+            //if (e.ColumnIndex == 5 && dgv_nhanvien.Rows[index].Cells["isAvailable"].Value.ToString() == "True")
+            //{
+
+            //}
+            //else
+            //{
+            //    //MessageBox.Show("IsNotAvailable");
+            //}
         }
 
         private void bttExit_Click(object sender, EventArgs e)

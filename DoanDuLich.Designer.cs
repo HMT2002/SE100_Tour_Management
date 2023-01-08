@@ -319,7 +319,7 @@ namespace Tour
             this.RdbtnEnded.Location = new System.Drawing.Point(1083, 32);
             this.RdbtnEnded.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RdbtnEnded.Name = "RdbtnEnded";
-            this.RdbtnEnded.Size = new System.Drawing.Size(70, 21);
+            this.RdbtnEnded.Size = new System.Drawing.Size(68, 20);
             this.RdbtnEnded.TabIndex = 47;
             this.RdbtnEnded.Text = "Ended";
             this.RdbtnEnded.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -339,7 +339,7 @@ namespace Tour
             this.RdbtnOngoing.Location = new System.Drawing.Point(988, 32);
             this.RdbtnOngoing.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RdbtnOngoing.Name = "RdbtnOngoing";
-            this.RdbtnOngoing.Size = new System.Drawing.Size(83, 21);
+            this.RdbtnOngoing.Size = new System.Drawing.Size(79, 20);
             this.RdbtnOngoing.TabIndex = 46;
             this.RdbtnOngoing.Text = "Ongoing";
             this.RdbtnOngoing.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -359,7 +359,7 @@ namespace Tour
             this.RdbtnPlanning.Location = new System.Drawing.Point(892, 32);
             this.RdbtnPlanning.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RdbtnPlanning.Name = "RdbtnPlanning";
-            this.RdbtnPlanning.Size = new System.Drawing.Size(84, 21);
+            this.RdbtnPlanning.Size = new System.Drawing.Size(80, 20);
             this.RdbtnPlanning.TabIndex = 45;
             this.RdbtnPlanning.Text = "Planning";
             this.RdbtnPlanning.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -379,7 +379,7 @@ namespace Tour
             this.RdbtnAll.Location = new System.Drawing.Point(836, 32);
             this.RdbtnAll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RdbtnAll.Name = "RdbtnAll";
-            this.RdbtnAll.Size = new System.Drawing.Size(44, 21);
+            this.RdbtnAll.Size = new System.Drawing.Size(43, 20);
             this.RdbtnAll.TabIndex = 44;
             this.RdbtnAll.Text = "All";
             this.RdbtnAll.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -896,7 +896,7 @@ namespace Tour
             this.label7.ForeColor = System.Drawing.Color.BlueViolet;
             this.label7.Location = new System.Drawing.Point(479, 10);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(569, 55);
+            this.label7.Size = new System.Drawing.Size(556, 53);
             this.label7.TabIndex = 38;
             this.label7.Text = "GROUP MANAGEMENT";
             // 

@@ -50,7 +50,6 @@ namespace Tour
             this.txtbxSearchTicket = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.exitbtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -366,7 +365,6 @@ namespace Tour
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Controls.Add(this.exitbtn);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2Panel1.Location = new System.Drawing.Point(363, 0);
@@ -374,22 +372,6 @@ namespace Tour
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(451, 431);
             this.guna2Panel1.TabIndex = 30;
-            // 
-            // exitbtn
-            // 
-            this.exitbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.exitbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.exitbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.exitbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.exitbtn.FillColor = System.Drawing.Color.Red;
-            this.exitbtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.exitbtn.ForeColor = System.Drawing.Color.White;
-            this.exitbtn.Location = new System.Drawing.Point(418, 0);
-            this.exitbtn.Name = "exitbtn";
-            this.exitbtn.Size = new System.Drawing.Size(33, 29);
-            this.exitbtn.TabIndex = 22;
-            this.exitbtn.Text = "X";
-            this.exitbtn.Click += new System.EventHandler(this.exitbtn_Click);
             // 
             // LoginForm
             // 
@@ -401,7 +383,6 @@ namespace Tour
             this.ClientSize = new System.Drawing.Size(814, 431);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2TabControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LoginForm";
@@ -439,7 +420,6 @@ namespace Tour
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkbxShowPassword;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Button exitbtn;
     }
 }
 

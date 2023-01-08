@@ -167,10 +167,10 @@ namespace Tour
                 flag = false;
             }
 
-            if (DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault() != null)
-            {
-                flag = false;
-            }
+            //if (DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault() != null)
+            //{
+            //    flag = false;
+            //}
 
             return flag;
         }

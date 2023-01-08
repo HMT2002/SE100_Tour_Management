@@ -14,7 +14,7 @@ namespace Tour
 {
     public partial class AddLocationForTour : Form
     {
-        string ID,Gia_tour;
+        string ID;
 
         ImageList listView_ImageList1 = new ImageList();
         ImageList listView_ImageList2 = new ImageList();
@@ -130,6 +130,7 @@ namespace Tour
             {
                 tour = DataProvider.Ins.DB.TOURs.Where(x => x.ID == ID && x.IsDeleted == false).FirstOrDefault();
                 tour.GIA = tour.GIA - DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == tb_diadiem.IDDIADIEM).FirstOrDefault().GIA;
+
                 DataProvider.Ins.DB.tb_DIADIEM_DULICH.Remove(tb_diadiem);
             }
             DataProvider.Ins.DB.SaveChanges();
@@ -146,6 +147,7 @@ namespace Tour
                 tour = DataProvider.Ins.DB.TOURs.Where(x => x.ID == ID && x.IsDeleted == false).FirstOrDefault();
                 tour.GIA = tour.GIA + DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == diadiem.ID).FirstOrDefault().GIA;
                 DataProvider.Ins.DB.SaveChanges();
+
             }
 
             this.Close();

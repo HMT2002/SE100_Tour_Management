@@ -20,10 +20,10 @@ namespace Tour
 
         ImageList listView_ImageList1 = new ImageList();
         ImageList listView_ImageList2 = new ImageList();
-
+        DOAN group = new DOAN();
         List<PHUONGTIEN> ListPhuongTien = new List<PHUONGTIEN>();
         List<PHUONGTIEN> ListTatCaPhuongTien = new List<PHUONGTIEN>();
-
+        public decimal tong_GIA = 0;
 
         public AddVehicalForGroup(string id)
         {
@@ -76,8 +76,9 @@ namespace Tour
         {
             foreach(var tb_pt in DataProvider.Ins.DB.tb_PHUONGTIEN.Where(x => x.IDDOAN == ID))
             {
+                group = DataProvider.Ins.DB.DOANs.Where(x => x.ID == ID).FirstOrDefault();
+                group.GIA = group.GIA - tb_pt.PHUONGTIEN.GIA;
                 DataProvider.Ins.DB.tb_PHUONGTIEN.Remove(tb_pt);
-
             }
             DataProvider.Ins.DB.SaveChanges();
 
@@ -89,11 +90,13 @@ namespace Tour
                 {
                     random1 = Converter.Instance.RandomString2(5);
                 }
-
+                tong_GIA += (decimal)phuongtien.GIA;
                 DataProvider.Ins.DB.tb_PHUONGTIEN.Add(new tb_PHUONGTIEN() { ID = random1, IDPHUONGTIEN = phuongtien.ID, IDDOAN = ID,IsDeleted=false });
+                group = DataProvider.Ins.DB.DOANs.Where(x => x.ID == ID).FirstOrDefault();
+                group.GIA = group.GIA + phuongtien.GIA;
+               
             }
             DataProvider.Ins.DB.SaveChanges();
-
 
             this.Close();
         }

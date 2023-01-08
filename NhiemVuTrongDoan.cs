@@ -23,6 +23,8 @@ namespace Tour
         private string waiter = "";
         private string translator = "";
 
+        DOAN temp_doan = new DOAN();
+
         public NhiemVuTrongDoan()
         {
             InitializeComponent();
@@ -33,7 +35,7 @@ namespace Tour
             doanID = ID_doan;
             InitializeComponent();
             textBox1.Text = doanID;
-
+            temp_doan=DataProvider.Ins.DB.DOANs.Where(X=>X.ID==doanID).FirstOrDefault();
 
             LoadData();
 
@@ -41,7 +43,7 @@ namespace Tour
 
         private void LoadData()
         {
-            var tb_phutrach = DataProvider.Ins.DB.tb_PHUTRACH.Where(x => x.IDDOAN == doanID && x.IsDeleted == false).ToList();
+            var tb_phutrach = DataProvider.Ins.DB.tb_PHUTRACH.Where(x => x.IDDOAN == doanID && x.IsDeleted == false&&x.DOAN.NGAYKETTHUC<DateTime.Today).ToList();
             foreach (var tb in tb_phutrach)
             {
                 if (tb.PHUTRACH == "Tour Guide")
@@ -127,7 +129,7 @@ namespace Tour
                 if (nv.seleted_nhanvien_phutrach.CompareTo(string.Empty) != 0)
                 {
                     txtDriver.Text = nv.seleted_nhanvien_phutrach;
-
+                    
                 }
                 this.Show();
             }
@@ -225,10 +227,6 @@ namespace Tour
                     break;
                 default: break;
             }
-
-
-
-
         }
 
         private void txtWaitor_Click(object sender, EventArgs e)
@@ -278,7 +276,11 @@ namespace Tour
                 try
                 {
                     var phutrach = DataProvider.Ins.DB.tb_PHUTRACH.Where(x => x.IDDOAN == doanID && x.PHUTRACH == role).FirstOrDefault();
+
                     phutrach.NHANVIEN.isAvailable = true;
+
+                    phutrach.NHANVIEN.SLDI--;
+
                     DataProvider.Ins.DB.SaveChanges();
 
                     DataProvider.Ins.DB.tb_PHUTRACH.Remove(phutrach);

@@ -29,6 +29,8 @@ namespace Tour
 
         public RegisterAccount()
         {
+            /*String a = Converter.Instance.MD5Decrypt("f4pA3ImzdFIU5/zNCSNOuA==");
+            txbHo.Text = Converter.Instance.DecryptEncrypt("Q5YjLGwD3qo=");*/
             InitializeComponent();
         }
 
@@ -126,7 +128,7 @@ namespace Tour
                         id = "NV" + id_num.ToString();
                     }
 
-                    var nv = new NHANVIEN() { ID = id,  TEN = txbHo.Text+" "+ txbTen.Text, SDT = txbSDT.Text, MAIL = txbGmail.Text,PICBI=img_data,IsDeleted=false,isAvailable=true,IDACC= id };
+                    var nv = new NHANVIEN() { ID = id,  TEN = txbHo.Text+" "+ txbTen.Text, SDT = txbSDT.Text, MAIL = txbGmail.Text,PICBI=img_data,IsDeleted=false,isAvailable=true,SLDI = 0,IDACC= id };
                     var account = new ACCOUNT() { ACC = txbGmail.Text, PASS = Converter.Instance.EncryptPassword( (txbPass.Text)), ID = id,IsDeleted=false,ACCROLE="Employee" };
                     DataProvider.Ins.DB.ACCOUNTs.Add(account);
                     DataProvider.Ins.DB.NHANVIENs.Add(nv);

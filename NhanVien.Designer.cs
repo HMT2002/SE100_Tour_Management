@@ -29,9 +29,9 @@ namespace Tour
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
@@ -47,13 +47,14 @@ namespace Tour
             this.txtbxPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.pcbxAvatar = new Guna.UI2.WinForms.Guna2PictureBox();
             this.cbbxRole = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.checkbxShowPassword = new System.Windows.Forms.CheckBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.data_employeeid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.checkbxShowPassword = new System.Windows.Forms.CheckBox();
+            this.SLDI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_nhanvien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvatar)).BeginInit();
             this.SuspendLayout();
@@ -139,23 +140,23 @@ namespace Tour
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(937, 345);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 21);
+            this.label5.Size = new System.Drawing.Size(96, 28);
             this.label5.TabIndex = 30;
             this.label5.Text = "Search By";
             // 
             // dgv_nhanvien
             // 
             this.dgv_nhanvien.AllowUserToResizeRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.dgv_nhanvien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_nhanvien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgv_nhanvien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_nhanvien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_nhanvien.ColumnHeadersHeight = 35;
             this.dgv_nhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgv_nhanvien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -164,15 +165,16 @@ namespace Tour
             this.TEN,
             this.SDT,
             this.MAIL,
-            this.isAvailable});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_nhanvien.DefaultCellStyle = dataGridViewCellStyle12;
+            this.isAvailable,
+            this.SLDI});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_nhanvien.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_nhanvien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.dgv_nhanvien.Location = new System.Drawing.Point(12, 386);
             this.dgv_nhanvien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -382,6 +384,21 @@ namespace Tour
             this.cbbxRole.StartIndex = 0;
             this.cbbxRole.TabIndex = 39;
             // 
+            // checkbxShowPassword
+            // 
+            this.checkbxShowPassword.AutoSize = true;
+            this.checkbxShowPassword.BackColor = System.Drawing.Color.Transparent;
+            this.checkbxShowPassword.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkbxShowPassword.ForeColor = System.Drawing.Color.Black;
+            this.checkbxShowPassword.Location = new System.Drawing.Point(1015, 284);
+            this.checkbxShowPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.checkbxShowPassword.Name = "checkbxShowPassword";
+            this.checkbxShowPassword.Size = new System.Drawing.Size(195, 33);
+            this.checkbxShowPassword.TabIndex = 40;
+            this.checkbxShowPassword.Text = "Show password";
+            this.checkbxShowPassword.UseVisualStyleBackColor = false;
+            this.checkbxShowPassword.CheckedChanged += new System.EventHandler(this.checkbxShowPassword_CheckedChanged);
+            // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -432,24 +449,17 @@ namespace Tour
             this.isAvailable.MinimumWidth = 6;
             this.isAvailable.Name = "isAvailable";
             // 
-            // checkbxShowPassword
+            // SLDI
             // 
-            this.checkbxShowPassword.AutoSize = true;
-            this.checkbxShowPassword.BackColor = System.Drawing.Color.Transparent;
-            this.checkbxShowPassword.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkbxShowPassword.ForeColor = System.Drawing.Color.Black;
-            this.checkbxShowPassword.Location = new System.Drawing.Point(1015, 284);
-            this.checkbxShowPassword.Margin = new System.Windows.Forms.Padding(2);
-            this.checkbxShowPassword.Name = "checkbxShowPassword";
-            this.checkbxShowPassword.Size = new System.Drawing.Size(156, 26);
-            this.checkbxShowPassword.TabIndex = 40;
-            this.checkbxShowPassword.Text = "Show password";
-            this.checkbxShowPassword.UseVisualStyleBackColor = false;
-            this.checkbxShowPassword.CheckedChanged += new System.EventHandler(this.checkbxShowPassword_CheckedChanged);
+            this.SLDI.DataPropertyName = "SLDI";
+            this.SLDI.FillWeight = 16.19263F;
+            this.SLDI.HeaderText = "SLDI";
+            this.SLDI.MinimumWidth = 6;
+            this.SLDI.Name = "SLDI";
             // 
             // NhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
@@ -501,12 +511,13 @@ namespace Tour
         private Guna.UI2.WinForms.Guna2TextBox txtbxPassword;
         private Guna.UI2.WinForms.Guna2PictureBox pcbxAvatar;
         private Guna.UI2.WinForms.Guna2ComboBox cbbxRole;
+        private System.Windows.Forms.CheckBox checkbxShowPassword;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn data_employeeid;
         private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAIL;
         private System.Windows.Forms.DataGridViewTextBoxColumn isAvailable;
-        private System.Windows.Forms.CheckBox checkbxShowPassword;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SLDI;
     }
 }

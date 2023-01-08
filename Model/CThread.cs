@@ -28,6 +28,7 @@ namespace Tour.Model
             foreach(var pt in DataProvider.Ins.DB.tb_PHUTRACH.Where(x => x.DOAN.NGAYKETTHUC < DateTime.Today && x.IsDeleted == false))
             {
                 pt.NHANVIEN.isAvailable= true;
+                pt.IsDeleted= true;
             }
             DataProvider.Ins.DB.SaveChanges();
 

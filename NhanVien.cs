@@ -288,7 +288,7 @@ namespace Tour
                 {
                     string randomcode = Converter.Instance.RandomString2(5);
 
-                    var nv = new NHANVIEN() { ID = txtbxID.Text, TEN = txtbxName.Text, MAIL = txtbxMail.Text, SDT = txtbxSDT.Text, IsDeleted = false, isAvailable = true,PICBI=img_data,IDACC=id };
+                    var nv = new NHANVIEN() { ID = txtbxID.Text, TEN = txtbxName.Text, MAIL = txtbxMail.Text, SDT = txtbxSDT.Text, IsDeleted = false, isAvailable = true,PICBI=img_data,IDACC=id,SLDI=0 };
                     var account = new ACCOUNT() { ACC = txtbxMail.Text, PASS = Converter.Instance.EncryptPassword((txtbxPassword.Text.Trim())), ID = id, IsDeleted = false, ACCROLE = "Employee" };
                     DataProvider.Ins.DB.ACCOUNTs.Add(account);
                     DataProvider.Ins.DB.NHANVIENs.Add(nv);

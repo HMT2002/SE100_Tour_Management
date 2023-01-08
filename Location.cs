@@ -97,6 +97,7 @@ namespace Tour
             txtbxMeal.Text = Converter.Instance.CurrencyDisplay((decimal)0.0);
             txtbxPlay.Text = Converter.Instance.CurrencyDisplay((decimal)0.0);
             txtbxOthers.Text = Converter.Instance.CurrencyDisplay((decimal)0.0);
+
         }
         public void showAll()
         {
@@ -110,6 +111,22 @@ namespace Tour
             if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null||cbboxProvince.SelectedIndex==-1)
             {
                 flag= false;
+            }
+
+            if (DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == id).FirstOrDefault() != null)
+            {
+                Notify.NotificationField(txtbxId);
+                flag = false;
+            }
+            return flag;
+        }
+
+        public bool CheckData2()
+        {
+            bool flag = true;
+            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null || cbboxProvince.SelectedIndex == -1)
+            {
+                flag = false;
             }
 
             if (DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == id).FirstOrDefault() == null)
@@ -202,30 +219,31 @@ namespace Tour
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (CheckData())
+            if (CheckData2())
             {
-                if (id == null || id.CompareTo(string.Empty) == 0)
-                {
-                    return;
-                }
                 if (MessageBox.Show("Are you sure to delete this?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-
+                    if (id == null || id.CompareTo(string.Empty) == 0)
+                    {
+                        return;
+                    }
                     try
                     {
+                        foreach (var tb_dd in DataProvider.Ins.DB.tb_DIADIEM_DULICH.Where(x => x.IDDIADIEM == id))
+                        {
+                            tb_dd.IsDeleted = true;
+                        }
                         DIADIEM diadiem = DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == id).FirstOrDefault();
                         diadiem.IsDeleted = true;
                         DataProvider.Ins.DB.SaveChanges();
                         showAll();
                         Clear();
-
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
-
                 }
             }
 
@@ -233,7 +251,7 @@ namespace Tour
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (CheckData() == true)
+            if (CheckData2() == true)
             {
                 if (id == null || id.CompareTo(string.Empty) == 0)
                 {
@@ -250,13 +268,15 @@ namespace Tour
                     var diadiem = DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == id).FirstOrDefault();
                     diadiem.TEN = txtbxName.Text;
                     diadiem.IDTINH = cbboxProvince.SelectedIndex.ToString();
-                    diadiem.CHITIET = rchtxtbxDetail.Text;
 
                     diadiem.PICBI =img_data;
-                    diadiem.GIA= Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text);
+                    
                     //diadiem.PHIAN = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxMeal.Text);
                     //diadiem.PHICHOI = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxPlay.Text);
                     //diadiem.PHIKHAC = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxOthers.Text);
+                    diadiem.GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxGia.Text);
+
+                    diadiem.CHITIET = rchtxtbxDetail.Text;
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
                     Clear();
@@ -284,17 +304,18 @@ namespace Tour
                 txtbxName.Text = temp.TEN;
                 cbboxProvince.Text = DataProvider.Ins.DB.TINHs.Where(x => x.ID == temp.IDTINH).FirstOrDefault().TEN;
                 img_data = temp.PICBI;
-                rchtxtbxDetail.Text = temp.CHITIET;
-
+                
                 txtbxMeal.Text = Converter.Instance.CurrencyDisplay((decimal)temp.PHIAN);
                 txtbxPlay.Text = Converter.Instance.CurrencyDisplay((decimal)temp.PHICHOI);
                 txtbxOthers.Text = Converter.Instance.CurrencyDisplay((decimal)temp.PHIKHAC);
+                txtbxGia.Text = Converter.Instance.CurrencyDisplay((decimal)temp.GIA);
+                rchtxtbxDetail.Text = temp.CHITIET;
 
-                decimal phian = Convert.ToDecimal(temp.PHIAN);
-                decimal phichoi = Convert.ToDecimal(temp.PHICHOI);
-                decimal phikhac = Convert.ToDecimal(temp.PHIKHAC);
+                //decimal phian = Convert.ToDecimal(temp.PHIAN);
+                //decimal phichoi = Convert.ToDecimal(temp.PHICHOI);
+                //decimal phikhac = Convert.ToDecimal(temp.PHIKHAC);
 
-                txtbxGia.Text = Converter.Instance.CurrencyDisplay(phian + phichoi + phikhac);
+                //txtbxGia.Text = Converter.Instance.CurrencyDisplay(phian + phichoi + phikhac);
 
             }
         }
@@ -380,23 +401,10 @@ namespace Tour
             {
                 return;
             }
-            //total = Decimal.Parse(txtbxMeal.Text);
-            //txtbxGia.Text = total.ToString();
-
             decimal phian = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxMeal.Text);
             decimal phichoi = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxPlay.Text);
             decimal phikhac = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxOthers.Text);
             txtbxGia.Text = Converter.Instance.CurrencyDisplay(phian + phichoi + phikhac);
-
-            //decimal a, b, c;
-            //Decimal.TryParse(txtbxMeal.Text,out a);
-            //Decimal.TryParse(txtbxPlay.Text, out b);
-            //Decimal.TryParse(txtbxOthers.Text, out c);
-
-            ////decimal a = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxMeal.Text);
-            ////decimal b = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxPlay.Text);
-            ////decimal c = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxOthers.Text);
-            //txtbxGia.Text = (a + b + c).ToString();
         }
 
         private void txtbxPlay_Leave(object sender, EventArgs e)
@@ -405,25 +413,18 @@ namespace Tour
             {
                 return;
             }
-            //total = Decimal.Parse(txtbxMeal.Text);
-            //txtbxGia.Text = total.ToString();
-            //decimal a, b, c;
-            //Decimal.TryParse(txtbxMeal.Text, out a);
-            //Decimal.TryParse(txtbxPlay.Text, out b);
-            //Decimal.TryParse(txtbxOthers.Text, out c);
-            //decimal a = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxMeal.Text);
-            //decimal b = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxPlay.Text);
-            //decimal c = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxOthers.Text);
-            //txtbxGia.Text = (a + b + c).ToString();
-
             decimal phian = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxMeal.Text);
             decimal phichoi = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxPlay.Text);
-            decimal phikhac = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxOthers.Text);  
+            decimal phikhac = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxOthers.Text);
             txtbxGia.Text = Converter.Instance.CurrencyDisplay(phian + phichoi + phikhac);
         }
 
         private void txtbxOthers_Leave(object sender, EventArgs e)
         {
+            if (txtbxMeal.Text == "")
+            {
+                return;
+            }
             decimal phian = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxMeal.Text);
             decimal phichoi = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxPlay.Text);
             decimal phikhac = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(txtbxOthers.Text);
