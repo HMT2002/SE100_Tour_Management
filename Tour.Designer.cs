@@ -70,9 +70,9 @@
             this.groupBox1.Controls.Add(this.dgv_trip);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(16, 476);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1568, 672);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
@@ -108,7 +108,7 @@
             this.dgv_trip.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_trip.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_trip.Location = new System.Drawing.Point(8, 31);
-            this.dgv_trip.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_trip.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_trip.Name = "dgv_trip";
             this.dgv_trip.RowHeadersVisible = false;
             this.dgv_trip.RowHeadersWidth = 50;
@@ -182,7 +182,7 @@
             // 
             this.tb_search.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_search.Location = new System.Drawing.Point(856, 14);
-            this.tb_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_search.Margin = new System.Windows.Forms.Padding(4);
             this.tb_search.Name = "tb_search";
             this.tb_search.Size = new System.Drawing.Size(475, 42);
             this.tb_search.TabIndex = 19;
@@ -205,9 +205,9 @@
             this.groupBox2.Controls.Add(this.lb_idtour);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(21, 116);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(1563, 279);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
@@ -224,7 +224,7 @@
             this.cb_typetour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cb_typetour.ItemHeight = 30;
             this.cb_typetour.Location = new System.Drawing.Point(185, 143);
-            this.cb_typetour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_typetour.Margin = new System.Windows.Forms.Padding(4);
             this.cb_typetour.Name = "cb_typetour";
             this.cb_typetour.Size = new System.Drawing.Size(471, 36);
             this.cb_typetour.TabIndex = 3;
@@ -233,7 +233,7 @@
             // guna2VSeparator1
             // 
             this.guna2VSeparator1.Location = new System.Drawing.Point(713, 21);
-            this.guna2VSeparator1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2VSeparator1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2VSeparator1.Name = "guna2VSeparator1";
             this.guna2VSeparator1.Size = new System.Drawing.Size(13, 251);
             this.guna2VSeparator1.TabIndex = 56;
@@ -270,7 +270,7 @@
             this.tb_nametour.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tb_nametour.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_nametour.Location = new System.Drawing.Point(185, 76);
-            this.tb_nametour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_nametour.Margin = new System.Windows.Forms.Padding(4);
             this.tb_nametour.Name = "tb_nametour";
             this.tb_nametour.PasswordChar = '\0';
             this.tb_nametour.PlaceholderText = "";
@@ -291,11 +291,10 @@
             this.tb_price.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tb_price.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_price.Location = new System.Drawing.Point(185, 206);
-            this.tb_price.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_price.Margin = new System.Windows.Forms.Padding(4);
             this.tb_price.Name = "tb_price";
             this.tb_price.PasswordChar = '\0';
             this.tb_price.PlaceholderText = "";
-            this.tb_price.ReadOnly = true;
             this.tb_price.SelectedText = "";
             this.tb_price.Size = new System.Drawing.Size(472, 39);
             this.tb_price.TabIndex = 2;
@@ -307,7 +306,7 @@
             this.lstbxLocation.FormattingEnabled = true;
             this.lstbxLocation.ItemHeight = 22;
             this.lstbxLocation.Location = new System.Drawing.Point(789, 30);
-            this.lstbxLocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lstbxLocation.Margin = new System.Windows.Forms.Padding(4);
             this.lstbxLocation.Name = "lstbxLocation";
             this.lstbxLocation.Size = new System.Drawing.Size(692, 202);
             this.lstbxLocation.TabIndex = 52;
@@ -317,7 +316,7 @@
             this.tb_idtrip.Enabled = false;
             this.tb_idtrip.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_idtrip.Location = new System.Drawing.Point(185, 30);
-            this.tb_idtrip.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_idtrip.Margin = new System.Windows.Forms.Padding(4);
             this.tb_idtrip.MaxLength = 15;
             this.tb_idtrip.Name = "tb_idtrip";
             this.tb_idtrip.ReadOnly = true;
@@ -495,7 +494,7 @@
             this.guna2Panel1.Controls.Add(this.btn_update);
             this.guna2Panel1.Controls.Add(this.btn_add);
             this.guna2Panel1.Location = new System.Drawing.Point(21, 395);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1563, 74);
             this.guna2Panel1.TabIndex = 60;
