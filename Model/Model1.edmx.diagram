@@ -41,7 +41,6 @@
         <AssociationConnector Association="QL_TOUR_DU_LICHModel.LK_PHUONGTIEN_PHUONGTIEN" ManuallyRouted="false" />
         <AssociationConnector Association="QL_TOUR_DU_LICHModel.LK_PHUONGTIEN_TINH" ManuallyRouted="false" />
         <AssociationConnector Association="QL_TOUR_DU_LICHModel.LK_TOUR_DULICH" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.sysdiagram" Width="1.5" PointX="0.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

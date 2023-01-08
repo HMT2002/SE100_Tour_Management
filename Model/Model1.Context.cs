@@ -44,7 +44,6 @@ namespace Tour.Model
         public virtual DbSet<TINH> TINHs { get; set; }
         public virtual DbSet<TOUR> TOURs { get; set; }
         public virtual DbSet<VE> VEs { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
