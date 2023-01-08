@@ -69,9 +69,11 @@
             // 
             this.groupBox1.Controls.Add(this.dgv_trip);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 387);
+            this.groupBox1.Location = new System.Drawing.Point(16, 476);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1176, 546);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(1568, 672);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tour list";
@@ -105,12 +107,13 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_trip.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_trip.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgv_trip.Location = new System.Drawing.Point(6, 25);
+            this.dgv_trip.Location = new System.Drawing.Point(8, 31);
+            this.dgv_trip.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgv_trip.Name = "dgv_trip";
             this.dgv_trip.RowHeadersVisible = false;
             this.dgv_trip.RowHeadersWidth = 50;
             this.dgv_trip.RowTemplate.Height = 100;
-            this.dgv_trip.Size = new System.Drawing.Size(1164, 515);
+            this.dgv_trip.Size = new System.Drawing.Size(1552, 634);
             this.dgv_trip.TabIndex = 2;
             this.dgv_trip.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_trip.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -178,9 +181,10 @@
             // tb_search
             // 
             this.tb_search.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_search.Location = new System.Drawing.Point(642, 11);
+            this.tb_search.Location = new System.Drawing.Point(856, 14);
+            this.tb_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_search.Name = "tb_search";
-            this.tb_search.Size = new System.Drawing.Size(357, 35);
+            this.tb_search.Size = new System.Drawing.Size(475, 42);
             this.tb_search.TabIndex = 19;
             this.tb_search.TextChanged += new System.EventHandler(this.tb_search_TextChanged_1);
             this.tb_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_search_KeyPress);
@@ -200,9 +204,11 @@
             this.groupBox2.Controls.Add(this.lb_price);
             this.groupBox2.Controls.Add(this.lb_idtour);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(16, 94);
+            this.groupBox2.Location = new System.Drawing.Point(21, 116);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1172, 227);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(1563, 279);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tour details";
@@ -222,17 +228,19 @@
             "Vacation",
             "Crusine",
             "Culture"});
-            this.cb_typetour.Location = new System.Drawing.Point(139, 116);
+            this.cb_typetour.Location = new System.Drawing.Point(185, 143);
+            this.cb_typetour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_typetour.Name = "cb_typetour";
-            this.cb_typetour.Size = new System.Drawing.Size(354, 36);
-            this.cb_typetour.TabIndex = 3;
+            this.cb_typetour.Size = new System.Drawing.Size(471, 36);
+            this.cb_typetour.TabIndex = 2;
             this.cb_typetour.Enter += new System.EventHandler(this.cb_typetour_Enter);
             // 
             // guna2VSeparator1
             // 
-            this.guna2VSeparator1.Location = new System.Drawing.Point(535, 17);
+            this.guna2VSeparator1.Location = new System.Drawing.Point(713, 21);
+            this.guna2VSeparator1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2VSeparator1.Name = "guna2VSeparator1";
-            this.guna2VSeparator1.Size = new System.Drawing.Size(10, 204);
+            this.guna2VSeparator1.Size = new System.Drawing.Size(13, 251);
             this.guna2VSeparator1.TabIndex = 56;
             // 
             // btnAddLocation
@@ -247,10 +255,10 @@
             this.btnAddLocation.ForeColor = System.Drawing.Color.Black;
             this.btnAddLocation.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnAddLocation.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnAddLocation.Location = new System.Drawing.Point(1117, 24);
-            this.btnAddLocation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddLocation.Location = new System.Drawing.Point(1489, 30);
+            this.btnAddLocation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddLocation.Name = "btnAddLocation";
-            this.btnAddLocation.Size = new System.Drawing.Size(50, 41);
+            this.btnAddLocation.Size = new System.Drawing.Size(67, 50);
             this.btnAddLocation.TabIndex = 55;
             this.btnAddLocation.Text = "+";
             this.btnAddLocation.Click += new System.EventHandler(this.btnAddLocation_Click);
@@ -266,13 +274,14 @@
             this.tb_nametour.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_nametour.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tb_nametour.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb_nametour.Location = new System.Drawing.Point(139, 62);
+            this.tb_nametour.Location = new System.Drawing.Point(185, 76);
+            this.tb_nametour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_nametour.Name = "tb_nametour";
             this.tb_nametour.PasswordChar = '\0';
             this.tb_nametour.PlaceholderText = "";
             this.tb_nametour.SelectedText = "";
-            this.tb_nametour.Size = new System.Drawing.Size(354, 36);
-            this.tb_nametour.TabIndex = 45;
+            this.tb_nametour.Size = new System.Drawing.Size(472, 44);
+            this.tb_nametour.TabIndex = 1;
             this.tb_nametour.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_nametour_KeyPress);
             // 
             // tb_price
@@ -286,34 +295,38 @@
             this.tb_price.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_price.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tb_price.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb_price.Location = new System.Drawing.Point(139, 167);
+            this.tb_price.Location = new System.Drawing.Point(185, 206);
+            this.tb_price.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_price.Name = "tb_price";
             this.tb_price.PasswordChar = '\0';
             this.tb_price.PlaceholderText = "";
             this.tb_price.SelectedText = "";
-            this.tb_price.Size = new System.Drawing.Size(354, 32);
-            this.tb_price.TabIndex = 2;
+            this.tb_price.Size = new System.Drawing.Size(472, 39);
+            this.tb_price.TabIndex = 3;
             this.tb_price.TextChanged += new System.EventHandler(this.tb_price_TextChanged);
             this.tb_price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_price_KeyPress);
             // 
             // lstbxLocation
             // 
             this.lstbxLocation.FormattingEnabled = true;
-            this.lstbxLocation.ItemHeight = 19;
-            this.lstbxLocation.Location = new System.Drawing.Point(592, 24);
+            this.lstbxLocation.ItemHeight = 22;
+            this.lstbxLocation.Location = new System.Drawing.Point(789, 30);
+            this.lstbxLocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstbxLocation.Name = "lstbxLocation";
-            this.lstbxLocation.Size = new System.Drawing.Size(520, 156);
+            this.lstbxLocation.Size = new System.Drawing.Size(692, 180);
             this.lstbxLocation.TabIndex = 52;
+            this.lstbxLocation.TabStop = false;
             // 
             // tb_idtrip
             // 
             this.tb_idtrip.Enabled = false;
             this.tb_idtrip.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_idtrip.Location = new System.Drawing.Point(139, 24);
+            this.tb_idtrip.Location = new System.Drawing.Point(185, 30);
+            this.tb_idtrip.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_idtrip.MaxLength = 15;
             this.tb_idtrip.Name = "tb_idtrip";
             this.tb_idtrip.ReadOnly = true;
-            this.tb_idtrip.Size = new System.Drawing.Size(354, 26);
+            this.tb_idtrip.Size = new System.Drawing.Size(471, 30);
             this.tb_idtrip.TabIndex = 1;
             this.tb_idtrip.Enter += new System.EventHandler(this.tb_idtrip_Enter);
             // 
@@ -321,9 +334,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(18, 123);
+            this.label4.Location = new System.Drawing.Point(24, 151);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 19);
+            this.label4.Size = new System.Drawing.Size(106, 22);
             this.label4.TabIndex = 26;
             this.label4.Text = "Type of tour";
             // 
@@ -331,9 +345,10 @@
             // 
             this.lb_idtrip.AutoSize = true;
             this.lb_idtrip.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_idtrip.Location = new System.Drawing.Point(18, 26);
+            this.lb_idtrip.Location = new System.Drawing.Point(24, 32);
+            this.lb_idtrip.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_idtrip.Name = "lb_idtrip";
-            this.lb_idtrip.Size = new System.Drawing.Size(57, 19);
+            this.lb_idtrip.Size = new System.Drawing.Size(72, 22);
             this.lb_idtrip.TabIndex = 20;
             this.lb_idtrip.Text = "Tour ID";
             // 
@@ -341,9 +356,10 @@
             // 
             this.lb_price.AutoSize = true;
             this.lb_price.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_price.Location = new System.Drawing.Point(18, 180);
+            this.lb_price.Location = new System.Drawing.Point(24, 222);
+            this.lb_price.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_price.Name = "lb_price";
-            this.lb_price.Size = new System.Drawing.Size(40, 19);
+            this.lb_price.Size = new System.Drawing.Size(52, 22);
             this.lb_price.TabIndex = 5;
             this.lb_price.Text = "Price";
             // 
@@ -351,9 +367,10 @@
             // 
             this.lb_idtour.AutoSize = true;
             this.lb_idtour.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_idtour.Location = new System.Drawing.Point(17, 72);
+            this.lb_idtour.Location = new System.Drawing.Point(23, 89);
+            this.lb_idtour.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_idtour.Name = "lb_idtour";
-            this.lb_idtour.Size = new System.Drawing.Size(78, 19);
+            this.lb_idtour.Size = new System.Drawing.Size(98, 22);
             this.lb_idtour.TabIndex = 0;
             this.lb_idtour.Text = "Tour Name";
             // 
@@ -362,9 +379,10 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(318, 9);
+            this.label8.Location = new System.Drawing.Point(424, 11);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(596, 76);
+            this.label8.Size = new System.Drawing.Size(795, 94);
             this.label8.TabIndex = 44;
             this.label8.Text = "TOUR MANAGEMENT";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -383,10 +401,10 @@
             this.cbbxSearchType.Items.AddRange(new object[] {
             "ID",
             "NAME"});
-            this.cbbxSearchType.Location = new System.Drawing.Point(1005, 10);
-            this.cbbxSearchType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbbxSearchType.Location = new System.Drawing.Point(1340, 12);
+            this.cbbxSearchType.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.cbbxSearchType.Name = "cbbxSearchType";
-            this.cbbxSearchType.Size = new System.Drawing.Size(132, 36);
+            this.cbbxSearchType.Size = new System.Drawing.Size(175, 36);
             this.cbbxSearchType.StartIndex = 0;
             this.cbbxSearchType.TabIndex = 45;
             // 
@@ -402,10 +420,10 @@
             this.btn_newid.ForeColor = System.Drawing.Color.Black;
             this.btn_newid.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btn_newid.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btn_newid.Location = new System.Drawing.Point(418, 10);
-            this.btn_newid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_newid.Location = new System.Drawing.Point(557, 12);
+            this.btn_newid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_newid.Name = "btn_newid";
-            this.btn_newid.Size = new System.Drawing.Size(99, 41);
+            this.btn_newid.Size = new System.Drawing.Size(132, 50);
             this.btn_newid.TabIndex = 56;
             this.btn_newid.Text = "Clear";
             this.btn_newid.Click += new System.EventHandler(this.btn_newid_Click);
@@ -423,10 +441,10 @@
             this.btn_delete.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btn_delete.HoverState.ForeColor = System.Drawing.Color.White;
             this.btn_delete.Image = global::Tour.Properties.Resources.deleteicon;
-            this.btn_delete.Location = new System.Drawing.Point(267, 10);
-            this.btn_delete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_delete.Location = new System.Drawing.Point(356, 12);
+            this.btn_delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(123, 41);
+            this.btn_delete.Size = new System.Drawing.Size(164, 50);
             this.btn_delete.TabIndex = 59;
             this.btn_delete.Text = "DELETE";
             this.btn_delete.Click += new System.EventHandler(this.delete_Click);
@@ -444,10 +462,10 @@
             this.btn_update.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btn_update.HoverState.ForeColor = System.Drawing.Color.White;
             this.btn_update.Image = global::Tour.Properties.Resources.update;
-            this.btn_update.Location = new System.Drawing.Point(140, 10);
-            this.btn_update.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_update.Location = new System.Drawing.Point(187, 12);
+            this.btn_update.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(123, 41);
+            this.btn_update.Size = new System.Drawing.Size(164, 50);
             this.btn_update.TabIndex = 58;
             this.btn_update.Text = "UPDATE";
             this.btn_update.Click += new System.EventHandler(this.update_Click);
@@ -465,10 +483,10 @@
             this.btn_add.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btn_add.HoverState.ForeColor = System.Drawing.Color.White;
             this.btn_add.Image = global::Tour.Properties.Resources.addp;
-            this.btn_add.Location = new System.Drawing.Point(13, 10);
-            this.btn_add.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_add.Location = new System.Drawing.Point(17, 12);
+            this.btn_add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(123, 41);
+            this.btn_add.Size = new System.Drawing.Size(164, 50);
             this.btn_add.TabIndex = 57;
             this.btn_add.Text = "ADD";
             this.btn_add.Click += new System.EventHandler(this.add_Click);
@@ -481,24 +499,25 @@
             this.guna2Panel1.Controls.Add(this.tb_search);
             this.guna2Panel1.Controls.Add(this.btn_update);
             this.guna2Panel1.Controls.Add(this.btn_add);
-            this.guna2Panel1.Location = new System.Drawing.Point(16, 321);
+            this.guna2Panel1.Location = new System.Drawing.Point(21, 395);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1172, 60);
+            this.guna2Panel1.Size = new System.Drawing.Size(1563, 74);
             this.guna2Panel1.TabIndex = 60;
             // 
             // Tour
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(1200, 894);
+            this.ClientSize = new System.Drawing.Size(1600, 1100);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Tour";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trip";

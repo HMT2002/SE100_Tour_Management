@@ -184,7 +184,7 @@
             this.txbPass.PlaceholderText = "Password";
             this.txbPass.SelectedText = "";
             this.txbPass.Size = new System.Drawing.Size(272, 46);
-            this.txbPass.TabIndex = 78;
+            this.txbPass.TabIndex = 77;
             this.txbPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPass_KeyPress);
             // 
             // txbConfirm
@@ -212,7 +212,7 @@
             this.txbConfirm.PlaceholderText = "Confirm Password";
             this.txbConfirm.SelectedText = "";
             this.txbConfirm.Size = new System.Drawing.Size(272, 46);
-            this.txbConfirm.TabIndex = 79;
+            this.txbConfirm.TabIndex = 78;
             this.txbConfirm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbConfirm_KeyPress);
             // 
             // txbCode
@@ -240,7 +240,7 @@
             this.txbCode.PlaceholderText = "Verify Code";
             this.txbCode.SelectedText = "";
             this.txbCode.Size = new System.Drawing.Size(272, 46);
-            this.txbCode.TabIndex = 80;
+            this.txbCode.TabIndex = 79;
             this.txbCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbCode_KeyPress);
             // 
             // txbGmail

@@ -39,6 +39,13 @@ namespace Tour
             this.cbbxSearchType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dgv_nhanvien = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data_employeeid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SLDI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtbxID = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtbxMail = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtbxSDT = new Guna.UI2.WinForms.Guna2TextBox();
@@ -48,13 +55,6 @@ namespace Tour
             this.pcbxAvatar = new Guna.UI2.WinForms.Guna2PictureBox();
             this.cbbxRole = new Guna.UI2.WinForms.Guna2ComboBox();
             this.checkbxShowPassword = new System.Windows.Forms.CheckBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.data_employeeid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SLDI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_nhanvien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxAvatar)).BeginInit();
             this.SuspendLayout();
@@ -214,191 +214,6 @@ namespace Tour
             this.dgv_nhanvien.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgv_nhanvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_nhanvien_CellClick);
             // 
-            // txtbxID
-            // 
-            this.txtbxID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbxID.DefaultText = "";
-            this.txtbxID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtbxID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtbxID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxID.Enabled = false;
-            this.txtbxID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxID.ForeColor = System.Drawing.Color.Black;
-            this.txtbxID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxID.Location = new System.Drawing.Point(376, 45);
-            this.txtbxID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtbxID.Name = "txtbxID";
-            this.txtbxID.PasswordChar = '\0';
-            this.txtbxID.PlaceholderText = "ID";
-            this.txtbxID.ReadOnly = true;
-            this.txtbxID.SelectedText = "";
-            this.txtbxID.Size = new System.Drawing.Size(795, 45);
-            this.txtbxID.TabIndex = 33;
-            // 
-            // txtbxMail
-            // 
-            this.txtbxMail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbxMail.DefaultText = "";
-            this.txtbxMail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtbxMail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtbxMail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxMail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxMail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxMail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxMail.ForeColor = System.Drawing.Color.Black;
-            this.txtbxMail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxMail.Location = new System.Drawing.Point(376, 210);
-            this.txtbxMail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtbxMail.Name = "txtbxMail";
-            this.txtbxMail.PasswordChar = '\0';
-            this.txtbxMail.PlaceholderText = "Mail";
-            this.txtbxMail.SelectedText = "";
-            this.txtbxMail.Size = new System.Drawing.Size(795, 45);
-            this.txtbxMail.TabIndex = 36;
-            this.txtbxMail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxMail_KeyPress);
-            // 
-            // txtbxSDT
-            // 
-            this.txtbxSDT.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbxSDT.DefaultText = "";
-            this.txtbxSDT.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtbxSDT.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtbxSDT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxSDT.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxSDT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxSDT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxSDT.ForeColor = System.Drawing.Color.Black;
-            this.txtbxSDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxSDT.Location = new System.Drawing.Point(376, 155);
-            this.txtbxSDT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtbxSDT.MaxLength = 13;
-            this.txtbxSDT.Name = "txtbxSDT";
-            this.txtbxSDT.PasswordChar = '\0';
-            this.txtbxSDT.PlaceholderText = "Phone";
-            this.txtbxSDT.SelectedText = "";
-            this.txtbxSDT.Size = new System.Drawing.Size(795, 45);
-            this.txtbxSDT.TabIndex = 35;
-            this.txtbxSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxSDT_KeyPress);
-            // 
-            // txtbxName
-            // 
-            this.txtbxName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbxName.DefaultText = "";
-            this.txtbxName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtbxName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtbxName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxName.ForeColor = System.Drawing.Color.Black;
-            this.txtbxName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxName.Location = new System.Drawing.Point(376, 100);
-            this.txtbxName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtbxName.Name = "txtbxName";
-            this.txtbxName.PasswordChar = '\0';
-            this.txtbxName.PlaceholderText = "Name";
-            this.txtbxName.SelectedText = "";
-            this.txtbxName.Size = new System.Drawing.Size(795, 45);
-            this.txtbxName.TabIndex = 34;
-            this.txtbxName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxName_KeyPress);
-            // 
-            // tb_search
-            // 
-            this.tb_search.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb_search.DefaultText = "";
-            this.tb_search.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tb_search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tb_search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tb_search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tb_search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb_search.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_search.ForeColor = System.Drawing.Color.Black;
-            this.tb_search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb_search.Location = new System.Drawing.Point(530, 334);
-            this.tb_search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tb_search.Name = "tb_search";
-            this.tb_search.PasswordChar = '\0';
-            this.tb_search.PlaceholderText = "Search";
-            this.tb_search.SelectedText = "";
-            this.tb_search.Size = new System.Drawing.Size(400, 45);
-            this.tb_search.TabIndex = 38;
-            this.tb_search.TextChanged += new System.EventHandler(this.tb_search_TextChanged_1);
-            // 
-            // txtbxPassword
-            // 
-            this.txtbxPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbxPassword.DefaultText = "";
-            this.txtbxPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtbxPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtbxPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbxPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxPassword.ForeColor = System.Drawing.Color.Black;
-            this.txtbxPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxPassword.Location = new System.Drawing.Point(376, 265);
-            this.txtbxPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtbxPassword.Name = "txtbxPassword";
-            this.txtbxPassword.PasswordChar = '●';
-            this.txtbxPassword.PlaceholderText = "Password";
-            this.txtbxPassword.SelectedText = "";
-            this.txtbxPassword.Size = new System.Drawing.Size(633, 45);
-            this.txtbxPassword.TabIndex = 37;
-            this.txtbxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxPassword_KeyPress);
-            // 
-            // pcbxAvatar
-            // 
-            this.pcbxAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pcbxAvatar.Image = global::Tour.Properties.Resources.ic_image_empty_128;
-            this.pcbxAvatar.ImageRotate = 0F;
-            this.pcbxAvatar.InitialImage = global::Tour.Properties.Resources.ic_image_empty_128;
-            this.pcbxAvatar.Location = new System.Drawing.Point(37, 40);
-            this.pcbxAvatar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pcbxAvatar.Name = "pcbxAvatar";
-            this.pcbxAvatar.Size = new System.Drawing.Size(301, 282);
-            this.pcbxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcbxAvatar.TabIndex = 38;
-            this.pcbxAvatar.TabStop = false;
-            this.pcbxAvatar.Click += new System.EventHandler(this.pcbxAvatar_Click);
-            // 
-            // cbbxRole
-            // 
-            this.cbbxRole.BackColor = System.Drawing.Color.Transparent;
-            this.cbbxRole.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
-            this.cbbxRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbxRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbxRole.FocusedColor = System.Drawing.Color.Empty;
-            this.cbbxRole.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbxRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbbxRole.FormattingEnabled = true;
-            this.cbbxRole.ItemHeight = 30;
-            this.cbbxRole.Items.AddRange(new object[] {
-            "Manager",
-            "Employee"});
-            this.cbbxRole.Location = new System.Drawing.Point(39, 341);
-            this.cbbxRole.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbbxRole.Name = "cbbxRole";
-            this.cbbxRole.Size = new System.Drawing.Size(299, 36);
-            this.cbbxRole.StartIndex = 0;
-            this.cbbxRole.TabIndex = 39;
-            // 
-            // checkbxShowPassword
-            // 
-            this.checkbxShowPassword.AutoSize = true;
-            this.checkbxShowPassword.BackColor = System.Drawing.Color.Transparent;
-            this.checkbxShowPassword.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkbxShowPassword.ForeColor = System.Drawing.Color.Black;
-            this.checkbxShowPassword.Location = new System.Drawing.Point(1015, 284);
-            this.checkbxShowPassword.Margin = new System.Windows.Forms.Padding(2);
-            this.checkbxShowPassword.Name = "checkbxShowPassword";
-            this.checkbxShowPassword.Size = new System.Drawing.Size(195, 33);
-            this.checkbxShowPassword.TabIndex = 40;
-            this.checkbxShowPassword.Text = "Show password";
-            this.checkbxShowPassword.UseVisualStyleBackColor = false;
-            this.checkbxShowPassword.CheckedChanged += new System.EventHandler(this.checkbxShowPassword_CheckedChanged);
-            // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -456,6 +271,191 @@ namespace Tour
             this.SLDI.HeaderText = "SLDI";
             this.SLDI.MinimumWidth = 6;
             this.SLDI.Name = "SLDI";
+            // 
+            // txtbxID
+            // 
+            this.txtbxID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbxID.DefaultText = "";
+            this.txtbxID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbxID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbxID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxID.Enabled = false;
+            this.txtbxID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxID.ForeColor = System.Drawing.Color.Black;
+            this.txtbxID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxID.Location = new System.Drawing.Point(376, 45);
+            this.txtbxID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtbxID.Name = "txtbxID";
+            this.txtbxID.PasswordChar = '\0';
+            this.txtbxID.PlaceholderText = "ID";
+            this.txtbxID.ReadOnly = true;
+            this.txtbxID.SelectedText = "";
+            this.txtbxID.Size = new System.Drawing.Size(795, 45);
+            this.txtbxID.TabIndex = 33;
+            // 
+            // txtbxMail
+            // 
+            this.txtbxMail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbxMail.DefaultText = "";
+            this.txtbxMail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbxMail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbxMail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxMail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxMail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxMail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxMail.ForeColor = System.Drawing.Color.Black;
+            this.txtbxMail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxMail.Location = new System.Drawing.Point(376, 210);
+            this.txtbxMail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtbxMail.Name = "txtbxMail";
+            this.txtbxMail.PasswordChar = '\0';
+            this.txtbxMail.PlaceholderText = "Mail";
+            this.txtbxMail.SelectedText = "";
+            this.txtbxMail.Size = new System.Drawing.Size(795, 45);
+            this.txtbxMail.TabIndex = 3;
+            this.txtbxMail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxMail_KeyPress);
+            // 
+            // txtbxSDT
+            // 
+            this.txtbxSDT.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbxSDT.DefaultText = "";
+            this.txtbxSDT.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbxSDT.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbxSDT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxSDT.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxSDT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxSDT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxSDT.ForeColor = System.Drawing.Color.Black;
+            this.txtbxSDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxSDT.Location = new System.Drawing.Point(376, 155);
+            this.txtbxSDT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtbxSDT.MaxLength = 13;
+            this.txtbxSDT.Name = "txtbxSDT";
+            this.txtbxSDT.PasswordChar = '\0';
+            this.txtbxSDT.PlaceholderText = "Phone";
+            this.txtbxSDT.SelectedText = "";
+            this.txtbxSDT.Size = new System.Drawing.Size(795, 45);
+            this.txtbxSDT.TabIndex = 2;
+            this.txtbxSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxSDT_KeyPress);
+            // 
+            // txtbxName
+            // 
+            this.txtbxName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbxName.DefaultText = "";
+            this.txtbxName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbxName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbxName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxName.ForeColor = System.Drawing.Color.Black;
+            this.txtbxName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxName.Location = new System.Drawing.Point(376, 100);
+            this.txtbxName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtbxName.Name = "txtbxName";
+            this.txtbxName.PasswordChar = '\0';
+            this.txtbxName.PlaceholderText = "Name";
+            this.txtbxName.SelectedText = "";
+            this.txtbxName.Size = new System.Drawing.Size(795, 45);
+            this.txtbxName.TabIndex = 1;
+            this.txtbxName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxName_KeyPress);
+            // 
+            // tb_search
+            // 
+            this.tb_search.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_search.DefaultText = "";
+            this.tb_search.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tb_search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tb_search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb_search.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_search.ForeColor = System.Drawing.Color.Black;
+            this.tb_search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb_search.Location = new System.Drawing.Point(530, 334);
+            this.tb_search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_search.Name = "tb_search";
+            this.tb_search.PasswordChar = '\0';
+            this.tb_search.PlaceholderText = "Search";
+            this.tb_search.SelectedText = "";
+            this.tb_search.Size = new System.Drawing.Size(400, 45);
+            this.tb_search.TabIndex = 38;
+            this.tb_search.TextChanged += new System.EventHandler(this.tb_search_TextChanged_1);
+            // 
+            // txtbxPassword
+            // 
+            this.txtbxPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbxPassword.DefaultText = "";
+            this.txtbxPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbxPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbxPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbxPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxPassword.ForeColor = System.Drawing.Color.Black;
+            this.txtbxPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbxPassword.Location = new System.Drawing.Point(376, 265);
+            this.txtbxPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtbxPassword.Name = "txtbxPassword";
+            this.txtbxPassword.PasswordChar = '●';
+            this.txtbxPassword.PlaceholderText = "Password";
+            this.txtbxPassword.SelectedText = "";
+            this.txtbxPassword.Size = new System.Drawing.Size(633, 45);
+            this.txtbxPassword.TabIndex = 4;
+            this.txtbxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxPassword_KeyPress);
+            // 
+            // pcbxAvatar
+            // 
+            this.pcbxAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pcbxAvatar.Image = global::Tour.Properties.Resources.ic_image_empty_128;
+            this.pcbxAvatar.ImageRotate = 0F;
+            this.pcbxAvatar.InitialImage = global::Tour.Properties.Resources.ic_image_empty_128;
+            this.pcbxAvatar.Location = new System.Drawing.Point(37, 40);
+            this.pcbxAvatar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pcbxAvatar.Name = "pcbxAvatar";
+            this.pcbxAvatar.Size = new System.Drawing.Size(301, 282);
+            this.pcbxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbxAvatar.TabIndex = 38;
+            this.pcbxAvatar.TabStop = false;
+            this.pcbxAvatar.Click += new System.EventHandler(this.pcbxAvatar_Click);
+            // 
+            // cbbxRole
+            // 
+            this.cbbxRole.BackColor = System.Drawing.Color.Transparent;
+            this.cbbxRole.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
+            this.cbbxRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbxRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbxRole.FocusedColor = System.Drawing.Color.Empty;
+            this.cbbxRole.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbxRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbxRole.FormattingEnabled = true;
+            this.cbbxRole.ItemHeight = 30;
+            this.cbbxRole.Items.AddRange(new object[] {
+            "Manager",
+            "Employee"});
+            this.cbbxRole.Location = new System.Drawing.Point(39, 341);
+            this.cbbxRole.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbbxRole.Name = "cbbxRole";
+            this.cbbxRole.Size = new System.Drawing.Size(299, 36);
+            this.cbbxRole.StartIndex = 0;
+            this.cbbxRole.TabIndex = 39;
+            // 
+            // checkbxShowPassword
+            // 
+            this.checkbxShowPassword.AutoSize = true;
+            this.checkbxShowPassword.BackColor = System.Drawing.Color.Transparent;
+            this.checkbxShowPassword.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkbxShowPassword.ForeColor = System.Drawing.Color.Black;
+            this.checkbxShowPassword.Location = new System.Drawing.Point(1015, 284);
+            this.checkbxShowPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.checkbxShowPassword.Name = "checkbxShowPassword";
+            this.checkbxShowPassword.Size = new System.Drawing.Size(195, 33);
+            this.checkbxShowPassword.TabIndex = 40;
+            this.checkbxShowPassword.Text = "Show password";
+            this.checkbxShowPassword.UseVisualStyleBackColor = false;
+            this.checkbxShowPassword.CheckedChanged += new System.EventHandler(this.checkbxShowPassword_CheckedChanged);
             // 
             // NhanVien
             // 

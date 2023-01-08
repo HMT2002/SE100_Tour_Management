@@ -66,11 +66,11 @@ namespace Tour
             this.guna2TabControl1.Controls.Add(this.tabPage1);
             this.guna2TabControl1.Controls.Add(this.tabPage2);
             this.guna2TabControl1.ItemSize = new System.Drawing.Size(180, 40);
-            this.guna2TabControl1.Location = new System.Drawing.Point(2, 1);
-            this.guna2TabControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2TabControl1.Location = new System.Drawing.Point(3, 1);
+            this.guna2TabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2TabControl1.Name = "guna2TabControl1";
             this.guna2TabControl1.SelectedIndex = 0;
-            this.guna2TabControl1.Size = new System.Drawing.Size(365, 428);
+            this.guna2TabControl1.Size = new System.Drawing.Size(487, 527);
             this.guna2TabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.guna2TabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
             this.guna2TabControl1.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -107,10 +107,10 @@ namespace Tour
             this.tabPage1.Controls.Add(this.cbghinho);
             this.tabPage1.ForeColor = System.Drawing.Color.Black;
             this.tabPage1.Location = new System.Drawing.Point(4, 44);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(357, 380);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Size = new System.Drawing.Size(479, 479);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "User";
             // 
@@ -120,11 +120,12 @@ namespace Tour
             this.checkbxShowPassword.BackColor = System.Drawing.Color.Transparent;
             this.checkbxShowPassword.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkbxShowPassword.ForeColor = System.Drawing.Color.Black;
-            this.checkbxShowPassword.Location = new System.Drawing.Point(180, 182);
-            this.checkbxShowPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.checkbxShowPassword.Location = new System.Drawing.Point(240, 224);
+            this.checkbxShowPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkbxShowPassword.Name = "checkbxShowPassword";
-            this.checkbxShowPassword.Size = new System.Drawing.Size(142, 24);
-            this.checkbxShowPassword.TabIndex = 26;
+            this.checkbxShowPassword.Size = new System.Drawing.Size(171, 29);
+            this.checkbxShowPassword.TabIndex = 4;
+            this.checkbxShowPassword.TabStop = false;
             this.checkbxShowPassword.Text = "Show password";
             this.checkbxShowPassword.UseVisualStyleBackColor = false;
             this.checkbxShowPassword.CheckedChanged += new System.EventHandler(this.checkbxShowPassword_CheckedChanged);
@@ -135,9 +136,10 @@ namespace Tour
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(129, 338);
+            this.label3.Location = new System.Drawing.Point(172, 416);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 19);
+            this.label3.Size = new System.Drawing.Size(103, 23);
             this.label3.TabIndex = 25;
             this.label3.Text = "New User?";
             // 
@@ -147,11 +149,12 @@ namespace Tour
             this.cbGuest.BackColor = System.Drawing.Color.Transparent;
             this.cbGuest.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGuest.ForeColor = System.Drawing.Color.Black;
-            this.cbGuest.Location = new System.Drawing.Point(48, 216);
-            this.cbGuest.Margin = new System.Windows.Forms.Padding(2);
+            this.cbGuest.Location = new System.Drawing.Point(64, 266);
+            this.cbGuest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbGuest.Name = "cbGuest";
-            this.cbGuest.Size = new System.Drawing.Size(141, 24);
-            this.cbGuest.TabIndex = 24;
+            this.cbGuest.Size = new System.Drawing.Size(174, 29);
+            this.cbGuest.TabIndex = 5;
+            this.cbGuest.TabStop = false;
             this.cbGuest.Text = "Are you guest? ";
             this.cbGuest.UseVisualStyleBackColor = false;
             this.cbGuest.CheckedChanged += new System.EventHandler(this.cbGuest_CheckedChanged);
@@ -163,10 +166,9 @@ namespace Tour
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.ForeColor = System.Drawing.Color.BlueViolet;
-            this.label2.Location = new System.Drawing.Point(124, 20);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(165, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 43);
+            this.label2.Size = new System.Drawing.Size(141, 53);
             this.label2.TabIndex = 6;
             this.label2.Text = "Login";
             // 
@@ -186,14 +188,14 @@ namespace Tour
             this.emailtxb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.emailtxb.IconLeft = ((System.Drawing.Image)(resources.GetObject("emailtxb.IconLeft")));
             this.emailtxb.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.emailtxb.Location = new System.Drawing.Point(42, 77);
-            this.emailtxb.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.emailtxb.Location = new System.Drawing.Point(56, 95);
+            this.emailtxb.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.emailtxb.Name = "emailtxb";
             this.emailtxb.PasswordChar = '\0';
             this.emailtxb.PlaceholderText = "Email";
             this.emailtxb.SelectedText = "";
-            this.emailtxb.Size = new System.Drawing.Size(265, 36);
-            this.emailtxb.TabIndex = 19;
+            this.emailtxb.Size = new System.Drawing.Size(353, 44);
+            this.emailtxb.TabIndex = 1;
             // 
             // passwordtxb
             // 
@@ -211,14 +213,14 @@ namespace Tour
             this.passwordtxb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.passwordtxb.IconLeft = ((System.Drawing.Image)(resources.GetObject("passwordtxb.IconLeft")));
             this.passwordtxb.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.passwordtxb.Location = new System.Drawing.Point(42, 133);
-            this.passwordtxb.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.passwordtxb.Location = new System.Drawing.Point(56, 164);
+            this.passwordtxb.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.passwordtxb.Name = "passwordtxb";
             this.passwordtxb.PasswordChar = '●';
             this.passwordtxb.PlaceholderText = "Password";
             this.passwordtxb.SelectedText = "";
-            this.passwordtxb.Size = new System.Drawing.Size(265, 36);
-            this.passwordtxb.TabIndex = 20;
+            this.passwordtxb.Size = new System.Drawing.Size(353, 44);
+            this.passwordtxb.TabIndex = 2;
             // 
             // loginbtn
             // 
@@ -232,10 +234,10 @@ namespace Tour
             this.loginbtn.FillColor2 = System.Drawing.Color.DeepSkyBlue;
             this.loginbtn.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
             this.loginbtn.ForeColor = System.Drawing.Color.White;
-            this.loginbtn.Location = new System.Drawing.Point(42, 248);
-            this.loginbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.loginbtn.Location = new System.Drawing.Point(56, 305);
+            this.loginbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.loginbtn.Name = "loginbtn";
-            this.loginbtn.Size = new System.Drawing.Size(265, 36);
+            this.loginbtn.Size = new System.Drawing.Size(353, 44);
             this.loginbtn.TabIndex = 22;
             this.loginbtn.Text = "Login";
             this.loginbtn.Click += new System.EventHandler(this.loginbtn_Click);
@@ -246,9 +248,10 @@ namespace Tour
             this.forgetlb.BackColor = System.Drawing.Color.Transparent;
             this.forgetlb.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.forgetlb.ForeColor = System.Drawing.Color.Black;
-            this.forgetlb.Location = new System.Drawing.Point(176, 301);
+            this.forgetlb.Location = new System.Drawing.Point(235, 370);
+            this.forgetlb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.forgetlb.Name = "forgetlb";
-            this.forgetlb.Size = new System.Drawing.Size(131, 19);
+            this.forgetlb.Size = new System.Drawing.Size(164, 23);
             this.forgetlb.TabIndex = 13;
             this.forgetlb.Text = "Forget password ?";
             this.forgetlb.Click += new System.EventHandler(this.forgetlb_Click);
@@ -259,9 +262,10 @@ namespace Tour
             this.registaccountlb.BackColor = System.Drawing.Color.Transparent;
             this.registaccountlb.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.registaccountlb.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.registaccountlb.Location = new System.Drawing.Point(206, 338);
+            this.registaccountlb.Location = new System.Drawing.Point(275, 416);
+            this.registaccountlb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.registaccountlb.Name = "registaccountlb";
-            this.registaccountlb.Size = new System.Drawing.Size(101, 19);
+            this.registaccountlb.Size = new System.Drawing.Size(125, 23);
             this.registaccountlb.TabIndex = 16;
             this.registaccountlb.Text = "Register here";
             this.registaccountlb.Click += new System.EventHandler(this.registaccountlb_Click);
@@ -272,11 +276,12 @@ namespace Tour
             this.cbghinho.BackColor = System.Drawing.Color.Transparent;
             this.cbghinho.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbghinho.ForeColor = System.Drawing.Color.Black;
-            this.cbghinho.Location = new System.Drawing.Point(48, 182);
-            this.cbghinho.Margin = new System.Windows.Forms.Padding(2);
+            this.cbghinho.Location = new System.Drawing.Point(64, 224);
+            this.cbghinho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbghinho.Name = "cbghinho";
-            this.cbghinho.Size = new System.Drawing.Size(120, 24);
+            this.cbghinho.Size = new System.Drawing.Size(144, 29);
             this.cbghinho.TabIndex = 3;
+            this.cbghinho.TabStop = false;
             this.cbghinho.Text = "Remember ?";
             this.cbghinho.UseVisualStyleBackColor = false;
             // 
@@ -288,10 +293,10 @@ namespace Tour
             this.tabPage2.Controls.Add(this.txtbxSearchTicket);
             this.tabPage2.ForeColor = System.Drawing.Color.Linen;
             this.tabPage2.Location = new System.Drawing.Point(4, 44);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(357, 380);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Size = new System.Drawing.Size(479, 479);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Search ticket";
             // 
@@ -305,10 +310,10 @@ namespace Tour
             this.btnSearchTicket.FillColor = System.Drawing.Color.BlueViolet;
             this.btnSearchTicket.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSearchTicket.ForeColor = System.Drawing.Color.White;
-            this.btnSearchTicket.Location = new System.Drawing.Point(108, 188);
-            this.btnSearchTicket.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearchTicket.Location = new System.Drawing.Point(144, 231);
+            this.btnSearchTicket.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearchTicket.Name = "btnSearchTicket";
-            this.btnSearchTicket.Size = new System.Drawing.Size(135, 37);
+            this.btnSearchTicket.Size = new System.Drawing.Size(180, 46);
             this.btnSearchTicket.TabIndex = 1;
             this.btnSearchTicket.Text = "search";
             this.btnSearchTicket.Click += new System.EventHandler(this.btnSearch_Click);
@@ -319,10 +324,9 @@ namespace Tour
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.BlueViolet;
-            this.label1.Location = new System.Drawing.Point(68, 22);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(91, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(241, 43);
+            this.label1.Size = new System.Drawing.Size(300, 53);
             this.label1.TabIndex = 29;
             this.label1.Text = "Search Ticket";
             // 
@@ -339,13 +343,13 @@ namespace Tour
             this.txtbxSearchTicket.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtbxSearchTicket.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxSearchTicket.IconRight = global::Tour.Properties.Resources.search;
-            this.txtbxSearchTicket.Location = new System.Drawing.Point(76, 98);
-            this.txtbxSearchTicket.Margin = new System.Windows.Forms.Padding(2);
+            this.txtbxSearchTicket.Location = new System.Drawing.Point(101, 121);
+            this.txtbxSearchTicket.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtbxSearchTicket.Name = "txtbxSearchTicket";
             this.txtbxSearchTicket.PasswordChar = '\0';
             this.txtbxSearchTicket.PlaceholderText = "";
             this.txtbxSearchTicket.SelectedText = "";
-            this.txtbxSearchTicket.Size = new System.Drawing.Size(212, 29);
+            this.txtbxSearchTicket.Size = new System.Drawing.Size(283, 36);
             this.txtbxSearchTicket.TabIndex = 0;
             // 
             // guna2PictureBox1
@@ -355,9 +359,9 @@ namespace Tour
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(451, 431);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(601, 530);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 18;
             this.guna2PictureBox1.TabStop = false;
@@ -367,27 +371,27 @@ namespace Tour
             // 
             this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2Panel1.Location = new System.Drawing.Point(363, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Panel1.Location = new System.Drawing.Point(484, 0);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(451, 431);
+            this.guna2Panel1.Size = new System.Drawing.Size(601, 530);
             this.guna2Panel1.TabIndex = 30;
             // 
             // LoginForm
             // 
             this.AcceptButton = this.loginbtn;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(814, 431);
+            this.ClientSize = new System.Drawing.Size(1085, 530);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2TabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "p";
+            this.Text = "Tour Management";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.guna2TabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

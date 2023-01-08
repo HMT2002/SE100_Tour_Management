@@ -63,18 +63,20 @@ namespace Tour
             // 
             this.panel3.AutoSize = true;
             this.panel3.Controls.Add(this.pcbxLocation);
-            this.panel3.Location = new System.Drawing.Point(557, 245);
+            this.panel3.Location = new System.Drawing.Point(743, 302);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(637, 545);
+            this.panel3.Size = new System.Drawing.Size(849, 671);
             this.panel3.TabIndex = 5;
             // 
             // pcbxLocation
             // 
             this.pcbxLocation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pcbxLocation.Image = global::Tour.Properties.Resources.ic_image_empty_128;
-            this.pcbxLocation.Location = new System.Drawing.Point(3, 11);
+            this.pcbxLocation.Location = new System.Drawing.Point(4, 14);
+            this.pcbxLocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pcbxLocation.Name = "pcbxLocation";
-            this.pcbxLocation.Size = new System.Drawing.Size(631, 530);
+            this.pcbxLocation.Size = new System.Drawing.Size(841, 652);
             this.pcbxLocation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbxLocation.TabIndex = 0;
             this.pcbxLocation.TabStop = false;
@@ -96,9 +98,10 @@ namespace Tour
             this.panel1.Controls.Add(this.txtbxSDT);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.rchtxtbxDetail);
-            this.panel1.Location = new System.Drawing.Point(9, 245);
+            this.panel1.Location = new System.Drawing.Point(12, 302);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(542, 575);
+            this.panel1.Size = new System.Drawing.Size(723, 708);
             this.panel1.TabIndex = 4;
             // 
             // cbboxProvince
@@ -117,22 +120,24 @@ namespace Tour
             this.cbboxProvince.ForeColor = System.Drawing.Color.Black;
             this.cbboxProvince.IntegralHeight = false;
             this.cbboxProvince.ItemHeight = 30;
-            this.cbboxProvince.Location = new System.Drawing.Point(117, 212);
+            this.cbboxProvince.Location = new System.Drawing.Point(156, 261);
+            this.cbboxProvince.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbboxProvince.MaxDropDownItems = 5;
             this.cbboxProvince.Name = "cbboxProvince";
             this.cbboxProvince.ShadowDecoration.BorderRadius = 10;
             this.cbboxProvince.ShadowDecoration.Depth = 15;
             this.cbboxProvince.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
-            this.cbboxProvince.Size = new System.Drawing.Size(422, 36);
-            this.cbboxProvince.TabIndex = 34;
+            this.cbboxProvince.Size = new System.Drawing.Size(561, 36);
+            this.cbboxProvince.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(8, 180);
+            this.label4.Location = new System.Drawing.Point(11, 222);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 19);
+            this.label4.Size = new System.Drawing.Size(121, 22);
             this.label4.TabIndex = 33;
             this.label4.Text = "Phone number";
             // 
@@ -140,9 +145,10 @@ namespace Tour
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(8, 139);
+            this.label1.Location = new System.Drawing.Point(11, 171);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 19);
+            this.label1.Size = new System.Drawing.Size(80, 22);
             this.label1.TabIndex = 32;
             this.label1.Text = "Cost/day";
             // 
@@ -150,9 +156,10 @@ namespace Tour
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(9, 98);
+            this.label3.Location = new System.Drawing.Point(12, 121);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 19);
+            this.label3.Size = new System.Drawing.Size(76, 22);
             this.label3.TabIndex = 31;
             this.label3.Text = "Address";
             // 
@@ -160,9 +167,10 @@ namespace Tour
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(8, 55);
+            this.label2.Location = new System.Drawing.Point(11, 68);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 19);
+            this.label2.Size = new System.Drawing.Size(56, 22);
             this.label2.TabIndex = 29;
             this.label2.Text = "Name";
             // 
@@ -170,9 +178,10 @@ namespace Tour
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.Location = new System.Drawing.Point(8, 14);
+            this.label7.Location = new System.Drawing.Point(11, 17);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 19);
+            this.label7.Size = new System.Drawing.Size(54, 22);
             this.label7.TabIndex = 28;
             this.label7.Text = "Hotel";
             // 
@@ -190,11 +199,11 @@ namespace Tour
             this.cbbxHotel.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbxHotel.ForeColor = System.Drawing.Color.Black;
             this.cbbxHotel.ItemHeight = 30;
-            this.cbbxHotel.Location = new System.Drawing.Point(117, 2);
-            this.cbbxHotel.Margin = new System.Windows.Forms.Padding(2);
+            this.cbbxHotel.Location = new System.Drawing.Point(156, 2);
+            this.cbbxHotel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbxHotel.Name = "cbbxHotel";
-            this.cbbxHotel.Size = new System.Drawing.Size(423, 36);
-            this.cbbxHotel.TabIndex = 28;
+            this.cbbxHotel.Size = new System.Drawing.Size(563, 36);
+            this.cbbxHotel.TabIndex = 1;
             this.cbbxHotel.SelectedValueChanged += new System.EventHandler(this.cbbxHotel_SelectedValueChanged);
             // 
             // txtbxName
@@ -213,14 +222,14 @@ namespace Tour
             this.txtbxName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtbxName.ForeColor = System.Drawing.Color.Black;
             this.txtbxName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxName.Location = new System.Drawing.Point(117, 44);
-            this.txtbxName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtbxName.Location = new System.Drawing.Point(156, 54);
+            this.txtbxName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtbxName.Name = "txtbxName";
             this.txtbxName.PasswordChar = '\0';
             this.txtbxName.PlaceholderText = "";
             this.txtbxName.SelectedText = "";
-            this.txtbxName.Size = new System.Drawing.Size(423, 29);
-            this.txtbxName.TabIndex = 30;
+            this.txtbxName.Size = new System.Drawing.Size(564, 36);
+            this.txtbxName.TabIndex = 2;
             // 
             // txtbxDiaChi
             // 
@@ -238,14 +247,14 @@ namespace Tour
             this.txtbxDiaChi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtbxDiaChi.ForeColor = System.Drawing.Color.Black;
             this.txtbxDiaChi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxDiaChi.Location = new System.Drawing.Point(117, 86);
-            this.txtbxDiaChi.Margin = new System.Windows.Forms.Padding(2);
+            this.txtbxDiaChi.Location = new System.Drawing.Point(156, 106);
+            this.txtbxDiaChi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtbxDiaChi.Name = "txtbxDiaChi";
             this.txtbxDiaChi.PasswordChar = '\0';
             this.txtbxDiaChi.PlaceholderText = "";
             this.txtbxDiaChi.SelectedText = "";
-            this.txtbxDiaChi.Size = new System.Drawing.Size(423, 29);
-            this.txtbxDiaChi.TabIndex = 29;
+            this.txtbxDiaChi.Size = new System.Drawing.Size(564, 36);
+            this.txtbxDiaChi.TabIndex = 3;
             // 
             // txtbxGia
             // 
@@ -263,14 +272,14 @@ namespace Tour
             this.txtbxGia.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtbxGia.ForeColor = System.Drawing.Color.Black;
             this.txtbxGia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxGia.Location = new System.Drawing.Point(117, 128);
-            this.txtbxGia.Margin = new System.Windows.Forms.Padding(2);
+            this.txtbxGia.Location = new System.Drawing.Point(156, 158);
+            this.txtbxGia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtbxGia.Name = "txtbxGia";
             this.txtbxGia.PasswordChar = '\0';
             this.txtbxGia.PlaceholderText = "";
             this.txtbxGia.SelectedText = "";
-            this.txtbxGia.Size = new System.Drawing.Size(423, 29);
-            this.txtbxGia.TabIndex = 30;
+            this.txtbxGia.Size = new System.Drawing.Size(564, 36);
+            this.txtbxGia.TabIndex = 4;
             this.txtbxGia.TextChanged += new System.EventHandler(this.txtbxGia_TextChanged);
             this.txtbxGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxGia_KeyPress);
             // 
@@ -291,24 +300,25 @@ namespace Tour
             this.txtbxSDT.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtbxSDT.ForeColor = System.Drawing.Color.Black;
             this.txtbxSDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxSDT.Location = new System.Drawing.Point(117, 169);
-            this.txtbxSDT.Margin = new System.Windows.Forms.Padding(2);
+            this.txtbxSDT.Location = new System.Drawing.Point(156, 208);
+            this.txtbxSDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtbxSDT.MaxLength = 13;
             this.txtbxSDT.Name = "txtbxSDT";
             this.txtbxSDT.PasswordChar = '\0';
             this.txtbxSDT.PlaceholderText = "";
             this.txtbxSDT.SelectedText = "";
-            this.txtbxSDT.Size = new System.Drawing.Size(423, 29);
-            this.txtbxSDT.TabIndex = 28;
+            this.txtbxSDT.Size = new System.Drawing.Size(564, 36);
+            this.txtbxSDT.TabIndex = 5;
             this.txtbxSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxSDT_KeyPress);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(8, 222);
+            this.label5.Location = new System.Drawing.Point(11, 273);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(34, 19);
+            this.label5.Size = new System.Drawing.Size(43, 22);
             this.label5.TabIndex = 17;
             this.label5.Text = "City";
             // 
@@ -317,10 +327,11 @@ namespace Tour
             this.rchtxtbxDetail.BackColor = System.Drawing.Color.Bisque;
             this.rchtxtbxDetail.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.rchtxtbxDetail.ForeColor = System.Drawing.Color.Black;
-            this.rchtxtbxDetail.Location = new System.Drawing.Point(8, 254);
+            this.rchtxtbxDetail.Location = new System.Drawing.Point(11, 313);
+            this.rchtxtbxDetail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rchtxtbxDetail.Name = "rchtxtbxDetail";
-            this.rchtxtbxDetail.Size = new System.Drawing.Size(531, 314);
-            this.rchtxtbxDetail.TabIndex = 8;
+            this.rchtxtbxDetail.Size = new System.Drawing.Size(707, 386);
+            this.rchtxtbxDetail.TabIndex = 7;
             this.rchtxtbxDetail.Text = "";
             // 
             // guna2Panel2
@@ -329,8 +340,9 @@ namespace Tour
             this.guna2Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1200, 195);
+            this.guna2Panel2.Size = new System.Drawing.Size(1600, 240);
             this.guna2Panel2.TabIndex = 44;
             // 
             // btnUpdate
@@ -348,10 +360,10 @@ namespace Tour
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnUpdate.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnUpdate.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(645, 17);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpdate.Location = new System.Drawing.Point(860, 21);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(241, 46);
+            this.btnUpdate.Size = new System.Drawing.Size(321, 57);
             this.btnUpdate.TabIndex = 46;
             this.btnUpdate.Text = "Modify";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -371,10 +383,10 @@ namespace Tour
             this.btnXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnXoa.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnXoa.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(398, 17);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXoa.Location = new System.Drawing.Point(531, 21);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(241, 46);
+            this.btnXoa.Size = new System.Drawing.Size(321, 57);
             this.btnXoa.TabIndex = 47;
             this.btnXoa.Text = "Delete";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -394,10 +406,10 @@ namespace Tour
             this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnAdd.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnAdd.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(151, 17);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdd.Location = new System.Drawing.Point(201, 21);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(241, 46);
+            this.btnAdd.Size = new System.Drawing.Size(321, 57);
             this.btnAdd.TabIndex = 45;
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -409,9 +421,10 @@ namespace Tour
             this.guna2Panel1.Controls.Add(this.btnAdd);
             this.guna2Panel1.Controls.Add(this.btnXoa);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 851);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 986);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1200, 94);
+            this.guna2Panel1.Size = new System.Drawing.Size(1600, 116);
             this.guna2Panel1.TabIndex = 48;
             // 
             // btnClear
@@ -429,26 +442,27 @@ namespace Tour
             this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnClear.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.btnClear.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(892, 17);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClear.Location = new System.Drawing.Point(1189, 21);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(241, 46);
+            this.btnClear.Size = new System.Drawing.Size(321, 57);
             this.btnClear.TabIndex = 48;
             this.btnClear.Text = "Clear";
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // Hotel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1200, 945);
+            this.ClientSize = new System.Drawing.Size(1600, 1102);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Hotel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hotel";

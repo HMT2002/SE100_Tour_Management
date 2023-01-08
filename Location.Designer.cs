@@ -81,7 +81,7 @@ namespace Tour
             this.rchtxtbxDetail.Margin = new System.Windows.Forms.Padding(5);
             this.rchtxtbxDetail.Name = "rchtxtbxDetail";
             this.rchtxtbxDetail.Size = new System.Drawing.Size(693, 297);
-            this.rchtxtbxDetail.TabIndex = 34;
+            this.rchtxtbxDetail.TabIndex = 7;
             this.rchtxtbxDetail.Text = "";
             // 
             // label1
@@ -133,7 +133,7 @@ namespace Tour
             this.cbbxLocation.ShadowDecoration.Depth = 15;
             this.cbbxLocation.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
             this.cbbxLocation.Size = new System.Drawing.Size(471, 36);
-            this.cbbxLocation.TabIndex = 29;
+            this.cbbxLocation.TabIndex = 1;
             this.cbbxLocation.SelectedValueChanged += new System.EventHandler(this.cbbxLocation_SelectedValueChanged);
             // 
             // label2
@@ -331,7 +331,7 @@ namespace Tour
             this.txtbxName.ShadowDecoration.Enabled = true;
             this.txtbxName.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
             this.txtbxName.Size = new System.Drawing.Size(472, 44);
-            this.txtbxName.TabIndex = 9;
+            this.txtbxName.TabIndex = 2;
             // 
             // txtbxGia
             // 
@@ -363,6 +363,7 @@ namespace Tour
             this.txtbxGia.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
             this.txtbxGia.Size = new System.Drawing.Size(239, 44);
             this.txtbxGia.TabIndex = 32;
+            this.txtbxGia.TabStop = false;
             this.txtbxGia.TextChanged += new System.EventHandler(this.txtbxGia_TextChanged);
             this.txtbxGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxGia_KeyPress);
             // 
@@ -397,6 +398,7 @@ namespace Tour
             this.txtbxId.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
             this.txtbxId.Size = new System.Drawing.Size(472, 44);
             this.txtbxId.TabIndex = 8;
+            this.txtbxId.TabStop = false;
             // 
             // cbboxProvince
             // 
@@ -422,7 +424,7 @@ namespace Tour
             this.cbboxProvince.ShadowDecoration.Depth = 15;
             this.cbboxProvince.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
             this.cbboxProvince.Size = new System.Drawing.Size(471, 36);
-            this.cbboxProvince.TabIndex = 13;
+            this.cbboxProvince.TabIndex = 6;
             // 
             // guna2Panel2
             // 
@@ -472,7 +474,7 @@ namespace Tour
             this.txtbxMeal.PlaceholderText = "Meal";
             this.txtbxMeal.SelectedText = "";
             this.txtbxMeal.Size = new System.Drawing.Size(148, 44);
-            this.txtbxMeal.TabIndex = 10;
+            this.txtbxMeal.TabIndex = 3;
             this.txtbxMeal.TextChanged += new System.EventHandler(this.txtbxMeal_TextChanged);
             this.txtbxMeal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxMeal_KeyPress);
             this.txtbxMeal.Leave += new System.EventHandler(this.txtbxMeal_Leave);
@@ -505,7 +507,7 @@ namespace Tour
             this.txtbxOthers.ShadowDecoration.Enabled = true;
             this.txtbxOthers.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
             this.txtbxOthers.Size = new System.Drawing.Size(148, 44);
-            this.txtbxOthers.TabIndex = 12;
+            this.txtbxOthers.TabIndex = 5;
             this.txtbxOthers.TextChanged += new System.EventHandler(this.txtbxOthers_TextChanged);
             this.txtbxOthers.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxOthers_KeyPress);
             this.txtbxOthers.Leave += new System.EventHandler(this.txtbxOthers_Leave);
@@ -538,7 +540,7 @@ namespace Tour
             this.txtbxPlay.ShadowDecoration.Enabled = true;
             this.txtbxPlay.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
             this.txtbxPlay.Size = new System.Drawing.Size(148, 44);
-            this.txtbxPlay.TabIndex = 11;
+            this.txtbxPlay.TabIndex = 4;
             this.txtbxPlay.TextChanged += new System.EventHandler(this.txtbxPlay_TextChanged);
             this.txtbxPlay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxPlay_KeyPress);
             this.txtbxPlay.Leave += new System.EventHandler(this.txtbxPlay_Leave);

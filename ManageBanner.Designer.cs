@@ -35,6 +35,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.tbTotal = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.btReset = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -50,8 +52,6 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnClear = new Guna.UI2.WinForms.Guna2Button();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
-            this.tbPrice = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbTotal = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel8.SuspendLayout();
             this.panel4.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -138,6 +138,50 @@
             this.panel4.Size = new System.Drawing.Size(448, 168);
             this.panel4.TabIndex = 8;
             // 
+            // tbTotal
+            // 
+            this.tbTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbTotal.DefaultText = "";
+            this.tbTotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbTotal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbTotal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbTotal.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbTotal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbTotal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTotal.ForeColor = System.Drawing.Color.Black;
+            this.tbTotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbTotal.Location = new System.Drawing.Point(195, 98);
+            this.tbTotal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tbTotal.Name = "tbTotal";
+            this.tbTotal.PasswordChar = '\0';
+            this.tbTotal.PlaceholderText = "";
+            this.tbTotal.SelectedText = "";
+            this.tbTotal.Size = new System.Drawing.Size(239, 31);
+            this.tbTotal.TabIndex = 36;
+            this.tbTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // tbPrice
+            // 
+            this.tbPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbPrice.DefaultText = "";
+            this.tbPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbPrice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPrice.ForeColor = System.Drawing.Color.Black;
+            this.tbPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbPrice.Location = new System.Drawing.Point(195, 28);
+            this.tbPrice.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tbPrice.Name = "tbPrice";
+            this.tbPrice.PasswordChar = '\0';
+            this.tbPrice.PlaceholderText = "";
+            this.tbPrice.SelectedText = "";
+            this.tbPrice.Size = new System.Drawing.Size(239, 31);
+            this.tbPrice.TabIndex = 35;
+            this.tbPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // btReset
             // 
             this.btReset.AutoSize = true;
@@ -185,7 +229,7 @@
             this.guna2Panel1.Controls.Add(this.txtbxDiscount);
             this.guna2Panel1.Controls.Add(this.pcbxBanner);
             this.guna2Panel1.Location = new System.Drawing.Point(75, 229);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(568, 299);
             this.guna2Panel1.TabIndex = 9;
@@ -195,7 +239,7 @@
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel4.Location = new System.Drawing.Point(4, 246);
-            this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(35, 28);
             this.guna2HtmlLabel4.TabIndex = 13;
@@ -206,7 +250,7 @@
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(4, 306);
-            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(35, 28);
             this.guna2HtmlLabel3.TabIndex = 12;
@@ -217,7 +261,7 @@
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(4, 203);
-            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(60, 28);
             this.guna2HtmlLabel2.TabIndex = 11;
@@ -228,7 +272,7 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(4, 167);
-            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(92, 28);
             this.guna2HtmlLabel1.TabIndex = 10;
@@ -305,7 +349,7 @@
             this.guna2Panel2.Controls.Add(this.btnClear);
             this.guna2Panel2.Controls.Add(this.btnAdd);
             this.guna2Panel2.Location = new System.Drawing.Point(651, 229);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(447, 299);
             this.guna2Panel2.TabIndex = 0;
@@ -342,48 +386,6 @@
             this.btnAdd.Text = "Update";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // tbPrice
-            // 
-            this.tbPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbPrice.DefaultText = "";
-            this.tbPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbPrice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPrice.ForeColor = System.Drawing.Color.Black;
-            this.tbPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbPrice.Location = new System.Drawing.Point(195, 28);
-            this.tbPrice.Name = "tbPrice";
-            this.tbPrice.PasswordChar = '\0';
-            this.tbPrice.PlaceholderText = "";
-            this.tbPrice.SelectedText = "";
-            this.tbPrice.Size = new System.Drawing.Size(239, 31);
-            this.tbPrice.TabIndex = 35;
-            this.tbPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // tbTotal
-            // 
-            this.tbTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbTotal.DefaultText = "";
-            this.tbTotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbTotal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbTotal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbTotal.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbTotal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbTotal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTotal.ForeColor = System.Drawing.Color.Black;
-            this.tbTotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbTotal.Location = new System.Drawing.Point(195, 98);
-            this.tbTotal.Name = "tbTotal";
-            this.tbTotal.PasswordChar = '\0';
-            this.tbTotal.PlaceholderText = "";
-            this.tbTotal.SelectedText = "";
-            this.tbTotal.Size = new System.Drawing.Size(239, 31);
-            this.tbTotal.TabIndex = 36;
-            this.tbTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // ManageBanner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -395,8 +397,9 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel8);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ManageBanner";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageBanner";
             this.Load += new System.EventHandler(this.ManageBanner_Load);
             this.panel8.ResumeLayout(false);

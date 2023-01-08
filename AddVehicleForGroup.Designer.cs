@@ -38,9 +38,10 @@
             // listView2
             // 
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(11, 269);
+            this.listView2.Location = new System.Drawing.Point(15, 331);
+            this.listView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(782, 100);
+            this.listView2.Size = new System.Drawing.Size(1041, 122);
             this.listView2.TabIndex = 11;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
@@ -48,9 +49,10 @@
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 10);
+            this.listView1.Location = new System.Drawing.Point(16, 12);
+            this.listView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(781, 240);
+            this.listView1.Size = new System.Drawing.Size(1040, 294);
             this.listView1.TabIndex = 10;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
@@ -58,15 +60,12 @@
             // btngunaExit
             // 
             this.btngunaExit.BackColor = System.Drawing.Color.Transparent;
-            this.btngunaExit.CheckedState.Parent = this.btngunaExit;
-            this.btngunaExit.CustomImages.Parent = this.btngunaExit;
             this.btngunaExit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btngunaExit.ForeColor = System.Drawing.Color.White;
-            this.btngunaExit.HoverState.Parent = this.btngunaExit;
-            this.btngunaExit.Location = new System.Drawing.Point(624, 393);
+            this.btngunaExit.Location = new System.Drawing.Point(832, 484);
+            this.btngunaExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btngunaExit.Name = "btngunaExit";
-            this.btngunaExit.ShadowDecoration.Parent = this.btngunaExit;
-            this.btngunaExit.Size = new System.Drawing.Size(164, 45);
+            this.btngunaExit.Size = new System.Drawing.Size(219, 55);
             this.btngunaExit.TabIndex = 14;
             this.btngunaExit.Text = "Cancel";
             this.btngunaExit.UseTransparentBackground = true;
@@ -74,32 +73,31 @@
             // 
             // btngunaUpdate
             // 
-            this.btngunaUpdate.CheckedState.Parent = this.btngunaUpdate;
-            this.btngunaUpdate.CustomImages.Parent = this.btngunaUpdate;
             this.btngunaUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btngunaUpdate.ForeColor = System.Drawing.Color.White;
-            this.btngunaUpdate.HoverState.Parent = this.btngunaUpdate;
-            this.btngunaUpdate.Location = new System.Drawing.Point(438, 393);
+            this.btngunaUpdate.Location = new System.Drawing.Point(584, 484);
+            this.btngunaUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btngunaUpdate.Name = "btngunaUpdate";
-            this.btngunaUpdate.ShadowDecoration.Parent = this.btngunaUpdate;
-            this.btngunaUpdate.Size = new System.Drawing.Size(180, 45);
+            this.btngunaUpdate.Size = new System.Drawing.Size(240, 55);
             this.btngunaUpdate.TabIndex = 13;
             this.btngunaUpdate.Text = "Update";
             this.btngunaUpdate.Click += new System.EventHandler(this.button1_Click);
             // 
-            // AddVehicalForGroup
+            // AddVehicleForGroup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.btngunaExit);
             this.Controls.Add(this.btngunaUpdate);
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.listView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AddVehicalForGroup";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "AddVehicleForGroup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddVehicalForGroup";
             this.Load += new System.EventHandler(this.AddVehicalForGroup_Load);
             this.ResumeLayout(false);
