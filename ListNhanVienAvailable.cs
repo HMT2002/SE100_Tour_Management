@@ -40,9 +40,13 @@ namespace Tour
         }
         private void showAll()
         {
-            foreach (var pt in DataProvider.Ins.DB.tb_PHUTRACH.Where(x => x.DOAN.NGAYKETTHUC < DateTime.Today && x.IsDeleted == false))
+            foreach (var pt in DataProvider.Ins.DB.tb_PHUTRACH)
             {
                 pt.NHANVIEN.isAvailable = true;
+            }
+            foreach (var pt in DataProvider.Ins.DB.tb_PHUTRACH.Where(x => x.DOAN.NGAYKETTHUC >= DateTime.Today && x.IsDeleted == false))
+            {
+                pt.NHANVIEN.isAvailable = false;
             }
             DataProvider.Ins.DB.SaveChanges();
 
@@ -73,6 +77,17 @@ namespace Tour
                 switch (dr)
                 {
                     case DialogResult.OK:
+                        tb_PHUTRACH temp_pt = DataProvider.Ins.DB.tb_PHUTRACH.Where(x => x.PHUTRACH == this.phutrach && x.IDDOAN == doanid).FirstOrDefault();
+                        if (temp_pt != null)
+                        {
+                            temp_pt.NHANVIEN.isAvailable = true;
+                            temp_pt.NHANVIEN.SLDI--;
+
+                        DataProvider.Ins.DB.tb_PHUTRACH.Remove(temp_pt);
+
+                        }
+                            DataProvider.Ins.DB.SaveChanges();
+
                         var nvu = new tb_PHUTRACH() { ID = Converter.Instance.RandomString2(5), IDDOAN = doanid, IDNHANVIEN = temp_nv.ID, PHUTRACH = phutrach, IsDeleted = false };
                         temp_nv.SLDI++;
                         DataProvider.Ins.DB.SaveChanges();

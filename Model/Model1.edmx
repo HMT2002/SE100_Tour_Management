@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="QL_TOUR_DU_LICHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="QL_TOUR_DU_LICHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ACCOUNT">
           <Key>
             <PropertyRef Name="ID" />
@@ -524,7 +524,8 @@
             <End Role="VE" EntitySet="VE" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QL_TOUR_DU_LICHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -562,11 +563,11 @@
           <Property Name="PICBI" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="IsDeleted" Type="Boolean" />
           <Property Name="GIA" Type="Decimal" Precision="19" Scale="4" />
-          <NavigationProperty Name="tb_DIADIEM_DULICH" Relationship="Self.LK_DIADIEM_DULICH" FromRole="DIADIEM" ToRole="tb_DIADIEM_DULICH" />
-          <NavigationProperty Name="TINH" Relationship="Self.LK_TINH" FromRole="DIADIEM" ToRole="TINH" />
           <Property Name="PHIAN" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="PHICHOI" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="PHIKHAC" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="tb_DIADIEM_DULICH" Relationship="Self.LK_DIADIEM_DULICH" FromRole="DIADIEM" ToRole="tb_DIADIEM_DULICH" />
+          <NavigationProperty Name="TINH" Relationship="Self.LK_TINH" FromRole="DIADIEM" ToRole="TINH" />
         </EntityType>
         <EntityType Name="DOAN">
           <Key>
@@ -579,13 +580,13 @@
           <Property Name="CHITIETCHUONGTRINH" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="IDTOUR" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
           <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="GIA" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="tb_KHACHSAN" Relationship="Self.LK_DOAN_KHACHSAN" FromRole="DOAN" ToRole="tb_KHACHSAN" />
           <NavigationProperty Name="tb_NHIEMVU" Relationship="Self.LK_DOAN_NHIEMVU" FromRole="DOAN" ToRole="tb_NHIEMVU" />
           <NavigationProperty Name="tb_PHUONGTIEN" Relationship="Self.LK_DOAN_PHUONGTIEN" FromRole="DOAN" ToRole="tb_PHUONGTIEN" />
           <NavigationProperty Name="tb_PHUTRACH" Relationship="Self.LK_DOAN_PHUTRACH" FromRole="DOAN" ToRole="tb_PHUTRACH" />
           <NavigationProperty Name="TOUR" Relationship="Self.LK_TOUR_DOAN" FromRole="DOAN" ToRole="TOUR" />
           <NavigationProperty Name="VEs" Relationship="Self.LK_VE_DOAN" FromRole="DOAN" ToRole="VE" />
-          <Property Name="GIA" Type="Decimal" Precision="19" Scale="4" />
         </EntityType>
         <EntityType Name="GIAMGIA">
           <Key>
@@ -1084,48 +1085,7 @@
             <End Role="TOUR" EntitySet="TOURs" />
             <End Role="tb_DIADIEM_DULICH" EntitySet="tb_DIADIEM_DULICH" />
           </AssociationSet>
-          <FunctionImport Name="sp_alterdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_creatediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_dropdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(QL_TOUR_DU_LICHModel.sp_helpdiagramdefinition_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(QL_TOUR_DU_LICHModel.sp_helpdiagrams_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_renamediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="new_diagramname" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1158,9 +1118,6 @@
           <EntitySetMapping Name="DIADIEMs">
             <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.DIADIEM">
               <MappingFragment StoreEntitySet="DIADIEM">
-                <ScalarProperty Name="PHIKHAC" ColumnName="PHIKHAC" />
-                <ScalarProperty Name="PHICHOI" ColumnName="PHICHOI" />
-                <ScalarProperty Name="PHIAN" ColumnName="PHIAN" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TEN" ColumnName="TEN" />
                 <ScalarProperty Name="IDTINH" ColumnName="IDTINH" />
@@ -1168,13 +1125,15 @@
                 <ScalarProperty Name="PICBI" ColumnName="PICBI" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
                 <ScalarProperty Name="GIA" ColumnName="GIA" />
+                <ScalarProperty Name="PHIAN" ColumnName="PHIAN" />
+                <ScalarProperty Name="PHICHOI" ColumnName="PHICHOI" />
+                <ScalarProperty Name="PHIKHAC" ColumnName="PHIKHAC" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DOANs">
             <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.DOAN">
               <MappingFragment StoreEntitySet="DOAN">
-                <ScalarProperty Name="GIA" ColumnName="GIA" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TEN" ColumnName="TEN" />
                 <ScalarProperty Name="NGAYKHOIHANH" ColumnName="NGAYKHOIHANH" />
@@ -1182,6 +1141,7 @@
                 <ScalarProperty Name="CHITIETCHUONGTRINH" ColumnName="CHITIETCHUONGTRINH" />
                 <ScalarProperty Name="IDTOUR" ColumnName="IDTOUR" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="GIA" ColumnName="GIA" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1345,7 +1305,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          </EntityContainerMapping>
+        </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

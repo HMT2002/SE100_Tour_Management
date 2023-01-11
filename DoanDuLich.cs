@@ -490,6 +490,12 @@ namespace Tour
         {
             if (DataProvider.Ins.DB.DOANs.Where(x=>x.ID==id).FirstOrDefault()!=null)
             {
+                if (DataProvider.Ins.DB.DOANs.Where(x => x.ID == id).FirstOrDefault().NGAYKETTHUC < DateTime.Today)
+                {
+                    MessageBox.Show("The group has ended");
+                    return;
+                }
+
                 using (NhiemVuTrongDoan nv = new NhiemVuTrongDoan(id))
                 {
                     this.Hide();

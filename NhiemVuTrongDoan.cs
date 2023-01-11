@@ -43,7 +43,7 @@ namespace Tour
 
         private void LoadData()
         {
-            var tb_phutrach = DataProvider.Ins.DB.tb_PHUTRACH.Where(x => x.IDDOAN == doanID && x.IsDeleted == false&&x.DOAN.NGAYKETTHUC<DateTime.Today).ToList();
+            var tb_phutrach = DataProvider.Ins.DB.tb_PHUTRACH.Where(x => x.IDDOAN == doanID && x.IsDeleted == false&&x.DOAN.NGAYKETTHUC>DateTime.Today).ToList();
             foreach (var tb in tb_phutrach)
             {
                 if (tb.PHUTRACH == "Tour Guide")

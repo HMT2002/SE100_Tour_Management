@@ -4,12 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="343b3ca1cf124e7cb86817ed9749477d" Name="Diagram1" ZoomLevel="94">
+      <Diagram DiagramId="899e95379a0c4786bc3b78ebcd8a3e88" Name="Diagram1">
         <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.ACCOUNT" Width="1.5" PointX="3.75" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.CHIPHI" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.DIADIEM" Width="1.5" PointX="3.75" PointY="28.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.DOAN" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.GIAMGIA" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.DIADIEM" Width="1.5" PointX="3.75" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.DOAN" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.GIAMGIA" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
         <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.KHACHHANG" Width="1.5" PointX="6" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.KHACHSAN" Width="1.5" PointX="3" PointY="21.125" IsExpanded="true" />
         <EntityTypeShape EntityType="QL_TOUR_DU_LICHModel.NHANVIEN" Width="1.5" PointX="3" PointY="17" IsExpanded="true" />
