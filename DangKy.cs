@@ -312,17 +312,50 @@ namespace Tour
 
             if (index >= 0)
             {
-                Type t = cbGroup.SelectedItem.GetType();
 
-                string iddoan = t.GetProperty("IDDOAN").GetValue(cbGroup.SelectedItem, null).ToString();
+                Type t = cbDes.SelectedItem.GetType();
+                string idtour = t.GetProperty("IDTOUR").GetValue(cbDes.SelectedItem, null).ToString();
+                selected_tour = DataProvider.Ins.DB.TOURs.Where(x => x.ID == idtour).FirstOrDefault();
+
+                Type g = cbGroup.SelectedItem.GetType();
+                string iddoan = g.GetProperty("IDDOAN").GetValue(cbGroup.SelectedItem, null).ToString();
                 selected_group = DataProvider.Ins.DB.DOANs.Where(x => x.ID == iddoan).FirstOrDefault();
+
                 tbDate.Text = selected_group.NGAYKHOIHANH.Value.ToString("dd/MM/yyyy");
                 tbDuration.Text = ((DateTime)selected_group.NGAYKETTHUC - (DateTime)selected_group.NGAYKHOIHANH).TotalDays.ToString();
-
                 lblReciptStartDate.Text= selected_group.NGAYKHOIHANH.Value.ToString("dd/MM/yyyy");
                 lblReciptEndDate.Text= selected_group.NGAYKETTHUC.ToString();
                 lblReciptGroupName.Text = selected_group.TEN;
 
+                tbPrice.Text = Converter.Instance.CurrencyDisplay((decimal)selected_group.GIA);
+
+                GIAMGIA giamgia = DataProvider.Ins.DB.GIAMGIAs.Where(x => x.IDTOUR == selected_tour.ID && x.IsDeleted == false && x.NGAYBATDAU >= DateTime.Today).FirstOrDefault();
+
+                if (giamgia != null)
+                {
+                    banner_discount = (double)giamgia.DISCOUNT;
+                    if (giamgia.DISCOUNT != 0)
+                    {
+                        pcbxBanner.Image = Converter.Instance.ByteArrayToImage(giamgia.PICBI);
+                        pcbxBanner.Visible = true;
+                    }
+                }
+                tbDiscount.Text = (banner_discount + customer_discount).ToString();
+                try
+                {
+                    decimal res = 0;
+                    double discount = banner_discount + customer_discount;
+                    decimal price = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tbPrice.Text);
+                    res = price - (price * (decimal)(discount / 100));
+                    tbTotal.Text = Converter.Instance.CurrencyDisplay(res);
+                }
+                catch
+                {
+                    tbTotal.Text = tbPrice.Text;
+
+                }
+
+                lblReciptPrice.Text = tbTotal.Text;
             }
 
         }
