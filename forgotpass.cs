@@ -96,10 +96,12 @@ namespace Tour
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            LoginForm change = new LoginForm();
-            this.Hide();
-            change.ShowDialog();
-            this.Show();
+            //LoginForm change = new LoginForm();
+            //this.Hide();
+            //change.ShowDialog();
+            //this.Show();
+
+            this.Dispose();
         }
 
         private void emailtxb_Validated(object sender, EventArgs e)

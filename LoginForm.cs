@@ -80,7 +80,7 @@ namespace Tour
                 ACCOUNT acc = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false && x.ACCROLE == "Customer")).SingleOrDefault();
                 if (acc != null)
                 {
-                    KHACHHANG kh = DataProvider.Ins.DB.KHACHHANGs.Where(x => (x.IDACC == acc.ID&&x.IsDeleted==false )).SingleOrDefault();
+                    KHACHHANG kh = DataProvider.Ins.DB.KHACHHANGs.Where(x => (x.IDACC == acc.ID && x.IsDeleted == false)).SingleOrDefault();
                     LoyalCustomer menuF = new LoyalCustomer(kh);
                     this.Hide();
                     menuF.ShowDialog();
@@ -93,7 +93,7 @@ namespace Tour
             }
             else
             {
-                if (DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false &&( (x.ACCROLE == "Manager") || (x.ACCROLE == "Employee")))).SingleOrDefault() != null)
+                if (DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false && ((x.ACCROLE == "Manager") || (x.ACCROLE == "Employee")))).SingleOrDefault() != null)
                 {
                     if (cbghinho.Checked == true)
                     {
@@ -147,9 +147,9 @@ namespace Tour
             forgotpass forgotpass = new forgotpass();
             this.Hide();
             forgotpass.ShowDialog();
+            this.Show();
+            //if (!this.IsDisposed)
 
-            if (!this.IsDisposed)
-                this.Show();
         }
 
         private void emailtxb_Validating(object sender, CancelEventArgs e)
@@ -202,7 +202,7 @@ namespace Tour
         private void btnSearch_Click(object sender, EventArgs e)
         {
             //OpenTicketReport();
-            VE ve = DataProvider.Ins.DB.VEs.Where(x => x.ID == txtbxSearchTicket.Text&&x.IsDeleted==false).FirstOrDefault();
+            VE ve = DataProvider.Ins.DB.VEs.Where(x => x.ID == txtbxSearchTicket.Text && x.IsDeleted == false).FirstOrDefault();
             if (ve == null)
             {
                 MessageBox.Show("Ticket ID doesn't existed");
