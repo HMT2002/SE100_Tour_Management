@@ -63,8 +63,8 @@ namespace Tour
                 listViewItem.ImageKey = i.ToString();
                 i++;
             }
-            listView_ImageList1.ImageSize = new Size(60, 60);
-            listView_ImageList2.ImageSize = new Size(60, 60);
+            listView_ImageList1.ImageSize = new Size(100, 100);
+            listView_ImageList2.ImageSize = new Size(100, 100);
 
             listView1.LargeImageList = listView_ImageList1;
             listView2.LargeImageList = listView_ImageList2;
