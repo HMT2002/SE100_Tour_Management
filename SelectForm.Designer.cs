@@ -85,11 +85,11 @@ namespace Tour
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(10, 7);
+            this.label1.Location = new System.Drawing.Point(21, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(246, 85);
+            this.label1.Size = new System.Drawing.Size(207, 33);
             this.label1.TabIndex = 11;
             this.label1.Text = "label1";
             // 
@@ -839,7 +839,7 @@ namespace Tour
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SelectForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SelectForm";
+            this.Text = "Weekend Travel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SelectForm_FormClosing);
             this.Load += new System.EventHandler(this.SelectForm_Load);
             this.panel_slide.ResumeLayout(false);

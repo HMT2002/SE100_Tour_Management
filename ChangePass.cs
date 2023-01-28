@@ -54,7 +54,7 @@ namespace Tour
 
         private void Cancelbtn_Click(object sender, EventArgs e)
         {
-
+            this.Close();
             Clear();
         }
     }

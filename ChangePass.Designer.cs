@@ -49,10 +49,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(87, 159);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(65, 129);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 25);
+            this.label1.Size = new System.Drawing.Size(108, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "New Password";
             // 
@@ -62,10 +61,9 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(87, 248);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(65, 202);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 25);
+            this.label2.Size = new System.Drawing.Size(132, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Confirm Password";
             // 
@@ -74,10 +72,9 @@
             this.Resetbtn.BackColor = System.Drawing.Color.Gainsboro;
             this.Resetbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Resetbtn.ForeColor = System.Drawing.Color.Black;
-            this.Resetbtn.Location = new System.Drawing.Point(203, 362);
-            this.Resetbtn.Margin = new System.Windows.Forms.Padding(4);
+            this.Resetbtn.Location = new System.Drawing.Point(152, 294);
             this.Resetbtn.Name = "Resetbtn";
-            this.Resetbtn.Size = new System.Drawing.Size(256, 39);
+            this.Resetbtn.Size = new System.Drawing.Size(192, 32);
             this.Resetbtn.TabIndex = 4;
             this.Resetbtn.Text = "Reset";
             this.Resetbtn.UseVisualStyleBackColor = false;
@@ -88,10 +85,9 @@
             this.Cancelbtn.BackColor = System.Drawing.Color.Gainsboro;
             this.Cancelbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancelbtn.ForeColor = System.Drawing.Color.Black;
-            this.Cancelbtn.Location = new System.Drawing.Point(203, 409);
-            this.Cancelbtn.Margin = new System.Windows.Forms.Padding(4);
+            this.Cancelbtn.Location = new System.Drawing.Point(152, 332);
             this.Cancelbtn.Name = "Cancelbtn";
-            this.Cancelbtn.Size = new System.Drawing.Size(256, 39);
+            this.Cancelbtn.Size = new System.Drawing.Size(192, 32);
             this.Cancelbtn.TabIndex = 5;
             this.Cancelbtn.Text = "Cancel";
             this.Cancelbtn.UseVisualStyleBackColor = false;
@@ -112,9 +108,10 @@
             this.guna2Panel1.Controls.Add(this.Resetbtn);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
-            this.guna2Panel1.Location = new System.Drawing.Point(192, 220);
+            this.guna2Panel1.Location = new System.Drawing.Point(144, 179);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(662, 467);
+            this.guna2Panel1.Size = new System.Drawing.Size(496, 379);
             this.guna2Panel1.TabIndex = 6;
             // 
             // confirmtxb
@@ -129,12 +126,13 @@
             this.confirmtxb.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.confirmtxb.ForeColor = System.Drawing.Color.Black;
             this.confirmtxb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.confirmtxb.Location = new System.Drawing.Point(92, 285);
+            this.confirmtxb.Location = new System.Drawing.Point(69, 232);
+            this.confirmtxb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.confirmtxb.Name = "confirmtxb";
             this.confirmtxb.PasswordChar = '\0';
             this.confirmtxb.PlaceholderText = "";
             this.confirmtxb.SelectedText = "";
-            this.confirmtxb.Size = new System.Drawing.Size(450, 36);
+            this.confirmtxb.Size = new System.Drawing.Size(338, 29);
             this.confirmtxb.TabIndex = 9;
             // 
             // newpasstxb
@@ -149,12 +147,13 @@
             this.newpasstxb.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.newpasstxb.ForeColor = System.Drawing.Color.Black;
             this.newpasstxb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.newpasstxb.Location = new System.Drawing.Point(92, 198);
+            this.newpasstxb.Location = new System.Drawing.Point(69, 161);
+            this.newpasstxb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.newpasstxb.Name = "newpasstxb";
             this.newpasstxb.PasswordChar = '\0';
             this.newpasstxb.PlaceholderText = "";
             this.newpasstxb.SelectedText = "";
-            this.newpasstxb.Size = new System.Drawing.Size(450, 36);
+            this.newpasstxb.Size = new System.Drawing.Size(338, 29);
             this.newpasstxb.TabIndex = 8;
             // 
             // guna2Panel2
@@ -162,30 +161,30 @@
             this.guna2Panel2.BackColor = System.Drawing.Color.Gray;
             this.guna2Panel2.BorderColor = System.Drawing.Color.Gray;
             this.guna2Panel2.BorderThickness = 1;
-            this.guna2Panel2.Location = new System.Drawing.Point(92, 108);
+            this.guna2Panel2.Location = new System.Drawing.Point(69, 88);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(450, 1);
+            this.guna2Panel2.Size = new System.Drawing.Size(338, 1);
             this.guna2Panel2.TabIndex = 7;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(85, 53);
+            this.label3.Location = new System.Drawing.Point(64, 43);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(245, 38);
+            this.label3.Size = new System.Drawing.Size(196, 30);
             this.label3.TabIndex = 6;
             this.label3.Text = "Change Password";
             // 
             // ChangePass
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 945);
+            this.ClientSize = new System.Drawing.Size(900, 768);
             this.Controls.Add(this.guna2Panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ChangePass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChangePass";
