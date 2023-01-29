@@ -76,6 +76,7 @@ namespace Tour
             // rchtxtbxDetail
             // 
             this.rchtxtbxDetail.BackColor = System.Drawing.Color.Bisque;
+            this.rchtxtbxDetail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rchtxtbxDetail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.rchtxtbxDetail.Location = new System.Drawing.Point(55, 688);
             this.rchtxtbxDetail.Margin = new System.Windows.Forms.Padding(5);
@@ -330,7 +331,7 @@ namespace Tour
             this.txtbxName.ShadowDecoration.Depth = 15;
             this.txtbxName.ShadowDecoration.Enabled = true;
             this.txtbxName.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
-            this.txtbxName.Size = new System.Drawing.Size(472, 44);
+            this.txtbxName.Size = new System.Drawing.Size(471, 44);
             this.txtbxName.TabIndex = 2;
             // 
             // txtbxGia
@@ -361,7 +362,7 @@ namespace Tour
             this.txtbxGia.ShadowDecoration.Depth = 15;
             this.txtbxGia.ShadowDecoration.Enabled = true;
             this.txtbxGia.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
-            this.txtbxGia.Size = new System.Drawing.Size(239, 44);
+            this.txtbxGia.Size = new System.Drawing.Size(238, 44);
             this.txtbxGia.TabIndex = 32;
             this.txtbxGia.TabStop = false;
             this.txtbxGia.TextChanged += new System.EventHandler(this.txtbxGia_TextChanged);
@@ -396,7 +397,7 @@ namespace Tour
             this.txtbxId.ShadowDecoration.Depth = 15;
             this.txtbxId.ShadowDecoration.Enabled = true;
             this.txtbxId.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
-            this.txtbxId.Size = new System.Drawing.Size(472, 44);
+            this.txtbxId.Size = new System.Drawing.Size(471, 44);
             this.txtbxId.TabIndex = 8;
             this.txtbxId.TabStop = false;
             // 
@@ -412,8 +413,8 @@ namespace Tour
             this.cbboxProvince.FillColor = System.Drawing.Color.Bisque;
             this.cbboxProvince.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbboxProvince.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbboxProvince.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbboxProvince.ForeColor = System.Drawing.Color.Black;
+            this.cbboxProvince.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cbboxProvince.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.cbboxProvince.IntegralHeight = false;
             this.cbboxProvince.ItemHeight = 30;
             this.cbboxProvince.Location = new System.Drawing.Point(277, 564);
@@ -495,7 +496,7 @@ namespace Tour
             this.txtbxOthers.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxOthers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxOthers.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxOthers.Location = new System.Drawing.Point(601, 485);
+            this.txtbxOthers.Location = new System.Drawing.Point(600, 485);
             this.txtbxOthers.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbxOthers.Name = "txtbxOthers";
             this.txtbxOthers.PasswordChar = '\0';

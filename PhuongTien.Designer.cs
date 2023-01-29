@@ -226,7 +226,7 @@ namespace Tour
             this.rchtxtbxDetail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.rchtxtbxDetail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.rchtxtbxDetail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rchtxtbxDetail.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.rchtxtbxDetail.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.rchtxtbxDetail.ForeColor = System.Drawing.Color.Black;
             this.rchtxtbxDetail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.rchtxtbxDetail.Location = new System.Drawing.Point(27, 418);
@@ -376,7 +376,7 @@ namespace Tour
             this.pcbxVehical.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pcbxVehical.Image = global::Tour.Properties.Resources.ic_image_empty_128;
             this.pcbxVehical.Location = new System.Drawing.Point(27, 27);
-            this.pcbxVehical.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbxVehical.Margin = new System.Windows.Forms.Padding(4);
             this.pcbxVehical.Name = "pcbxVehical";
             this.pcbxVehical.Size = new System.Drawing.Size(761, 553);
             this.pcbxVehical.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -395,7 +395,7 @@ namespace Tour
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PhuongTien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "PhuongTien";

@@ -64,7 +64,7 @@ namespace Tour
             this.panel3.AutoSize = true;
             this.panel3.Controls.Add(this.pcbxLocation);
             this.panel3.Location = new System.Drawing.Point(743, 302);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(849, 671);
             this.panel3.TabIndex = 5;
@@ -74,7 +74,7 @@ namespace Tour
             this.pcbxLocation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pcbxLocation.Image = global::Tour.Properties.Resources.ic_image_empty_128;
             this.pcbxLocation.Location = new System.Drawing.Point(4, 14);
-            this.pcbxLocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbxLocation.Margin = new System.Windows.Forms.Padding(4);
             this.pcbxLocation.Name = "pcbxLocation";
             this.pcbxLocation.Size = new System.Drawing.Size(841, 652);
             this.pcbxLocation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -99,7 +99,7 @@ namespace Tour
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.rchtxtbxDetail);
             this.panel1.Location = new System.Drawing.Point(12, 302);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(723, 708);
             this.panel1.TabIndex = 4;
@@ -116,18 +116,18 @@ namespace Tour
             this.cbboxProvince.FillColor = System.Drawing.Color.Bisque;
             this.cbboxProvince.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbboxProvince.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbboxProvince.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbboxProvince.ForeColor = System.Drawing.Color.Black;
+            this.cbboxProvince.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.cbboxProvince.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.cbboxProvince.IntegralHeight = false;
             this.cbboxProvince.ItemHeight = 30;
             this.cbboxProvince.Location = new System.Drawing.Point(156, 261);
-            this.cbboxProvince.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbboxProvince.Margin = new System.Windows.Forms.Padding(4);
             this.cbboxProvince.MaxDropDownItems = 5;
             this.cbboxProvince.Name = "cbboxProvince";
             this.cbboxProvince.ShadowDecoration.BorderRadius = 10;
             this.cbboxProvince.ShadowDecoration.Depth = 15;
             this.cbboxProvince.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
-            this.cbboxProvince.Size = new System.Drawing.Size(561, 36);
+            this.cbboxProvince.Size = new System.Drawing.Size(563, 36);
             this.cbboxProvince.TabIndex = 6;
             // 
             // label4
@@ -196,8 +196,8 @@ namespace Tour
             this.cbbxHotel.FillColor = System.Drawing.Color.Bisque;
             this.cbbxHotel.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbxHotel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbxHotel.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbxHotel.ForeColor = System.Drawing.Color.Black;
+            this.cbbxHotel.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.cbbxHotel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.cbbxHotel.ItemHeight = 30;
             this.cbbxHotel.Location = new System.Drawing.Point(156, 2);
             this.cbbxHotel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -219,8 +219,8 @@ namespace Tour
             this.txtbxName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtbxName.FillColor = System.Drawing.Color.Bisque;
             this.txtbxName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtbxName.ForeColor = System.Drawing.Color.Black;
+            this.txtbxName.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtbxName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.txtbxName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxName.Location = new System.Drawing.Point(156, 54);
             this.txtbxName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -228,7 +228,7 @@ namespace Tour
             this.txtbxName.PasswordChar = '\0';
             this.txtbxName.PlaceholderText = "";
             this.txtbxName.SelectedText = "";
-            this.txtbxName.Size = new System.Drawing.Size(564, 36);
+            this.txtbxName.Size = new System.Drawing.Size(563, 36);
             this.txtbxName.TabIndex = 2;
             // 
             // txtbxDiaChi
@@ -244,8 +244,8 @@ namespace Tour
             this.txtbxDiaChi.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtbxDiaChi.FillColor = System.Drawing.Color.Bisque;
             this.txtbxDiaChi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxDiaChi.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtbxDiaChi.ForeColor = System.Drawing.Color.Black;
+            this.txtbxDiaChi.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtbxDiaChi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.txtbxDiaChi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxDiaChi.Location = new System.Drawing.Point(156, 106);
             this.txtbxDiaChi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -253,7 +253,7 @@ namespace Tour
             this.txtbxDiaChi.PasswordChar = '\0';
             this.txtbxDiaChi.PlaceholderText = "";
             this.txtbxDiaChi.SelectedText = "";
-            this.txtbxDiaChi.Size = new System.Drawing.Size(564, 36);
+            this.txtbxDiaChi.Size = new System.Drawing.Size(563, 36);
             this.txtbxDiaChi.TabIndex = 3;
             // 
             // txtbxGia
@@ -269,8 +269,7 @@ namespace Tour
             this.txtbxGia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtbxGia.FillColor = System.Drawing.Color.Bisque;
             this.txtbxGia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxGia.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtbxGia.ForeColor = System.Drawing.Color.Black;
+            this.txtbxGia.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtbxGia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxGia.Location = new System.Drawing.Point(156, 158);
             this.txtbxGia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -278,7 +277,7 @@ namespace Tour
             this.txtbxGia.PasswordChar = '\0';
             this.txtbxGia.PlaceholderText = "";
             this.txtbxGia.SelectedText = "";
-            this.txtbxGia.Size = new System.Drawing.Size(564, 36);
+            this.txtbxGia.Size = new System.Drawing.Size(563, 36);
             this.txtbxGia.TabIndex = 4;
             this.txtbxGia.TextChanged += new System.EventHandler(this.txtbxGia_TextChanged);
             this.txtbxGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxGia_KeyPress);
@@ -297,8 +296,8 @@ namespace Tour
             this.txtbxSDT.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtbxSDT.FillColor = System.Drawing.Color.Bisque;
             this.txtbxSDT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxSDT.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtbxSDT.ForeColor = System.Drawing.Color.Black;
+            this.txtbxSDT.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtbxSDT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.txtbxSDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxSDT.Location = new System.Drawing.Point(156, 208);
             this.txtbxSDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -307,7 +306,7 @@ namespace Tour
             this.txtbxSDT.PasswordChar = '\0';
             this.txtbxSDT.PlaceholderText = "";
             this.txtbxSDT.SelectedText = "";
-            this.txtbxSDT.Size = new System.Drawing.Size(564, 36);
+            this.txtbxSDT.Size = new System.Drawing.Size(563, 36);
             this.txtbxSDT.TabIndex = 5;
             this.txtbxSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxSDT_KeyPress);
             // 
@@ -325,10 +324,10 @@ namespace Tour
             // rchtxtbxDetail
             // 
             this.rchtxtbxDetail.BackColor = System.Drawing.Color.Bisque;
-            this.rchtxtbxDetail.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.rchtxtbxDetail.ForeColor = System.Drawing.Color.Black;
+            this.rchtxtbxDetail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.rchtxtbxDetail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(117)))), ((int)(((byte)(112)))));
             this.rchtxtbxDetail.Location = new System.Drawing.Point(11, 313);
-            this.rchtxtbxDetail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rchtxtbxDetail.Margin = new System.Windows.Forms.Padding(4);
             this.rchtxtbxDetail.Name = "rchtxtbxDetail";
             this.rchtxtbxDetail.Size = new System.Drawing.Size(707, 386);
             this.rchtxtbxDetail.TabIndex = 7;
@@ -340,7 +339,7 @@ namespace Tour
             this.guna2Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(1600, 240);
             this.guna2Panel2.TabIndex = 44;
@@ -422,7 +421,7 @@ namespace Tour
             this.guna2Panel1.Controls.Add(this.btnXoa);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 986);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1600, 116);
             this.guna2Panel1.TabIndex = 48;
@@ -462,7 +461,7 @@ namespace Tour
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Hotel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hotel";
