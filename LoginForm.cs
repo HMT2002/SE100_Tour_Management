@@ -12,7 +12,6 @@ using System.Security.Cryptography;
 using System.Threading;
 using Tour.Model;
 using Tour.Utils;
-using Tour.CrystalReport;
 
 namespace Tour
 {
@@ -185,18 +184,6 @@ namespace Tour
 
             VE ve = DataProvider.Ins.DB.VEs.Where(x => (x.ID == ticket_id && x.IsDeleted == false)).SingleOrDefault();
 
-            using (fPrint f = new fPrint(ve))
-            {
-                rptTicket crys = new rptTicket();
-                crys.Load(@"rptTicket.rep");
-
-                f.rptViewer.ReportSource = crys;
-                f.rptViewer.Refresh();
-
-                f.rptViewer.SelectionFormula = "{VE.ID} = '" + ve.ID + "' ";
-
-                f.ShowDialog();
-            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

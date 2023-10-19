@@ -29,26 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fPrint));
-            this.rptViewer = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
             // rptViewer
             // 
-            this.rptViewer.ActiveViewIndex = -1;
-            this.rptViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rptViewer.Cursor = System.Windows.Forms.Cursors.Default;
-            this.rptViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rptViewer.Location = new System.Drawing.Point(0, 0);
-            this.rptViewer.Name = "rptViewer";
-            this.rptViewer.Size = new System.Drawing.Size(800, 450);
-            this.rptViewer.TabIndex = 0;
+
             // 
             // fPrint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.rptViewer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fPrint";
             this.Text = "fPrint";
@@ -58,6 +49,5 @@
         }
 
         #endregion
-        public CrystalDecisions.Windows.Forms.CrystalReportViewer rptViewer;
     }
 }

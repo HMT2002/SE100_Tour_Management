@@ -1,5 +1,4 @@
-﻿using CrystalDecisions.CrystalReports.Engine;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Compilation;
 using System.Windows.Forms;
-using Tour.CrystalReport;
 using Tour.Model;
 
 namespace Tour
@@ -67,19 +65,6 @@ namespace Tour
                 return;
             }
 
-
-            using(fPrint f=new fPrint(this.Ve))
-            {
-                rptTicket crys = new rptTicket();
-                crys.Load(@"rptTicket.rep");
-
-                f.rptViewer.ReportSource = crys;
-                f.rptViewer.Refresh();
-
-                f.rptViewer.SelectionFormula = "{VE.ID} = '" + this.Ve.ID + "' ";
-
-                f.ShowDialog();
-            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)

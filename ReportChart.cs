@@ -10,7 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Tour.CrystalReport;
 using Tour.Model;
 
 namespace Tour
@@ -59,58 +58,22 @@ namespace Tour
 
         public void OpenReportYearly()
         {
-            using (fPrint f = new fPrint())
-            {
-                rptYearly crys = new rptYearly();
-                crys.Load(@"rptYearly.rep");
 
-                f.rptViewer.ReportSource = crys;
-                f.rptViewer.Refresh();
-                f.rptViewer.SelectionFormula = "{Command.NAM}=" + cbbxYear.SelectedValue.ToString();
-                f.ShowDialog();
-            }
         }
 
         public void OpenReportYearlyTour()
         {
-            using (fPrint f = new fPrint())
-            {
-                rptYearly crys = new rptYearly();
-                crys.Load(@"rptYearly.rep");
 
-                f.rptViewer.ReportSource = crys;
-                f.rptViewer.Refresh();
-                f.rptViewer.SelectionFormula = "{Command.NAM}=" + cbbxYear.SelectedValue.ToString();
-                f.ShowDialog();
-            }
         }
 
         private void OpenReportMonthly()
         {
-            using (fPrint f = new fPrint())
-            {
-                rptMonthly crys = new rptMonthly();
-                crys.Load(@"rptMonthly.rep");
 
-                f.rptViewer.ReportSource = crys;
-                f.rptViewer.Refresh();
-                f.rptViewer.SelectionFormula = "{Command.NAM}=" + cbbxYear.SelectedValue.ToString();
-                f.ShowDialog();
-            }
         }
 
         public void OpenReport()
         {
-            using (fPrint f = new fPrint(this.selected_tour))
-            {
-                rptTourIncome crys = new rptTourIncome();
-                crys.Load(@"rptTourIncome.rep");
 
-                f.rptViewer.ReportSource = crys;
-                f.rptViewer.Refresh();
-                f.rptViewer.SelectionFormula = "{Command.TourID}='" + this.selected_tour.ID + "' and {Command.NAM}=" + this.selected_year + " and {Command.THANG}=" + this.selected_month;
-                f.ShowDialog();
-            }
         }
 
         public void LoadCharts()

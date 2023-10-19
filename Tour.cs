@@ -13,7 +13,6 @@ using Tour.Model;
 using Tour.Utils;
 using System.Data.Entity.SqlServer;
 using System.Data.Entity;
-using Tour.CrystalReport;
 using System.Globalization;
 using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;

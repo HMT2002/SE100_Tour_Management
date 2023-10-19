@@ -210,30 +210,6 @@
     <Compile Include="ChooseLoyalCustomer.Designer.cs">
       <DependentUpon>ChooseLoyalCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="CrystalReport\rptMonthly.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rptMonthly.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CrystalReport\rptTicket.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rptTicket.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CrystalReport\rptTourIncome.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rptTourIncome.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CrystalReport\rptYearly.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rptYearly.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="CSDLPhieuDatCho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -463,22 +439,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChooseLoyalCustomer.resx">
       <DependentUpon>ChooseLoyalCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport\rptMonthly.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptMonthly.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport\rptTicket.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptTicket.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport\rptTourIncome.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptTourIncome.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport\rptYearly.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptYearly.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CSDLPhieuDatCho.resx">
       <DependentUpon>CSDLPhieuDatCho.cs</DependentUpon>

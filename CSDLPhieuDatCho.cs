@@ -11,7 +11,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Tour.CrystalReport;
 using Tour.Model;
 
 namespace Tour
@@ -291,18 +290,6 @@ namespace Tour
         {
                 VE ve = DataProvider.Ins.DB.VEs.Where(x => (x.ID == this.selected_ve.ID && x.IsDeleted == false)).SingleOrDefault();
 
-                using (fPrint f = new fPrint(ve))
-                {
-                    rptTicket crys = new rptTicket();
-                    crys.Load(@"rptTicket.rep");
-
-                    f.rptViewer.ReportSource = crys;
-                    f.rptViewer.Refresh();
-
-                    f.rptViewer.SelectionFormula = "{VE.ID} = '" + ve.ID + "' ";
-
-                    f.ShowDialog();
-                }
         }
 
         private void AskForReport()

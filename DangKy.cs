@@ -10,7 +10,6 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Tour.CrystalReport;
 using Tour.Model;
 using Tour.Utils;
 
@@ -444,18 +443,6 @@ namespace Tour
 
                 VE ve = DataProvider.Ins.DB.VEs.Where(x => (x.ID == temp_ticket_id && x.IsDeleted == false)).SingleOrDefault();
 
-                using (fPrint f = new fPrint(ve))
-                {
-                    rptTicket crys = new rptTicket();
-                    crys.Load(@"rptTicket.rep");
-
-                    f.rptViewer.ReportSource = crys;
-                    f.rptViewer.Refresh();
-
-                    f.rptViewer.SelectionFormula = "{VE.ID} = '" + ve.ID + "' ";
-
-                    f.ShowDialog();
-                }
             }
 
         }
