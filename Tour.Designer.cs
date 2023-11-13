@@ -31,11 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tour));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv_trip = new System.Windows.Forms.DataGridView();
-            this.data_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DACDIEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tb_search = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnAddLocation = new System.Windows.Forms.Button();
@@ -62,6 +57,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.rdNameSearch = new System.Windows.Forms.RadioButton();
             this.rdIDSearch = new System.Windows.Forms.RadioButton();
+            this.data_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENTOUR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DACDIEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_trip)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -87,7 +87,7 @@
             this.dgv_trip.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_trip.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.data_ID,
-            this.TEN,
+            this.TENTOUR,
             this.GIA,
             this.DACDIEM,
             this.LOAI});
@@ -95,44 +95,10 @@
             this.dgv_trip.Name = "dgv_trip";
             this.dgv_trip.ReadOnly = true;
             this.dgv_trip.RowHeadersWidth = 51;
+            this.dgv_trip.RowTemplate.Height = 50;
             this.dgv_trip.Size = new System.Drawing.Size(1434, 225);
             this.dgv_trip.TabIndex = 1;
             this.dgv_trip.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_trip_CellClick_1);
-            // 
-            // data_ID
-            // 
-            this.data_ID.DataPropertyName = "ID";
-            this.data_ID.HeaderText = "ID";
-            this.data_ID.Name = "data_ID";
-            this.data_ID.ReadOnly = true;
-            // 
-            // TEN
-            // 
-            this.TEN.DataPropertyName = "TEN";
-            this.TEN.HeaderText = "Tên tour du lịch";
-            this.TEN.Name = "TEN";
-            this.TEN.ReadOnly = true;
-            // 
-            // GIA
-            // 
-            this.GIA.DataPropertyName = "GIA";
-            this.GIA.HeaderText = "Giá";
-            this.GIA.Name = "GIA";
-            this.GIA.ReadOnly = true;
-            // 
-            // DACDIEM
-            // 
-            this.DACDIEM.DataPropertyName = "DACDIEM";
-            this.DACDIEM.HeaderText = "Đặc điểm";
-            this.DACDIEM.Name = "DACDIEM";
-            this.DACDIEM.ReadOnly = true;
-            // 
-            // LOAI
-            // 
-            this.LOAI.DataPropertyName = "LOAI";
-            this.LOAI.HeaderText = "Loại";
-            this.LOAI.Name = "LOAI";
-            this.LOAI.ReadOnly = true;
             // 
             // tb_search
             // 
@@ -244,6 +210,7 @@
             this.cb_typetour.Name = "cb_typetour";
             this.cb_typetour.Size = new System.Drawing.Size(249, 27);
             this.cb_typetour.TabIndex = 48;
+            this.cb_typetour.Enter += new System.EventHandler(this.cb_typetour_Enter);
             // 
             // tb_nametour
             // 
@@ -253,6 +220,7 @@
             this.tb_nametour.Name = "tb_nametour";
             this.tb_nametour.Size = new System.Drawing.Size(249, 26);
             this.tb_nametour.TabIndex = 47;
+            this.tb_nametour.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_nametour_KeyPress);
             // 
             // tb_price
             // 
@@ -263,6 +231,7 @@
             this.tb_price.Name = "tb_price";
             this.tb_price.Size = new System.Drawing.Size(204, 26);
             this.tb_price.TabIndex = 17;
+            this.tb_price.TextChanged += new System.EventHandler(this.tb_price_TextChanged);
             this.tb_price.Enter += new System.EventHandler(this.tb_price_Enter);
             this.tb_price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_price_KeyPress);
             // 
@@ -490,6 +459,41 @@
             this.rdIDSearch.UseVisualStyleBackColor = true;
             this.rdIDSearch.Enter += new System.EventHandler(this.rdIDSearch_Enter);
             // 
+            // data_ID
+            // 
+            this.data_ID.DataPropertyName = "ID";
+            this.data_ID.HeaderText = "ID";
+            this.data_ID.Name = "data_ID";
+            this.data_ID.ReadOnly = true;
+            // 
+            // TENTOUR
+            // 
+            this.TENTOUR.DataPropertyName = "TENTOUR";
+            this.TENTOUR.HeaderText = "Tên tour du lịch";
+            this.TENTOUR.Name = "TENTOUR";
+            this.TENTOUR.ReadOnly = true;
+            // 
+            // GIA
+            // 
+            this.GIA.DataPropertyName = "GIA";
+            this.GIA.HeaderText = "Giá";
+            this.GIA.Name = "GIA";
+            this.GIA.ReadOnly = true;
+            // 
+            // DACDIEM
+            // 
+            this.DACDIEM.DataPropertyName = "DACDIEM";
+            this.DACDIEM.HeaderText = "Đặc điểm";
+            this.DACDIEM.Name = "DACDIEM";
+            this.DACDIEM.ReadOnly = true;
+            // 
+            // LOAI
+            // 
+            this.LOAI.DataPropertyName = "LOAI";
+            this.LOAI.HeaderText = "Loại";
+            this.LOAI.Name = "LOAI";
+            this.LOAI.ReadOnly = true;
+            // 
             // Tour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -559,7 +563,7 @@
         private System.Windows.Forms.RadioButton rdNameSearch;
         private System.Windows.Forms.RadioButton rdIDSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn data_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENTOUR;
         private System.Windows.Forms.DataGridViewTextBoxColumn GIA;
         private System.Windows.Forms.DataGridViewTextBoxColumn DACDIEM;
         private System.Windows.Forms.DataGridViewTextBoxColumn LOAI;

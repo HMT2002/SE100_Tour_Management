@@ -12,13 +12,16 @@ namespace Tour.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class CHIPHI
+    public partial class GIAMGIA
     {
         public string ID { get; set; }
-        public Nullable<decimal> PHIAN { get; set; }
-        public Nullable<decimal> PHICHOI { get; set; }
-        public Nullable<decimal> PHIKHAC { get; set; }
-        public Nullable<decimal> TONG { get; set; }
+        public Nullable<int> DISCOUNT { get; set; }
+        public byte[] PICBI { get; set; }
+        public string IDTOUR { get; set; }
         public Nullable<bool> IsDeleted { get; set; }
+        public Nullable<System.DateTime> NGAYBATDAU { get; set; }
+        public Nullable<System.DateTime> NGAYKETTHUC { get; set; }
+    
+        public virtual TOUR TOUR { get; set; }
     }
 }

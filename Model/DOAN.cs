@@ -29,11 +29,10 @@ namespace Tour.Model
         public Nullable<System.DateTime> NGAYKHOIHANH { get; set; }
         public Nullable<System.DateTime> NGAYKETTHUC { get; set; }
         public string CHITIETCHUONGTRINH { get; set; }
-        public string IDCHIPHI { get; set; }
         public string IDTOUR { get; set; }
         public Nullable<bool> IsDeleted { get; set; }
+        public Nullable<decimal> GIA { get; set; }
     
-        public virtual CHIPHI CHIPHI { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_KHACHSAN> tb_KHACHSAN { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

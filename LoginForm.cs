@@ -83,12 +83,19 @@ namespace Tour
                 {
                     Properties.Settings.Default.Email = emailtxb.Text;
                     Properties.Settings.Default.Password = passwordtxb.Text;
+                    Properties.Settings.Default.CurUserId = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().ACC;
+                    Properties.Settings.Default.CurUserName = DataProvider.Ins.DB.NHANVIENs.Where(x => (x.ACCOUNT.ACC == emailtxb.Text && x.ACCOUNT.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().TEN;
+
+
                     Properties.Settings.Default.Save();
                 }
                 if (cbghinho.Checked == false)
                 {
                     Properties.Settings.Default.Email = "";
                     Properties.Settings.Default.Password = "";
+                    Properties.Settings.Default.CurUserId = "";
+                    Properties.Settings.Default.CurUserName = "";
+
                     Properties.Settings.Default.Save();
                 }
 
@@ -97,7 +104,7 @@ namespace Tour
                 {
                     Properties.Settings.Default.UserName = emailtxb.Text;
                     Properties.Settings.Default.Password = passwordtxb.Text;
-                    Properties.Settings.Default.CurUserId = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().IDNHANVIEN;
+                    Properties.Settings.Default.CurUserId = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().ID;
 
                     Properties.Settings.Default.Save();
                     SelectForm menuF = new SelectForm();

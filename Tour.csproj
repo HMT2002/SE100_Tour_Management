@@ -236,6 +236,9 @@
     <Compile Include="Model\DOAN.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\GIAMGIA.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\KHACHHANG.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -356,6 +359,8 @@
     <Compile Include="DAL\typeCustomerDAL.cs" />
     <Compile Include="Utils\Converter.cs" />
     <Compile Include="Utils\Features.cs" />
+    <Compile Include="Utils\Notify.cs" />
+    <Compile Include="Utils\Validate.cs" />
     <EmbeddedResource Include="AddHotelForGroup.resx">
       <DependentUpon>AddHotelForGroup.cs</DependentUpon>
     </EmbeddedResource>

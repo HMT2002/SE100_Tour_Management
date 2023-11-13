@@ -17,7 +17,6 @@ namespace Tour.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NHANVIEN()
         {
-            this.ACCOUNTs = new HashSet<ACCOUNT>();
             this.tb_NHIEMVU = new HashSet<tb_NHIEMVU>();
             this.tb_PHUTRACH = new HashSet<tb_PHUTRACH>();
         }
@@ -30,9 +29,9 @@ namespace Tour.Model
         public Nullable<bool> IsDeleted { get; set; }
         public Nullable<bool> isAvailable { get; set; }
         public Nullable<int> SLDI { get; set; }
+        public string IDACC { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ACCOUNT> ACCOUNTs { get; set; }
+        public virtual ACCOUNT ACCOUNT { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_NHIEMVU> tb_NHIEMVU { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
