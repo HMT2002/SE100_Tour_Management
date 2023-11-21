@@ -12,6 +12,7 @@ using System.Security.Cryptography;
 using System.Threading;
 using Tour.Model;
 using Tour.Utils;
+using Tour.Auth;
 
 namespace Tour
 {
@@ -64,10 +65,11 @@ namespace Tour
         }
         public void loginbtn_Click(object sender, EventArgs e)
         {
+
             if (cbGuest.Checked == true)
             {
                 string ticket_id = emailtxb.Text;
-                if(DataProvider.Ins.DB.VEs.Where(x => (x.ID == ticket_id && x.IsDeleted == false)).SingleOrDefault() == null)
+                if (DataProvider.Ins.DB.VEs.Where(x => (x.ID == ticket_id && x.IsDeleted == false)).SingleOrDefault() == null)
                 {
                     MessageBox.Show("Số vé không tồn tại!");
                 }
@@ -79,41 +81,34 @@ namespace Tour
             else
             {
                 string ensryptedpass = Converter.Instance.MD5Encrypt(Converter.Instance.Base64Encode(passwordtxb.Text));
-                if (cbghinho.Checked == true)
+                NHANVIEN curUser=new UserAuthConcrete().GrantAccessToUser(emailtxb.Text,ensryptedpass);
+                if ( curUser!= null)
                 {
-                    Properties.Settings.Default.Email = emailtxb.Text;
-                    Properties.Settings.Default.Password = passwordtxb.Text;
-                    Properties.Settings.Default.CurUserId = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().ACC;
-                    Properties.Settings.Default.CurUserName = DataProvider.Ins.DB.NHANVIENs.Where(x => (x.ACCOUNT.ACC == emailtxb.Text && x.ACCOUNT.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().TEN;
-
-
+                    if (cbghinho.Checked == true)
+                    {
+                        Properties.Settings.Default.Email = emailtxb.Text;
+                        Properties.Settings.Default.Password = passwordtxb.Text;
+                        ACCOUNT curAccount = curUser.ACCOUNT;
+                        Properties.Settings.Default.CurUserId = curAccount.ID;
+                        Properties.Settings.Default.CurUserName = curUser.TEN;
+                    }
+                    if (cbghinho.Checked == false)
+                    {
+                        Properties.Settings.Default.Email = "";
+                        Properties.Settings.Default.Password = "";
+                        Properties.Settings.Default.CurUserId = "";
+                        Properties.Settings.Default.CurUserName = "";
+                    }
                     Properties.Settings.Default.Save();
-                }
-                if (cbghinho.Checked == false)
-                {
-                    Properties.Settings.Default.Email = "";
-                    Properties.Settings.Default.Password = "";
-                    Properties.Settings.Default.CurUserId = "";
-                    Properties.Settings.Default.CurUserName = "";
 
-                    Properties.Settings.Default.Save();
-                }
-
-
-                if (DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault() != null)
-                {
-                    Properties.Settings.Default.UserName = emailtxb.Text;
-                    Properties.Settings.Default.Password = passwordtxb.Text;
-                    Properties.Settings.Default.CurUserId = DataProvider.Ins.DB.ACCOUNTs.Where(x => (x.ACC == emailtxb.Text && x.PASS == ensryptedpass && x.IsDeleted == false)).SingleOrDefault().ID;
-
-                    Properties.Settings.Default.Save();
-                    SelectForm menuF = new SelectForm();
+                    SelectForm menuF = new SelectForm(curUser);
                     this.Hide();
                     menuF.ShowDialog();
                     this.Show();
                 }
                 else
                 {
+
                     MessageBox.Show("Wrong email or password!!!!");
                 }
             }

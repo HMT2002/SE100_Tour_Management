@@ -49,13 +49,6 @@ namespace Tour
             this.tbName = new System.Windows.Forms.TextBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.tbCMND = new System.Windows.Forms.TextBox();
-            this.PnFore = new System.Windows.Forms.Panel();
-            this.VisaEXP = new System.Windows.Forms.DateTimePicker();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.PassEXP = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lb7 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.RdMale = new System.Windows.Forms.RadioButton();
             this.RdFmale = new System.Windows.Forms.RadioButton();
@@ -67,22 +60,14 @@ namespace Tour
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel25 = new System.Windows.Forms.Panel();
             this.tbTotal = new System.Windows.Forms.TextBox();
-            this.panel24 = new System.Windows.Forms.Panel();
-            this.tbDiscount = new System.Windows.Forms.TextBox();
-            this.panel23 = new System.Windows.Forms.Panel();
-            this.tbPrice = new System.Windows.Forms.TextBox();
             this.btReset = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbTime = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
             this.rtbreservation = new System.Windows.Forms.RichTextBox();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.rtbTicket = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel26 = new System.Windows.Forms.Panel();
@@ -106,8 +91,9 @@ namespace Tour
             this.label22 = new System.Windows.Forms.Label();
             this.btExit = new System.Windows.Forms.Button();
             this.btCreate = new System.Windows.Forms.Button();
-            this.btnGo = new System.Windows.Forms.Button();
             this.btngotocsdl = new System.Windows.Forms.Button();
+            this.btnGo = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel17.SuspendLayout();
@@ -116,15 +102,10 @@ namespace Tour
             this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel10.SuspendLayout();
-            this.PnFore.SuspendLayout();
-            this.panel11.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel25.SuspendLayout();
-            this.panel24.SuspendLayout();
-            this.panel23.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel26.SuspendLayout();
             this.panel22.SuspendLayout();
@@ -138,6 +119,7 @@ namespace Tour
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.panel17);
             this.panel1.Controls.Add(this.panel16);
@@ -147,7 +129,6 @@ namespace Tour
             this.panel1.Controls.Add(this.panel13);
             this.panel1.Controls.Add(this.panel14);
             this.panel1.Controls.Add(this.panel10);
-            this.panel1.Controls.Add(this.PnFore);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -330,10 +311,10 @@ namespace Tour
             // 
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel10.Controls.Add(this.tbCMND);
-            this.panel10.Location = new System.Drawing.Point(4, 361);
+            this.panel10.Location = new System.Drawing.Point(106, 361);
             this.panel10.Margin = new System.Windows.Forms.Padding(2);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(284, 27);
+            this.panel10.Size = new System.Drawing.Size(182, 27);
             this.panel10.TabIndex = 22;
             // 
             // tbCMND
@@ -341,94 +322,15 @@ namespace Tour
             this.tbCMND.BackColor = System.Drawing.SystemColors.Window;
             this.tbCMND.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbCMND.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCMND.Location = new System.Drawing.Point(-1, -2);
+            this.tbCMND.Location = new System.Drawing.Point(2, -2);
             this.tbCMND.Margin = new System.Windows.Forms.Padding(2);
             this.tbCMND.MaxLength = 40;
             this.tbCMND.Name = "tbCMND";
-            this.tbCMND.Size = new System.Drawing.Size(283, 26);
+            this.tbCMND.Size = new System.Drawing.Size(174, 26);
             this.tbCMND.TabIndex = 16;
             this.tbCMND.Enter += new System.EventHandler(this.tbCMND_Enter);
             this.tbCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCMND_KeyPress);
             this.tbCMND.Leave += new System.EventHandler(this.tbCMND_Leave);
-            // 
-            // PnFore
-            // 
-            this.PnFore.Controls.Add(this.VisaEXP);
-            this.PnFore.Controls.Add(this.panel12);
-            this.PnFore.Controls.Add(this.panel11);
-            this.PnFore.Controls.Add(this.label7);
-            this.PnFore.Controls.Add(this.lb7);
-            this.PnFore.Location = new System.Drawing.Point(-6, 401);
-            this.PnFore.Margin = new System.Windows.Forms.Padding(2);
-            this.PnFore.Name = "PnFore";
-            this.PnFore.Size = new System.Drawing.Size(295, 64);
-            this.PnFore.TabIndex = 21;
-            this.PnFore.Visible = false;
-            // 
-            // VisaEXP
-            // 
-            this.VisaEXP.CalendarFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VisaEXP.CustomFormat = "dd/MM/yyyy";
-            this.VisaEXP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VisaEXP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.VisaEXP.Location = new System.Drawing.Point(135, 37);
-            this.VisaEXP.Name = "VisaEXP";
-            this.VisaEXP.Size = new System.Drawing.Size(156, 26);
-            this.VisaEXP.TabIndex = 32;
-            // 
-            // panel12
-            // 
-            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel12.Location = new System.Drawing.Point(135, 37);
-            this.panel12.Margin = new System.Windows.Forms.Padding(2);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(157, 21);
-            this.panel12.TabIndex = 23;
-            // 
-            // panel11
-            // 
-            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel11.Controls.Add(this.PassEXP);
-            this.panel11.Location = new System.Drawing.Point(135, 6);
-            this.panel11.Margin = new System.Windows.Forms.Padding(2);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(157, 23);
-            this.panel11.TabIndex = 23;
-            // 
-            // PassEXP
-            // 
-            this.PassEXP.CalendarFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PassEXP.CustomFormat = "dd/MM/yyyy";
-            this.PassEXP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PassEXP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.PassEXP.Location = new System.Drawing.Point(-2, -2);
-            this.PassEXP.Name = "PassEXP";
-            this.PassEXP.Size = new System.Drawing.Size(156, 26);
-            this.PassEXP.TabIndex = 31;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(8, 35);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 21);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "Visa Exp";
-            // 
-            // lb7
-            // 
-            this.lb7.AutoSize = true;
-            this.lb7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb7.ForeColor = System.Drawing.Color.Black;
-            this.lb7.Location = new System.Drawing.Point(8, 6);
-            this.lb7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lb7.Name = "lb7";
-            this.lb7.Size = new System.Drawing.Size(111, 21);
-            this.lb7.TabIndex = 23;
-            this.lb7.Text = "Passport Exp";
             // 
             // panel6
             // 
@@ -535,16 +437,12 @@ namespace Tour
             this.panel4.BackColor = System.Drawing.SystemColors.Control;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.panel25);
-            this.panel4.Controls.Add(this.panel24);
-            this.panel4.Controls.Add(this.panel23);
             this.panel4.Controls.Add(this.btReset);
             this.panel4.Controls.Add(this.label20);
-            this.panel4.Controls.Add(this.label18);
-            this.panel4.Controls.Add(this.label17);
-            this.panel4.Location = new System.Drawing.Point(320, 391);
+            this.panel4.Location = new System.Drawing.Point(320, 395);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(336, 179);
+            this.panel4.Size = new System.Drawing.Size(336, 175);
             this.panel4.TabIndex = 4;
             // 
             // panel25
@@ -567,49 +465,6 @@ namespace Tour
             this.tbTotal.ReadOnly = true;
             this.tbTotal.Size = new System.Drawing.Size(180, 26);
             this.tbTotal.TabIndex = 7;
-            // 
-            // panel24
-            // 
-            this.panel24.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel24.Controls.Add(this.tbDiscount);
-            this.panel24.Location = new System.Drawing.Point(146, 72);
-            this.panel24.Margin = new System.Windows.Forms.Padding(2);
-            this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(180, 28);
-            this.panel24.TabIndex = 33;
-            // 
-            // tbDiscount
-            // 
-            this.tbDiscount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbDiscount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDiscount.Location = new System.Drawing.Point(-2, 0);
-            this.tbDiscount.MaxLength = 20;
-            this.tbDiscount.Name = "tbDiscount";
-            this.tbDiscount.ReadOnly = true;
-            this.tbDiscount.Size = new System.Drawing.Size(180, 26);
-            this.tbDiscount.TabIndex = 7;
-            // 
-            // panel23
-            // 
-            this.panel23.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel23.Controls.Add(this.tbPrice);
-            this.panel23.Location = new System.Drawing.Point(146, 23);
-            this.panel23.Margin = new System.Windows.Forms.Padding(2);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(180, 28);
-            this.panel23.TabIndex = 32;
-            // 
-            // tbPrice
-            // 
-            this.tbPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbPrice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPrice.Location = new System.Drawing.Point(-2, 0);
-            this.tbPrice.MaxLength = 20;
-            this.tbPrice.Name = "tbPrice";
-            this.tbPrice.ReadOnly = true;
-            this.tbPrice.Size = new System.Drawing.Size(180, 26);
-            this.tbPrice.TabIndex = 7;
-            this.tbPrice.TextChanged += new System.EventHandler(this.tbPrice_TextChanged);
             // 
             // btReset
             // 
@@ -637,30 +492,6 @@ namespace Tour
             this.label20.Size = new System.Drawing.Size(48, 21);
             this.label20.TabIndex = 18;
             this.label20.Text = "Total";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(9, 72);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(77, 21);
-            this.label18.TabIndex = 14;
-            this.label18.Text = "Discount";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(9, 23);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(48, 21);
-            this.label17.TabIndex = 12;
-            this.label17.Text = "Price";
             // 
             // timer1
             // 
@@ -694,7 +525,7 @@ namespace Tour
             this.panel3.Location = new System.Drawing.Point(668, 80);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(317, 292);
+            this.panel3.Size = new System.Drawing.Size(317, 490);
             this.panel3.TabIndex = 9;
             // 
             // label21
@@ -715,30 +546,9 @@ namespace Tour
             this.rtbreservation.Margin = new System.Windows.Forms.Padding(2);
             this.rtbreservation.Name = "rtbreservation";
             this.rtbreservation.ReadOnly = true;
-            this.rtbreservation.Size = new System.Drawing.Size(316, 255);
+            this.rtbreservation.Size = new System.Drawing.Size(316, 453);
             this.rtbreservation.TabIndex = 0;
             this.rtbreservation.Text = "";
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.Transparent;
-            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel9.Controls.Add(this.rtbTicket);
-            this.panel9.Location = new System.Drawing.Point(668, 391);
-            this.panel9.Margin = new System.Windows.Forms.Padding(2);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(316, 179);
-            this.panel9.TabIndex = 10;
-            // 
-            // rtbTicket
-            // 
-            this.rtbTicket.Location = new System.Drawing.Point(-2, -2);
-            this.rtbTicket.Margin = new System.Windows.Forms.Padding(2);
-            this.rtbTicket.Name = "rtbTicket";
-            this.rtbTicket.ReadOnly = true;
-            this.rtbTicket.Size = new System.Drawing.Size(316, 179);
-            this.rtbTicket.TabIndex = 0;
-            this.rtbTicket.Text = "";
             // 
             // label5
             // 
@@ -1033,24 +843,6 @@ namespace Tour
             this.btCreate.UseVisualStyleBackColor = true;
             this.btCreate.Click += new System.EventHandler(this.btCreate_Click);
             // 
-            // btnGo
-            // 
-            this.btnGo.BackColor = System.Drawing.Color.Transparent;
-            this.btnGo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGo.BackgroundImage")));
-            this.btnGo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGo.FlatAppearance.BorderSize = 0;
-            this.btnGo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGo.ForeColor = System.Drawing.Color.Black;
-            this.btnGo.Location = new System.Drawing.Point(807, 576);
-            this.btnGo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnGo.Name = "btnGo";
-            this.btnGo.Size = new System.Drawing.Size(95, 25);
-            this.btnGo.TabIndex = 13;
-            this.btnGo.Text = "MANAGE";
-            this.btnGo.UseVisualStyleBackColor = true;
-            this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
-            // 
             // btngotocsdl
             // 
             this.btngotocsdl.BackColor = System.Drawing.Color.Transparent;
@@ -1066,6 +858,36 @@ namespace Tour
             this.btngotocsdl.Text = "Go to ticket database";
             this.btngotocsdl.UseVisualStyleBackColor = false;
             this.btngotocsdl.Click += new System.EventHandler(this.btngotocsdl_Click);
+            // 
+            // btnGo
+            // 
+            this.btnGo.BackColor = System.Drawing.Color.Transparent;
+            this.btnGo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGo.BackgroundImage")));
+            this.btnGo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGo.FlatAppearance.BorderSize = 0;
+            this.btnGo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGo.ForeColor = System.Drawing.Color.Black;
+            this.btnGo.Location = new System.Drawing.Point(807, 576);
+            this.btnGo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGo.Name = "btnGo";
+            this.btnGo.Size = new System.Drawing.Size(95, 25);
+            this.btnGo.TabIndex = 13;
+            this.btnGo.Text = "CLEAR";
+            this.btnGo.UseVisualStyleBackColor = true;
+            this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(4, 367);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(98, 21);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "Personal ID";
             // 
             // DangKy
             // 
@@ -1084,7 +906,6 @@ namespace Tour
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel9);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1109,22 +930,14 @@ namespace Tour
             this.panel14.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
-            this.PnFore.ResumeLayout(false);
-            this.PnFore.PerformLayout();
-            this.panel11.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel25.ResumeLayout(false);
             this.panel25.PerformLayout();
-            this.panel24.ResumeLayout(false);
-            this.panel24.PerformLayout();
-            this.panel23.ResumeLayout(false);
-            this.panel23.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel9.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel26.ResumeLayout(false);
@@ -1158,25 +971,16 @@ namespace Tour
         private System.Windows.Forms.RadioButton rdDomestic;
         private System.Windows.Forms.RadioButton RdForeign;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel PnFore;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lb7;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.RichTextBox rtbreservation;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.RichTextBox rtbTicket;
         private System.Windows.Forms.Button btExit;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button btReset;
         private System.Windows.Forms.Button backtotourbtn;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Panel panel13;
@@ -1204,19 +1008,14 @@ namespace Tour
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel25;
         private System.Windows.Forms.TextBox tbTotal;
-        private System.Windows.Forms.Panel panel24;
-        private System.Windows.Forms.TextBox tbDiscount;
-        private System.Windows.Forms.Panel panel23;
-        private System.Windows.Forms.TextBox tbPrice;
         private System.Windows.Forms.Button btCreate;
-        private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.Label lbDate;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.DateTimePicker PassEXP;
-        private System.Windows.Forms.DateTimePicker VisaEXP;
         private System.Windows.Forms.Button btngotocsdl;
         private System.Windows.Forms.Panel panel26;
         private System.Windows.Forms.ComboBox cbGroup;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnGo;
+        private System.Windows.Forms.Label label7;
     }
 }

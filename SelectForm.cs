@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tour.Model;
 
 namespace Tour
 {
@@ -17,6 +18,56 @@ namespace Tour
             InitializeComponent();
             CustomizeDesign();
         }
+        NHANVIEN Nhanvien = new NHANVIEN();
+
+        public SelectForm(NHANVIEN nhanvien)
+        {
+
+            InitializeComponent();
+            CustomizeDesign();
+            Nhanvien = nhanvien;
+            if (nhanvien != null)
+            {
+                if (nhanvien.ACCOUNT.ACCROLE.CompareTo("Manager") == 0)
+                {
+                    CustomizeDesignManager();
+
+                }
+                else if (nhanvien.ACCOUNT.ACCROLE.CompareTo("Employee") == 0)
+                {
+                    CustomizeDesignEmployee();
+
+                }
+
+            }
+            label1.Text = nhanvien.TEN;
+
+        }
+
+        private void CustomizeDesignManager()
+        {
+
+
+
+        }
+
+        private void CustomizeDesignEmployee()
+        {
+
+            //btndataCus.Visible = false;
+            //btnEmployyeDatabase.Visible = false;
+            //btnMission.Visible = false;
+            //btnStatistics.Visible = false;
+
+            panelManage.Controls.Remove(btndataCus);
+            btndataCus.Dispose();
+            panelManage.Controls.Remove(btnEmployyeDatabase);
+            btnEmployyeDatabase.Dispose();
+            panelManage.Height = 60 * 8;
+
+        }
+
+
         private void CustomizeDesign()
         {
             panelManage.Visible = false;

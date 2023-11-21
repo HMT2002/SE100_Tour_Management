@@ -164,6 +164,8 @@
     <Compile Include="AddVehicalForGroup.Designer.cs">
       <DependentUpon>AddVehicalForGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Auth\UserAuth.cs" />
+    <Compile Include="Auth\UserAuthConcrete.cs" />
     <Compile Include="ChangePass.cs">
       <SubType>Form</SubType>
     </Compile>

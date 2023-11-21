@@ -48,11 +48,9 @@ namespace Tour
             {
                 //tbCMND.Text = "Please Enter Identification Card Number";
                 //tbCMND.ForeColor = Color.LightGray;
-                PnFore.Visible = false;
             }
             else
             {
-                PnFore.Visible = true;
                 //tbCMND.Text = "Please Enter Passport Number";
                 //tbCMND.ForeColor = Color.LightGray;
             }
@@ -85,24 +83,23 @@ namespace Tour
         private void btExit_Click(object sender, EventArgs e)
         {
 
-            if(MessageBox.Show("Confirm if you want to exit ?", "Travel Management System",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                this.Close();
-            }
+            //if(MessageBox.Show("Confirm if you want to exit ?", "Travel Management System",
+            //    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            //{
+            //this.Close();
+            //}
+            this.Close();
+
         }
 
         private void reset()
         {
             tbDate.Clear();
-            tbPrice.Clear();
-            tbDiscount.Clear();
             tbTotal.Clear();
             cbDes.Text = "None";
             RdMale.Checked = true;
             rdDomestic.Checked = true;
             rtbreservation.Clear();
-            rtbTicket.Clear();
             tbDuration.Clear();
         }
         private void btReset_Click(object sender, EventArgs e)
@@ -141,60 +138,88 @@ namespace Tour
             }
 
         }
+        KHACHHANG khachhang;
 
-        private void btCreate_Click(object sender, EventArgs e)
+        public void AddTicket()
         {
-
-            if (RdMale.Checked == true)
-            {
-                gender = "Nam";
-            }
-            else gender = "Nữ";
 
 
             if (CheckData())
             {
-                try
+                if (MessageBox.Show("Confirm create ticket? ", "Confirmation", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
-                    string randomcode = Converter.Instance.RandomString2(5);
-                    string idkhach = randomcode;
-                    var khachhang = new KHACHHANG()
+                    try
                     {
-                        ID = idkhach,
-                        TENKH = tbSurname.Text + " " + tbName.Text,
-                        CMND = tbCMND.Text,
-                        GIOITINH = gender,
-                        DIACHI = tbAddress.Text,
-                        SDT = tbTelephone.Text,
-                        IsDeleted = false,
-                    };
-                    DataProvider.Ins.DB.KHACHHANGs.Add(khachhang);
+                        //MessageBox.Show(Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tbPrice.Text).ToString());
+                        //return;
 
-                    randomcode = Converter.Instance.RandomString2(5);
-                    var ve = new VE()
+                        if (RdFmale.Checked == true)
+                        {
+                            gender = "Male";
+                        }
+                        else gender = "Female";
+                        string idkhach = Converter.Instance.RandomString2(5);
+                        string randomcode = Converter.Instance.RandomString2(5);
+
+                        if (khachhang == null)
+                        {
+                            idkhach = randomcode;
+                            khachhang = new KHACHHANG()
+                            {
+                                ID = idkhach,
+                                TENKH = tbName.Text,
+                                CMND = this.tbCMND.Text,
+                                GIOITINH = gender,
+                                DIACHI = tbAddress.Text,
+                                SDT = tbTelephone.Text,
+                                IsDeleted = false,
+                            };
+                            DataProvider.Ins.DB.KHACHHANGs.Add(khachhang);
+                        }
+                        else
+                        {
+                            khachhang.SPENDING += Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tbTotal.Text);
+                        }
+
+                        var ve = new VE()
+                        {
+                            ID = Converter.Instance.RandomString(5),
+                            IDKHACH = idkhach,
+                            IDDOAN = cbGroup.SelectedValue.ToString(),
+                            NGAYMUA = DateTime.Today,
+                            GIA = Converter.Instance.CurrencyStringToDecimalByReplaceCharacter(tbTotal.Text),
+                            IsDeleted = false,
+                        };
+                        DataProvider.Ins.DB.VEs.Add(ve);
+                        DataProvider.Ins.DB.SaveChanges();
+                        showAll();
+                        Clear();
+                        MessageBox.Show("Ticket Booked!");
+                    }
+                    catch (Exception ex)
                     {
-                        ID = randomcode,
-                        IDKHACH = idkhach,
-                        IDDOAN = cbGroup.SelectedValue.ToString(),
-                        NGAYMUA = DateTime.Today,
-                        GIA = Convert.ToDecimal(tbPrice.Text),
-                        IsDeleted = false,
-                    };
-                    DataProvider.Ins.DB.VEs.Add(ve);
-                    DataProvider.Ins.DB.SaveChanges();
-                    showAll();
-                    Clear();
+                        MessageBox.Show(ex.Message);
+                    }
                 }
-                catch (Exception ex)
-                {
 
-                }
 
             }
         }
+
+
+        private void btCreate_Click(object sender, EventArgs e)
+        {
+            if (CheckData())
+            {
+                AddTicket();
+            }
+
+        }
+
+
         private void btnGo_Click(object sender, EventArgs e)
         {
-
+            Clear();
         }
 
         private void LoadCombobox(ComboBox cb)
@@ -253,7 +278,7 @@ namespace Tour
                 cbGroup.DisplayMember = "TENDOAN";
                 cbGroup.SelectedIndex = -1;
                 reset();
-                tbPrice.Text = cbDes.SelectedItem.GetType().GetProperty("GIA").GetValue(cbDes.SelectedItem, null).ToString();
+                tbTotal.Text = cbDes.SelectedItem.GetType().GetProperty("GIA").GetValue(cbDes.SelectedItem, null).ToString();
             }
 
         }
