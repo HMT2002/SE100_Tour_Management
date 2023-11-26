@@ -53,7 +53,6 @@ namespace Tour
             this.btndataCus = new System.Windows.Forms.Button();
             this.btnRoute = new System.Windows.Forms.Button();
             this.btnTicket = new System.Windows.Forms.Button();
-            this.btnTour = new System.Windows.Forms.Button();
             this.btnManage = new System.Windows.Forms.Button();
             this.panel_logo = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -63,6 +62,7 @@ namespace Tour
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnTour = new System.Windows.Forms.Button();
             this.panel_slide.SuspendLayout();
             this.panel_Help.SuspendLayout();
             this.panel_staff.SuspendLayout();
@@ -462,26 +462,6 @@ namespace Tour
             this.btnTicket.UseVisualStyleBackColor = false;
             this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click);
             // 
-            // btnTour
-            // 
-            this.btnTour.BackColor = System.Drawing.Color.Linen;
-            this.btnTour.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTour.FlatAppearance.BorderSize = 0;
-            this.btnTour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTour.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTour.ForeColor = System.Drawing.Color.Black;
-            this.btnTour.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTour.Location = new System.Drawing.Point(0, 0);
-            this.btnTour.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTour.Name = "btnTour";
-            this.btnTour.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnTour.Size = new System.Drawing.Size(247, 60);
-            this.btnTour.TabIndex = 1;
-            this.btnTour.Text = "Route Management";
-            this.btnTour.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTour.UseVisualStyleBackColor = false;
-            this.btnTour.Click += new System.EventHandler(this.btnTour_Click);
-            // 
             // btnManage
             // 
             this.btnManage.Dock = System.Windows.Forms.DockStyle.Top;
@@ -584,6 +564,26 @@ namespace Tour
             this.label3.Text = "X";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // btnTour
+            // 
+            this.btnTour.BackColor = System.Drawing.Color.Linen;
+            this.btnTour.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTour.FlatAppearance.BorderSize = 0;
+            this.btnTour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTour.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTour.ForeColor = System.Drawing.Color.Black;
+            this.btnTour.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTour.Location = new System.Drawing.Point(0, 0);
+            this.btnTour.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTour.Name = "btnTour";
+            this.btnTour.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnTour.Size = new System.Drawing.Size(247, 60);
+            this.btnTour.TabIndex = 1;
+            this.btnTour.Text = "Route Management";
+            this.btnTour.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTour.UseVisualStyleBackColor = false;
+            this.btnTour.Click += new System.EventHandler(this.btnTour_Click);
+            // 
             // SelectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -633,7 +633,6 @@ namespace Tour
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button btnRoute;
         private System.Windows.Forms.Button btnTicket;
-        private System.Windows.Forms.Button btnTour;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -647,5 +646,6 @@ namespace Tour
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btnTour;
     }
 }

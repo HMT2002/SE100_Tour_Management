@@ -135,6 +135,14 @@ namespace Tour
                 object ngayketthuc = t.GetProperty("NGAYKETTHUC").GetValue(cbGroup.SelectedItem, null);
                 tbDate.Text= t.GetProperty("NGAYKHOIHANH").GetValue(cbGroup.SelectedItem, null).ToString();
                 tbDuration.Text = ((DateTime)ngayketthuc - (DateTime)ngaykhoihanh).TotalDays.ToString();
+                selected_group = DataProvider.Ins.DB.DOANs.Where(x => x.ID == iddoan).FirstOrDefault();
+
+                lblFrom.Text = selected_group.NGAYKHOIHANH.Value.ToString("dd/MM/yyyy");
+                lblTo.Text = selected_group.NGAYKETTHUC.Value.ToString("dd/MM/yyyy");
+                lblGroup.Text = t.GetProperty("TENDOAN").GetValue(cbGroup.SelectedItem, null).ToString();
+
+                tbTotal.Text=lblPrice.Text= (((DateTime)ngayketthuc - (DateTime)ngaykhoihanh).TotalDays * (double)selected_tour.GIA).ToString();
+                
             }
 
         }
@@ -206,6 +214,11 @@ namespace Tour
             }
         }
 
+        private void tbName_TextChanged(object sender, EventArgs e)
+        {
+            lblCustomer.Text = tbName.Text;
+
+        }
 
         private void btCreate_Click(object sender, EventArgs e)
         {
@@ -227,9 +240,6 @@ namespace Tour
 
         }
 
-        static string sqlconnectStr = @"Data Source=.\mssqlserver01;initial catalog=QL_TOUR_DU_LICH;integrated security=True";
-        SqlConnection sqlconnect = new SqlConnection(sqlconnectStr);
-
         private void showAll()
         {
             cbDes.Refresh();
@@ -241,7 +251,7 @@ namespace Tour
                                 {
                                     TENTOUR = tour.TEN,
                                     IDTOUR = tour.ID,
-                                    GIA = tour.GIA,
+                                    GIA = (double)tour.GIA,
                                 }
                 ).ToList();
 
@@ -252,6 +262,8 @@ namespace Tour
 
 
         }
+        public TOUR selected_tour = new TOUR();
+        public DOAN selected_group = new DOAN();
 
         private void cbDes_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -262,6 +274,7 @@ namespace Tour
 
                 Type t = cbDes.SelectedItem.GetType();
                 string idtour = t.GetProperty("IDTOUR").GetValue(cbDes.SelectedItem, null).ToString();
+                selected_tour = DataProvider.Ins.DB.TOURs.Where(x => x.ID == idtour).FirstOrDefault();
 
                 cbGroup.DataSource = (from tour in DataProvider.Ins.DB.TOURs
                                       join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
@@ -278,7 +291,8 @@ namespace Tour
                 cbGroup.DisplayMember = "TENDOAN";
                 cbGroup.SelectedIndex = -1;
                 reset();
-                tbTotal.Text = cbDes.SelectedItem.GetType().GetProperty("GIA").GetValue(cbDes.SelectedItem, null).ToString();
+                tbTotal.Text = t.GetProperty("GIA").GetValue(cbDes.SelectedItem, null).ToString();
+                lblTour.Text= t.GetProperty("TENTOUR").GetValue(cbDes.SelectedItem, null).ToString();
             }
 
         }
@@ -291,6 +305,8 @@ namespace Tour
         }
         void Clear()
         {
+            selected_tour=null;
+            selected_group = null;
             tbName.Text = tbSurname.Text = tbAddress.Text = tbTelephone.Text = tbEmail.Text = tbCMND.Text = "";
         }
         private void tbTelephone_KeyPress(object sender, KeyPressEventArgs e)
@@ -372,10 +388,18 @@ namespace Tour
 
         private void tbName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            Utils.Notify.UnnotificationField(sender);
+
+            if (char.IsControl(e.KeyChar) || char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Space)
             {
-                e.Handled = true;
+
+                Utils.Validate.CapitaLetter(sender, e);
+
+                return;
             }
+
+            e.Handled = true;
+
         }
 
         private void tbSurname_KeyPress_1(object sender, KeyPressEventArgs e)

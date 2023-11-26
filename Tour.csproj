@@ -172,8 +172,9 @@
     <Compile Include="ChangePass.Designer.cs">
       <DependentUpon>ChangePass.cs</DependentUpon>
     </Compile>
-    <Compile Include="BLL\ChuyenBLL.cs" />
-    <Compile Include="DAL\ChuyenDAL.cs" />
+    <Compile Include="CollectionLists\CustomerCollection.cs" />
+    <Compile Include="CollectionLists\GroupCollection.cs" />
+    <Compile Include="CollectionLists\TourCollection.cs" />
     <Compile Include="CSDLPhieuDatCho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,7 +212,6 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Customer.cs" />
-    <Compile Include="DAL\CustomerDAL.cs" />
     <Compile Include="DangKy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,7 +318,6 @@
       <DependentUpon>RegisterAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Reservation.cs" />
-    <Compile Include="DAL\ReservationDAL.cs" />
     <Compile Include="SearchTicket.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -340,7 +339,6 @@
     <Compile Include="Model\tblChuyen.cs" />
     <Compile Include="Model\tblTicket.cs" />
     <Compile Include="Model\tblTuyen.cs" />
-    <Compile Include="DAL\ticketDAL.cs" />
     <Compile Include="Tour.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -355,10 +353,7 @@
     <Compile Include="Route.Designer.cs">
       <DependentUpon>Route.cs</DependentUpon>
     </Compile>
-    <Compile Include="BLL\TuyenBLL.cs" />
-    <Compile Include="DAL\TuyenDAL.cs" />
     <Compile Include="Model\typeCustomer.cs" />
-    <Compile Include="DAL\typeCustomerDAL.cs" />
     <Compile Include="Utils\Converter.cs" />
     <Compile Include="Utils\Features.cs" />
     <Compile Include="Utils\Notify.cs" />
@@ -561,6 +556,7 @@
     </Content>
     <Content Include="tickets.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

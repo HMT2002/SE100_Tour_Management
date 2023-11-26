@@ -13,11 +13,9 @@ namespace Tour
 {
     public partial class Route : Form
     {
-        TuyenBLL bllTuyen;
         public Route()
         {
             InitializeComponent();
-            bllTuyen = new TuyenBLL();
             searchtxb.ForeColor = Color.LightGray;
             searchtxb.Text = "Enter Route Name to search";
             this.searchtxb.Leave += new System.EventHandler(this.textBox1_Leave);
@@ -43,7 +41,6 @@ namespace Tour
         //Load Tuyến lên datagridview
         public void ShowAllTuyen()
         {
-            dataGridView1.DataSource = bllTuyen.getAllTuyen();
         }
         private void TOUR_Load(object sender, EventArgs e)
         {
@@ -119,12 +116,6 @@ namespace Tour
                     route.MaLoaiTuyen = "ROUTE02";
                     route.TenLoaiTuyen = "International";
                 }
-                if (bllTuyen.InsertTuyen(route))
-                {
-                    ShowAllTuyen();
-                }
-                else
-                    MessageBox.Show("Error, Please try again later", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Clear();
             }
         }
@@ -138,20 +129,17 @@ namespace Tour
             route.ThoiGianToChuc = Days + " Day " + Nights + " Night";
             route.MaLoaiTuyen = RouteCode;
             route.TenLoaiTuyen = TypeofRoute;
-            if (bllTuyen.InsertTuyen(route))
-            {
                 return true;
-            }
+
             return false;
         }
         public bool deleteTuyen()
         {
             tblTuyen route = new tblTuyen();
             route.MaTuyen = Guid.Parse(RouteID);
-            if (bllTuyen.DeleteTuyen(route))
-            {
+
                 return true;
-            }
+
             return false;
         }
         public bool updateTuyen()
@@ -164,11 +152,9 @@ namespace Tour
             route.ThoiGianToChuc = Days + " Day " + Nights + " Night";
             route.MaLoaiTuyen = RouteCode;
             route.TenLoaiTuyen = TypeofRoute;
-            if (bllTuyen.UpdateTuyen(route))
-            {
+
                 return true;
-            }
-            return false;
+
         }
         //Sửa một tuyến
         private void Updatebtn_Click(object sender, EventArgs e)
@@ -191,12 +177,9 @@ namespace Tour
                     route.MaLoaiTuyen = "ROUTE02";
                     route.TenLoaiTuyen = "International";
                 }
-                if (bllTuyen.UpdateTuyen(route))
-                {
+
                     ShowAllTuyen();
-                }
-                else
-                    MessageBox.Show("Error, Please try again later", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 Clear();
             }
         }
@@ -210,12 +193,7 @@ namespace Tour
             {
                 tblTuyen route = new tblTuyen();
                 route.MaTuyen = Guid.Parse(IDtxb.Text);
-                if (bllTuyen.DeleteTuyen(route))
-                {
-                    ShowAllTuyen();
-                }
-                else
-                    MessageBox.Show("Error, Please try again later", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 Clear();
             }
         }
@@ -258,11 +236,9 @@ namespace Tour
         private void searchtxb_TextChanged(object sender, EventArgs e)
         {
             string value = searchtxb.Text;
-            if (!string.IsNullOrEmpty(value) && value != "Enter Route Name to search")
-            {
-                dataGridView1.DataSource = bllTuyen.FindTuyen(value);
-            }
-            else { ShowAllTuyen(); }
+
+
+              ShowAllTuyen();
         }
         private void GotoTourbtn_Click(object sender, EventArgs e)
         {
