@@ -172,9 +172,12 @@
     <Compile Include="ChangePass.Designer.cs">
       <DependentUpon>ChangePass.cs</DependentUpon>
     </Compile>
-    <Compile Include="CollectionLists\CustomerCollection.cs" />
-    <Compile Include="CollectionLists\GroupCollection.cs" />
-    <Compile Include="CollectionLists\TourCollection.cs" />
+    <Compile Include="CollectionLists\DALCustomerCollection.cs" />
+    <Compile Include="CollectionLists\DALGroupCollection.cs" />
+    <Compile Include="CollectionLists\DALHotelCollection.cs" />
+    <Compile Include="CollectionLists\DALLocationCollection.cs" />
+    <Compile Include="CollectionLists\DALTourCollection.cs" />
+    <Compile Include="CollectionLists\DALVehicalCollection.cs" />
     <Compile Include="CSDLPhieuDatCho.cs">
       <SubType>Form</SubType>
     </Compile>

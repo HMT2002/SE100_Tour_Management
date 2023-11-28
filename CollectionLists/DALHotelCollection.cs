@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Tour.CollectionLists
 {
-    public class TourCollection
+    public class DALHotelCollection
     {
-        public TourCollection() { }
+        public DALHotelCollection() { }
     }
 }

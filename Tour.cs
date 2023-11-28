@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using Tour.Model;
 using Tour.Utils;
 using System.Data.Entity.SqlServer;
+using Tour.CollectionLists;
 
 namespace Tour
 {
@@ -47,21 +48,8 @@ namespace Tour
         }
         public void ShowAllChuyen()
         {
-            dgv_trip.DataSource = (from tour in DataProvider.Ins.DB.TOURs
-                                   join giamgia in DataProvider.Ins.DB.GIAMGIAs on tour.ID equals giamgia.IDTOUR
-                                   where tour.IsDeleted == false && giamgia.IsDeleted == false
-                                   group tour by new { tour, giamgia } into g
-                                   select new
-                                   {
-                                       ID = g.Key.tour.ID,
-                                       TENTOUR = g.Key.tour.TEN,
-                                       GIA = g.Key.tour.GIA,
-                                       BANNER = g.Key.giamgia.PICBI,
-                                       TOURTYPE = g.Key.tour.LOAI,
-                                       DACDIEM=g.Key.tour.DACDIEM,
-
-
-                                   }).Distinct().ToList();
+            DALTourCollection tourCollection=new DALTourCollection();
+            dgv_trip.DataSource = tourCollection.AllTourList();
 
 
 

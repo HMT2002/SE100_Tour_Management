@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tour.CollectionLists;
 using Tour.Model;
 using Tour.Utils;
 
@@ -243,17 +244,8 @@ namespace Tour
         private void showAll()
         {
             cbDes.Refresh();
-            cbDes.DataSource = (from tour in DataProvider.Ins.DB.TOURs
-                                join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
-                                where tour.IsDeleted == false && doan.IsDeleted == false
-
-                                select new
-                                {
-                                    TENTOUR = tour.TEN,
-                                    IDTOUR = tour.ID,
-                                    GIA = (double)tour.GIA,
-                                }
-                ).ToList();
+            DALTourCollection tourCollection = new DALTourCollection();
+            cbDes.DataSource = tourCollection.AvailableTourList();
 
             cbDes.ValueMember = "IDTOUR";
             cbDes.DisplayMember = "TENTOUR";//DisplayMember phải trùng trên select new
@@ -275,18 +267,8 @@ namespace Tour
                 Type t = cbDes.SelectedItem.GetType();
                 string idtour = t.GetProperty("IDTOUR").GetValue(cbDes.SelectedItem, null).ToString();
                 selected_tour = DataProvider.Ins.DB.TOURs.Where(x => x.ID == idtour).FirstOrDefault();
-
-                cbGroup.DataSource = (from tour in DataProvider.Ins.DB.TOURs
-                                      join doan in DataProvider.Ins.DB.DOANs on tour.ID equals doan.IDTOUR
-                                      where tour.ID == idtour && tour.IsDeleted == false && doan.IsDeleted == false
-                                      select new
-                                      {
-                                          TENDOAN = doan.TEN,
-                                          IDDOAN = doan.ID,
-                                          NGAYKHOIHANH = doan.NGAYKHOIHANH,
-                                          NGAYKETTHUC = doan.NGAYKETTHUC
-                                      }
-                                            ).ToList();
+                DALGroupCollection groupCollection=new DALGroupCollection();
+                cbGroup.DataSource = groupCollection.AvailableGroupList(idtour);
                 cbGroup.ValueMember = "IDDOAN";
                 cbGroup.DisplayMember = "TENDOAN";
                 cbGroup.SelectedIndex = -1;

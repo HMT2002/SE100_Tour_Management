@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Tour.CollectionLists
 {
-    public class GroupCollection
+    public class DALLocationCollection
     {
-        public GroupCollection() { }
+        public DALLocationCollection() { }
     }
 }
