@@ -22,4 +22,18 @@ namespace Tour.Model
 
         }
     }
+
+    public class AppDbContextFactory
+    {
+
+        public AppDbContextFactory() { }
+        private static AppDbContextFactory _ins;
+
+        public static AppDbContextFactory Ins { get { if (_ins == null) _ins = new AppDbContextFactory(); return _ins; } set => _ins = value; }
+        public QL_TOUR_DU_LICHEntities CreateDbContext()
+        {
+            DataProvider.Ins.DB.Database.CreateIfNotExists();
+            return DataProvider.Ins.DB;
+        }
+    }
 }

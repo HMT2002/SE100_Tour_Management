@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tour.Model;
 
 namespace Tour
 {
@@ -14,11 +15,16 @@ namespace Tour
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+
+
+            AppDbContextFactory.Ins.CreateDbContext();
 
             Application.Run(new LoginForm());
             //Application.Run(new SLDiTour());
+
+
         }
     }
 }
