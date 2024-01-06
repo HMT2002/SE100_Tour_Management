@@ -314,6 +314,7 @@
     <Compile Include="PhuongTien.Designer.cs">
       <DependentUpon>PhuongTien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proxy\Proxy.cs" />
     <Compile Include="RegisterAccount.cs">
       <SubType>Form</SubType>
     </Compile>

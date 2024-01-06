@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Tour.Utils
 {
-    class Converter
+    public class Converter
     {
         public Random random = new Random();
         public string RandomString(int length)

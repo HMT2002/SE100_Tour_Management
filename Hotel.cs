@@ -202,6 +202,46 @@ namespace Tour
             }
         }
 
+        public KHACHSAN addNewHotel(string name, byte[] img_data, string so_tinh, string ten_tinh, string chi_tiet, string gia)
+        {
+            try
+            {
+                randomcode = Converter.Instance.RandomString2(5);
+                if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == so_tinh).FirstOrDefault() == null)
+                {
+                    var tinh = new TINH() { ID = so_tinh, TEN = ten_tinh, IsDeleted = false };
+                    DataProvider.Ins.DB.TINHs.Add(tinh);
+                    DataProvider.Ins.DB.SaveChanges();
+                }
+
+                var khachsan = new KHACHSAN() { ID = randomcode, TEN = name, IDTINH = so_tinh, PICBI = img_data, CHITIET = chi_tiet, IsDeleted = false, GIA = Convert.ToDecimal(gia) };
+
+                DataProvider.Ins.DB.KHACHSANs.Add(khachsan);
+                DataProvider.Ins.DB.SaveChanges();
+                return khachsan;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public bool deleteHotel(string id)
+        {
+            try
+            {
+                var khachsan = DataProvider.Ins.DB.KHACHSANs.Where(x => x.ID == id).FirstOrDefault();
+                khachsan.IsDeleted = true;
+                DataProvider.Ins.DB.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (id == null || id.CompareTo(string.Empty) == 0||cbboxProvince.Text.Trim().CompareTo(string.Empty) == 0)

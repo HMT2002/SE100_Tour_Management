@@ -187,6 +187,46 @@ namespace Tour
 
         }
 
+
+        public PHUONGTIEN addNewVehical(string name, byte[] img_data, string so_tinh, string ten_tinh,string loai, string gia)
+        {
+            try
+            {
+                randomcode = Converter.Instance.RandomString2(5);
+                if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == so_tinh).FirstOrDefault() == null)
+                {
+                    var tinh = new TINH() { ID = so_tinh, TEN = ten_tinh, IsDeleted = false };
+                    DataProvider.Ins.DB.TINHs.Add(tinh);
+                    DataProvider.Ins.DB.SaveChanges();
+                }
+
+                var vehical = new PHUONGTIEN() { ID = randomcode, TEN =name, IDTINH = so_tinh, PICBI = img_data, LOAI = loai, IsDeleted = false, GIA = Convert.ToDecimal(gia) };
+
+                DataProvider.Ins.DB.PHUONGTIENs.Add(vehical);
+                DataProvider.Ins.DB.SaveChanges();
+                return vehical;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public bool deleteVehical(string id)
+        {
+            try
+            {
+                var phuongtien = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault();
+                phuongtien.IsDeleted = true;
+                DataProvider.Ins.DB.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure to delete this?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)

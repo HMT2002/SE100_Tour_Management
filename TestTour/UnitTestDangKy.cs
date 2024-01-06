@@ -1,4 +1,7 @@
 ﻿using NUnit.Framework;
+using System.Drawing;
+using Tour.Proxy;
+using Tour.Utils;
 
 namespace TestTour
 {
@@ -42,6 +45,17 @@ namespace TestTour
         }
 
 
+        [Test]
+        public void TestAddHotel0()
+        {
+            fTour.nametour = "nametour";
+            fTour.typetour = "Plane";
+            fTour.price = "150000";
 
+            Image image = Image.FromFile("Path");
+            byte[] img_data = Converter.Instance.ImageToByte(image);
+            bool result= new Proxy().testAddHotel("", img_data, "", "", "", "");
+            Assert.True(result);
+        }
     }
 }

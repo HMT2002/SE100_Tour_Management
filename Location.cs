@@ -124,6 +124,16 @@ namespace Tour
             return true;
         }
 
+        public bool CheckData(string txtbxName, byte[] img_data,int SelectedIndex)
+        {
+
+            if (txtbxName.Trim().CompareTo(string.Empty) == 0 || img_data == null || SelectedIndex == -1)
+            {
+                return false;
+            }
+            return true;
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -188,6 +198,49 @@ namespace Tour
 
             }
         }
+
+        public DIADIEM addNewLocation(string name, byte[] img_data,string so_tinh,string ten_tinh,string chi_tiet,string gia)
+        {
+            try
+            {
+                    randomcode = Converter.Instance.RandomString(5);
+                    if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == so_tinh).FirstOrDefault() == null)
+                    {
+                        var tinh = new TINH() { ID = so_tinh, TEN = ten_tinh, IsDeleted = false };
+                        DataProvider.Ins.DB.TINHs.Add(tinh);
+                        DataProvider.Ins.DB.SaveChanges();
+                    }
+                    var location = new DIADIEM() { ID = randomcode, TEN = name, IDTINH = so_tinh, CHITIET = chi_tiet, PICBI = img_data, IsDeleted = false, GIA = Convert.ToDecimal(gia) };
+                    DataProvider.Ins.DB.DIADIEMs.Add(location);
+                    DataProvider.Ins.DB.SaveChanges();
+                return location;
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public bool deleteLocation(string id)
+        {
+            try
+            {
+                if (id == null || id.CompareTo(string.Empty) == 0)
+                {
+                    return false;
+                }
+
+                    DIADIEM diadiem = DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == id).FirstOrDefault();
+                    diadiem.IsDeleted = true;
+                    DataProvider.Ins.DB.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
