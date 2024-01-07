@@ -244,6 +244,7 @@ namespace Tour
             this.Name = "Location";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Location";
+            this.Load += new System.EventHandler(this.Location_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbxLocation)).EndInit();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);

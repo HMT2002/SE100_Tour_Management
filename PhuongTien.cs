@@ -93,8 +93,6 @@ namespace Tour
             InitializeComponent();
             cbbxKind.DataSource = new List<string> { "Tàu", "Xe hai bánh", "Xe bốn bánh", "Xe buýt", "Máy bay" };
             cbboxProvince.DataSource = ListProvince;
-            showAll();
-            Clear();
 
         }
 
@@ -333,6 +331,12 @@ namespace Tour
             {
                 e.Handled = true;
             }
+        }
+
+        private void PhuongTien_Load(object sender, EventArgs e)
+        {
+            showAll();
+            Clear();
         }
     }
 }

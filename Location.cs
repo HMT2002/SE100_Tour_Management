@@ -90,9 +90,6 @@ namespace Tour
             InitializeComponent();
             cbboxProvince.DataSource = ListProvince;
 
-            showAll();
-            cbbxLocation.SelectedIndex = -1;
-            Clear();
 
         }
         public void showAll()
@@ -118,6 +115,16 @@ namespace Tour
         {
 
             if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null||cbboxProvince.SelectedIndex==-1)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool CheckData(string name, byte[] img_data, string so_tinh)
+        {
+
+            if (name.Trim().CompareTo(string.Empty) == 0 || img_data == null ||Convert.ToInt32(so_tinh) == 0)
             {
                 return false;
             }
@@ -333,6 +340,13 @@ namespace Tour
             {
                 e.Handled = true;
             }
+        }
+
+        private void Location_Load(object sender, EventArgs e)
+        {
+            showAll();
+            cbbxLocation.SelectedIndex = -1;
+            Clear();
         }
     }
 }

@@ -91,9 +91,7 @@ namespace Tour
         {
             InitializeComponent();
             cbboxProvince.DataSource = ListProvince;
-            showAll();
-            cbbxHotel.SelectedIndex = -1;
-            Clear();
+
         }
 
 
@@ -202,27 +200,19 @@ namespace Tour
             }
         }
 
-        public KHACHSAN addNewHotel(string name, byte[] img_data, string so_tinh, string ten_tinh, string chi_tiet, string gia)
+        public bool CheckData(string name, byte[] img_data, string so_tinh, string dia_chi, string chi_tiet, string gia)
         {
             try
             {
-                randomcode = Converter.Instance.RandomString2(5);
-                if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == so_tinh).FirstOrDefault() == null)
+                if (name.Trim().CompareTo(string.Empty) == 0 || img_data == null || dia_chi.Trim().CompareTo(string.Empty) == 0 || Convert.ToDecimal(gia) == 0 ||Convert.ToInt32( so_tinh) == 0)
                 {
-                    var tinh = new TINH() { ID = so_tinh, TEN = ten_tinh, IsDeleted = false };
-                    DataProvider.Ins.DB.TINHs.Add(tinh);
-                    DataProvider.Ins.DB.SaveChanges();
+                    return false;
                 }
-
-                var khachsan = new KHACHSAN() { ID = randomcode, TEN = name, IDTINH = so_tinh, PICBI = img_data, CHITIET = chi_tiet, IsDeleted = false, GIA = Convert.ToDecimal(gia) };
-
-                DataProvider.Ins.DB.KHACHSANs.Add(khachsan);
-                DataProvider.Ins.DB.SaveChanges();
-                return khachsan;
+                return true;
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
 
@@ -310,6 +300,13 @@ namespace Tour
             {
                 e.Handled = true;
             }
+        }
+
+        private void Hotel_Load(object sender, EventArgs e)
+        {
+            showAll();
+            cbbxHotel.SelectedIndex = -1;
+            Clear();
         }
     }
 }

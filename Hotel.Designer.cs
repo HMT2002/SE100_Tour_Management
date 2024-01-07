@@ -273,6 +273,7 @@ namespace Tour
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Hotel";
             this.Text = "Hotel";
+            this.Load += new System.EventHandler(this.Hotel_Load);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbxLocation)).EndInit();
             this.panel1.ResumeLayout(false);

@@ -247,6 +247,7 @@ namespace Tour
             this.Name = "PhuongTien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PhuongTien";
+            this.Load += new System.EventHandler(this.PhuongTien_Load);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbxVehical)).EndInit();
             this.ResumeLayout(false);

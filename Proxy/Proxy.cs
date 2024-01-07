@@ -16,6 +16,7 @@ namespace Tour.Proxy
         Hotel fHotel;
         PhuongTien fPhuongTien;
         Location fLocation;
+
         public Proxy() { }
         public Proxy(DangKy dangky)
         {
@@ -71,12 +72,12 @@ namespace Tour.Proxy
             }
         }
 
-        public bool testAddHotel(string name, byte[] img_data, string so_tinh, string ten_tinh, string chi_tiet, string gia)
+        public bool testCheckHotelInput(string name, byte[] img_data, string so_tinh, string dia_chi, string chi_tiet, string gia)
         {
             try
             {
-                KHACHSAN khachsan = this.fHotel.addNewHotel(name, img_data, so_tinh, ten_tinh, chi_tiet, gia);
-                return this.fLocation.deleteLocation(khachsan.ID);
+                bool check = this.fHotel.CheckData(name, img_data, so_tinh, dia_chi, chi_tiet, gia);
+                return check;
 
             }
             catch (Exception ex)
@@ -84,6 +85,18 @@ namespace Tour.Proxy
                 return false;
             }
         }
+        public bool testCheckLocationInput(string name, byte[] img_data, string so_tinh)
+        {
+            try
+            {
+                bool check = this.fLocation.CheckData(name, img_data, so_tinh);
+                return check;
 
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }
