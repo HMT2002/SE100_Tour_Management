@@ -115,7 +115,12 @@ namespace Tour
             cbboxProvince.SelectedIndex = -1;
             pcbxVehical.Image = null;
         }
-
+        public void UnnotifyAllFields()
+        {
+            Notify.Unnotification(txtbxName);
+            Notify.Unnotification(txtbxGia);
+            Notify.Unnotification(cbbxKind);
+        }
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -326,6 +331,7 @@ namespace Tour
 
         private void txtbxGia_KeyPress(object sender, KeyPressEventArgs e)
         {
+            Notify.Unnotification(sender);
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
@@ -340,6 +346,16 @@ namespace Tour
         {
             showAll();
             Clear();
+        }
+
+        private void txtbxName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Notify.Unnotification(sender);
+        }
+
+        private void cbbxKind_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Notify.Unnotification(sender);
         }
     }
 }

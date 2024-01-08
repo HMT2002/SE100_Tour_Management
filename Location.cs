@@ -143,6 +143,7 @@ namespace Tour
             cbboxProvince.SelectedIndex = cbbxLocation.SelectedIndex = -1;
             txtbxGia.Text = "";
             pcbxLocation.Image = null;
+            UnnotifyAllFields();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -168,6 +169,8 @@ namespace Tour
                 }
                 catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
                 {
+                Notify.Notification(txtbxName);
+                Notify.Notification(txtbxGia);
                     Exception raise = dbEx;
                     foreach (var validationErrors in dbEx.EntityValidationErrors)
                     {
@@ -182,12 +185,17 @@ namespace Tour
                         }
                     }
                     throw raise;
+
                 }
-                Clear();
-
             }
-        }
 
+        }
+        public void UnnotifyAllFields()
+        {
+            Notify.Unnotification(txtbxGia);
+            Notify.Unnotification(txtbxName);
+
+        }
         public DIADIEM addNewLocation(string name, byte[] img_data, string so_tinh, string ten_tinh, string chi_tiet, string gia)
         {
             try
@@ -317,6 +325,7 @@ namespace Tour
 
         private void txtbxGia_KeyPress(object sender, KeyPressEventArgs e)
         {
+            Notify.Unnotification(sender);
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
@@ -332,6 +341,11 @@ namespace Tour
             showAll();
             cbbxLocation.SelectedIndex = -1;
             Clear();
+        }
+
+        private void txtbxName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Notify.Unnotification(sender);
         }
     }
 }

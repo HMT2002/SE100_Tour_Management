@@ -269,8 +269,13 @@ namespace Tour
             txtbxName.Text = rchtxtbxDetail.Text = txtbxDiaChi.Text = txtbxGia.Text =txtbxName.Text=txtbxSDT.Text= "";
             cbboxProvince.SelectedIndex= cbbxHotel.SelectedIndex = -1;
             pcbxLocation.Image = null;
+            UnnotifyAllFields();
         }
-
+        public void UnnotifyAllFields()
+        {
+            Notify.Unnotification(txtbxGia);
+            Notify.Unnotification(txtbxName);
+        }
         private void cbbxHotel_SelectedValueChanged(object sender, EventArgs e)
         {
             int index = cbbxHotel.SelectedIndex;
@@ -293,6 +298,7 @@ namespace Tour
 
         private void txtbxGia_KeyPress(object sender, KeyPressEventArgs e)
         {
+            Notify.Unnotification(sender);
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
@@ -308,6 +314,11 @@ namespace Tour
             showAll();
             cbbxHotel.SelectedIndex = -1;
             Clear();
+        }
+
+        private void txtbxName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Notify.Unnotification(sender);
         }
     }
 }

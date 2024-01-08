@@ -210,6 +210,7 @@ namespace Tour
             this.txtbxName.Name = "txtbxName";
             this.txtbxName.Size = new System.Drawing.Size(288, 20);
             this.txtbxName.TabIndex = 6;
+            this.txtbxName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxName_KeyPress);
             // 
             // cbbxHotel
             // 

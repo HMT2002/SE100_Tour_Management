@@ -51,8 +51,6 @@ namespace Tour.Utils
 
             }
         }
-
-
         public static void EnterCurrencyVnd(object sender)
         {
 

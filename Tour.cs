@@ -156,13 +156,12 @@ namespace Tour
 
         public void UnnotifyAllFields()
         {
-            Notify.UnnotificationField(tb_price);
-            Notify.UnnotificationSelect(tb_nametour);
-            Notify.UnnotificationSelect(cb_typetour);
-
-
-
+            Notify.Unnotification(tb_price);
+            Notify.Unnotification(tb_nametour);
+            Notify.Unnotification(cb_typetour);
         }
+
+
         public void AddNewTour()
         {
             try
@@ -325,13 +324,13 @@ namespace Tour
 
         private void tb_nametour_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Notify.UnnotificationField(sender);
+            Notify.Unnotification(sender);
 
         }
 
         private void cb_typetour_Enter(object sender, EventArgs e)
         {
-            Notify.UnnotificationSelect(sender);
+            Notify.Unnotification(sender);
 
         }
         private void rdIDSearch_Enter(object sender, EventArgs e)

@@ -208,8 +208,6 @@ namespace Tour.Utils
 
             return res;
         }
-
-
         public string CurrencyDisplay(decimal dec)
         {
             return (dec).ToString("C3", CultureInfo.CreateSpecificCulture("vi"));

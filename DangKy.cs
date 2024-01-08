@@ -370,7 +370,7 @@ namespace Tour
 
         private void tbName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Utils.Notify.UnnotificationField(sender);
+            Utils.Notify.Unnotification(sender);
 
             if (char.IsControl(e.KeyChar) || char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Space)
             {

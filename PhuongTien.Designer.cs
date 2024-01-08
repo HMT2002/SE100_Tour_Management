@@ -90,6 +90,7 @@ namespace Tour
             this.cbbxKind.Name = "cbbxKind";
             this.cbbxKind.Size = new System.Drawing.Size(232, 21);
             this.cbbxKind.TabIndex = 19;
+            this.cbbxKind.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbbxKind_KeyPress);
             // 
             // cbboxProvince
             // 
@@ -143,6 +144,7 @@ namespace Tour
             this.txtbxName.Name = "txtbxName";
             this.txtbxName.Size = new System.Drawing.Size(232, 20);
             this.txtbxName.TabIndex = 6;
+            this.txtbxName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxName_KeyPress);
             // 
             // cbbxVehical
             // 
