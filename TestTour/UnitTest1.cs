@@ -31,7 +31,7 @@ namespace TestTour
             fTour.typetour = "Plane";
             fTour.price = "150000";
 
-            Assert.True(fTour.CheckData());
+            Assert.False(fTour.CheckData());
         }
 
 

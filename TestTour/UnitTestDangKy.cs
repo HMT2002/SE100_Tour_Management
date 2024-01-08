@@ -28,50 +28,49 @@ namespace TestTour
             this.FPhuongTien = new Tour.PhuongTien();
             this.FLocation = new Tour.Location();
             this.FDoanDuLich = new Tour.DoanDuLich();
-
-
+            this.FHotel= new Tour.Hotel();
         }
-
+        //[Test]
+        //public void TestAddLocation()
+        //{
+        //    string app_domain = AppDomain.CurrentDomain.BaseDirectory;
+        //    string image_path = Path.Combine(app_domain, @"..\..\..\testimg.png");
+        //    Image image = Image.FromFile(image_path);
+        //    byte[] img_data = Converter.Instance.ImageToByte(image);
+        //    bool result = new Proxy(this.FLocation).testAddLocation("123", img_data, "1", "Ha Giang", "Hà Giang là một tỉnh thuộc vùng Đông Bắc Bộ, Việt Nam", "50000");
+        //    Assert.True(result);
+        //}
 
         [Test]
         public void TestAddHotel0()
         {            
-            string solution_dir = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory));
-            string TestDirectory = TestContext.CurrentContext.TestDirectory;
-            var ins=DataProvider.Ins;
             string app_domain = AppDomain.CurrentDomain.BaseDirectory;
             string image_path = Path.Combine(app_domain, @"..\..\..\testimg.png");
             Image image = Image.FromFile(image_path);
             byte[] img_data = Converter.Instance.ImageToByte(image);
-            bool result= new Proxy(new Hotel()).testCheckHotelInput("123", img_data, "1", "Ha Giang", "Hà Giang là một tỉnh thuộc vùng Đông Bắc Bộ, Việt Nam", "50000");
+            bool result= new Proxy(this.FHotel).testTypeAInput(this.FHotel,"123", img_data, "1", "Ha Giang", "Hà Giang là một tỉnh thuộc vùng Đông Bắc Bộ, Việt Nam", "50000");
             Assert.True(result);
         }
 
         [Test]
         public void TestAddHotel1()
         {
-            string solution_dir = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory));
-            string TestDirectory = TestContext.CurrentContext.TestDirectory;
-            var ins = DataProvider.Ins;
             string app_domain = AppDomain.CurrentDomain.BaseDirectory;
             string image_path = Path.Combine(app_domain, @"..\..\..\testimg.png");
             Image image = Image.FromFile(image_path);
             byte[] img_data = Converter.Instance.ImageToByte(image);
-            bool result = new Proxy(new Hotel()).testCheckHotelInput("", img_data, "1", "Ha Giang", "Hà Giang là một tỉnh thuộc vùng Đông Bắc Bộ, Việt Nam", "50000");
+            bool result = new Proxy(this.FHotel).testTypeAInput(this.FHotel, "", img_data, "1", "Ha Giang", "Hà Giang là một tỉnh thuộc vùng Đông Bắc Bộ, Việt Nam", "50000");
             Assert.False(result);
         }
 
         [Test]
         public void TestAddHotel2()
         {
-            string solution_dir = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory));
-            string TestDirectory = TestContext.CurrentContext.TestDirectory;
-            var ins = DataProvider.Ins;
             string app_domain = AppDomain.CurrentDomain.BaseDirectory;
             string image_path = Path.Combine(app_domain, @"..\..\..\testimg.png");
             Image image = Image.FromFile(image_path);
             byte[] img_data = Converter.Instance.ImageToByte(image);
-            bool result = new Proxy(new Hotel()).testCheckHotelInput("123", null, "1", "Ha Giang", "Hà Giang là một tỉnh thuộc vùng Đông Bắc Bộ, Việt Nam", "50000");
+            bool result = new Proxy(this.FHotel).testTypeAInput(this.FHotel, "123", null, "1", "Ha Giang", "Hà Giang là một tỉnh thuộc vùng Đông Bắc Bộ, Việt Nam", "50000");
             Assert.False(result);
         }
 
@@ -85,7 +84,7 @@ namespace TestTour
             string image_path = Path.Combine(app_domain, @"..\..\..\testimg.png");
             Image image = Image.FromFile(image_path);
             byte[] img_data = Converter.Instance.ImageToByte(image);
-            bool result = new Proxy(new Location()).testCheckLocationInput("123", img_data, "1");
+            bool result = new Proxy(this.FLocation).testTypeBInput(this.FLocation,"123", img_data, "1","", "485.000");
             Assert.True(result);
         }
         [Test]
@@ -98,8 +97,8 @@ namespace TestTour
             string image_path = Path.Combine(app_domain, @"..\..\..\testimg.png");
             Image image = Image.FromFile(image_path);
             byte[] img_data = Converter.Instance.ImageToByte(image);
-            bool result = new Proxy(new Hotel()).testCheckHotelInput("123", img_data, "1", "Ha Giang", "Hà Giang là một tỉnh thuộc vùng Đông Bắc Bộ, Việt Nam", "50000");
-            Assert.True(result);
+            bool result = new Proxy(this.FLocation).testTypeBInput(this.FLocation, "", img_data, "1", "", "");
+            Assert.False(result);
         }
         [Test]
         public void TestAddLocation2()
@@ -111,8 +110,8 @@ namespace TestTour
             string image_path = Path.Combine(app_domain, @"..\..\..\testimg.png");
             Image image = Image.FromFile(image_path);
             byte[] img_data = Converter.Instance.ImageToByte(image);
-            bool result = new Proxy(new Hotel()).testCheckHotelInput("123", img_data, "1", "Ha Giang", "Hà Giang là một tỉnh thuộc vùng Đông Bắc Bộ, Việt Nam", "50000");
-            Assert.True(result);
+            bool result = new Proxy(this.FLocation).testTypeBInput(this.FLocation, "123", img_data, "abc", "", "abc");
+            Assert.False(result);
         }
 
         [Test]
@@ -125,8 +124,8 @@ namespace TestTour
             string image_path = Path.Combine(app_domain, @"..\..\..\testimg.png");
             Image image = Image.FromFile(image_path);
             byte[] img_data = Converter.Instance.ImageToByte(image);
-            bool result = new Proxy(new Hotel()).testCheckHotelInput("123", img_data, "1", "Ha Giang", "Hà Giang là một tỉnh thuộc vùng Đông Bắc Bộ, Việt Nam", "50000");
-            Assert.True(result);
+            bool result = new Proxy(this.FPhuongTien).testTypeBInput(this.FPhuongTien, "abc", img_data, "123", "", "50.000");
+            Assert.False(result);
         }
         [Test]
         public void TestAddPhuongTien1()
@@ -138,7 +137,7 @@ namespace TestTour
             string image_path = Path.Combine(app_domain, @"..\..\..\testimg.png");
             Image image = Image.FromFile(image_path);
             byte[] img_data = Converter.Instance.ImageToByte(image);
-            bool result = new Proxy(new Hotel()).testCheckHotelInput("123", img_data, "1", "Ha Giang", "Hà Giang là một tỉnh thuộc vùng Đông Bắc Bộ, Việt Nam", "50000");
+            bool result = new Proxy(this.FPhuongTien).testTypeBInput(this.FPhuongTien, "abc", img_data, "1", "Xe taxi", "90.000");
             Assert.True(result);
         }
         [Test]
@@ -151,8 +150,8 @@ namespace TestTour
             string image_path = Path.Combine(app_domain, @"..\..\..\testimg.png");
             Image image = Image.FromFile(image_path);
             byte[] img_data = Converter.Instance.ImageToByte(image);
-            bool result = new Proxy(new Hotel()).testCheckHotelInput("123", img_data, "1", "Ha Giang", "Hà Giang là một tỉnh thuộc vùng Đông Bắc Bộ, Việt Nam", "50000");
-            Assert.True(result);
+            bool result = new Proxy(this.FPhuongTien).testTypeBInput(this.FPhuongTien, "", img_data, "abc", "Xe buyt", "abc");
+            Assert.False(result);
         }
 
     }

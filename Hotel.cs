@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tour.CollectionLists;
 using Tour.Model;
 using Tour.Utils;
 
@@ -100,7 +101,7 @@ namespace Tour
         {
             this.Close();
         }
-
+        DALHotelCollection hotelCollection = new DALHotelCollection();
         private void btnPickPicture_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -125,7 +126,7 @@ namespace Tour
 
         public void showAll()
         {
-            cbbxHotel.DataSource = DataProvider.Ins.DB.KHACHSANs.Select(t => t).Where(t=>t.IsDeleted==false).ToList();
+            cbbxHotel.DataSource = hotelCollection.AllHotelList();
             cbbxHotel.DisplayMember = "TEN";
         }
 
@@ -143,7 +144,7 @@ namespace Tour
                     }
                     randomcode = Converter.Instance.RandomString(5);
                     var location = new KHACHSAN() { ID = randomcode, DIACHI = txtbxName.Text, PICBI = img_data,CHITIET=rchtxtbxDetail.Text,GIA=Convert.ToDecimal( txtbxGia.Text ),IDTINH=cbboxProvince.SelectedIndex.ToString(),SDT=txtbxSDT.Text,TEN=txtbxName.Text,IsDeleted=false};
-                    DataProvider.Ins.DB.KHACHSANs.Add(location);
+                    hotelCollection.AllHotelList().Add(location);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
                     Clear();
@@ -186,7 +187,7 @@ namespace Tour
                     {
                         tb_ks.IsDeleted = true;
                     }
-                    KHACHSAN khachsan = DataProvider.Ins.DB.KHACHSANs.Where(x => x.ID == id).FirstOrDefault();
+                    KHACHSAN khachsan = hotelCollection.AllHotelList().Where(x => x.ID == id).FirstOrDefault();
                     khachsan.IsDeleted = true;
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
@@ -220,7 +221,7 @@ namespace Tour
         {
             try
             {
-                var khachsan = DataProvider.Ins.DB.KHACHSANs.Where(x => x.ID == id).FirstOrDefault();
+                var khachsan = hotelCollection.AllHotelList().Where(x => x.ID == id).FirstOrDefault();
                 khachsan.IsDeleted = true;
                 DataProvider.Ins.DB.SaveChanges();
                 return true;
@@ -240,7 +241,7 @@ namespace Tour
             }
             try
             {
-                var khachsan = DataProvider.Ins.DB.KHACHSANs.Where(x => x.ID == id).FirstOrDefault();
+                var khachsan = hotelCollection.AllHotelList().Where(x => x.ID == id).FirstOrDefault();
                 khachsan.TEN = txtbxName.Text;
                 khachsan.IDTINH = cbboxProvince.SelectedIndex.ToString();
                 khachsan.CHITIET = rchtxtbxDetail.Text;
@@ -277,7 +278,7 @@ namespace Tour
             {
 
                 KHACHSAN selected_item = (KHACHSAN)cbbxHotel.SelectedItem;
-                KHACHSAN temp = DataProvider.Ins.DB.KHACHSANs.Where(x => x.ID == selected_item.ID).FirstOrDefault();
+                KHACHSAN temp = hotelCollection.AllHotelList().Where(x => x.ID == selected_item.ID).FirstOrDefault();
                 pcbxLocation.Image = Converter.Instance.ByteArrayToImage(temp.PICBI);
                 id = temp.ID;
                 txtbxName.Text = temp.TEN;

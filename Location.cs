@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tour.CollectionLists;
 using Tour.Model;
 using Tour.Utils;
 
@@ -92,9 +93,11 @@ namespace Tour
 
 
         }
+
+        DALLocationCollection locationCollection = new DALLocationCollection();
         public void showAll()
         {
-            cbbxLocation.DataSource = DataProvider.Ins.DB.DIADIEMs.Select(t =>t).Where(t=>t.IsDeleted==false).ToList();
+            cbbxLocation.DataSource = locationCollection.AllLocationList();
             cbbxLocation.DisplayMember = "TEN";
         }
         private void btnPickPicture_Click(object sender, EventArgs e)
@@ -110,31 +113,10 @@ namespace Tour
 
             }
         }
-
-        public bool CheckData()
+        public bool CheckData(string name, byte[] img_data, string so_tinh, string chi_tiet, string gia)
         {
 
-            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null||cbboxProvince.SelectedIndex==-1)
-            {
-                return false;
-            }
-            return true;
-        }
-
-        public bool CheckData(string name, byte[] img_data, string so_tinh)
-        {
-
-            if (name.Trim().CompareTo(string.Empty) == 0 || img_data == null ||Convert.ToInt32(so_tinh) == 0)
-            {
-                return false;
-            }
-            return true;
-        }
-
-        public bool CheckData(string txtbxName, byte[] img_data,int SelectedIndex)
-        {
-
-            if (txtbxName.Trim().CompareTo(string.Empty) == 0 || img_data == null || SelectedIndex == -1)
+            if (name.Trim().CompareTo(string.Empty) == 0 || img_data == null || Convert.ToInt32(so_tinh) == 0 || Convert.ToDecimal(gia) == 0)
             {
                 return false;
             }
@@ -165,21 +147,21 @@ namespace Tour
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (CheckData() == true)
+            if (CheckData(txtbxName.Text, img_data, cbboxProvince.SelectedIndex.ToString(), rchtxtbxDetail.Text, txtbxGia.Text) == true)
             {
                 try
                 {
                     randomcode = Converter.Instance.RandomString(5);
                     if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
                     {
-                        var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text,IsDeleted=false };
+                        var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text, IsDeleted = false };
                         DataProvider.Ins.DB.TINHs.Add(tinh);
                         DataProvider.Ins.DB.SaveChanges();
                     }
 
-                    var location = new DIADIEM() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), CHITIET = rchtxtbxDetail.Text, PICBI = img_data,IsDeleted=false,GIA=Convert.ToDecimal(txtbxGia.Text) };
+                    var location = new DIADIEM() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), CHITIET = rchtxtbxDetail.Text, PICBI = img_data, IsDeleted = false, GIA = Convert.ToDecimal(txtbxGia.Text) };
 
-                    DataProvider.Ins.DB.DIADIEMs.Add(location);
+                    locationCollection.AllLocationList().Add(location);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
                     Clear();
@@ -206,24 +188,27 @@ namespace Tour
             }
         }
 
-        public DIADIEM addNewLocation(string name, byte[] img_data,string so_tinh,string ten_tinh,string chi_tiet,string gia)
+        public DIADIEM addNewLocation(string name, byte[] img_data, string so_tinh, string ten_tinh, string chi_tiet, string gia)
         {
             try
             {
-                    randomcode = Converter.Instance.RandomString(5);
-                    if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == so_tinh).FirstOrDefault() == null)
-                    {
-                        var tinh = new TINH() { ID = so_tinh, TEN = ten_tinh, IsDeleted = false };
-                        DataProvider.Ins.DB.TINHs.Add(tinh);
-                        DataProvider.Ins.DB.SaveChanges();
-                    }
-                    var location = new DIADIEM() { ID = randomcode, TEN = name, IDTINH = so_tinh, CHITIET = chi_tiet, PICBI = img_data, IsDeleted = false, GIA = Convert.ToDecimal(gia) };
-                    DataProvider.Ins.DB.DIADIEMs.Add(location);
+                System.Diagnostics.Debug.WriteLine("fadsfadsfawedsfcsadxfewadsfsda");
+                randomcode = Converter.Instance.RandomString(5);
+                if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == so_tinh).FirstOrDefault() == null)
+                {
+                    var tinh = new TINH() { ID = so_tinh, TEN = ten_tinh, IsDeleted = false };
+                    DataProvider.Ins.DB.TINHs.Add(tinh);
                     DataProvider.Ins.DB.SaveChanges();
+                }
+                var location = new DIADIEM() { ID = randomcode, TEN = name, IDTINH = so_tinh, CHITIET = chi_tiet, PICBI = img_data, IsDeleted = false, GIA = Convert.ToDecimal(gia) };
+                locationCollection.AllLocationList().Add(location);
+                DataProvider.Ins.DB.SaveChanges();
                 return location;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
                 return null;
             }
         }
@@ -237,9 +222,9 @@ namespace Tour
                     return false;
                 }
 
-                    DIADIEM diadiem = DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == id).FirstOrDefault();
-                    diadiem.IsDeleted = true;
-                    DataProvider.Ins.DB.SaveChanges();
+                DIADIEM diadiem = locationCollection.AllLocationList().Where(x => x.ID == id).FirstOrDefault();
+                diadiem.IsDeleted = true;
+                DataProvider.Ins.DB.SaveChanges();
                 return true;
             }
             catch (Exception ex)
@@ -259,7 +244,7 @@ namespace Tour
                 }
                 try
                 {
-                    DIADIEM diadiem = DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == id).FirstOrDefault();
+                    DIADIEM diadiem = locationCollection.AllLocationList().Where(x => x.ID == id).FirstOrDefault();
                     diadiem.IsDeleted = true;
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
@@ -277,7 +262,7 @@ namespace Tour
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (CheckData() == true)
+            if (CheckData(txtbxName.Text, img_data, cbboxProvince.SelectedIndex.ToString(), rchtxtbxDetail.Text, txtbxGia.Text) == true)
             {
                 if (id == null || id.CompareTo(string.Empty) == 0)
                 {
@@ -291,12 +276,12 @@ namespace Tour
                         DataProvider.Ins.DB.TINHs.Add(tinh);
                         DataProvider.Ins.DB.SaveChanges();
                     }
-                    var diadiem = DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == id).FirstOrDefault();
+                    var diadiem = locationCollection.AllLocationList().Where(x => x.ID == id).FirstOrDefault();
                     diadiem.TEN = txtbxName.Text;
                     diadiem.IDTINH = cbboxProvince.SelectedIndex.ToString();
                     diadiem.CHITIET = rchtxtbxDetail.Text;
                     diadiem.PICBI = img_data;
-                    diadiem.GIA= Convert.ToDecimal(txtbxGia.Text);
+                    diadiem.GIA = Convert.ToDecimal(txtbxGia.Text);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
                     Clear();
@@ -317,7 +302,7 @@ namespace Tour
             if (index >= 0)
             {
                 DIADIEM selected_item = (DIADIEM)cbbxLocation.SelectedItem;
-                DIADIEM temp = DataProvider.Ins.DB.DIADIEMs.Where(x => x.ID == selected_item.ID).FirstOrDefault();
+                DIADIEM temp = locationCollection.AllLocationList().Where(x => x.ID == selected_item.ID).FirstOrDefault();
                 pcbxLocation.Image = Converter.Instance.ByteArrayToImage(temp.PICBI);
                 id = temp.ID;
                 txtbxId.Text = id;

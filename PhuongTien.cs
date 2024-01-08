@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tour.CollectionLists;
 using Tour.Model;
 using Tour.Utils;
 
@@ -86,6 +87,7 @@ namespace Tour
         string randomcode;
         string id;
 
+            DALVehicalCollection vehicalCollection = new DALVehicalCollection();
 
 
         public PhuongTien()
@@ -98,7 +100,7 @@ namespace Tour
 
         public void showAll()
         {
-            cbbxVehical.DataSource = DataProvider.Ins.DB.PHUONGTIENs.Where(t=>t.IsDeleted==false).Select(t => t).ToList();
+            cbbxVehical.DataSource = vehicalCollection.AllVehicalList();
             cbbxVehical.DisplayMember = "TEN";
         }
         private void Clear()
@@ -119,7 +121,7 @@ namespace Tour
             this.Close();
         }
 
-        private void btnPickPicture_Click(object sender, EventArgs e)
+        public void btnPickPicture_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
             dialog.Filter = "Chon anh(*.jpg; *.png; *.gif) | *.jpg; *.png; *.gif";
@@ -132,18 +134,18 @@ namespace Tour
 
             }
         }
-
-        private bool CheckData()
+        public bool CheckData(string name, byte[] img_data, string so_tinh, string loai,string gia)
         {
-            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null||cbboxProvince.Text.Trim().CompareTo(string.Empty) == 0||cbbxKind.Text.Trim().CompareTo(string.Empty) == 0)
+            if (name.Trim().CompareTo(string.Empty) == 0 || img_data == null || Convert.ToInt32(so_tinh) == 0 || loai.Trim().CompareTo(string.Empty) == 0|| Convert.ToDecimal(gia)==0)
             {
                 return false;
             }
             return true;
         }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (CheckData() == true)
+            if (CheckData(txtbxName.Text,img_data, cbboxProvince.SelectedIndex.ToString(),cbbxKind.Text, txtbxGia.Text) == true)
             {
                 try
                 {
@@ -157,7 +159,7 @@ namespace Tour
 
                     var vehical = new PHUONGTIEN() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), PICBI = img_data,LOAI=cbbxKind.Text,IsDeleted=false ,GIA=Convert.ToDecimal( txtbxGia.Text)};
 
-                    DataProvider.Ins.DB.PHUONGTIENs.Add(vehical);
+                    vehicalCollection.AllVehicalList().Add(vehical);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
                     Clear();
@@ -200,7 +202,7 @@ namespace Tour
 
                 var vehical = new PHUONGTIEN() { ID = randomcode, TEN =name, IDTINH = so_tinh, PICBI = img_data, LOAI = loai, IsDeleted = false, GIA = Convert.ToDecimal(gia) };
 
-                DataProvider.Ins.DB.PHUONGTIENs.Add(vehical);
+                vehicalCollection.AllVehicalList().Add(vehical);
                 DataProvider.Ins.DB.SaveChanges();
                 return vehical;
             }
@@ -214,7 +216,7 @@ namespace Tour
         {
             try
             {
-                var phuongtien = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault();
+                var phuongtien = vehicalCollection.AllVehicalList().Where(x => x.ID == id).FirstOrDefault();
                 phuongtien.IsDeleted = true;
                 DataProvider.Ins.DB.SaveChanges();
                 return true;
@@ -235,7 +237,8 @@ namespace Tour
                 }
                 try
                 {
-                    var phuongtien = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault();
+
+                    var phuongtien = vehicalCollection.AllVehicalList().Where(x => x.ID == id).FirstOrDefault();
                     phuongtien.IsDeleted = true;
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
@@ -252,7 +255,7 @@ namespace Tour
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (CheckData() == true)
+            if (CheckData(txtbxName.Text, img_data, cbboxProvince.SelectedIndex.ToString(), cbbxKind.Text, txtbxGia.Text) == true)
             {
                 if (id == null || id.CompareTo(string.Empty) == 0)
                 {
@@ -266,7 +269,7 @@ namespace Tour
                         DataProvider.Ins.DB.TINHs.Add(tinh);
                         DataProvider.Ins.DB.SaveChanges();
                     }
-                    var phuongtien = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == id).FirstOrDefault();
+                    var phuongtien = vehicalCollection.AllVehicalList().Where(x => x.ID == id).FirstOrDefault();
                     phuongtien.TEN = txtbxName.Text;
                     phuongtien.IDTINH = cbboxProvince.SelectedIndex.ToString();
                     phuongtien.LOAI = cbbxKind.Text;
@@ -311,7 +314,7 @@ namespace Tour
                 PHUONGTIEN selected_item = (PHUONGTIEN)cbbxVehical.SelectedItem;
                 id = selected_item.ID;
 
-                PHUONGTIEN temp = DataProvider.Ins.DB.PHUONGTIENs.Where(x => x.ID == selected_item.ID).FirstOrDefault();
+                PHUONGTIEN temp = vehicalCollection.AllVehicalList().Where(x => x.ID == selected_item.ID).FirstOrDefault();
                 pcbxVehical.Image = Converter.Instance.ByteArrayToImage(temp.PICBI);
                 txtbxName.Text = temp.TEN;
                 cbbxKind.Text = temp.LOAI;

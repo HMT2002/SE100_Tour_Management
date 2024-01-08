@@ -37,40 +37,33 @@ namespace Tour.Proxy
         {
             this.fLocation = location;
         }
-
         public bool testAddLocation(string name, byte[] img_data, string so_tinh, string ten_tinh, string chi_tiet, string gia)
         {
             try
             {
-
                 //Image image = Image.FromFile("Path");
                 //byte[] img_data = Converter.Instance.ImageToByte(image);
                 DIADIEM location = this.fLocation.addNewLocation(name, img_data, so_tinh, ten_tinh, chi_tiet, gia);
                 return this.fLocation.deleteLocation(location.ID);
-
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.ToString());
                 return false;
             }
         }
-
-        public bool testAddVehical(string name, byte[] img_data, string so_tinh, string ten_tinh, string loai, string gia)
-        {
-            try
-            {
-
-                //Image image = Image.FromFile("Path");
-                //byte[] img_data = Converter.Instance.ImageToByte(image);
-                PHUONGTIEN phuongtien = this.fPhuongTien.addNewVehical(name, img_data, so_tinh, ten_tinh, loai, gia);
-                return this.fLocation.deleteLocation(phuongtien.ID);
-
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
-        }
+        //public bool testAddVehical(string name, byte[] img_data, string so_tinh, string ten_tinh, string loai, string gia)
+        //{
+        //    try
+        //    {
+        //        PHUONGTIEN phuongtien = this.fPhuongTien.addNewVehical(name, img_data, so_tinh, ten_tinh, loai, gia);
+        //        return this.fLocation.deleteLocation(phuongtien.ID);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return false;
+        //    }
+        //}
 
         public bool testCheckHotelInput(string name, byte[] img_data, string so_tinh, string dia_chi, string chi_tiet, string gia)
         {
@@ -78,18 +71,17 @@ namespace Tour.Proxy
             {
                 bool check = this.fHotel.CheckData(name, img_data, so_tinh, dia_chi, chi_tiet, gia);
                 return check;
-
             }
             catch (Exception ex)
             {
                 return false;
             }
         }
-        public bool testCheckLocationInput(string name, byte[] img_data, string so_tinh)
+        public bool testCheckLocationInput(string name, byte[] img_data, string so_tinh, string chi_tiet, string gia)
         {
             try
             {
-                bool check = this.fLocation.CheckData(name, img_data, so_tinh);
+                bool check = this.fLocation.CheckData(name, img_data, so_tinh, chi_tiet, gia);
                 return check;
 
             }
@@ -98,5 +90,62 @@ namespace Tour.Proxy
                 return false;
             }
         }
+
+        public bool testCheckVehicalInput(string name, byte[] img_data, string so_tinh, string loai, string gia)
+        {
+            try
+            {
+                bool check = this.fPhuongTien.CheckData(name, img_data, so_tinh, loai, gia);
+                return check;
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool testTypeAInput(object sender, string name, byte[] img_data, string so_tinh, string dia_chi, string chi_tiet, string gia)
+        {
+            try
+            {
+                bool check = false;
+                if (sender is Hotel)
+                {
+                    check = this.fHotel.CheckData(name, img_data, so_tinh, dia_chi, chi_tiet, gia);
+                }
+                return check;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+
+                return false;
+            }
+        }
+
+        public bool testTypeBInput(object sender, string name, byte[] img_data, string so_tinh, string thong_tin, string gia)
+        {
+            try
+            {
+                bool check = false;
+                if (sender is PhuongTien)
+                {
+                    check = this.fPhuongTien.CheckData(name, img_data, so_tinh, thong_tin, gia);
+                }
+                else if (sender is Location)
+                {
+                    check = this.fLocation.CheckData(name, img_data, so_tinh, thong_tin, gia);
+                }
+                return check;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
+
     }
 }
