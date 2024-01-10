@@ -326,14 +326,18 @@ namespace Tour
         private void txtbxGia_KeyPress(object sender, KeyPressEventArgs e)
         {
             Notify.Unnotification(sender);
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
+            //if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            //{
+            //    e.Handled = true;
+            //}
+            //if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            //{
+            //    e.Handled = true;
+            //}
+
+            Utils.Validate.EnterNumberOnly(sender, e);
+
+
         }
 
         private void Location_Load(object sender, EventArgs e)

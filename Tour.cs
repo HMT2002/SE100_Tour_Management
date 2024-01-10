@@ -319,7 +319,7 @@ namespace Tour
         private void tb_price_TextChanged(object sender, EventArgs e)
         {
 
-            Utils.Validate.EnterCurrencyVnd(sender);
+            Utils.Validate.EnterNumberOnly(sender,e);
         }
 
         private void tb_nametour_KeyPress(object sender, KeyPressEventArgs e)
@@ -392,14 +392,17 @@ namespace Tour
 
         private void tb_price_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
+            //if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            //{
+            //    e.Handled = true;
+            //}
+            //if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            //{
+            //    e.Handled = true;
+            //}
+
+            Utils.Validate.EnterNumberOnly(sender, e);
+
         }
 
         private void btn_newid_Click(object sender, EventArgs e)

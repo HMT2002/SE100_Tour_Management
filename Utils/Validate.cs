@@ -85,5 +85,30 @@ namespace Tour.Utils
 
             }
         }
+        public static void EnterNumberOnly(object sender, EventArgs eve)
+        {
+
+            try
+            {
+                if(eve is KeyPressEventArgs)
+                {
+               KeyPressEventArgs e = (KeyPressEventArgs)eve;
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+                {
+                    e.Handled = true;
+                }
+                if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+                {
+                    e.Handled = true;
+                }
+                }
+ 
+            }
+            catch
+            {
+
+            }
+        }
+
     }
 }

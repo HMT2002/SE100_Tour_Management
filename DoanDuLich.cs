@@ -315,14 +315,17 @@ namespace Tour
 
         private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
+            //if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            //{
+            //    e.Handled = true;
+            //}
+            //if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            //{
+            //    e.Handled = true;
+            //}
+
+            Utils.Validate.EnterNumberOnly(sender, e);
+
         }
 
         private void btnAddHotelForGroup_Click(object sender, EventArgs e)

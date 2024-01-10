@@ -21,7 +21,7 @@ namespace Tour
         string id;
         void Clear()
         {
-            tbName.Text=tbAddress.Text = tbID.Text = tbICN.Text = tbphone.Text = tbAddress.Text = "";
+            tbName.Text = tbAddress.Text = tbID.Text = tbICN.Text = tbphone.Text = tbAddress.Text = "";
             rdbDomestic.Checked = rdbFemale.Checked = rdbMale.Checked = rdbForeign.Checked = false;
         }
         public CSDLPhieuDatCho()
@@ -73,12 +73,12 @@ namespace Tour
                                     join doan in DataProvider.Ins.DB.DOANs on ve.IDDOAN equals doan.ID
                                     join khachhang in DataProvider.Ins.DB.KHACHHANGs on ve.IDKHACH equals khachhang.ID
                                     join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-                                    where doan.ID==id
+                                    where doan.ID == id
                                     select new
                                     {
                                         IDVE = ve.ID,
                                         TENKHACHHANG = khachhang.TENKH,
-                                        TENTOUR=tour.TEN,
+                                        TENTOUR = tour.TEN,
 
                                     }).ToList();
 
@@ -100,7 +100,7 @@ namespace Tour
             String gender, tourist;
             if (index >= 0)
             {
-                id= dgvQuanLy.Rows[index].Cells["IDTOUR"].Value.ToString();
+                id = dgvQuanLy.Rows[index].Cells["IDTOUR"].Value.ToString();
 
 
                 NameOfTourType = dgvQuanLy.Rows[index].Cells["TenLoaiChuyen"].Value.ToString();
@@ -168,18 +168,18 @@ namespace Tour
             {
                 try
                 {
-                        dgvDatCho.DataSource = (from ve in DataProvider.Ins.DB.VEs
-                                                join doan in DataProvider.Ins.DB.DOANs on ve.IDDOAN equals doan.ID
-                                                join khachhang in DataProvider.Ins.DB.KHACHHANGs on ve.IDKHACH equals khachhang.ID
-                                                join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
-                                                where SqlMethods.Like(ve.ID, "%" + value + "%")
-                                                select new
-                                                {
-                                                    IDVE = ve.ID,
-                                                    TENKHACHHANG = khachhang.TENKH,
-                                                    TENTOUR = tour.TEN,
+                    dgvDatCho.DataSource = (from ve in DataProvider.Ins.DB.VEs
+                                            join doan in DataProvider.Ins.DB.DOANs on ve.IDDOAN equals doan.ID
+                                            join khachhang in DataProvider.Ins.DB.KHACHHANGs on ve.IDKHACH equals khachhang.ID
+                                            join tour in DataProvider.Ins.DB.TOURs on doan.IDTOUR equals tour.ID
+                                            where SqlMethods.Like(ve.ID, "%" + value + "%")
+                                            select new
+                                            {
+                                                IDVE = ve.ID,
+                                                TENKHACHHANG = khachhang.TENKH,
+                                                TENTOUR = tour.TEN,
 
-                                                }).ToList();
+                                            }).ToList();
                 }
                 catch
                 {
@@ -203,14 +203,17 @@ namespace Tour
 
         private void tbphone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
+            //if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            //{
+            //    e.Handled = true;
+            //}
+            //if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            //{
+            //    e.Handled = true;
+            //}
+            Utils.Validate.EnterNumberOnly(sender, e);
+
+
         }
 
         private void backbtn_Click(object sender, EventArgs e)
@@ -299,15 +302,15 @@ namespace Tour
             Clear();
 
         }
-        public string mave,maphieu,madukhach,tourID;
+        public string mave, maphieu, madukhach, tourID;
         public bool XoaKhach()
         {
             tblTicket tk = new tblTicket();
             tk.MaVe = Guid.Parse(mave);
-            tk.MaPhieu =Guid.Parse(maphieu);
+            tk.MaPhieu = Guid.Parse(maphieu);
             tk.MaDuKhach = Guid.Parse(madukhach);
             Customer cus = new Customer();
-            cus.MaDuKhach= Guid.Parse(madukhach);
+            cus.MaDuKhach = Guid.Parse(madukhach);
             Reservation res = new Reservation();
             res.MaPhieu = Guid.Parse(maphieu);
             res.MaChuyen = Guid.Parse(tourID);
@@ -322,13 +325,14 @@ namespace Tour
             {
 
             }
-            else { 
-                MessageBox.Show("Error", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); 
+            else
+            {
+                MessageBox.Show("Error", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
 
-                tientong();
-                Clear();
+            tientong();
+            Clear();
 
         }
         public float getTienHoantra(string TenLoaiChuyen)
@@ -358,7 +362,7 @@ namespace Tour
             SqlDataReader da = cmd.ExecuteReader();
             while (da.Read())
             {
-                cost = Int32.Parse( da.GetValue(0).ToString());             
+                cost = Int32.Parse(da.GetValue(0).ToString());
             }
             return cost;
         }
@@ -366,7 +370,7 @@ namespace Tour
         public DateTime GetTime(Guid MaChuyen)
         {
             DateTime date = new DateTime();
-            
+
             try
             {
 
