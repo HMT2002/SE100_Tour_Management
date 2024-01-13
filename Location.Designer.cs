@@ -190,6 +190,7 @@ namespace Tour
             this.cbboxProvince.Name = "cbboxProvince";
             this.cbboxProvince.Size = new System.Drawing.Size(198, 21);
             this.cbboxProvince.TabIndex = 13;
+            this.cbboxProvince.SelectedIndexChanged += new System.EventHandler(this.cbboxProvince_SelectedIndexChanged);
             // 
             // panel3
             // 

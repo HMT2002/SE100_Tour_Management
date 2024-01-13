@@ -12,17 +12,10 @@ namespace Tour.Proxy
 {
     public class Proxy
     {
-        DangKy fDangKy;
         Hotel fHotel;
         PhuongTien fPhuongTien;
         Location fLocation;
-
         public Proxy() { }
-        public Proxy(DangKy dangky)
-        {
-            this.fDangKy = dangky;
-        }
-
         public Proxy(Hotel hotel)
         {
             this.fHotel = hotel;
@@ -37,33 +30,97 @@ namespace Tour.Proxy
         {
             this.fLocation = location;
         }
-        public bool testAddLocation(string name, byte[] img_data, string so_tinh, string ten_tinh, string chi_tiet, string gia)
+        public void ProxyAddLoggerPhuongTien( string name, byte[] img_data, string so_tinh, string ten_tinh, string loai, string gia)
         {
             try
             {
-                //Image image = Image.FromFile("Path");
-                //byte[] img_data = Converter.Instance.ImageToByte(image);
-                DIADIEM location = this.fLocation.addNewLocation(name, img_data, so_tinh, ten_tinh, chi_tiet, gia);
-                return this.fLocation.deleteLocation(location.ID);
+                //Do before adding
+            System.Console.WriteLine("Adding new Vehical: " + name + " \n" + ten_tinh + " \n" + loai + " \n" + gia);
+            this.fPhuongTien.addNewVehical(name,img_data, so_tinh, ten_tinh, loai, gia);
+
+                //Do after adding
+            System.Console.WriteLine("Success adding!");
+
             }
-            catch (Exception ex)
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
             {
-                Console.WriteLine(ex.ToString());
-                return false;
+                Exception raise = dbEx;
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        string message = string.Format("{0}:{1}",
+                            validationErrors.Entry.Entity.ToString(),
+                            validationError.ErrorMessage);
+                        raise = new InvalidOperationException(message, raise);
+                    }
+                }
+                throw raise;
             }
         }
-        //public bool testAddVehical(string name, byte[] img_data, string so_tinh, string ten_tinh, string loai, string gia)
-        //{
-        //    try
-        //    {
-        //        PHUONGTIEN phuongtien = this.fPhuongTien.addNewVehical(name, img_data, so_tinh, ten_tinh, loai, gia);
-        //        return this.fLocation.deleteLocation(phuongtien.ID);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return false;
-        //    }
-        //}
+        public void ProxyAddLoggerKhachSan(string name, byte[] img_data, string so_tinh, string dia_chi,string sdt, string chi_tiet, string gia)
+        {
+            try
+            {
+                //Do before adding
+                System.Console.WriteLine("Adding new Vehical: " + name + " \n" + dia_chi + " \n" + gia+" \n"+sdt);
+
+                this.fHotel.addNewHotel(name, img_data, so_tinh, dia_chi, sdt,chi_tiet, gia);
+                //Do after adding
+                System.Console.WriteLine("Success adding!");
+
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            {
+                Exception raise = dbEx;
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        string message = string.Format("{0}:{1}",
+                            validationErrors.Entry.Entity.ToString(),
+                            validationError.ErrorMessage);
+                        // raise a new exception nesting
+                        // the current instance as InnerException
+                        raise = new InvalidOperationException(message, raise);
+                    }
+                }
+                throw raise;
+            }
+        }
+        public void ProxyAddLoggerDiaDiem(string name, byte[] img_data, string so_tinh, string ten_tinh, string chi_tiet, string gia)
+        {
+            try
+            {
+                //Do before adding
+                System.Console.WriteLine("Adding new Vehical: " + name + " \n" + ten_tinh + " \n" + chi_tiet + " \n" + gia);
+                this.fLocation.addNewLocation(name, img_data, so_tinh, ten_tinh, chi_tiet, gia);
+
+                //Do after adding
+                System.Console.WriteLine("Success adding!");
+
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            {
+                Exception raise = dbEx;
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        string message = string.Format("{0}:{1}",
+                            validationErrors.Entry.Entity.ToString(),
+                            validationError.ErrorMessage);
+                        // raise a new exception nesting
+                        // the current instance as InnerException
+                        raise = new InvalidOperationException(message, raise);
+                    }
+                }
+                throw raise;
+            }
+        }
+        
+        
+        
 
         public bool testCheckHotelInput(string name, byte[] img_data, string so_tinh, string dia_chi, string chi_tiet, string gia)
         {
@@ -87,6 +144,21 @@ namespace Tour.Proxy
             }
             catch (Exception ex)
             {
+                return false;
+            }
+        }
+        public bool testAddLocation(string name, byte[] img_data, string so_tinh, string ten_tinh, string chi_tiet, string gia)
+        {
+            try
+            {
+                //Image image = Image.FromFile("Path");
+                //byte[] img_data = Converter.Instance.ImageToByte(image);
+                DIADIEM location = this.fLocation.addNewLocation(name, img_data, so_tinh, ten_tinh, chi_tiet, gia);
+                return this.fLocation.deleteLocation(location.ID);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
                 return false;
             }
         }
@@ -146,6 +218,5 @@ namespace Tour.Proxy
                 return false;
             }
         }
-
     }
 }

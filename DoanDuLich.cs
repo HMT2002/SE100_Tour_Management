@@ -389,5 +389,25 @@ namespace Tour
             }
 
         }
+
+        private void txtbxTenDoan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utils.Notify.Unnotification(sender);
+        }
+
+        private void cbbxTour_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utils.Notify.Unnotification(sender);
+        }
+
+        private void datetimeNgayKetThuc_ValueChanged(object sender, EventArgs e)
+        {
+            Utils.Notify.Unnotification(sender);
+        }
+
+        private void datetimeNgayKhoiHanh_ValueChanged(object sender, EventArgs e)
+        {
+            Utils.Notify.Unnotification(sender);
+        }
     }
 }

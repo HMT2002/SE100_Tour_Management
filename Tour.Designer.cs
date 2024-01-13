@@ -264,9 +264,9 @@
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(7, 189);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 19);
+            this.label4.Size = new System.Drawing.Size(64, 19);
             this.label4.TabIndex = 26;
-            this.label4.Text = "Type of tour";
+            this.label4.Text = "Loại tour";
             // 
             // lb_idtrip
             // 
@@ -284,9 +284,9 @@
             this.lb_price.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_price.Location = new System.Drawing.Point(456, 20);
             this.lb_price.Name = "lb_price";
-            this.lb_price.Size = new System.Drawing.Size(40, 19);
+            this.lb_price.Size = new System.Drawing.Size(30, 19);
             this.lb_price.TabIndex = 5;
-            this.lb_price.Text = "Price";
+            this.lb_price.Text = "Giá";
             // 
             // lb_idtour
             // 
@@ -294,9 +294,9 @@
             this.lb_idtour.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_idtour.Location = new System.Drawing.Point(6, 138);
             this.lb_idtour.Name = "lb_idtour";
-            this.lb_idtour.Size = new System.Drawing.Size(78, 19);
+            this.lb_idtour.Size = new System.Drawing.Size(60, 19);
             this.lb_idtour.TabIndex = 0;
-            this.lb_idtour.Text = "Tour Name";
+            this.lb_idtour.Text = "Tên tour";
             // 
             // btn_add
             // 
@@ -312,7 +312,7 @@
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(100, 38);
             this.btn_add.TabIndex = 5;
-            this.btn_add.Text = "   ADD";
+            this.btn_add.Text = "    THÊM";
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.add_Click);
             // 
@@ -326,11 +326,11 @@
             this.btn_delete.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.Image = global::Tour.Properties.Resources.deleteicon;
             this.btn_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_delete.Location = new System.Drawing.Point(249, 355);
+            this.btn_delete.Location = new System.Drawing.Point(278, 355);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(100, 38);
             this.btn_delete.TabIndex = 6;
-            this.btn_delete.Text = "DELETE";
+            this.btn_delete.Text = "XÓA";
             this.btn_delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_delete.UseVisualStyleBackColor = true;
             this.btn_delete.Click += new System.EventHandler(this.delete_Click);
@@ -346,11 +346,11 @@
             this.btnExit.ForeColor = System.Drawing.Color.Red;
             this.btnExit.Image = global::Tour.Properties.Resources.exit;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(368, 355);
+            this.btnExit.Location = new System.Drawing.Point(397, 355);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(100, 38);
             this.btnExit.TabIndex = 8;
-            this.btnExit.Text = "  EXIT";
+            this.btnExit.Text = "  THOÁT";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -366,9 +366,9 @@
             this.btn_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_update.Location = new System.Drawing.Point(132, 355);
             this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(100, 38);
+            this.btn_update.Size = new System.Drawing.Size(140, 38);
             this.btn_update.TabIndex = 7;
-            this.btn_update.Text = "UPDATE";
+            this.btn_update.Text = "CẬP NHẬT";
             this.btn_update.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_update.UseVisualStyleBackColor = true;
             this.btn_update.Click += new System.EventHandler(this.update_Click);
@@ -468,7 +468,7 @@
             // 
             // TENTOUR
             // 
-            this.TENTOUR.DataPropertyName = "TENTOUR";
+            this.TENTOUR.DataPropertyName = "TEN";
             this.TENTOUR.HeaderText = "Tên tour du lịch";
             this.TENTOUR.Name = "TENTOUR";
             this.TENTOUR.ReadOnly = true;
@@ -489,7 +489,7 @@
             // 
             // LOAI
             // 
-            this.LOAI.DataPropertyName = "LOAI";
+            this.LOAI.DataPropertyName = "TOURTYPE";
             this.LOAI.HeaderText = "Loại";
             this.LOAI.Name = "LOAI";
             this.LOAI.ReadOnly = true;

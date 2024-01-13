@@ -12,7 +12,7 @@ namespace Tour.CollectionLists
     {
         public DALTourModel() { }
         string tentour;
-        public string TENTOUR { get => tentour; set => tentour = value; }
+        public string TEN { get => tentour; set => tentour = value; }
         string idtour;
         public string IDTOUR { get => idtour; set => idtour = value; }
         string id;
@@ -40,7 +40,7 @@ namespace Tour.CollectionLists
                     where tour.IsDeleted == false && doan.IsDeleted == false
                     select new DALTourModel
                     {
-                        TENTOUR = tour.TEN,
+                        TEN = tour.TEN,
                         IDTOUR = tour.ID,
                         GIA = (double)tour.GIA,
                     }
@@ -56,7 +56,7 @@ namespace Tour.CollectionLists
                     select new DALTourModel
                     {
                         ID = g.Key.tour.ID,
-                        TENTOUR = g.Key.tour.TEN,
+                        TEN = g.Key.tour.TEN,
                         GIA = (double)g.Key.tour.GIA,
                         BANNER = g.Key.giamgia.PICBI,
                         TOURTYPE = g.Key.tour.LOAI,

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Tour.CollectionLists;
 using Tour.Model;
 using Tour.Utils;
+using Tour.Proxy;
 
 namespace Tour
 {
@@ -103,7 +104,7 @@ namespace Tour
             cbbxVehical.DataSource = vehicalCollection.AllVehicalList();
             cbbxVehical.DisplayMember = "TEN";
         }
-        private void Clear()
+        public void Clear()
         {
             txtbxName.Text = "";
             rchtxtbxDetail.Text = "";
@@ -152,42 +153,43 @@ namespace Tour
         {
             if (CheckData(txtbxName.Text,img_data, cbboxProvince.SelectedIndex.ToString(),cbbxKind.Text, txtbxGia.Text) == true)
             {
-                try
-                {
-                    randomcode = Converter.Instance.RandomString2(5);
-                    if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
-                    {
-                        var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text ,IsDeleted=false};
-                        DataProvider.Ins.DB.TINHs.Add(tinh);
-                        DataProvider.Ins.DB.SaveChanges();
-                    }
+                //try
+                //{
+                //    randomcode = Converter.Instance.RandomString2(5);
+                //    if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
+                //    {
+                //        var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text ,IsDeleted=false};
+                //        DataProvider.Ins.DB.TINHs.Add(tinh);
+                //        DataProvider.Ins.DB.SaveChanges();
+                //    }
 
-                    var vehical = new PHUONGTIEN() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), PICBI = img_data,LOAI=cbbxKind.Text,IsDeleted=false ,GIA=Convert.ToDecimal( txtbxGia.Text)};
+                //    var vehical = new PHUONGTIEN() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), PICBI = img_data,LOAI=cbbxKind.Text,IsDeleted=false ,GIA=Convert.ToDecimal( txtbxGia.Text)};
 
-                    vehicalCollection.AllVehicalList().Add(vehical);
-                    DataProvider.Ins.DB.SaveChanges();
-                    showAll();
-                    Clear();
+                //    vehicalCollection.AllVehicalList().Add(vehical);
+                //    DataProvider.Ins.DB.SaveChanges();
+                //    showAll();
+                //    Clear();
+                //}
+                //catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+                //{
+                //    Exception raise = dbEx;
+                //    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                //    {
+                //        foreach (var validationError in validationErrors.ValidationErrors)
+                //        {
+                //            string message = string.Format("{0}:{1}",
+                //                validationErrors.Entry.Entity.ToString(),
+                //                validationError.ErrorMessage);
+                //            // raise a new exception nesting
+                //            // the current instance as InnerException
+                //            raise = new InvalidOperationException(message, raise);
+                //        }
+                //    }
+                //    throw raise;
+                //}
+                Proxy.Proxy proxy = new Proxy.Proxy(this);
+                proxy.ProxyAddLoggerPhuongTien(txtbxName.Text, img_data, cbboxProvince.SelectedIndex.ToString(), cbboxProvince.Text, cbbxKind.Text, txtbxGia.Text);
 
-
-                }
-                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
-                {
-                    Exception raise = dbEx;
-                    foreach (var validationErrors in dbEx.EntityValidationErrors)
-                    {
-                        foreach (var validationError in validationErrors.ValidationErrors)
-                        {
-                            string message = string.Format("{0}:{1}",
-                                validationErrors.Entry.Entity.ToString(),
-                                validationError.ErrorMessage);
-                            // raise a new exception nesting
-                            // the current instance as InnerException
-                            raise = new InvalidOperationException(message, raise);
-                        }
-                    }
-                    throw raise;
-                }
             }
 
         }
@@ -207,12 +209,17 @@ namespace Tour
 
                 var vehical = new PHUONGTIEN() { ID = randomcode, TEN =name, IDTINH = so_tinh, PICBI = img_data, LOAI = loai, IsDeleted = false, GIA = Convert.ToDecimal(gia) };
 
-                vehicalCollection.AllVehicalList().Add(vehical);
+                DataProvider.Ins.DB.PHUONGTIENs.Add(vehical);
                 DataProvider.Ins.DB.SaveChanges();
+                showAll();
+                Clear();
                 return vehical;
             }
             catch (Exception ex)
             {
+                Utils.Notify.Notification(txtbxGia);
+                Utils.Notify.Notification(txtbxName);
+
                 return null;
             }
         }
@@ -287,6 +294,8 @@ namespace Tour
                 }
                 catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
                 {
+                    Notify.Notification(txtbxName);
+                    Notify.Notification(txtbxGia);
                     Exception raise = dbEx;
                     foreach (var validationErrors in dbEx.EntityValidationErrors)
                     {

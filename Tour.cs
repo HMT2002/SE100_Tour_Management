@@ -320,6 +320,7 @@ namespace Tour
         {
 
             Utils.Validate.EnterNumberOnly(sender,e);
+            Utils.Notify.Unnotification(sender);
         }
 
         private void tb_nametour_KeyPress(object sender, KeyPressEventArgs e)
@@ -352,14 +353,16 @@ namespace Tour
             {
                 try
                 {
+                    DALTourCollection tourCollection = new DALTourCollection();
                     if (rdIDSearch.Checked)
                     {
-                        dgv_trip.DataSource = DataProvider.Ins.DB.TOURs.Where(t => (SqlFunctions.PatIndex("%" + value + "%", t.ID) > 0) && (t.IsDeleted == false)).Select(t => t).ToList();
+
+                        dgv_trip.DataSource = DataProvider.Ins.DB.TOURs.Where(t => (SqlFunctions.PatIndex("%" + value + "%", t.ID) > 0)).Select(t => t).ToList();
 
                     }
                     else if(rdNameSearch.Checked)
                     {
-                        dgv_trip.DataSource = DataProvider.Ins.DB.TOURs.Where(t =>( SqlFunctions.PatIndex("%" + value + "%", t.TEN) > 0) && (t.IsDeleted==false)).Select(t => t).ToList();
+                        dgv_trip.DataSource = DataProvider.Ins.DB.TOURs.Where(t =>( SqlFunctions.PatIndex("%" + value + "%", t.TEN) > 0)).Select(t => t).ToList();
 
                     }
                 }

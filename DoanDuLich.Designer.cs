@@ -37,6 +37,13 @@ namespace Tour
             this.datetimeNgayKetThuc = new System.Windows.Forms.DateTimePicker();
             this.cbbxTour = new System.Windows.Forms.ComboBox();
             this.dgvDoan = new System.Windows.Forms.DataGridView();
+            this.data_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYKHOIHANH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYKETTHUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHIPHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENTOUR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idtour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tb_search = new System.Windows.Forms.TextBox();
             this.rdNameSearch = new System.Windows.Forms.RadioButton();
             this.rdIDSearch = new System.Windows.Forms.RadioButton();
@@ -66,13 +73,6 @@ namespace Tour
             this.btnAddVehicalForGroup = new System.Windows.Forms.Button();
             this.dgvPhuongTien = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.data_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYKHOIHANH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYKETTHUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHIPHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENTOUR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idtour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.panel1.SuspendLayout();
@@ -100,6 +100,7 @@ namespace Tour
             this.txtbxTenDoan.Name = "txtbxTenDoan";
             this.txtbxTenDoan.Size = new System.Drawing.Size(151, 20);
             this.txtbxTenDoan.TabIndex = 1;
+            this.txtbxTenDoan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxTenDoan_KeyPress);
             // 
             // txtbxChiPhi
             // 
@@ -118,6 +119,7 @@ namespace Tour
             this.datetimeNgayKhoiHanh.Name = "datetimeNgayKhoiHanh";
             this.datetimeNgayKhoiHanh.Size = new System.Drawing.Size(151, 20);
             this.datetimeNgayKhoiHanh.TabIndex = 4;
+            this.datetimeNgayKhoiHanh.ValueChanged += new System.EventHandler(this.datetimeNgayKhoiHanh_ValueChanged);
             // 
             // datetimeNgayKetThuc
             // 
@@ -126,6 +128,7 @@ namespace Tour
             this.datetimeNgayKetThuc.Name = "datetimeNgayKetThuc";
             this.datetimeNgayKetThuc.Size = new System.Drawing.Size(151, 20);
             this.datetimeNgayKetThuc.TabIndex = 5;
+            this.datetimeNgayKetThuc.ValueChanged += new System.EventHandler(this.datetimeNgayKetThuc_ValueChanged);
             // 
             // cbbxTour
             // 
@@ -135,6 +138,7 @@ namespace Tour
             this.cbbxTour.Name = "cbbxTour";
             this.cbbxTour.Size = new System.Drawing.Size(151, 21);
             this.cbbxTour.TabIndex = 6;
+            this.cbbxTour.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbbxTour_KeyPress);
             // 
             // dgvDoan
             // 
@@ -157,6 +161,61 @@ namespace Tour
             this.dgvDoan.TabIndex = 8;
             this.dgvDoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dgvDoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDoan_CellContentClick);
+            // 
+            // data_ID
+            // 
+            this.data_ID.DataPropertyName = "ID";
+            this.data_ID.HeaderText = "ID";
+            this.data_ID.MinimumWidth = 6;
+            this.data_ID.Name = "data_ID";
+            this.data_ID.Width = 90;
+            // 
+            // TEN
+            // 
+            this.TEN.DataPropertyName = "TEN";
+            this.TEN.HeaderText = "Tên đoàn";
+            this.TEN.MinimumWidth = 6;
+            this.TEN.Name = "TEN";
+            this.TEN.Width = 200;
+            // 
+            // NGAYKHOIHANH
+            // 
+            this.NGAYKHOIHANH.DataPropertyName = "NGAYKHOIHANH";
+            this.NGAYKHOIHANH.HeaderText = "Ngày khởi hành";
+            this.NGAYKHOIHANH.MinimumWidth = 6;
+            this.NGAYKHOIHANH.Name = "NGAYKHOIHANH";
+            this.NGAYKHOIHANH.Width = 180;
+            // 
+            // NGAYKETTHUC
+            // 
+            this.NGAYKETTHUC.DataPropertyName = "NGAYKETTHUC";
+            this.NGAYKETTHUC.HeaderText = "Ngày kết thúc";
+            this.NGAYKETTHUC.MinimumWidth = 6;
+            this.NGAYKETTHUC.Name = "NGAYKETTHUC";
+            this.NGAYKETTHUC.Width = 180;
+            // 
+            // CHIPHI
+            // 
+            this.CHIPHI.DataPropertyName = "GIA_TOUR";
+            this.CHIPHI.HeaderText = "Chi phí";
+            this.CHIPHI.MinimumWidth = 6;
+            this.CHIPHI.Name = "CHIPHI";
+            this.CHIPHI.Width = 150;
+            // 
+            // TENTOUR
+            // 
+            this.TENTOUR.DataPropertyName = "TEN_TOUR";
+            this.TENTOUR.HeaderText = "Tour";
+            this.TENTOUR.MinimumWidth = 6;
+            this.TENTOUR.Name = "TENTOUR";
+            this.TENTOUR.Width = 180;
+            // 
+            // idtour
+            // 
+            this.idtour.DataPropertyName = "ID_TOUR";
+            this.idtour.HeaderText = "ID tour";
+            this.idtour.Name = "idtour";
+            this.idtour.Visible = false;
             // 
             // tb_search
             // 
@@ -467,61 +526,6 @@ namespace Tour
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.Width = 230;
-            // 
-            // data_ID
-            // 
-            this.data_ID.DataPropertyName = "ID";
-            this.data_ID.HeaderText = "ID";
-            this.data_ID.MinimumWidth = 6;
-            this.data_ID.Name = "data_ID";
-            this.data_ID.Width = 90;
-            // 
-            // TEN
-            // 
-            this.TEN.DataPropertyName = "TEN";
-            this.TEN.HeaderText = "Tên đoàn";
-            this.TEN.MinimumWidth = 6;
-            this.TEN.Name = "TEN";
-            this.TEN.Width = 200;
-            // 
-            // NGAYKHOIHANH
-            // 
-            this.NGAYKHOIHANH.DataPropertyName = "NGAYKHOIHANH";
-            this.NGAYKHOIHANH.HeaderText = "Ngày khởi hành";
-            this.NGAYKHOIHANH.MinimumWidth = 6;
-            this.NGAYKHOIHANH.Name = "NGAYKHOIHANH";
-            this.NGAYKHOIHANH.Width = 180;
-            // 
-            // NGAYKETTHUC
-            // 
-            this.NGAYKETTHUC.DataPropertyName = "NGAYKETTHUC";
-            this.NGAYKETTHUC.HeaderText = "Ngày kết thúc";
-            this.NGAYKETTHUC.MinimumWidth = 6;
-            this.NGAYKETTHUC.Name = "NGAYKETTHUC";
-            this.NGAYKETTHUC.Width = 180;
-            // 
-            // CHIPHI
-            // 
-            this.CHIPHI.DataPropertyName = "GIA_TOUR";
-            this.CHIPHI.HeaderText = "Chi phí";
-            this.CHIPHI.MinimumWidth = 6;
-            this.CHIPHI.Name = "CHIPHI";
-            this.CHIPHI.Width = 150;
-            // 
-            // TENTOUR
-            // 
-            this.TENTOUR.DataPropertyName = "TEN_TOUR";
-            this.TENTOUR.HeaderText = "Tour";
-            this.TENTOUR.MinimumWidth = 6;
-            this.TENTOUR.Name = "TENTOUR";
-            this.TENTOUR.Width = 180;
-            // 
-            // idtour
-            // 
-            this.idtour.DataPropertyName = "ID_TOUR";
-            this.idtour.HeaderText = "ID tour";
-            this.idtour.Name = "idtour";
-            this.idtour.Visible = false;
             // 
             // DoanDuLich
             // 

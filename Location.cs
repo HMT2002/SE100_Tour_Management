@@ -134,7 +134,7 @@ namespace Tour
             Clear();
         }
 
-        private void Clear()
+        public void Clear()
         {
             txtbxId.Text = "";
             txtbxName.Text = "";
@@ -148,48 +148,11 @@ namespace Tour
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (CheckData(txtbxName.Text, img_data, cbboxProvince.SelectedIndex.ToString(), rchtxtbxDetail.Text, txtbxGia.Text) == true)
-            {
-                try
-                {
-                    randomcode = Converter.Instance.RandomString(5);
-                    if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
-                    {
-                        var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text, IsDeleted = false };
-                        DataProvider.Ins.DB.TINHs.Add(tinh);
-                        DataProvider.Ins.DB.SaveChanges();
-                    }
-
-                    var location = new DIADIEM() { ID = randomcode, TEN = txtbxName.Text, IDTINH = cbboxProvince.SelectedIndex.ToString(), CHITIET = rchtxtbxDetail.Text, PICBI = img_data, IsDeleted = false, GIA = Convert.ToDecimal(txtbxGia.Text) };
-
-                    locationCollection.AllLocationList().Add(location);
-                    DataProvider.Ins.DB.SaveChanges();
-                    showAll();
-                    Clear();
-                }
-                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
-                {
-                Notify.Notification(txtbxName);
-                Notify.Notification(txtbxGia);
-                    Exception raise = dbEx;
-                    foreach (var validationErrors in dbEx.EntityValidationErrors)
-                    {
-                        foreach (var validationError in validationErrors.ValidationErrors)
-                        {
-                            string message = string.Format("{0}:{1}",
-                                validationErrors.Entry.Entity.ToString(),
-                                validationError.ErrorMessage);
-                            // raise a new exception nesting
-                            // the current instance as InnerException
-                            raise = new InvalidOperationException(message, raise);
-                        }
-                    }
-                    throw raise;
-
-                }
-            }
-
+            Proxy.Proxy proxy=new Proxy.Proxy(this);
+            proxy.ProxyAddLoggerDiaDiem(txtbxName.Text,img_data,cbboxProvince.SelectedIndex.ToString(),cbboxProvince.Text,rchtxtbxDetail.Text,txtbxGia.Text);
         }
+
+
         public void UnnotifyAllFields()
         {
             Notify.Unnotification(txtbxGia);
@@ -200,7 +163,6 @@ namespace Tour
         {
             try
             {
-                System.Diagnostics.Debug.WriteLine("fadsfadsfawedsfcsadxfewadsfsda");
                 randomcode = Converter.Instance.RandomString(5);
                 if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == so_tinh).FirstOrDefault() == null)
                 {
@@ -211,12 +173,16 @@ namespace Tour
                 var location = new DIADIEM() { ID = randomcode, TEN = name, IDTINH = so_tinh, CHITIET = chi_tiet, PICBI = img_data, IsDeleted = false, GIA = Convert.ToDecimal(gia) };
                 locationCollection.AllLocationList().Add(location);
                 DataProvider.Ins.DB.SaveChanges();
+                showAll();
+                Clear();
                 return location;
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
-                System.Diagnostics.Debug.WriteLine(ex.ToString());
+                    Utils.Notify.Notification(txtbxName);
+                    Utils.Notify.Notification(txtbxGia);
+                    Utils.Notify.Notification(cbboxProvince);
+
                 return null;
             }
         }
@@ -350,6 +316,11 @@ namespace Tour
         private void txtbxName_KeyPress(object sender, KeyPressEventArgs e)
         {
             Notify.Unnotification(sender);
+        }
+
+        private void cbboxProvince_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Utils.Notify.Unnotification(sender);
         }
     }
 }

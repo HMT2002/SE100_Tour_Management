@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using Tour.CollectionLists;
 using Tour.Model;
 using Tour.Utils;
@@ -132,27 +133,84 @@ namespace Tour
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (CheckData() == true)
+            //if (CheckData() == true)
+            //{
+            //    try
+            //    {
+            //        if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
+            //        {
+            //            var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text,IsDeleted=false };
+            //            DataProvider.Ins.DB.TINHs.Add(tinh);
+            //            DataProvider.Ins.DB.SaveChanges();
+            //        }
+            //        randomcode = Converter.Instance.RandomString(5);
+            //        var location = new KHACHSAN() { ID = randomcode, DIACHI = txtbxName.Text, PICBI = img_data,CHITIET=rchtxtbxDetail.Text,GIA=Convert.ToDecimal( txtbxGia.Text ),IDTINH=cbboxProvince.SelectedIndex.ToString(),SDT=txtbxSDT.Text,TEN=txtbxName.Text,IsDeleted=false};
+            //        hotelCollection.AllHotelList().Add(location);
+            //        DataProvider.Ins.DB.SaveChanges();
+            //        showAll();
+            //        Clear();
+            //    }
+            //    catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            //    {
+            //        Notify.Notification(txtbxName);
+            //        Notify.Notification(txtbxName);
+            //        Notify.Notification(txtbxDiaChi);
+            //        Notify.Notification(txtbxSDT);
+            //        Exception raise = dbEx;
+            //        foreach (var validationErrors in dbEx.EntityValidationErrors)
+            //        {
+            //            foreach (var validationError in validationErrors.ValidationErrors)
+            //            {
+            //                string message = string.Format("{0}:{1}",
+            //                    validationErrors.Entry.Entity.ToString(),
+            //                    validationError.ErrorMessage);
+            //                // raise a new exception nesting
+            //                // the current instance as InnerException
+            //                raise = new InvalidOperationException(message, raise);
+            //            }
+            //        }
+            //        throw raise;
+            //    }
+            //}
+            //else
+            //{
+            //    Notify.Notification(txtbxSDT);
+            //    Notify.Notification(txtbxName);
+            //    Notify.Notification(txtbxGia);
+            //    Notify.Notification(txtbxDiaChi);
+            //}
+
+            Proxy.Proxy proxy = new Proxy.Proxy(this);
+            proxy.ProxyAddLoggerKhachSan(txtbxName.Text, img_data, cbboxProvince.SelectedIndex.ToString(), txtbxDiaChi.Text, txtbxSDT.Text, rchtxtbxDetail.Text, txtbxGia.Text);
+        }
+
+
+        public void addNewHotel(string name, byte[] img_data, string so_tinh, string dia_chi,string sdt, string chi_tiet, string gia)
+        {
+            if (CheckData(name,img_data,so_tinh,dia_chi,chi_tiet,gia) == true)
             {
                 try
                 {
                     if (DataProvider.Ins.DB.TINHs.Where(x => x.ID == cbboxProvince.SelectedIndex.ToString()).FirstOrDefault() == null)
                     {
-                        var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text,IsDeleted=false };
+                        var tinh = new TINH() { ID = cbboxProvince.SelectedIndex.ToString(), TEN = cbboxProvince.Text, IsDeleted = false };
                         DataProvider.Ins.DB.TINHs.Add(tinh);
                         DataProvider.Ins.DB.SaveChanges();
                     }
                     randomcode = Converter.Instance.RandomString(5);
-                    var location = new KHACHSAN() { ID = randomcode, DIACHI = txtbxName.Text, PICBI = img_data,CHITIET=rchtxtbxDetail.Text,GIA=Convert.ToDecimal( txtbxGia.Text ),IDTINH=cbboxProvince.SelectedIndex.ToString(),SDT=txtbxSDT.Text,TEN=txtbxName.Text,IsDeleted=false};
+                    var location = new KHACHSAN() { ID = randomcode, DIACHI = dia_chi, PICBI = img_data, CHITIET = chi_tiet, GIA = Convert.ToDecimal(gia), IDTINH = so_tinh.ToString(), SDT = sdt, TEN = name, IsDeleted = false };
                     hotelCollection.AllHotelList().Add(location);
                     DataProvider.Ins.DB.SaveChanges();
                     showAll();
                     Clear();
 
-
                 }
                 catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
                 {
+                    Notify.Notification(txtbxName);
+                    Notify.Notification(txtbxName);
+                    Notify.Notification(txtbxDiaChi);
+                    Notify.Notification(txtbxSDT);
                     Exception raise = dbEx;
                     foreach (var validationErrors in dbEx.EntityValidationErrors)
                     {
@@ -169,6 +227,13 @@ namespace Tour
                     throw raise;
                 }
 
+            }
+            else
+            {
+                Notify.Notification(txtbxSDT);
+                Notify.Notification(txtbxName);
+                Notify.Notification(txtbxGia);
+                Notify.Notification(txtbxDiaChi);
             }
 
         }
@@ -264,7 +329,7 @@ namespace Tour
             Clear();
         }
 
-        private void Clear()
+        public void Clear()
         {
             txtbxName.Text = rchtxtbxDetail.Text = txtbxDiaChi.Text = txtbxGia.Text =txtbxName.Text=txtbxSDT.Text= "";
             cbboxProvince.SelectedIndex= cbbxHotel.SelectedIndex = -1;
@@ -321,6 +386,18 @@ namespace Tour
         private void txtbxName_KeyPress(object sender, KeyPressEventArgs e)
         {
             Notify.Unnotification(sender);
+        }
+
+        private void txtbxSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utils.Validate.EnterNumberOnly(sender, e);
+            Utils.Notify.Unnotification(sender);
+
+        }
+
+        private void txtbxDiaChi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utils.Notify.Unnotification(sender);
         }
     }
 }

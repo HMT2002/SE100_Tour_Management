@@ -56,7 +56,7 @@ namespace Tour.Utils
 
             try
             {
-                System.Windows.Forms.TextBox txtbx =(System.Windows.Forms.TextBox ) sender;
+                System.Windows.Forms.TextBox txtbx = (System.Windows.Forms.TextBox)sender;
 
                 if (txtbx.Text.Length == 6)
                 {
@@ -90,19 +90,19 @@ namespace Tour.Utils
 
             try
             {
-                if(eve is KeyPressEventArgs)
+                if (eve is KeyPressEventArgs)
                 {
-               KeyPressEventArgs e = (KeyPressEventArgs)eve;
-                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-                {
-                    e.Handled = true;
+                    KeyPressEventArgs e = (KeyPressEventArgs)eve;
+                    if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+                    {
+                        e.Handled = true;
+                    }
+                    if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+                    {
+                        e.Handled = true;
+                    }
                 }
-                if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-                {
-                    e.Handled = true;
-                }
-                }
- 
+
             }
             catch
             {

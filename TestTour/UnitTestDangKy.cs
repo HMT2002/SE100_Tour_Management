@@ -20,6 +20,7 @@ namespace TestTour
         Tour.DoanDuLich FDoanDuLich;
 
 
+
         [SetUp]
         public void Setup()
         {
@@ -29,6 +30,7 @@ namespace TestTour
             this.FLocation = new Tour.Location();
             this.FDoanDuLich = new Tour.DoanDuLich();
             this.FHotel= new Tour.Hotel();
+            
         }
         //[Test]
         //public void TestAddLocation()
@@ -153,6 +155,18 @@ namespace TestTour
             bool result = new Proxy(this.FPhuongTien).testTypeBInput(this.FPhuongTien, "", img_data, "abc", "Xe buyt", "abc");
             Assert.False(result);
         }
-
+        [Test]
+        //public void TestAddPhuongTienAction()
+        //{
+        //    string solution_dir = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory));
+        //    string TestDirectory = TestContext.CurrentContext.TestDirectory;
+        //    var ins = DataProvider.Ins;
+        //    string app_domain = AppDomain.CurrentDomain.BaseDirectory;
+        //    string image_path = Path.Combine(app_domain, @"..\..\..\testimg.png");
+        //    Image image = Image.FromFile(image_path);
+        //    byte[] img_data = Converter.Instance.ImageToByte(image);
+        //    bool result = new Proxy(this.FPhuongTien).testAddVehical( "", img_data, "abc","Ha Giang", "Xe buyt", "abc");
+        //    Assert.False(result);
+        //}
     }
 }

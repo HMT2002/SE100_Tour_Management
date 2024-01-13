@@ -33,8 +33,9 @@ namespace Tour
         bool CheckDuplicateEmail(string email)
         {
             string query = "select * from User where Email='" + email + "'";
+            ACCOUNT test = DataProvider.Ins.DB.ACCOUNTs.Where(t => t.ACC == email).FirstOrDefault();
 
-            return false;
+            return test != null ? true : false;
         }
 
         private void SignUpbtn_Click(object sender, EventArgs e)
@@ -64,8 +65,8 @@ namespace Tour
                 try
                 {
 
-                    var nv = new NHANVIEN() { ID = randomcode,  TEN = txbHo.Text+" "+ txbTen.Text, SDT = txbSDT.Text, MAIL = txbGmail.Text,PICBI=img_data };
-                    var account = new ACCOUNT() { ACC = txbGmail.Text, PASS = Converter.Instance.MD5Encrypt(Converter.Instance.Base64Encode(txbPass.Text)), ID = randomcode,IsDeleted=false };
+                    var nv = new NHANVIEN() { ID = randomcode, TEN = txbHo.Text + " " + txbTen.Text, SDT = txbSDT.Text, MAIL = txbGmail.Text, PICBI = img_data };
+                    var account = new ACCOUNT() { ACC = txbGmail.Text, PASS = Converter.Instance.MD5Encrypt(Converter.Instance.Base64Encode(txbPass.Text)), ID = randomcode, IsDeleted = false };
                     DataProvider.Ins.DB.ACCOUNTs.Add(account);
                     DataProvider.Ins.DB.NHANVIENs.Add(nv);
 

@@ -103,6 +103,12 @@ namespace Tour.Utils
                     obj.BackColor = Color.White;
 
                 }
+                else if (sender is System.Windows.Forms.DateTimePicker)
+                {
+                    var obj = (System.Windows.Forms.DateTimePicker)sender;
+                    obj.BackColor = Color.White;
+
+                }
                 else
                 {
 

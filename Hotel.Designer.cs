@@ -153,6 +153,7 @@ namespace Tour
             this.txtbxSDT.Name = "txtbxSDT";
             this.txtbxSDT.Size = new System.Drawing.Size(288, 20);
             this.txtbxSDT.TabIndex = 15;
+            this.txtbxSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxSDT_KeyPress);
             // 
             // label1
             // 
@@ -186,6 +187,7 @@ namespace Tour
             this.txtbxDiaChi.Name = "txtbxDiaChi";
             this.txtbxDiaChi.Size = new System.Drawing.Size(288, 20);
             this.txtbxDiaChi.TabIndex = 11;
+            this.txtbxDiaChi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxDiaChi_KeyPress);
             // 
             // label2
             // 

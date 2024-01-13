@@ -54,6 +54,7 @@ namespace Tour.Utils
             }
         }
 
+
         public static string GetLocalIPAddress()
         {
             string listOfIP = "These are the IP in the system: ";
