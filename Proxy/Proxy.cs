@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Tour.Model;
 using Tour.Utils;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace Tour.Proxy
@@ -39,7 +40,11 @@ namespace Tour.Proxy
             this.fPhuongTien.addNewVehical(name,img_data, so_tinh, ten_tinh, loai, gia);
 
                 //Do after adding
-            System.Console.WriteLine("Success adding!");
+                var nhanvien = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == Properties.Settings.Default.CurUserId).FirstOrDefault();
+                var logger = DataProvider.Ins.DB.LOGGERs.Add(new LOGGER() { ID = Utils.Converter.Instance.RandomString2(9, false), EMPLOYEEID = Properties.Settings.Default.CurUserId, MESSAGE = nhanvien.TEN + " đã thêm mới phương tiện",DATE = DateTime.Now });
+                DataProvider.Ins.DB.SaveChanges();
+
+                System.Console.WriteLine("Success adding!");
 
             }
             catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
@@ -67,6 +72,11 @@ namespace Tour.Proxy
 
                 this.fHotel.addNewHotel(name, img_data, so_tinh, dia_chi, sdt,chi_tiet, gia);
                 //Do after adding
+                var nhanvien = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == Properties.Settings.Default.CurUserId).FirstOrDefault();
+
+                var logger = DataProvider.Ins.DB.LOGGERs.Add(new LOGGER() { ID = Utils.Converter.Instance.RandomString2(9, false), EMPLOYEEID = Properties.Settings.Default.CurUserId, MESSAGE =nhanvien.TEN+ " đã thêm mới khách sạn", DATE = DateTime.Now });
+                DataProvider.Ins.DB.SaveChanges();
+
                 System.Console.WriteLine("Success adding!");
 
             }
@@ -97,6 +107,9 @@ namespace Tour.Proxy
                 this.fLocation.addNewLocation(name, img_data, so_tinh, ten_tinh, chi_tiet, gia);
 
                 //Do after adding
+                var nhanvien = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == Properties.Settings.Default.CurUserId).FirstOrDefault();
+                var logger = DataProvider.Ins.DB.LOGGERs.Add(new LOGGER() { ID = Utils.Converter.Instance.RandomString2(9, false), EMPLOYEEID = Properties.Settings.Default.CurUserId, MESSAGE = nhanvien.TEN + " đã thêm mới địa điểm du lịch",DATE=DateTime.Now });
+                DataProvider.Ins.DB.SaveChanges();
                 System.Console.WriteLine("Success adding!");
 
             }
@@ -118,9 +131,107 @@ namespace Tour.Proxy
                 throw raise;
             }
         }
-        
-        
-        
+
+        public void ProxyDeleteLoggerPhuongTien(string id)
+        {
+            try
+            {
+                //Do before adding
+                System.Console.WriteLine("Delete Vehical: " + id);
+                this.fPhuongTien.deleteVehical(id);
+
+                //Do after adding
+                var nhanvien = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == Properties.Settings.Default.CurUserId).FirstOrDefault();
+                var logger = DataProvider.Ins.DB.LOGGERs.Add(new LOGGER() { ID = Utils.Converter.Instance.RandomString2(9, false), EMPLOYEEID = Properties.Settings.Default.CurUserId, MESSAGE = nhanvien.TEN + " đã xóa phương tiện "+id, DATE = DateTime.Now });
+                DataProvider.Ins.DB.SaveChanges();
+
+                System.Console.WriteLine("Success adding!");
+
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            {
+                Exception raise = dbEx;
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        string message = string.Format("{0}:{1}",
+                            validationErrors.Entry.Entity.ToString(),
+                            validationError.ErrorMessage);
+                        raise = new InvalidOperationException(message, raise);
+                    }
+                }
+                throw raise;
+            }
+        }
+        public void ProxyDeleteLoggerKhachSan(string id)
+        {
+            try
+            {
+                //Do before adding
+                System.Console.WriteLine("Delete hotel: " + id);
+
+                this.fHotel.deleteHotel(id);
+                //Do after adding
+                var nhanvien = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == Properties.Settings.Default.CurUserId).FirstOrDefault();
+
+                var logger = DataProvider.Ins.DB.LOGGERs.Add(new LOGGER() { ID = Utils.Converter.Instance.RandomString2(9, false), EMPLOYEEID = Properties.Settings.Default.CurUserId, MESSAGE = nhanvien.TEN + " đã xóa khách sạn "+id, DATE = DateTime.Now });
+                DataProvider.Ins.DB.SaveChanges();
+
+                System.Console.WriteLine("Success adding!");
+
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            {
+                Exception raise = dbEx;
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        string message = string.Format("{0}:{1}",
+                            validationErrors.Entry.Entity.ToString(),
+                            validationError.ErrorMessage);
+                        // raise a new exception nesting
+                        // the current instance as InnerException
+                        raise = new InvalidOperationException(message, raise);
+                    }
+                }
+                throw raise;
+            }
+        }
+        public void ProxyDeleteLoggerDiaDiem(string id)
+        {
+            try
+            {
+                //Do before adding
+                System.Console.WriteLine("Delete Location: " + id);
+                this.fLocation.deleteLocation(id);
+                //Do after adding
+                var nhanvien = DataProvider.Ins.DB.NHANVIENs.Where(x => x.ID == Properties.Settings.Default.CurUserId).FirstOrDefault();
+                var logger = DataProvider.Ins.DB.LOGGERs.Add(new LOGGER() { ID = Utils.Converter.Instance.RandomString2(9, false), EMPLOYEEID = Properties.Settings.Default.CurUserId, MESSAGE = nhanvien.TEN + " đã xóa địa điểm du lịch " + id, DATE = DateTime.Now });
+                DataProvider.Ins.DB.SaveChanges();
+                System.Console.WriteLine("Success adding!");
+
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            {
+                Exception raise = dbEx;
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        string message = string.Format("{0}:{1}",
+                            validationErrors.Entry.Entity.ToString(),
+                            validationError.ErrorMessage);
+                        // raise a new exception nesting
+                        // the current instance as InnerException
+                        raise = new InvalidOperationException(message, raise);
+                    }
+                }
+                throw raise;
+            }
+        }
+
 
         public bool testCheckHotelInput(string name, byte[] img_data, string so_tinh, string dia_chi, string chi_tiet, string gia)
         {

@@ -118,7 +118,7 @@ namespace Tour
         }
         public bool CheckData()
         {
-            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null||txtbxDiaChi.Text.Trim().CompareTo(string.Empty) == 0|| Convert.ToDecimal(txtbxGia.Text) == 0 || cbboxProvince.SelectedIndex == -1)
+            if (txtbxName.Text.Trim().CompareTo(string.Empty) == 0 || img_data == null || txtbxDiaChi.Text.Trim().CompareTo(string.Empty) == 0 || Convert.ToDecimal(txtbxGia.Text) == 0 || cbboxProvince.SelectedIndex == -1)
             {
                 return false;
             }
@@ -185,9 +185,9 @@ namespace Tour
         }
 
 
-        public void addNewHotel(string name, byte[] img_data, string so_tinh, string dia_chi,string sdt, string chi_tiet, string gia)
+        public void addNewHotel(string name, byte[] img_data, string so_tinh, string dia_chi, string sdt, string chi_tiet, string gia)
         {
-            if (CheckData(name,img_data,so_tinh,dia_chi,chi_tiet,gia) == true)
+            if (CheckData(name, img_data, so_tinh, dia_chi, chi_tiet, gia) == true)
             {
                 try
                 {
@@ -242,27 +242,26 @@ namespace Tour
         {
             if (MessageBox.Show("Are you sure to delete this?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                if (id == null || id.CompareTo(string.Empty) == 0)
-                {
-                    return;
-                }
-                try
-                {
-                    foreach(var tb_ks in DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.IDKHACHSAN == id))
-                    {
-                        tb_ks.IsDeleted = true;
-                    }
-                    KHACHSAN khachsan = hotelCollection.AllHotelList().Where(x => x.ID == id).FirstOrDefault();
-                    khachsan.IsDeleted = true;
-                    DataProvider.Ins.DB.SaveChanges();
-                    showAll();
-                    Clear();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                }
+                //try
+                //{
+                //    foreach(var tb_ks in DataProvider.Ins.DB.tb_KHACHSAN.Where(x => x.IDKHACHSAN == id))
+                //    {
+                //        tb_ks.IsDeleted = true;
+                //    }
+                //    KHACHSAN khachsan = hotelCollection.AllHotelList().Where(x => x.ID == id).FirstOrDefault();
+                //    khachsan.IsDeleted = true;
+                //    DataProvider.Ins.DB.SaveChanges();
+                //    showAll();
+                //    Clear();
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                //}
+                Proxy.Proxy proxy = new Proxy.Proxy(this);
+                proxy.ProxyDeleteLoggerKhachSan(id);
             }
         }
 
@@ -270,7 +269,7 @@ namespace Tour
         {
             try
             {
-                if (name.Trim().CompareTo(string.Empty) == 0 || img_data == null || dia_chi.Trim().CompareTo(string.Empty) == 0 || Convert.ToDecimal(gia) == 0 ||Convert.ToInt32( so_tinh) == 0)
+                if (name.Trim().CompareTo(string.Empty) == 0 || img_data == null || dia_chi.Trim().CompareTo(string.Empty) == 0 || Convert.ToDecimal(gia) == 0 || Convert.ToInt32(so_tinh) == 0)
                 {
                     return false;
                 }
@@ -284,11 +283,17 @@ namespace Tour
 
         public bool deleteHotel(string id)
         {
+            if (id == null || id.CompareTo(string.Empty) == 0)
+            {
+                return false;
+            }
             try
             {
                 var khachsan = hotelCollection.AllHotelList().Where(x => x.ID == id).FirstOrDefault();
                 khachsan.IsDeleted = true;
                 DataProvider.Ins.DB.SaveChanges();
+                showAll();
+                Clear();
                 return true;
             }
             catch (Exception ex)
@@ -300,7 +305,7 @@ namespace Tour
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (id == null || id.CompareTo(string.Empty) == 0||cbboxProvince.Text.Trim().CompareTo(string.Empty) == 0)
+            if (id == null || id.CompareTo(string.Empty) == 0 || cbboxProvince.Text.Trim().CompareTo(string.Empty) == 0)
             {
                 return;
             }
@@ -311,7 +316,7 @@ namespace Tour
                 khachsan.IDTINH = cbboxProvince.SelectedIndex.ToString();
                 khachsan.CHITIET = rchtxtbxDetail.Text;
                 khachsan.PICBI = img_data;
-                khachsan.GIA= Convert.ToDecimal(txtbxGia.Text);
+                khachsan.GIA = Convert.ToDecimal(txtbxGia.Text);
                 DataProvider.Ins.DB.SaveChanges();
                 showAll();
                 Clear();
@@ -331,8 +336,8 @@ namespace Tour
 
         public void Clear()
         {
-            txtbxName.Text = rchtxtbxDetail.Text = txtbxDiaChi.Text = txtbxGia.Text =txtbxName.Text=txtbxSDT.Text= "";
-            cbboxProvince.SelectedIndex= cbbxHotel.SelectedIndex = -1;
+            txtbxName.Text = rchtxtbxDetail.Text = txtbxDiaChi.Text = txtbxGia.Text = txtbxName.Text = txtbxSDT.Text = "";
+            cbboxProvince.SelectedIndex = cbbxHotel.SelectedIndex = -1;
             pcbxLocation.Image = null;
             UnnotifyAllFields();
         }

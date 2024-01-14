@@ -32,6 +32,7 @@ namespace Tour.Model
         public virtual DbSet<GIAMGIA> GIAMGIAs { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
         public virtual DbSet<KHACHSAN> KHACHSANs { get; set; }
+        public virtual DbSet<LOGGER> LOGGERs { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
         public virtual DbSet<PHUONGTIEN> PHUONGTIENs { get; set; }
         public virtual DbSet<tb_DIADIEM_DULICH> tb_DIADIEM_DULICH { get; set; }

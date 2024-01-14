@@ -231,6 +231,8 @@ namespace Tour
                 var phuongtien = vehicalCollection.AllVehicalList().Where(x => x.ID == id).FirstOrDefault();
                 phuongtien.IsDeleted = true;
                 DataProvider.Ins.DB.SaveChanges();
+                showAll();
+                Clear();
                 return true;
             }
             catch (Exception ex)
@@ -243,26 +245,28 @@ namespace Tour
         {
             if (MessageBox.Show("Are you sure to delete this?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                if (id == null || id.CompareTo(string.Empty) == 0)
-                {
-                    return;
-                }
-                try
-                {
+                //    if (id == null || id.CompareTo(string.Empty) == 0)
+                //    {
+                //        return;
+                //    }
+                //    try
+                //    {
 
-                    var phuongtien = vehicalCollection.AllVehicalList().Where(x => x.ID == id).FirstOrDefault();
-                    phuongtien.IsDeleted = true;
-                    DataProvider.Ins.DB.SaveChanges();
-                    showAll();
-                    Clear();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //        var phuongtien = vehicalCollection.AllVehicalList().Where(x => x.ID == id).FirstOrDefault();
+                //        phuongtien.IsDeleted = true;
+                //        DataProvider.Ins.DB.SaveChanges();
+                //        showAll();
+                //        Clear();
+                //    }
+                //    catch (Exception ex)
+                //    {
+                //        MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                }
+                //    }
+                //}
+                Proxy.Proxy proxy = new Proxy.Proxy(this);
+                proxy.ProxyDeleteLoggerPhuongTien(id);
             }
-
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

@@ -148,8 +148,8 @@ namespace Tour
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Proxy.Proxy proxy=new Proxy.Proxy(this);
-            proxy.ProxyAddLoggerDiaDiem(txtbxName.Text,img_data,cbboxProvince.SelectedIndex.ToString(),cbboxProvince.Text,rchtxtbxDetail.Text,txtbxGia.Text);
+            Proxy.Proxy proxy = new Proxy.Proxy(this);
+            proxy.ProxyAddLoggerDiaDiem(txtbxName.Text, img_data, cbboxProvince.SelectedIndex.ToString(), cbboxProvince.Text, rchtxtbxDetail.Text, txtbxGia.Text);
         }
 
 
@@ -179,10 +179,9 @@ namespace Tour
             }
             catch (Exception ex)
             {
-                    Utils.Notify.Notification(txtbxName);
-                    Utils.Notify.Notification(txtbxGia);
-                    Utils.Notify.Notification(cbboxProvince);
-
+                Utils.Notify.Notification(txtbxName);
+                Utils.Notify.Notification(txtbxGia);
+                Utils.Notify.Notification(cbboxProvince);
                 return null;
             }
         }
@@ -199,6 +198,8 @@ namespace Tour
                 DIADIEM diadiem = locationCollection.AllLocationList().Where(x => x.ID == id).FirstOrDefault();
                 diadiem.IsDeleted = true;
                 DataProvider.Ins.DB.SaveChanges();
+                showAll();
+                Clear();
                 return true;
             }
             catch (Exception ex)
@@ -212,24 +213,26 @@ namespace Tour
         {
             if (MessageBox.Show("Are you sure to delete this?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                if (id == null || id.CompareTo(string.Empty) == 0)
-                {
-                    return;
-                }
-                try
-                {
-                    DIADIEM diadiem = locationCollection.AllLocationList().Where(x => x.ID == id).FirstOrDefault();
-                    diadiem.IsDeleted = true;
-                    DataProvider.Ins.DB.SaveChanges();
-                    showAll();
-                    Clear();
+                //if (id == null || id.CompareTo(string.Empty) == 0)
+                //{
+                //    return;
+                //}
+                //try
+                //{
+                //    DIADIEM diadiem = locationCollection.AllLocationList().Where(x => x.ID == id).FirstOrDefault();
+                //    diadiem.IsDeleted = true;
+                //    DataProvider.Ins.DB.SaveChanges();
+                //    showAll();
+                //    Clear();
 
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show("Error " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                }
+                //}
+                Proxy.Proxy proxy = new Proxy.Proxy(this);
+                proxy.ProxyDeleteLoggerDiaDiem(id);
 
             }
         }

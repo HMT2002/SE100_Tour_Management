@@ -94,6 +94,15 @@
           <Property Name="TEN" Type="nvarchar" MaxLength="50" />
           <Property Name="IsDeleted" Type="bit" />
         </EntityType>
+        <EntityType Name="LOGGER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="MESSAGE" Type="nvarchar" MaxLength="60" />
+          <Property Name="EMPLOYEEID" Type="char" MaxLength="7" />
+          <Property Name="DATE" Type="smalldatetime" />
+        </EntityType>
         <EntityType Name="NHANVIEN">
           <Key>
             <PropertyRef Name="ID" />
@@ -197,6 +206,18 @@
           <Property Name="IDDOAN" Type="char" MaxLength="7" />
           <Property Name="IsDeleted" Type="bit" />
         </EntityType>
+        <Association Name="FK__LOGGER__EMPLOYEE__68487DD7">
+          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+          <End Role="LOGGER" Type="Self.LOGGER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LOGGER">
+              <PropertyRef Name="EMPLOYEEID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="LK_DIADIEM_DULICH">
           <End Role="DIADIEM" Type="Self.DIADIEM" Multiplicity="0..1" />
           <End Role="tb_DIADIEM_DULICH" Type="Self.tb_DIADIEM_DULICH" Multiplicity="*" />
@@ -433,6 +454,7 @@
           <EntitySet Name="GIAMGIA" EntityType="Self.GIAMGIA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KHACHSAN" EntityType="Self.KHACHSAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOGGER" EntityType="Self.LOGGER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PHUONGTIEN" EntityType="Self.PHUONGTIEN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_DIADIEM_DULICH" EntityType="Self.tb_DIADIEM_DULICH" Schema="dbo" store:Type="Tables" />
@@ -443,6 +465,10 @@
           <EntitySet Name="TINH" EntityType="Self.TINH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TOUR" EntityType="Self.TOUR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VE" EntityType="Self.VE" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__LOGGER__EMPLOYEE__68487DD7" Association="Self.FK__LOGGER__EMPLOYEE__68487DD7">
+            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+            <End Role="LOGGER" EntitySet="LOGGER" />
+          </AssociationSet>
           <AssociationSet Name="LK_DIADIEM_DULICH" Association="Self.LK_DIADIEM_DULICH">
             <End Role="DIADIEM" EntitySet="DIADIEM" />
             <End Role="tb_DIADIEM_DULICH" EntitySet="tb_DIADIEM_DULICH" />
@@ -629,6 +655,16 @@
           <NavigationProperty Name="tb_KHACHSAN" Relationship="Self.LK_KHACHSAN_KHACHSAN" FromRole="KHACHSAN" ToRole="tb_KHACHSAN" />
           <NavigationProperty Name="TINH" Relationship="Self.LK_KHACHSAN_TINH" FromRole="KHACHSAN" ToRole="TINH" />
         </EntityType>
+        <EntityType Name="LOGGER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MESSAGE" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="EMPLOYEEID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="DATE" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="NHANVIEN" Relationship="Self.FK__LOGGER__EMPLOYEE__68487DD7" FromRole="LOGGER" ToRole="NHANVIEN" />
+        </EntityType>
         <EntityType Name="NHANVIEN">
           <Key>
             <PropertyRef Name="ID" />
@@ -643,6 +679,7 @@
           <Property Name="SLDI" Type="Int32" />
           <Property Name="IDACC" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
           <NavigationProperty Name="ACCOUNT" Relationship="Self.LK_MAIL_ACCOUNT_NV" FromRole="NHANVIEN" ToRole="ACCOUNT" />
+          <NavigationProperty Name="LOGGERs" Relationship="Self.FK__LOGGER__EMPLOYEE__68487DD7" FromRole="NHANVIEN" ToRole="LOGGER" />
           <NavigationProperty Name="tb_NHIEMVU" Relationship="Self.LK_NHANVIEN_NHIEMVU" FromRole="NHANVIEN" ToRole="tb_NHIEMVU" />
           <NavigationProperty Name="tb_PHUTRACH" Relationship="Self.LK_NHANVIEN_PHUTRACH" FromRole="NHANVIEN" ToRole="tb_PHUTRACH" />
         </EntityType>
@@ -923,6 +960,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__LOGGER__EMPLOYEE__68487DD7">
+          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+          <End Role="LOGGER" Type="Self.LOGGER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LOGGER">
+              <PropertyRef Name="EMPLOYEEID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="LK_NHANVIEN_NHIEMVU">
           <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
           <End Role="tb_NHIEMVU" Type="Self.tb_NHIEMVU" Multiplicity="*" />
@@ -991,6 +1040,7 @@
           <EntitySet Name="GIAMGIAs" EntityType="Self.GIAMGIA" />
           <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
           <EntitySet Name="KHACHSANs" EntityType="Self.KHACHSAN" />
+          <EntitySet Name="LOGGERs" EntityType="Self.LOGGER" />
           <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
           <EntitySet Name="PHUONGTIENs" EntityType="Self.PHUONGTIEN" />
           <EntitySet Name="tb_DIADIEM_DULICH" EntityType="Self.tb_DIADIEM_DULICH" />
@@ -1056,6 +1106,10 @@
           <AssociationSet Name="LK_KHACHSAN_TINH" Association="Self.LK_KHACHSAN_TINH">
             <End Role="TINH" EntitySet="TINHs" />
             <End Role="KHACHSAN" EntitySet="KHACHSANs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LOGGER__EMPLOYEE__68487DD7" Association="Self.FK__LOGGER__EMPLOYEE__68487DD7">
+            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+            <End Role="LOGGER" EntitySet="LOGGERs" />
           </AssociationSet>
           <AssociationSet Name="LK_NHANVIEN_NHIEMVU" Association="Self.LK_NHANVIEN_NHIEMVU">
             <End Role="NHANVIEN" EntitySet="NHANVIENs" />
@@ -1177,6 +1231,16 @@
                 <ScalarProperty Name="IDTINH" ColumnName="IDTINH" />
                 <ScalarProperty Name="TEN" ColumnName="TEN" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOGGERs">
+            <EntityTypeMapping TypeName="QL_TOUR_DU_LICHModel.LOGGER">
+              <MappingFragment StoreEntitySet="LOGGER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MESSAGE" ColumnName="MESSAGE" />
+                <ScalarProperty Name="EMPLOYEEID" ColumnName="EMPLOYEEID" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
